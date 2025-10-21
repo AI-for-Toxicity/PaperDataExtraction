@@ -1,0 +1,13 @@
+transformers>=4.43
+datasets>=2.21
+accelerate
+seqeval
+pydantic>=2
+python-dateutil
+numpy
+pandas
+regex
+rapidfuzz
+tqdm
+scikit-learn
+unidecode
