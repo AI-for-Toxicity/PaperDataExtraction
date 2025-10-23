@@ -1,0 +1,5 @@
+protobuf
+torch
+transformers
+sacremoses
+hf_xet
