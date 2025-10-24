@@ -1,0 +1,1808 @@
+
+
+T r o p i c a l   B i o m e d i c i n e ( ) :
+
+–
+
+(
+
+)
+
+P r o t e c t i v e   e f f i c a c y   o f   A n o p h e l e s   m i n i m u s   C Y P P a n d
+
+C Y P A A a g a i n s t   c y t o t o x i c i t y   o f   p y r e t h r o i d   i n s e c t i c i d e s
+
+i n   S p o d o p t e r a   f r u g i p e r d a   ( S f )   i n s e c t   c e l l s
+
+D u a n g k a e w ,   P . ,   K a e w p a ,   D .   a n d   R o n g n o p a r u t ,   P . * D e p a r t m e n t   o f   B i o c h e m i s t r y ,   F a c u l t y   o f   S c i e n c e ,   M a h i d o l   U n i v e r s i t y ,   B a n g k o k ,   T h a i l a n d
+
+D i v i s i o n   o f   B i o l o g y ,   F a c u l t y   o f   S c i e n c e   a n d   T e c h n o l o g y ,   R a j a m a n g a l a   U n i v e r s i t y   o f   T e c h n o l o g y   T h a n y a b u r i ,
+
+P a t h u m   T h a n i ,   T h a i l a n d
+
+*   C o r r e s p o n d e n c e   a u t h o r   e m a i l :   s c p r n @ m a h i d o l . a c . t h
+
+R e c e i v e d
+
+N o v e m b e r
+
+;   r e c e i v e d   i n   r e v i s e d   f o r m J a n u a r y
+
+;   a c c e p t e d J a n u a r y
+
+A b s t r a c t .   C y t o c h r o m e   P
+
+m o n o o x y g e n a s e s   ( P
+
+s )   a r e   e n z y m e s   k n o w n   t o   m e t a b o l i z e   a
+
+w i d e   v a r i e t y   o f   c o m p o u n d s   i n c l u d i n g   i n s e c t i c i d e s .   T h e i r   o v e r e x p r e s s i o n   l e a d i n g   t o   e n h a n c e d
+
+i n s e c t i c i d e   d e t o x i f i c a t i o n   c o u l d   r e s u l t   i n   i n s e c t i c i d e   r e s i s t a n c e   i n   i n s e c t s .   T h e   i n c r e a s e d
+
+m R N A   e x p r e s s i o n   o f   t w o   P
+
+g e n e s ,   C Y P P a n d   C Y P A A ,   h a s   b e e n   p r e v i o u s l y   o b s e r v e d
+
+i n   l a b o r a t o r y - s e l e c t e d   d e l t a m e t h r i n - r e s i s t a n t   A n o p h e l e s   m i n i m u s ,   a   m a j o r   m a l a r i a   v e c t o r   i n
+
+S o u t h e a s t   A s i a ,   s u g g e s t i n g   t h e i r   r o l e   i n   d e t o x i f i c a t i o n   o f   p y r e t h r o i d s .   I n   t h i s   s t u d y   C Y P P a n d   C Y P A A w e r e   e x p r e s s e d   i n   i n s e c t   S p o d o p t e r a   f r u g i p e r d a   ( S f )   c e l l s   v i a   b a c u l o v i r u s -
+
+d i r e c t e d   e x p r e s s i o n   s y s t e m .   I n s e c t i c i d e   d e t o x i f i c a t i o n   c a p a b i l i t i e s   o f   S f c e l l s   w i t h   a n d
+
+w i t h o u t   e x p r e s s i o n   o f   C Y P P o r   C Y P A A w e r e   e v a l u a t e d   u s i n g - ( , - d i m e t h y l - t h i a z o l - -
+
+y l ) - , - d i p h e n y l t e t r a z o l i u m   b r o m i d e   ( M T T )   a s s a y s .   T h e   r e s u l t s   r e v e a l e d   t h a t   C Y P P -   o r
+
+C Y P A A - e x p r e s s i n g   c e l l s   s h o w e d   s i g n i f i c a n t l y   h i g h e r   c y t o p r o t e c t i v e   c a p a b i l i t y   t h a n   p a r e n t a l
+
+S f c e l l s   a g a i n s t   c y t o t o x i c i t y   o f   p y r e t h r o i d s   i n c l u d i n g   p e r m e t h r i n ,   c y p e r m e t h r i n   a n d
+
+d e l t a m e t h r i n .   S u c h   c y t o p r o t e c t i v e   e f f e c t   w a s   n o t   o b s e r v e d   f o r   b i o a l l e t h r i n   ( p y r e t h r o i d ) ,
+
+c h l o r p y r i f o s   ( o r g a n o p h o s p h a t e )   a n d   p r o p o x u r   ( c a r b a m a t e ) .   M o r e o v e r ,   e x p r e s s i o n   o f   C Y P A A ,
+
+b u t   n o t   C Y P P ,   c o u l d   p r o t e c t   c e l l s   a g a i n s t   λ - c y h a l o t h r i n   c y t o t o x i c i t y .   I n   M T T   a s s a y s   u p o n
+
+c o - i n c u b a t i o n   w i t h   p i p e r o n y l   b u t o x i d e   ( P
+
+i n h i b i t o r ) ,   c y t o p r o t e c t i v e   a b i l i t y   o f   C Y P P a n d
+
+C Y P A A a g a i n s t   d e l t a m e t h r i n   w a s   d i m i n i s h e d ,   i m p l y i n g   t h a t   p y r e t h r o i d   d e t o x i f i c a t i o n   w a s
+
+d u e   t o   a c t i v i t i e s   o f   P
+
+e n z y m e s .   I n s e c t i c i d e   d e t o x i f i c a t i o n   c a p a b i l i t i e s   o f   C Y P P a n d
+
+C Y P A A o b s e r v e d   f r o m   M T T   a s s a y s   w e r e   c o r r e l a t e d   t o   t h e i r   p y r e t h r o i d   m e t a b o l i z i n g   a c t i v i t i e s
+
+o b s e r v e d   f r o m   i n   v i t r o   r e c o n s t i t u t i o n   e n z y m a t i c   a s s a y s .   T h u s   M T T   a s s a y s   u s i n g   c e l l s
+
+e x p r e s s i n g   P
+
+e n z y m e s   o f   i n t e r e s t   c o u l d   b e   p r i m a r i l y   u s e d   t o   d e t e r m i n e   d e t o x i f i c a t i o n
+
+a c t i v i t i e s   o f   e n z y m e s   a g a i n s t   c y t o t o x i c   i n s e c t i c i d e s .
+
+I N T R O D U C T I O N
+
+C o n t r o l   o f   m o s q u i t o   v e c t o r s   r e l y i n g   o n
+
+a p p l i c a t i o n s   w i t h   c h e m i c a l   i n s e c t i c i d e s   i s
+
+a n   i m p o r t a n t   s t r a t e g y   i n   p r e v e n t i n g
+
+t r a n s m i s s i o n   o f   v e c t o r - b o r n e   d i s e a s e s ,
+
+i n c l u d i n g   m a l a r i a .   P y r e t h r o i d   i n s e c t i c i d e s
+
+a r e   c u r r e n t l y   u s e d   w o r l d w i d e   i n   a g r i c u l t u r e
+
+a n d   f o r   v e c t o r   c o n t r o l ,   h o w e v e r   l o n g - t e r m
+
+e x t e n s i v e   u s e   o f   i n s e c t i c i d e s   h a s   b e e n   a
+
+m a j o r   c a u s e   o f   d e v e l o p m e n t   o f   i n s e c t i c i d e
+
+r e s i s t a n c e   a m o n g   m o s q u i t o   p o p u l a t i o n s
+
+( C o l e m a n   &   H e m i n g w a y ,
+
+) .   C o n -
+
+s e q u e n t l y ,   r e s i s t a n c e   c a n   l e a d   t o   r e d u c e d
+
+e f f i c a c y   o f   v e c t o r   c o n t r o l   p r o g r a m m e .
+
+P y r e t h r o i d   r e s i s t a n c e   i n   m o s q u i t o   v e c t o r s   o f
+
+m a l a r i a   h a s   b e e n   r e p o r t e d   i n   s e v e r a l
+
+c o u n t r i e s   i n   A f r i c a   a n d   S o u t h e a s t   A s i a ,
+
+i n c l u d i n g   T h a i l a n d   ( C h a r o e n v i r i y a p h a p   e t   a l . ,
+
+;   B o r t e l   e t   a l . ,
+
+;   M u n h e n g a   e t   a l . ,
+
+;   C u a m b a   e t   a l . ,
+
+;   M a t o w o   e t   a l . ,
+
+) .
+
+C y t o c h r o m e   P
+
+m o n o o x y g e n a s e s
+
+( P
+
+s )   c o m p r i s e   a   s u p e r f a m i l y   o f   e n z y m e s
+
+t h a t   c a t a l y z e   m e t a b o l i s m s   o f   e n d o g e n o u s
+
+a n d   x e n o b i o t i c   c o m p o u n d s ,   i n c l u d i n g
+
+i n s e c t i c i d e s   ( F e y e r e i s e n ,
+
+) .   E x a m i n a -
+
+t i o n s   o f   v a r i o u s   i n s e c t s   h a v e   s u g g e s t e d
+
+i n v o l v e m e n t   o f   P
+
+s   i n   r e s i s t a n c e   t o
+
+d i f f e r e n t   i n s e c t i c i d e s ,   b y   v i r t u e   o f   e n h a n c e d
+
+e x p r e s s i o n   o f   P
+
+s   a n d   t h u s   i n c r e a s e d
+
+d e t o x i f i c a t i o n   o f   i n s e c t i c i d e s .   ( F e y e r e i s e n ,
+
+) .   O v e r e x p r e s s i o n   o f   P
+
+s   h a s   b e e n
+
+o b s e r v e d   i n   s e v e r a l   p y r e t h r o i d   r e s i s t a n t
+
+i n s e c t s   s u c h   a s   i n c r e a s e d   e x p r e s s i o n   o f
+
+C Y P D h a s   b e e n   f o u n d   i n   p y r e t h r o i d
+
+r e s i s t a n t   M u s c a   d o m e s t i c a   ( T o m i t a   e t   a l . ,
+
+) ,   C Y P P a n d   C Y P M   i n   m u l t i p l e
+
+p y r e t h r o i d   r e s i s t a n t   A n o p h e l e s   g a m b i a e
+
+( D j o u a k a   e t   a l . ,
+
+) .
+
+A n o p h e l e s   m i n i m u s   i s   o n e   o f   m a l a r i a
+
+v e c t o r s   i n   S o u t h e a s t   A s i a ,   i n c l u d i n g   T h a i l a n d ,
+
+L o a s ,   C a m b o d i a ,   a n d   V i e t n a m .   W e   p r e v i o u s l y
+
+d e t e r m i n e d   t h a t   P
+
+e n z y m e s   m i g h t   a c t
+
+a s   a   p r i m a r y   r o u t e   o f   d e l t a m e t h r i n   d e t o x i -
+
+f i c a t i o n   d u r i n g   l a b o r a t o r y   s e l e c t i o n   f o r
+
+d e l t a m e t h r i n   r e s i s t a n c e   i n   A n .   m i n i m u s
+
+( C h a r e o n v i r i y a p h a p   e t   a l . ,
+
+) .   I n   p a r a l l e l
+
+d u r i n g  
+
+s e l e c t i o n ,  
+
+i n c r e a s e d  
+
+m R N A
+
+e x p r e s s i o n   o f   C Y P P a n d   C Y P A A w a s
+
+o b s e r v e d   ( R o n g n o p a r u t   e t   a l . ,
+
+;
+
+R o d p r a d i t   e t   a l . ,
+
+) .   T h u s   C Y P P a n d
+
+C Y P A A c o u l d   b e   i m p l i c a t e d   t o   p l a y   a   r o l e
+
+i n   d e t o x i f i c a t i o n   o f   d e l t a m e t h r i n   i n   t h i s
+
+m o s q u i t o .
+
+P y r e t h r o i d s   a r e   k n o w n   t o   c o m m o n l y
+
+t a r g e t   o n   s o d i u m   c h a n n e l s   o f   n e r v o u s
+
+s y s t e m .   O t h e r   t o x i c   e f f e c t s   o f   p y r e t h r o i d s
+
+t o w a r d   c e l l s   i n c l u d e   c a u s i n g   D N A   d a m a g e ,
+
+i n h i b i t i o n   o f   m i t o c h o n d r i a l   c o m p l e x   I ,   a n d
+
+i n d u c t i o n   o f   r e a c t i v e   o x y g e n   s p e c i e s
+
+( R O S )   a c c u m u l a t i o n   ( G a s s n e r   e t   a l . ,
+
+;
+
+V i l l a r i n i   e t   a l . ,
+
+;   N a r a v a n e n i   e t   a l . ,
+
+;
+
+P a t e l   e t   a l . ,
+
+) .   C y t o t o x i c   e f f e c t s   o f
+
+o r g a n o p h o s p h a t e   a n d   c a r b a m a t e   i n s e c t i -
+
+c i d e s   h a v e   a l s o   b e e n   r e p o r t e d   s u c h   a s
+
+o x i d a t i v e   s t r e s s ,   a l t e r a t i o n   o f   m i t o c h o n d r i a
+
+f u n c t i o n   ( S w a n n   e t   a l . ,
+
+;   S c h m u c k   &
+
+M i h a i l ,
+
+;   M a r a n   e t   a l . ,
+
+) .   T h u s
+
+t r e a t m e n t   o f   c e l l s   w i t h   c y t o t o x i c   i n s e c t i c i d e s
+
+i n   c y t o t o x i c i t y   a s s a y s   c a n   c a u s e   c e l l
+
+m o r t a l i t y   u n l e s s   c e l l s   p o s s e s s   a b i l i t y   t o
+
+d e t o x i f y   i n s e c t i c i d e s .   T h i s   i s   s u p p o r t e d   b y
+
+t h a t   S p o d o p t e r a   f r u g i p e r d a   ( S f )   i n s e c t   c e l l s
+
+e x p r e s s i n g   C Y P A A h a v e   s i g n i f i c a n t l y
+
+h i g h e r   c e l l   v i a b i l i t y   u p o n   t r e a t m e n t   w i t h
+
+d e l t a m e t h r i n   t h a n   c e l l s   w i t h o u t   C Y P A A e x p r e s s i o n   i n   M T T   c y t o t o x i c i t y   a s s a y ,
+
+s u g g e s t i n g   t h a t   C Y P A A c o u l d   d e t o x i f y
+
+d e l t a m e t h r i n   i n   S f c e l l s   ( B o o n s u e p s a k u l
+
+e t   a l . ,
+
+) .
+
+I n   t h i s   s t u d y ,   w e   f u r t h e r   e m p l o y e d
+
+M T T   c y t o t o x i c i t y   a s s a y s   t o   i n v e s t i g a t e
+
+d e t o x i f i c a t i o n   c a p a b i l i t y   o f   S f c e l l s
+
+e x p r e s s i n g   C Y P P o r   C Y P A A a g a i n s t
+
+p y r e t h r o i d ,   o r g a n o p h o s p h a t e   a n d   c a r b a m a t e
+
+i n s e c t i c i d e s   t h a t   a r e   c o m m o n l y   u s e d   i n
+
+T h a i l a n d .   E n z y m a t i c   a s s a y s   o f   C Y P P a n d
+
+C Y P A A a g a i n s t   i n s e c t i c i d e s   w e r e
+
+p e r f o r m e d   a n d   c o m p a r e d   t o   r e s u l t s   o b t a i n e d
+
+f r o m   M T T   a s s a y s .
+
+M A T E R I A L S   A N D   M E T H O D S
+
+C h e m i c a l s
+
+T h e   c h e m i c a l   c o m p o u n d s   i n c l u d i n g
+
+d e l t a m e t h r i n ,   p e r m e t h r i n ,   c y p e r m e t h r i n ,   λ -
+
+c y h a l o t h r i n ,   b i o a l l e t h r i n ,   c h l o r p y r i f o s ,
+
+p r o p o x u r ,   l e u p e p t i n ,   p h e n y l m e t h y l s u l p h o n y l
+
+f l u o r i d e   ( P M S F ) ,   d i m e t h y l   s u l f o x i d e   ( D M S O ) ,
+
+a n d   p i p e r o n y l   b u t o x i d e   ( P B O )   w e r e
+
+p u r c h a s e d   f r o m   S i g m a - A l d r i c h   ( S t .   L o u i s ,
+
+M O ) . - ( , - d i m e t h y l t h i a z o l - - y l ) - , -
+
+d i p h e n y l t e t r a z o l i u m   b r o m i d e   ( M T T )   w e r e
+
+p u r c h a s e d   f r o m   U S B   ( C l e v e l a n d ,   O H ) .
+
+C e l l   c u l t u r e   a n d   b a c u l o v i r u s - m e d i a t e d
+
+i n s e c t   c e l l   e x p r e s s i o n   o f   P
+
+p r o t e i n s
+
+T h e   S f i n s e c t   c e l l   l i n e   a n d   S F -
+
+I I   S F M
+
+c u l t u r e   m e d i a   w e r e   p u r c h a s e d   f r o m
+
+I n v i t r o g e n   ( C a r l s b a d ,   C A ) ,   a n d   S f c e l l s   w e r e
+
+c u l t u r e d   i n   S F
+
+I I   s e r u m - f r e e   m e d i a   a t º C .   T h e   r e c o m b i n a n t   b a c u l o v i r u s ,   e i t h e r
+
+c o n t a i n i n g   C Y P A A o r   C Y P P ,   w a s
+
+p r o d u c e d  
+
+f o l l o w i n g  
+
+m a n u f a c t u r e r ’ s
+
+i n s t r u c t i o n   a s   p r e v i o u s l y   d e s c r i b e d   ( K a e w p a
+
+e t   a l . ,
+
+) .   B r i e f l y ,   C Y P P o r   C Y P A A c D N A   i s o l a t e d   f r o m   d e l t a m e t h r i n   r e s i s t a n t
+
+A n .   m i n i m u s   ( R o n g n o p a r u t   e t   a l . ,
+
+;
+
+R o d p r a d i t   e t   a l . ,
+
+)   w a s   s u b c l o n e d   i n t o
+
+t h e   t r a n s f e r   v e c t o r   p B a c P A K ( B D   B i o -
+
+s c i e n c e s ,   P a l o   A l t o ,   C A ) ,   c o - t r a n s f e c t e d   w i t h
+
+a   l i n e a r i z e d   B a c P A K v i r a l   D N A   i n t o   S f c e l l s .
+
+T h e   r e s u l t i n g   r e c o m b i n a n t   v i r u s ,   u p o n
+
+p u r i f i c a t i o n ,   w a s   u s e d   i n   t h e   e x p r e s s i o n   o f
+
+e n z y m e s .   F o r   c y t o t o x i c i t y   a s s a y s ,   S f c e l l s
+
+w e r e   i n f e c t e d   w i t h   C Y P P o r   C Y P A A r e c o m b i n a n t   v i r u s   a t   m u l t i p l i c i t y   o f   i n f e c t i o n
+
+( m o i )   e q u a l   t o .   A f t e r h o u r s   p o s t - i n f e c t i o n ,
+
+c e l l s   e x p r e s s i n g   C Y P P o r   C Y P A A w e r e
+
+h a r v e s t e d   a n d   s e e d e d   o n t o - w e l l   p l a t e   f o r
+
+c y t o t o x i c i t y   a s s a y s .   T h e s e   c o n d i t i o n s
+
+f o l l o w e d   t h e   m e t h o d s   d e s c r i b e d   b y   K a e w p a
+
+e t   a l .   (
+
+)   a n d   B o o n s u e p s a k u l   e t   a l .   (
+
+) .
+
+E x p r e s s i o n   o f   P
+
+p r o t e i n s   w a s   d e t e c t e d   b y
+
+s o d i u m   d o d e c y l   s u l f a t e - p o l y a c r y l a m i d e   g e l
+
+e l e c t r o p h o r e s i s   ( S D S - P A G E ) .
+
+E x p r e s s i o n   o f   P
+
+s   f o r   i n   v i t r o
+
+e n z y m a t i c   a c t i v i t y   a s s a y   w a s   p e r f o r m e d   a s
+
+d e s c r i b e d   b y   B o o n s u e p s a k u l   e t   a l .   (
+
+) .   I n
+
+b r i e f ,   S f c e l l s   w e r e   i n f e c t e d   w i t h   e i t h e r
+
+C Y P P o r   C Y P A A - e x p r e s s e d   v i r u s   a t
+
+m o i   e q u a l   t o .   T h e   i n f e c t e d   c e l l s   w e r e
+
+h a r v e s t e d   a t
+
+-
+
+h o u r s   p o s t - i n f e c t i o n   a n d
+
+r e s u s p e n d e d   i n   s o d i u m   p h o s p h a t e   b u f f e r   p H .   c o n t a i n i n g m M   E D T A , . m M   P M S F , µ g / m l   l e u p e p t i n , . m M   D T T ,   a n d %
+
+g l y c e r o l .   T h e   h a r v e s t e d   c e l l s   w e r e   l y s e d   a n d
+
+s u b j e c t e d   t o   d i f f e r e n t i a l   c e n t r i f u g a t i o n ,
+
+r e s u l t i n g   i n   m i c r o s o m a l   p e l l e t   w h i c h   w a s
+
+s o l u b i l i z e d   i n   s o d i u m   p h o s p h a t e   b u f f e r   p H .   c o n t a i n i n g
+
+m M   K C l   a n d %   ( v / v )
+
+T r i t o n   X -
+
+.   T h e   m i c r o s o m e s   o f   S f c e l l s
+
+i n f e c t e d   w i t h   e i t h e r   C Y P P o r   C Y P A A r e c o m b i n a n t   v i r u s   w e r e   u s e d   i n   e n z y m a t i c
+
+r e c o n s t i t u t i o n   a s s a y s   a s   d e s c r i b e d   i n   K a e w p a
+
+e t   a l .   (
+
+) .   T h e   e x p r e s s e d   p r o t e i n s   i n
+
+m i c r o s o m a l   f r a c t i o n s   w e r e   o b s e r v e d   b y   S D S -
+
+P A G E   a n d   t o t a l   P
+
+c o n t e n t   w a s   m e a s u r e d
+
+b y   r e d u c e d - C O   d i f f e r e n c e   s p e c t r u m   a n a l y s i s
+
+a c c o r d i n g   t o   O m u r a   &   S a t o   (
+
+) .
+
+C e l l   t r e a t m e n t   a n d   M T T   c y t o t o x i c i t y
+
+a s s a y s
+
+C y t o t o x i c i t y   e f f e c t   o f   i n s e c t i c i d e s   e v a l u a t e d
+
+b y   M T T   a s s a y s   w a s   p e r f o r m e d   a s   p r e v i o u s l y
+
+d e s c r i b e d   ( B o o n s u e p s a k u l   e t   a l . ,
+
+) .
+
+I n s e c t i c i d e s   u s e d   i n   t h i s   s t u d y   i n c l u d e d
+
+b i o a l l e t h r i n ,   c y p e r m e t h r i n ,   c h l o r p y r i f o s ,
+
+d e l t a m e t h r i n ,   p e r m e t h r i n ,   p r o p o x u r   a n d   λ -
+
+c y h a l o t h r i n .   W e   p r e v i o u s l y   u s e d   c e l l s
+
+i n f e c t e d   w i t h   b a c u l o v i r u s   c o n t a i n i n g
+
+B a c P a k v i r a l   D N A   a s   c o n t r o l   i n   p a r a l l e l   w i t h
+
+u n i n f e c t e d   p a r e n t a l   S f c e l l s ,   a n d   b o t h   c o n t r o l
+
+c e l l s   s h o w e d   s a m e   r e s p o n s e   t o   d e l t a m e t h r i n
+
+( B o o n s u e p s a k u l   e t   a l . ,
+
+) .   I n   t h i s   s t u d y   w e
+
+t h u s   u s e d   o n l y   u n i n f e c t e d   S f c e l l s   a s   c o n t r o l
+
+i n   M T T   a s s a y s ,   a n d   c e l l s   t r e a t e d   w i t h   D M S O
+
+s o l v e n t   a l o n e   w a s   a   n e g a t i v e   c o n t r o l .
+
+C Y P P -   o r   C Y P A A - e x p r e s s i n g   c e l l s   a n d
+
+c o n t r o l   S f c e l l s   w e r e   s e e d e d   a t     x
+
+c e l l s
+
+p e r   w e l l   i n - w e l l   c u l t u r e   p l a t e s .   C e l l s   w e r e
+
+a l l o w e d   t o   a t t a c h   t o   w e l l s   f o r h o u r s ,
+
+i n s e c t i c i d e s   r a n g i n g   f r o m . t o
+
+µ M   f i n a l
+
+c o n c e n t r a t i o n s   w e r e   s u b s e q u e n t l y   a d d e d
+
+i n t o   e a c h   w e l l   a n d   c e l l s   w e r e   l e f t   e x p o s i n g   t o
+
+e a c h   i n s e c t i c i d e   f o r h r .   W h e n   i n s e c t i c i d e s
+
+w e r e   u s e d   a t   h i g h e r   c o n c e n t r a t i o n   t h a n
+
+µ M ,   t h e y   w e r e   p r e c i p i t a t e d   i n   c u l t u r e
+
+m e d i a ,   p a r t i c u l a r l y   f o r   p y r e t h r o i d s .   T h u s
+
+c o n c e n t r a t i o n s   o f   p y r e t h r o i d s   o v e r
+
+µ M
+
+w e r e   n o t   e v a l u a t e d   i n   M T T   a s s a y s .   F o l l o w i n g
+
+i n s e c t i c i d e   t r e a t m e n t ,   c u l t u r e   m e d i a   w e r e
+
+r e m o v e d   a n d   e a c h   w e l l   w a s   w a s h e d   t w i c e
+
+w i t h   L u c k h o f f ’ s   b u f f e r   (
+
+m M   N a C l , . m M
+
+K C l , m M   C a C l , . m M   M g C l ,   a n d m M
+
+H E P E S ) .   C e l l   v i a b i l i t y   w a s   d e t e r m i n e d   u s i n g
+
+M T T   a s s a y .   T h i s   w a s   a c c o m p l i s h e d   b y
+
+a d d i t i o n   o f
+
+µ l   M T T   s o l u t i o n   ( m g / m l   i n
+
+L u c k h o f f ' s   b u f f e r )   a n d   f u r t h e r   s u b j e c t e d   t o - h o u r   i n c u b a t i o n   a t º C .   S u b s e q u e n t l y ,
+
+M T T   s o l u t i o n   w a s   r e m o v e d   a n d   D M S O   w a s
+
+a d d e d   t o   d i s s o l v e   t h e   p u r p l e   f o r m a z a n
+
+p r e c i p i t a t e  
+
+f o r m e d  
+
+b y  
+
+a c t i v i t y  
+
+o f
+
+m i t o c h o n d r i a l   e n z y m e s   i n   l i v e   c e l l s
+
+( M o s m a n n ,
+
+) .   T h e   a b s o r b a n c e   o f
+
+f o r m a z a n   p r o d u c t   w a s   m e a s u r e d   a t
+
+n m
+
+u s i n g   M u l t i s k a n   E X   m i c r o t i t e r   p l a t e   r e a d e r
+
+( T h e r m o   L a b s y s t e m s ,   F i n l a n d ) .   C e l l   v i a b i l i t y
+
+u p o n   i n c u b a t i o n   w i t h   e a c h   i n s e c t i c i d e   w a s
+
+e x p r e s s e d   a s   p e r c e n t a g e   o f   v i a b l e   c e l l s
+
+r e l a t i v e   t o   c e l l s   t r e a t e d   w i t h   D M S O   s o l v e n t
+
+a l o n e   w h i c h   w a s   a s s i g n e d   a s
+
+%   v i a b i l i t y .
+
+T h e   v a l u e   o f
+
+%   l e t h a l   c o n c e n t r a t i o n   ( L C
+
+)
+
+w a s   e v a l u a t e d   f r o m   t h e   p l o t   o f   p e r c e n t a g e   o f
+
+c e l l   v i a b i l i t y   a g a i n s t   d i f f e r e n t   c o n c e n t r a t i o n s
+
+o f   e a c h   i n s e c t i c i d e .   H i g h e r   L C
+
+v a l u e
+
+r e p r e s e n t s   h i g h e r   a b i l i t y   t o   s u r v i v e   t o x i c i t y
+
+o f   i n s e c t i c i d e s .
+
+I n   e n z y m e   i n h i b i t i o n   s t u d y ,   c e l l s   w e r e   c o -
+
+i n c u b a t e d   w i t h
+
+µ M   d e l t a m e t h r i n   a n d   P B O
+
+( k n o w n   P
+
+i n h i b i t o r )   a t   c o n c e n t r a t i o n s   o f . , a n d
+
+µ M   ( i n   e a c h   c a s e   t h e   f i n a l
+
+c o n c e n t r a t i o n   o f   D M S O   i n   m e d i a   w a s % ) .
+
+T h i s   r a n g e   o f   P B O   c o n c e n t r a t i o n s   w a s   l e s s
+
+t h a n   L D
+
+v a l u e   ( µ M )   o f   P B O   a g a i n s t   S f c e l l s   p r e - d e t e r m i n e d   b y   M T T   a s s a y s   ( d a t a
+
+n o t   s h o w n ) .   I n h i b i t i o n   o f   P
+
+s   b y   P B O   w a s
+
+m e a s u r e d   a s   c e l l   s u r v i v a l   a g a i n s t   d e l t a -
+
+m e t h r i n   c y t o t o x i c i t y   i n   t h e   p r e s e n c e   o f   P B O ,
+
+a f t e r   n o r m a l i z a t i o n   w i t h   t h a t   o f   c e l l s   t r e a t e d
+
+w i t h   P B O   o n l y .   E a c h   M T T   a s s a y   m e a s u r i n g
+
+c y t o t o x i c   e f f e c t   o f   i n s e c t i c i d e s   a n d
+
+m e a s u r i n g   i n h i b i t o r y   e f f e c t   b y   P B O   w a s   d o n e
+
+i n   t r i p l i c a t e .
+
+I n   v i t r o   i n s e c t i c i d e   m e t a b o l i s m   b y
+
+C Y P P a n d   C Y P A A T h e   i n   v i t r o   r e c o n s t i t u t i o n   a s s a y s   i n   t h e
+
+p r e s e n c e   o f   i n s e c t i c i d e   s u b s t r a t e   w e r e
+
+p e r f o r m e d   a s   p r e v i o u s l y   d e s c r i b e d   ( K a e w p a
+
+e t   a l . ,
+
+) .   B r i e f l y   r e c o n s t i t u t i o n   r e a c t i o n s
+
+w e r e   c a r r i e d   o u t   a t
+
+º C   i n . M   s o d i u m
+
+p h o s p h a t e   b u f f e r   p H .   i n   t h e   p r e s e n c e   o f
+
+p m o l   o f   e i t h e r   C Y P P o r   C Y P A A a n d
+
+w a s   r e c o n s t i t u t e d   w i t h   p u r i f i e d   A n .   m i n i m u s
+
+N A D P H - d e p e n d e n t   c y t o c h r o m e   P
+
+r e d u c t a s e   ( P
+
+r e d o x   p a r t n e r )   i n   t h e   r a t i o
+
+o f : ,
+
+µ M   o f   t e s t   i n s e c t i c i d e ,   a n d   N A D P H -
+
+r e g e n e r a t i n g   s y s t e m .   I n t e r n a l   s t a n d a r d
+
+( b i o a l l e t h r i n )   a n d   r e m a i n i n g   o f   i n s e c t i c i d e
+
+a t   e a c h   r e a c t i o n   t i m e   w e r e   a n a l y z e d   b y   H P L C
+
+a n a l y s i s   a n d   p e a k s   w e r e   m o n i t o r e d   b y   U V
+
+d e t e c t i o n   a t n m .   T h e   s u b s t r a t e   p e a k
+
+a r e a   a t   e a c h   t i m e   p o i n t   w a s   c a l c u l a t e d   a s
+
+p e r c e n t a g e   o f   r e m a i n i n g   r e s i d u a l   s u b s t r a t e
+
+c o m p a r e d   t o   t h a t   o f   t i m e   z e r o   w h i c h   w a s
+
+a s s i g n e d   t o   b e
+
+% .   W h e n   b i o a l l e t h r i n   w a s
+
+a   s u b s t r a t e ,   d e l t a m e t h r i n   w a s   u s e d   a s   i n t e r n a l
+
+s t a n d a r d .   T o   d e t e r m i n e   m e t a b o l i s m s
+
+m e d i a t e d   b y   C Y P P a n d   C Y P A A ,   a m o u n t
+
+o f   e a c h   i n s e c t i c i d e   c o n s u m e d   a t   e a c h
+
+i n c u b a t i o n   t i m e   w a s   c a l c u l a t e d   a s   p e r c e n t a g e
+
+o f   d e p l e t i o n   o f   e a c h   i n s e c t i c i d e   c o m p a r e d
+
+t o   t h e   i n i t i a l   a m o u n t   a t   t i m e   z e r o .   E a c h   o f
+
+r e c o n s t i t u t i o n   e x p e r i m e n t s   w a s   p e r f o r m e d   i n
+
+t r i p l i c a t e   a n d   i n t e r n a l   s t a n d a r d   w a s   u s e d   f o r
+
+n o r m a l i z a t i o n .   C o n t r o l   r e a c t i o n s   w e r e
+
+p e r f o r m e d   b y   i n c u b a t i n g   r e a c t i o n s   w i t h o u t
+
+N A D P H - r e g e n e r a t i n g   s y s t e m ,   a n d   r e a c t i o n
+
+u s i n g   m i c r o s o m e   o f   u n i n f e c t e d   S f c e l l s .
+
+S t a t i s t i c a l   a n a l y s i s
+
+D a t a   w e r e   s t a t i s t i c a l l y   a n a l y z e d   b y   G r a p h P a d
+
+P r i s m   v e r s i o n ( G r a p h P a d   S o f t w a r e   I n c . ,   S a n
+
+D i e g o ,   C A )   u s i n g   A N O V A   w i t h   T u k e y ’ s
+
+M u l t i p l e   c o m p a r i s o n   t e s t .   R e s u l t s   w i t h   p   < .
+
+w e r e   c o n s i d e r e d   t o   b e   s i g n i f i c a n t l y
+
+d i f f e r e n t .
+
+R E S U L T S
+
+I n   t h i s   s t u d y ,   c y t o t o x i c i t y   o f   i n s e c t i c i d e s   w a s
+
+e x a m i n e d   w i t h   S f i n s e c t   c e l l s ,   w i t h   a n d
+
+w i t h o u t   e x p r e s s i o n   o f   C Y P P o r   C Y P A A ,
+
+u s i n g   M T T   c y t o t o x i c i t y   a s s a y s .   C Y P P a n d
+
+C Y P A A w e r e   e x p r e s s e d   v i a   b a c u l o v i r u s -
+
+d i r e c t e d   e x p r e s s i o n   s y s t e m .   T h e   r e s u l t s
+
+r e v e a l e d   h i g h e r   c e l l   v i a b i l i t y   a g a i n s t
+
+c y t o t o x i c   e f f e c t s   o f   p e r m e t h r i n ,   c y p e r m e t h r i n
+
+a n d   d e l t a m e t h r i n   i n   C Y P P -   o r   C Y P A A -
+
+e x p r e s s i n g   c e l l s   t h a n   p a r e n t a l   S f c e l l s   f o r
+
+a l l   g i v e n   i n s e c t i c i d e   c o n c e n t r a t i o n s   ( F i g u r e B - D ) .   T h i s   i s   d e m o n s t r a t e d   b y -   t o
+
+- f o l d
+
+h i g h e r   L C
+
+v a l u e s   o b s e r v e d   i n   C Y P P -   a n d
+
+C Y P A A - e x p r e s s i n g   c e l l s   t h a n   c o n t r o l   S f p a r e n t a l   c e l l s .   I t   c o u l d   b e   n o t e d   t h a t   r e s p o n s e
+
+t o   λ - c y h a l o t h r i n   c y t o t o x i c i t y   w a s   d i f f e r e n t
+
+b e t w e e n   c e l l s   e x p r e s s i n g   C Y P P a n d
+
+C Y P A A ,   a s   d e m o n s t r a t e d   b y . - f o l d   h i g h e r
+
+L C
+
+v a l u e   o b s e r v e d   i n   C Y P A A - e x p r e s s i n g
+
+c e l l s   t h a n   i n   C Y P P - e x p r e s s i n g   c e l l s   a n d
+
+p a r e n t a l   S f c e l l s   ( F i g u r e E ) .   U p o n
+
+t r e a t m e n t   w i t h   b i o a l l e t h r i n ,   c h l o r p y r i f o s ,   a n d
+
+p r o p o x u r ,   p e r c e n t a g e   o f   c e l l   v i a b i l i t y   o f
+
+C Y P P -   a n d   C Y P A A - e x p r e s s i n g   c e l l s   a n d
+
+L C
+
+v a l u e s   w e r e   s i m i l a r   t o   c o n t r o l   S f c e l l s
+
+( F i g u r e s A ,   F ,   a n d   G ) .
+
+I n   o r d e r   t o   d e t e r m i n e   w h e t h e r   i n c r e a s e d
+
+c e l l   s u r v i v a l   a g a i n s t   p y r e t h r o i d   c y t o t o x i c i t y
+
+f o u n d   i n   c e l l s   e x p r e s s i n g   C Y P P o r
+
+C Y P A A w a s   d u e   t o   a c t i v i t y   o f   P
+
+s ,   w e
+
+a s s a y e d   d e l t a m e t h r i n   c y t o t o x i c i t y   i n   t h e
+
+p r e s e n c e   o f   d i f f e r e n t   c o n c e n t r a t i o n s   o f   P B O ,
+
+P
+
+i n h i b i t o r .   D e c r e a s e   o f   c e l l   v i a b i l i t y
+
+a g a i n s t   d e l t a m e t h r i n   c y t o t o x i c i t y   w a s
+
+o b s e r v e d   w h e n   c e l l s   e x p r e s s i n g   C Y P P a n d
+
+C Y P A A w e r e   t r e a t e d   w i t h   i n c r e a s i n g
+
+c o n c e n t r a t i o n s   o f   P B O   ( F i g u r e   ) .   S i n c e   P B O
+
+a l s o   p o s s e s s e d   c y t o t o x i c   e f f e c t   a g a i n s t   S f c e l l s   ( s e e   M a t e r i a l s   a n d   M e t h o d s   s e c t i o n ) ,
+
+t h u s   p e r c e n t   c e l l   v i a b i l i t y   o f   P
+
+- e x p r e s s i n g
+
+c e l l s   s h o w n   i n   F i g u r e     w a s   o b t a i n e d   a f t e r
+
+n o r m a l i z a t i o n   w i t h   t h a t   o f   c e l l s   t r e a t e d   w i t h
+
+P B O   o n l y .   P e r c e n t a g e   o f   c e l l   s u r v i v a l   a g a i n s t
+
+d e l t a m e t h r i n   o f   C Y P P -   o r   C Y P A A -
+
+e x p r e s s i n g   c e l l s   i n   t h e   p r e s e n c e   o f
+
+µ M
+
+P B O   w a s   s i g n i f i c a n t l y   d e c r e a s e d ,   c o m p a r e d
+
+t o   t h o s e   w i t h o u t   P B O   ( p < .
+
+) .   I n   S f c o n t r o l
+
+c e l l s ,   a f t e r   n o r m a l i z a t i o n ,   p e r c e n t a g e   o f   c e l l s
+
+s u r v i v i n g  
+
+d e l t a m e t h r i n  
+
+c y t o t o x i c i t y
+
+r e m a i n e d   s i m i l a r   t h r o u g h o u t   t r e a t m e n t   w i t h
+
+d i f f e r e n t   P B O   c o n c e n t r a t i o n s   ( F i g u r e   ) .
+
+E n z y m a t i c   a c t i v i t i e s   o f   C Y P P a n d
+
+C Y P A A a g a i n s t   p y r e t h r o i d ,   o r g a n o -
+
+p h o s p h a t e ,   a n d   c a r b a m a t e   i n s e c t i c i d e s   w e r e
+
+F i g u r e .   V i a b i l i t y   o f   C Y P P - e x p r e s s i n g   S f c e l l s   ( z ) ,   C Y P A A - e x p r e s s i n g   S f c e l l s   (  )   a n d   p a r e n t a l
+
+S f c e l l s   ( U )   u p o n   i n c u b a t i o n   w i t h   v a r i o u s   i n s e c t i c i d e s .   P e r c e n t a g e   o f   c e l l   v i a b i l i t y   w a s   m e a s u r e d
+
+u s i n g   M T T   c y t o t o x i c i t y   a s s a y s   a s   d e s c r i b e d   i n   M a t e r i a l s   a n d   M e t h o d s .   D a t a   a r e   m e a n s   ±   S . D .   o f   t h r e e
+
+r e p l i c a t e d   e x p e r i m e n t s .   A s t e r i s k   ( * )   r e p r e s e n t s   t h e   v a l u e   s i g n i f i c a n t l y   d i f f e r e n t   f r o m   c o n t r o l   c e l l s   ( p
+
+< .
+
+,   o n e - w a y   A N O V A ,   T u k e y ’ s   M u l t i p l e   C o m p a r i s o n   T e s t )
+
+F i g u r e   .   E f f e c t   o f   d e l t a m e t h r i n   o n   v i a b i l i t y   o f   c e l l s   e x p r e s s i n g   C Y P P ,   C Y P A A ,   a n d   p a r e n t a l
+
+S f c e l l s   i n   t h e   p r e s e n c e   o f   P B O .   C e l l s   w e r e   c o - i n c u b a t e d   w i t h   d e l t a m e t h r i n   a n d   P B O ,   a n d
+
+p e r c e n t a g e   o f   c e l l   v i a b i l i t y   a f t e r   n o r m a l i z a t i o n   w i t h   t h a t   t r e a t e d   w i t h   P B O   o n l y   w a s   o b t a i n e d   a s
+
+d e s c r i b e d   i n   M a t e r i a l s   a n d   M e t h o d s .   D a t a   a r e   m e a n s   ±   S . D .   o f   t h r e e   r e p l i c a t e d   e x p e r i m e n t s
+
+i n v e s t i g a t e d   u s i n g   C Y P P -   o r   C Y P A A r e c o n s t i t u t e d   w i t h   t h e i r   r e d o x   p a r t n e r
+
+e n z y m e ,   t h e   N A D P H - d e p e n d e n t   c y t o c h r o m e
+
+P
+
+r e d u c t a s e .   A s   s h o w n   i n   F i g u r e C Y P P a n d   C Y P A A s h o w e d   e n z y m a t i c   a c t i v i t i e s
+
+t o w a r d   p e r m e t h r i n ,   c y p e r m e t h r i n   a n d
+
+d e l t a m e t h r i n ,   b u t   n o   d e t e c t a b l e   a c t i v i t i e s
+
+w e r e   o b s e r v e d   w i t h   b i o a l l e t h r i n ,   c h l o r p y r i f o s ,
+
+a n d   p r o p o x u r .   M o r e o v e r ,   i n   c o n t r a s t   t o
+
+C Y P A A ,   C Y P P h a d   u n d e t e c t a b l e   e n z y m e
+
+a c t i v i t y   i n   m e t a b o l i z i n g   λ - c y h a l o t h r i n .   T h e s e
+
+r e s u l t s   w e r e   t h u s   i n   a g r e e m e n t   w i t h   t h e   a b i l i t y
+
+o f   C Y P P a n d   C Y P A A i n   p r o t e c t i n g   c e l l s
+
+a g a i n s t   c y t o t o x i c   e f f e c t s   o f   t e s t   i n s e c t i c i d e s .
+
+F i g u r e .   P l o t   o f   t h e   t i m e   c o u r s e   o f   i n s e c t i c i d e   d e p l e t i o n   m e d i a t e d   b y   C Y P P ( A )   a n d   C Y P A A ( B )
+
+e n z y m e s   u s i n g   i n   v i t r o   r e c o n s t i t u t i o n   a s s a y s ,   p e r f o r m e d   a s   d e s c r i b e d   i n   K a e w p a   e t   a l .   (
+
+) .
+
+D e g r a d a t i o n   o f   i n s e c t i c i d e   m e d i a t e d   b y   C Y P P a n d   C Y P A A w a s   c a l c u l a t e d   a s   p e r c e n t a g e   o f
+
+i n s e c t i c i d e   c o n s u m e d   i n   t h e   r e a c t i o n s   a t   e a c h   i n c u b a t i o n   t i m e   c o m p a r e d   t o   t i m e   z e r o ,   a f t e r   n o r m a l i z a t i o n
+
+w i t h   i n t e r n a l   s t a n d a r d .   D a t a   a r e   m e a n s   ±   S . D .   o f   t r i p l i c a t e   e x p e r i m e n t s
+
+D I S C U S S I O N
+
+T h e   r e s u l t s   o f   t h i s   s t u d y   s h o w e d   t h a t
+
+e x p r e s s i o n   o f   C Y P P a n d   C Y P A A c o u l d
+
+h e l p   p r o t e c t i n g   i n s e c t   S f c e l l s   f r o m   c y t o -
+
+t o x i c i t y   o f   s e v e r a l   p y r e t h r o i d s .   P r e s e n c e   o f
+
+P B O   d i m i n i s h e d   C Y P P -   a n d   C Y P A A -
+
+m e d i a t e d   c y t o p r o t e c t i o n   o f   S f c e l l s   a g a i n s t
+
+d e l t a m e t h r i n   c y t o t o x i c i t y ,   s u g g e s t i n g   t h a t
+
+c y t o p r o t e c t i o n   a g a i n s t   p y r e t h r o i d s   w a s
+
+d u e   t o   C Y P P a n d   C Y P A A e n z y m e s .
+
+M o r e o v e r ,   r e s u l t s   f r o m   M T T   c y t o t o x i c i t y
+
+a s s a y s   c o r r e s p o n d e d   t o   t h o s e   o f   i n   v i t r o
+
+r e c o n s t i t u t i o n   e n z y m a t i c   a s s a y s .   I n   t h i s   s t u d y
+
+w e   d e t e c t e d   c y t o t o x i c   e f f e c t   o f   P B O   a g a i n s t
+
+S f c e l l s ,   P B O   t o x i c i t y   h a s   a l s o   b e e n   r e p o r t e d ,
+
+a s   i t   c a u s e s   t u m o r s   a n d   a d v e r s e   e f f e c t s   i n
+
+l a b o r a t o r y   r o d e n t s   ( T a k a h a s h i   e t   a l . ,
+
+;
+
+O k a m i y a   e t   a l . ,
+
+) .
+
+A s   s h o w n   i n   t h i s   s t u d y ,   S f p a r e n t a l   c e l l s
+
+w e r e   s u s c e p t i b l e   t o   c y t o t o x i c i t y   o f   t e s t
+
+i n s e c t i c i d e s   w i t h   L C
+
+v a l u e s   l e s s   t h a n
+
+µ M .
+
+S e n s i t i v i t y   o f   i n s e c t   S f c e l l s   t o   c y t o t o x i c
+
+e f f e c t s   o f   c o m p o u n d s   s u c h   a s   f u n g a l
+
+m e t a b o l i t e s   ( F o r n e l l i   e t   a l . ,
+
+) ,   p y r i d a l y l
+
+i n s e c t i c i d e   ( S a i t o   e t   a l . ,
+
+)   h a v e   b e e n
+
+r e p o r t e d .   T h u s   s u s c e p t i b i l i t y   o f   S f p a r e n t a l
+
+c e l l s   t o   i n s e c t i c i d e   c y t o t o x i c i t y   o b s e r v e d   i n
+
+t h e   p r e s e n t   s t u d y   i s   a d v a n t a g e o u s   t o
+
+d e t e r m i n i n g   c a p a b i l i t y   o f   P
+
+e n z y m e s   i n
+
+d e t o x i f y i n g   i n s e c t i c i d e s .   C a p a b i l i t y   o f   P
+
+i n   d e t o x i f y i n g   c y t o t o x i c   x e n o c h e m i c a l s   w e r e
+
+p r e v i o u s l y   r e p o r t e d   u s i n g   i n s e c t   c e l l s
+
+e x p r e s s i n g   P
+
+e n z y m e   v i a   b a c u l o v i r u s -
+
+d i r e c t e d   e x p r e s s i o n   ( G r a n t   e t   a l . ,
+
+) .
+
+M o r e o v e r   S f c e l l s   e x p r e s s i n g   h u m a n
+
+C Y P A w e r e   u s e d   t o   i n v e s t i g a t e   t o x i c i t y   o f
+
+n a p h t h a l e n e   ( G r e e n e   e t   a l . ,
+
+) .
+
+T h e   r e s u l t s   o f   t h i s   s t u d y   r e v e a l e d   t h a t
+
+C Y P P a n d   C Y P A A c o u l d   f u n c t i o n   i n
+
+m e t a b o l i z i n g   o f   p e r m e t h r i n ,   c y p e r m e t h r i n ,
+
+a n d   d e l t a m e t h r i n ,   h o w e v e r   r o l e   i n
+
+m e t a b o l i s m s   o f   b i o a l l e t h r i n ,   c h l o r p y r i f o s
+
+a n d   p r o p o x u r   w a s   n o t   o b s e r v e d .   T h u s
+
+a b i l i t i e s   o f   C Y P P a n d   C Y P A A i n
+
+d e t o x i f y i n g   p y r e t h r o i d s   s u p p o r t   t h e i r   r o l e
+
+i n   c o n f e r r i n g   d e l t a m e t h r i n   r e s i s t a n c e   i n
+
+A n .   m i n i m u s   m o s q u i t o   ( R o d p r a d i t   e t   a l . ,
+
+) .   A   d i f f e r e n c e   w a s   n o t e d   i n   t h a t   w h i l e
+
+C Y P A A s h o w e d   m e t a b o l i c   a c t i v i t y   a n d
+
+c y t o p r o t e c t i v e   a c t i v i t y   a g a i n s t   λ - c y h a l o t h r i n ,
+
+t h e s e   c a p a b i l i t i e s   w e r e   n o t   o b s e r v e d   f o r
+
+C Y P P .   T h e   r e s u l t s   t h u s   i n d i c a t e d
+
+d i f f e r e n c e s   i n   p r o p e r t i e s   o f   t h e s e   t w o
+
+e n z y m e s .
+
+A   c h a r a c t e r i s t i c   o f   P
+
+s   t h a t   h a s   b e e n
+
+n o t e d   i s   t h e i r   v a r i a t i o n   i n   s u b s t r a t e   s p e c i f i c i t y
+
+s u c h   a s   a   s i n g l e   P
+
+c o u l d   m e t a b o l i z e   m o r e
+
+t h a n   o n e   s u b s t r a t e   ( S c o t t ,
+
+) .   I n   v i t r o
+
+m e t a b o l i s m s   o f   i n s e c t i c i d e s   b y   i n s e c t   P
+
+s
+
+h a v e   b e e n   r e p o r t e d   s u c h   a s   a b i l i t y   o f   C Y P P o f   A n .   g a m b i a e   i n   m e t a b o l i z i n g   m o r e   t h a n
+
+o n e   p y r e t h r o i d   s u b s t r a t e s   i n c l u d i n g
+
+d e l t a m e t h r i n   a n d   p e r m e t h r i n   ( M û l l e r   e t   a l . ,
+
+) ,   a n d   C Y P D o f   M .   d o m e s t i c a   i n
+
+m e t a b o l i s m s   o f   d e l t a m e t h r i n   a n d   c y p e r -
+
+m e t h r i n   ( W h e e l o c k   &   S c o t t ,
+
+;   Z h a n g   &
+
+S c o t t ,
+
+) .   I n   t h i s   s t u d y ,   r e s u l t s   o f   b o t h   i n
+
+s i t u   d e t o x i f i c a t i o n   a s s a y s   a n d   i n   v i t r o
+
+e n z y m a t i c   a s s a y s   d e m o n s t r a t e d   v a r i a t i o n   o f
+
+C Y P P a n d   C Y P A A a c t i v i t i e s   t o w a r d
+
+d i f f e r e n t   p y r e t h r o i d s   a n d   w i t h   d i f f e r e n t
+
+s p e c i f i c i t i e s ,   s u g g e s t i n g   t h e i r   a b i l i t i e s   t o
+
+m e t a b o l i z e   a n d   d e t o x i f y   s e v e r a l   p y r e t h r o i d
+
+i n s e c t i c i d e s   i n   A n .   m i n i m u s   m o s q u i t o .
+
+M o r e o v e r ,   a b i l i t y   o f   C Y P P a n d   C Y P A A t o   d e t o x i f y   p y r e t h r o i d s   o b s e r v e d   i n   t h i s   s t u d y ,
+
+a l t h o u g h   w i t h o u t   c o - e x p r e s s i o n   o f   A n .
+
+m i n i m u s   c y t o c h r o m e   P
+
+r e d u c t a s e ,
+
+i n d i c a t e d   t h a t   t h e   N A D P H - d e p e n d e n t
+
+c y t o c h r o m e   P
+
+r e d u c t a s e   e n z y m e   o f   S f c e l l s   c o u l d   h e l p   s u p p o r t i n g   a c t i v i t y   o f   t h e s e
+
+m o s q u i t o   P
+
+s .
+
+I n   c o n c l u s i o n ,   t h e   r e s u l t s   o b t a i n e d   i n   t h i s
+
+s t u d y   e l u c i d a t e   t h e   a b i l i t y   o f   C Y P P a n d
+
+C Y P A A i n   d e t o x i f i c a t i o n   o f   s e v e r a l
+
+p y r e t h r o i d s   a n d   e m p h a s i z e   t h e   p o s s i b l e   r o l e
+
+o f   C Y P P a n d   C Y P A A e n z y m e s   i n
+
+c o n f e r r i n g   p y r e t h r o i d   r e s i s t a n c e   i n   A n .
+
+m i n i m u s   m o s q u i t o .   A   c o r r e l a t i o n   o f   r e s u l t s
+
+f r o m   M T T   c y t o t o x i c i t y   a s s a y s   a n d   i n   v i t r o
+
+e n z y m a t i c   a c t i v i t y   a s s a y s   e m p h a s i z e s
+
+u s e f u l n e s s   o f   e m p l o y i n g   P
+
+- e x p r e s s i n g   S f c e l l s   t o   p r e - s c r e e n   d e t o x i f i c a t i o n   c a p a b i l i t y
+
+o f   P
+
+s   a g a i n s t   c y t o t o x i c   i n s e c t i c i d e s   u s i n g
+
+M T T   c y t o t o x i c i t y   a s s a y s .
+
+A c k n o w l e d g e m e n t s .   W e   t h a n k   S i r i k u n
+
+P e t h u a n   a n d   D r .   S o a m r u t a i   B o o n s u e p s a k u l
+
+f o r   t e c h n i c a l   s u p p o r t ,   a n d   D r .   S o n g k l o d
+
+S a r a p u s i t   f o r   c r i t i c i s m s .   T h i s   w o r k   i s   f u n d e d
+
+b y   R o y a l   G o l d e n   J u b i l e e   P r o g r a m   ( R G J ) ;
+
+B I O T E C ,   N a t i o n a l   S c i e n c e   a n d   T e c h n o l o g y
+
+D e v e l o p m e n t   A g e n c y   ( N S T D A ) ;   a n d   p a r t l y
+
+s u p p o r t e d   b y   T h a i l a n d   R e s e a r c h   F u n d   ( T R F )
+
+a n d   M a h i d o l   U n i v e r s i t y .
+
+R E F E R E N C E S
+
+B o o n s u e p s a k u l ,   S . ,   L u e p r o m c h a i ,   E .   &
+
+R o n g n o p a r u t ,   P .   (
+
+) .   C h a r a c t e r i z a t i o n
+
+o f   A n o p h e l e s   m i n i m u s   C Y P A A e x p r e s s e d   i n   r e c o m b i n a n t   b a c u l o v i r u s
+
+s y s t e m .   A r c h i v e s   o f   I n s e c t   B i o c h e m i s t r y
+
+a n d   P h y s i o l o g y
+
+:
+
+- .
+
+B o r t e l ,   W . V . ,   T r u n g ,   H . D . ,   T h u a n ,   L . K . ,
+
+S o c h a n t h a ,   T . ,   S o c h e a t ,   D . ,   S u m r a n d e e ,   C . ,
+
+B a i m a i ,   V . ,   K e o k e n c h a n h ,   K . ,   S a m l a n e ,   P . ,
+
+R o e l a n t s ,   P . ,   D e n i s ,   L . ,   V e r h a e g h e n ,   K . ,
+
+O b s o m e r ,   V .   &   C o o s e m a n s ,   M .   (
+
+) .   T h e
+
+i n s e c t i c i d e   r e s i s t a n c e   s t a t u s   o f   m a l a r i a
+
+v e c t o r s   i n   t h e   M e k o n g   r e g i o n .   M a l a r i a
+
+J o u r n a l :
+
+.
+
+C h a r e o n v i r i y a p h a p ,   T . ,   A u m - a u n g ,   B .   &
+
+R a t a n a t h a m ,   S .   (
+
+) .   C u r r e n t
+
+i n s e c t i c i d e   r e s i s t a n c e   p a t t e r n s   i n
+
+m o s q u i t o   v e c t o r s   i n   T h a i l a n d .   S o u t h e a s t
+
+A s i a n   J o u r n a l   o f   T r o p i c a l   M e d i c i n e   a n d
+
+P u b l i c   H e a l t h
+
+:
+
+-
+
+.
+
+C h a r e o n v i r i y a p h a p ,   T . ,   R o n g n o p a r u t ,   P . ,
+
+C h a n t a r u m p o r n ,   P .   &   B a n g s ,   M . J .   (
+
+) .
+
+B i o c h e m i c a l   d e t e c t i o n   o f   p y r e t h r o i d
+
+r e s i s t a n c e   m e c h a n i s m s   i n   A n o p h e l e s
+
+m i n i m u s   i n   T h a i l a n d .   J o u r n a l   o f   V e c t o r
+
+E c o l o g y :
+
+-
+
+.
+
+C o l e m a n ,   M .   &   H e m i n g w a y ,   J .   (
+
+) .
+
+I n s e c t i c i d e   r e s i s t a n c e   m o n i t o r i n g   a n d
+
+e v a l u a t i o n   i n   d i s e a s e   t r a n s m i t t i n g
+
+m o s q u i t o e s .   J o u r n a l   o f   P e s t i c i d e   S c i e n c e :
+
+-
+
+.
+
+C u a m b a ,   N . ,   M o r g a n ,   J . C . ,   I r v i n g ,   H . ,   S t e v e n ,
+
+A .   &   W o n d j i ,   C . S .   (
+
+) .   H i g h   l e v e l   o f
+
+p y r e t h r o i d   r e s i s t a n c e   i n   a n   A n o p h e l e s
+
+f u n e s t u s   p o p u l a t i o n   o f   t h e   C h o k w e
+
+d i s t r i c t   i n   M o z a m b i q u e .   P L o S   O N E :
+
+e
+
+.
+
+D j o u a k a ,   R . F . ,   B a k a r e ,   A . A . ,   C o u l i b a l y ,   O . N . ,
+
+A k o g b e t o ,   M . C . ,   R a n s o n ,   H . ,   H e m i n g w a y ,
+
+J .   &   S t r o d e ,   C .   (
+
+) .   E x p r e s s i o n   o f   t h e
+
+c y t o c h r o m e   P
+
+s ,   C Y P P a n d   C Y P M
+
+a r e   s i g n i f i c a n t l y   e l e v a t e d   i n   m u l t i p l e
+
+p y r e t h r o i d   r e s i s t a n t   p o p u l a t i o n s   o f
+
+A n o p h e l e s   g a m b i a e   s . s .   f r o m   S o u t h e r n
+
+B e n i n   a n d   N i g e r i a .   B M C   g e n o m i c s :
+
+.
+
+F e y e r e i s e n ,   R .   (
+
+) .   I n s e c t   P
+
+e n z y m e s .
+
+A n n u a l   R e v i e w   o f   E n t o m o l o g y
+
+:
+
+-
+
+.
+
+F o r n e l l i ,   F . ,   M i n e r v i n i ,   F .   &   L o g r i e c o ,   A .
+
+(
+
+) .   C y t o t o x i c i t y   o f   f u n g a l   m e t a -
+
+b o l i t e s   t o   l e p i d o p t e r a n   ( S p o d o p t e r a
+
+f r u g i p e r d a )   c e l l   l i n e   ( S f - ) .   J o u r n a l   o f
+
+I n v e r t e b r a t e   P a t h o l o g y
+
+:
+
+-
+
+.
+
+G a s s n e r ,   B . ,   W ã t h r i c h ,   A . ,   S c h o l t y s i k ,   G .   &
+
+S o l i o z ,   M .   (
+
+) .   T h e   p y r e t h r o i d s
+
+p e r m e t h r i n   a n d   c y h a l o t h r i n   a r e   p o t e n t
+
+i n h i b i t o r s   o f   t h e   m i t o c h o n d r i a l   c o m p l e x
+
+I .   T h e   J o u r n a l   o f   P h a r m a c o l o g y   a n d
+
+E x p e r i m e n t a l   T h e r a p e u t i c s
+
+:
+
+-
+
+.
+
+G r a n t ,   D . F . ,   G r e e n e ,   J . F . ,   P i n o t ,   F . ,   B o r h a n ,   B . ,
+
+M o g h a d d a m ,   M . F . ,   H u m m o c k ,   B . D . ,
+
+M c C u t c h e n ,   B . ,   O h k a w a ,   H . ,   L u o ,   G .   &
+
+G u e n t h n e r ,   T . M .   (
+
+) .   D e v e l o p m e n t   o f
+
+a n   i n   s i t u   t o x i c i t y   a s s a y   s y s t e m   u s i n g
+
+r e c o m b i n a n t   b a c u l o v i r u s e s .   B i o -
+
+c h e m i c a l   P h a r m a c o l o g y
+
+:
+
+-
+
+.
+
+G r e e n e ,   J . F . ,   Z h e n g ,   J . ,   G r a n t ,   D . F .   &
+
+H a m m o c k ,   B . D .   (
+
+) .   C y t o t o x i c i t y   o f , - e p o x y n a p h t h a l e n e   i s   c o r r e l a t e d   w i t h
+
+p r o t e i n   b i n d i n g   a n d   i n   s i t u   g l u t a t h i o n e
+
+d e p l e t i o n   i n   c y t o c h r o m e   P
+
+A e x p r e s s i n g   S f - c e l l s .   T o x i c o l o g i c a l
+
+S c i e n c e s
+
+:
+
+-
+
+.
+
+K a e w p a ,   D . ,   B o o n s u e p s a k u l ,   S .   &
+
+R o n g n o p a r u t ,   P .   (
+
+) .   F u n c t i o n a l
+
+e x p r e s s i o n   o f   m o s q u i t o   N A D P H -
+
+c y t o c h r o m e  
+
+P
+
+r e d u c t a s e  
+
+i n
+
+E s c h e r i c h i a   c o l i .   J o u r n a l   o f   E c o n o m i c
+
+E n t o m o l o g y
+
+:
+
+-
+
+.
+
+M a r a n ,   E . ,   F e r n á n d e z - F r a n Ÿ o n ,   M . ,   F o n t ,   G .   &
+
+R u i z ,   M . J .   (
+
+) .   E f f e c t s   o f   a l d i c a r b   a n d
+
+p r o p o x u r   o n   c y t o t o x i c i t y   a n d   l i p i d
+
+p e r o x i d a t i o n   i n   C H O - K c e l l s .   F o o d   a n d
+
+C h e m i c a l   T o x i c o l o g y
+
+:
+
+-
+
+.
+
+M a t o w o ,   J . ,   K u l k a r n i ,   M . A . ,   M o s h a ,   F . W . ,
+
+O x b o r o u g h ,   R . M . ,   K i t a u ,   J . A . ,   T e n u ,   F .   &
+
+R o w l a n d ,   M .   (
+
+) .   B i o c h e m i c a l   b a s i s
+
+o f   p e r m e t h r i n   r e s i s t a n c e   i n   A n o p h e l e s
+
+a r a b i e n s i s   f r o m   L o w e r   M o s h i ,   n o r t h -
+
+e a s t e r n   T a n z a n i a .   M a l a r i a   J o u r n a l :
+
+.
+
+M o s m a n n ,   T .   (
+
+) .   R a p i d   c o l o r i m e t r i c
+
+a s s a y   f o r   c e l l u l a r   g r o w t h   a n d   s u r v i v a l :
+
+a p p l i c a t i o n   t o   p r o l i f e r a t i o n   a n d
+
+c y t o t o x i c i t y   a s s a y s .   J o u r n a l   o f   l m m u n o -
+
+l o g i c a l   M e t h o d s
+
+:
+
+-
+
+.
+
+M ü l l e r ,   P . ,   W a r r ,   E . ,   S t e v e n s o n ,   B . J . ,   P i g n a t e l l i ,
+
+P . M . ,   M o r g a n ,   J . C . ,   S t e v e n ,   A . ,   Y a w s o n ,
+
+A . E . ,   M i t c h e l l ,   S . N . ,   R a n s o n ,   H . ,
+
+H e m i n g w a y ,   J . ,   P a i n e ,   M . J . I .   &   D o n n e l l y ,
+
+M . J .   (
+
+) .   F i e l d - c a u g h t   p e r m e t h r i n -
+
+r e s i s t a n t   A n o p h e l e s   g a m b i a e   o v e r -
+
+e x p r e s s   C Y P P ,   a   P
+
+t h a t   m e t a b o l i s e s
+
+p y r e t h r o i d s .   P L o S   G e n e t i c s :   e
+
+.
+
+M u n h e n g a ,   G . ,   M a s e n d u ,   H . T . ,   B r o o k e ,   B . D . ,
+
+H u n t ,   R . H .   &   K o e k e m o e r ,   L . K .   (
+
+) .
+
+P y r e t h r o i d   r e s i s t a n c e   i n   t h e   m a j o r
+
+m a l a r i a   v e c t o r   A n o p h e l e s   a r a b i e n s i s
+
+f r o m   G w a v e ,   a   m a l a r i a - e n d e m i c   a r e a   i n
+
+Z i m b a b w e .   M a l a r i a   J o u r n a l :
+
+.
+
+N a r a v a n e n i ,   R .   &   J a m i l ,   K .   (
+
+) .   E v a l u a t i o n
+
+o f   c y t o g e n e t i c   e f f e c t s   o f   l a m b d a -
+
+c y h a l o t h r i n   o n   h u m a n   l y m p h o c y t e s .
+
+J o u r n a l   o f   B i o c h e m i c a l   a n d   M o l e c u l a r
+
+T o x i c o l o g y
+
+:
+
+-
+
+.
+
+O k a m i y a ,   H . ,   M i t s u m o r i ,   K . ,   O n o d e r a ,   H . ,   I t o ,
+
+S . ,   I m a z a w a ,   T . ,   Y a s u h a r a ,   K .   &
+
+T a k a h a s h i ,   M .   (
+
+) .   M e c h a n i s t i c   s t u d y
+
+o n   l i v e r   t u m o r   p r o m o t i n g   e f f e c t s   o f
+
+p i p e r o n y l   b u t o x i d e   i n   r a t s .   A r c h i v e s   o f
+
+T o x i c o l o g y :
+
+-
+
+.
+
+O m u r a ,   T .   &   S a t o ,   R .   (
+
+) .   T h e   c a r b o n
+
+m o n o x i d e - b i d i n g   p i g m e n t   o f   l i v e r
+
+m i c r o s o m e   I .   E v i d e n c e   f o r   i t s
+
+h e m o p r o t e i n   n a t u r e .   J o u r n a l   o f
+
+B i o l o g i c a l   C h e m i s t r y
+
+:
+
+-
+
+.
+
+P a t e l ,   S . ,   B a j p a y e e ,   M . ,   P a n d e y ,   A . K . ,   P a r m a r ,
+
+D .   &   D h a w a n ,   A .   (
+
+) .   I n   v i t r o   i n d u c t i o n
+
+o f   c y t o t o x i c i t y   a n d   D N A   s t r a n d   b r e a k s
+
+i n   C H O   c e l l s   e x p o s e d   t o   c y p e r m e t h r i n ,
+
+p e n d i m e t h a l i n   a n d   d i c h l o r v o s .   T o x i c o -
+
+l o g y   I n   V i t r o :
+
+-
+
+.
+
+R o d p r a d i t ,  
+
+P . ,  
+
+B o o n s u e p s a k u l ,  
+
+S . ,
+
+C h a r e o n v i r i y a p h a p ,   T . ,   B a n g s ,   M . J .   &
+
+R o n g n o p a r u t ,   P .   (
+
+) .   C y t o c h r o m e
+
+P
+
+g e n e s :   m o l e c u l a r   c l o n i n g   a n d
+
+o v e r e x p r e s s i o n   i n   a   p y r e t h r o i d - r e s i s t a n t
+
+s t r a i n   o f   A n o p h e l e s   m i n i m u s   m o s q u i t o .
+
+J o u r n a l   o f   t h e   A m e r i c a n   M o s q u i t o
+
+C o n t r o l   A s s o c i a t i o n :
+
+-
+
+.
+
+R o n g n o p a r u t ,   P . ,   B o o n s u e p s a k u l ,   S . ,
+
+C h a r e o n v i r i y a p h a p ,   T .   &   T h a n o m s i n g ,   N .
+
+(
+
+) .   C l o n i n g   o f   c y t o c h r o m e   P
+
+,
+
+C Y P P ,   a n d   C Y P A A   f r o m   A n o p h e l e s
+
+m i n i m u s   r e s i s t a n t   t o   d e l t a m e t h r i n .
+
+J o u r n a l   o f   V e c t o r   E c o l o g y :
+
+-
+
+.
+
+S a i t o ,   S . ,   S a k a m o t o ,   N .   &   U m e d a ,   K .   (
+
+) .
+
+E f f e c t s   o f   p y r i d a l y l ,   a   n o v e l   i n s e c t i c i d a l
+
+a g e n t ,   o n   c u l t u r e d   S f c e l l s .   J o u r n a l   o f
+
+P e s t i c i d e   S c i e n c e
+
+:
+
+- .
+
+S c h m u c k ,   G .   &   M i h a i l ,   F .   (
+
+) .   E f f e c t s   o f
+
+t h e   c a r b a m a t e s   f e n o x y c a r b ,   p r o -
+
+p a m o c a r b   a n d   p r o p o x u r   o n   e n e r g y   s u p p l y ,
+
+g l u c o s e   u t i l i z a t i o n   a n d   S H - g r o u p s   i n
+
+n e u r o n s .   A r c h i v e s   o f   T o x i c o l o g y
+
+:
+
+-
+
+.
+
+S c o t t ,   J . G .   (
+
+) .   C y t o c h r o m e s   P
+
+a n d
+
+i n s e c t i c i d e   r e s i s t a n c e .   I n s e c t   B i o -
+
+c h e m i s t r y   a n d   M o l e c u l a r   B i o l o g y :
+
+-
+
+.
+
+S w a n n ,   J . M . ,   S c h u l t z ,   T . W .   &   K e n n e d y ,   J . R .
+
+(
+
+) .   T h e   e f f e c t s   o f   t h e   o r g a n o -
+
+p h o s p h o r o u s   i n s e c t i c i d e s   D u r s b a n T M
+
+a n d   L o r s b a n T M   o n   t h e   c i l i a t e d   e p i t h e l i u m
+
+o f   t h e   f r o g   p a l a t e   i n   v i t r o .   A r c h i v e s   o f
+
+E n v i r o n m e n t a l   C o n t a m i n a t i o n   a n d
+
+T o x i c o l o g y
+
+:
+
+-
+
+.
+
+T a k a h a s h i ,   O . ,   O i s h i ,   S . ,   F u j i t a n i ,   T . ,   T a n a k a ,
+
+T .   &   Y o n e y a m a ,   M .   (
+
+) .   C h r o n i c
+
+t o x i c i t y   s t u d i e s   o f   p i p e r o n y l   b u t o x i d e   i n
+
+C D - m i c e :   I n d u c t i o n   o f   h e p a t o c e l l u l a r
+
+c a r c i n o m a .   T o x i c o l o g y
+
+:
+
+-
+
+.
+
+T o m i t a ,   T . ,   L i u ,   N . ,   S m i t h ,   F . F . ,   S r i d h a r ,   P .
+
+&   S c o t t ,   J . G .   (
+
+) .   M o l e c u l a r
+
+m e c h a n i s m s   i n v o l v e d   i n   i n c r e a s e d
+
+e x p r e s s i o n   o f   a   c y t o c h r o m e   P
+
+r e s p o n s i b l e   f o r   p y r e t h r o i d   r e s i s t a n c e   i n
+
+t h e   h o u s e f l y ,   M u s c a   d o m e s t i c a .   I n s e c t
+
+M o l e c u l a r   B i o l o g y :
+
+-
+
+.
+
+V i l l a r i n i ,   M . ,   M o r e t t i ,   M . ,   P a s q u i n i ,   R . ,
+
+S c a s s e l l a t i - S f o r z o l i n i ,   G . ,   F a t i g o n i ,   C . ,
+
+M a r c a r e l l i ,   M . ,   M o n a r c a ,   S .   &   R o d r í g u e z ,
+
+A . V .   (
+
+) .   I n   v i t r o   g e n o t o x i c   e f f e c t s   o f
+
+t h e   i n s e c t i c i d e   d e l t a m e t h r i n   i n   h u m a n
+
+p e r i p h e r a l   b l o o d   l e u k o c y t e s :   D N A
+
+d a m a g e   ( ‘ c o m e t ’   a s s a y )   i n   r e l a t i o n   t o   t h e
+
+i n d u c t i o n   o f   s i s t e r - c h r o m a t i d   e x c h a n g e s
+
+a n d   m i c r o n u c l e i .   T o x i c o l o g y
+
+:
+
+-
+
+.
+
+W h e e l o c k ,   G . D .   &   S c o t t ,   J . G .   (
+
+) .   T h e   r o l e
+
+o f   c y t o c h r o m e   P
+
+l p r   i n   d e l t a m e t h r i n
+
+m e t a b o l i s m   b y   p y r e t h r o i d - r e s i s t a n t   a n d
+
+s u s c e p t i b l e   s t r a i n s   o f   h o u s e   f l i e s .
+
+P e s t i c i d e   B i o c h e m i s t r y   a n d   P h y s i o l o g y
+
+:
+
+-
+
+.
+
+Z h a n g ,   M .   &   S c o t t ,   J . G .   (
+
+) .   C y t o c h r o m e
+
+b i s   e s s e n t i a l   f o r   c y t o c h r o m e   P
+
+D -
+
+m e d i a t e d   c y p e r m e t h r i n   r e s i s t a n c e   i n
+
+L P R   h o u s e   f l i e s .   P e s t i c i d e   B i o c h e m i s t r y
+
+a n d   P h y s i o l o g y
+
+:
+
+-
+
+.
+

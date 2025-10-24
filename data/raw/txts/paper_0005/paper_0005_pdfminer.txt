@@ -1,0 +1,359 @@
+Toxicology and Applied Pharmacology 354 (2018) 81– Contents lists available at ScienceDirect Toxicology and Applied Pharmacology journal homepage: www.elsevier.com/locate/taap Deﬁning toxicological tipping points in neuronal network development ☆ Christopher L. Franka,1, Jasmine P. Browna,2, Kathleen Wallacea, John F. Wambaughb, Imran Shahb, Timothy J. Shafera,⁎ a Integrated Systems Toxicology Division, National Health and Environmental Eﬀects Research Laboratory, EPA, Research Triangle Park, NC, USA b National Center for Computational Toxicology, EPA, Research Triangle Park, NC, USA T A R T I C L E I N F O A B S T R A C T Keywords: Network development In vitro Tipping point Screening Measuring electrical activity of neural networks by microelectrode array (MEA) has recently shown promise for screening level assessments of chemical toxicity on network development and function. Important aspects of interneuronal communication can be quantiﬁed from a single MEA recording, including individual ﬁring rates, coordinated bursting, and measures of network synchrony, providing rich datasets to evaluate chemical eﬀects. Further, multiple recordings can be made from the same network, including during the formation of these networks in vitro. The ability to perform multiple recording sessions over the in vitro development of network activity may provide further insight into developmental eﬀects of neurotoxicants. In the current study, a recently described MEA-based screen of 86 compounds in primary rat cortical cultures over 12 days in vitro was revisited to establish a framework that integrates all available primary measures of electrical activity from MEA re- cordings into a composite metric for deviation from normal activity (total scalar perturbation). Examining scalar perturbations over time and increasing concentration of compound allowed for deﬁnition of critical con- centrations or “tipping points” at which the neural networks switched from recovery to non-recovery trajectories for 42 compounds. These tipping point concentrations occurred at predominantly lower concentrations than those causing overt cell viability loss or disrupting individual network parameters, suggesting tipping points may be a more sensitive measure of network functional loss. Comparing tipping points for six compounds with plasma concentrations known to cause developmental neurotoxicity in vivo demonstrated strong concordance and suggests there is potential for using tipping points for chemical prioritization. 1. Introduction The lack of information on the potential for tens of thousands of chemicals in the environment to cause developmental neurotoxicity (DNT) is well documented (Grandjean and Landrigan, 2006, 2014). Because guideline DNT studies (US EPA, 1998; OECD, 2007) are ex- pensive, time-consuming and animal intensive (Smirnova et al., 2014), it is now generally recognized that it will be necessary to use a battery of in vitro screening assays (Bal-Price et al., 2010, 2015; Fritsche et al., 2017) to screen thousands of compounds for their potential to cause DNT and thus prioritize them for additional testing. To this end, a wide variety of assays have been developed to determine the eﬀects of compounds on processes critical to the development of the nervous system, including proliferation (Breier et al., 2008), neurite outgrowth (Radio and Mundy, 2008; Harrill et al., 2010; Stiegler et al., 2011), synaptogenesis (Harrill et al., 2011), transcriptomic responses (Krug et al., 2013), diﬀerentiation (Schmuck et al., 2017), and migration (Zimmer et al., 2014). Formation of interconnected neural networks is critical to devel- opment of the nervous system. In vivo formation of networks occurs as the structures of the nervous system develop, and connections between diﬀerent neurons form as axons and dendrites extend using chemical and electrical cues as guidance. Similar in vitro network activity arises spontaneously in primary monolayer cultures from many diﬀerent brain regions, including the cortex, hippocampus, and brainstem as dissociated neurons (re)establish synaptic connections. Both in the brain and in primary cultures, this spontaneous electrical activity be- comes patterned and coordinated over time, with synchronous bursting ☆ Preparation of this document has been funded by the U.S. Environmental Protection Agency. This document has been subjected to review by the National Health and Environmental Eﬀects Research Laboratory (NHEERL) and approved for publication. Approval does not signify that the contents reﬂect the views of the Agency, nor does mention of trade names or commercial products constitute endorsement or recommendation for use. ⁎ Corresponding author at: Integrated Systems Toxicology Division, US EPA, MD105-03, Research Triangle Park, NC 27711, USA. E-mail address: Shafer.tim@epa.gov (T.J. Shafer). 1 Current aﬃliation: Element Genomics, Durham, NC, USA. 2 JPB was supported by Student Services Contract #EP-14-D-000101. https://doi.org/10.1016/j.taap.2018.01. Received 18 December 2017; Accepted 22 January Available online 03 February 0041-008X/ Published by Elsevier Inc.
+
+Toxicology and Applied Pharmacology 354 (2018) 81– observed. In vivo synchronous bursting is associated with important nervous system processes including attention, learning, and memory (Buschman and Kastner, 2015; Korte and Schmitz, 2016; Salinas and Sejnowski, 2001). In vitro, such activity can be observed in networks of developing neurons using microelectrode array (MEA) recording tech- niques (Chiappalone et al., 2003; Van Pelt et al., 2004; Wagenaar et al., 2006; Cotterill et al., 2016; Brown et al., 2016). MEAs measure extra- cellular electrical activity associated with the generation and propa- gation of action potentials (spikes). Over time, patterned activity in the form of groups of spikes (bursts) from the same neuron, as well as co- ordinated bursting of multiple neurons across a network are readily observed. Measuring chemical eﬀects on the development of sponta- neous network activity has been proposed as a screening assay for DNT (Hogberg et al., 2011; Robinette et al., 2011; Dingemans et al., 2016), and our laboratory recently demonstrated that by using multi-well MEAs (mwMEAs) a medium-throughput assay is feasible (Brown et al., 2016; Frank et al., 2017). Our laboratory recently reported results using this medium-throughput mwMEA-based DNT assay for 86 compounds, demonstrating that 49 of (82%) compounds with evidence of developmental neurotoxicity in the published literature altered development of at least one network parameter (Frank et al., 2017). These data also were used to develop estimates of potency (eﬀective concentration that caused a 50% change; EC50 value) for those compounds that altered network development (64/86). Although such information is useful for prioritization for additional testing, relating in vitro perturbations to in vivo adversity is a key challenge for 21st century toxicology (Keller et al., 2012). To address this issue, Shah et al. (2016) developed a novel systems toxicology approach to identify toxicological “tipping points” between adaptation and adversity. Toxicological “tipping points” are deﬁned by Shah et al. as dose- dependent transitions in cells based on their inability to recover to normal (or basal) functions. To analyze tipping points they examined data on the eﬀects of almost a thousand ToxCast chemicals in HepG cells using multiple high-content imaging (HCI) endpoints over time (0, 1, 24 and 72 h). They translated the temporal response of HepG2 cells to each chemical treatment as cell-state trajectories. Interestingly, all chemical eﬀects on cells could be classiﬁed into three main groups: no eﬀect, recovering and nonrecovering trajectories. Recovering trajec- tories were characterized by a return of cells to their normal (or basal) states. On the other hand, nonrecovering trajectories were assumed to be indicative of a loss of cellular homeostatic capacity. They deﬁned the transition from recovering to nonrecovering trajectories as the tipping point, and the corresponding chemical concentration as the critical concentration. This approach for identifying tipping points developed by Shah et al. is quite general and can be readily applied to other in vitro models that involve temporal measurements. In the present study, we used the data from Frank et al., 2017, to de- termine tipping points for chemical eﬀects on in vitro neural network for- mation, and to estimate the corresponding critical chemical concentrations. The results indicate that by consideration of a uniﬁed framework for network formation, critical concentrations can be determined for many compounds that altered neural network development, and that in many cases, these concentrations are lower than the EC50 values for individual parameters de- scribing neural network function or the composite values for eﬀects on all parameters. Further, using high-throughput toxicokinetic estimates, we de- monstrate that the tipping point concentrations for a small subset of chemi- cals are concordant with plasma concentrations in vivo that are associated with developmental neurotoxicity. The results indicate that such an analysis can provide a robust and sensitive determination of the point at which compounds begin to alter neural network development in vitro. 2. Methods 2.1. Compounds and methods The present study represents additional analysis of the data presented in Frank et al., 2017. Brieﬂy, in that study, concentration- dependent (typically 0.03 to 30 μM) eﬀects of 86 compounds on neural network development were measured in primary cortical cultures pre- pared from day old rat pups using mwMEA recordings across 4 time points (Days in vitro (DIV) 5, 7, 9 and 12). Sixty of the tested compounds had at least limited literature evidence of DNT eﬀects in humans or animal models (Mundy et al., 2015), 4 additional compounds had been previously tested in this assay (Brown et al., 2016) and found to impact network function (bisindolylmaleimide I, loperamide, mevastatin, and sodium orthovanadate), and 21 compounds were classiﬁed as un- knowns with insuﬃcient evidence for DNT eﬀects in the published literature. Acetaminophen was used as a negative control. Cultures were plated at 150,000 cells/well in 48 well microelectrode array plates from Axion Biosystems (M768-KAP-48) using standardized culture and plating protocols (Cotterill et al., 2016; Brown et al., 2016), and che- mical treatment commenced 2 h after plating of the cells and continued throughout the experiment. Chemicals were renewed when media was refreshed on DIV 5, and 9. As described in complete detail in Brown et al., 2016, electrical activity in the cultures was recorded for 15 min on DIV 5, 7, 9 and 12 using an Axion Maestro ampliﬁer, Middleman A/ D conversion, and AXiS 1.9 or later software. Axion raw (*.raw) and spike (*.spk) ﬁles were saved to a redundant physical hard drive for later analysis. Culture viability was assessed following the ﬁnal DIV recording using total LDH release and CellTiter-Blue assays as described in Frank et al., 2017. 2.2. Initial data processing and normalization Axion spikelist ﬁles with time-stamped spikes were combined with comma-separated plate layout data for conversion to hierarchical data format (.h5) ﬁles. Hierarchical data format ﬁles were used as input to the ‘meadq’ (https://github.com/dianaransomhall/meadq) and ‘sjemea’ (https://github.com/sje30/sjemea) R packages, which to- gether generated a set of 16 network measures per well that were used for downstream analyses with date and plate ID tracking information attached. An additional network parameter, normalized mutual in- formation (Ball et al., 2017), a measure of shared information in the network, was computed for each recording separately. Nine of the network parameters (mean ﬁring rate (MFR), number of active elec- trodes (#AE), burst rate (BR), number of actively bursting electrodes (#ABE), percent of spikes in bursts (%SiB), number of network spikes (#NS), percent of spikes in network spikes (%SiNS), Pearson's correla- tion (r) between activity on electrodes, and normalized mutual in- formation (MI)) were selected for incorporation into the critical con- centration analysis. To reduce the impact of any batch eﬀects, raw network parameter values were normalized by dividing by the median of untreated control well values located on the same plate and on the same DIV (5, 7, 9, or 12). If the median of same-plate untreated control wells was zero, all values for that parameter on that plate were set to 1 (no change from controls). The fold-change from control median values were then log- transformed to reduce the impact of outlier values. The mean and standard deviation of log-transformed fold change values of all un- treated control wells on the same DIV were then used to z-score scale all fold-change values. This resulted in values centered at zero that in- dicate the number standard deviations away from the untreated control mean (positive or negative). 2.3. Tipping point analysis We used the methods described previously (Shah et al., 2016) to identify tipping points by calculating the following four quantities from the data: system perturbation (X), total scalar perturbation (|X|), ve- locity (V) and derivative of the velocity with respect to concentration (∂Vc). A conceptual overview of these quantities is provided in Fig. 1. The scripts used for the analysis of tipping points are available at the
+
+Toxicology and Applied Pharmacology 354 (2018) 81– dataset using the above-described method. This process was repeated 1000 times and the 95% conﬁdence interval was taken as the range of 950 out of the 1000 sampled values. 2.5. Network parameter inclusion In Frank et al., 2017, a total of 17 diﬀerent parameters were de- termined from the recordings of network activity. However, 8 of these parameters were derived from nine “empirical” parameters that were collected directly from the recording (e.g. burst duration is undeﬁned in the absence of bursting). To determine whether parameter inclusion would substantially change interpretation of network trajectories, a collection of 9 out of the 17 total network parameters were randomly selected 100 times and scalar perturbations over time were calculated for each compound as described above. Conﬁdence intervals (95%) were then estimated at each time point from the central 95 out of median scalar perturbation trajectories. These ranges were qualitatively assessed to determine whether overall system recovery and non-re- covery trends remained present with diﬀerent network parameter in- clusion. 2.6. Comparison to cytotoxicity and individual network parameter eﬀects The critical concentrations derived herein were compared to the EC50 values for chemical eﬀects on individual network parameters and viability that were published previously in Frank et al., 2017. The EC values were determined by calculating the area under the curve (AUC) for each well over time, as described in Brown et al., 2016 and Frank et al., 2017. Brieﬂy, the temporal component of parameters describing network function (e.g. MFR, #AE, etc.) from each well's recordings was reduced to a single area under the curve (AUC) value by calculating the trapezoidal area under the curve for each treatment concentration. Raw AUC values were normalized by same plate untreated control means. For chemicals that produced AUC values exceeding 3× the MAD of untreated control wells for any concentration, 4-parameter log-logistic curves were ﬁt to model concentration-response relationships. Raw cell viability assay values from alamar blue and lactase dehy- drogenase (LDH) assays were normalized by subtracting blank well controls and dividing by the median of untreated well absorbance. Concentration-response relationships and the concentrations that pro- duced a median 50% or greater reduction in cell viability value were determined. Since these assays were conducted at only a single time point, AUC values were not determined. The lower of the two con- centrations identiﬁed by cytotoxicity assays (LDH release or reduction of resazurin) was used for comparison with tipping point concentra- tions. 2.7. Comparison to in vivo results using toxicokinetics The R package “httk” (Pearce et al., 2017) includes both chemical- speciﬁc in vitro data and models for predicting in vivo toxicokinetics (i.e., absorption, distribution, metabolism, and excretion). Six study chemicals with literature in vivo data on doses causing neurological eﬀects in laboratory animals (see Table 1) following developmental exposure also were available for simulation with “httk”. These six chemicals had chemical speciﬁc in vitro toxicokinetic measurements and physico-chemical properties (i.e., molecular weight, hydro- phobicity, and ionization equilibria). Where rat-speciﬁc in vitro tox- icokinetic data were available, these were used; otherwise rat phy- siology and human in vitro data were used. Human in vitro data were used for all mouse predictions. Version 1.8 was used with non-re- strictive metabolism assumed (i.e., that chemical bound to protein ra- pidly dissociates to be metabolized in the liver). The function “solve_pbtk” was used to model a generic physiologically-based tox- icokinetic (PBTK) model featuring liver, kidney, gut, venous, arterial, and rest of body compartments. Time-integrated plasma concentration Fig. 1. Understanding tipping points. The graph shows the relationship between scalar system perturbation (|X|),time (t) and velocity (V) for diﬀerent theoretical trajectories. With increasing chemical stimulation, the system deviates from a normal trajectory to recovery (V < 0), and then to adversity (V > 0). A tipping point is the critical transition between recovery and adversity (V = 0). representative of the total number of following doi: http://dx.doi.org/10.23719/1407690. First, the z-scores of the nine normalized network parameters (MFR, #AE, BR, #ABE, % SiB, #NS, %SiNS, r and MI) from each well were used to represent the system perturbation at DIV 5, 7, 9, and 12 (denoted as X5, X7, X9, and X12, respectively) for each treatment replicate. Second, total scalar perturbation values (|X5|, |X7|, |X9|, and |X12|) were calculated from the system perturbation as the Euclidean norm. This resulted in strictly positive values standard deviations away from “normal” network recordings at each time point. The diﬀerence between scalar perturbation values at DIV 5, 7, or 9 and the terminal DIV 12 value were divided by the number of days elapsed to calculate a numerical derivative of change in scalar perturbation over change in time (denoted as V5, V7, V9, and V12). These values were termed “velocities” of the system and plotted as individual well velocities over increasing concentration of compound. The velocity over concentration relationship for all replicates was approximated with a localized regression function (loess function in R v3.2.5; R Core Team, 2016). The derivative of the velocity with respect to concentration (denoted as ∂Vc) for each compound was then taken to search for a critical concentration at which the slope of velocity changes from negative to positive. 2.4. Critical concentration determination A search for a critical concentration was triggered when a com- pound had at least one concentration that produced a terminal DIV scalar perturbation beyond 3 times the median absolute deviation (MAD) of untreated control wells (indicating that the compound per- turbed the system beyond random variation). Both negative and posi- tive velocity values along the concentration curve (indicating both re- covery and non-recovery trajectories) also were required to identify a critical concentration. If the highest concentration of compound pro- duced negative velocity derivative values, these values were excluded from consideration as they were found to represent a topping out of scalar perturbation values at total network failure (associated with gross cell loss). The concentration at the last V = 0 crossing point of the velocity derivative (going from negative to positive) was then taken as the critical concentration. If multiple V = 0 crossings occurred, the greater concentration was selected as the critical concentration to be more conservative in estimating compound eﬀects. Uncertainty in the critical concentration value was estimated by randomly leaving out one replicate for each concentration of a com- pound and estimating a new critical concentration for the incomplete Toxicology and Applied Pharmacology 354 (2018) 81– e s o D s e c n e r e f e R t n i o p d n E e t u o R . e s o D e r u s o p x E s e i c e p S d I _ e c n a t s b u S _ x o T S S D l a c i m e h C N R S A C _ e c n a t s b u S . a t a d o v i v n i o t n o s i r a p m o c r o f d e s u s e i d u t S e l b a T
+
+.
+
+.
+
+.
+
+.
+
+.
+
+, . l a t e n e n n a r B
+
+, . l a t e n o s l O
+
+, s m a d A l a g n i h s i r u K
+
+, . l a t e y r t s i m e h c o r u e N r o i v a h e B r o i v a h e B r o i v a h e B
+
+, . l a t e i r e c c i R
+
+, . l a t e a i s o c i N
+
+, . l a t e r e d e i r F
+
+, . l a t e k r a l C
+
+, . l a t e m a D
+
+, . l a t e h a n n a H
+
+, k c i l a h i M r o i v a h e b , y r t s i m e h c o r u e N r o i v a h e B r o i v a h e B r o i v a h e B r o i v a h e B y g o l o h p r o M r o i v a h e B
+
+, . l a t e a k u s t i a K y r t s i m e h c o r u e n , r o i v a h e B . c . s l a r o , g k / g m – , g k / g m – . c . s , g k / g m
+
+. . c . s , g k / g m
+
+. m . i , g k / g m
+
+l a r o . c . s , g μ
+
+. , g k / g μ
+
+. . c . s , g k / g m . c . s , g k / g m
+
+–
+
+. p . i , g k / g m l a r o , g k / g μ
+
+. . p . i , g k / g m
+
+l a t a n t s o p / e r P l a t a n t s o P l a t a n t s o p / e r P l a t a n e r P l a t a n t s o p / e r P l a t a n e r P l a t a n t s o p / e r P l a t a n e r P l a t a n t s o P l a t a n e r P l a t a n t s o p / e r P l a t a n e r P e s u o M t a R t a R t a R t a R t a R e s u o M e s u o M t a R e s u o M t a R t a R
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D
+
+D I S X T D e n i z a m o r p r o l h C e n i z a m o r p r o l h C l o r t s e b l i t s l y h t e i D l o r t s e b l i t s l y h t e i D * e d i x o p e z a i d r o l h C * e d i x o p e z a i d r o l h C * s o f i r y p r o l h C * s o f i r y p r o l h C m a p e z a i D m a p e z a i D n i r d l e i D n i r d l e i D -
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+v e r b b a . d n u o p m o C I C . .
+
+. r e h g i H I C . .
+
+. r e w o L n o i t a r t n e c n o c . l a c i t i r C C U A x a m C s y a D e t u o R s t i n U . e s o D N R S A C _ e c n a t s b u S o l h C o l h C z a i D z a i D o l h C o l h C t e i D t e i D o l h C o l h C l e i D l e i D
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+- E
+
+.
+
+- E
+
+.
+
+.
+
+.
+
+- E
+
+.
+
+.
+
+.
+
+. .
+
+. .
+
+.
+
+- E
+
+.
+
+. .
+
+- E
+
+. .
+
+.
+
+. c . s l a r o . c . s . c . s . c . s . m . i . c . s l a r o . p . i . c . s l a r o . p . i g k / g m g k / g m g k / g m g k / g m g k / g m g k / g m g k / g μ g k / g m g k / g m g k / g μ g k / g m g μ -
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+Toxicology and Applied Pharmacology 354 (2018) 81– (area under the curve or AUC) was calculated for the species, doses, number of days, and administration routes as indicated by Table 1. Due subcutaneous, and in- intraperitoneal, to software tramuscular injection routes were all modeled as intravenous doses. limitations, 3. Results 3.1. Calculation of network scalar perturbations Complex primary cultures isolated from newborn rat cortex exhibit a reproducible developmental trajectory as neurite outgrowth leads to synaptogenesis and increasing network activity over approximately two weeks in vitro (Cotterill et al., 2016). mwMEA recordings over this time period provide multiparametric data that includes measures of spike, burst, and network synchrony in each culture. Our previous work de- monstrated that many compounds that are developmentally neurotoxic in mammals perturb these parameters (Frank et al., 2017). Because of the temporal nature of our previous data, it was possible to determine a critical concentration at which a given compound began to perturb the developing system beyond recovery. Such concentrations may represent the transition point in the series of events that results in developmental neurotoxicity. To determine these tipping points, it was ﬁrst necessary to transform network parameter data into values that deﬁne a distance from normal activity range. Importantly, normal network values change across developmental time as activity and synchrony increase between DIV5 and DIV12, so a normal range needs to be redeﬁned at each time point. To reduce variation attributed to cortical culture batch and plate- to-plate variability, the 17 individual network parameters quantiﬁed from recordings were ﬁrst divided by the median value of untreated control wells run on the same plate and same DIV to obtain fold-change values. Log-transformed fold-change values were then standardized by subtracting the mean fold-change and standard deviation of the same DIV untreated control wells. Standardizing to the distribution of all untreated control wells on each DIV yielded z-score values that re- ﬂected the number of standard deviations away from normal at each time point; ensuring that all network parameters were measured on a common scale (Fig. 2). Examination of z-score values over time revealed a number of dif- ferent trajectories a network might take depending on the concentra- tion of compound present. For a compound that did not appreciably impact network activity, such as acetaminophen, all concentrations resulted in network parameter trajectories that vary within the normal range of controls (Fig. 2B). In contrast, for compounds that signiﬁcantly perturbed normal network development, such as haloperidol, a con- centration-response relationship was often observed whereby the z- score perturbation exits the normal range of controls in a positive or negative direction at certain timepoints and this departure becomes more pronounced with increasing concentration (Fig. 2C). Interest- ingly, it was noted that intermediate concentrations of many com- pounds, including haloperidol, produce z-score perturbations that exit the normal range at earlier recording time points, but return to fall within normal range by DIV12. This occurred in the presence of com- pound exposure, which was from 2 h after plating through DIV12. By integrating data from multiple measures of network activity, it was reasoned a more comprehensive and reliable metric of network function could be deﬁned. To this end, the total perturbation of the cortical network was deﬁned by the sum of individual network para- meter perturbations observed. In particular, the Euclidean norm of network parameters was selected at each time point to equally weight values that depart from the normal range in both the positive and ne- gative direction. This resulted in total system scalar perturbation over time trajectories that were visualized for each replicate and summar- ized by localized regression curves (Fig. 3). For example, the total scalar perturbation of acetaminophen remained below the shaded uncertainty range of 3× the median absolute deviation (MAD) of untreated control wells across all timepoints (Fig. 3A). In contrast, the scalar perturbation of haloperidol exposure increased with increasing haloperidol con- centration and extended well past the 3× MAD limit (Fig. 3B). Inter- estingly, the two highest concentrations of haloperidol tested (10 and 30 μM) caused apparent network failure (maximal scalar perturbation), while lower concentrations (0.3–3 μM) exhibited some recovery toward the normal range by DIV 12, reﬂecting the similar trends observed in the individual parameter z-score transformations. Graphs showing Z- scores and total scalar perturbations are available for all compounds at the following doi: http://dx.doi.org/10.23719/1407690. The decision to model system scalar perturbation as a function of of the 17 network parameters measured was made for two reasons. First, the 9 selected parameters (MFR, #AE, BR, #ABE, %SiB, #NS, % SiNS, r, and MI) are directly calculated from the recording spike trains, as opposed to the other 8 network parameters that are dependent upon non-zero values for one of the selected parameters. For example, the mean network spike duration (NSD) is dependent upon the observation of at least one network spike during the recording time, else it remains undeﬁned. At earlier time points in development, the cortical cultures have little or no network spiking and bursting activity and this results in many undeﬁned values for the dependent parameters that could in- troduce extra uncertainty into the analysis. Second, it was found that random selection of 9 out of the 17 network parameters for calculation of total system perturbation did not qualitatively alter the overall concentration-dependent trajectories of network scalar perturbation (data not shown). That is, concentrations that showed a pattern of es- calating scalar perturbation over time or exhibited a recovery trend with the 9 selected parameters, produced a similar pattern with random selection of network parameters. Together, these results suggested that inclusion of the additional 8 network parameters would introduce ad- ditional uncertainty into the analysis without contributing to suﬃ- ciently diﬀerent trajectories that would meaningfully change inter- pretation of recovery and non-recovery trends. 3.2. Determination of critical concentrations Determination of a critical concentration was based on the premise that a developing cortical network is in some ways capable of adapting to the presence of certain compounds at particular concentrations (i.e., overcoming the initial perturbation). Therefore, after calculation of scalar perturbation values, it was important to ﬁrst establish that in- stances of network recovery could be identiﬁed in the assay. If the median scalar perturbation of a treatment group exceeded three times the MAD of untreated control wells at DIV 5, 7, or 9, but then returned to a median value closer to zero at the ﬁnal time point (DIV 12), this was taken as preliminary evidence of system recovery in the presence of a given compound at a deﬁned concentration. Applying these criteria, evidence of system recovery was observed in 54 out of the 86 com- pounds (62.8%) for at least one concentration (Supp. Table 1). The presence of these scalar perturbation trajectories indicated the assay is capable of modeling treatments where neural networks are disrupted at one stage of in vitro development but exhibit a return to normal range at a later time. To further model the dynamics of system recovery and failure in the presence of tested compounds, the “velocity” of scalar perturbation values was calculated between DIV 5, 7, or 9 and DIV 12 to determine the transition from a system recovery to a non-recovery trajectory. The ﬁnal recording time point was chosen as a consistent anchor because it provided the strongest evidence in the assay of ﬁnal system status as network development concluded (i.e. DIV12 status best reﬂected whe- ther the network resembled a normal untreated network at the con- clusion of in vitro development). System velocities were then plotted over increasing concentration of each compound to visualize the re- lationship (Fig. 4). The derivative of velocity with respect to con- centration was taken to identify the point in the velocity curve where the slope changed from negative to positive, indicating a transition from a system recovery to a non-recovery trajectory. In order to focus Toxicology and Applied Pharmacology 354 (2018) 81–
+
+(caption on next page)
+
+Toxicology and Applied Pharmacology 354 (2018) 81– Fig. 2. Conversion of network parameters to normalized z-scores. A) Individual network parameters were calculated from raw spike train data from recordings, normalized to same-plate untreated well medians, then log-transformed and converted to z-scores ( ± 1 z-score = ± 1 standard deviation from the untreated well mean value) to put all network parameters on the same scale. Example of log-transformed and z-score distributions for untreated and treated wells are shown with histograms on right. B and C) Examples of z-scores over time for acetaminophen (B) and haloperidol (C). In each plot, the shaded gray area represents the variability of untreated control wells (3 times the median absolute deviation) and colored lines show median z-score values over time for varying concentrations of compound for one network parameter. The 8 network parameters shown are mean ﬁring rate (MFR), burst rate (BR), number of active electrodes (#AE), percent of spikes in bursts (%SiB), number of network spikes (#NS), percent of spikes in network spikes (%SiNS), mean correlation (R), and mutual information (MI). A
+
+n o i t a b r u t r e p l r a a c S Acetaminophen log(concentration) 100% 1. 0. 0. −0. −1. −1. 50%
+
+DIV 0% Cytotoxicity B
+
+n o i t a b r u t r e p l r a a c S Haloperidol log(concentration) 100% 1. 0. 0. −0. −1. −1. 50%
+
+DIV 0% Cytotoxicity Fig. 3. Total Scalar Perturbations integrate changes across network parameters. Total scalar perturbations (sum of individual network parameter z-scores) for varying concentrations of acetaminophen (A) and haloperidol (B) are shown as individual data points and best ﬁt lines colored by concentration over time in vitro. Shaded gray area represents 3 times the median absolute deviation of untreated control wells at each timepoint. on compounds with a more reproducible impact on network activity and avoid overﬁtting subtle trajectories, a compound was required to have at least one concentration where the DIV 12 scalar perturbation exceeded three times the MAD of untreated control networks. The minimum concentration derived from the three time windows proﬁled for each compound was selected to accommodate diﬀerent trajectory shapes and identify the lowest concentration with evidence of a tipping point and possible adverse eﬀect. In total, a point of zero velocity slope (where trajectory transitioned from recovery to non-recovery) was found for 42 out of the 86 compounds, with critical concentrations ranging from 0.005 μM for bis(tri-n-butylin) oxide to 9.77 μM for dia- zepam (Table 2). Uncertainty in these critical concentrations was esti- mated by a 95% conﬁdence interval derived from iterative random sampling and recalculation of the critical concentration with available replicates. The same compound often produced multiple tipping points de- pending on the time interval considered (e.g. DIV 5–12 vs DIV 9–12). Tipping points with uncertainty ranges spanning two orders of magni- tude or greater were discarded as unreliable estimates. These criteria applied to 9 out of the 42 compounds, but in no case did it remove all tipping point estimates for a compound (Supp Table 2). To interrogate the magnitude of tipping point concentration diﬀerences between dif- ferent time windows, the fold-change between the most discordant pair of tipping point estimates was calculated for each compound with more than one estimate. The average fold-diﬀerence among the 33 com- pounds with multiple estimates was found to be 2.21 (Supp Table 2). Considering the concentration series employed in this assay was in- cremented by half-log units, these results showed relatively high con- sistency between tipping points derived from diﬀerent time intervals for the same compound. 3.3. Critical concentration comparison to cytotoxicity and individual network parameters To evaluate whether the tipping point concentrations determined for the 42 compounds corresponded to treatments that also resulted in high general cytotoxicity, tipping points were compared to compound concentrations that produced a 50% reduction in cell viability levels (EC50) from resazurin reduction and LDH release assays (Frank et al., 2017) (Fig. 5A). Only two out of the 42 compounds (4.8%), emamectin benzoate and mevastatin, exhibited high cytotoxicity at concentrations lower than the tipping point estimate. For all other compounds, there was at least a 4-fold diﬀerence between the tipping point and cyto- toxicity EC50. The mean diﬀerence between 50% cell viability (where deﬁned) and tipping point concentration was 13.8-fold. This suggests that tipping points often occur at concentrations substantially lower than those causing high levels of cell viability loss in the cortical net- works. Previous analyses of these same data used an area under the curve (AUC) metric to evaluate concentration-response relationships for each compound (Frank et al., 2017). The AUC approach determined EC concentrations where an exposure was suﬃcient to reduce individual network parameters below 50% of control values. AUC-derived EC concentrations for the 9 network parameters used for scalar perturba- tion calculations were compared to tipping point concentrations in two ways. The ﬁrst approach was to determine where the minimum of the AUC-derived EC50 values fell in relation to the tipping point con- centration. The second was to compare the median of the 9 AUC-de- rived EC50 values to the critical concentration for each compound. Both values are shown in relation to the tipping point concentration in Fig. 5B. For the majority of compounds (27/42, 64.3%), the tipping A
+
+− −
+
+− −
+
+− − Toxicology and Applied Pharmacology 354 (2018) 81– Fig. 4. Examples of Tipping Point determinations for acetaminophen and haloperidol. Plots show DIV 12 scalar perturbation (blue line), as well as velocity of change (green line) and derivative of that velocity curve (dV/dC; red line) from DIV 9 (top), DIV 7 (middle), or DIV (bottom) for varying concentrations of acetaminophen (A) or haloperidol (B). Horizontal dotted lines demarcate times median absolute deviation of untreated control wells. Vertical dotted line indicates tipping point concentration, deﬁned as the derivative of velocity over concentration transitioning from negative to positive values. For com- parison, the yellow vertical line indicates the lower EC value for cell viability loss. (For interpretation of the re- ferences to color in this ﬁgure legend, the reader is referred to the web version of this article.) Haloperidol DIV9− Acetaminophen DIV9− DIV12 scalar perturbation Velocity Velocity derivative < 50% cell viability Tipping point B
+
+− − −
+
+log(concentration) −
+
+log(concentration) Acetaminophen DIV7− Haloperidol DIV7− −
+
+log(concentration) Acetaminophen DIV5−
+
+− −
+
+− − −
+
+log(concentration) Haloperidol DIV5− −
+
+log(concentration) −
+
+log(concentration) point concentration was equal to or lower than the minimum AUC- derived EC50 values identiﬁed. For all but four compounds (emamectin benzoate, mevastatin, PBDE-47, and diazepam), the critical con- centration was below the median AUC-derived EC50 values. This result suggests that in most cases, tipping points serve as a more sensitive measure of network developmental eﬀects than looking for individual network parameter changes. Interestingly, in the cases where the minimum AUC-derived EC50 values fell below the critical concentra- tion, 9 out of 15 times it was the number of network spikes parameter that produced the lowest EC50. The number of network spikes may therefore be considered the most sensitive of the 9 parameters ex- amined. Table Critical concentrations. Toxicology and Applied Pharmacology 354 (2018) 81– Compound Timepoint comparison Critical concentration (μM) Lower 95% CI Higher 95% CI Deltamethrin Cytosine Arabinoside DEHP 5-Fluorouracil Haloperidol Loperamide Chlorpyrifos Chlorpyrifos oxon Diazepam Thiouracil t-Retinoic acid Trimethyltin Dieldrin Lead acetate Cadmium Methylmercury Bis Domoic Acid Sodium Orthovanadate Cypermethrin Emamectin benzoate Fipronil Flusilazole Methylchloroisothiazolinone Carbaryl Heptachlor epoxide Lindane Mevastatin Diethylstilbestrol Isoniazid PBDE- Hexachlorophene Tebuconazole Aminonicotinamide Bis tri n butylin oxide Chlordiazepoxide Permethrin Paraquat Sodium Arsenate Fluoxetine Chlorpromazine Triethyltin bromide DIV5 to DIV DIV7 to DIV DIV9 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV9 to DIV DIV5 to DIV DIV9 to DIV DIV5 to DIV DIV5 to DIV DIV9 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV9 to DIV DIV7 to DIV DIV9 to DIV DIV9 to DIV DIV9 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV9 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV DIV7 to DIV DIV5 to DIV DIV5 to DIV DIV9 to DIV DIV9 to DIV DIV9 to DIV DIV5 to DIV DIV5 to DIV DIV5 to DIV 3.4. Comparison to in vivo results using toxicokinetics To determine how the tipping point concentrations compare to plasma levels associated with reports of neurotoxicity following ex- posure during development, in vitro concentration levels were con- verted to estimated plasma levels using the high-throughput tox- icokinetic (httk) package in R. For an in vivo comparator, studies were selected from Table 1 in Mundy et al., 2015, as the studies in that publication were cited as examples of compounds with evidence for developmental neurotoxicity. There were suﬃcient in vitro tox- icokinetic data available for this package for only 6 of the 42 chemicals with tipping point concentrations. Complete information on the com- pounds, dose levels and model estimates are provided in Table 1. When comparing the in vivo AUC concentration estimated with httk to the in vitro predicted critical concentration, the data indicate close agreement for ﬁve of the six compounds (Fig. 6). The exception was diethyl- stilbestrol, for which the critical concentration was higher than the in vivo estimate. There were also discordant results with dieldrin where the tipping point was less potent than one in vivo study; this was due to 3000-fold diﬀerences in the in vivo doses used. 4. Discussion The present data demonstrate that, “tipping points” associated with alterations in network formation can be determined for a subset of 0. 0. 0. 0. 0. 0. 1. 0. 9. 2. 1. 0. 1. 2. 0. 0. 0. 0. 4. 0. 0. 0. 0. 0. 0. 1. 0. 0. 2. 0. 1. 0. 1. 0. 0. 2. 0. 0. 0. 0. 0. 0.
+
+0. 0. 0. 0. 0. 0. 0. 0. 7. 0. 0. 0. 0. 1. 0. 0. 0. 0. 3. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 16. 5. 2. 0. 2. 4. 0. 0. 0. 0. 5. 0. 0. 3. 0. 0. 1. 1. 4. 1. 4. 0. 2. 0. 4. 1. 0. 2. 1. 0. 0. 0. 0. 0. compounds recently tested in Frank et al., 2017. For a subset of these compounds where enough data were available, it was possible to use high-throughput toxicokinetic (httk) model to compare in vitro tipping points to blood levels associated with neurodevelopmental outcomes in animal models; these comparisons indicated that the in vitro alterations in network function occurred at concentrations that are concordant with in vivo developmental neurotoxicity following pre- or perinatal exposure to these compounds. Thus, the tipping point concentrations provide a sensitive indicator of biological alterations in developing neural networks that may be relevant to adverse neurodevelopmental outcomes following in vivo exposures to chemicals. The need to develop a screening battery of tests to assess the po- tential for a compound to cause developmental neurotoxicity is now well recognized (Bal-Price et al., 2010, 2015; Fritsche et al., 2017). Several in vitro assays have now been developed for a number of process critical to nervous system development, including proliferation (Breier et al., 2008), neurite outgrowth and synaptogenesis (Harrill et al., 2010, 2011: Stiegler et al., 2011), migration (Zimmer et al., 2014; Nyﬀeler et al., 2017), and apoptosis (Druwe et al., 2015). Assessment of function following exposure during in vitro development of neural networks using MEAs (Hogberg et al., 2011; Robinette et al., 2011; Brown et al., 2016; Dingemans et al., 2016; Frank et al., 2017) is unique among these assays in that it can provide both functional and temporal measure- ments from the same network. This facilitates the determination of whether the system recovers or deviates from homeostasis over the
+
+Toxicology and Applied Pharmacology 354 (2018) 81–
+
+(caption on next page)
+
+Toxicology and Applied Pharmacology 354 (2018) 81– Fig. 5. Comparison of tipping points to cytotoxicity and individual network parameters. Tipping points could be determined for 42 compounds, and are compared to A) concentrations that impact cell viability (orange triangles, lower EC50 between total LDH and alamar blue assays) and B) the minimum (purple circles) and median (blue diamonds) EC50 value for individual network parameters based on Area Under the Curve (AUC) calculations. Heatmap on right in panel B shows AUC EC50 values for each network parameter included in tipping point determination for reference. (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this article.) measured time span, and thus the resultant data are well-suited for determination of tipping points. Neural network activity as measured by MEAs can be described by multiple parameters that include measurements of the overall activity (e.g. mean ﬁring rate, number of active electrodes), bursting (e.g. burst duration, burst rate) and coordinated activity (e.g. correlation coeﬃ- cient, mutual information), most of which show clear “developmental” changes with time in vitro (Cotterill et al., 2016). In the present study, tipping points were determined based on chemical eﬀects on 9 of these parameters because they can be derived directly from the spike train. Although other parameters also can be assessed, preliminary analysis using additional parameters indicated that this would have increased the uncertainty in the tipping point analysis. In addition, the para- meters selected were among those identiﬁed as being more impactful in separating treatments that alter network function from those that do not using Random Forest analyses (Brown et al., 2016; Frank et al., 2017). Thus, the tipping points calculated here represent a composite value for eﬀects on the 9 parameters included. Tipping points could be determined for 42 of the 64 compounds that perturbed activity of neural networks following exposure during network development (Frank et al., 2017). In all but 2 of these cases (mevastatin and ema- mectin), the calculated tipping point is more potent than the corre- sponding EC50 value for cytotoxicity, indicating that these changes re- ﬂect alterations in network function rather than simply decrements in cellular viability. Further, for 23 of the 42 compounds, the tipping point was lower than the EC50 for the most sensitive of these parameters; while only 4 of the 42 compounds had tipping points that were higher than the median EC50 of individual parameters of network function. Thus, even though they are based on an “averaged” response, these data indicate that the tipping point calculations are sensitive measures of when and at what concentrations network formation begins to be ir- revocably altered by chemical exposure. In Toxicity Testing in the 21st Century: Strategy and Vision, the use of cell-based toxicity testing methods was encouraged (NRC, 2007). Important to this concept was the ability to determine diﬀerences in adaptive responses (homeostatic responses) versus those responses that led toward a “toxicity pathway”. Tipping points are one method for determining the adaptive vs adverse responses, and in the present case, the tipping points represent the concentration at which development of network function no longer proceeds according to its normal trajectory in vitro. Although speculative, an additional point to consider in the present study is whether or not the “adaptive” responses just below the tipping points (concentrations at which “recovery” is observed), might also ultimately lead to adverse responses. The importance of electrical activity in development of the nervous system is well established (Kerschensteiner, 2014; Babij and De Marco Garcia, 2016). Further, the timing of electrical activity during nervous system development is also crucial, and delays in electrical activity have been associated with neurodevelopmental disorders such as attention-deﬁcit hyper activity syndrome (McLaughlin et al., 2010). Thus, the possibility exists that even in cases where some recovery of network activity to normal re- sponse levels occurs, the excursion out of normal parameters may dis- rupt the timing of other important event sequences, resulting in latent or delayed eﬀects on nervous system function. Such eﬀects may only become apparent later in life or only when the nervous system is challenged in a way that uncovers the deﬁcit. Of note, the present Diet Diet Diel Diaz Diaz Chlo Chlo Chlo Chlo Diel Chlo Chlo −
+
+−
+
+) M µ ( . c n o C l a c i t i r C d e t c d e r p i o r t i v n I Fig. 6. Comparison between predicted plasma levels for critical concentrations and in vivo estimates from the httk model. For those chemicals with 1) in vitro predicted critical concentra- tions, 2) in vivo studies indicating neurological eﬀect, and 3) available toxicokinetic data the time-integrated plasma con- centration (area under the curve or AUC) was predicted for the LOEL associated with each chemical-speciﬁc study. The che- mical-speciﬁc prediction is indicated by the ﬁrst four letters of each chemicals name. There were two available studies for each chemical. The identity (“perfect predictor”) line is indicated by a solid black line, while the dashed lines indicate ten-fold above and below perfect prediction. Because all in vitro treatments were exposed for the same amount of time, the relationship between nominal in vitro concentration and time-integrated concentration is a constant. −
+
+In vivo AUC estimated with HTTK (µM*day) −
+
+Chemical a a Chlordiazepoxide* Chlorpromazine a a Chlorpyrifos* Diazepam a a Dieldrin Diethylstilbestrol Toxicology and Applied Pharmacology 354 (2018) 81– experiments stopped on DIV 12, and that network function was not assessed or challenged after this time. As such, it remains to be de- termined whether or not adaptive responses in the present study re- present true recovery, or a change in state that might lead to adverse responses at a later time. In vitro data will be useful for decision-making beyond screening and prioritization if there is conﬁdence that the concentrations at which eﬀects are observed in vitro have relevance to blood levels that cause neurodevelopmental eﬀects in vivo. In order to examine how the tipping points determined herein compare to dose levels associated with neu- rodevelopmental toxicity, compounds from Table 1 in Mundy et al. (2015) were selected as representative in vivo exposures that were as- sociated with a DNT outcome. High-throughput toxicokinetics were then used to estimate relevant blood levels for the 6 compounds for which suﬃcient data existed. When compared to the tipping point concentrations, in 5 of 6 cases, the tipping points for eﬀects on neural network function were equal to or lower than doses associated with DNT outcomes. Interestingly, diethylstilbestrol, the one compound where the tipping point did not match the levels associated with DNT outcomes in vivo, is a well-known estrogenic compound. Although acute activity in mature networks does show some responsiveness to estro- genic compounds (Strickland et al., 2017), there is no information on whether those eﬀects are mediated by the estrogen receptor or re- garding the role of estrogen in maturation of neural networks in vitro. Thus, it could be that the in vivo eﬀects of diethylstilbestrol are medi- ated via mechanisms not present in the in vitro assay. Comparisons to chemical concentrations known or predicted to cause developmental neurotoxicity in vivo for all of the compounds tested herein would have been desirable. However, important data were not available for all of the test compounds. Never the less, based on this small sample, calculated tipping points indicate eﬀects at re- levant doses in vivo. Several caveats should be noted regarding this analysis. First, the in vivo dose levels were simply those reported in the literature as cited in Mundy et al., 2015; these were not LOAEL values from guideline studies. Thus, it may be that other events or endpoints are more sensitive to perturbation than those examined here, either in vivo or in vitro. Second, the httk model predictions in some cases (for example the mouse data) relied on substitution of data from another species (human), as species-speciﬁc data were not available, or on other assumptions, for example, regarding chemical binding to protein. Third, it should be noted that a relationship between the in vitro al- ternations of network development and the in vivo endpoint reported in the studies used is not implied by these comparisons, simply that dose/ concentration levels are concordant. In the future, such associations could be strengthened by linking the in vitro eﬀects, through a series of key events, to an adverse neurodevelopmental outcome (e.g. through an adverse outcome pathway or AOP). There is a critical need for the development of adverse outcome pathways relevant to developmental neurotoxicity (Bal-Price and Meek, 2017); only a few (~8) AOPs re- levant to DNT have been established in the AOPwiki database (https:// aopwiki.org/). In summary, the present data demonstrate that toxicological tipping points can be determined for chemical eﬀects on neural network de- velopment, and, based on a small set of compounds, that those tipping point values are relevant to in vivo dose levels associated with adverse this combination of ap- neurodevelopmental outcomes. As such, proaches could oﬀers high potential as a powerful tool for assessment of potential developmental neurotoxicity for larger numbers of chemicals. Supplementary data to this article can be found online at https:// doi.org/10.1016/j.taap.2018.01.017. Conﬂict of interest statement The authors declare no conﬂict of interest pertaining to this manuscript. Preparation of this document has been funded by the U.S. Environmental Protection Agency. This document has been subject to review by the National Health and Environmental Eﬀects Research Laboratory (NHEERL) and approved for publication. Approval does not signify that the contents reﬂect the views of the Agency, nor does mention of trade names or commercial products constitute endorsement or recommendation for use. Acknowledgements The authors would like to thank Dr. William Boyes, US EPA and Dr. Nisha Sipes, National Institutes of Environmental Health Sciences, for their useful comments on a draft version of this manuscript. References Adams, P.M., 1982. Eﬀects of perinatal chlordiazepoxide exposure on rat preweaning and postweaning behavior. Neurobehav. Toxicol. Teratol. 4, 279–282. Babij, R., De Marco Garcia, N., 2016. Neuronal activity controls the development of in- terneurons in the somatosensory cortex. Front. Biol. (Beijing) 11, 459–470. Ball, K.R., Grant, C., Mundy, W.R., Shafer, T.J., 2017. A multivariate extension of mutual information for growing neural networks. Neural Netw. 95, 29–43. Bal-Price, A., Meek, M.E.B., 2017. Adverse outcome pathways: application to enhance mechanistic understanding of neurotoxicity. Pharmacol. Ther. 179, 84–95. Bal-Price, A.K., Hogberg, H.T., Buzanska, L., Lenas, P., van Vliet, E., Hartung, T., 2010. In vitro developmental neurotoxicity (DNT) testing: relevant models and endpoints. Neurotoxicology 31, 545–554. Bal-Price, A., Crofton, K.M., Leist, M., Allen, S., Arand, M., Buetler, T., Delrue, N., FitzGerald, R.E., Hartung, T., Heinonen, T., et al., 2015. International STakeholder NETwork (ISTNET): creating a developmental neurotoxicity (DNT) testing road map for regulatory purposes. Arch. Toxicol. 89, 269–287. Brannen, K.C., Devaud, L.L., Liu, J., Lauder, J.M., 1998. Prenatal exposure to neurotox- icants dieldrin or lindane alters tert-butylbicyclophosphorothionate binding to GABA(a) receptors in fetal rat brainstem. Dev. Neurosci. 20, 34–41. Breier, J.M., Radio, N.M., Mundy, W.R., Shafer, T.J., 2008. Development of a high- throughput screening assay for chemical eﬀects on proliferation and viability of immortalized human neural progenitor cells. Toxicol. Sci. 105, 119–133. Brown, J.P., Hall, D., Frank, C.L., Wallace, K., Mundy, W.R., Shafer, T.J., 2016. Editor's highlight: evaluation of a microelectrode array-based assay for neural network on- togeny using training set chemicals. Toxicol. Sci. 154, 126–139. Buschman, T.J., Kastner, S., 2015. From behavior to neural dynamics: an integrated theory of attention. Neuron 88, 127–144. Chiappalone, M., Vato, A., Tedesco, M.B., Marcoli, M., Davide, F., Martinoia, S., 2003. Networks of neurons coupled to microelectrode arrays: a neuronal sensory system for pharmacological applications. Biosens. Bioelectron. 18, 627–634. Clark, C.V.H., Gorman, D., Vernadakis, A., 1970. Eﬀects of prenatal administration of psychotropic drugs on behavior of developing rats. Dev. Psychobiol. 3, 225–235. Core Team, R., 2016. R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria URL. https://www.R-project. org/. Cotterill, E., Hall, D., Wallace, K., Mundy, W.R., Eglen, S.J., Shafer, T.J., 2016. Characterization of early cortical neural network development in multiwell micro- electrode array plates. J. Biomol. Screen. 21, 510–519. Dam, K., Seidler, F.J., Slotkin, T.A., 2000. Chlorpyrifos exposure during a critical neonatal period elicits gender-selective deﬁcits in the development of coordination skills and locomotor activity. Brain Res. Dev. Brain Res. 121, 179–187. Dingemans, M.M.L., Schütte, M.G., Wiersma, D.M.M., de Groot, A., van Kleef, R.G.D.M., Wijnolts, F.M.J., Westerink, R.H.S., 2016. Chronic 14-day exposure to insecticides or methylmercury modulates neuronal activity in primary rat cortical cultures. Neurotoxicology 57, 194–202. Druwe, I., Freudenrich, T.M., Wallace, K., Shafer, T.J., Mundy, W.R., 2015. Sensitivity of neuroprogenitor cells to chemical-induced apoptosis using a multiplexed assay sui- table for high-throughput screening. Toxicology 333, 14–24. Frank, C.L., Brown, J.P., Wallace, K., Mundy, W.R., Shafer, T.J., 2017. Developmental neurotoxicants disrupt activity in cortical networks on microelectrode arrays: results of screening 86 compounds during neural network formation. Toxicol. Sci. 160, 121–135. Frieder, B., Epstein, S., Grimm, V.E., 1984. The eﬀects of exposure to diazepam during various stages of gestation or during lactation on the development and behavior of rat pups. Psychopharmacology 83, 51–55. Fritsche, E., Crofton, K.M., Hernandez, A.F., Hougaard Bennekou, S., Leist, M., Bal-Price, A., Reaves, E., Wilks, M.F., Terron, A., Solecki, R., et al., 2017. OECD/EFSA workshop on developmental neurotoxicity (DNT): the use of non-animal test methods for reg- ulatory purposes. ALTEX 34, 311–315. Grandjean, P., Landrigan, P.J., 2006. Developmental neurotoxicity of industrial chemi- cals. Lancet 368, 2167–2178. Grandjean, P., Landrigan, P.J., 2014. Neurobehavioural eﬀects of developmental toxicity. Lancet Neurol. 13, 330–338. Hannah, R.S., Roth, S.H., Spira, A.W., 1982. The eﬀects of chlorpromazine and pheno- barbital on cerebellar Purkinje cells. Teratology 26, 21–25. Harrill, J.A., Freudenrich, T.M., Machacek, D.W., Stice, S.L., Mundy, W.R., 2010. Quantitative assessment of neurite outgrowth in human embryonic stem cell-derived hN2 cells using automated high-content image analysis. Neurotoxicology 31,
+
+277–290. Harrill, J.A., Robinette, B.L., Mundy, W.R., 2011. Use of high content image analysis to detect chemical-induced changes in synaptogenesis in vitro. Toxicol. in Vitro 25, 368–387. Hogberg, H.T., Sobanski, T., Novellino, A., Whelan, M., Weiss, D.G., Bal-Price, A.K., 2011. Application of micro-electrode arrays (MEAs) as an emerging technology for devel- opmental neurotoxicity: evaluation of domoic acid-induced eﬀects in primary cul- tures of rat cortical neurons. Neurotoxicology 32, 158–168. Kaitsuka, T., Fukunaga, K., Soeda, F., Shirasaki, T., Miyamoto, E., Takahama, K., 2007. Changes in Ca(2+)/calmodulin-dependent protein kinase II activity and its relation to performance in passive avoidance response and long-term potentiation formation in mice prenatally exposed to diethylstilbestrol. Neuroscience 144, 1415–1424. Keller, D.A., Juberg, D.R., Catlin, N., Farland, W.H., Hess, F.G., Wolf, D.C., Doerrer, N.G., 2012. Identiﬁcation and characterization of adverse eﬀects in 21st century tox- icology. Toxicol. Sci. 126, 291–297. Kerschensteiner, D., 2014. Spontaneous network activity and synaptic development. Neuroscientist 20, 272–290. Toxicology and Applied Pharmacology 354 (2018) 81– Development, Paris Available: http://www.oecd-ilibrary.org/environment/test-no- 426-developmental-neurotoxicity-study_9789264067394-en (Accessed 10/28/2015). Olson, K.L., Boush, G.M., Matsumura, F., 1980. Pre- and postnatal exposure to dieldrin: persistent stimulatory and behavioral eﬀects. Pestic. Biochem. Physiol. 13, 20–33. Pearce, R.G., Setzer, R.W., Davis, J.L., Wambaugh, J.F., 2017. Evaluation and calibration of high-throughput predictions of chemical distribution to tissues. J. Pharmacokinet. Pharmacodyn. 44, 549–565. Radio, N.M., Mundy, W.R., 2008. Developmental neurotoxicity testing in vitro: models for assessing chemical eﬀects on neurite outgrowth. Neurotoxicology 29, 549–565. Ricceri, L., Venerosi, A., Capone, F., Cometa, M.F., Lorenzini, P., Fortuna, S., et al., 2006. Developmental neurotoxicity of organophosphorous pesticides: fetal and neonatal exposure to chlorpyrifos alters sex-speciﬁc behaviors at adulthood in mice. Toxicol. Sci. 93, 105–113. Robinette, B.L., Harrill, J.A., Mundy, W.R., Shafer, T.J., 2011. In vitro assessment of developmental neurotoxicity: use of microelectrode arrays to measure functional changes in neuronal network ontogeny. Front. Neuroeng. 4, 1. Salinas, E., Sejnowski, T.J., 2001. Correlated neuronal activity and the ﬂow of neural Korte, M., Schmitz, D., 2016. Cellular and system biology of memory: timing, molecules, information. Nat. Rev. Neurosci. 2, 539–550. and beyond. Physiol. Rev. 96, 647–693. Krug, A.K., Kolde, R., Gaspar, J.A., Rempel, E., Balmer, N.V., Meganathan, K., Vojnits, K., Baquié, M., Waldmann, T., Ensenat-Waser, R., et al., 2013. Human embryonic stem cell-derived test systems for developmental neurotoxicity: a transcriptomics ap- proach. Arch. Toxicol. 87, 123–143. Kurishingal, H., Palanza, P., Brain, P.F., 1992. Eﬀects of exposure of pregnant mice to chlordiazepoxide (CDP) on the development and ultrasound production of their oﬀspring. Gen. Pharmacol. 23, 49–53. McLaughlin, K.A., Fox, N.A., Zeanah, C.H., Sheridan, M.A., Marshall, P., Nelson, C.A., 2010. Delayed maturation in brain electrical activity partially explains the associa- tion between early environmental deprivation and symptoms of attention-deﬁcit/ hyperactivity disorder. Biol. Psychiatry 68, 329–336. Mihalick, S.M., 2003. Perinatal exposure to diethylstilbestrol improves olfactory dis- crimination learning in male and female Swiss–Webster mice. Neurobiol. Learn. Mem. 80, 55–62. Mundy, W.R., Padilla, S., Breier, J.M., Crofton, K.M., Gilbert, M.E., Herr, D.W., Jensen, K.F., Radio, N.M., Raﬀaele, K.C., Schumacher, K., et al., 2015. Expanding the test set: chemicals with potential to disrupt mammalian brain development. Neurotoxicol. Teratol. 52, 25–35. Nicosia, A., Giardina, L., Di Leo, F., Medico, M., Mazzola, C., Genazzani, A.A., et al., 2003. Long-lasting behavioral changes induced by pre- or neonatal exposure to diazepam in rats. Eur. J. Pharmacol. 469, 103–109. NRC, 2007. Toxicity Testing in the Twenty-First Century: A Vision and a Strategy. The National Academies Press, Washington, D.C. Nyﬀeler, J., Dolde, X., Krebs, A., Pinto-Gil, K., Pastor, M., Behl, M., Waldmann, T., Leist, M., 2017. Combination of multiple neural crest migration assays to identify en- vironmental toxicants from a proof-of-concept chemical library. Arch. Toxicol. 91, 3613–3632. OECD, 2007. Test guideline 426. In: OECD Guideline for Testing of Chemicals. Developmental Neurotoxicity Study. Organisation for Economic Co-operation and Schmuck, M.R., Temme, T., Dach, K., de Boer, D., Barenys, M., Bendt, F., Mosig, A., Fritsche, E., 2017. Omnisphero: a high-content image analysis (HCA) approach for phenotypic developmental neurotoxicity (DNT) screenings of organoid neurosphere cultures in vitro. Arch. Toxicol. 91, 2017–2028. Shah, I., Setzer, R.W., Jack, J., Houck, K.A., Judson, R.S., Knudsen, T.B., Liu, J., Martin, M.T., Reif, D.M., Richard, A.M., et al., 2016. Using ToxCast™ data to reconstruct dynamic cell state trajectories and estimate toxicological points of departure. Environ. Health Perspect. 124, 910–919. Smirnova, L., Hogberg, H.T., Leist, M., Hartung, T., 2014. Developmental neurotoxicity - challenges in the 21st century and in vitro opportunities. ALTEX 31, 129–156. Stiegler, N.V., Krug, A.K., Matt, F., Leist, M., 2011. Assessment of chemical-induced im- pairment of human neurite outgrowth by multiparametric live cell imaging in high- density cultures. Toxicol. Sci. 121, 73–87. Strickland, J.D., Martin, M., Houck, T., Richard, A., Shafer, T.J., 2017. Screening the ToxCast phase II libraries for neuroactivity using cortical neurons grown on multi- well microelectrode array (mwMEA) plates. Arch. Toxicol. http://dx.doi.org/10. 1007/s00204-017-2035-5. (Available online Aug 2, 2017). US EPA. (US Environmental Protection Agency), 1998. Health eﬀects guidelines OPPTS 870.6300. In: Developmental Neurotoxicity Study. EPA 712-C-98-239. Van Pelt, J., Corner, M.A., Wolters, P.S., Rutten, W.L.C., Ramakers, G.J.A., 2004. Longterm stability and developmental changes in spontaneous network burst ﬁring patterns in dissociated rat cerebral cortex cell cultures on multielectrode arrays. Neurosci. Lett. 361, 86–89. Wagenaar, D.A., Pine, J., Potter, S.M., 2006. An extremely rich repertoire of bursting patterns during the development of cortical cultures. BMC Neurosci. 7, 11. Zimmer, B., Pallocca, G., Dreser, N., Foerster, S., Waldmann, T., Westerhout, J., Julien, S., Krause, K.H., van Thriel, C., Hengstler, J.G., et al., 2014. Proﬁling of drugs and en- vironmental chemicals for functional impairment of neural crest migration in a novel stem cell-based test battery. Arch. Toxicol. 88, 1109–1126. 93
