@@ -11,3 +11,4 @@ rapidfuzz
 tqdm
 scikit-learn
 unidecode
+pdfminer.six
