@@ -1,0 +1,20 @@
+PARAGRAPH_ID,CHEMICAL_NAME_RAW,CHEMICAL_NAME_NORM,CASRN,DTXSID,SOURCE,EXPECTED_RESULT
+001,DNT,DNT,,,scispaCy,deltamethrin
+001,deltamethrin,deltamethrin,52918-63-5,DTXSID3025404,scispaCy,deltamethrin
+002,DNT,DNT,,,scispaCy,
+003,DNT,DNT,,,scispaCy,
+003,bisindolylmaleimide,bisindolylmaleimide,,,scispaCy,
+003,Bis-I,Bis-I,,,scispaCy,
+003,bisindolylmaleimide I,bisindolylmaleimide I,,,ChemDataExtractor,
+006,insecticides,insecticides,,,scispaCy,deltamethrin
+006,Pyrethroid,Pyrethroid,,,scispaCy,deltamethrin
+006,deltamethrin,deltamethrin,52918-63-5,DTXSID3025404,scispaCy,deltamethrin
+006,sodium,sodium,,,scispaCy,deltamethrin
+006,pyrethroids,pyrethroids,,,scispaCy,deltamethrin
+006,oxygen,oxygen,,,scispaCy,deltamethrin
+006,organophosphate,organophosphate,,,scispaCy,deltamethrin
+006,carbamate insecticides,carbamate insecticides,,,scispaCy,deltamethrin
+006,pyrethroid,pyrethroid,,,ChemDataExtractor,deltamethrin
+006,Pyrethroids,Pyrethroids,,,ChemDataExtractor,deltamethrin
+006,MTT,MTT,,,ChemDataExtractor,deltamethrin
+006,carbamate,carbamate,,,ChemDataExtractor,deltamethrin

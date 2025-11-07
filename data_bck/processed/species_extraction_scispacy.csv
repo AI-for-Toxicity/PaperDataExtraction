@@ -1,0 +1,33 @@
+PARAGRAPH_ID,SPECIES_MENTION,SPECIES_NORM,NCBI_TAXID,CONFIDENCE,SOURCE,EXPECTED_RESULT
+001,human NNF,Homo Sapiens,9606,0.8,ner,human
+001,human,Homo Sapiens,9606,1.0,ner,human
+001,human astroglia,Homo Sapiens,9606,0.8,ner,human
+001,rat cortical cells,Rattus Norvegicus,10116,0.8,ner,human
+001,human,Homo Sapiens,9606,1.0,gaz,human
+001,human,Homo Sapiens,9606,1.0,gaz,human
+001,human,Homo Sapiens,9606,1.0,gaz,human
+001,hiPSC,Homo Sapiens,9606,1.0,gaz,human
+001,rat,Rattus Norvegicus,10116,1.0,gaz,human
+002,children,children,,0.8,ner,human
+002,human brain,Homo Sapiens,9606,0.8,ner,human
+002,human  neural  progenitor  cell  ,Homo Sapiens,9606,0.8,ner,human
+002,human,Homo Sapiens,9606,1.0,gaz,human
+002,human,Homo Sapiens,9606,1.0,gaz,human
+003,rat primary cortical cells,Rattus Norvegicus,10116,0.8,ner,human
+003,human cell,Homo Sapiens,9606,0.8,ner,human
+003,human,Homo Sapiens,9606,1.0,ner,human
+003,hiPSC,Homo Sapiens,9606,1.0,ner,human
+003,hiPSC-derived neural networks,Homo Sapiens,9606,0.8,ner,human
+003,human neural network,Homo Sapiens,9606,0.8,ner,human
+003,hiPSC-derived excitatory,Homo Sapiens,9606,0.8,ner,human
+003,human,Homo Sapiens,9606,1.0,gaz,human
+003,human,Homo Sapiens,9606,1.0,gaz,human
+003,hiPSC,Homo Sapiens,9606,1.0,gaz,human
+003,hiPSC,Homo Sapiens,9606,1.0,gaz,human
+003,hiPSC,Homo Sapiens,9606,1.0,gaz,human
+003,rat,Rattus Norvegicus,10116,1.0,gaz,human
+004,rat dams,Rattus Norvegicus,10116,0.8,ner,rat
+004,brains,brains,,0.8,ner,rat
+004,rat,Rattus Norvegicus,10116,1.0,gaz,rat
+006,Musca domestica,Musca domestica,,0.8,ner,spodoptera frugiperda
+006,Spodoptera frugiperda,Spodoptera frugiperda,,0.8,ner,spodoptera frugiperda

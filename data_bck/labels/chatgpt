@@ -1,0 +1,25 @@
+Ok chat here's the thing. I need to extract a list of informations from paragraphs of papers in order to build a decent dataset that I can use to fine tune a NLP model that does that automatically.
+
+The list of columns to extract is:
+ASSAY_SHORT_DESCRIPTION = short description of the test that has been performed (e.g. "MEA on primary rat cortical neurons")
+CHEMICAL = The chemical substance used (e.g. "Deltamethrin")
+AOP = Adverse Outcome Pathway (e.g. "Voltage-gated sodium channel modulation → altered network function → behavioral impairment")
+EVENT = (e.g "Increased weighted mean firing rate (wMFR) (+24.6%); decreased number of active electrodes (AEs) (-33.5%); changes in network excitability")
+AC50 = (e.g.  "38.2 ng/mL")
+LOGAC50 = Not to be calculated, just put it there if it's in the paragraph as logac50 instead of just ac50
+BMD = (e.g. "BMC50 (most sensitive endpoint): 2.74µM (hNNF, number of spikes per network burst")
+MAX_MED_CONC = (e.g. "20µM")
+ORGANISM = The organism the test has been performed on (e.g. "rat")
+CELL_LINE = (e.g. "Primary cortical neurons")
+CELL_FORMAT = (e.g. "monolayer on MEA")
+CONCENTRATION = (e.g. "0.027, 0.082, 0.247, 0.74, 2.22, 6.67, 20 µM")
+RESPONSE = (e.g. "Concentration-dependent reduction in network parameters (5/14 affected, most sensitive: spikes per network burst, BMC50: 2.74µM)")
+CYTOTOX_BURST = Info about cytotoxicity (e.g. "No cytotoxicity at active concentrations")
+INTENDED_TARGET = (e.g. "Voltage-gated sodium channels; neuronal and synaptic networks")
+BIOLOGICAL_PROCESS_TARGET = (e.g. "Neural network formation, synaptic activity, neuronal firing/bursting, network connectivity/organization")
+TISSUE = (e.g. "In vitro model of developing human brain")
+
+In this chat, I will send you paragraphs and you will have to return a JSON or CSV containing all the columns/keys I told you along with found info.
+If one or more columns are not found in a paragraph, set the corresponding values to null (json) or nothing (csv).
+If in the same paragraph there is data about multiple assays being performed (like the same test being ran on two different substances, output multiple rows).
+Do not make up things, just copy-paste informations that are in the paragraph, because I won't be able to train a model to make stuff up instead of extracting informations, so use the same words and values found.

@@ -1,0 +1,11 @@
+Extract toxicology findings as JSON with fields:
+ASSAY_SHORT_DESCRIPTION, AOP, EVENT, AC50, LOGAC50, BMD, MAX_MED_CONC, ORGANISM, CELL_LINE, CELL_FORMAT, CONCENTRATION, RESPONSE, CYTOTOX_BURST, INTENDED_TARGET, BIOLOGICAL_PROCESS_TARGET, TISSUE
+
+Rules:
+- Use spans present in the paragraph only.
+- If multiple findings, return an array with one object per finding.
+- concentration must be numeric (float) + an unit (e.g., µM, mg/kg).
+- If any of the values is not found in the paragraph, set its value as null.
+
+Paragraph:
+"(A-C) Starting at DIV 7, neural networks were treated with increasing concentrations of deltamethrin (A), β-cyfluthrin (B), and α-endosulfan (C), and exemplary network parameters were evaluated. Time- and concentration-dependent data are shown as the mean of three (A, B) or two (C) independent experiments ± SEM (A, B) or SD (C). AUC values were computed for these data and plotted in a concentration dependent relationship (D-F). Compounds did not induce cytotoxicity (data not shown). Data are represented as the mean of three (D, E) or two (F) independent experiments ± SEM (D, E) or ± SD (F). Replicates within one experiment are summarized by median. Curve fitting was conducted as described in Section 2. Statistical significance was calculated using one-way ANOVA. A p-value below 0.05 was termed significant. *, significant compared to the respective solvent control."

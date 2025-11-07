@@ -1,0 +1,15 @@
+PAR,CHEMICAL,NAME,ASSAY_ENDPOINT_DESCRIPTION,ASSAY_COMPONENT_NAME,AOP,EVENT,AC50,BMD,MAX_MED_CONC,ORGANISM,CELL_LINE,CELL_FORMAT,CONCENTRATION,RESPONSE,CYTOTOX_BURST,INTENDED_TARGET_FAMILY,INTENDED_TARGET_TYPE,BIOLOGICAL_PROCESS_TARGET,TISSUE
+1,Deltamethrin,hNNF assay ,,,,,,,,human,"iPSC-derived excitatory/inhibitory neurons (SynFire), and primary human astroglia","co-culture (52% glutamatergic neurons, 22% GABAergic neurons, 26% astrocytes)","0.027, 0.082, 0.247, 0.74, 2.22, 6.67, 20 µM","Concentration-dependent reduction in network parameters (5/14 affected, most sensitive: spikes per network burst, BMC50: 2.74 µM)",,Voltage-gated sodium channels; neuronal and synaptic networks,Ion channel modulator (Sodium channel blocker/disrupter); developmental neurotoxicity,"Neural network formation, synaptic activity, neuronal firing/bursting, network connectivity/organization","In vitro model of developing human brain (neuronal/glial co-culture, hiPSC-derived)"
+2,,,,,,,,"BMC50 (most sensitive endpoint): 2.74ÂµM (hNNF, number of spikes per network burst)",,,,,,,,,,,
+3,,,,,,,,,20 µM (hno overt cytotoxicity in positive parameters),,,,,,No cytotoxicity at active concentrations,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,"Effects of deltamethrin on neural network formation and function in human iPSC-derived co-cultures measured by network burst, spike, and connectivity parameters using multi-electrode arrays (MEA); calculation of BMCs for sensitive endpoints","Hnnf (human neural network formation and function) â€“ number of spikes per network burst (MSE), plus other network parameters",Voltage-gated sodium channel modulation (MIE in EFSA DNT AOP for deltamethrin) â†’ altered network function â†’ behavioral impairment,Most sensitive: reduction in number of spikes per network burst; inhibition of network activity (molecular initiating event: voltage-gated sodium channel interference),,,,,,,,,,,,,

@@ -1,0 +1,1854 @@
+C i t a t i o n :   C h e n ,   C . ;   D e n g ,   Y . ;   L i u ,   L . ;
+
+Z o u ,   Z . ;   J i n ,   C . ;   C h e n ,   Z . ;   W a n g ,   S .
+
+H i g h - D o s e   D e l t a m e t h r i n   I n d u c e s
+
+D e v e l o p m e n t a l   T o x i c i t y   i n
+
+C a e n o r h a b d i t i s   e l e g a n s   v i a   I R E - .
+
+o l e c u l e s
+
+,
+
+,
+
+.   h t t p s : / /
+
+d o i . o r g /
+
+.
+
+/ m o l e c u l e s
+
+A c a d e m i c   E d i t o r :   G e o r g e   G r a n t
+
+R e c e i v e d :
+
+J u n e
+
+R e v i s e d :
+
+A u g u s t
+
+A c c e p t e d :
+
+A u g u s t
+
+P u b l i s h e d :
+
+A u g u s t
+
+C o p y r i g h t :
+
+©
+
+b y   t h e   a u t h o r s .
+
+L i c e n s e e   D P I ,   B a s e l ,   S w i t z e r l a n d .
+
+T h i s   a r t i c l e   i s   a n   o p e n   a c c e s s   a r t i c l e
+
+d i s t r i b u t e d
+
+u n d e r
+
+t h e
+
+t e r m s
+
+a n d
+
+c o n d i t i o n s   o f   t h e   C r e a t i v e   C o m m o n s
+
+A t t r i b u t i o n   ( C C   B Y )   l i c e n s e   ( h t t p s : / /
+
+c r e a t i v e c o m m o n s . o r g / l i c e n s e s / b y / . / ) .
+
+m o l e c u l e s
+
+A r t i c l e
+
+H i g h - D o s e   D e l t a m e t h r i n   I n d u c e s   D e v e l o p m e n t a l   T o x i c i t y   i n
+
+C a e n o r h a b d i t i s   e l e g a n s   v i a   I R E - C h u h o n g   C h e n , ,   Y i n g   D e n g ,   L i n y a n   L i u ,   Z h e n y a n   Z o u ,   C h e n z h o n g   J i n , ,   Z h i y i n   C h e n a n d
+
+S h u a n g h u i   W a n g , , * K e y   L a b o r a t o r y   o f   G r e e n   C o n t r o l   o f   C r o p   P e s t s   i n   H u n a n   H i g h e r   E d u c a t i o n ,   H u n a n   U n i v e r s i t y   o f   H u m a n i t i e s
+
+S c i e n c e   a n d   T e c h n o l o g y ,   L o u d i
+
+,   C h i n a C o l l a b o r a t i v e   I n n o v a t i o n   C e n t e r   f o r   F a r m l a n d   W e e d s   C o n t r o l   T e c h n i q u e s   a n d   A p p l i c a t i o n   o f   H u n a n   P r o v i n c e ,
+
+H u n a n   U n i v e r s i t y   o f   H u m a n i t i e s   S c i e n c e   a n d   T e c h n o l o g y ,   L o u d i
+
+,   C h i n a ;
+
+c h e n z h i y i n
+
+@
+
+. c o m   ( Z . C . )
+
+*
+
+C o r r e s p o n d e n c e :
+
+@
+
+. c o m
+
+A b s t r a c t :   D e l t a m e t h r i n   ( D ) ,   a   T y p e   I I   p y r e t h r o i d ,   i s   w i d e l y   u s e d   w o r l d w i d e   i n   a g r i c u l t u r e ,   h o u s e -
+
+h o l d   a p p l i c a t i o n s ,   a n d   m e d i c i n e .   R e c e n t   s t u d i e s   h a v e   s h o w n   t h a t   D   e x e r t s   a   v a r i e t y   o f   t o x i c   e f f e c t s
+
+o n   o r g a n s   s u c h   a s   t h e   k i d n e y ,   h e a r t   m u s c l e ,   a n d   n e r v e s   i n   a n i m a l s .   H o w e v e r ,   l i t t l e   i s   k n o w n   a b o u t   t h e
+
+e f f e c t s   o f   h i g h - d o s e   D   o n   g r o w t h   a n d   d e v e l o p m e n t ,   a n d   t h e   m e c h a n i s m   o f   t o x i c i t y   r e m a i n s   u n c l e a r .
+
+U s i n g   t h e   C a e n o r h a b d i t i s   e l e g a n s   m o d e l ,   w e   f o u n d   t h a t   h i g h - d o s e   D   c a u s e d   a   d e l a y   i n   n e m a t o d e
+
+d e v e l o p m e n t .   O u r   r e s u l t s   s h o w e d   t h a t   h i g h - d o s e   D   r e d u c e d   t h e   a c t i v a t i o n   o f   t h e   e n d o p l a s m i c
+
+r e t i c u l u m   u n f o l d e d   p r o t e i n   r e s p o n s e   ( U P R E R ) .   F u r t h e r   s t u d i e s   r e v e a l e d   t h a t   h i g h - d o s e   D - i n d u c e d
+
+d e v e l o p m e n t a l   t o x i c i t y   a n d   r e d u c e d   c a p a c i t y   f o r   U P R E R   a c t i v a t i o n   w e r e   a s s o c i a t e d   w i t h   t h e   I R E - / X B P - p a t h w a y .   O u r   r e s u l t s   p r o v i d e   n e w   e v i d e n c e   f o r   t h e   d e v e l o p m e n t a l   t o x i c i t y   o f   D   a n d   n e w
+
+i n s i g h t s   i n t o   t h e   m e c h a n i s m   o f   D   t o x i c i t y .
+
+K e y w o r d s :   d e l t a m e t h r i n ;   C a e n o r h a b d i t i s   e l e g a n s ;   d e v e l o p m e n t ;   t o x i c i t y ;   e n d o p l a s m i c   r e t i c u l u m
+
+u n f o l d e d   p r o t e i n   r e s p o n s e .   I n t r o d u c t i o n
+
+D e l t a m e t h r i n   ( D )   i s   a   T y p e   I I   p y r e t h r o i d   t h a t   i s   w i d e l y   u t i l i z e d   a s   a n   i n s e c t i c i d e   a n d
+
+a c a r i c i d e   i n   v a r i o u s   s e c t o r s ,   i n c l u d i n g   a g r i c u l t u r e ,   h o u s e h o l d s ,   a n d   m e d i c i n e ,   o n   a   g l o b a l
+
+s c a l e   [ ] .   I n i t i a l l y ,   D   w a s   b e l i e v e d   t o   p o s s e s s   m i n i m a l   t o x i c i t y   t o w a r d s   m a m m a l s   [ ] .
+
+H o w e v e r ,   c o n t e m p o r a r y   r e s e a r c h   h a s   r e v e a l e d   t h a t   D   e l i c i t s   n u m e r o u s   t o x i c   e f f e c t s   o n
+
+v a r i o u s   o r g a n s ,   i n c l u d i n g   t h e   k i d n e y ,   h e a r t   m u s c l e ,   a n d   n e r v e s ,   i n   a n i m a l s .   S p e c i ﬁ c a l l y ,
+
+e x p o s u r e   t o   D   h a s   b e e n   s h o w n   t o   i n d u c e   a p o p t o s i s   i n   g o l d ﬁ s h   k i d n e y   c e l l s   [ ] ,   p r o m o t e
+
+i n ﬂ a m m a t i o n   a n d   a p o p t o s i s   i n   h e a r t   m u s c l e   c e l l s ,   l e a d i n g   t o   h e a r t   d a m a g e   i n   q u a i l   [ ] ,
+
+r e d u c e   t h e   n u m b e r   o f   n e u r o n s   i n   m i c e   [ ] ,   a n d   c a u s e   i m m u n o t o x i c i t y   i n   s i l v e r ﬁ s h   u p o n
+
+a c u t e   e x p o s u r e   [ ] .   I n   s u m m a r y ,   D   c a u s e s   m u l t i p l e   t o x i c   e f f e c t s   i n   a n i m a l s .
+
+T h e   p r e v a l e n c e   o f   D   e x p o s u r e   a m o n g   h u m a n s   i s   w i d e s p r e a d ,   e n c o m p a s s i n g   p r e g -
+
+n a n t   w o m e n   a n d   c h i l d r e n   [ ] .   C h i l d r e n ,   i n   p a r t i c u l a r ,   e x h i b i t   h i g h e r   e x p o s u r e   l e v e l s   t o   D
+
+c o m p a r e d   t o   a d u l t s ,   a t t r i b u t e d   t o   t h e i r   i n c r e a s e d   c o n t a c t   w i t h   e n v i r o n m e n t a l   s u r f a c e s   a n d
+
+h a n d - t o - m o u t h   b e h a v i o r s .   F u r t h e r m o r e ,   c h i l d r e n   p o s s e s s   i m m a t u r e   m e t a b o l i c   e n z y m e s
+
+a n d   b l o o d - b r a i n   b a r r i e r s ,   r e s u l t i n g   i n   s l o w e r   c l e a r a n c e   o f   D   [ ] .   E p i d e m i o l o g i c a l   i n v e s -
+
+t i g a t i o n s   h a v e   d e m o n s t r a t e d   t h a t   D   e x p o s u r e   n e g a t i v e l y   i m p a c t s   n e u r o d e v e l o p m e n t
+
+i n   c h i l d r e n   [ ] .   H o w e v e r ,   t h e   e f f e c t s   o f   D   o n   g r o w t h   a n d   d e v e l o p m e n t   r e m a i n   p o o r l y
+
+u n d e r s t o o d ,   a n d   t h e   m e c h a n i s m   o f   t o x i c i t y   r e m a i n s   e l u s i v e .
+
+R e s e a r c h   o n   t h e   c y t o t o x i c i t y   m e c h a n i s m   o f   D   h a s   f o c u s e d   o n   r e d o x - r e l a t e d   s i g n a l i n g
+
+p a t h w a y s ,   i n c l u d i n g   t h e   N r f / A R E   p a t h w a y ,   c a s p a s e - d e p e n d e n t   o r   - i n d e p e n d e n t   p a t h -
+
+w a y s ,   a n d   t h e   p
+
+s h c - m e d i a t e d   R O S   p r o d u c t i o n   p a t h w a y   [ ] .   H o w e v e r ,   s e v e r a l   s t u d i e s
+
+h a v e   s h o w n   t h a t   e x p o s u r e   t o   l o w - d o s e   D   ( <
+
+m g / k g )   c a n   i n d u c e   e n d o p l a s m i c   r e t i c u l u m
+
+o l e c u l e s
+
+,
+
+,
+
+.   h t t p s : / / d o i . o r g /
+
+.
+
+/ m o l e c u l e s
+
+h t t p s : / / w w w . m d p i . c o m / j o u r n a l / m o l e c u l e s
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+( E R )   s t r e s s   i n   t h e   h i p p o c a m p u s   o f   m i c e ,   l e a d i n g   t o   i m p a i r e d   l e a r n i n g   [ ,
+
+–
+
+] .   A d d i -
+
+t i o n a l l y ,   a c u t e   e x p o s u r e   t o   D   ( m g / L )   h a s   b e e n   s h o w n   t o   i n d u c e   E R   s t r e s s   i n   C a r a s s i u s
+
+a u r a t u s ,   r e s u l t i n g   i n   d e c r e a s e d   r e s i s t a n c e   t o   h y p o x i a   [
+
+] .   C h r o n i c   e x p o s u r e   t o   D   w a s
+
+f o u n d   t o   p r o m o t e   E R   s t r e s s - i n d u c e d   a p o p t o s i s   o f   n e u r o n s   i n   q u a i l   b r a i n s   [
+
+] .   F u r t h e r m o r e ,
+
+D   ( m g / L )   h a s   b e e n   s h o w n   t o   a c t i v a t e   t h e   A P K α   p a t h w a y   t h r o u g h   E R   s t r e s s ,   l e a d i n g
+
+t o   s i g n i ﬁ c a n t   f a t   a c c u m u l a t i o n   i n   m o u s e T - L a d i p o c y t e s   a n d   C a e n o r h a b d i t i s   e l e g a n s   [
+
+] .
+
+I n   s u m m a r y ,   l o w - d o s e   D   a d m i n i s t r a t i o n   l e a d s   t o   t o x i c i t y   v i a   t h e   i n d u c t i o n   o f   E R   s t r e s s .
+
+H o w e v e r ,   t h e   e f f e c t s   o f   h i g h - d o s e   D   ( >
+
+m g / L )   o n   E R   s t r e s s   h a v e   n o t   b e e n   r e p o r t e d ,
+
+a n d   i t   r e m a i n s   u n c l e a r   w h e t h e r   D   i n d u c e s   d e v e l o p m e n t a l   t o x i c i t y   i n   j u v e n i l e   a n i m a l s   v i a
+
+E R   s t r e s s .
+
+G l o b a l l y ,   p e s t i c i d e s   a r e   u s e d   a s   a   m e a n s   o f   s u i c i d e ,   p a r t i c u l a r l y   i n   l o w -   a n d   m i d d l e -
+
+i n c o m e   c o u n t r i e s ,   w i t h   p e s t i c i d e   s u i c i d e s   a c c o u n t i n g   f o r   o n e   ﬁ f t h   o f   s u i c i d e s   [
+
+,
+
+] .   I n
+
+a d d i t i o n ,   p e s t i c i d e   a p p l i c a t o r s   a n d   m a n u f a c t u r e r s   a r e   v u l n e r a b l e   t o   e x p o s u r e   t o   h i g h   d o s e s
+
+o f   p e s t i c i d e s   [
+
+] .   T h e r e f o r e ,   i t   i s   o f   i n t e r e s t   t o   s t u d y   h i g h - d o s e   e x p o s u r e   t o   D .
+
+C .   e l e g a n s   i s   a n   e x c e l l e n t   m o d e l   o r g a n i s m   f o r   d e v e l o p m e n t a l   s t u d i e s   d u e   t o   i t s   s h o r t
+
+l i f e s p a n ,   l o w   m a i n t e n a n c e   r e q u i r e m e n t s ,
+
+–
+
+%   h o m o l o g y   t o   h u m a n s ,   a n d   e x t e n s i v e   a v a i l -
+
+a b i l i t y   o f   m u t a n t   s t r a i n s   [
+
+] .   I n   t h i s   s t u d y ,   w e   u s e d   C .   e l e g a n s   a s   a   m o d e l   t o   i n v e s t i g a t e   t h e
+
+e f f e c t s   o f   h i g h - d o s e   D   e x p o s u r e   d u r i n g   j u v e n i l e   l i f e   o n   a n i m a l   g r o w t h   a n d   d e v e l o p m e n t ,
+
+a s   w e l l   a s   E R   s t r e s s .   O u r   ﬁ n d i n g s   p r o v i d e   n e w   e v i d e n c e   f o r   t h e   d e v e l o p m e n t a l   t o x i c i t y   o f
+
+D   a n d   n e w   p e r s p e c t i v e s   o n   t h e   m e c h a n i s m s   u n d e r l y i n g   D   t o x i c i t y . .   R e s u l t s . .   H i g h - D o s e   D   I n d u c e s   D e v e l o p m e n t a l   D e l a y   i n   C .   e l e g a n s
+
+T o   i n v e s t i g a t e   t h e   p o t e n t i a l   e f f e c t s   o f   D   o n   t h e   d e v e l o p m e n t a l   p r o c e s s ,   w e   c o n d u c t e d
+
+a n   e x p e r i m e n t   i n   w h i c h   L l a r v a e   w e r e   e x p o s e d   t o   v a r i o u s   c o n c e n t r a t i o n s   o f   D   a n d
+
+t h e   l e n g t h   o f   t h e   n e m a t o d e s   w a s   s u b s e q u e n t l y   a s s e s s e d .   O u r   r e s u l t s   i n d i c a t e d   t h a t   e x p o -
+
+s u r e   t o m g / L   D   f o r   a   p e r i o d   o f
+
+h   h a d   n o   d i s c e r n i b l e   e f f e c t   o n   t h e   b o d y   l e n g t h   o f
+
+C .   e l e g a n s .   H o w e v e r ,   e x p o s u r e   t o   D   c o n c e n t r a t i o n s   r a n g i n g   f r o m
+
+–
+
+m g / L   r e s u l t e d
+
+i n   a   s i g n i ﬁ c a n t   r e d u c t i o n   i n   n e m a t o d e   b o d y   l e n g t h ,   w i t h   a   d o s e - d e p e n d e n t   r e l a t i o n s h i p
+
+o b s e r v e d   ( F i g u r e A ) .   T h e   t r e n d s   o b s e r v e d   a f t e r
+
+h   o f   e x p o s u r e   w e r e   l a r g e l y   c o n s i s t e n t
+
+w i t h   t h o s e   o b s e r v e d   a f t e r
+
+h   ( F i g u r e D ) .   S i n c e   t h e   e f f e c t s   o f
+
+m g / L   D   a n d
+
+m g / L
+
+D   o n   C .   e l e g a n s   b o d y   l e n g t h   w e r e   n e a r l y   i n d i s t i n g u i s h a b l e ,   w e   c h o s e   t o   u s e
+
+m g / L   D
+
+a s   t h e   t r e a t m e n t   c o n c e n t r a t i o n   f o r   h i g h - d o s e   D   i n   o u r   s u b s e q u e n t   i n v e s t i g a t i o n .   B e c a u s e
+
+h i g h - d o s e   D   a l s o   a f f e c t e d   n e m a t o d e   b o d y   w i d t h ,   w e   u s e d   b o d y   s i z e   a s   a   m e a s u r e   o f
+
+n e m a t o d e   s i z e .   T h e   b o d y   s i z e   o f   h i g h - d o s e   D   (
+
+m g / L )   w a s   l e s s   t h a n   h a l f   t h a t   o f   t h e
+
+c o n t r o l   ( F i g u r e B , C ) .   T o   f u r t h e r   i n v e s t i g a t e   t h e   e f f e c t   o f   D   o n   n e m a t o d e   d e v e l o p m e n t ,
+
+w e   e x a m i n e d   t h e   e f f e c t   o f   D   o n   t h e   p r o p o r t i o n   o f   l a r v a e   a t   e a c h   s t a g e .   I n   t h e   D - f r e e
+
+e n v i r o n m e n t ,   t h e   m a j o r i t y   o f   n e m a t o d e s   m a t u r e d   t o   a d u l t s   w i t h i n
+
+h ,   w i t h   l e s s   t h a n
+
+%
+
+r e m a i n i n g   i n   t h e   L s t a g e .   H o w e v e r ,   e x p o s u r e   t o   h i g h - d o s e   D   r e s u l t e d   i n   a p p r o x i m a t e l y
+
+%   o f   n e m a t o d e s   r e m a i n i n g   i n   t h e   L s t a g e   a f t e r
+
+h   ( F i g u r e E ) .   T h e   o n s e t   o f   e g g - l a y i n g
+
+t i m e   s e r v e s   a s   a n   i n d i c a t o r   o f   n e m a t o d e   r e p r o d u c t i v e   d e v e l o p m e n t ,   a n d   o u r   r e s u l t s   s h o w e d
+
+t h a t   h i g h - d o s e   D   s i g n i ﬁ c a n t l y   p r o l o n g e d   t h i s   p e r i o d   ( F i g u r e F ) .   I n   c o n c l u s i o n ,   o u r   r e s u l t s
+
+i n d i c a t e d   t h a t   h i g h - d o s e   D   i n d u c e d   a   d e v e l o p m e n t a l   d e l a y   i n   C .   e l e g a n s . . .   E x p o s u r e   t o   H i g h - D o s e   D   d u r i n g   D e v e l o p m e n t   A d v e r s e l y   A f f e c t s   H e a l t h y   P h y s i c a l
+
+I n d i c a t o r s   i n   C .   e l e g a n s
+
+T h e   i n ﬂ u e n c e   o f   e a r l y   d e v e l o p m e n t a l   s t a g e s   o n   i n d i v i d u a l   a g i n g   i s   s i g n i ﬁ c a n t   [
+
+] .   T o
+
+i n v e s t i g a t e   t h e   p o t e n t i a l   i n ﬂ u e n c e   o f   D   e x p o s u r e   d u r i n g   d e v e l o p m e n t   o n   n e m a t o d e   a g i n g ,
+
+w e   t e s t e d   t h e   l i f e s p a n ,   h e a d   t h r a s h i n g ,   b o d y   b e n d i n g ,   a n d   p h a r y n g e a l   p u m p i n g   r a t e   o f
+
+n e m a t o d e s   e x p o s e d   t o   D   f o r   t h r e e   d a y s .   O u r   r e s u l t s   i n d i c a t e   t h a t   e x p o s u r e   t o   D   d u r i n g
+
+t h e   l a r v a l   s t a g e   a l o n e   i s   s u f ﬁ c i e n t   t o   r e d u c e   t h e   l i f e s p a n   o f   n e m a t o d e s   ( F i g u r e A )   a s   w e l l
+
+a s   s i g n i ﬁ c a n t l y   r e d u c e   t h e   f r e q u e n c y   o f   h e a d   t h r a s h i n g   a n d   b o d y   b e n d i n g   ( F i g u r e B , C ) .
+
+I n   a d d i t i o n ,   D   e x p o s u r e   a l s o   r e s u l t e d   i n   a   s l o w i n g   o f   t h e   p h a r y n g e a l   p u m p i n g   r a t e   o f
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+n e m a t o d e s   ( F i g u r e D ) .   I n   c o n c l u s i o n ,   e x p o s u r e   t o   D   d u r i n g   d e v e l o p m e n t   n e g a t i v e l y
+
+a f f e c t s   n e m a t o d e   h e a l t h   i n d i c a t o r s .
+
+ 
+
+F i g u r e .   H i g h - d o s e   d e l t a m e t h r i n   ( D )   i n d u c e s   d e v e l o p m e n t a l   d e l a y   i n   C a e n o r h a b d i t i s   e l e g a n s .
+
+( A )   B o d y   l e n g t h   o f   C .   e l e g a n s   a f t e r   e x p o s u r e   t o   d i f f e r e n t   c o n c e n t r a t i o n s   o f   D   f r o m   L f o r
+
+h .
+
+( B )   R e p r e s e n t a t i v e   p i c t u r e   s h o w i n g   t h e   b o d y   s i z e   o f   C .   e l e g a n s   e x p o s e d   t o
+
+m g / L   D   f r o m   L f o r
+
+h .   ( C )   B o d y   s i z e   o f   C .   e l e g a n s   e x p o s e d   t o
+
+m g / L   D   f r o m   L f o r
+
+h .   ( D )   B o d y   l e n g t h   o f
+
+C .   e l e g a n s   a f t e r   e x p o s u r e   t o   d i f f e r e n t   c o n c e n t r a t i o n s   o f   D   f r o m   L f o r
+
+h .   ( E )   Q u a n t i ﬁ c a t i o n   o f
+
+d i f f e r e n t   d e v e l o p m e n t a l   s t a g e s   o f   C .   e l e g a n s   e x p o s e d   t o
+
+m g / L   D   f r o m   L f o r
+
+h .   ( F )   E f f e c t   o f
+
+D   e x p o s u r e   o n   t h e   o n s e t   o f   e g g   l a y i n g .   A l l   e r r o r   b a r s   r e p r e s e n t   s t a n d a r d   e r r o r   o f   m e a n   ( S E ) ,   a n d
+
+d i f f e r e n c e s   w e r e   c o n s i d e r e d   s i g n i ﬁ c a n t   a t   * *   p   < .
+
+,   a n d   * * *   p   < .
+
+;   n s ,   n o   s i g n i ﬁ c a n c e .
+
+ 
+
+F i g u r e .   E x p o s u r e   t o   h i g h - d o s e   D   d u r i n g   d e v e l o p m e n t   a d v e r s e l y   a f f e c t s   h e a l t h y   p h y s i c a l   i n d i c a -
+
+t o r s   i n   C .   e l e g a n s .   T h e   s u r v i v a l   c u r v e   ( A ) ,   h e a d   t h r a s h e s   ( B ) ,   b o d y   b e n d s   ( C ) ,   a n d   p h a r y n g e a l   p u m p i n g
+
+( D )   w e r e   a s s e s s e d   f o l l o w i n g   e x p o s u r e   t o
+
+m g / L   D   f r o m   L f o r   a   d u r a t i o n   o f
+
+h .   A l l   e r r o r   b a r s
+
+r e p r e s e n t   S E ,   a n d   d i f f e r e n c e s   w e r e   c o n s i d e r e d   s i g n i ﬁ c a n t   a t   * *   p   < .
+
+,   a n d   * * *   p   < .
+
+.
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+. .   H i g h - D o s e   D   R e d u c e s   t h e   A b i l i t y   t o   A c t i v a t e   t h e   E n d o p l a s m i c   R e t i c u l u m   U n f o l d e d   P r o t e i n
+
+R e s p o n s e   ( U P R E R )
+
+P r e v i o u s   s t u d i e s   h a v e   s h o w n   t h a t   l o w - d o s e   D   i n d u c e s   E R   s t r e s s   a n d   a c t i v a t e s
+
+U P R E R   [
+
+] .   T o   t e s t   w h e t h e r   h i g h - d o s e   D   i n d u c e s   E R   s t r e s s ,   w e   u s e d   t h e   ﬂ u o r e s c e n t   s t r a i n
+
+S J
+
+( h s p - p : : G F P )   w i t h   t h e   E R   s t r e s s   r e p o r t e r   g e n e   h s p - p : : G F P   t o   d e t e r m i n e   t h e   e f f e c t   o f
+
+D   o n   E R   s t r e s s .   I n t e r e s t i n g l y ,   h i g h - d o s e   D   d i d   n o t   i n c r e a s e   t h e   e x p r e s s i o n   o f   h s p - p : : G F P
+
+b u t   i n s t e a d   d e c r e a s e d   t h e   e x p r e s s i o n   o f   h s p - p : : G F P ;   i n   p a r t i c u l a r ,   t h e   b r i g h t n e s s   o f   t w o
+
+ﬂ u o r e s c e n t   s p o t s   o n   t h e   a b d o m e n   o f   t h e   n e m a t o d e   w a s   s i g n i ﬁ c a n t l y   r e d u c e d   ( F i g u r e A , B ) .
+
+W e   s u s p e c t e d   t h a t   h i g h - d o s e   D   m a y   h a v e   r e d u c e d   t h e   a b i l i t y   o f   n e m a t o d e s   t o   a c t i v a t e
+
+U P R E R ,   a n d   w e   t r e a t e d   n e m a t o d e s   w i t h
+
+m g / m L   t u n i c a m y c i n   ( T m ) ,   a n   i n d u c e r   o f   E R
+
+s t r e s s ,   t o   t e s t   t h e   a b i l i t y   o f   n e m a t o d e s   t o   a c t i v a t e   U P R E R .   W e   f o u n d   t h a t   h s p - p : : G F P
+
+e x p r e s s i o n   i n c r e a s e d   a p p r o x i m a t e l y . - f o l d   a f t e r   s u p p l e m e n t a t i o n   w i t h   T m   w h e n   n o t
+
+e x p o s e d   t o   D ,   w h e r e a s   h s p - p : : G F P   e x p r e s s i o n   i n c r e a s e d   o n l y   a p p r o x i m a t e l y . - f o l d
+
+a f t e r   s u p p l e m e n t a t i o n   w i t h   T m   w h e n   e x p o s e d   t o   h i g h - d o s e   D   ( F i g u r e A , B ) .   T h i s   s u g g e s t s
+
+t h a t   D   r e d u c e s   t h e   a b i l i t y   o f   t h e   n e m a t o d e   t o   a c t i v a t e   t h e   U P R E R .   W e   a l s o   f o u n d   t h a t   w h e n
+
+e x p o s e d   t o m - p h e n y l b u t y r i c   a c i d   ( - P B A ,   a   c o n s i s t e n t   i n h i b i t o r   o f   t h e   E R   s t r e s s ) ,   D
+
+s t i l l   r e d u c e d   t h e   e x p r e s s i o n   o f   h s p - p : : G F P ,   b u t   t h e   e x p r e s s i o n   o f   h s p - p : : G F P   w a s   s l i g h t l y
+
+h i g h e r   i n   t h e   D + - P B A   g r o u p   t h a n   i n   t h e   D   g r o u p   ( F i g u r e A , B ) .   D i l l i n   e t   a l .   [
+
+]
+
+s h o w e d   t h a t   t h e   r e d u c e d   a c t i v a t i o n   c a p a c i t y   o f   t h e   U P R E R   l e a d s   t o   r e d u c e d   r e s i s t a n c e   o f
+
+n e m a t o d e s   t o   E R   s t r e s s .   W e   f o u n d   t h a t   n e m a t o d e   s u r v i v a l   i n
+
+m g / L   T m   w a s   s i g n i ﬁ c a n t l y
+
+r e d u c e d   a f t e r   D   t r e a t m e n t   ( F i g u r e C ) .   I n   c o n c l u s i o n ,   o u r   r e s u l t s   s u g g e s t   t h a t   h i g h - d o s e
+
+D   t r e a t m e n t   r e d u c e s   t h e   a c t i v a t i o n   c a p a c i t y   o f   n e m a t o d e   U P R E R . . .   H i g h - D o s e   D   R e d u c e s   T r a n s c r i p t   L e v e l s   o f   U P R E R   T a r g e t   G e n e s
+
+T o   p r o g r e s s i v e l y   v e r i f y   t h e   e f f e c t   o f   D   t r e a t m e n t   o n   U P R E R   a c t i v a t i o n   c a p a c i t y ,   w e
+
+m e a s u r e d   t h e   t r a n s c r i p t   l e v e l s   o f   U P R E R   r e g u l a t o r y   a n d   t a r g e t   g e n e s   b y   q u a n t i t a t i v e   R T -
+
+P C R .   D   t r e a t m e n t   d e c r e a s e d   t h e   b a s a l   t r a n s c r i p t   l e v e l s   o f   t h e   U P R E R   t a r g e t   g e n e s   i r e - ,
+
+x b p - t o t a l ,   x b p - s p l i c e d ,   h s p - ,   c r t - ,   a n d   T
+
+G . ( F i g u r e A – D ) .   A f t e r   T   t r e a t m e n t ,   t h e
+
+c o n t r o l   i r e - ,   x b p - t o t a l ,   x b p - s p l i c e d ,   h s p - ,   c r t - ,   a n d   T
+
+G . t r a n s c r i p t   l e v e l s   i n c r e a s e d
+
+b y   a p p r o x i m a t e l y
+
+% ,
+
+% ,
+
+% ,
+
+% ,
+
+% ,   a n d
+
+% ,   r e s p e c t i v e l y ,   w h i l e   t h e   t r e a t e d
+
+g r o u p   i n c r e a s e d   b y   o n l y   a p p r o x i m a t e l y
+
+% ,
+
+% ,
+
+% ,
+
+% ,
+
+% ,   a n d
+
+% ,   r e s p e c t i v e l y
+
+( F i g u r e A – D ) .   T h i s   i n d i c a t e s   t h a t   u n d e r   E R   s t r e s s ,   h i g h - d o s e   D   t r e a t m e n t   r e d u c e s   t h e
+
+t r a n s c r i p t   l e v e l s   o f   U P R E R   t a r g e t   g e n e s . . .   D e v e l o p m e n t a l   T o x i c i t y   o f   H i g h - D o s e   D   i n   C .   e l e g a n s   A s s o c i a t e d   w i t h   E R   S t r e s s
+
+P r e v i o u s   r e s u l t s   i n   t h i s   s t u d y   h a v e   s h o w n   t h a t   h i g h - d o s e   D   i n d u c e s   d e v e l o p m e n t a l
+
+d e f e c t s   i n   n e m a t o d e s   w h i l e   r e d u c i n g   t h e   e x p r e s s i o n   l e v e l   o f   t h e   E R   s t r e s s   m a r k e r   p r o t e i n
+
+H S P - ( F i g u r e s a n d ) .   T o   c o n ﬁ r m   w h e t h e r   D - i n d u c e d   d e v e l o p m e n t a l   t o x i c i t y   i s   r e l a t e d
+
+t o   E R   s t r e s s ,   w e   t e s t e d   t h e   e f f e c t   o f   D   o n   n e m a t o d e   b o d y   s i z e   d e v e l o p m e n t   i n   t h e   p r e s e n c e
+
+o f   T m   o r - P B A .   W e   f o u n d   t h a t   D   c o u l d   n o t   f u r t h e r   r e d u c e   n e m a t o d e   b o d y   s i z e   i n   t h e
+
+p r e s e n c e   o f
+
+m g / L   T m ; m - P B A   c o u l d   s l i g h t l y   r e s t o r e   t h e   b o d y   s i z e   r e d u c t i o n
+
+i n d u c e d   b y   h i g h - d o s e   D   ( F i g u r e A , B ) .   T o   f u r t h e r   d e m o n s t r a t e   t h a t   t h e   d e v e l o p m e n t a l
+
+t o x i c i t y   o f   h i g h - d o s e   D   o n   n e m a t o d e s   w a s   r e l a t e d   t o   E R   s t r e s s ,   w e   t e s t e d   t h e   e f f e c t   o f   D
+
+o n   t h e   d i s t r i b u t i o n   o f   l a r v a l   s t a g e s .   T h e   p r o p o r t i o n   o f   e a c h   l a r v a l   s t a g e   u n d e r   T m   s t r e s s
+
+w a s   n o t   s i g n i ﬁ c a n t l y   d i f f e r e n t   b e t w e e n   D   t r e a t m e n t   a n d   t h e   c o n t r o l .   T h e - P B A   t r e a t m e n t
+
+s l i g h t l y   i n c r e a s e d   t h e   p r o p o r t i o n   o f   a d u l t s   u n d e r   D   t r e a t m e n t   ( F i g u r e C ) .   I n   c o n c l u s i o n ,
+
+o u r   r e s u l t s   s u g g e s t   t h a t   t h e   d e v e l o p m e n t a l   t o x i c i t y   i n d u c e d   b y   h i g h - d o s e   D   i s   a s s o c i a t e d
+
+w i t h   E R   s t r e s s .
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+F i g u r e .   H i g h - d o s e   D   r e d u c e s   t h e   a b i l i t y   t o   a c t i v a t e   t h e   e n d o p l a s m i c   r e t i c u l u m   u n f o l d e d   p r o t e i n
+
+r e s p o n s e   ( U P R E R ) .   ( A )   F l u o r e s c e n c e   i m a g e s   s h o w i n g   t h e   h s p - p : : G F P   e x p r e s s i o n   l e v e l   o f   C .   e l e g a n s
+
+e x p o s e d   t o
+
+m g / L   D   f r o m   L f o r
+
+h .   T h e   b l u e   a r r o w   p o i n t s   t o   t h e   ﬂ u o r e s c e n t   h i g h l i g h t
+
+o n   t h e   n e m a t o d e ’ s   a b d o m e n .   ( B )   R e l a t i v e   ﬂ u o r e s c e n c e   d e n s i t y   o f   h s p - p : : G F P   w o r m s   e x p o s e d   t o
+
+m g / L   D   a n d   s u p p l e m e n t e d   w i t h   d i m e t h y l   s u l f o x i d e   ( D S O ) ,
+
+m g / L   t u n i c a m y c i n   © ,   o r m - p h e n y l b u t y r i c   a c i d   ( - P B A ) .   ( C )   A d u l t   w o r m s   t r e a t e d   w i t h
+
+m g / L   D   f r o m   L f o r d   w e r e
+
+t r a n s f e r r e d   t o   p l a t e s   c o n t a i n i n g
+
+m g / L   T m   a n d   s u r v i v a l   w a s   m o n i t o r e d .   T h e   b l u e   a r r o w   p o i n t s   t o
+
+t h e   ﬂ u o r e s c e n t   h i g h l i g h t   o n   t h e   n e m a t o d e ’ s   a b d o m e n .   A l l   e r r o r   b a r s   r e p r e s e n t   S E ,   a n d   d i f f e r e n c e s
+
+w e r e   c o n s i d e r e d   s i g n i ﬁ c a n t   a t   *   p   < .
+
+,   * *   p   < .
+
+,   a n d   * * *   p   < .
+
+. . .   H i g h - D o s e   D   I n d u c e s   D e v e l o p m e n t a l   T o x i c i t y   i n   C .   e l e g a n s   v i a   I R E - U s i n g   t h e   U P R E R   b r a n c h i n g   t r a n s m e m b r a n e   r e g u l a t o r   m u t a n t   s t r a i n s   R E
+
+( i r e - ( v
+
+) ) ,   R B
+
+( p e k - ( o k
+
+) ) ,   a n d   R B
+
+( a t f - ( o k
+
+) ) ,   w e   d e t e r m i n e d   t h e   e f f e c t   o f   h i g h -
+
+d o s e   D   o n   t h e   d e v e l o p m e n t   o f   e a c h   m u t a n t   s t r a i n .   O u r   d a t a   s h o w e d   t h a t   t h e   e f f e c t   o f   D
+
+o n   t h e   b o d y   s i z e   o f   p e k - ( o k
+
+)   a n d   a t f - ( o k
+
+)   m u t a n t s   r e m a i n e d   s i g n i ﬁ c a n t l y   r e d u c e d   i n
+
+n e m a t o d e   b o d y   s i z e   a s   i n   w i l d   t y p e   ( W T ) ;   i n t e r e s t i n g l y ,   D   d i d   n o t   a f f e c t   t h e   b o d y   s i z e   o f
+
+t h e   i r e - ( v
+
+)   m u t a n t   ( F i g u r e A , B ) ,   s u g g e s t i n g   t h a t   t h e   r e d u c t i o n   i n   n e m a t o d e   b o d y   s i z e   b y
+
+h i g h - d o s e   D   w a s   r e l a t e d   t o   I R E - b u t   n o t   t o   P E K - a n d   A T F - i n d e p e n d e n t l y .   I n   a d d i t i o n ,
+
+D   s i g n i ﬁ c a n t l y   r e d u c e d   t h e   g r o w t h   r a t e   o f   W T ,   p e k - ( o k
+
+) ,   a n d   a t f - ( o k
+
+)   m u t a n t s ,
+
+a n d   a f t e r
+
+h   o f   d e v e l o p m e n t ,   t h e   v a s t   m a j o r i t y   o f   t h e   c o n t r o l   g r o u p   d e v e l o p e d   i n t o   a d u l t s ,
+
+w h i l e   m o s t   o f   t h e   D - t r e a t e d   g r o u p   s t a g n a t e d   a t   t h e   L l a r v a l   s t a g e ;   h o w e v e r ,   D   d i d   n o t
+
+a f f e c t   t h e   g r o w t h   r a t e   o f   i r e - ( v
+
+)   m u t a n t s ,   a n d   a f t e r
+
+h   o f   d e v e l o p m e n t ,   a p p r o x i m a t e l y
+
+%   o f   b o t h   t h e   c o n t r o l   a n d   D - t r e a t e d   g r o u p s   r e m a i n e d   a t   t h e   L l a r v a l   s t a g e   ( F i g u r e C ) .
+
+T h e s e   r e s u l t s   s u g g e s t e d   t h a t   t h e   d e v e l o p m e n t a l   t o x i c i t y   o f   h i g h - d o s e   D   o n   n e m a t o d e s
+
+w a s   r e l a t e d   t o   I R E - .
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+F i g u r e .   H i g h - d o s e   D   r e d u c e s   t r a n s c r i p t   l e v e l s   o f   U P R E R   t a r g e t   g e n e s .   T r a n s c r i p t   l e v e l s   o f   i r e - ( A ) ,   x b p - t o t a l   ( B ) ,   x b p - s p l i c e d   ( C ) ,   h s p - ( D ) ,   c r t - ( E ) ,   a n d   T
+
+G . ( F )   i n   w o r m s   t r e a t e d   w i t h
+
+m g / L   D   f r o m   L f o r d   w e r e   m e a s u r e d   b y   q u a n t i t a t i v e   R T - P C R .   A l l   e r r o r   b a r s   r e p r e s e n t   S E ,
+
+a n d   d i f f e r e n c e s   w e r e   c o n s i d e r e d   s i g n i ﬁ c a n t   a t   *   p   < .
+
+,   * *   p   < .
+
+,   a n d   * * *   p   < .
+
+.
+
+ 
+
+F i g u r e .
+
+D e v e l o p m e n t a l   t o x i c i t y   o f   h i g h - d o s e   D   i n   C .   e l e g a n s   a s s o c i a t e d   w i t h   E R   s t r e s s .
+
+( A )   R e p r e s e n t a t i v e   i m a g e s   s h o w i n g   t h e   b o d y   s i z e   o f   C .   e l e g a n s   e x p o s e d   t o
+
+m g / L   D   s u p p l e -
+
+m e n t e d   w i t h   D S O ,
+
+m g / L   T m ,   o r m - P B A   f r o m   L f o r
+
+h .   ( B )   B o d y   s i z e   o f   C .   e l e g a n s
+
+e x p o s e d   t o
+
+m g / L   D   a n d   s u p p l e m e n t e d   w i t h   D S O ,
+
+m g / L   T m ,   o r m - P B A   f r o m   L f o r
+
+h .   ( C )   Q u a n t i ﬁ c a t i o n   o f   d i f f e r e n t   d e v e l o p m e n t a l   s t a g e s   o f   C .   e l e g a n s   e x p o s e d   t o
+
+m g / L   D   a n d
+
+s u p p l e m e n t e d   w i t h   D S O ,
+
+m g / L   T m ,   o r m - P B A   f r o m   L .   A l l   e r r o r   b a r s   r e p r e s e n t   S E ,   a n d
+
+d i f f e r e n c e s   w e r e   c o n s i d e r e d   s i g n i ﬁ c a n t   a t   * * *   p   < .
+
+;   n s ,   n o   s i g n i ﬁ c a n c e .
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+F i g u r e .   H i g h - d o s e   D   i n d u c e s   d e v e l o p m e n t a l   t o x i c i t y   i n   C .   e l e g a n s   v i a   I R E - .   ( A )   R e p r e s e n t a t i v e
+
+i m a g e s   s h o w i n g   t h e   b o d y   s i z e   o f   w i l d   t y p e   ( W T ) ,   i r e - ( v
+
+) ,   p e k - ( o k
+
+) ,   a n d   a t f - ( o k
+
+)   w o r m s
+
+e x p o s e d   t o
+
+m g / L   D   f r o m   L f o r
+
+h .   ( B )   B o d y   s i z e   o f   w i l d   t y p e   ( W T ) ,   i r e - ( v
+
+) ,   p e k - ( o k
+
+) ,
+
+a n d   a t f - ( o k
+
+)   w o r m s   e x p o s e d   t o
+
+m g / L   D   f r o m   L f o r
+
+h .   ( C )   Q u a n t i ﬁ c a t i o n   o f   d i f f e r e n t
+
+d e v e l o p m e n t a l   s t a g e s   o f   W T ,   i r e - ( v
+
+) ,   p e k - ( o k
+
+) ,   a n d   a t f - ( o k
+
+)   w o r m s   e x p o s e d   t o
+
+m g / L
+
+D   f r o m   L .   ( D )   R e p r e s e n t a t i v e   i m a g e s   s h o w i n g   t h e   b o d y   s i z e   o f   W T   w o r m s   g r o w n   o n   e m p t y   v e c t o r
+
+( E V )   a n d   x b p - R N A i   e x p o s e d   t o
+
+m g / L   D   f r o m   L .   ( E )   B o d y   s i z e   o f   W T   w o r m s   g r o w n   o n   E V
+
+a n d   x b p - R N A i   e x p o s e d   t o
+
+m g / L   D   f r o m   L .   A l l   e r r o r   b a r s   r e p r e s e n t   S E ,   a n d   d i f f e r e n c e s   w e r e
+
+c o n s i d e r e d   s i g n i ﬁ c a n t   a t   * * *   p   < .
+
+;   n s ,   n o   s i g n i ﬁ c a n c e .
+
+A c t i v a t i o n   o f   t h e   I R E p a t h w a y   l e a d s   t o   s e q u e n t i a l   s p l i c i n g   o f   t h e   t r a n s c r i p t i o n   f a c t o r
+
+X B P v i a   I R E e n d o n u c l e a s e   a c t i v i t y .   T h e   s p l i c e d   X B P i s   t r a n s l a t e d   a n d   a c t i v a t e s   a   r a n g e
+
+o f   t r a n s c r i p t i o n a l   t a r g e t s   e s s e n t i a l   f o r   E R   p r o t e i n   h o m e o s t a s i s   [
+
+] .   T o   f u r t h e r   v a l i d a t e
+
+t h a t   t h e   d e v e l o p m e n t a l   t o x i c i t y   o f   h i g h - d o s e   D   i s   r e l a t e d   t o   I R E - ,   w e   p e r f o r m e d   R N A
+
+i n t e r f e r e n c e   ( R N A i )   o f   x b p - t o   r e d u c e   t h e   l e v e l   o f   X B P - s p l i c e d .   W e   f o u n d   t h a t   R N A i
+
+o f   x b p - r e d u c e d   t h e   e f f e c t s   o f   h i g h - d o s e   D   o n   b o d y   s i z e   d e v e l o p m e n t .   I n   c o n c l u s i o n ,
+
+o u r   r e s u l t s   s u g g e s t   t h a t   t h e   d e v e l o p m e n t a l   t o x i c i t y   o f   h i g h - d o s e   D   i s   a s s o c i a t e d   w i t h   t h e
+
+I R E - / X B P - s i g n a l i n g   p a t h w a y .
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+. .   T h e   A b i l i t y   o f   H i g h - D o s e   D   t o   R e d u c e   U P R E R   A c t i v a t i o n   I s   A s s o c i a t e d   w i t h   I R E - / X B P - e a n w h i l e ,   w e   u s e d   R N A i   t o   r e d u c e   t h e   l e v e l s   o f   I R E - a n d   s p l i c e d   X B P - .   I n   t h e   E V
+
+g r o u p ,   h i g h - d o s e   D   s i g n i f i c a n t l y   i n h i b i t e d   U P R E R   a c t i v a t i o n ,   w h e r e a s   i n   t h e   i r e - R N A i   a n d
+
+x b p - R N A i   g r o u p s ,   t h e   i n h i b i t o r y   e f f e c t   o f   h i g h - d o s e   D   o n   U P R E R   w a s   a b s e n t   ( F i g u r e A , B ) .
+
+A f t e r   s u p p l e m e n t a t i o n   w i t h   T m ,   w e   f o u n d   s i m i l a r   r e s u l t s ,   a n d   t h e   i n h i b i t o r y   e f f e c t   o f   h i g h - d o s e
+
+D   o n   U P R E R   w a s   e v e n   m o r e   s i g n i f i c a n t   ( F i g u r e C , D ) .   T h e s e   r e s u l t s   s u g g e s t   t h a t   t h e   a b i l i t y
+
+o f   h i g h - d o s e   D   t o   r e d u c e   t h e   a c t i v a t i o n   o f   U P R E R   i s   r e l a t e d   t o   t h e   I R E - / X B P - p a t h w a y ,
+
+w h i c h   i s   c o n s i s t e n t   w i t h   t h e   m e c h a n i s m   o f   d e v e l o p m e n t a l   t o x i c i t y   o f   h i g h - d o s e   D .
+
+ 
+
+F i g u r e .   T h e   a b i l i t y   o f   h i g h - d o s e   D   t o   r e d u c e   U P R E R   a c t i v a t i o n   i s   a s s o c i a t e d   w i t h   I R E - / X B P - .
+
+( A )   F l u o r e s c e n c e   i m a g e s   s h o w i n g   t h e   h s p - p : : G F P   e x p r e s s i o n   l e v e l   o f   C .   e l e g a n s   g r o w n   o n   E V ,   i r e - R N A i ,
+
+a n d   x b p - R N A i   e x p o s e d   t o
+
+m g / L   D   f r o m   L f o r
+
+h .   ( B )   R e l a t i v e   f l u o r e s c e n c e   d e n s i t y   o f   h s p - p : : G F P
+
+w o r m s   g r o w n   o n   E V ,   i r e - R N A i ,   a n d   x b p - R N A i   e x p o s e d   t o
+
+m g / L   D   f r o m   L f o r
+
+h .   ( C )   R e l a t i v e
+
+f l u o r e s c e n c e   d e n s i t y   o f   h s p - p : : G F P   w o r m s   g r o w n   o n   E V ,   i r e - R N A i ,   a n d   x b p - R N A i   e x p o s e d   t o
+
+m g / L
+
+D   f r o m   L s u p p l e m e n t e d   w i t h
+
+m g / L   T m   f o r
+
+h .   ( D )   F l u o r e s c e n c e   i m a g e s   s h o w i n g   t h e   h s p - p : : G F P
+
+e x p r e s s i o n   l e v e l   o f   C .   e l e g a n s   g r o w n   o n   E V ,   i r e - R N A i ,   a n d   x b p - R N A i   e x p o s e d   t o
+
+m g / L   D   f r o m   L s u p p l e m e n t e d   w i t h
+
+m g / L   T m   f o r
+
+h .   A l l   e r r o r   b a r s   r e p r e s e n t   S E ,   a n d   d i f f e r e n c e s   w e r e   c o n s i d e r e d
+
+s i g n i f i c a n t   a t   * * *   p   < .
+
+;   n s ,   n o   s i g n i f i c a n c e .
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+.   D i s c u s s i o n
+
+I n   t h i s   s t u d y ,   w e   f o u n d   t h a t   h i g h - d o s e   D   c a u s e d   a   d e l a y   i n   t h e   d e v e l o p m e n t   o f
+
+C .   e l e g a n s .   W e   a l s o   f o u n d   t h a t   h i g h - d o s e   D   r e d u c e d   U P R E R   a c t i v a t i o n   i n   C .   e l e g a n s .
+
+e c h a n i s t i c a l l y ,   h i g h - d o s e   D - i n d u c e d   d e v e l o p m e n t a l   t o x i c i t y   a n d   r e d u c e d   c a p a c i t y   f o r
+
+U P R E R   a c t i v a t i o n   w e r e   a s s o c i a t e d   w i t h   t h e   I R E - / X B P - p a t h w a y   i n   C .   e l e g a n s .
+
+D   i s   a   w i d e l y   u s e d   p e s t i c i d e ,   b u t   i t s   e n v i r o n m e n t a l   a n d   b i o l o g i c a l   e f f e c t s   a r e   o f
+
+g r e a t   c o n c e r n .   S t u d i e s   h a v e   s h o w n   t h a t   D   i s   p o t e n t i a l l y   h a r m f u l   t o   a n i m a l   d e v e l o p m e n t .
+
+I n   i n s e c t s ,   D   e x p o s u r e   d u r i n g   t h e   l a r v a l   s t a g e   r e d u c e d   b o d y   w e i g h t   a n d   p r o l o n g e d
+
+d e v e l o p m e n t   i n   C h r y s o m y a   m e g a c e p h a l a   [
+
+] .   I n   ﬁ s h ,   e x p o s u r e   o f   z e b r a ﬁ s h   e m b r y o s   t o
+
+l o w - d o s e   D   f o r
+
+h   s i g n i ﬁ c a n t l y   r e d u c e d   l a r v a l   b o d y   l e n g t h   a n d   s w i m   b l a d d e r   [
+
+] ;   i t
+
+a l s o   r e s u l t e d   i n   d e f e c t i v e   l a r v a l   l o c o m o t i o n   i n   z e b r a ﬁ s h   [
+
+] .   I n   m a m m a l s ,   D   e x p o s u r e
+
+c a u s e d   w e i g h t   l o s s   i n   m i c e   [
+
+]   a n d   i n h i b i t e d   n e u r o n a l   c e l l   p r o l i f e r a t i o n ,   m a t u r a t i o n ,
+
+a n d   d i f f e r e n t i a t i o n   i n   m o u s e   f e t u s e s   [
+
+] ;   e p i d e m i o l o g i c a l   s t u d i e s   h a v e   s h o w n   t h a t   D
+
+a f f e c t s   b r a i n   d e v e l o p m e n t   i n   c h i l d r e n   [ ] .   O u r   s t u d i e s   i n   n e m a t o d e s   s h o w e d   t h a t   l o w - d o s e
+
+D   ( m g / L )   d i d   n o t   a f f e c t   n e m a t o d e   s i z e   d e v e l o p m e n t ,   b u t   h i g h - d o s e   D   (
+
+m g / L )
+
+s i g n i ﬁ c a n t l y   r e d u c e d   n e m a t o d e   s i z e ,   s l o w e d   d e v e l o p m e n t a l   r a t e s ,   a n d   p r o l o n g e d   t i m e
+
+t o   ﬁ r s t   o v i p o s i t i o n   ( F i g u r e ) .   W e   d e m o n s t r a t e d   t h e   d e v e l o p m e n t a l   t o x i c i t y   o f   h i g h - d o s e
+
+D   i n   C .   e l e g a n s   f o r   t h e   ﬁ r s t   t i m e ,   p r o v i d i n g   n e w   e v i d e n c e   f o r   t h e   d e v e l o p m e n t a l   t o x i c i t y
+
+o f   D .
+
+u l t i c e l l u l a r   a n i m a l s   f a c e   c o n s t a n t   s t r e s s   d u r i n g   g r o w t h   a n d   d e v e l o p m e n t ,   a n d   t o
+
+m a i n t a i n   c e l l u l a r   h o m e o s t a s i s ,   c e l l s   h a v e   e v o l v e d   s e v e r a l   s u b c e l l u l a r   s t r e s s   r e s p o n s e s ,
+
+s u c h   a s   t h e   c y t o p l a s m i c   h e a t   s h o c k   r e s p o n s e ,   t h e   U P R E R ,   a n d   t h e   m i t o c h o n d r i a l   u n f o l d e d
+
+p r o t e i n   r e s p o n s e   [
+
+] .   T h e   E R   a c t i v a t e s   t h e   U P R E R   i n   r e s p o n s e   t o   i n t r a -   a n d   e x t r a c e l l u l a r
+
+s t r e s s e s   t o   r e s t o r e   E R   h o m e o s t a s i s   [
+
+] .   S t u d i e s   h a v e   s h o w n   t h a t   D   i n d u c e s   E R   s t r e s s .
+
+I n   m a m m a l s ,   D   ( – . m g / k g )   c a u s e d   E R   s t r e s s   i n   m o u s e   h i p p o c a m p a l   n e u r o n s   w i t h
+
+e l e v a t e d   l e v e l s   o f   C / E B P   h o m o l o g o u s   p r o t e i n   ( C H O P )   a n d   g l u c o s e - r e g u l a t e d   p r o t e i n
+
+( G R P
+
+)   [
+
+] ;   o r a l   a d m i n i s t r a t i o n   o f   D   ( m g / k g )   t o   m i c e   r e s u l t e d   i n   E R   s t r e s s - m e d i a t e d
+
+n e u r o i n ﬂ a m m a t i o n   [
+
+] ;   a n d   D   ( m g / k g )   e x p o s u r e   c a u s e d   E R   s t r e s s   a n d   l e a r n i n g   d e ﬁ c i t s
+
+i n   t h e   h i p p o c a m p u s   o f   a d u l t   m i c e   [
+
+] .   O r a l   a d m i n i s t r a t i o n   o f   D   ( o r m g / k g )   t o   m i c e
+
+i n d u c e d   E R   s t r e s s   a n d   a c t i v a t i o n   o f   a p o p t o t i c   s i g n a l i n g   [ ] .   I n   b i r d s ,   D   (
+
+m g / k g )
+
+e x p o s u r e   s i g n i ﬁ c a n t l y   i n c r e a s e d   t h e   e x p r e s s i o n   o f   E R   s t r e s s - r e l a t e d   m R N A   i n   q u a i l   b r a i n
+
+t i s s u e   [
+
+] .   I n   ﬁ s h ,   D   e x p o s u r e   ( .
+
+– .
+
+µ g / L )   c a u s e d   g i l l   d a m a g e   i n   c r u c i a n   c a r p
+
+t h r o u g h   a   m e c h a n i s m   r e l a t e d   t o   a c t i v a t i o n   o f   E R   s t r e s s   [
+
+] .   I n   c e l l s   a n d   C .   e l e g a n s ,   D
+
+( m g / L )   s i g n i ﬁ c a n t l y   i n c r e a s e d   f a t   a c c u m u l a t i o n   t h r o u g h   t h e   E R   s t r e s s - A P K α   p a t h -
+
+w a y   [
+
+] .   I n   c o n c l u s i o n ,   p r e v i o u s   s t u d i e s   h a v e   s h o w n   t h a t   l o w - d o s e   D   ( <
+
+m g / L )
+
+i n d u c e s   E R   s t r e s s ,   r e s u l t i n g   i n   t o x i c i t y .
+
+I n t e r e s t i n g l y ,   o u r   s t u d y   s h o w e d   t h a t   h i g h - d o s e   D   (
+
+m g / L )   d e c r e a s e d   t h e   e x p r e s -
+
+s i o n   l e v e l   o f   E R   s t r e s s   m a r k e r   p r o t e i n   H s p - ( F i g u r e A , B ) .   W e   s u s p e c t e d   t h a t   t h i s   m i g h t
+
+b e   d u e   t o   t h e   f a c t   t h a t   D   r e d u c e d   t h e   a c t i v a t i o n   c a p a c i t y   o f   t h e   U P R E R .   T h e r e f o r e ,   w e
+
+u s e d   T m   t o   i n d u c e   E R   s t r e s s   a n d   t e s t e d   t h e   e f f e c t   o f   D   o n   U P R E R   u n d e r   T m   e x p o s u r e .
+
+T h e   r e s u l t s   s h o w e d   t h a t   D   r e d u c e d   t h e   l e v e l   o f   U P R E R   u n d e r   E R   s t r e s s   ( F i g u r e A , B ) .
+
+T a y l o r   a n d   D i l l i n   [
+
+]   s h o w e d   t h a t   t h e   r e d u c e d   a c t i v a t i o n   c a p a c i t y   o f   U P R E R   l e a d s   t o   a
+
+d e c r e a s e d   r e s i s t a n c e   t o   E R   s t r e s s .   O u r   r e s u l t s   a l s o   s u g g e s t   t h a t   D   r e d u c e s   t h e   a b i l i t y   t o
+
+s u r v i v e   u n d e r   T m   e x p o s u r e   ( F i g u r e C ) .   F u r t h e r m o r e ,   w e   m e a s u r e d   t h e   t r a n s c r i p t   l e v e l s
+
+o f   U P R E R   r e g u l a t o r y   a n d   t a r g e t   g e n e s   a n d   f o u n d   t h a t   D   r e d u c e d   t h e   t r a n s c r i p t   l e v e l s
+
+o f   U P R E R   r e g u l a t o r y   g e n e s   a n d   t a r g e t   g e n e s   i r e - ,   x b p - t o t a l ,   x b p - s p l i c e d ,   h s p - ,   c r t - ,
+
+a n d   T
+
+G . u n d e r   E R   s t r e s s   ( F i g u r e ) .   F i n a l l y ,   w e   f o u n d   t h a t   i r e - a n d   x b p - R N A i
+
+r e s c u e d   t h e   r e d u c t i o n   o f   U P R E R   a c t i v a t i o n   c a p a c i t y   b y   D   ( F i g u r e ) .   T h u s ,   o u r   r e s u l t s
+
+f u l l y   d e m o n s t r a t e   t h a t   h i g h - d o s e   D   d o e s   n o t   i n d u c e   E R   s t r e s s   b u t   r e d u c e s   t h e   a c t i v a t i o n
+
+c a p a c i t y   o f   U P R E R .   O u r   r e s u l t s   p r o v i d e   a   t h e o r e t i c a l   b a s i s   f o r   t h e   d e v e l o p m e n t   o f   d r u g s   f o r
+
+h i g h - d o s e   D   e x p o s u r e ,   i n   p a r t i c u l a r   U P R E R - t a r g e t e d   t h e r a p y   f o r   D   p e s t i c i d e   s u i c i d e .
+
+A d m i n i s t r a t i o n   o f   d r u g s   t h a t   e n h a n c e   U P R E R   a c t i v a t i o n   m a y   b e   a   v i a b l e   o p t i o n   t o   m i t i g a t e
+
+h i g h - d o s e   D   t o x i c i t y .
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+T h e   a b i l i t y   t o   a c t i v a t e   t h e   U P R E R   d e c r e a s e s   w i t h   a g e   [
+
+] .   A b n o r m a l   a c c u m u l a t i o n   o f
+
+m i s f o l d e d   o r   u n f o l d e d   p r o t e i n s   i s   a   h a l l m a r k   o f   s e n e s c e n c e ,   a n d   a   d e c r e a s e   i n   t h e   a b i l i t y
+
+t o   a c t i v a t e   U P R E R   l e a d s   t o   a b n o r m a l   a c c u m u l a t i o n   o f   u n f o l d e d   p r o t e i n s   [
+
+] .   T h e r e f o r e ,
+
+t h e   d e c r e a s e   i n   U P R E R   a c t i v a t i o n   c a p a c i t y   b y   D   t r e a t m e n t   m a y   i n c r e a s e   t h e   a b n o r m a l
+
+a c c u m u l a t i o n   o f   m i s f o l d e d   o r   u n f o l d e d   p r o t e i n s   a n d   a c c e l e r a t e   n e m a t o d e   s e n e s c e n c e .
+
+O u r   ﬁ n d i n g   t h a t   D   e x p o s u r e   d u r i n g   l a r v a l   s t a g e s   s h o r t e n e d   l i f e s p a n   a n d   n e g a t i v e l y
+
+a f f e c t e d   h e a l t h y   p h y s i c a l   i n d i c a t o r s   s u c h   a s   h e a d   t h r a s h i n g ,   b o d y   b e n d i n g ,   a n d   p h a r y n g e a l
+
+p u m p i n g   r a t e   p r o v i d e s   e v i d e n c e   t h a t   D   a c c e l e r a t e s   s e n e s c e n c e   ( F i g u r e ) .
+
+U P R E R   i s   c o m p o s e d   o f   t h r e e   c o n s e r v e d   b r a n c h e s   t h a t   t r a n s m i t   E R   s t r e s s   s i g n a l s   t o
+
+t h e   c y t o p l a s m   t h r o u g h   t h e   t r a n s m e m b r a n e   r e g u l a t o r s   i n o s i t o l - r e q u i r i n g   e n z y m e ( I R E ,
+
+h o m o l o g o u s   t o   n e m a t o d e   I R E - ) ,   P K R - l i k e   E R   k i n a s e   ( P E R K ,   h o m o l o g o u s   t o   n e m a t o d e
+
+P E K - ) ,   a n d   a c t i v a t i n g   t r a n s c r i p t i o n   f a c t o r ( A T F ,   h o m o l o g o u s   t o   n e m a t o d e   A T F - )   t o
+
+a c t i v a t e   d i f f e r e n t   U P R E R   s i g n a l i n g   p a t h w a y s   [
+
+] .   O n e   s t u d y   s h o w e d   t h a t   g i l l   d a m a g e
+
+i n   C a r a s s i u s   a u r a t u s   d u e   t o   D   e x p o s u r e   w a s   a s s o c i a t e d   w i t h   P E R K   a n d   I R E [
+
+] .   W e
+
+f o u n d   t h a t   p e k - a n d   a t f - m u t a t i o n s   d i d   n o t   a l t e r   t h e   e f f e c t s   o f   h i g h - d o s e   D   o n   b o d y
+
+s i z e   d e v e l o p m e n t   a n d   d e v e l o p m e n t a l   r a t e   i n   C .   e l e g a n s ,   w h i l e   h i g h - d o s e   D   w a s   n o t   t o x i c
+
+t o   i r e - m u t a n t s   a n d   x b p - R N A i   n e m a t o d e s   ( F i g u r e ) .   T h i s   s u g g e s t s   t h a t   h i g h - d o s e   D
+
+c a u s e s   d e v e l o p m e n t a l   r e t a r d a t i o n   i n   n e m a t o d e s   v i a   I R E - .   H o w e v e r ,   o u r   ﬁ n d i n g s   a r e
+
+l i m i t e d   t o   C .   e l e g a n s ,   a n d   f u r t h e r   v a l i d a t i o n   o f   o u r   c o n c l u s i o n s   i n   m i c e   a n d   e p i d e m i o l o g y   i s
+
+n e e d e d .   I n   a d d i t i o n ,   o u r   s t u d y   d i d   n o t   i n v e s t i g a t e   w h y   h i g h - d o s e   D   r e d u c e d   U P R E R . .   a t e r i a l s   a n d   e t h o d s . .   N e m a t o d e   S t r a i n s   a n d   a i n t e n a n c e
+
+A l l   s t r a i n s   w e r e   g r o w n   a t
+
+◦ C   u s i n g   s t a n d a r d   n e m a t o d e   m e t h o d s   a s   d e s c r i b e d
+
+p r e v i o u s l y   [
+
+] .   U n l e s s   o t h e r w i s e   s t a t e d ,   s t a n d a r d   n e m a t o d e   g r o w t h   m e d i u m   ( N G )
+
+i n o c u l a t e d   w i t h   E .   c o l i   O P
+
+w a s   u s e d   f o r   n o r m a l   g r o w t h .   N ,   R E
+
+( i r e - ( v
+
+) ) ,   R B
+
+( p e k - ( o k
+
+) ) ,   S J
+
+( h s p - p : : G F P ) ,   a n d   R B
+
+( a t f - ( o k
+
+) )   s t r a i n s   w e r e   o b t a i n e d   f r o m   t h e
+
+C a e n o r h a b d i t i s   e l e g a n s   G e n e t i c s   C e n t e r   ( C G C ;   U n i v e r s i t y   o f   i n n e s o t a ,   i n n e a p o l i s ,   N ,
+
+U S A ) .   T h e   s y n c h r o n i z a t i o n   m e t h o d   f o r   C .   e l e g a n s   w a s   t h e   b l e a c h i n g   m e t h o d   [
+
+] . . .   D r u g s   a n d   T r e a t m e n t
+
+D e l t a m e t h r i n   ( D ) ,   t u n i c a m y c i n   ( T m ) ,   a n d - p h e n y l b u t y r i c   a c i d   ( - P B A )   w e r e   p u r -
+
+c h a s e d   f r o m   S h a n g h a i   A l a d d i n   B i o c h e m i c a l   T e c h n o l o g y   C o .   ( S h a n g h a i ,   C h i n a ) .   D   w a s
+
+d i s s o l v e d   i n   d i s t i l l e d   w a t e r ,   a n d   T m   a n d - P B A   w e r e   d i s s o l v e d   i n   d i m e t h y l   s u l f o x i d e
+
+( D S O ) ,   w h i c h   w a s   u s e d   a s   a   c o n t r o l .   E x c e p t   f o r   t h e   D   s c r e e n i n g   e x p e r i m e n t ,   D   w a s
+
+u s e d   a t   a   c o n c e n t r a t i o n   o f
+
+m g / L   f o r   a l l   o t h e r   e x p e r i m e n t s ,
+
+m g / L   f o r   T m   i n   t h e   l a r v a l
+
+s t a g e ,
+
+m g / L   i n   t h e   a d u l t   s t a g e ,   a n d m   f o r - P B A .   D ,   T m , - P B A ,   a n d   o t h e r   d r u g s
+
+w e r e   a d d e d   t o   O P
+
+f o o d   a n d   t h e n   a p p l i e d   t o   N G   s o l i d   p l a t e s .   U n l e s s   o t h e r w i s e   n o t e d ,
+
+a l l   d r u g s   w e r e   a p p l i e d   f r o m   s y n c h r o n i z e d   l a r v a l   L . . .   B o d y   S i z e   E s t i m a t i o n   o f   N e m a t o d e s
+
+D   s o l u t i o n   w a s   a d d e d   p r o p o r t i o n a l l y   t o   O P
+
+f o o d   c o n ﬁ g u r e d   t o   c o n t a i n m g / L , m g / L ,
+
+m g / L ,
+
+m g / L ,
+
+m g / L ,   a n d
+
+m g / L   D   a n d   c o a t e d   o n t o   N G   p l a t e s .
+
+S y n c h r o n i z e d   L l a r v a e   w e r e   t r a n s f e r r e d   t o   t h e   a b o v e   p l a t e s   a n d   i n c u b a t e d   a t
+
+◦ C   f o r
+
+h   o r
+
+h .   A f t e r   i n c u b a t i o n ,   t h e   n e m a t o d e s   w e r e   i m a g e d   u s i n g   a   s t e r e o m i c r o s c o p e ,
+
+a n d   t h e   b o d y   l e n g t h   ( f r o m   t h e   m o u t h p a r t s   t o   t h e   e n d   o f   t h e   h i n d g u t )   a n d   b o d y   w i d t h
+
+( t h e   h o r i z o n t a l   w i d t h   o f   t h e   g o n a d   a t   t h e   l o c a t i o n   o f   t h e   g o n a d )   o f   t h e   n e m a t o d e s   w e r e
+
+m e a s u r e d   u s i n g   I m a g e J   V . . .
+
+s o f t w a r e .   A p p r o x i m a t e l y
+
+n e m a t o d e s   w e r e   m e a s u r e d
+
+f o r   e a c h   t r e a t m e n t .   A   m i n i m u m   o f   t h r e e   b i o l o g i c a l   r e p l i c a t e s   w e r e   p e r f o r m e d   f o r   e a c h
+
+g r o u p ,   a n d   b o d y   s i z e   w a s   e s t i m a t e d   u s i n g   E q u a t i o n   ( ) :
+
+B o d y s i z e   =   π   ×
+
+ B o d y w i d t h  ×   B o d y l e n g t h
+
+( )
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+. .   N e m a t o d e   D e v e l o p m e n t   A n a l y s i s
+
+S y n c h r o n i z e d   L l a r v a e   w e r e   t r a n s f e r r e d   t o   N G   p e t r i   d i s h e s   c o n t a i n i n g m g / L
+
+o r
+
+m g / L   D   f o r
+
+h ,   a f t e r   w h i c h   t h e   n e m a t o d e s   w e r e   q u a n t i ﬁ e d   f o r   t h e   d i f f e r e n t
+
+d e v e l o p m e n t a l   s t a g e s   ( L – L ,   L ,   a d u l t ) .   A t   l e a s t   t h r e e   b i o l o g i c a l   r e p l i c a t e s   w e r e   p e r f o r m e d
+
+f o r   e a c h   g r o u p . . .   O n s e t   o f   E g g   L a y i n g
+
+S y n c h r o n i z e d   L l a r v a e   w e r e   t r a n s f e r r e d   t o   N G   p e t r i   d i s h e s   c o n t a i n i n g m g / L
+
+o r
+
+m g / L   D   a n d   i n c u b a t e d   f o r
+
+h .   A p p r o x i m a t e l y
+
+n e m a t o d e s   w e r e   p i c k e d   a n d
+
+t r a n s f e r r e d   t o   p e t r i   d i s h e s   c o n t a i n i n g   t h e   c o r r e s p o n d i n g   d r u g ,   p l a c i n g n e m a t o d e   i n
+
+e a c h   d i s h ,   a n d   t h e   e g g   l a y i n g   s t a t u s   w a s   o b s e r v e d   e v e r y   h o u r .   A t   l e a s t   t h r e e   b i o l o g i c a l
+
+r e p l i c a t e s   w e r e   p e r f o r m e d   f o r   e a c h   g r o u p . . .   L i f e s p a n   A n a l y s i s
+
+N e m a t o d e   l i f e s p a n   w a s   d e t e r m i n e d   u s i n g   s t a n d a r d   m e t h o d s   [
+
+] .   S y n c h r o n i z e d
+
+L l a r v a e   w e r e   c u l t u r e d   i n   N G   d i s h e s   c o n t a i n i n g m g / L   o r
+
+m g / L   D .   A f t e r d ,   a p p r o x i m a t e l y
+
+n e m a t o d e s   w e r e   p l u c k e d   a n d   t r a n s f e r r e d   t o   d i s h e s   c o n t a i n i n g ′ - ﬂ u o r o d e o x y u r i d i n e   (
+
+µ )   w i t h o u t   d r u g s   f o r   f u r t h e r   i n c u b a t i o n .   T h e   n u m b e r   o f   d e a d
+
+n e m a t o d e s   w a s   c o u n t e d   e v e r y d ,   a n d   m o r t a l i t y   w a s   c a l c u l a t e d   u n t i l   a l l   n e m a t o d e s   w e r e
+
+d e a d .   D e a t h   w a s   j u d g e d   b y   t h e   l a c k   o f   r e s p o n s e   t o   g e n t l e   c o n t a c t   o f   t h e   w o r m   w i t h   a   p i c k .
+
+A t   l e a s t b i o l o g i c a l   r e p l i c a t e s   w e r e   p e r f o r m e d   f o r   e a c h   g r o u p . . .   H e a d   T h r a s h i n g   a n d   B o d y   B e n d i n g   A n a l y s i s
+
+H e a d   t h r a s h i n g   a n d   b o d y   b e n d i n g   f r e q u e n c y   a n a l y s i s   w a s   p e r f o r m e d d a y s   a f t e r   d r u g
+
+t r e a t m e n t   o f   L l a r v a e .   A p p r o x i m a t e l y
+
+n e m a t o d e s   w e r e   s e l e c t e d   f r o m   e a c h   d i s h .   H e a d
+
+t h r a s h i n g   a n d   b o d y   b e n d i n g   f r e q u e n c y   w e r e   d e t e r m i n e d   u s i n g   s t a n d a r d   m e t h o d s   [
+
+] .   A t
+
+l e a s t   t h r e e   b i o l o g i c a l   r e p l i c a t e s   w e r e   p e r f o r m e d   f o r   e a c h   g r o u p . . .   P h a r y n g e a l   P u m p i n g   A s s a y
+
+P h a r y n g e a l   p u m p   r a t e   w a s   m e a s u r e d   a f t e r d   o f   d r u g   t r e a t m e n t .   T h e   n u m b e r   o f   n e m a -
+
+t o d e   p h a r y n g e a l   p u m p   c o n t r a c t i o n s   w a s   o b s e r v e d   f o r
+
+s .   A p p r o x i m a t e l y
+
+n e m a t o d e s
+
+p e r   t r e a t m e n t   w e r e   r a n d o m l y   m e a s u r e d ,   a n d   t h e   e x p e r i m e n t   w a s   r e p e a t e d   t h r e e   t i m e s . . .   e a s u r e m e n t   o f   U P R E R   A c t i v a t i o n   L e v e l s
+
+T h e   a c t i v a t i o n   l e v e l   o f   U P R E R   w a s   d e t e r m i n e d   u s i n g   t h e   H s p - p : : G F P   s t r a i n .   T h e
+
+n e m a t o d e s   w e r e   p l a c e d   o n   g e l   p a d s   c o n t a i n i n g %   a g a r o s e   a f t e r d a y s   o f m g / L   o r
+
+m g / L   D   t r e a t m e n t ,   a n d u L   o f . m   l e v a m i s o l e   s o l u t i o n   w a s   a d d e d   t o   p a r a l y z e
+
+t h e m .   F l u o r e s c e n c e   i m a g e s   w e r e   c a p t u r e d   u s i n g   a   N i k o n   E C L I P S E   T i - U   ﬂ u o r e s c e n c e
+
+m i c r o s c o p e   ( N i k o n   G r o u p ,   T o k y o ,   J a p a n ) .   T h e   a v e r a g e   ﬂ u o r e s c e n c e   i n t e n s i t y   w a s   s c o r e d
+
+u s i n g   I m a g e   J   ( I m a g e J   V . . .
+
+)   s o f t w a r e . .
+
+.   E R   S t r e s s   S u r v i v a l   A n a l y s i s
+
+S y n c h r o n i z e d   L l a r v a e   w e r e   t r a n s f e r r e d   t o   P e t r i   d i s h e s   c o n t a i n i n g m g / L   o r
+
+m g / L   D   f o r d .   A p p r o x i m a t e l y
+
+n e m a t o d e s   p e r   d i s h   w e r e   s e l e c t e d   a n d   t r a n s -
+
+f e r r e d   t o   P e t r i   d i s h e s   c o n t a i n i n g
+
+m g / L   T m   w i t h o u t   D   f o r   f u r t h e r   i n c u b a t i o n ,   a n d
+
+s u r v i v a l   w a s   a s s e s s e d   d a i l y .   T h e   e x p e r i m e n t   w a s   r e p e a t e d   a t   l e a s t   t h r e e   t i m e s . .
+
+.   Q u a n t i t a t i v e   R e a l - T i m e   P C R
+
+T o t a l   R N A   w a s   e x t r a c t e d   a n d   p u r i ﬁ e d   f r o m   a t   l e a s t
+
+n e m a t o d e s   u s i n g   t h e   T o t a l
+
+R N A   E x t r a c t i o n   K i t   ( B e i j i n g   S o l a r b i o   S c i e n c e   &   T e c h n o l o g y   C o . ,   L t d . ,   B e i j i n g ,   C h i n a ) .   c D N A
+
+w a s   s y n t h e s i z e d   u s i n g   t h e   U n i v e r s a l   R T - P C R   K i t   ( - L V )   ( B e i j i n g   S o l a r b i o   S c i e n c e   &
+
+T e c h n o l o g y   C o . ,   L t d . ,   B e i j i n g ,   C h i n a ) .   P C R   w a s   p e r f o r m e d   u s i n g   t h e   i n d i c a t e d   p r i m e r s   a s
+
+f o l l o w s   ( T a b l e ) .   A c t - w a s   u s e d   a s   a n   e n d o g e n o u s   c o n t r o l .   T h e   e x p e r i m e n t   w a s   r e p e a t e d
+
+a t   l e a s t   t h r e e   t i m e s .
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+T a b l e .   P r i m e r s   u s e d   i n   r e a l - t i m e   P C R .
+
+T a r g e t   G e n e
+
+F o r w a r d   P r i m e r
+
+R e v e r s e   P r i m e r
+
+i r e - T C C T C A A C C G C T C C A T C A A C A T
+
+T C C T C A A C C G C T C C A T C A A C A T
+
+h s p - G A A C A A C C T A C T C G T G C G T T G G
+
+G A A C A A C C T A C T C G T G C G T T G G
+
+x b p - t o t a l
+
+G G A C T T C T T C G G C T T C T G G A G T
+
+G G A C T T C T T C G G C T T C T G G A G T
+
+x b p - s p l i c e d
+
+G G T G G A T G G A G G G A G A A G A T T
+
+G G T G G A T G G A G G G A G A A G A T T
+
+c r t - G A A G T A A T A G C C G A G G G A A G C
+
+G A A G T A A T A G C C G A G G G A A G C
+
+T
+
+G . C A C C T C C A T C A A C A A C A A C A T
+
+C A C C T C C A T C A A C A A C A A C A T
+
+a c t - G T C A T G G T C G G T A T G G G A C A
+
+A G T G A G G A G G A C T G G G T G C T .
+
+.   R N A   I n t e r f e r e n c e   ( R N A i )   i n   C .   e l e g a n s
+
+D o u b l e - s t r a n d e d   D N A   c o n t a i n i n g   h o m o l o g s   o f   t h e   t a r g e t   g e n e   w a s   l i g a t e d   t o   p l a s m i d
+
+L
+
+a n d   t r a n s f o r m e d   i n t o   a   E .   c o l i   H T
+
+( D E )   r e c e p t o r   s t a t e .   E .   c o l i   H T
+
+c o n t a i n i n g
+
+t h e   a p p r o p r i a t e   v e c t o r   w a s   i n c u b a t e d   i n   L B   m e d i u m   c o n t a i n i n g   a m p i c i l l i n   (
+
+u g / L )   o n   a
+
+s h a k e r   a t
+
+◦ C   f o r
+
+h ,   t h e n   I P T G   ( m )   w a s   a d d e d ,   a n d   t h e   i n c u b a t i o n   c o n t i n u e d   f o r h .   T h e   b a c t e r i a l   s o l u t i o n   w a s   c o a t e d   o n   N G   d i s h e s   c o n t a i n i n g   a m p i c i l l i n   a n d   I P T G ,   a n d
+
+s y n c h r o n i z e d   n e m a t o d e s   w e r e   t r a n s f e r r e d   t o   t h e   d i s h e s   f o r   R N A   i n t e r f e r e n c e .   T h e   b a c t e r i a l
+
+s o l u t i o n   w a s   s p r e a d   o n   N G   p l a t e s   c o n t a i n i n g   a m p i c i l l i n   a n d   I P T G . .
+
+.   S t a t i s t i c a l   A n a l y s i s
+
+T h e   p r e s e n t   s t u d y   u s e d   i n d e p e n d e n t   e x p e r i m e n t s   r e p e a t e d   a t   l e a s t   t h r e e   t i m e s .   F o r
+
+d a t a   s e t s   g r e a t e r   t h a n   t w o ,   s t a t i s t i c a l   a n a l y s i s   w a s   p e r f o r m e d   u s i n g   o n e - w a y   a n a l y s i s   o f
+
+v a r i a n c e   ( A N O V A )   f o l l o w e d   b y   T u k e y ’ s   p o s t - h o c   t e s t .   S u r v i v a l   a n a l y s i s   w a s   p e r f o r m e d
+
+u s i n g   t h e   K a p l a n - e i e r   t e s t ,   a n d   p   v a l u e s   w e r e   o b t a i n e d   u s i n g   t h e   l o g - r a n k   t e s t .   D a t a
+
+a n a l y s i s   a n d   g r a p h i n g   w e r e   p e r f o r m e d   u s i n g   G r a p h P a d   P r i s m s o f t w a r e .   E r r o r   b a r s   a r e
+
+r e p r e s e n t e d   b y   s t a n d a r d   e r r o r   o f   m e a n   ( S E ) ,   a n d   s t a t i s t i c a l   s i g n i ﬁ c a n c e   w a s   d e t e r m i n e d
+
+a t   *   p   < . ;   * *   p   < .
+
+;   a n d   * * *   p   < .
+
+;   n s ,   n o   s i g n i ﬁ c a n c e . .   C o n c l u s i o n s
+
+I n   c o n c l u s i o n ,   h i g h - d o s e   D   r e d u c e s   t h e   a c t i v a t i o n   c a p a c i t y   o f   t h e   U P R E R   a n d   i n d u c e s
+
+d e v e l o p m e n t a l   r e t a r d a t i o n   i n   C .   e l e g a n s   v i a   I R E - / X B P - .   O u r   r e s u l t s   p r o v i d e   n e w   e v i d e n c e
+
+f o r   t h e   d e v e l o p m e n t a l   t o x i c i t y   o f   D   a n d   n e w   i n s i g h t s   i n t o   t h e   m e c h a n i s m s   o f   D   t o x i c i t y .
+
+A u t h o r   C o n t r i b u t i o n s :   C o n c e p t u a l i z a t i o n ,   S . W . ;   d a t a   c u r a t i o n ,   C . C .   a n d   S . W . ;   f o r m a l   a n a l y s i s ,   C . C . ;
+
+f u n d i n g   a c q u i s i t i o n ,   C . J .   a n d   S . W . ;   i n v e s t i g a t i o n ,   C . C .   a n d   Y . D . ;   m e t h o d o l o g y ,   S . W . ;   p r o j e c t   a d m i n i s t r a -
+
+t i o n ,   S . W . ;   v a l i d a t i o n ,   Y . D . ,   L . L .   a n d   Z . Z . ;   w r i t i n g — o r i g i n a l   d r a f t ,   C . C . ;   w r i t i n g — r e v i e w   a n d   e d i t i n g ,
+
+C . J . ,   Z . C .   a n d   S . W .   A l l   a u t h o r s   h a v e   r e a d   a n d   a g r e e d   t o   t h e   p u b l i s h e d   v e r s i o n   o f   t h e   m a n u s c r i p t .
+
+F u n d i n g :   T h i s   r e s e a r c h   w a s   ﬁ n a n c i a l l y   s u p p o r t e d   b y   t h e   P r o j e c t   o f   t h e   E d u c a t i o n   D e p a r t m e n t   i n
+
+H u n a n   P r o v i n c e   ( N o .
+
+B
+
+) ,   t h e   H u n a n   P r o v i n c i a l   P o s t g r a d u a t e   R e s e a r c h   I n n o v a t i o n   P r o j e c t   ( N o .
+
+C X
+
+) ,   a n d   t h e   N a t u r a l   S c i e n c e   F o u n d a t i o n   o f   H u n a n   P r o v i n c e   ( N o .
+
+J J
+
+) .
+
+I n s t i t u t i o n a l   R e v i e w   B o a r d   S t a t e m e n t :   N o t   a p p l i c a b l e .
+
+I n f o r m e d   C o n s e n t   S t a t e m e n t :   N o t   a p p l i c a b l e .
+
+D a t a   A v a i l a b i l i t y   S t a t e m e n t :   D a t a   i s   c o n t a i n e d   w i t h i n   t h e   a r t i c l e .
+
+C o n ﬂ i c t s   o f   I n t e r e s t :   T h e   a u t h o r s   d e c l a r e   t h a t   t h e   r e s e a r c h   w a s   c o n d u c t e d   i n   t h e   a b s e n c e   o f   a n y
+
+c o m m e r c i a l   o r   ﬁ n a n c i a l   r e l a t i o n s h i p s   t h a t   c o u l d   b e   c o n s t r u e d   a s   a   p o t e n t i a l   c o n ﬂ i c t   o f   i n t e r e s t .
+
+S a m p l e   A v a i l a b i l i t y :   S a m p l e s   o f   t h e   c o m p o u n d s   a r e   n o t   a v a i l a b l e   f r o m   t h e   a u t h o r s .
+
+R e f e r e n c e s .
+
+A i e l l o ,   F . ;   S i m o n s ,   . G . ;   v a n   V e l d e ,   J . W . ;   D a n i ,   P .   N e w   I n s i g h t s   i n t o   t h e   D e g r a d a t i o n   P a t h   o f   D e l t a m e t h r i n .   o l e c u l e s
+
+,
+
+,
+
+.   [ C r o s s R e f ]   [ P u b e d ] .
+
+L u ,   Q . ;   S u n ,   Y . ;   A r e s ,   I . ;   A n a d o n ,   A . ;   a r t i n e z ,   . ;   a r t i n e z - L a r r a n a g a ,   . R . ;   Y u a n ,   Z . ;   W a n g ,   X . ;   a r t i n e z ,   . A .   D e l t a m e t h r i n
+
+t o x i c i t y :   A   r e v i e w   o f   o x i d a t i v e   s t r e s s   a n d   m e t a b o l i s m .   E n v i r o n .   R e s .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+.
+
+Z h o u ,   S . ;   D o n g ,   J . ;   L i u ,   Y . ;   Y a n g ,   Q . ;   X u ,   N . ;   Y a n g ,   Y . ;   A i ,   X .   E f f e c t s   o f   a c u t e   d e l t a m e t h r i n   e x p o s u r e   o n   k i d n e y   t r a n s c r i p t o m e   a n d
+
+i n t e s t i n a l   m i c r o b i o t a   i n   g o l d ﬁ s h   ( C a r a s s i u s   a u r a t u s ) .   E c o t o x i c o l .   E n v i r o n .   S a f .
+
+,
+
+,
+
+.   [ C r o s s R e f ] .
+
+Y a n g ,   X . ;   F a n g ,   Y . ;   H o u ,   J . ;   W a n g ,   X . ;   L i ,   J . ;   L i ,   S . ;   Z h e n g ,   X . ;   L i u ,   Y . ;   Z h a n g ,   Z .   T h e   h e a r t   a s   a   t a r g e t   f o r   d e l t a m e t h r i n   t o x i c i t y :
+
+I n h i b i t i o n   o f   N r f / H O - p a t h w a y   i n d u c e s   o x i d a t i v e   s t r e s s   a n d   r e s u l t s   i n   i n ﬂ a m m a t i o n   a n d   a p o p t o s i s .   C h e m o s p h e r e
+
+,
+
+,
+
+.   [ C r o s s R e f ]   [ P u b e d ] .
+
+H o s s a i n ,   . . ;   B e l k a d i ,   A . ;   Z h o u ,   X . ;   D i C i c c o - B l o o m ,   E .   E x p o s u r e   t o   D e l t a m e t h r i n   a t   t h e   N O A E L   C a u s e s   E R   S t r e s s   a n d   D i s r u p t i o n
+
+o f   H i p p o c a m p a l   N e u r o g e n e s i s   i n   A d u l t   i c e .   N e u r o t o x i c o l o g y
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]   [ P u b e d ] .
+
+W u ,   H . ;   G a o ,   J . ;   X i e ,   . ;   X i a n g ,   J . ;   Z u o ,   Z . ;   T i a n ,   X . ;   S o n g ,   R . ;   Y u a n ,   X . ;   W u ,   Y . ;   O u ,   D .   H i s t o p a t h o l o g y   a n d   t r a n s c r i p t o m e   a n a l y s i s
+
+r e v e a l s   t h e   g i l l s   i n j u r y   a n d   i m m u n o t o x i c i t y   i n   g i b e l   c a r p   f o l l o w i n g   a c u t e   d e l t a m e t h r i n   e x p o s u r e .   E c o t o x i c o l .   E n v i r o n .   S a f .
+
+,
+
+,
+
+.   [ C r o s s R e f ] .
+
+B e r k o w i t z ,   G . S . ;   O b e l ,   J . ;   D e y c h ,   E . ;   L a p i n s k i ,   R . ;   G o d b o l d ,   J . ;   L i u ,   Z . ;   L a n d r i g a n ,   P . J . ;   W o l f f ,   . S .   E x p o s u r e   t o   i n d o o r   p e s t i c i d e s
+
+d u r i n g   p r e g n a n c y   i n   a   m u l t i e t h n i c ,   u r b a n   c o h o r t .   E n v i r o n .   H e a l t h   P e r s p e c t .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]   [ P u b e d ] .
+
+A l l e g a e r t ,   K . ;   v a n   d e n   A n k e r ,   J .   O n t o g e n y   o f   P h a s e   I   e t a b o l i s m   o f   D r u g s .   J .   C l i n .   P h a r m a c o l .
+
+,
+
+( S u p p l .   S ) ,   S
+
+– S
+
+.
+
+[ C r o s s R e f ]   [ P u b e d ] .
+
+P i t z e r ,   E . . ;   W i l l i a m s ,   . T . ;   V o r h e e s ,   C . V .   E f f e c t s   o f   p y r e t h r o i d s   o n   b r a i n   d e v e l o p m e n t   a n d   b e h a v i o r :   D e l t a m e t h r i n .   N e u r o t o x i c o l .
+
+T e r a t o l .
+
+,
+
+,
+
+.   [ C r o s s R e f ]
+
+.
+
+H o s s a i n ,   . . ;   D i C i c c o - B l o o m ,   E . ;   R i c h a r d s o n ,   J . R .   H i p p o c a m p a l   E R   S t r e s s   a n d   L e a r n i n g   D e ﬁ c i t s   F o l l o w i n g   R e p e a t e d   P y r e t h r o i d
+
+E x p o s u r e .   T o x i c o l .   S c i .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]
+
+.
+
+H o s s a i n ,   . . ;   S i v a r a m ,   G . ;   R i c h a r d s o n ,   J . R .   R e g i o n a l   S u s c e p t i b i l i t y   t o   E R   S t r e s s   a n d   P r o t e c t i o n   b y   S a l u b r i n a l   F o l l o w i n g   a   S i n g l e
+
+E x p o s u r e   t o   D e l t a m e t h r i n .   T o x i c o l .   S c i .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]
+
+.
+
+H o s s a i n ,   . . ;   R i c h a r d s o n ,   J . R .   N e r v e   G r o w t h   F a c t o r   P r o t e c t s   A g a i n s t   P y r e t h r o i d - I n d u c e d   E n d o p l a s m i c   R e t i c u l u m   ( E R )   S t r e s s   i n
+
+P r i m a r y   H i p p o c a m p a l   N e u r o n s .   T o x i c o l .   S c i .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+.
+
+H o s s a i n ,   . . ;   T o l t i n ,   A . C . ;   G a m b a ,   L . . ;   o l i n a ,   . A .   D e l t a m e t h r i n - E v o k e d   E R   S t r e s s   P r o m o t e s   N e u r o i n ﬂ a m m a t i o n   i n   t h e
+
+A d u l t   o u s e   H i p p o c a m p u s .   C e l l s
+
+,
+
+,
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+.
+
+Y u a n ,   X . ;   W u ,   H . ;   G a o ,   J . ;   G e n g ,   X . ;   X i e ,   . ;   S o n g ,   R . ;   Z h e n g ,   J . ;   W u ,   Y . ;   O u ,   D .   A c u t e   d e l t a m e t h r i n   e x p o s u r e   i n d u c e s   o x i d a t i v e
+
+s t r e s s ,   t r i g g e r s   e n d o p l a s m i c   r e t i c u l u m   s t r e s s ,   a n d   i m p a i r s   h y p o x i c   r e s i s t a n c e   o f   c r u c i a n   c a r p .   C o m p .   B i o c h e m .   P h y s .   C
+
+,
+
+,
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+.
+
+L i ,   S . ;   W u ,   P . ;   H a n ,   B . ;   Y a n g ,   Q . ;   W a n g ,   X . ;   L i ,   J . ;   D e n g ,   N . ;   H a n ,   B . ;   L i a o ,   Y . ;   L i u ,   Y . ;   e t   a l .   D e l t a m e t h r i n   i n d u c e s   a p o p t o s i s   i n
+
+c e r e b r u m   n e u r o n s   o f   q u a i l   v i a   p r o m o t i n g   e n d o p l a s m i c   r e t i c u l u m   s t r e s s   a n d   m i t o c h o n d r i a l   d y s f u n c t i o n .   E n v i r o n .   T o x i c o l .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+.
+
+Y u a n ,   L . ;   L i n ,   J . ;   X u ,   Y . ;   P e n g ,   Y . ;   C l a r k ,   J . . ;   G a o ,   R . ;   P a r k ,   Y . ;   S u n ,   Q .   D e l t a m e t h r i n   p r o m o t e s   a d i p o g e n e s i s   v i a   A P K   a l p h a   a n d
+
+E R   s t r e s s - m e d i a t e d   p a t h w a y   i n T - L a d i p o c y t e s   a n d   C a e n o r h a b d i t i s   e l e g a n s .   F o o d   C h e m .   T o x i c o l .
+
+,
+
+,
+
+.   [ C r o s s R e f ]
+
+.
+
+E d d l e s t o n ,   . ;   G u n n e l l ,   D .   P r e v e n t i n g   s u i c i d e   t h r o u g h   p e s t i c i d e   r e g u l a t i o n .   L a n c e t   P s y c h i a t r y
+
+, , –
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+.
+
+R o t h e r ,   H . A .   P e s t i c i d e   s u i c i d e s :   W h a t   m o r e   e v i d e n c e   i s   n e e d e d   t o   b a n   h i g h l y   h a z a r d o u s   p e s t i c i d e s .   L a n c e t   G l o b .   H e a l t h
+
+, ,
+
+e
+
+– e
+
+.   [ C r o s s R e f ]
+
+.
+
+A r s h a d ,   . ;   S i d d i q a ,   . ;   R a s h i d ,   S . ;   H a s h m i ,   I . ;   A w a n ,   . A . ;   A l i ,   . A .   B i o m o n i t o r i n g   o f   T o x i c   E f f e c t s   o f   P e s t i c i d e s   i n   O c c u p a t i o n -
+
+a l l y   E x p o s e d   I n d i v i d u a l s .   S a f .   H e a l t h   W o r k
+
+, ,
+
+–
+
+.   [ C r o s s R e f ]
+
+.
+
+L a n g i e ,   S . A . S . ;   L a r a ,   J . ;   a t h e r s ,   J . C .   E a r l y   d e t e r m i n a n t s   o f   t h e   a g e i n g   t r a j e c t o r y .   B e s t   P r a c t .   R e s .   C l i n .   E n d o c r i n o l .   e t a b .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]
+
+.
+
+S h e n ,   P . ;   H s i e h ,   T . - H . ;   Y u e ,   Y . ;   S u n ,   Q . ;   C l a r k ,   J . . ;   P a r k ,   Y .   D e l t a m e t h r i n   i n c r e a s e s   t h e   f a t   a c c u m u l a t i o n   i n T - L a d i p o c y t e s   a n d
+
+C a e n o r h a b d i t i s   e l e g a n s .   F o o d   C h e m .   T o x i c o l .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+.
+
+T a y l o r ,   R . C . ;   D i l l i n ,   A .   X B P - I s   a   C e l l - N o n a u t o n o m o u s   R e g u l a t o r   o f   S t r e s s   R e s i s t a n c e   a n d   L o n g e v i t y .   C e l l
+
+,
+
+,
+
+–
+
+.
+
+[ C r o s s R e f ]   [ P u b e d ]
+
+.
+
+A c o s t a - A l v e a r ,   D . ;   Z h o u ,   Y . ;   B l a i s ,   A . ;   T s i k i t i s ,   . ;   L e n t s ,   N . H . ;   A r i a s ,   C . ;   L e n n o n ,   C . J . ;   K l u g e r ,   Y . ;   D y n l a c h t ,   B . D .   X B P c o n t r o l s
+
+d i v e r s e   c e l l   t y p e -   a n d   c o n d i t i o n - s p e c i ﬁ c   t r a n s c r i p t i o n a l   r e g u l a t o r y   n e t w o r k s .   o l .   C e l l
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]
+
+.
+
+d e   O l i v e i r a ,   S . R . ;   C a l e f f e ,   R . R . T . ;   G i g l i o l l i ,   A . A . S . ;   o r e i r a ,   D . R . ;   C o n t e ,   H . ;   R u v o l o - T a k a s u s u k i ,   . C . C .   D e v e l o p m e n t a l   c h a n g e s   i n
+
+l a r v a e   o f   t h e   o r i e n t a l   l a t r i n e   ﬂ y ,   C h r y s o m y a   m e g a c e p h a l a ,   e x p o s e d   t o   d e l t a m e t h r i n .   P a r a s i t o l .   R e s .
+
+,
+
+, – .   [ C r o s s R e f ]
+
+.
+
+i a o ,   W . ;   J i a n g ,   Y . ;   H o n g ,   Q . ;   S h e n g ,   H . ;   L i u ,   P . ;   H u a n g ,   Y . ;   C h e n g ,   J . ;   P a n ,   X . ;   Y u ,   Q . ;   W u ,   Y . ;   e t   a l .   S y s t e m a t i c   e v a l u a t i o n   o f
+
+t h e   t o x i c o l o g i c a l   e f f e c t s   o f   d e l t a m e t h r i n   e x p o s u r e   i n   z e b r a ﬁ s h   l a r v a e .   E n v i r o n .   T o x i c o l .   P h a r m a c o l .
+
+,
+
+,
+
+.   [ C r o s s R e f ]
+
+[ P u b e d ]
+
+.
+
+K u n g ,   T . S . ;   R i c h a r d s o n ,   J . R . ;   C o o p e r ,   K . R . ;   W h i t e ,   L . A .   D e v e l o p m e n t a l   D e l t a m e t h r i n   E x p o s u r e   C a u s e s   P e r s i s t e n t   C h a n g e s   i n
+
+D o p a m i n e r g i c   G e n e   E x p r e s s i o n ,   N e u r o c h e m i s t r y ,   a n d   L o c o m o t o r   A c t i v i t y   i n   Z e b r a ﬁ s h .   T o x i c o l .   S c i .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]
+
+.
+
+Z h u ,   Q . ;   Y a n g ,   Y . ;   L a o ,   Z . ;   Z h o n g ,   Y . ;   Z h a n g ,   K . ;   Z h a o ,   S .   A c u t e   a n d   c h r o n i c   t o x i c i t y   o f   d e l t a m e t h r i n ,   p e r m e t h r i n ,   a n d   d i h a l o a c e t y -
+
+l a t e d   h e t e r o c y c l i c   p y r e t h r o i d s   i n   m i c e .   P e s t   a n a g .   S c i .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]
+
+.
+
+G u o ,   J . ;   X u ,   J . ;   Z h a n g ,   J . ;   A n ,   L .   A l t e r a t i o n   o f   m i c e   c e r e b r a l   c o r t e x   d e v e l o p m e n t   a f t e r   p r e n a t a l   e x p o s u r e   t o   c y p e r m e t h r i n   a n d
+
+d e l t a m e t h r i n .   T o x i c o l .   L e t t .
+
+,
+
+, – .   [ C r o s s R e f ]
+
+.
+
+e t c a l f ,   . G . ;   H i g u c h i - S a n a b r i a ,   R . ;   G a r c i a ,   G . ;   T s u i ,   C . K . ;   D i l l i n ,   A .   B e y o n d   t h e   c e l l   f a c t o r y :   H o m e o s t a t i c   r e g u l a t i o n   o f   a n d   b y
+
+t h e   U P R E R .   S c i .   A d v .
+
+, ,   e a b b
+
+.   [ C r o s s R e f ]
+
+o l e c u l e s
+
+,
+
+,
+
+o f
+
+.
+
+Y o u ,   K . ;   W a n g ,   L . ;   C h o u ,   C . H . ;   L i u ,   K . ;   N a k a t a ,   T . ;   J a i s w a l ,   A . ;   Y a o ,   J . ;   L e f k o v i t h ,   A . ;   O m a r ,   A . ;   P e r r i g o u e ,   J . G . ;   e t   a l .   Q R I C H d i c t a t e s   t h e   o u t c o m e   o f   E R   s t r e s s   t h r o u g h   t r a n s c r i p t i o n a l   c o n t r o l   o f   p r o t e o s t a s i s .   S c i e n c e
+
+,
+
+,   e a b b
+
+.   [ C r o s s R e f ]
+
+.
+
+C a i ,   Y . ;   S o n g ,   W . ;   L i ,   J . ;   J i n g ,   Y . ;   L i a n g ,   C . ;   Z h a n g ,   L . ;   Z h a n g ,   X . ;   Z h a n g ,   W . ;   L i u ,   B . ;   A n ,   Y . ;   e t   a l .   T h e   l a n d s c a p e   o f   a g i n g .   S c i e n c e
+
+C h i n a   L i f e   S c i .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+.
+
+W e b s t e r ,   B . . ;   G i l d e a ,   H . K . ;   D i l l i n ,   A .   P r o t e i n   h o m e o s t a s i s   f r o m   t h e   o u t s i d e   i n .   N a t .   C e l l   B i o l .
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]
+
+[ P u b e d ]
+
+.
+
+B r e n n e r ,   S .   T h e   g e n e t i c s   o f   C a e n o r h a b d i t i s   e l e g a n s .   G e n e t i c s
+
+,
+
+,
+
+–
+
+.   [ C r o s s R e f ]
+
+.
+
+L e w i s ,   J . A . ;   F l e m i n g ,   J . T .   C h a p t e r B a s i c   C u l t u r e   e t h o d s .   I n   C a e n o r h a b d i t i s   e l e g a n s :   o d e r n   B i o l o g c i a l   A n a l y s i s   o f   a n   O r g a n i s m ;
+
+e t h o d s   i n   C e l l   B i o l o g y ;   A c a d e m i c   P r e s s :   C a m b r i d g e ,   A ,   U S A ,
+
+;   p p . –
+
+.
+
+.
+
+S u t p h i n ,   G . L . ;   K a e b e r l e i n ,   .   e a s u r i n g   C a e n o r h a b d i t i s   e l e g a n s   l i f e   s p a n   o n   s o l i d   m e d i a .   J .   V i s .   E x p .
+
+,
+
+,   e
+
+.   [ C r o s s R e f ]
+
+.
+
+C a i   S h i ,   D . ;   L o n g ,   C . ;   V a r d e m a n ,   E . ;   K e n n e l l y ,   E . J . ;   L a w t o n ,   . A . ;   D i ,   R .   P o t e n t i a l   A n t i - A l z h e i m e r   P r o p e r t i e s   o f   o g r o s i d e s   i n
+
+V i t a m i n   B
+
+- D e ﬁ c i e n t   C a e n o r h a b d i t i s   e l e g a n s .   o l e c u l e s
+
+,
+
+,
+
+.   [ C r o s s R e f ]   [ P u b e d ]
+
+D i s c l a i m e r / P u b l i s h e r ’ s   N o t e :   T h e   s t a t e m e n t s ,   o p i n i o n s   a n d   d a t a   c o n t a i n e d   i n   a l l   p u b l i c a t i o n s   a r e   s o l e l y   t h o s e   o f   t h e   i n d i v i d u a l
+
+a u t h o r ( s )   a n d   c o n t r i b u t o r ( s )   a n d   n o t   o f   D P I   a n d / o r   t h e   e d i t o r ( s ) .   D P I   a n d / o r   t h e   e d i t o r ( s )   d i s c l a i m   r e s p o n s i b i l i t y   f o r   a n y   i n j u r y   t o
+
+p e o p l e   o r   p r o p e r t y   r e s u l t i n g   f r o m   a n y   i d e a s ,   m e t h o d s ,   i n s t r u c t i o n s   o r   p r o d u c t s   r e f e r r e d   t o   i n   t h e   c o n t e n t .
+

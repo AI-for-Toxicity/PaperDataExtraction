@@ -1,0 +1,254 @@
+<!-- image -->
+
+## Abstract
+
+The rainbow trout fish cell lines RTG-2 and RTL-W1 were used to determine the cytotoxic effects of the pesticides bifenthrin, cypermethrin, cyhalothrin, l -cyhalothrin, quinalphos and chlorpyrifos. Cytotoxicity was measured by EROD and b -Gal enzymatic activities, the neutral red (NR) uptake assay, and the FRAME KB protein (KBP) assay. The b -Gal activity was unaffected by the pesticide exposure. The EROD activity was induced by cyhalothrin and l -cyhalothrin (RTG-2 and RTL-W1) and by bifenthrin (RTL-W1). Dose dependent inhibition responses were observed for EROD activity in cells exposed to quinalphos (RTL-W1) and chlorpyrifos (RTG-2 and RTL-W1). RTL-W1 offered a better response for EROD induction. The EC50 values on EROD endpoint were more sensitive than NR and KBP. The acute fish toxicity of chlorpyrifos and quinalphos depends highly on the species; the species sensitivity distributions cover several orders of magnitude and the values obtained for EROS were within the lowest part of the reported ranges.
+
+/C211 2004 Elsevier Ltd. All rights reserved.
+
+Keywords: Pesticides; RTG-2; RTL-W1
+
+## 1. Introduction
+
+The possibility of using in vitro systems to minimise the use of vertebrates in regulatory testing is currently under discussion. In the European Union, the White Paper on the future strategy on chemicals presents this issue, and the ECVAM has recently reviewed the possibilities of in vitro mammalian tests (Worth and Balls, 2002), and the EU Scientific Committee has expressed its opinion on the current state of the art (CSTEE, 2004). In vitro cytotoxicity tests with fish cell lines can offer a similar alternative for reducing regulatory testing on fish. An in vitro system does not offer the
+
+* Corresponding author. Tel.: C 34 913 476 866; fax: C 34 913 572 293. E-mail address: babin@inia.es (M.M. Babı´ n).
+
+Availableonlineatwww.sciencedirect.com
+
+<!-- image -->
+
+Environmental Pollution 135 (2005) 267-274
+
+ENVIRONMENTAL POLLUTION
+
+www.elsevier.com/locate/envpol
+
+## In vitro toxicity of selected pesticides on RTG-2 and RTL-W1 fish cell lines
+
+M.M. Babı´ n*, J.V. Tarazona
+
+Laboratory for Ecotoxicology, Department of the Environment, INIA, Crta. de La Corun ˜a Km 7, 28040 Madrid, Spain
+
+Received 12 April 2004; accepted 5 November 2004
+
+In vitro cell cultures can provide sensitive indicators for pesticide effects on biota.
+
+complexity of living organisms and therefore some mechanisms of action may not be covered. Pesticides are considered among the most environmentally hazardous chemicals and in most countries are subject to an authorisation process. Standardized acute lethality tests on fish are commonly included in the required basic data set for pesticides (e.g. EC, 2001). Pesticides are molecules designed with specific modes of action. Insecticides and some fungicides are frequently highly toxic to aquatic animals including fish (Bradbury and Coats, 1989). Therefore, pesticides offer a good model for testing the capacity of in vitro methods for detecting the toxicity of chemicals acting through specific mechanisms.
+
+In vitro systems can be designed for detecting specific and/or general damage at the cellular and subcellular level. Comparisons between the cytotoxicity on RTG-2 and in vivo acute lethality indicated a potential use of
+
+general endpoints such as neutral red or ATP for a wide variety of ecotoxicologically relevant substances (Castan ˜ o et al. 1996). The use of several endpoints, reflecting lethal and sublethal cellular responses, represents a clear advantage for studying chemicals with specific mechanisms of action.
+
+An in vitro toxicity screening test has been developed to identify compounds that have a potential to be acutely toxic to fish. This screening test employs two fish cell lines, rainbow trout liver cells (RTL-W1) and rainbow trout gonadal cells (RTG-2). The final objective is to develop an alternative method for detecting chemicals toxic to fish which could handle large sample numbers in short times. The possibilities for using such methods for biological monitoring and toxicity identification evaluation have been already assayed (Babı´ n et al., 2001). This paper analyses the capacity of the method for detecting the toxicity of pesticides with specific mechanisms of action. Six insecticides, two organophosphorus (Quinalphos and Chlorpyrifos) and four pyrethrinoides (cypermethrin, bifenthrin, cyhalothrin and l -cyhalothrin) were assayed under 24 h exposures and using a battery of endpoints. Two enzymatic activities, EROD (7-ethoxyresorufino -deethylase) activity, and the hydrolysis of 4-methylumbelliferylb -D-galactoside ( b -Gal activity), and two classical endpoints, the neutral red (NR) uptake assay and the FRAME Kenacid Blue protein (KBP) assay, were selected, and dose-response experiments conducted for each pesticide. The sensitivity of the different endpoints and cell lines was studied.
+
+## 2. Materials and methods
+
+## 2.1. Stock culture
+
+Rainbow trout hepatic cell line RTL-W1 was grown as described by Lee et al. (1993). Rainbow trout gonad fibroblasts (RTG-2, ATCC CCL55) were maintained in EMEM, containing 10% foetal bovine serum, 100 IU/ml penicillin, 100 m g/ml streptomycin, L-glutamine 2 mM and 5% CO2 in air at 20 /C14 C. Cells in the exponential growth phase were collected with trypsin, and plated at a density of 2.5 ! 10 4 cells per well in medium containing 10% (RTG-2) or 5% (RTL-W1) FBS. The cells were allowed to adhere for 24 h before exposure to agrochemicals.
+
+## 2.2. Chemicals
+
+Pesticides were purchased from two sources in crystallized form with a 99% level of purity except for cypermethrin (95%). Stock solutions of bifenthrin (BT), cypermethrin (CM), cyhalothrin (CT), l -cyhalothrin (LCT), quinalphos (QP) (Riedel de Hae ¨ n-Germany) and chlorpyrifos(CPF) (Supelco-Canada) were prepared by dissolving the crystalline compound in methanol (BT, CT, LCT and CPF) or n -hexane (CM and QP). The final solvent concentration in culture medium did not exceed 2%. A 200 m M stock solution of 7-ethoxyresorufin (Sigma) was prepared by dissolving the crystalline compound in DMSO. Methylumbelliferilb -D-galactoside (ICN-Ohio) was dissolved in 0.5% dimethylformamide/deionised water v/v to yield a solution of 0.18 mM.
+
+## 2.3. Test procedures
+
+After 24 h of attachment, culture medium was removed and replaced with complete medium containing the test pesticide, using eight replicate wells per concentration. Untreated controls (medium), and solvent controls (methanol or n -hexane at a final concentration of 2% or 1% v/v, respectively) were run in parallel. The four endpoints were tested subsequently with each microtiter plate, following the sequence: EROD, b -Gal, neutral red and FRAME KB protein.
+
+Fluorescence measurements can be measured in the same well with no interference, due to the different spectra of the selected fluorophors. Similarly, no interference for the spectrometric determinations of neutral red or KBP was observed. However, it was considered essential to assess potential changes in the biological responses due to the subsequent measurements in the same plate. To confirm the suitability of this approach, a set of additional studies were conducted using two model compounds pentachlorophenol, PCP (0-300 ppm) and Cd (0-110 ppm). Toxicity responses were measured independently or following the successive measurement approach. No statistically significant differences using one-way ANOVA ( P ! 0.05) in the measured responses were observed for neutral red and KB protein. The b -Gal responses were slightly (about 10%), but statistically significantly different, when measured after measuring EROD. However, as the effect was similar at all concentrations, the doseresponse curves were not affected (Fig. 1).
+
+After 24 h of exposure, EROD activity was measured directly in the wells without removing the exposure medium (Bols et al., 1999). Fifty microliters per well of a 0.825 m M solution of 7-ethoxyresorufin in EMEM (RGT-2) or L-15 (RTL-W1) medium were added. Fluorescence was measured (TECAN-spectrafluor fluorescence spectrofluorometer, excitation wavelength of 530 nm and emission wavelength of 590 nm) in a kinetic way, collecting data for 60 min.
+
+The fluorescence plate reader was also used to quantify b -Gal activity. Fluorescence was measured (excitation wavelength of 360 nm and emission wavelength of 465 nm) before adding the substrate of b -Gal, to confirm that the EROD substrate and reagent medium did not contribute to the background fluorescence, and
+
+Fig. 1. b -Gal activity by RTG-2 cells exposed to various concentrations of PCP (A) or Cd (B). Assays for PCP and Cd were conducted 1 d after plating. Cells were assayed with subsequently EROD and b -Gal activity on the same microtiter plate ( , ) or only b -Gal activity ( -). Results shown are the means G SD of three independent experiments (three wells per experiment). The y -axis shows 4-methylumbelliferone formation in units of fluorescence at 60 min (100% control cells).
+
+<!-- image -->
+
+at 0, 30 and 60 min after the addition of 20 m l/well (0.18 mM) of substrate to the medium.
+
+After measuring the enzymatic activities, the microplates were washed with PBS and the uptake of neutral red stain by the lysosomes to evaluate the cell viability was performed as described by Borenfreund and Puerner (1985) but adding only one half of the described amount of neutral red. Plates were read at 550 nm. Then, the protein content was measured on the same plate, to evaluate the total cellular mass, using the KBP assay described by Knox et al. (1986) but adapted to use 96 well plates adding for 30 min, 100 m l Coomassie blue stain solution. The extraction of the dye was also modified, plates were kept in an ultrasonic bath for 3 min, with 50 m l of the desorb solution per well, and then completed up to 100 m l of the desorb solution, sacked 30 min and read at 620 nm.
+
+## 2.4. Data analysis
+
+The traditional log-probit analysis was used to determine the concentration giving 50% inhibition
+
+(EC50 and 95% confidence limits) for neutral red and FRAME KB protein. Concentrations giving 50% inhibition (EC50) for the kinetic parameter EROD, was estimated from the areas under the curve, using the OECD method 201 (OECD, 1993). This method estimates growth inhibition in the cellular (algae) population and allows the use of all time point measurements, offering higher relevance and better statistical confidence than the single measurements at a fixed time point. Statistical analyses were performed using Statgraphics Plus software at a level of significance of P ! 0.05. Global one-way ANOVAs were used to determine treatment-related effects, followed by the Fisher's least significant difference (LSD) method for pair-wise multiple comparisons. Data are reported as means G standard errors for n Z 3.
+
+## 3. Results
+
+## 3.1. EROD activity
+
+For standardisation, EROD activities are commonly referred relative to the amount of protein in the system. The amount of cell protein in the wells are directly proportional to the plating density (Hahn et al., 1996), for this reason and to avoid additional measurements, the total activity per well was employed in this study. Wells had been seeded with the same number of cells and grown for the same length of time under similar conditions, allowing direct comparisons, where pesticide exposure was the only variable. Inter-assay comparisons confirmed the validity of this practical approach.
+
+Resorufin production in pesticide-treated cells was linear through at least 60 min. EROD activities in RTLW1 cells were twofold higher than in RTG-2 cells. EROD activity was induced by CT and LCT in both cell lines, with the induction higher in RTL-W1 than in RTG-2 (Fig. 2). The LOEC for induction appeared at the lowest tested concentrations, 0.5 mg/L for CT and 0.75 mg/L for LCT (RTL-W1 and RTG-2) (Tables 1 and 2).
+
+CT showed the highest EROD activity at 4.3 mg/L, representing induction of 2.8 times and 2.3 times versus control for RTL-W1 and RTG-2, respectively. Highest concentrations showed a dose-related decline achieving inhibition when compared to controls at the highest concentrations (Tables 1 and 2). Quinalphos (RTL-W1) and chlorpyrifos (RTL-W1 and RTG-2) provoked doserelated inhibition responses on EROD activity (Fig. 3; Tables 1 and 2). Inhibition was already observed at the lowest tested concentration, 0.03 mg/L for QP and 0.02 mg/L for CPF. The calculated EC50 values are presented in Table 3. No effects were observed for BT, CM and QP on RTG-2 cells and for CM on RTL-W1 cells.
+
+Fig. 2. Induction of EROD activity (fluorescence 60 min after substrate addition) 24 h after exposure to cyhalothrin (CT) or l -cyhalothrin (LCT) on RTL-W1 or RTG-2 fish cell lines. Mean G SD (three independent assays, eight replicates per assay).
+
+<!-- image -->
+
+## 3.2. b -Gal activity
+
+No effects on this activity on RTL-W1 or RTG-2 cell lines were observed even at the highest tested concentrations: bifenthrin (72 mg/L), cypermethrin (18 mg/L), cyhalothrin (70 mg/L), l -cyhalothrin (100 mg/L), quinalphos (5 mg/L) and chlorpyrifos (3 mg/L).
+
+## 3.3. Neutral red
+
+Significant differences between the cell lines were observed for this endpoint. Bifenthrin, cyhalothrin, l -cyhalothrin and chlorpyrifos produced a dose-related reduction in RTG-2 (Table 2), while only chlorpyrifos affected RTL-W1 (Fig. 4; Table 1). Chlorpyrifos showed different LOECs and response slopes in each cell line, effects were already observed at 0.1 mg/L on RTLW1, while only concentrations higher than 0.4 mg/L provoked effects on RTG-2 (Fig. 4; Tables 1 and 2). The rank order of EC50 values was CPF ! BT ! CT ! LCT for RTG-2 cell line (Table 3).
+
+Table 1 Effects observed for RTL-W1 cells exposed to several pesticides )
+
+| Bifenthrin   | Bifenthrin    | Cyhalothrin   | Cyhalothrin        | l -Cyhalothrin   | l -Cyhalothrin   | Quinalphos   | Quinalphos      | Chlorpyrifos   | Chlorpyrifos        |                   |                   |
+|--------------|---------------|---------------|--------------------|------------------|------------------|--------------|-----------------|----------------|---------------------|-------------------|-------------------|
+| mg/L         | EROD          | mg/L          | EROD 4             | mg/L             | EROD 4           | mg/L         | EROD 4          | mg/L           | EROD 4              | N.R. 4            | Protein 4         |
+| 0            | 1680 ( G 121) | 0             | 1966 a ( G 292)    | 0                | 1957 a ( G 249)  | 0            | 506 a ( G 29)   | 0              | 298 a ( G 174)      | 0.21 a ( G 0.01)  | 0.75 a ( G 0.01)  |
+| 0.5          | 1717 ( G 159) | 0.5           | 3044 abc ( G 697)  | 0.7              | 2066 a ( G 319)  | 0.03         | 264 ab ( G 180) | 0.02           | 117 b ( G 32)       | 0.20 ab ( G 0.03) | 0.71 a ( G 0.03)  |
+| 1.1          | 1727 ( G 245) | 1.0           | 3617 abcd ( G 805) | 1.5              | 2091 a ( G 226)  | 0.07         | 201 b ( G 165)  | 0.04           | 88 bc ( G 35)       | 0.20 bc ( G 0.03) | 0.69 ab ( G 0.04) |
+| 2.2          | 1687 ( G 189) | 2.1           | 4604 cde ( G 999)  | 3.0              | 2541 ab ( G 285) | 0.15         | 168 b ( G 145)  | 0.09           | 51 bcd ( G 27)      | 0.18 c ( G 0.03)  | 0.63 b ( G 0.04)  |
+| 4.5          | 1689 ( G 205) | 4.3           | 5682 e ( G 890)    | 6.0              | 2928 bc ( G 448) | 0.30         | 112 b ( G 104)  | 0.18           | 42 bcd ( G 16)      | 0.16 d ( G 0.03)  | 0.56 c ( G 0.04)  |
+| 9.0          | 1759 ( G 219) | 8.7           | 5501 e ( G 1151)   | 12.0             | 3289 cd ( G 545) | 0.60         | 104 b ( G 111)  | 0.37           | 27 bcd ( G 25)      | 0.12 e ( G 0.03)  | 0.48 c ( G 0.03)  |
+| 18.0         | 1878 ( G 344) | 17.5          | 5025 de ( G 1340)  | 25.0             | 3738 d ( G 491)  | 1.25         | 81 b ( G 108)   | 0.75           | 11 cd ( G 27)       | 0.09 f ( G 0.03)  | 0.38 d ( G 0.03)  |
+| 36.0         | 2021 ( G 368) | 35.0          | 3791 bcd ( G 1237) | 50.0             | 4569 e ( G 846)  | 2.50         | 52 b ( G 93)    | 1.50           | /C255 22 d ( G 7)   | 0.1 f ( G 0.03)   | 0.38 d ( G 0.04)  |
+| 72.0         | 2060 ( G 328) | 70.0          | 2577 ab ( G 859)   | 100.0            | 5205 e ( G 776)  | 5.0          | 29 b ( G 67)    | 3.0            | /C255 36 d ( G 0.7) | 0.1 f ( G 0.03)   | 0.36 d ( G 0.03)  |
+
+) Dates are presented as the mean ( G standard deviation); n Z 3.
+
+4 Statistically significant treatment-related differences in the one-way ANOVA test ( P ! 0.05).
+
+a-f Results of the Fisher's least significant difference (LSD) tests. Within each column, values not sharing the same letter are significantly ( P ! 0.05) different.
+
+## 3.4. FRAME KBP assay
+
+The FRAME Kenacid Blue protein assays showed a poor response. No effects were observed in RTG-2 cells; while only chlorpyrifos was toxic to RTL-W1 cells (Fig. 5; Table 3).
+
+## 4. Discussion
+
+Significant differences among the selected endpoints and between the fish cell lines were observed. EROD activity was the most sensitive parameter, followed by neutral red.
+
+However, EROD activity was induced by some pesticides but inhibited by others. The specific induction of EROD activity by planar molecules such as chlorinated dioxins, PAHs or PCBs is well described (e.g. Petrulis and Bunce, 1999). The induction observed for the pyretroid insecticides cyhalothrin and l -cyhalothrin was, however, lower than that usually observed for coplanar molecules (Basu et al., 2001). The induction of cytochrome P450 2B1 (CYP2B1) and 3A1 (CYP3A1) isoforms has been reported for permethrin (Heder et al., 2001); however, the same authors did not find induction of cytochrome P450 1A1 (CYP1A1), which is the isoform related to EROD induction (Stegeman et al., 2001). The induction of cytochrome P450 activities has been reported as a mechanism for resistance to pyretroid insecticides (Kranthi et al., 2001); but again this induction is associated to a different isoform, CYP6D1, than CYP1A1 (Liu and Scott, 1998). Therefore, to the best of our knowledge no previous reports of EROD or CYP1A1 induction for pyretroid insecticides have been published. The dose/response pattern observed for cyhalothrin has been commonly observed (Bols et al., 1999; Leguen et al., 2000). For cyhalothrin, an association between the reduction in EROD induction
+
+Table 2 Effects observed for RTG-2 cells exposed to pesticides )
+
+| Bifenthrin   | Bifenthrin        | Cyhalothrin   | Cyhalothrin       | Cyhalothrin       | l -Cyhalothrin   | l -Cyhalothrin    | l -Cyhalothrin    | Chlorpyrifos   | Chlorpyrifos         | Chlorpyrifos      |
+|--------------|-------------------|---------------|-------------------|-------------------|------------------|-------------------|-------------------|----------------|----------------------|-------------------|
+| mg/L         | N.R. 4            | mg/L          | EROD 4            | N.R. 4            | mg/L             | EROD 4            | N.R. 4            | mg/L           | EROD 4               | N.R. 4            |
+| 0            | 0.26 a ( G 0.02)  | 0             | 1288 a ( G 227)   | 0.26 a ( G 0.00)  | 0                | 1323 a ( G 227)   | 0.27 ab ( G 0.07) | 0              | 419 a ( G 141)       | 0.31 a ( G 0.01)  |
+| 0.5          | 0.24 a ( G 0.05)  | 0.5           | 1987 bc ( G 358)  | 0.26 a ( G 0.00)  | 0.7              | 1418 ab ( G 330)  | 0.29 ab ( G 0.08) | 0.02           | 143 b ( G 30)        | 0.30 ab ( G 0.02) |
+| 1.1          | 0.26 a ( G 0.04)  | 1.0           | 2438 cd ( G 458)  | 0.26 a ( G 0.01)  | 1.5              | 1513 ab ( G 270)  | 0.30 a ( G 0.06)  | 0.04           | 95 bc ( G 11)        | 0.31 a ( G 0.02)  |
+| 2.2          | 0.27 a ( G 0.02)  | 2.1           | 2872 de ( G 369)  | 0.27 a ( G 0.01)  | 3.0              | 1710 abc ( G 327) | 0.30 a ( G 0.06)  | 0.09           | 89 bc ( G 30)        | 0.31 a ( G 0.01)  |
+| 4.5          | 0.24 a ( G 0.07)  | 4.3           | 3054 f ( G 500)   | 0.25 ab ( G 0.01) | 6.0              | 2015 bcd ( G 343) | 0.30 a ( G 0.05)  | 0.18           | 61 c ( G 26)         | 0.30 ab ( G 0.02) |
+| 9            | 0.22 ab ( G 0.05) | 8.7           | 2797 de ( G 351)  | 0.23 ab ( G 0.04) | 12.0             | 2265 cd ( G 473)  | 0.27 ab ( G 0.08) | 0.37           | 30 cd ( G 10)        | 0.30 b ( G 0.01)  |
+| 18           | 0.18 ab ( G 0.06) | 17.5          | 2517 cde ( G 490) | 0.19 bc ( G 0.04) | 25.0             | 2441 d ( G 452)   | 0.24 ab ( G 0.1)  | 0.75           | /C255 22 de ( G 0.7) | 0.20 c ( G 0.02)  |
+| 36           | 0.16 ab ( G 0.06) | 35.0          | 2011 bc ( G 545)  | 0.14 cd ( G 0.03) | 50.0             | 2500 d ( G 507)   | 0.22 ab ( G 0.1)  | 1.5            | /C255 25 de ( G 3)   | 0.14 d ( G 0.02)  |
+| 72           | 0.11 b ( G 0.01)  | 70.0          | 1535 ab ( G 285)  | 0.12 d ( G 0.02)  | 100.0            | 3244 e ( G 748)   | 0.12 b ( G 0.02)  | 3.0            | /C255 45 e ( G 2)    | 0.10 e ( G 0.01)  |
+
+) Dates are presented as the mean ( G standard deviation); n Z 3.
+
+4 Statistically significant treatment-related differences in the one-way ANOVA test ( P ! 0.05).
+
+a-f Results of the Fisher's least significant difference (LSD) tests. Within each column, values not sharing the same letter are significantly ( P ! 0.05) different.
+
+and the effects on cell viability can be observed. However, for l -cyhalothrin EROD induction is observed at concentrations producing dramatic effects on cell viability but not on cell detachment. The organophosphorous insecticides provoked a dose/response inhibition of EROD activity, which was 72 and 18 times more sensitive than neutral red for RTG-2 and RTL-W1, respectively. The concentration-response curves obtained for chlorpyrifos (RTG-2 and RTL-W1) display decreased EROD activity and increased neutral red cytotoxicity. EROD inhibition resulting from metabolism failure is less frequently studied than induction but it has been observed for some chemicals both in vivo and in vitro (Willett et al., 2001). EROD basal activity was in general higher in RTL-W1 than in RTG-2 cells, and the induction was also higher in the first line, confirming the aptitude of the liver cell line (Lee et al., 1993).
+
+Fig. 3. Inhibition of EROD activity after 24 h exposure to quinalphos (QP) on RTL-W1 or chlorpyrifos (CPF) on RTL-W1 or RTG-2 cell lines. Data shown are areas under the curve for the first 60 min after substrate addition. Mean G SD (three independent assays, eight replicates per assay).
+
+<!-- image -->
+
+Neutral red appeared as the most sensitive endpoint after EROD. RTG-2 was more sensitive than RTL-W1 for bifenthrin, cyhalothrin and l -cyhalothrin but not for chlorpyrifos.
+
+Surprisingly, the inhibition of enzymatic activity of b -Gal, used as a sublethal stress indicator (Pablos et al., 1998a), was not detected at the assayed doses. The interpretation of these results must consider the employed methodology. Opposite to neutral red and protein, b -Gal is directly measured in the well without medium removal, and therefore the activity of the detached cells and released enzyme is included (Snyder et al., 1986; Haugland, 1995). Previous studies on other chemicals have highlighted the potential of this enzyme as a sublethal endpoint (Pablos et al., 1998b; Babı´ n et al., 2001), which has been associated in vitro with senescence and cellular death although its use as a senescence marker is under discussion (Severino et al., 2000; Going et al., 2002). Our results suggest that the assayed insecticides do not affect this enzymatic activity even at concentrations producing significant changes in lysosome permeability and cell detachment. These results confirm the need for a battery of endpoints when studying chemicals with very specific mechanisms of action.
+
+Dose-related effects on the KB protein assay were only observed for chlorpyrifos on the RTL-W1 cell line. Protein measurement was threefold less sensitive than neutral red. KB protein measurement is usually less sensitive than neutral red in cytotoxicity test on RTG-2 (Castan ˜ o et al., 1996). The underlying processes elucidating these endpoints are relatively simple. Cytotoxicity is expected to produce a decrease in cell viability (measured by neutral red) followed by cell detachment (measured by total protein assays). Therefore, good agreement between protein and neutral red effect is generally expected. However, detachment requires some time, and in short-term tests, non-viable cells can still be
+
+Table 3
+
+3.
+
+Z
+
+n
+
+standard deviation);
+
+G
+
+Dates are presented as the mean (
+
+a
+
+Fig. 4. Dose-response curves for neutral red of bifenthrin (BT), cyhalothrin (CT), l -cyhalothrin (LCT) and chlorpyrifos (CPF) on RTG-2 cell line and chlorpyrifos (CPF) on line RTL-W1. Data show absorbance at 550 nm. Mean G SD (three independent assays, eight replicates per assay).
+
+| Chlorpyrifos            | 0.026          | [0.013-0.054]   | O 3       | 0.47      | [0.29-0.75]          | 1.47     |
+|-------------------------|----------------|-----------------|-----------|-----------|----------------------|----------|
+| Quinalphos              | 0.20           | [0.10-0.43]     | O 5       | O 5       | O                    | 5        |
+| -Cyhalothrin            | Induction      | was observed    | O 100     | O 100     |                      | O 100    |
+| Cyhalothrin l           | Induction      | was observed    | O         | 70 O 70   |                      | O 70     |
+| Bifenthrin Cypermethrin | Induction O 18 | was observed    | O 18      | O 18      |                      | O 18     |
+| RTL-W1 Chlorpyrifos     | 0.022          | [0.010-0.051]   | O 3 O 72  | 1.58 O 72 | [1.00-2.49]          | O 72     |
+| Quinalphos              | O 5            |                 | O 5       | O 5       |                      | O 3      |
+| l -Cyhalothrin          | Induction was  | observed        | O 100     |           | [28.75-446.25]       | O 5      |
+| Cyhalothrin             | Induction was  | observed        | O 72 O 70 | 113.16    | 50.98 [21.81-121.42] | 70 O 100 |
+| Cypermethrin            |                |                 | O         | O 18      |                      | O        |
+|                         | O 18           |                 | 18        |           |                      | O 18     |
+|                         |                |                 |           | 49.02     | [16.38-153.98]       | O 72     |
+| RTG-2 Bifenthrin        | O 72           |                 |           |           |                      |          |
+| Chemical                | EROD           |                 |           |           |                      |          |
+|                         |                |                 | b -Gal    | N.R.      |                      | KBP      |
+
+<!-- image -->
+
+attached to the plate and diminish the capability of protein measurement to identify toxic effects. Under some conditions, e.g. by exposure to some solvents, death cells can be fixed on the plastic surface and are accounted as live cells in the protein measurements. Although both mechanisms could explain the lack of protein response at doses severely affecting neutral red, the first hypothesis seems to be more likely. The results observed for neutral red and protein are in agreement with those published by Castan ˜ o et al. (1996).
+
+The Pan Pesticides Database (http://www.pesticideinfo.org) summarises the information on pesticides obtained from the US EPA system AQUIRE (http:// www.epa.gov/ecotox). A comparison of the EROD EC50 values obtained in this study with the reported acute in vivo LC50 values for fish confirms the capacity of the EROD endpoint. The acute toxicity of chlorpyrifos to fish ranges from 0.001 to 2 mg/L; 23, out of the 36 fish species reported, are less sensitive than the proposed in vitro method. Similar results can be obtained from the review published by Giesy et al.
+
+Fig. 5. Dose-response curves for KB proteins of chlorpyrifos (CPF) on RTL-W1 cells. Data show absorbance at 620 nm. Mean G SD (three independent assays, eight replicates per assay).
+
+<!-- image -->
+
+(1999); the EROD 48 h EC50 would correspond to the 30th percentile of the species sensitivity distribution obtained for the 48 h normalized acute toxicity of freshwater fish, indicating again that the in vitro method is within most sensitive part of the distribution. For quinalphos, the fish acute toxicity ranges from 0.14 to 6.2 mg/L; most fish species were 5 times less sensitive than the EROD response. For bifenthrin, the in vitro responses only appeared at doses well above those reported toxic to fish, while no conclusions can be drawn on cyhalothrin and l -cyhalothrin as the EROD induction was already observed at the lowest tested dose. The RTL-W1 cell line offered better responses for EROD activity, as previously reported, while no clear trends were observed for other endpoints being the sensitivity endpoint and chemical dependent. EROD activity was the most sensitive endpoint, and the response, either induction or reduction, offers additional information on potential mechanisms. The inclusion of enzymatic activities, and particularly EROD increased largely the sensitivity of the in vitro battery.
+
+## 5. Conclusions
+
+For the selected model pesticides, large differences in the responses of the measured endpoints were observed, confirming the need for using a battery of endpoints. The results confirmed the capacity of the assayed method for detecting toxic chemicals acting through specific mechanisms, at concentrations similar to those producing acute lethality in fish. From the tested pesticides, a large amount of information on ambient water levels is available for chlorpyrifos. Although risk reduction measures have been implemented, concentrations similar to those producing effects on EROD activities are still occasionally reported in small tributaries in agricultural areas (Kozlowski et al., 2004), while those affecting the other endpoints have only been found as a result of accidental spills (Raven and George, 1989). The use of concentration methods (Pablos et al., 1999) can increase the capacity of this method. The capacity of in vitro assays on fish cell lines as a complementary tool for analysing effluents, wastes and hot spots has been previously demonstrated (Castan ˜ o et al., 1994; Vega et al., 1996) but limitations should also be considered.
+
+## Acknowledgements
+
+WethankDr.L.E.J.Lee(WilfridLaurierUniversityof Waterloo, Ontario, Canada) for providing the RTL-W1 cells. We thank Pilar Garcı´ a for technical assistance. This work has been funded by the INIA Research Project CAL-00-14.
+
+## References
+
+- Babı´ n, M.M., Garcı´ a, P., Ferna ´ ndez, C., Alonso, C., Carbonell, G., Tarazona, J.V., 2001. Toxicological characterization of sludge from sewage treatment plants using toxicity identification evaluation protocols based on in vitro toxicity test. Toxicology In vitro 15, 519-524.
+- Basu, N., Billiard, S., Fragoso, N., Omoike, A., Tabash, S., Brown, S., Hodson, P., 2001. EthoxyresorufinO -deethylase induction in trout exposed to mixtures of polycyclic aromatic hydrocarbons. Environmental Toxicology and Chemistry 20, 1244-1251.
+- Bols, N.C., Schirmer, K., Joyce, M.E., Dixon, D.G., Greenberg, B.M., Whyte, J.J., 1999. Ability of polycyclic aromatic hydrocarbons to induce 7-ethoxyrresorufino -deethylase activity in a trout liver cell line. Ecotoxicology and Environmental Safety 44, 118-128.
+- Borenfreund, E., Puerner, J.A., 1985. Toxicity determined in vitro by morphological alterations and neutral red absorption. Toxicology Letters 24, 119-124.
+- Bradbury, S.P., Coats, J.R., 1989. Comparative toxicology of the pyrethroid insecticides. Reviews of Environmental Contamination and Toxicology 108, 133-177.
+- Castan ˜ o, A., Vega, M., Blazquez, T., Tarazona, J.V., 1994. Biological alternatives to chemical identification for the ecotoxicological assessment of industrial effluents: the RTG-2 in vitro cytotoxicity test. Environmental Toxicology and Chemistry 13, 1607-1611.
+- Castan ˜ o, A., Cantarino, M.J., Castillo, P., Tarazona, J.V., 1996. Correlation between the RTG-2 cytotoxicity test EC50 and in vivo LC50 rainbow trout bioassay. Chemosphere 32, 2141-2157.
+- CSTEE, 2004. The way forward - action to end animal toxicity testing. Forty-first Plenary Meeting of 8 January 2004.
+- EC, 2001. Guidance document on aquatic ecotoxicology in the frame of the Directive 91/414/EC. DGSANCO/3268/2001, 21 pp.
+- Giesy, J.P., Solomon, K.R., Coats, J.R., Dixon, K.R., Giddings, J.M., Kenaga, E.E., 1999. Chlorpyrifos: ecological risk assessment in North American aquatic environments. Reviews of Environmental Contamination and Toxicology 160, 1-129.
+- Going, J.J., Stuart, R.C., Downie, M., Fletcher-Monaghan, A.J., Keith, W.N., 2002. 'Senescence-associated' beta-galactosidase activity in the upper gastrointestinal tract. Journal of Pathology 196, 394-400.
+- Hahn, M., Woodward, B., Stegeman, J., Kennedy, S., 1996. Rapid assessment of induced cytochrome P4501A protein and catalytic activity in fish hepatoma cells grown in multiwell plates: response to TCDD, TCDF and two planar PCBs. Environmental Toxicology and Chemistry 15, 582-591.
+- Haugland, R.P., 1995. Detecting enzymatic activity in cells using fluorogenic substrates. Biotechnic and Histochemistry 70, 243-251.
+- Heder, A.F., Hirsch-Ernst, K.I., Bauer, D., Kahl, G.F., Desel, H., 2001. Induction of cytochrome P450 2B1 by pyrethroids in primary rat hepatocyte cultures. Biochemical Pharmacology 62, 71-79.
+- Knox, P., Uphill, P.F., Fry, J.R., Beuford, J., Balls, M., 1986. The FRAME multicentre project on in vitro cytotoxicology. Food and Chemical Toxicology 24, 457-463.
+- Kozlowski, D., Watson, F., Angelo, M., Larson, J., 2004. Monitoring chlorpyrifos and diazinon in impaired surface waters of the Lower Salinas region. Watershed Institute, California State University Monterey Bay, Report No. WI-2004-03, 170 pp.
+- Kranthi, K.R., Jadhav, D., Wanjari, R., Kranthi, S., Russell, D., 2001. Pyrethroid resistance and mechanisms of resistance in field strains of Helicoverpa armigera (Lepidoptera: Noctuidae). Journal of Economic Entomology 94, 253-263.
+- Lee, L.E., Clemons, J.H., Bechtel, D.G., Caldwell, S.J., Han, K.B., Pasitschniak-Arts, M., Mosser, D.D., Bols, N.C., 1993. Development and characterization of a rainbow trout liver cell line expressing cytochrome P450-dependent mono-oxygenase activity. Cell Biology and Toxicology 9, 279-294.
+
+- Leguen, I., Carlsson, C., Perdu-Durand, E., Prunet, P., Part, P., Cravedi, J.P., 2000. Xenobiotic and steroid biotransformation activities in rainbow trout gill epithelial cells in culture. Aquatic Toxicology 48, 165-176.
+- Liu, N., Scott, J.G., 1998. Increased transcription of CYP6D1 causes cytochrome P450-mediated insecticide resistance in house fly. Insect Biochemistry and Molecular Biology 28, 531-535.
+- OECD, 1993. Guidelines for Testing of Chemicals. Alga, Growth Inhibition Test 201.
+- Pablos, M.V., Boleas, S., Garcı´ a, P., Carbonell, G., Tarazona, J.V., 1998a. Inhibicio ´ n de la actividad b -GAL como para ´ metro de toxicidad subletal interespecı ´ fico. Cuadernos de Investigacio ´ n Biolo ´ gica 20, 471-474.
+- Pablos, M.V., Boleas, S., Tarazona, J.V., 1998b. Use of MfuGalactoside enzymatic activity as ecotoxicological endpoint on rainbow trout red blood cells. Bulletin of Environmental Contamination and Toxicology 61, 786-792.
+- Pablos, M.V., Ferna ´ ndez, C., Garcı´ a-Horigu ¨ ela, P., Valdominos, C., Tarazona, J.V., 1999. Comparison of different extraction procedures for organic-fraction toxicity testing of urban sewages. Toxicological and Environmental Chemistry 70, 115-127.
+- Petrulis, J.R., Bunce, N.J., 1999. Competitive inhibition by inducer as a confounding factor in the use of the ethoxyresorufinO -deethylase (EROD) assay to estimate exposure to dioxin-like compounds. Toxicology Letters 105, 251-260.
+- Raven, P.J., George, J.J., 1989. Recovery by riffle macroinvertebrates in a river after a major accidental spillage of chlorpyrifos. Environmental Pollution 59, 55-70.
+- Severino, J., Allen, R.G., Balin, S., Balin, A., Cristofalo, V.J., 2000. Is beta-galactosidase staining a marker of senescence in vitro and in vivo? Experimental Cell Research 257, 162-171.
+- Snyder, A.P., Wang, T.T., Greenberg, D.B., 1986. Pattern recognition analysis of in vivo enzyme-substrate fluorescence velocities in microorganism detection and identification. Applied and Environmental Microbiology 51, 969-977.
+- Stegeman, J.J., Schlezinger, J.J., Craddock, J.E., Tillitt, D.E., 2001. Cytochrome P450 1A expression in midwater fishes: potential effects of chemical contaminants in remote oceanic zones. Environmental Science and Technology 35, 54-62.
+- Vega, M.M., Fernandez, C., Bla ´ zquez, T., Tarazona, J.V., Castan ˜ o, A., 1996. Biological and chemical tools in the toxicological risk assessment of Jarama river, Madrid, Spain. Environmental Pollution 93, 135-139.
+- Willett, K.L., Wassenberg, D., Lienesch, L., Reichert, W., Di Giulio, R.T., 2001. In vivo and in vitro inhibition of CYP1A-dependent activity in Fundulus heteroclitus by the polynuclear aromatic hydrocarbon fluoranthene. Toxicology and Applied Pharmacology 177, 264-271.
+- Worth, A., Balls, M., 2002. Alternative (non-animal) methods for chemicals testing: current status and future prospects. ECVAM Report - July.
