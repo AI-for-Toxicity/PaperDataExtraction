@@ -3,10 +3,10 @@ from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 from docling_core.types.doc.document import TableItem, PictureItem
 from pathlib import Path
-import re
+from sklearn.base import defaultdict
 
-PDF_DIR = Path("data/raw/pdfs/")
-OUTPUT_DIR = Path("data/raw/markdown/")
+PDF_DIR = Path("data/raw/pdfs/00_docling_test")
+OUTPUT_DIR = Path("data/raw/markdown/00_docling_test")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # --- Configurable Docling behavior ---
