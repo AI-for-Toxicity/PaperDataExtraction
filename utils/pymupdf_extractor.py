@@ -3,11 +3,29 @@ import collections
 import fitz  # PyMuPDF
 from pathlib import Path
 import tempfile
-from docling.document_converter import DocumentConverter
+from docling.datamodel.base_models import InputFormat
+from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.datamodel.pipeline_options import PdfPipelineOptions
 
 PDF_DIR = Path("data/raw/pdfs/")
+TMP_DIR = Path("eval/")
 OUTPUT_DIR = Path("data/raw/markdown/")
-HEADER_FOOTER_MARGIN_RATIO = 0.1  # top/bottom 10% of page
+HEADER_FOOTER_MARGIN_RATIO = 0.10  # top/bottom 10% of page
+DIVIDE_PDFS = True
+CONVERT_PDF_WITH_DOCLING = True
+SKIP_EXISTING = False
+
+pipeline_options = PdfPipelineOptions(
+    do_table_structure=True,
+    do_ocr=True,
+    generate_table_images=True,
+    generate_picture_images=True,
+)
+docling_converter = DocumentConverter(
+    format_options={
+        InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
+    }
+)
 
 def extract_spans(doc):
     """Yield (page_idx, span_dict, page_height)."""
@@ -24,30 +42,9 @@ def extract_spans(doc):
                         continue
                     yield (p_idx, span, line["bbox"], ph)
 
-def find_repeated_headers_footers(spans):
-    by_page = collections.defaultdict(list)
-    page_count = 0
-    for (p, span, line_bbox, ph) in spans:
-        text = span["text"].strip()
-        by_page[p].append((text, line_bbox, ph))
-        page_count = max(page_count, p + 1)
-
-    header_counter = collections.Counter()
-    footer_counter = collections.Counter()
-
-    for p, items in by_page.items():
-        for text, bbox, ph in items:
-            y0 = bbox[1]
-            y1 = bbox[3]
-            if y0 <= ph * HEADER_FOOTER_MARGIN_RATIO:
-                header_counter[text] += 1
-            elif y1 >= ph * (1 - HEADER_FOOTER_MARGIN_RATIO):
-                footer_counter[text] += 1
-
-    min_pages = max(2, int(page_count * 0.5))
-    headers = {t for t, c in header_counter.items() if c >= min_pages}
-    footers = {t for t, c in footer_counter.items() if c >= min_pages}
-    return headers, footers
+def is_in_header_or_footer_region(line_bbox, page_height, margin_ratio=HEADER_FOOTER_MARGIN_RATIO):
+    y0, y1 = line_bbox[1], line_bbox[3]
+    return (y0 <= page_height * margin_ratio) or (y1 >= page_height * (1 - margin_ratio))
 
 def dominant_font_size_by_chars(spans, debug=False):
     """
@@ -246,7 +243,7 @@ def build_filtered_pdf(src_doc, spans, headers, footers, threshold, keep_big=Tru
 
     return out_doc
 
-def build_filtered_pdf_redaction(src_path, spans, headers, footers, threshold, keep_big=True, out_path=None):
+def build_filtered_pdf_redaction(src_path, spans, headers, footers, threshold, keep_big=True, out_path=None, eps=0.5):
     """
     Open original PDF, redact spans we DON'T want, keep the rest.
     This preserves layout and fonts.
@@ -267,14 +264,27 @@ def build_filtered_pdf_redaction(src_path, spans, headers, footers, threshold, k
             text = span["text"].strip()
             if not text:
                 continue
-            if text in headers or text in footers:
-                # always remove repeated header/footer
-                bbox = fitz.Rect(span["bbox"])
-                page.add_redact_annot(bbox, fill=(1, 1, 1))
+
+            #if is_in_header_or_footer_region(line_bbox, ph):
+            #    page.add_redact_annot(fitz.Rect(span["bbox"]), fill=(1, 1, 1))
+            #    continue
+
+            try:
+                size = float(span.get("size", 0.0))
+            except Exception:
+                size = 0.0
+
+            if size <= 0:
+                # if size is unknown, don't risk removing it
                 continue
 
-            size = span.get("size", 0)
-            keep = (size >= threshold - 0.5) if keep_big else (size < threshold - 0.5)
+            # gray zone: sizes in [body_size - eps, body_size + eps] are treated as body
+            lower = threshold - eps
+            if keep_big:
+                keep = (size >= lower)  # allow slightly smaller glyphs in body lines
+            else:
+                keep = (size < lower)
+                
             if not keep:
                 bbox = fitz.Rect(span["bbox"])
                 # white fill so background looks normal
@@ -291,12 +301,34 @@ def build_filtered_pdf_redaction(src_path, spans, headers, footers, threshold, k
     return doc
 
 def run_docling_on_pdf(path_str: str) -> str:
-    converter = DocumentConverter()
-    res = converter.convert(path_str)
+    res = docling_converter.convert(path_str)
     return res.document.export_to_markdown()
 
+def debug_spans_for_word(spans, needle="variability"):
+    # group spans by (page, line bbox)
+    lines = collections.defaultdict(list)
+    for p_idx, span, line_bbox, ph in spans:
+        lines[(p_idx, tuple(line_bbox))].append(span)
+
+    for (p_idx, bbox), line_spans in lines.items():
+        # reconstruct the line text as PyMuPDF created it
+        line_text = "".join(s["text"] for s in line_spans)
+
+        # be generous with the match in case PDF splits weirdly
+        if needle in line_text or "variabi" in line_text:
+            print(f"\n=== Page {p_idx+1}, line bbox={bbox} ===")
+            print("FULL LINE:", repr(line_text))
+            for s in line_spans:
+                print(
+                    "  span:",
+                    repr(s["text"]),
+                    "size=", s["size"],
+                    "font=", s.get("font"),
+                    "bbox=", s["bbox"],
+                )
+
 def main():
-    tmpdir = tempfile.TemporaryDirectory(delete=False, dir="./eval")
+    tmpdir = tempfile.TemporaryDirectory(delete=False, dir=TMP_DIR)
     paper_files = list(PDF_DIR.glob("*.pdf"))
     total = len(paper_files)
     print(f"Found {total} PDFs to process.\n")
@@ -309,43 +341,57 @@ def main():
         output_dir.mkdir(parents=True, exist_ok=True)
         output_path = output_dir / f"{name}.md"
 
-        doc = fitz.open(str(pdf))
+        tmp_path_exists = TMP_DIR / f"{name}_big.pdf"
+        if SKIP_EXISTING and tmp_path_exists.exists():
+            print(f"Skipping {name} because {tmp_path_exists} exists.")
+            continue
 
-        # first pass spans
-        spans = list(extract_spans(doc))
-        headers, footers = find_repeated_headers_footers(spans)
-        #dom_size = dominant_font_size_by_chars(spans)
-        dom_size = pick_body_font_size(spans, headers, footers, debug=False)
-
-        # build two filtered PDFs in temp files
-        tmpdir_path = Path(tmpdir.name)
+        tmpdir_path = Path(tmpdir.name) if DIVIDE_PDFS else TMP_DIR
         big_pdf_path = tmpdir_path / f"{name}_big.pdf"
         small_pdf_path = tmpdir_path / f"{name}_small.pdf"
+        
+        if DIVIDE_PDFS:
+            doc = fitz.open(str(pdf))
 
-        big_doc = build_filtered_pdf_redaction(doc, spans, headers, footers, dom_size, keep_big=True)
-        big_doc.save(str(big_pdf_path))
-        big_doc.close()
+            # first pass spans
+            spans = list(extract_spans(doc))
+            headers, footers = [], []
+            dom_size = dominant_font_size_by_chars(spans)
+            #dom_size = pick_body_font_size(spans, headers, footers, debug=False)
 
-        small_doc = build_filtered_pdf_redaction(doc, spans, headers, footers, dom_size, keep_big=False)
-        small_doc.save(str(small_pdf_path))
-        small_doc.close()
+            debug_spans_for_word(spans, needle="variability")
+            exit(0)
 
-        # docling on both
-        big_md = run_docling_on_pdf(str(big_pdf_path)).strip()
-        small_md = run_docling_on_pdf(str(small_pdf_path)).strip()
+            # build two filtered PDFs in temp files
+            big_doc = build_filtered_pdf_redaction(doc, spans, headers, footers, dom_size, keep_big=True)
+            big_doc.save(str(big_pdf_path))
+            big_doc.close()
 
-        # combine
-        combined = []
-        if big_md:
-            combined.append(big_md)
-        if small_md:
-            combined.append("\n# Small-font content\n")
-            combined.append(small_md)
+            small_doc = build_filtered_pdf_redaction(doc, spans, headers, footers, dom_size, keep_big=False)
+            small_doc.save(str(small_pdf_path))
+            small_doc.close()
+        
+        if CONVERT_PDF_WITH_DOCLING:
+            if not big_pdf_path.exists() or not small_pdf_path.exists():
+                print(f"Divided PDFs not found for {pdf.name}, returning.")
+                return
 
-        final_md = "\n".join(combined).strip() + "\n"
+            # docling on both
+            big_md = run_docling_on_pdf(str(big_pdf_path)).strip()
+            small_md = run_docling_on_pdf(str(small_pdf_path)).strip()
 
-        with output_path.open("w", encoding="utf-8") as out:
-            out.write(final_md)
+            # combine
+            combined = []
+            if big_md:
+                combined.append(big_md)
+            if small_md:
+                combined.append("\n# Small-font content\n")
+                combined.append(small_md)
+
+            final_md = "\n".join(combined).strip() + "\n"
+
+            with output_path.open("w", encoding="utf-8") as out:
+                out.write(final_md)
 
 if __name__ == "__main__":
     main()

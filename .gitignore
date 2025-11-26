@@ -1,2 +1,4 @@
 .venv/
 data_bck/
+data/*
+eval/
