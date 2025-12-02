@@ -6,7 +6,7 @@ from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 
 class PDFExtractor:
-  def __init__(self, paper_files: list, output_dir: Path, skip_existing: bool = False) -> None:
+  def __init__(self, paper_files: list, output_dir: Path, skip_existing: bool = False, keep_divided_pdfs: bool = False, divided_folder: Path | None = None) -> None:
     print("### PDFExtractor - init ###")
     self.pipeline_options = PdfPipelineOptions(
       do_table_structure=True,
@@ -20,6 +20,8 @@ class PDFExtractor:
       }
     )
     self.tmpdir = tempfile.TemporaryDirectory()
+    if keep_divided_pdfs and divided_folder is not None:
+      self.tmpdir = tempfile.TemporaryDirectory(delete=False, dir=divided_folder)
     self.paper_files = paper_files
     self.output_dir = output_dir
     self.skip_existing = skip_existing
@@ -246,23 +248,71 @@ class PDFExtractor:
 
     return out_doc
 
+  def _collect_body_rects(self, spans, threshold, eps):
+    body_rects_by_page = collections.defaultdict(list)
+
+    lower = threshold - eps
+    for (p_idx, span, line_bbox, ph) in spans:
+        text = span.get("text", "").strip()
+        if not text:
+            continue
+        try:
+            size = float(span.get("size", 0.0))
+        except Exception:
+            continue
+        if size <= 0:
+            continue
+
+        # considera "body" tutto ciò che è >= (threshold - eps)
+        if size >= lower:
+            bbox = fitz.Rect(span["bbox"])
+            body_rects_by_page[p_idx].append(bbox)
+
+    return body_rects_by_page
+
+  def _overlaps_body(self, bbox, body_rects, min_overlap_ratio=0.2):
+    if not body_rects:
+        return False
+
+    area = bbox.get_area()
+    if area <= 0:
+        return False
+
+    for br in body_rects:
+        inter = bbox & br
+        if inter.is_empty:
+            continue
+        # quanto del piccolo bbox è coperto da body
+        if inter.get_area() / area >= min_overlap_ratio:
+            return True
+    return False
+
   '''
   Open original PDF, redact spans we DON'T want, keep the rest.
   This preserves layout and fonts.
   keep_big=True  -> keep size >= threshold, redact smaller
   keep_big=False -> keep size < threshold, redact bigger
   '''
-  def build_filtered_pdf_redaction(self, src_path, spans, headers, footers, threshold, keep_big=True, out_path=None, eps=0.5):
-    doc = fitz.open(src_path)
+  def build_filtered_pdf_redaction(self, src_doc, spans, headers, footers, threshold, keep_big=True, out_path=None, eps=0.5):
+    doc = src_doc
 
-    # group spans by page
+    # 1) rettangoli di testo "body" per pagina
+    body_rects_by_page = self._collect_body_rects(spans, threshold, eps)
+
+    # 2) group spans by page
     spans_by_page = collections.defaultdict(list)
     for (p_idx, span, line_bbox, ph) in spans:
         spans_by_page[p_idx].append((span, line_bbox, ph))
 
+    lower = threshold - eps
+
+    # 3) Redaction
     for p_idx in range(len(doc)):
       page = doc[p_idx]
       page_spans = spans_by_page.get(p_idx, [])
+
+      body_rects = body_rects_by_page.get(p_idx, [])
+
       for span, line_bbox, ph in page_spans:
         text = span["text"].strip()
         if not text:
@@ -276,23 +326,27 @@ class PDFExtractor:
           size = float(span.get("size", 0.0))
         except Exception:
           size = 0.0
-
+        # if size is unknown, don't risk removing it
         if size <= 0:
-          # if size is unknown, don't risk removing it
           continue
 
+        bbox = fitz.Rect(span["bbox"])
+
         # gray zone: sizes in [body_size - eps, body_size + eps] are treated as body
-        lower = threshold - eps
+        is_big = size >= lower
         if keep_big:
-          keep = (size >= lower)  # allow slightly smaller glyphs in body lines
-        else:
-          keep = (size < lower)
-            
-        if not keep:
-          bbox = fitz.Rect(span["bbox"])
-          # white fill so background looks normal
+          if is_big:
+            continue
+          # inline piccolo (¹, H₂O, stuff vicino alle parole): lascialo
+          if self._overlaps_body(bbox, body_rects):
+            continue
           page.add_redact_annot(bbox, fill=(1, 1, 1))
-          
+        else:
+          if is_big or self._overlaps_body(bbox, body_rects):
+            page.add_redact_annot(bbox, fill=(1, 1, 1))
+          else:
+            continue
+                
       page.apply_redactions()
 
     if out_path is not None:
@@ -432,6 +486,7 @@ class PDFExtractor:
       big_doc.save(str(big_pdf_path))
       big_doc.close()
 
+      doc = fitz.open(str(pdf))
       small_doc = self.build_filtered_pdf_redaction(doc, spans, headers, footers, dom_size, keep_big=False)
       small_doc.save(str(small_pdf_path))
       small_doc.close()

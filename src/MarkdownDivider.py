@@ -1,11 +1,13 @@
+import json
 from pathlib import Path
 from typing import List, Dict, Any
 import re
 
 class MarkdownDivider:
-  def __init__(self, md_files: List[Path]) -> None:
+  def __init__(self, md_files: List[Path], output_dir: Path) -> None:
     print("### MarkdownDivider - init ###")
     self.md_files = md_files
+    self.output_dir = output_dir
 
   def __enter__(self):
     return self
@@ -40,7 +42,7 @@ class MarkdownDivider:
 
     return sentences
 
-  def divide_files(self) -> Dict[str, Dict[str, Any]]:
+  def divide_files(self, folder: str):
     result: Dict[str, Dict[str, Any]] = {}
 
     for path in self.md_files:
@@ -105,7 +107,9 @@ class MarkdownDivider:
         "paragraphs": paragraphs
       }
 
-    return result
+    output_json_path = self.output_dir / folder
+    with output_json_path.open("w", encoding="utf-8") as json_file:
+      json.dump(result, json_file, indent=2, ensure_ascii=False)
   
   def __exit__(self, exc_type, exc_value, traceback):
     print("### MarkdownDivider - exit ###")
