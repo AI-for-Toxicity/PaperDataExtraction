@@ -9,19 +9,21 @@ class PDFExtractor:
   def __init__(self, paper_files: list, output_dir: Path, skip_existing: bool = False, keep_divided_pdfs: bool = False, divided_folder: Path | None = None) -> None:
     print("### PDFExtractor - init ###")
     self.pipeline_options = PdfPipelineOptions(
-      do_table_structure=True,
-      do_ocr=True,
-      generate_table_images=True,
-      generate_picture_images=True,
+      do_table_structure=False,
+      do_ocr=False,
+      generate_table_images=False,
+      generate_picture_images=False,
     )
     self.docling_converter = DocumentConverter(
       format_options={
         InputFormat.PDF: PdfFormatOption(pipeline_options=self.pipeline_options)
       }
     )
+    self.keep_divided_pdfs = keep_divided_pdfs
+    self.divided_folder = divided_folder
     self.tmpdir = tempfile.TemporaryDirectory()
-    if keep_divided_pdfs and divided_folder is not None:
-      self.tmpdir = tempfile.TemporaryDirectory(delete=False, dir=divided_folder)
+    if self.keep_divided_pdfs and self.divided_folder is not None:
+      self.tmpdir = tempfile.TemporaryDirectory(delete=False, dir=self.divided_folder)
     self.paper_files = paper_files
     self.output_dir = output_dir
     self.skip_existing = skip_existing
@@ -248,25 +250,32 @@ class PDFExtractor:
 
     return out_doc
 
-  def _collect_body_rects(self, spans, threshold, eps):
+  def _collect_body_rects(self, spans, threshold, eps, padding_factor=1.5):
     body_rects_by_page = collections.defaultdict(list)
-
     lower = threshold - eps
+
     for (p_idx, span, line_bbox, ph) in spans:
         text = span.get("text", "").strip()
         if not text:
             continue
+
         try:
             size = float(span.get("size", 0.0))
         except Exception:
             continue
-        if size <= 0:
+
+        if size < lower:
             continue
 
-        # considera "body" tutto ciò che è >= (threshold - eps)
-        if size >= lower:
-            bbox = fitz.Rect(span["bbox"])
-            body_rects_by_page[p_idx].append(bbox)
+        bbox = fitz.Rect(span["bbox"])
+
+        # allarga il rect un po' in verticale per beccare i superscript
+        h = bbox.height
+        pad = h * (padding_factor - 1.0) / 2.0
+        bbox.y0 -= pad
+        bbox.y1 += pad
+
+        body_rects_by_page[p_idx].append(bbox)
 
     return body_rects_by_page
 
@@ -282,18 +291,19 @@ class PDFExtractor:
         inter = bbox & br
         if inter.is_empty:
             continue
-        # quanto del piccolo bbox è coperto da body
+        # quanto del SMALL rect è coperto da un body rect
         if inter.get_area() / area >= min_overlap_ratio:
             return True
-    return False
 
+    return False
+  
   '''
   Open original PDF, redact spans we DON'T want, keep the rest.
   This preserves layout and fonts.
   keep_big=True  -> keep size >= threshold, redact smaller
   keep_big=False -> keep size < threshold, redact bigger
   '''
-  def build_filtered_pdf_redaction(self, src_doc, spans, headers, footers, threshold, keep_big=True, out_path=None, eps=0.5):
+  def build_filtered_pdf_redaction(self, src_doc, spans, threshold, keep_big=True, eps=0.5):
     doc = src_doc
 
     # 1) rettangoli di testo "body" per pagina
@@ -349,12 +359,6 @@ class PDFExtractor:
                 
       page.apply_redactions()
 
-    if out_path is not None:
-      doc.save(out_path)
-      doc.close()
-      return out_path
-
-    # if caller wants the document object
     return doc
 
   def run_docling_on_pdf(self, path_str: str) -> str:
@@ -477,17 +481,16 @@ class PDFExtractor:
 
       # first pass spans
       spans = list(self.extract_spans(doc))
-      headers, footers = [], []
       dom_size = self.dominant_font_size_by_chars(spans)
       #dom_size = pick_body_font_size(spans, headers, footers, debug=False)
 
       # build two filtered PDFs in temp files
-      big_doc = self.build_filtered_pdf_redaction(doc, spans, headers, footers, dom_size, keep_big=True)
+      big_doc = self.build_filtered_pdf_redaction(doc, spans, dom_size, keep_big=True)
       big_doc.save(str(big_pdf_path))
       big_doc.close()
 
       doc = fitz.open(str(pdf))
-      small_doc = self.build_filtered_pdf_redaction(doc, spans, headers, footers, dom_size, keep_big=False)
+      small_doc = self.build_filtered_pdf_redaction(doc, spans, dom_size, keep_big=False)
       small_doc.save(str(small_pdf_path))
       small_doc.close()
 
@@ -553,6 +556,7 @@ class PDFExtractor:
     print("Table extraction complete")
 
   def __exit__(self, exc_type, exc_value, traceback):
-    self.tmpdir.cleanup()
+    if not self.keep_divided_pdfs:
+      self.tmpdir.cleanup()
     print("### PDFExtractor - close ###")
     pass

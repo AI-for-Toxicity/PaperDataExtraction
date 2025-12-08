@@ -25,11 +25,13 @@ if __name__ == "__main__":
     exit(0)
 
   # Estrai testo e immagini dai PDF
-  paper_files = list(PDF_DIR.glob("*.pdf"))
+  pdf_files = list(PDF_DIR.glob("*.pdf"))
   md_folder = "markdown"
-  with PDFExtractor(paper_files, OUTPUT_DIR, skip_existing=True, keep_divided_pdfs=True, divided_folder=PDF_DIR) as extractor:
+  images_folder = "images"
+  with PDFExtractor(pdf_files, OUTPUT_DIR, skip_existing=True, keep_divided_pdfs=True, divided_folder=PDF_DIR) as extractor:
     extractor.run_text_extraction(folder=md_folder)
-    extractor.run_image_extraction()
+    extractor.run_image_extraction(folder=images_folder)
+    # Extract tables
   
   # Pulisci markdown estratto
   md_files = list((OUTPUT_DIR / md_folder).glob("*.md"))
@@ -40,11 +42,12 @@ if __name__ == "__main__":
   # Dividi markdown
   md_cleaned_files = list((OUTPUT_DIR / md_cleaned_folder).glob("*.md"))
   divided_md_folder = "divided_markdown"
-  with MarkdownDivider(md_cleaned_files, OUTPUT_DIR) as divider:
+  with MarkdownDivider(md_cleaned_files, OUTPUT_DIR, skip_existing=True) as divider:
     divided_markdowns = divider.divide_files(folder=divided_md_folder)
   
   # Processa markdown diviso con NER e BioMistral
-  divided_file = OUTPUT_DIR / divided_md_folder / "divided_markdowns.json"
+  json_divided_files = list((OUTPUT_DIR / divided_md_folder).glob("*.json"))
+  
 
   pass
 

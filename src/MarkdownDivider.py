@@ -4,10 +4,11 @@ from typing import List, Dict, Any
 import re
 
 class MarkdownDivider:
-  def __init__(self, md_files: List[Path], output_dir: Path) -> None:
+  def __init__(self, md_files: List[Path], output_dir: Path, skip_existing: bool = False) -> None:
     print("### MarkdownDivider - init ###")
     self.md_files = md_files
     self.output_dir = output_dir
+    self.skip_existing = skip_existing
 
   def __enter__(self):
     return self
@@ -43,15 +44,26 @@ class MarkdownDivider:
     return sentences
 
   def divide_files(self, folder: str):
-    result: Dict[str, Dict[str, Any]] = {}
+    total = len(self.md_files)
+    print(f"Found {total} markdown files to process for markdown division.\n")
 
-    for path in self.md_files:
-      if not path.is_file():
+    for i, md_file in enumerate(self.md_files, 1):
+      print(f"[{i}/{total}] Processing {md_file.name}...")
+      result: Dict[str, Any] = {}
+      
+      if not md_file.is_file():
         # You asked for code, not babysitting, so skip invalid paths.
         continue
 
-      stem = path.stem  # filename without .md
-      with path.open("r", encoding="utf-8") as f:
+      # filename without .md
+      stem = md_file.stem
+      output_json_path = self.output_dir / folder / f"{stem}_divided.json"
+      output_json_path.parent.mkdir(parents=True, exist_ok=True)
+      if self.skip_existing and output_json_path.exists():
+        print(f"Skipping {stem} because {output_json_path} exists.")
+        continue
+
+      with md_file.open("r", encoding="utf-8") as f:
         raw_lines = f.readlines()
 
       file_lines: List[str] = []        # non-heading, non-empty
@@ -101,15 +113,16 @@ class MarkdownDivider:
           "body": body
         })
 
-      result[stem] = {
+      result = {
         "lines": file_lines,
         "sentences": file_sentences,
         "paragraphs": paragraphs
       }
 
-    output_json_path = self.output_dir / folder
-    with output_json_path.open("w", encoding="utf-8") as json_file:
-      json.dump(result, json_file, indent=2, ensure_ascii=False)
+      with output_json_path.open("w", encoding="utf-8") as json_file:
+        json.dump(result, json_file, indent=2, ensure_ascii=False)
+    
+    print("Markdown division complete")
   
   def __exit__(self, exc_type, exc_value, traceback):
     print("### MarkdownDivider - exit ###")
