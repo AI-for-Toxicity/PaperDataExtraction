@@ -1,4 +1,0 @@
-1. Remove lines repeated a lot of times across the file
-2. Join foo-\nbar -> foobar, keep hyphenated terms like “endocrine-related” within a line
-3. Join mid-sentence line breaks into spaces, keep paragraph breaks
-4. Try to remove citations

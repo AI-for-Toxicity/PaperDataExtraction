@@ -1,9 +1,0 @@
-event -> want to identify the path that produces the final effect (contained in the AOP, can be multiple types of event)
-cell line -> sometimes they specify that they are talking about the cell-line, or extraction from a primary cell
-cell format -> kind of same as cell line, cell line is specific name, format is more descriptive
-tissue -> tissue of origin for the cell
-biological process -> epatotoxicity for example
-intended target -> more detail about the molecule that we are studying in the paper (molecules related to cell death, more detail in the type)
-Cytotox -> does it have a high toxicity level, like when all cells die at a certain point you say the cytotox burst happen at that concentration. "No cytotoxicity" or "Yes cytoxicity burst (at which concentration, if available)"
-
-
