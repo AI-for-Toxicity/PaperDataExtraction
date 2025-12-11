@@ -123,37 +123,59 @@ def annotate_blocks(blocks, events, key_text: str, block_kind: str):
     out = []
     matched_event_ids = set()
 
-    for block in blocks:
-        text = block.get(key_text, "") or ""
-        block_events = []
+    # Prepare per-block event buckets
+    block_events_map = [[] for _ in blocks]
 
-        for ev in events:
-            chemical = ev.get("chemical", "")
-            chemical_found = contains_exact(text, chemical)
+    # Short-circuit if no blocks
+    if not blocks:
+        return [], matched_event_ids
+
+    # For each event, find the single best block
+    for ev in events:
+        best_score = float("-inf")
+        best_idx = None
+        best_chemical_found = False
+
+        chemical = ev.get("chemical", "")
+        chemical_norm = chemical
+        chemical_abbr = None
+        if " (" in chemical:
+            chemical_norm = chemical.split(" (")[0].strip()
+            chemical_abbr = chemical.split(" (")[1].strip(" )")
+
+        for i, block in enumerate(blocks):
+            text = block.get(key_text, "") or ""
 
             score = compute_score(text, ev, block_kind)
 
-            # You can choose your own threshold.
-            # Keep >0 to preserve "weak signals", or raise to reduce noise.
-            if score > 0:
-                ev_with_score = dict(ev)
-                ev_with_score["score"] = round(score, 3)
-                ev_with_score["chemical_found"] = chemical_found
+            if score > best_score:
+                best_score = score
+                best_idx = i
+                best_chemical_found = contains_exact(text, chemical)
+                if not best_chemical_found and chemical != chemical_norm:
+                    best_chemical_found = contains_exact(text, chemical_norm)
+                    if best_chemical_found:
+                        ev["chemical"] = chemical_norm
+                    elif not best_chemical_found and chemical_abbr:
+                        best_chemical_found = contains_exact(text, chemical_abbr)
+                        if best_chemical_found:
+                            ev["chemical"] = chemical_abbr
 
-                # OPTIONAL micro-bonus that doesn't dominate:
-                # if you want strictly independent, delete these 3 lines.
-                # if chemical_found:
-                #     ev_with_score["score"] = round(min(99.0, ev_with_score["score"] + 1.0), 3)
+        # Apply your threshold once, on the best match only
+        if best_idx is not None and best_score > 0:
+            ev_with_score = dict(ev)
+            ev_with_score["score"] = round(best_score, 3)
+            ev_with_score["chemical_found"] = best_chemical_found
 
-                block_events.append(ev_with_score)
+            # consider "matched" if either:
+            # - strong description match
+            # - or chemical found with decent description
+            if best_score >= 50.0 and best_chemical_found:
+                block_events_map[best_idx].append(ev_with_score)
+                matched_event_ids.add(ev["event_id"])
 
-                # consider "matched" if either:
-                # - strong description match
-                # - or chemical found with decent description
-                if score >= 50.0 or (chemical_found and score >= 30.0):
-                    matched_event_ids.add(ev["event_id"])
-
-        # Sort events by score desc
+    # Build output blocks, attach only the max-score events computed above
+    for block, block_events in zip(blocks, block_events_map):
         block_events.sort(key=lambda x: x["score"], reverse=True)
 
         new_block = dict(block)
@@ -180,25 +202,22 @@ def process_file(json_path: Path):
     events = load_events(label_path)
 
     # Prepare blocks
-    line_dicts = [{"text": ln} for ln in data.get("lines", [])]
-    sent_dicts = [{"text": s} for s in data.get("sentences", [])]
-    para_dicts = [{"title": p.get("title", ""), "text": p.get("body", "")}
-                  for p in data.get("paragraphs", [])]
+    #line_dicts = [{"text": ln} for ln in data.get("lines", [])]
+    #sent_dicts = [{"text": s} for s in data.get("sentences", [])]
+    #para_dicts = [{"title": p.get("title", ""), "text": p.get("body", "")} for p in data.get("paragraphs", [])]
+    chunks_dicts = [{"text": c.get("text", "")} for c in data.get("chunks", [])]
 
     # Annotate
-    lines_annotated, matched_lines = annotate_blocks(line_dicts, events, "text", "line")
-    sentences_annotated, matched_sents = annotate_blocks(sent_dicts, events, "text", "sentence")
-    paragraphs_annotated, matched_paras = annotate_blocks(para_dicts, events, "text", "paragraph")
-
-    matched_any = matched_lines | matched_sents | matched_paras
+    #lines_annotated, matched_lines = annotate_blocks(line_dicts, events, "text", "line")
+    #sentences_annotated, matched_sents = annotate_blocks(sent_dicts, events, "text", "sentence")
+    #paragraphs_annotated, matched_paras = annotate_blocks(para_dicts, events, "text", "paragraph")
+    chunks_annotated, matched_chunks = annotate_blocks(chunks_dicts, events, "text", "chunk")
 
     # Unmatched events
-    unmatched_events = [ev for ev in events if ev["event_id"] not in matched_any]
+    unmatched_events = [ev for ev in events if ev["event_id"] not in matched_chunks]
 
     output = {
-        "lines": lines_annotated,
-        "sentences": sentences_annotated,
-        "paragraphs": paragraphs_annotated,
+        "chunks": chunks_annotated,
         "unmatched_events": unmatched_events
     }
 
@@ -206,7 +225,16 @@ def process_file(json_path: Path):
     with open(out_path, "w", encoding="utf8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"[OK] Saved {out_path} | events={len(events)} matched={len(matched_any)} unmatched={len(unmatched_events)}")
+    lowest_matched_score = 0
+    highest_matched_score = 0
+    for c in chunks_annotated:
+        for ev in c.get("events", []):
+            if lowest_matched_score == 0 or ev["score"] < lowest_matched_score:
+                lowest_matched_score = ev["score"]
+            if ev["score"] > highest_matched_score:
+                highest_matched_score = ev["score"]
+
+    print(f"[OK] Saved {out_path} | events={len(events)} matched={len(matched_chunks)} unmatched={len(unmatched_events)} ls={lowest_matched_score} hs={highest_matched_score}")
 
 
 def main():
