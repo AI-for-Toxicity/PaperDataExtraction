@@ -57,17 +57,20 @@ class EventsChatDataset(Dataset):
     """
     Dataset per training chat-like di BioMistral:
 
-    Ogni esempio è:
+    Ogni esempio nel file è:
     {
       "messages": [
         {"role": "system", "content": ...},
         {"role": "user", "content": ...},
-        {"role": "assistant", "content": ...}  # lista eventi CSV
+        {"role": "assistant", "content": ...}
       ]
     }
 
-    Viene applicata la chat_template del tokenizer.
-    La loss viene calcolata SOLO sui token della risposta dell'assistant.
+    Qui però il modello vede SOLO:
+      user: (system + user messi insieme)
+      assistant: risposta canonicalizzata
+
+    La loss viene calcolata SOLO sui token della risposta.
     """
 
     def __init__(self, data, tokenizer, max_length: int = 2048):
@@ -75,7 +78,6 @@ class EventsChatDataset(Dataset):
         self.tokenizer = tokenizer
         self.max_length = max_length
 
-        # sanity check: il modello deve avere una chat_template
         if self.tokenizer.chat_template is None:
             raise ValueError("Tokenizer has no chat_template. Set tokenizer.chat_template manually.")
 
@@ -84,30 +86,54 @@ class EventsChatDataset(Dataset):
 
     def __getitem__(self, idx):
         example = self.data[idx]
-        messages = example["messages"]
+        raw_messages = example["messages"]
 
-        # canonicalizza l'output dell'assistant
-        # (così la loss non dipende dall'ordine “sporco” salvato nel file)
-        last = messages[-1]
-        if last["role"] != "assistant":
-            raise ValueError("Last message must be assistant.")
-        canonical_assistant_text = canonicalize_events_text(last["content"])
-        messages = messages[:-1] + [
-            {
-                "role": "assistant",
-                "content": canonical_assistant_text,
-            }
+        if len(raw_messages) < 2:
+            raise ValueError(f"Example {idx} has too few messages: {raw_messages}")
+
+        # estrai system (opzionale), user e assistant
+        system_msg = None
+        user_msg = None
+        assistant_msg = None
+
+        for m in raw_messages:
+            if m["role"] == "system":
+                system_msg = m
+            elif m["role"] == "user":
+                user_msg = m
+            elif m["role"] == "assistant":
+                assistant_msg = m
+
+        if user_msg is None or assistant_msg is None:
+            raise ValueError(f"Example {idx} missing user or assistant message: {raw_messages}")
+
+        # canonicalizza la risposta dell'assistant (ordine eventi)
+        canonical_assistant_text = canonicalize_events_text(assistant_msg["content"])
+
+        # mergia system + user in un unico prompt utente
+        merged_user_content_parts = []
+        if system_msg is not None and system_msg.get("content"):
+            merged_user_content_parts.append(system_msg["content"])
+        if user_msg.get("content"):
+            merged_user_content_parts.append(user_msg["content"])
+
+        merged_user_content = "\n\n".join(merged_user_content_parts).strip()
+
+        # nuova conversazione SOLO con ruoli user/assistant
+        conv_messages = [
+            {"role": "user", "content": merged_user_content},
+            {"role": "assistant", "content": canonical_assistant_text},
         ]
 
-        # input con risposta
+        # stringa completa (user + assistant)
         full_str = self.tokenizer.apply_chat_template(
-            messages,
+            conv_messages,
             tokenize=False,
             add_generation_prompt=False,
         )
 
-        # input SENZA risposta (solo system+user), serve per mascherare la loss
-        user_only_messages = [m for m in messages if m["role"] != "assistant"]
+        # stringa solo con user (serve per mascherare la loss)
+        user_only_messages = conv_messages[:1]  # solo il primo: user
         user_only_str = self.tokenizer.apply_chat_template(
             user_only_messages,
             tokenize=False,
@@ -133,11 +159,10 @@ class EventsChatDataset(Dataset):
         input_ids = full_tokens["input_ids"][0]
         attention_mask = full_tokens["attention_mask"][0]
 
-        # labels = input_ids con i token "pre-assistant" mascherati a -100
         labels = input_ids.clone()
         user_len = user_only_tokens["input_ids"].shape[1]
 
-        # tutto ciò che è prima della risposta non contribuisce alla loss
+        # maschera tutto il prompt (user) con -100, loss solo sui token di risposta
         labels[:user_len] = -100
 
         return {
