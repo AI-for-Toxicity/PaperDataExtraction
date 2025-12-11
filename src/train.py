@@ -12,6 +12,7 @@ from transformers import (
     TrainingArguments,
     Trainer,
     DataCollatorForLanguageModeling,
+    BitsAndBytesConfig,
 )
 
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
@@ -156,22 +157,29 @@ def get_bnb_config():
 
 
 def load_model_and_tokenizer(base_model: str):
+    """
+    Carica BioMistral in 4-bit NF4 + prepara QLoRA.
+    """
     tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
+    # Config 4-bit corretta con BitsAndBytesConfig
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+    )
+
     model = AutoModelForCausalLM.from_pretrained(
         base_model,
-        load_in_4bit=True,
+        quantization_config=bnb_config,
         device_map="auto",
-        quantization_config=bnb.nn.quantization.Params4bit(
-            quant_type="nf4",
-            compress_statistics=True,
-            quant_storage=torch.uint8,
-        ),
         torch_dtype=torch.bfloat16,
     )
 
+    # Step standard per QLoRA
     model = prepare_model_for_kbit_training(model)
 
     lora_config = LoraConfig(
@@ -261,10 +269,10 @@ if __name__ == "__main__":
     main()
 
 '''
-python train_biomistral_events.py \
+python src/train.py \
   --base_model BioMistral/BioMistral-7B \
-  --train_file train.jsonl \
-  --eval_file test.jsonl \
+  --train_file train/train.jsonl \
+  --eval_file train/test.jsonl \
   --output_dir outputs/biomistral_mie_ke_ao_qlora \
   --num_train_epochs 3 \
   --per_device_train_batch_size 1 \
