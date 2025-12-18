@@ -12,12 +12,30 @@ from transformers import (
     TrainingArguments,
     Trainer,
     DataCollatorForLanguageModeling,
+    DataCollatorWithPadding,
     BitsAndBytesConfig,
 )
 
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 import bitsandbytes as bnb
 
+class PadWithLabels:
+    def __init__(self, tokenizer):
+        self.tokenizer = tokenizer
+
+    def __call__(self, features):
+        # pad input_ids/attention_mask
+        batch = self.tokenizer.pad(
+            features,
+            padding=True,
+            return_tensors="pt",
+        )
+        # tokenizer.pad will pad "labels" too, but with pad_token_id, not -100
+        if "labels" in batch:
+            labels = batch["labels"]
+            labels[labels == self.tokenizer.pad_token_id] = -100
+            batch["labels"] = labels
+        return batch
 
 # ------------- DATASET UTILS ------------- #
 
@@ -61,14 +79,9 @@ class EventsChatDataset(Dataset):
     {
       "messages": [
         {"role": "system", "content": ...},
-        {"role": "user", "content": ...},
-        {"role": "assistant", "content": ...}
+        {"role": "user", "content": ...}
       ]
     }
-
-    Qui però il modello vede SOLO:
-      user: (system + user messi insieme)
-      assistant: risposta canonicalizzata
 
     La loss viene calcolata SOLO sui token della risposta.
     """
@@ -132,12 +145,11 @@ class EventsChatDataset(Dataset):
             add_generation_prompt=False,
         )
 
-        # stringa solo con user (serve per mascherare la loss)
-        user_only_messages = conv_messages[:1]  # solo il primo: user
-        user_only_str = self.tokenizer.apply_chat_template(
-            user_only_messages,
+        # Build the *exact* prompt boundary: user + assistant header/start tokens
+        prompt_str = self.tokenizer.apply_chat_template(
+            [{"role": "user", "content": merged_user_content}],
             tokenize=False,
-            add_generation_prompt=False,
+            add_generation_prompt=True,   # IMPORTANT: includes assistant-start tokens
         )
 
         full_tokens = self.tokenizer(
@@ -148,8 +160,8 @@ class EventsChatDataset(Dataset):
             return_tensors="pt",
         )
 
-        user_only_tokens = self.tokenizer(
-            user_only_str,
+        prompt_tokens = self.tokenizer(
+            prompt_str,
             truncation=True,
             max_length=self.max_length,
             padding=False,
@@ -160,10 +172,13 @@ class EventsChatDataset(Dataset):
         attention_mask = full_tokens["attention_mask"][0]
 
         labels = input_ids.clone()
-        user_len = user_only_tokens["input_ids"].shape[1]
+        prompt_len = prompt_tokens["input_ids"].shape[1]
 
-        # maschera tutto il prompt (user) con -100, loss solo sui token di risposta
-        labels[:user_len] = -100
+        # Safety: in case truncation makes prompt_len exceed full length
+        prompt_len = min(prompt_len, labels.shape[0])
+
+        # Mask everything up to the generation start; loss only on assistant content tokens
+        labels[:prompt_len] = -100
 
         return {
             "input_ids": input_ids,
@@ -252,10 +267,11 @@ def main():
     train_dataset = EventsChatDataset(train_data, tokenizer, max_length=args.max_length)
     eval_dataset = EventsChatDataset(eval_data, tokenizer, max_length=args.max_length)
 
-    data_collator = DataCollatorForLanguageModeling(
-        tokenizer=tokenizer,
-        mlm=False,
-    )
+    data_collator = PadWithLabels(tokenizer)
+    #DataCollatorForLanguageModeling(
+    #    tokenizer=tokenizer,
+    #    mlm=False,
+    #)
 
     training_args = TrainingArguments(
         output_dir=args.output_dir,
@@ -304,4 +320,20 @@ python src/train.py \
   --gradient_accumulation_steps 8 \
   --learning_rate 2e-4 \
   --max_length 2048
+'''
+
+'''
+If you see the model start outputting garbage formats after a few hundred steps, LR is usually the first suspect. Common stable range is 1e-4 to 3e-5 for instruction-ish extraction tasks, especially with noisy supervision.
+
+Use early stopping behavior without adding more machinery:
+- run 3 epochs, check set-F1 on test (your eval script),
+- if it’s still improving and not getting more hallucination-y, go to 5–7 epochs,
+- if test set-F1 peaks early and then drops, you were already overtraining.
+Practical tweaks I’d actually recommend
+If your dataset is < ~5k examples:
+- try LR = 1e-4 first (or 5e-5 if it’s really small / very noisy)
+- consider 5 epochs max unless test metrics keep improving
+If your dataset is > ~10k examples:
+- 2e-4 can be fine, and 3 epochs may even be enough.
+And regardless: don’t judge by loss alone. Judge by set-based F1, because that’s your real target behavior.
 '''

@@ -1,0 +1,42 @@
+squalo we have to do something real quick:
+I have a file result.json containing a structure like this:
+
+{
+  "chunks": [
+    {
+      "text": "...", 
+      "events": []
+    },
+    {
+      "text": "...", 
+      "matched_chemicals": ["Bis-I", ... ],
+      "matched_species": [ "rabbit", ... ]
+      "events": [
+        {
+          "event_id": 37,
+          "chemical": "Bis-I",
+          "event_type": "MIE",
+          "event_description_short": "Protein kinase C inhibition",
+          "score": 77.921,
+          "chemical_found": true
+        }
+      ]
+    },
+  ],
+  "unmatched_events": [
+    {
+      "event_id": 9,
+      "chemical": "β-cyfluthrin",
+      "event_type": "KE",
+      "event_description_short": "Reduced network synchronicity"
+    },
+  ]
+}
+
+I need to build a small python server that showcases this somehow.
+I was thinking of something like a webpage with:
+filename (without .json) as the title
+a section with the list of events (showing substance, event type, description and score), ordered by score, each will have a reference button that opens the related chunk text (it is quite long, open it as a popup or whatever, the important is that it can be copied)
+
+a section "AOPs" that puts together MIE -> KE -> AO structures for the same substance
+it should show each substance that has all the 3 types of events associated 
