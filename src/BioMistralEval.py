@@ -172,13 +172,15 @@ def ordered_line_metrics(pred_lines: List[str], gold_lines: List[str]) -> Dict[s
 
 # ----------------- Model loading -----------------
 
-def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool):
+def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool, device_map: str="auto"):
+    print("[eval] loading tokenizer...", flush=True)
     tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True)
 
     quant_cfg = None
     torch_dtype = torch.bfloat16 if bf16 else torch.float16
 
     if load_in_4bit:
+        print("[eval] setting up 4-bit quant config...", flush=True)
         quant_cfg = BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_quant_type="nf4",
@@ -186,14 +188,17 @@ def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool
             bnb_4bit_compute_dtype=torch_dtype,
         )
 
+    print(f"[eval] loading base model (device_map={device_map})...", flush=True)
     model = AutoModelForCausalLM.from_pretrained(
         base_model,
-        device_map="auto",
+        device_map=device_map,
         quantization_config=quant_cfg,
         torch_dtype=torch_dtype,
     )
+    print("[eval] loading LoRA adapter...", flush=True)
     model = PeftModel.from_pretrained(model, adapter_dir)
     model.eval()
+    print("[eval] model ready.", flush=True)
     return model, tokenizer
 
 
@@ -269,6 +274,8 @@ def main():
     if args.limit and args.limit > 0:
         data = data[:args.limit]
 
+    print(f"[eval] loaded {len(data)} examples", flush=True)
+
     # Aggregate counters
     n = 0
     loss_sum = 0.0
@@ -285,6 +292,9 @@ def main():
     out_f = open(args.save_preds, "w", encoding="utf-8") if args.save_preds else None
 
     for ex in data:
+        if (n % 10) == 0:
+            print(f"[eval] example {n}/{len(data)}", flush=True)
+
         messages = ex.get("messages", ex.get("conversation", ex.get("data", None)))
         if messages is None:
             # If your jsonl format differs, you're allowed to be consistent for once
@@ -375,6 +385,8 @@ def main():
         "set_micro_f1": set_prf["f1"],
         "set_micro_counts": {"tp": tp, "fp": fp, "fn": fn},
     }, indent=2))
+
+    print("[eval] done.", flush=True)
 
 
 if __name__ == "__main__":

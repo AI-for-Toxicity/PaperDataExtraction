@@ -287,6 +287,10 @@ def main():
         save_steps=args.save_steps,
         eval_strategy="steps",
         save_strategy="steps",
+        load_best_model_at_end=True,
+        metric_for_best_model="eval_loss",
+        greater_is_better=False,
+        save_total_limit=2,
         bf16=True,
         lr_scheduler_type="cosine",
         report_to="none",
@@ -310,7 +314,7 @@ if __name__ == "__main__":
     main()
 
 '''
-python src/train.py \
+python src/BioMistralTrain.py \
   --base_model BioMistral/BioMistral-7B \
   --train_file train/train.jsonl \
   --eval_file train/test.jsonl \
@@ -320,6 +324,8 @@ python src/train.py \
   --gradient_accumulation_steps 8 \
   --learning_rate 2e-4 \
   --max_length 2048
+
+python src/BioMistralTrain.py --base_model BioMistral/BioMistral-7B --train_file train/train.jsonl --eval_file train/test.jsonl --output_dir outputs/biomistral_mie_ke_ao_qlora --num_train_epochs 3 --per_device_train_batch_size 1 --gradient_accumulation_steps 8 --learning_rate 2e-4 --max_length 2048
 '''
 
 '''
