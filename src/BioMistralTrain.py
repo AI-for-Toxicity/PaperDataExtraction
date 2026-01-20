@@ -322,10 +322,12 @@ python src/BioMistralTrain.py \
   --num_train_epochs 3 \
   --per_device_train_batch_size 1 \
   --gradient_accumulation_steps 8 \
-  --learning_rate 2e-4 \
+  --learning_rate 5e-5 \
   --max_length 2048
 
-python src/BioMistralTrain.py --base_model BioMistral/BioMistral-7B --train_file train/train.jsonl --eval_file train/test.jsonl --output_dir outputs/biomistral_mie_ke_ao_qlora --num_train_epochs 3 --per_device_train_batch_size 1 --gradient_accumulation_steps 8 --learning_rate 2e-4 --max_length 2048
+Learning rate precedente era 2e-4, ma spesso troppo alto per set piccoli (causa output garbage dopo poche centinaia di step)
+
+python src/BioMistralTrain.py --base_model BioMistral/BioMistral-7B --train_file train/train.jsonl --eval_file train/test.jsonl --output_dir outputs/biomistral_mie_ke_ao_qlora --num_train_epochs 3 --per_device_train_batch_size 1 --gradient_accumulation_steps 8 --learning_rate 5e-5 --max_length 2048
 '''
 
 '''

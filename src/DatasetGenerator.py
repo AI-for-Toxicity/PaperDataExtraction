@@ -17,9 +17,12 @@ except ImportError:
 DATA_DIR = Path("test_data/processed/divided_markdown")
 LABELS_DIR = Path("test_data/labels/aop_raw")
 OUTPUT_DIR = Path("test_data/labels/scored")
-OUTPUT_DIR.mkdir(exist_ok=True)
 FINAL_JSON_TRAIN = Path("train/train.jsonl")
 FINAL_JSON_TEST = Path("train/test.jsonl")
+EVAL_RESULTS_JSONL = Path("train/results/eval_preds.jsonl")
+
+ONLY_CHECK_EXTRACTIONS = False
+INSTR = "You are an assistant specialized in extracting mechanistic toxicology events (MIE, KE, AO) from scientific text.\n\nGiven the following text from a toxicology article, extract all MIE, KE and AO events with the associated chemical and a concise description.\n\nReturn one event per line in the exact format:\n\"chemical\",\"event_type\",\"description\"\n\nIf the text does not contain any MIE, KE or AO events, return an empty output.\n\nText:\n"
 
 
 def csv_quote(value: str) -> str:
@@ -32,13 +35,11 @@ def csv_quote(value: str) -> str:
     value = value.replace('"', '""')
     return f'"{value}"'
 
-
 def normalize_whitespace(text: str) -> str:
     """
     Basic whitespace normalization to avoid duplicati per differenze di spazi.
     """
     return " ".join((text or "").split())
-
 
 def extract_chunk_examples_from_file(
     path: Path,
@@ -122,7 +123,6 @@ def extract_chunk_examples_from_file(
 
     return positive_examples, empty_chunks
 
-
 def build_messages_for_chunk(
     chunk_text: str,
     events: List[Dict[str, str]],
@@ -150,7 +150,7 @@ def build_messages_for_chunk(
         desc = csv_quote(ev["description"])
         lines.append(f"{chem},{etype},{desc}")
 
-    assistant_output = "\n".join(lines)
+    assistant_output = "\n".join(lines) + "\n### END"
 
     return {
         "messages": [
@@ -158,7 +158,6 @@ def build_messages_for_chunk(
             {"role": "assistant", "content": assistant_output},
         ]
     }
-
 
 def build_messages_for_empty_chunk(chunk_text: str) -> Dict[str, Any]:
     """
@@ -177,7 +176,7 @@ def build_messages_for_empty_chunk(chunk_text: str) -> Dict[str, Any]:
         f"Text:\n{chunk_text}"
     )
 
-    assistant_output = ""  # nessun evento → output vuoto
+    assistant_output = "### END"  # nessun evento → output vuoto
 
     return {
         "messages": [
@@ -185,7 +184,6 @@ def build_messages_for_empty_chunk(chunk_text: str) -> Dict[str, Any]:
             {"role": "assistant", "content": assistant_output},
         ]
     }
-
 
 def build_biomistral_chunk_dataset(
     input_dir: Path,
@@ -475,6 +473,348 @@ def annotate_blocks(
     return out, matched_event_ids
 
 # -----------------------------
+# Parse assistant CSV output (gold/pred) into events
+# -----------------------------
+
+def parse_event_lines_to_list(s: str) -> list[dict]:
+    """
+    Parses a string containing lines like:
+      "chemical","event_type","description"
+
+    Returns list of dicts:
+      {"chemical": ..., "event_type": ..., "description": ...}
+
+    Robustness:
+    - Ignores empty lines
+    - Ignores malformed/truncated lines (len < 3)
+    - Strips whitespace
+    - Uppercases event_type
+    """
+    if not s:
+        return []
+
+    events = []
+    for raw_line in s.splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+
+        # csv.reader handles quotes/commas properly
+        try:
+            row = next(csv.reader([line]))
+        except Exception:
+            continue
+
+        if len(row) < 3:
+            continue
+
+        chem = (row[0] or "").strip()
+        etype = (row[1] or "").strip().upper()
+        desc = (row[2] or "").strip()
+
+        if not chem or not etype or not desc:
+            continue
+
+        events.append({"chemical": chem, "event_type": etype, "description": desc})
+
+    # Deduplicate (case/space-insensitive on chem/desc)
+    seen = set()
+    deduped = []
+    for ev in events:
+        key = (norm(ev["chemical"]), ev["event_type"], norm(ev["description"]))
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(ev)
+
+    return deduped
+
+# -----------------------------
+# Extract chunk text from prompt
+# -----------------------------
+
+def extract_chunk_text_from_prompt(prompt: str, instruction_prefix: str | None = None) -> str:
+    """
+    Your prompts look like:
+      <instructions...>
+      Text:
+      <chunk>
+
+    This extracts what's after the last "Text:" marker.
+    If instruction_prefix is provided and prompt starts with it, it will be stripped first.
+    """
+    if not prompt:
+        return ""
+
+    p = prompt
+    if instruction_prefix and p.startswith(instruction_prefix):
+        p = p[len(instruction_prefix):]
+
+    # Prefer last occurrence to be safe
+    m = re.search(r"(?:^|\n)Text:\s*\n", p, flags=re.IGNORECASE)
+    if not m:
+        # fallback: sometimes "Text:" might be inline
+        idx = p.lower().rfind("text:")
+        if idx == -1:
+            return p.strip()
+        return p[idx + len("text:"):].strip()
+
+    # Grab from the marker to end
+    start = m.end()
+    return p[start:].strip()
+
+# -----------------------------
+# Similarity matching: pred vs gold
+# -----------------------------
+
+def event_similarity(pred_ev: dict, gold_ev: dict) -> float:
+    """
+    Returns a similarity score 0..1.
+    Hard requirement: event_type must match (MIE/KE/AO), otherwise 0.
+    Then blend chemical similarity + description similarity.
+
+    This is intentionally conservative, because your model loves hallucinating.
+    """
+    if (pred_ev.get("event_type") or "").upper() != (gold_ev.get("event_type") or "").upper():
+        return 0.0
+
+    chem_p = pred_ev.get("chemical", "")
+    chem_g = gold_ev.get("chemical", "")
+    desc_p = pred_ev.get("description", "")
+    desc_g = gold_ev.get("description", "")
+
+    chem_sim = fuzzy_score(chem_p, chem_g)  # 0..1
+    desc_sim = fuzzy_score(desc_p, desc_g)  # 0..1
+
+    # Description matters more than chemical string casing/variants
+    return 0.4 * chem_sim + 0.6 * desc_sim
+
+def compare_gold_pred(
+    gold_events: list[dict],
+    pred_events: list[dict],
+    *,
+    sim_threshold: float = 0.85
+) -> dict:
+    """
+    Computes:
+      - similar_to_gold: count of pred events that match a gold event (exact or fuzzy >= threshold)
+      - not_in_gold: count of pred events that couldn't be matched
+      - gold_not_found: count of gold events not matched by any pred
+
+    Uses greedy one-to-one matching on best similarity.
+    """
+    # Exact match shortcut
+    gold_keys = {(norm(e["chemical"]), e["event_type"], norm(e["description"])) for e in gold_events}
+    pred_keys = {(norm(e["chemical"]), e["event_type"], norm(e["description"])) for e in pred_events}
+
+    exact_hits = pred_keys & gold_keys
+
+    # Build lists excluding exact matches (so fuzzy matching doesn't double count)
+    gold_remaining = [e for e in gold_events if (norm(e["chemical"]), e["event_type"], norm(e["description"])) not in exact_hits]
+    pred_remaining = [e for e in pred_events if (norm(e["chemical"]), e["event_type"], norm(e["description"])) not in exact_hits]
+
+    matched_gold = set()  # indices in gold_remaining
+    matched_pred = set()  # indices in pred_remaining
+
+    # Score all pairs (could be big, but usually gold is small)
+    candidates = []
+    for pi, pe in enumerate(pred_remaining):
+        for gi, ge in enumerate(gold_remaining):
+            sim = event_similarity(pe, ge)
+            if sim >= sim_threshold:
+                candidates.append((sim, pi, gi))
+
+    # Greedy match: highest similarity first
+    candidates.sort(reverse=True, key=lambda x: x[0])
+    fuzzy_matches = []
+    for sim, pi, gi in candidates:
+        if pi in matched_pred or gi in matched_gold:
+            continue
+        matched_pred.add(pi)
+        matched_gold.add(gi)
+        fuzzy_matches.append((sim, pred_remaining[pi], gold_remaining[gi]))
+
+    similar_to_gold = len(exact_hits) + len(fuzzy_matches)
+    not_in_gold = len(pred_events) - similar_to_gold
+    gold_not_found = len(gold_events) - similar_to_gold  # because one-to-one matching
+
+    return {
+        "similar_to_gold": similar_to_gold,
+        "not_in_gold": not_in_gold,
+        "gold_not_found": gold_not_found,
+        "exact_hits": len(exact_hits),
+        "fuzzy_hits": len(fuzzy_matches),
+        "fuzzy_matches": fuzzy_matches,
+    }
+
+# -----------------------------
+# Score pred events on the chunk text
+# -----------------------------
+
+def score_pred_events_on_chunk(
+    chunk_text: str,
+    pred_events: list[dict],
+) -> list[dict]:
+    """
+    For each pred event:
+      - compute your description score (0..100) using compute_score
+      - compute chemical_found using your word-boundary checks + simple variant handling
+    Returns a list of events with added fields:
+      score, chemical_found
+    """
+    out = []
+    for ev in pred_events:
+        chem_raw = ev.get("chemical", "") or ""
+        desc = ev.get("description", "") or ""
+        etype = (ev.get("event_type", "") or "").upper()
+
+        # Adapt to your compute_score API
+        fake_gold = {
+            "event_description_short": desc,
+            "event_description_long": desc,
+        }
+        score = compute_score(chunk_text, fake_gold, "chunk")
+
+        # chemical variant logic (same idea as annotate_blocks)
+        chemical_norm = chem_raw.strip()
+        chemical_abbr = None
+        if " (" in chem_raw and chem_raw.endswith(")"):
+            last_paren = chem_raw.rfind(" (")
+            chemical_norm = chem_raw[:last_paren].strip()
+            chemical_abbr = chem_raw[last_paren + 2 : -1].strip()
+        elif " / " in chem_raw:
+            parts = chem_raw.split(" / ", 1)
+            chemical_norm = parts[0].strip()
+            chemical_abbr = parts[1].strip() if len(parts) > 1 else None
+
+        chemical_found = False
+        if chem_raw and contains_wordbound(chunk_text, chem_raw):
+            chemical_found = True
+        elif chemical_norm and chemical_norm != chem_raw and contains_wordbound(chunk_text, chemical_norm):
+            chemical_found = True
+        elif chemical_abbr and contains_wordbound(chunk_text, chemical_abbr):
+            chemical_found = True
+
+        out.append({
+            "chemical": chem_raw,
+            "event_type": etype,
+            "description": desc,
+            "score": round(float(score), 3),
+            "chemical_found": bool(chemical_found),
+        })
+
+    out.sort(key=lambda x: x["score"], reverse=True)
+    return out
+
+# -----------------------------
+# Main helper: analyze an eval jsonl file
+# -----------------------------
+
+def analyze_eval_jsonl(
+    eval_jsonl_path: str | Path,
+    *,
+    instruction_prefix: str | None = None,
+    sim_threshold: float = 0.85,
+    show_top_scored_pred: int = 8,
+    show_top_fuzzy: int = 5,
+    limit: int | None = None,
+) -> None:
+    """
+    Reads a jsonl of records like:
+      {"prompt": "...", "gold": "...", "pred": "...", ...}
+
+    Prints per-record:
+      X similar to gold ones, Y not in gold, Z gold not found
+    And scores pred events on the chunk.
+    Also prints aggregate totals at the end.
+    """
+    path = Path(eval_jsonl_path)
+    if not path.exists():
+        raise FileNotFoundError(f"Eval jsonl not found: {path}")
+
+    tot_sim = tot_fp = tot_fn = 0
+    tot_gold = tot_pred = 0
+    n = 0
+
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            rec = json.loads(line)
+            prompt = rec.get("prompt", "") or ""
+            gold_s = rec.get("gold", "") or ""
+            pred_s = rec.get("pred", "") or ""
+
+            gold_events = parse_event_lines_to_list(gold_s)
+            pred_events = parse_event_lines_to_list(pred_s)
+            print(gold_events)
+            print(pred_events)
+
+            chunk_text = extract_chunk_text_from_prompt(prompt, instruction_prefix=instruction_prefix)
+
+            cmp = compare_gold_pred(gold_events, pred_events, sim_threshold=sim_threshold)
+            scored_pred = score_pred_events_on_chunk(chunk_text, pred_events)
+
+            # per-record report
+            n += 1
+            rid = rec.get("id", None)
+            loss = rec.get("loss", None)
+
+            print("\n" + "=" * 90)
+            print(f"[RECORD {n}] id={rid} loss={loss}")
+            print(f"Gold events: {len(gold_events)} | Pred events: {len(pred_events)}")
+            print(
+                f"{cmp['similar_to_gold']} matches similar to gold ones "
+                f"(exact={cmp['exact_hits']}, fuzzy={cmp['fuzzy_hits']}), "
+                f"{cmp['not_in_gold']} matches not in gold, "
+                f"{cmp['gold_not_found']} matches from gold not found"
+            )
+
+            # show fuzzy matches (debug)
+            if cmp["fuzzy_matches"]:
+                print("\nTop fuzzy matches (pred -> gold):")
+                for sim, pe, ge in cmp["fuzzy_matches"][:show_top_fuzzy]:
+                    print(f"  sim={sim:.3f} | P: {pe}  ->  G: {ge}")
+
+            # pred relevance on chunk
+            if scored_pred:
+                scores = [e["score"] for e in scored_pred]
+                chem_found_cnt = sum(1 for e in scored_pred if e["chemical_found"])
+                print("\nPred relevance on chunk (description score 0..100):")
+                print(
+                    f"  score: min={min(scores):.1f} mean={sum(scores)/len(scores):.1f} max={max(scores):.1f} "
+                    f"| chemical_found={chem_found_cnt}/{len(scored_pred)}"
+                )
+                print(f"\nTop {min(show_top_scored_pred, len(scored_pred))} pred events by score:")
+                for e in scored_pred[:show_top_scored_pred]:
+                    cf = "chem✓" if e["chemical_found"] else "chem✗"
+                    print(f"  {e['score']:6.1f} {cf} | {e['chemical']!r}, {e['event_type']}, {e['description']!r}")
+            else:
+                print("\nNo parsable pred events to score (model probably output garbage/truncated lines).")
+
+            # totals
+            tot_sim += cmp["similar_to_gold"]
+            tot_fp += cmp["not_in_gold"]
+            tot_fn += cmp["gold_not_found"]
+            tot_gold += len(gold_events)
+            tot_pred += len(pred_events)
+
+            if limit is not None and n >= limit:
+                break
+
+    print("\n" + "#" * 90)
+    print("[SUMMARY]")
+    print(f"Records: {n}")
+    print(f"Total gold events: {tot_gold} | Total pred events: {tot_pred}")
+    print(f"Total similar-to-gold: {tot_sim} | Total not-in-gold (FP): {tot_fp} | Total gold-not-found (FN): {tot_fn}")
+
+    # Optional: rough precision/recall from 'similar'
+    prec = (tot_sim / tot_pred) if tot_pred else 0.0
+    rec = (tot_sim / tot_gold) if tot_gold else 0.0
+    f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) else 0.0
+    print(f"Precision≈{prec:.3f} Recall≈{rec:.3f} F1≈{f1:.3f}")
+
+# -----------------------------
 # Main processing
 # -----------------------------
 
@@ -528,6 +868,8 @@ def process_file(json_path: Path):
 
 
 def main():
+  OUTPUT_DIR.mkdir(exist_ok=True)
+  
   for json_path in DATA_DIR.glob("paper_*_divided.json"):
     process_file(json_path)
   
@@ -536,9 +878,13 @@ def main():
     train_path=FINAL_JSON_TRAIN,
     test_path=FINAL_JSON_TEST,
     test_ratio=0.1,   # test piccolo
-    empty_ratio=1.0,   # ~stesso numero di esempi vuoti dei positivi
+    empty_ratio=1.5,   # ~stesso numero di esempi vuoti dei positivi
     seed=42,
   )
 
 if __name__ == "__main__":
-    main()
+    if not ONLY_CHECK_EXTRACTIONS:
+        main()
+    else:
+        analyze_eval_jsonl(EVAL_RESULTS_JSONL, instruction_prefix=INSTR)
+
