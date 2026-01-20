@@ -10,7 +10,7 @@ WORKDIR="/workspace/dave/PaperDataExtraction"
 VENV_ACTIVATE="/workspace/dave/PaperDataExtraction/.venv/bin/activate"
 
 # Full command you want to run (hardcoded)
-TRAIN_CMD='python eval.py \
+TRAIN_CMD='python src/BioMistralEval.py \
   --base_model BioMistral/BioMistral-7B \
   --adapter_dir outputs/biomistral_mie_ke_ao_qlora \
   --eval_file train/test.jsonl \

@@ -1,0 +1,4 @@
+Differenze secondo train rispetto al primo:
+- Aumentato numero di esempi negativi (da 50% del totale a 70-80%)
+- Ridotto learning rate (da 2... a 5... vedi train.py)
+- Selezione best model tra le 3 epoche, non per forza l'ultimo

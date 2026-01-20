@@ -1,0 +1,15 @@
+spacy==3.1.0
+chemdataextractor2
+rapidfuzz
+wordfreq
+pyspellchecker
+pillow
+docling
+transformers
+hf_transfer
+torch
+peft
+bitsandbytes
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bionlp13cg_md-0.5.4.tar.gz
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bc5cdr_md-0.5.4.tar.gz
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
