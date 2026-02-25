@@ -1,0 +1,47 @@
+[eval] loading tokenizer...
+[eval] setting up 4-bit quant config...
+[eval] loading base model (device_map=auto)...
+`torch_dtype` is deprecated! Use `dtype` instead!
+[eval] loading LoRA adapter...
+[eval] model ready.
+[eval] loaded 228 examples
+[eval] example 0/228
+[eval] example 10/228
+[eval] example 20/228
+[eval] example 30/228
+[eval] example 40/228
+[eval] example 50/228
+[eval] example 60/228
+[eval] example 70/228
+[eval] example 80/228
+[eval] example 90/228
+[eval] example 100/228
+[eval] example 110/228
+[eval] example 120/228
+[eval] example 130/228
+[eval] example 140/228
+[eval] example 150/228
+[eval] example 160/228
+[eval] example 170/228
+[eval] example 180/228
+[eval] example 190/228
+[eval] example 200/228
+[eval] example 210/228
+[eval] example 220/228
+{
+  "n_examples": 228,
+  "masked_ce_loss": 2.39367437637166,
+  "masked_ppl": 10.953667989402613,
+  "exact_match_rate": 0.0,
+  "ordered_exact_rate": 0.0,
+  "ordered_line_acc": 0.0003373819163292848,
+  "set_micro_precision": 0.009831460674157303,
+  "set_micro_recall": 0.00922266139657444,
+  "set_micro_f1": 0.009517335146159076,
+  "set_micro_counts": {
+    "tp": 7,
+    "fp": 705,
+    "fn": 752
+  }
+}
+[eval] done.

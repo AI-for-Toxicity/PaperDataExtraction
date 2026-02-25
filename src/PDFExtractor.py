@@ -485,12 +485,15 @@ class PDFExtractor:
       #dom_size = pick_body_font_size(spans, headers, footers, debug=False)
 
       # build two filtered PDFs in temp files
-      big_doc = self.build_filtered_pdf_redaction(doc, spans, dom_size, keep_big=True)
+      big_doc = fitz.open()  # new empty
+      big_doc.insert_pdf(doc) # clone
+      big_doc = self.build_filtered_pdf_redaction(big_doc, spans, dom_size, keep_big=True)
       big_doc.save(str(big_pdf_path))
       big_doc.close()
 
-      doc = fitz.open(str(pdf))
-      small_doc = self.build_filtered_pdf_redaction(doc, spans, dom_size, keep_big=False)
+      small_doc = fitz.open()  # new empty
+      small_doc.insert_pdf(doc) # clone
+      small_doc = self.build_filtered_pdf_redaction(small_doc, spans, dom_size, keep_big=False)
       small_doc.save(str(small_pdf_path))
       small_doc.close()
 

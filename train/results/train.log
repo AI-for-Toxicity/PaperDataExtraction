@@ -1,0 +1,78 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+  0%|          | 0/630 [00:00<?, ?it/s]You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+{'loss': 2.6205, 'grad_norm': 6.072336673736572, 'learning_rate': 9.473684210526316e-05, 'epoch': 0.05}
+{'loss': 0.9974, 'grad_norm': 4.195497035980225, 'learning_rate': 0.0002, 'epoch': 0.1}
+{'loss': 0.7003, 'grad_norm': 8.515303611755371, 'learning_rate': 0.00019986784255090397, 'epoch': 0.14}
+{'loss': 0.7001, 'grad_norm': 3.203922748565674, 'learning_rate': 0.0001994717195154429, 'epoch': 0.19}
+{'loss': 0.5962, 'grad_norm': 2.746975898742676, 'learning_rate': 0.00019881267790581466, 'epoch': 0.24}
+{'loss': 0.6896, 'grad_norm': 1.279374122619629, 'learning_rate': 0.00019789245966717883, 'epoch': 0.29}
+{'loss': 0.8122, 'grad_norm': 3.897728204727173, 'learning_rate': 0.00019671349707343593, 'epoch': 0.33}
+{'loss': 0.7201, 'grad_norm': 1.9622827768325806, 'learning_rate': 0.0001952789062983654, 'epoch': 0.38}
+{'loss': 0.6243, 'grad_norm': 1.8163868188858032, 'learning_rate': 0.00019359247917911384, 'epoch': 0.43}
+{'loss': 0.7922, 'grad_norm': 1.2474287748336792, 'learning_rate': 0.00019165867319380456, 'epoch': 0.48}
+{'loss': 0.7275, 'grad_norm': 5.970194339752197, 'learning_rate': 0.00018948259967975888, 'epoch': 0.53}
+{'loss': 0.6233, 'grad_norm': 1.2159663438796997, 'learning_rate': 0.00018707001032347, 'epoch': 0.57}
+{'loss': 0.6751, 'grad_norm': 1.880047082901001, 'learning_rate': 0.00018442728195803881, 'epoch': 0.62}
+{'loss': 0.6262, 'grad_norm': 1.6607269048690796, 'learning_rate': 0.00018156139970825391, 'epoch': 0.67}
+{'loss': 0.6404, 'grad_norm': 1.105043649673462, 'learning_rate': 0.0001784799385278661, 'epoch': 0.72}
+{'loss': 0.5659, 'grad_norm': 1.0061213970184326, 'learning_rate': 0.00017519104317785717, 'epoch': 0.76}
+{'loss': 0.6254, 'grad_norm': 1.8419864177703857, 'learning_rate': 0.0001717034066986231, 'epoch': 0.81}
+{'loss': 0.6274, 'grad_norm': 2.3107259273529053, 'learning_rate': 0.00016802624743297333, 'epoch': 0.86}
+{'loss': 0.6163, 'grad_norm': 2.0332486629486084, 'learning_rate': 0.00016416928466067723, 'epoch': 0.91}
+{'loss': 0.6549, 'grad_norm': 2.7998344898223877, 'learning_rate': 0.00016014271290895965, 'epoch': 0.96}
+{'eval_loss': 0.393027663230896, 'eval_runtime': 38.9617, 'eval_samples_per_second': 5.236, 'eval_steps_per_second': 5.236, 'epoch': 0.96}
+ 32%|███▏      | 200/630 [17:45<35:43,  4.99s/it]/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+{'loss': 0.5814, 'grad_norm': 7.391272068023682, 'learning_rate': 0.0001559571750068468, 'epoch': 1.0}
+{'loss': 0.322, 'grad_norm': 1.6513170003890991, 'learning_rate': 0.00015162373395458345, 'epoch': 1.05}
+{'loss': 0.3875, 'grad_norm': 1.6347543001174927, 'learning_rate': 0.00014715384368247506, 'epoch': 1.1}
+{'loss': 0.4229, 'grad_norm': 2.4713797569274902, 'learning_rate': 0.00014255931877644372, 'epoch': 1.14}
+{'loss': 0.3605, 'grad_norm': 1.6283766031265259, 'learning_rate': 0.00013785230325031719, 'epoch': 1.19}
+{'loss': 0.3745, 'grad_norm': 5.127171993255615, 'learning_rate': 0.00013304523844739124, 'epoch': 1.24}
+{'loss': 0.3952, 'grad_norm': 2.073845624923706, 'learning_rate': 0.00012815083015610572, 'epoch': 1.29}
+{'loss': 0.4121, 'grad_norm': 1.8345383405685425, 'learning_rate': 0.00012318201502675285, 'epoch': 1.33}
+{'loss': 0.3091, 'grad_norm': 2.7762255668640137, 'learning_rate': 0.00011815192637798314, 'epoch': 1.38}
+{'loss': 0.4163, 'grad_norm': 2.0857174396514893, 'learning_rate': 0.00011307385948348762, 'epoch': 1.43}
+{'loss': 0.4068, 'grad_norm': 1.7233922481536865, 'learning_rate': 0.00010796123643060847, 'epoch': 1.48}
+{'loss': 0.3774, 'grad_norm': 2.4768097400665283, 'learning_rate': 0.00010282757064376297, 'epoch': 1.53}
+{'loss': 0.3386, 'grad_norm': 2.2697107791900635, 'learning_rate': 9.768643116644909e-05, 'epoch': 1.57}
+{'loss': 0.37, 'grad_norm': 2.844576597213745, 'learning_rate': 9.255140679624219e-05, 'epoch': 1.62}
+{'loss': 0.4338, 'grad_norm': 2.1283457279205322, 'learning_rate': 8.743607016757858e-05, 'epoch': 1.67}
+{'loss': 0.3743, 'grad_norm': 2.1174936294555664, 'learning_rate': 8.235394187726046e-05, 'epoch': 1.72}
+{'loss': 0.3617, 'grad_norm': 2.7612578868865967, 'learning_rate': 7.731845474750438e-05, 'epoch': 1.76}
+{'loss': 0.3035, 'grad_norm': 1.327929973602295, 'learning_rate': 7.234291832099078e-05, 'epoch': 1.81}
+{'loss': 0.3846, 'grad_norm': 2.924417018890381, 'learning_rate': 6.744048368175999e-05, 'epoch': 1.86}
+{'loss': 0.3122, 'grad_norm': 1.6673139333724976, 'learning_rate': 6.262410869493757e-05, 'epoch': 1.91}
+{'eval_loss': 0.431418776512146, 'eval_runtime': 38.9594, 'eval_samples_per_second': 5.236, 'eval_steps_per_second': 5.236, 'epoch': 1.91}
+ 63%|██████▎   | 400/630 [35:24<19:57,  5.21s/it]/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+{'loss': 0.3641, 'grad_norm': 2.924273729324341, 'learning_rate': 5.790652375716652e-05, 'epoch': 1.96}
+{'loss': 0.337, 'grad_norm': 10.721343040466309, 'learning_rate': 5.3300198148272185e-05, 'epoch': 2.0}
+{'loss': 0.1573, 'grad_norm': 0.9505161046981812, 'learning_rate': 4.881730707309821e-05, 'epoch': 2.05}
+{'loss': 0.1449, 'grad_norm': 2.399538993835449, 'learning_rate': 4.4469699480625884e-05, 'epoch': 2.1}
+{'loss': 0.1468, 'grad_norm': 1.6665242910385132, 'learning_rate': 4.026886674543713e-05, 'epoch': 2.14}
+{'loss': 0.152, 'grad_norm': 1.5740530490875244, 'learning_rate': 3.622591229429911e-05, 'epoch': 2.19}
+{'loss': 0.1465, 'grad_norm': 1.949130654335022, 'learning_rate': 3.2351522258153345e-05, 'epoch': 2.24}
+{'loss': 0.1545, 'grad_norm': 3.326301097869873, 'learning_rate': 2.8655937227079466e-05, 'epoch': 2.29}
+{'loss': 0.1632, 'grad_norm': 1.7042001485824585, 'learning_rate': 2.514892518288988e-05, 'epoch': 2.33}
+{'loss': 0.1342, 'grad_norm': 1.8004984855651855, 'learning_rate': 2.1839755680898853e-05, 'epoch': 2.38}
+{'loss': 0.1266, 'grad_norm': 1.555166244506836, 'learning_rate': 1.873717534910653e-05, 'epoch': 2.43}
+{'loss': 0.1591, 'grad_norm': 2.172832727432251, 'learning_rate': 1.5849384769558195e-05, 'epoch': 2.48}
+{'loss': 0.2044, 'grad_norm': 3.972203493118286, 'learning_rate': 1.3184016802984212e-05, 'epoch': 2.53}
+{'loss': 0.1295, 'grad_norm': 2.7225394248962402, 'learning_rate': 1.0748116414011888e-05, 'epoch': 2.57}
+{'loss': 0.1305, 'grad_norm': 1.982123851776123, 'learning_rate': 8.548122050274366e-06, 'epoch': 2.62}
+{'loss': 0.1332, 'grad_norm': 4.630605220794678, 'learning_rate': 6.589848624634398e-06, 'epoch': 2.67}
+{'loss': 0.1674, 'grad_norm': 2.636838912963867, 'learning_rate': 4.8784721455032875e-06, 'epoch': 2.72}
+{'loss': 0.134, 'grad_norm': 1.8917652368545532, 'learning_rate': 3.418516035879571e-06, 'epoch': 2.76}
+{'loss': 0.1457, 'grad_norm': 2.1746132373809814, 'learning_rate': 2.2138391772679847e-06, 'epoch': 2.81}
+{'loss': 0.1423, 'grad_norm': 2.1778676509857178, 'learning_rate': 1.2676257100809442e-06, 'epoch': 2.86}
+{'eval_loss': 0.5145646929740906, 'eval_runtime': 38.9836, 'eval_samples_per_second': 5.233, 'eval_steps_per_second': 5.233, 'epoch': 2.86}
+ 95%|█████████▌| 600/630 [53:08<02:39,  5.30s/it]/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+{'loss': 0.1432, 'grad_norm': 4.59561014175415, 'learning_rate': 5.823766174809397e-07, 'epoch': 2.91}
+{'loss': 0.1617, 'grad_norm': 2.9386539459228516, 'learning_rate': 1.599031149093988e-07, 'epoch': 2.96}
+{'loss': 0.103, 'grad_norm': 5.421654224395752, 'learning_rate': 1.3218627745725797e-09, 'epoch': 3.0}
+{'train_runtime': 3344.6937, 'train_samples_per_second': 1.501, 'train_steps_per_second': 0.188, 'train_loss': 0.42953351054872785, 'epoch': 3.0}
+100%|██████████| 630/630 [55:44<00:00,  5.31s/it]
