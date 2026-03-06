@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
+from PDFExtractor import PDFExtractor
 from MarkdownCleaner import MarkdownCleaner
 from MarkdownDivider import MarkdownDivider
-from PDFExtractor import PDFExtractor
 from BioNERExtractor import BioNERExtractor
 
 PDF_DIR = Path("test_data/raw/")
