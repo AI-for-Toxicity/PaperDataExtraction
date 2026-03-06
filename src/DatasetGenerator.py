@@ -25,13 +25,13 @@ LABELS_DIR = Path("test_data_old/labels/aop_raw")
 OUTPUT_DIR = Path("test_data_old/labels/scored")
 FINAL_JSON_TRAIN = Path("train/train.jsonl")
 FINAL_JSON_TEST = Path("train/test.jsonl")
-EVAL_RESULTS_BASE = Path("train/results_2")
+EVAL_RESULTS_BASE = Path("train/results_3")
 EVAL_RESULTS_JSONL = EVAL_RESULTS_BASE / "eval_preds.jsonl"
 EVAL_ANALYSIS_RESULT = EVAL_RESULTS_BASE / "eval_analysis.txt"
 
 RAG_INDEX_PATH = "new_data/aop_rag_index.json"
 
-ONLY_CHECK_EXTRACTIONS = False
+ONLY_CHECK_EXTRACTIONS = True
 INSTR = "You are an assistant specialized in extracting mechanistic toxicology events (MIE, KE, AO) from scientific text.\n\nGiven the following text from a toxicology article, extract all MIE, KE and AO events with the associated chemical and a concise description.\n\nReturn one event per line in the exact format:\n\"chemical\",\"event_type\",\"description\"\n\nIf the text does not contain any MIE, KE or AO events, return an empty output.\n\nText:\n"
 
 

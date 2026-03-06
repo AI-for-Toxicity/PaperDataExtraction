@@ -196,45 +196,53 @@ def get_bnb_config():
     )  # placeholder per forzare l'import; usato solo per assicurare bitsandbytes
 
 
-def load_model_and_tokenizer(base_model: str):
+def load_model_and_tokenizer(base_model: str, load_in_4bit: bool = False, lora_r: int = 32):
     """
-    Carica BioMistral in 4-bit NF4 + prepara QLoRA.
+    Loads BioMistral with LoRA.
+
+    load_in_4bit=False (default): loads in bf16 — recommended when VRAM >= 20GB.
+    load_in_4bit=True: QLoRA (4-bit NF4) for low-VRAM environments.
+    lora_r: LoRA rank. Higher = more capacity. 32 is a good default for 48GB VRAM.
     """
     tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    # Config 4-bit corretta con BitsAndBytesConfig
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
-    )
-
-    model = AutoModelForCausalLM.from_pretrained(
-        base_model,
-        quantization_config=bnb_config,
-        device_map="auto",
-        torch_dtype=torch.bfloat16,
-    )
-    
-    # Step standard per QLoRA
-    model = prepare_model_for_kbit_training(model)
+    if load_in_4bit:
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_use_double_quant=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.bfloat16,
+        )
+        model = AutoModelForCausalLM.from_pretrained(
+            base_model,
+            quantization_config=bnb_config,
+            device_map="auto",
+            torch_dtype=torch.bfloat16,
+        )
+        model = prepare_model_for_kbit_training(model)
+    else:
+        # Full bf16: ~14GB for 7B model, fine for A40/A100/H100
+        model = AutoModelForCausalLM.from_pretrained(
+            base_model,
+            device_map="auto",
+            torch_dtype=torch.bfloat16,
+        )
 
     lora_config = LoraConfig(
-        r=16,
-        lora_alpha=32,
-        target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+        r=lora_r,
+        lora_alpha=lora_r * 2,
+        # Attention + MLP: covers both retrieval and generation behaviour
+        target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                        "gate_proj", "up_proj", "down_proj"],
         lora_dropout=0.05,
         bias="none",
         task_type="CAUSAL_LM",
     )
 
     model = get_peft_model(model, lora_config)
-
-    # Enable gradient checkpointing for memory efficiency
-    model.gradient_checkpointing_enable()
+    # Gradient checkpointing is not needed with large VRAM; omit it to save ~25% runtime
 
     return model, tokenizer
 
@@ -247,6 +255,10 @@ def main():
                         help="BioMistral base model, es. BioMistral/BioMistral-7B")
     parser.add_argument("--train_file", type=str, required=True)
     parser.add_argument("--eval_file", type=str, required=True)
+    parser.add_argument("--load_in_4bit", action="store_true",
+                        help="Use QLoRA (4-bit NF4). Omit for bf16 LoRA (recommended if VRAM >= 20GB).")
+    parser.add_argument("--lora_r", type=int, default=32,
+                        help="LoRA rank. lora_alpha is set to 2*lora_r automatically.")
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument("--max_length", type=int, default=2048)
     parser.add_argument("--num_train_epochs", type=int, default=3)
@@ -263,7 +275,11 @@ def main():
 
     args = parser.parse_args()
 
-    model, tokenizer = load_model_and_tokenizer(args.base_model)
+    model, tokenizer = load_model_and_tokenizer(
+        args.base_model,
+        load_in_4bit=args.load_in_4bit,
+        lora_r=args.lora_r,
+    )
 
     train_data = read_jsonl(args.train_file)
     eval_data = read_jsonl(args.eval_file)

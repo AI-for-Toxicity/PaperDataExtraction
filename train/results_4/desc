@@ -1,0 +1,29 @@
+Quantization
+- Before: 4-bit NF4 (QLoRA) always
+- Now: bf16 by default; --load_in_4bit flag for low-VRAM
+LoRA rank
+- Before: r=16, alpha=32
+- Now: r=32 (configurable via --lora_r), alpha=64
+LoRA modules
+- Before: q, k, v, o only
+- Now: + gate, up, down (MLP projections)
+Gradient checkpointing
+- Before: always enabled
+- Now: removed
+
+
+Batch size
+- Before: 1
+- Now: 4
+Grad accumulation
+- Before: 8
+- Now: 4
+Effective batch
+- Before: 8
+- Now: 16
+max_length
+- Before: 3072 (already set)
+- Now: 3072
+New arg
+- Before: —
+- Now: --lora_r 32
