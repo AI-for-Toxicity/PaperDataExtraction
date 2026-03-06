@@ -1,10 +1,16 @@
 import json
 import csv
-import json
 import random
 import re
+import sys
 from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from rag.retriever import AOPRetriever as _AOPRetriever
+except ImportError:
+    _AOPRetriever = None
 
 try:
     from rapidfuzz import fuzz
@@ -14,14 +20,18 @@ except ImportError:
     RAPIDFUZZ_AVAILABLE = False
 
 
-DATA_DIR = Path("test_data/processed/divided_markdown")
-LABELS_DIR = Path("test_data/labels/aop_raw")
-OUTPUT_DIR = Path("test_data/labels/scored")
+DATA_DIR = Path("test_data_old/processed/divided_markdown")
+LABELS_DIR = Path("test_data_old/labels/aop_raw")
+OUTPUT_DIR = Path("test_data_old/labels/scored")
 FINAL_JSON_TRAIN = Path("train/train.jsonl")
 FINAL_JSON_TEST = Path("train/test.jsonl")
-EVAL_RESULTS_JSONL = Path("train/results_2/eval_preds.jsonl")
+EVAL_RESULTS_BASE = Path("train/results_2")
+EVAL_RESULTS_JSONL = EVAL_RESULTS_BASE / "eval_preds.jsonl"
+EVAL_ANALYSIS_RESULT = EVAL_RESULTS_BASE / "eval_analysis.txt"
 
-ONLY_CHECK_EXTRACTIONS = True
+RAG_INDEX_PATH = "new_data/aop_rag_index.json"
+
+ONLY_CHECK_EXTRACTIONS = False
 INSTR = "You are an assistant specialized in extracting mechanistic toxicology events (MIE, KE, AO) from scientific text.\n\nGiven the following text from a toxicology article, extract all MIE, KE and AO events with the associated chemical and a concise description.\n\nReturn one event per line in the exact format:\n\"chemical\",\"event_type\",\"description\"\n\nIf the text does not contain any MIE, KE or AO events, return an empty output.\n\nText:\n"
 
 
@@ -192,6 +202,7 @@ def build_biomistral_chunk_dataset(
     test_ratio: float = 0.05,
     empty_ratio: float = 1.0,
     seed: int = 42,
+    rag_index_path: str = "",
 ) -> None:
     input_dir_path = Path(input_dir)
     files = sorted(input_dir_path.glob("*.json"))
@@ -252,6 +263,18 @@ def build_biomistral_chunk_dataset(
     rng2 = random.Random(seed + 1)
     rng2.shuffle(train_examples)
     rng2.shuffle(test_examples)
+
+    # RAG augmentation: inject AOP Wiki context into each user message
+    if rag_index_path:
+        if _AOPRetriever is None:
+            print("[WARN] rag_index_path provided but AOPRetriever could not be imported; skipping RAG augmentation.")
+        else:
+            retriever = _AOPRetriever(rag_index_path)
+            for ex in train_examples + test_examples:
+                for msg in ex["messages"]:
+                    if msg["role"] == "user":
+                        msg["content"] = retriever.augment(msg["content"])
+            print(f"[RAG] Augmented {len(train_examples)} train + {len(test_examples)} test examples.")
 
     with Path(train_path).open("w", encoding="utf-8") as f_train:
         for ex in train_examples:
@@ -715,25 +738,38 @@ def analyze_eval_jsonl(
     *,
     instruction_prefix: str | None = None,
     sim_threshold: float = 0.85,
+    text_match_threshold: float = 50.0,
     show_top_scored_pred: int = 8,
     show_top_fuzzy: int = 5,
     limit: int | None = None,
+    output_path: str | Path = EVAL_ANALYSIS_RESULT,
 ) -> None:
     """
     Reads a jsonl of records like:
       {"prompt": "...", "gold": "...", "pred": "...", ...}
 
-    Prints per-record:
-      X similar to gold ones, Y not in gold, Z gold not found
-    And scores pred events on the chunk.
-    Also prints aggregate totals at the end.
+    Writes per-record and aggregate analysis to output_path.
+    Per-record:
+      - gold/pred event counts
+      - X similar to gold, Y not in gold, Z gold not found
+      - how many pred events match the chunk text vs don't (score >= text_match_threshold)
+      - top fuzzy matches and top scored pred events
     """
     path = Path(eval_jsonl_path)
     if not path.exists():
         raise FileNotFoundError(f"Eval jsonl not found: {path}")
 
+    out_path = Path(output_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    lines_out: list[str] = []
+
+    def emit(s: str = "") -> None:
+        lines_out.append(s)
+
     tot_sim = tot_fp = tot_fn = 0
     tot_gold = tot_pred = 0
+    tot_text_match = tot_text_no_match = 0
     n = 0
 
     with path.open("r", encoding="utf-8") as f:
@@ -747,8 +783,6 @@ def analyze_eval_jsonl(
 
             gold_events = parse_event_lines_to_list(gold_s)
             pred_events = parse_event_lines_to_list(pred_s)
-            print(gold_events)
-            print(pred_events)
 
             chunk_text = extract_chunk_text_from_prompt(prompt, instruction_prefix=instruction_prefix)
 
@@ -760,37 +794,54 @@ def analyze_eval_jsonl(
             rid = rec.get("id", None)
             loss = rec.get("loss", None)
 
-            print("\n" + "=" * 90)
-            print(f"[RECORD {n}] id={rid} loss={loss}")
-            print(f"Gold events: {len(gold_events)} | Pred events: {len(pred_events)}")
-            print(
+            emit()
+            emit("=" * 90)
+            emit(f"[RECORD {n}] id={rid} loss={loss}")
+            emit(f"Gold events: {len(gold_events)} | Pred events: {len(pred_events)}")
+            emit(
                 f"{cmp['similar_to_gold']} matches similar to gold ones "
                 f"(exact={cmp['exact_hits']}, fuzzy={cmp['fuzzy_hits']}), "
                 f"{cmp['not_in_gold']} matches not in gold, "
                 f"{cmp['gold_not_found']} matches from gold not found"
             )
 
+            # text grounding line
+            if scored_pred:
+                text_match_cnt = sum(1 for e in scored_pred if e["score"] >= text_match_threshold)
+                text_no_match_cnt = len(scored_pred) - text_match_cnt
+                emit(
+                    f"Pred grounded in chunk text (score>={text_match_threshold:.0f}): "
+                    f"{text_match_cnt} match, {text_no_match_cnt} don't match"
+                )
+                tot_text_match += text_match_cnt
+                tot_text_no_match += text_no_match_cnt
+            else:
+                emit("Pred grounded in chunk text: no pred events to score")
+
             # show fuzzy matches (debug)
             if cmp["fuzzy_matches"]:
-                print("\nTop fuzzy matches (pred -> gold):")
+                emit()
+                emit("Top fuzzy matches (pred -> gold):")
                 for sim, pe, ge in cmp["fuzzy_matches"][:show_top_fuzzy]:
-                    print(f"  sim={sim:.3f} | P: {pe}  ->  G: {ge}")
+                    emit(f"  sim={sim:.3f} | P: {pe}  ->  G: {ge}")
 
             # pred relevance on chunk
             if scored_pred:
                 scores = [e["score"] for e in scored_pred]
                 chem_found_cnt = sum(1 for e in scored_pred if e["chemical_found"])
-                print("\nPred relevance on chunk (description score 0..100):")
-                print(
+                emit()
+                emit("Pred relevance on chunk (description score 0..100):")
+                emit(
                     f"  score: min={min(scores):.1f} mean={sum(scores)/len(scores):.1f} max={max(scores):.1f} "
                     f"| chemical_found={chem_found_cnt}/{len(scored_pred)}"
                 )
-                print(f"\nTop {min(show_top_scored_pred, len(scored_pred))} pred events by score:")
+                emit(f"Top {min(show_top_scored_pred, len(scored_pred))} pred events by score:")
                 for e in scored_pred[:show_top_scored_pred]:
                     cf = "chem✓" if e["chemical_found"] else "chem✗"
-                    print(f"  {e['score']:6.1f} {cf} | {e['chemical']!r}, {e['event_type']}, {e['description']!r}")
+                    emit(f"  {e['score']:6.1f} {cf} | {e['chemical']!r}, {e['event_type']}, {e['description']!r}")
             else:
-                print("\nNo parsable pred events to score (model probably output garbage/truncated lines).")
+                emit()
+                emit("No parsable pred events to score (model probably output garbage/truncated lines).")
 
             # totals
             tot_sim += cmp["similar_to_gold"]
@@ -802,17 +853,26 @@ def analyze_eval_jsonl(
             if limit is not None and n >= limit:
                 break
 
-    print("\n" + "#" * 90)
-    print("[SUMMARY]")
-    print(f"Records: {n}")
-    print(f"Total gold events: {tot_gold} | Total pred events: {tot_pred}")
-    print(f"Total similar-to-gold: {tot_sim} | Total not-in-gold (FP): {tot_fp} | Total gold-not-found (FN): {tot_fn}")
+    emit()
+    emit("#" * 90)
+    emit("[SUMMARY]")
+    emit(f"Records: {n}")
+    emit(f"Total gold events: {tot_gold} | Total pred events: {tot_pred}")
+    emit(f"Total similar-to-gold: {tot_sim} | Total not-in-gold (FP): {tot_fp} | Total gold-not-found (FN): {tot_fn}")
+    emit(
+        f"Total pred grounded in text: {tot_text_match} match, {tot_text_no_match} don't match "
+        f"(threshold={text_match_threshold:.0f})"
+    )
 
-    # Optional: rough precision/recall from 'similar'
     prec = (tot_sim / tot_pred) if tot_pred else 0.0
     rec = (tot_sim / tot_gold) if tot_gold else 0.0
     f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) else 0.0
-    print(f"Precision≈{prec:.3f} Recall≈{rec:.3f} F1≈{f1:.3f}")
+    emit(f"Precision≈{prec:.3f} Recall≈{rec:.3f} F1≈{f1:.3f}")
+
+    with out_path.open("w", encoding="utf-8") as fout:
+        fout.write("\n".join(lines_out) + "\n")
+
+    print(f"Analysis saved to {out_path}")
 
 # -----------------------------
 # Main processing
@@ -877,9 +937,10 @@ def main():
     input_dir=OUTPUT_DIR,
     train_path=FINAL_JSON_TRAIN,
     test_path=FINAL_JSON_TEST,
-    test_ratio=0.1,   # test piccolo
-    empty_ratio=1.5,   # ~stesso numero di esempi vuoti dei positivi
+    test_ratio=0.1,
+    empty_ratio=1.0,   # 50% negatives (results_3)
     seed=42,
+    rag_index_path=RAG_INDEX_PATH,
   )
 
 if __name__ == "__main__":

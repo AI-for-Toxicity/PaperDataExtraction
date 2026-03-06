@@ -1,0 +1,15 @@
+BioMistral-7b
+- Fine-tuned with train.jsonl
+- Tested on test.jsonl
+- Context augmented with AOP-Wiki RAG
+
+Dataset composition:
+- Chunk vuoti (negative examples) 50% del totale
+-- Restored, the 70-80% of previous try did not help
+
+Iperparameters:
+- Learning rate: 5e-5
+-- Should I restore it to 2e-4?
+
+Model chosen:
+- Best one

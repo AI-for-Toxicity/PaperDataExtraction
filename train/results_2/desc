@@ -1,0 +1,15 @@
+BioMistral-7b
+- Fine-tuned with train.jsonl
+- Tested on test.jsonl
+
+Dataset composition:
+- Chunk vuoti (negative examples) 70-80% del totale
+-- Augmented, it was 50% before
+
+Iperparameters:
+- Learning rate: 5e-5
+-- Augmented, it was 2e-4 before
+
+Model chosen:
+- Best one
+-- Instead of final
