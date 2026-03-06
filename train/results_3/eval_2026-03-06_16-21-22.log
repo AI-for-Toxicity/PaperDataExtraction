@@ -1,0 +1,76 @@
+[eval] loading tokenizer...
+[eval] setting up 4-bit quant config...
+[eval] loading base model (device_map=auto)...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Exception in thread Thread-auto_conversion:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 117, in auto_conversion
+    raise e
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 96, in auto_conversion
+    sha = get_conversion_pr_reference(api, pretrained_model_name_or_path, **cached_file_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 72, in get_conversion_pr_reference
+    spawn_conversion(token, private, model_id)
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 48, in spawn_conversion
+    result = httpx.post(sse_url, follow_redirects=True, json=data).json()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/httpx/_models.py", line 832, in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   0%|          | 1/291 [00:00<03:34,  1.35it/s]Loading weights:   1%|          | 2/291 [00:01<02:48,  1.72it/s]Loading weights:   1%|▏         | 4/291 [00:13<19:29,  4.08s/it]Loading weights:   2%|▏         | 5/291 [00:22<26:18,  5.52s/it]Loading weights:   2%|▏         | 6/291 [00:32<33:34,  7.07s/it]Loading weights:   3%|▎         | 8/291 [00:44<30:14,  6.41s/it]Loading weights:   3%|▎         | 9/291 [00:51<30:58,  6.59s/it]Loading weights:   3%|▎         | 10/291 [01:01<35:37,  7.61s/it]Loading weights:   4%|▍         | 11/291 [01:12<40:03,  8.58s/it]Loading weights:   4%|▍         | 13/291 [01:15<25:18,  5.46s/it]Loading weights:  36%|███▌      | 105/291 [01:15<00:34,  5.43it/s]Loading weights:  86%|████████▌ | 250/291 [01:16<00:02, 17.10it/s]Loading weights: 100%|██████████| 291/291 [01:16<00:00,  3.83it/s]
+[eval] loading LoRA adapter...
+[eval] model ready.
+[RAG] index loaded: 566 AOPs
+[eval] loaded 204 examples
+[eval] example 0/204
+[eval] example 10/204
+[eval] example 20/204
+[eval] example 30/204
+[eval] example 40/204
+[eval] example 50/204
+[eval] example 60/204
+[eval] example 70/204
+[eval] example 80/204
+[eval] example 90/204
+[eval] example 100/204
+[eval] example 110/204
+[eval] example 120/204
+[eval] example 130/204
+[eval] example 140/204
+[eval] example 150/204
+[eval] example 160/204
+[eval] example 170/204
+[eval] example 180/204
+[eval] example 190/204
+[eval] example 200/204
+{
+  "n_examples": 204,
+  "masked_ce_loss": NaN,
+  "masked_ppl": Infinity,
+  "exact_match_rate": 0.0,
+  "ordered_exact_rate": 0.0,
+  "ordered_line_acc": 0.29411764705882354,
+  "set_micro_precision": 0.19065420560747665,
+  "set_micro_recall": 0.13877551020408163,
+  "set_micro_f1": 0.16062992125984252,
+  "set_micro_counts": {
+    "tp": 102,
+    "fp": 433,
+    "fn": 633
+  }
+}
+[eval] done.

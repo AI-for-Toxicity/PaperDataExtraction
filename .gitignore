@@ -9,5 +9,5 @@ src/__pycache__/
 log.txt
 tde_log.txt
 test_data_old/
-train/results_2/outputs
+train/results_*/outputs
 stuff/

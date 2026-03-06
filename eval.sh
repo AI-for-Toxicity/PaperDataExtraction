@@ -24,8 +24,8 @@ TRAIN_CMD='python src/biomistral/BioMistralEval.py \
 mkdir -p "${WORKDIR}/logs"
 
 TS="$(date +%F_%H-%M-%S)"
-LOG_FILE="${WORKDIR}/logs/train_${TS}.log"
-PID_FILE="${WORKDIR}/logs/train_${TS}.pid"
+LOG_FILE="${WORKDIR}/logs/eval_${TS}.log"
+PID_FILE="${WORKDIR}/logs/eval_${TS}.pid"
 
 # One-liner runner executed by a detached shell.
 # Important bits:
@@ -67,7 +67,7 @@ start_detached() {
 
 start_detached
 
-echo "Started training detached from SSH."
+echo "Started evaluation detached from SSH."
 echo "PID:      $PID"
 echo "LOG FILE: $LOG_FILE"
 echo
