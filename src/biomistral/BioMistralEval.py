@@ -251,6 +251,8 @@ def generate_answer(model, tokenizer, prompt_str: str, max_new_tokens: int, temp
 
     new_tokens = gen[0, input_ids.shape[1]:]
     text = tokenizer.decode(new_tokens, skip_special_tokens=True)
+    if "### END" in text:
+        text = text[:text.index("### END")]
     return text.strip()
 
 
