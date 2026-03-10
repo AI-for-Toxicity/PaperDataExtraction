@@ -1,0 +1,75 @@
+[eval] loading tokenizer...
+[eval] setting up 4-bit quant config...
+[eval] loading base model (device_map=auto)...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Exception in thread Thread-auto_conversion:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 117, in auto_conversion
+    raise e
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 96, in auto_conversion
+    sha = get_conversion_pr_reference(api, pretrained_model_name_or_path, **cached_file_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 72, in get_conversion_pr_reference
+    spawn_conversion(token, private, model_id)
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 48, in spawn_conversion
+    result = httpx.post(sse_url, follow_redirects=True, json=data).json()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/httpx/_models.py", line 832, in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   0%|          | 1/291 [00:01<04:53,  1.01s/it]Loading weights:   1%|          | 2/291 [00:01<04:10,  1.15it/s]Loading weights:   1%|▏         | 4/291 [00:19<28:01,  5.86s/it]Loading weights:   2%|▏         | 5/291 [00:26<29:19,  6.15s/it]Loading weights:   2%|▏         | 6/291 [00:41<42:11,  8.88s/it]Loading weights:   3%|▎         | 8/291 [00:54<36:41,  7.78s/it]Loading weights:   3%|▎         | 9/291 [01:10<46:19,  9.86s/it]Loading weights:   3%|▎         | 10/291 [01:22<48:50, 10.43s/it]Loading weights:   4%|▍         | 11/291 [01:35<51:56, 11.13s/it]Loading weights:  46%|████▋     | 135/291 [01:35<00:35,  4.42it/s]Loading weights:  91%|█████████▏| 266/291 [01:35<00:02, 10.91it/s]Loading weights: 100%|██████████| 291/291 [01:35<00:00,  3.04it/s]
+[eval] loading LoRA adapter...
+[eval] model ready.
+[RAG] index loaded: 566 AOPs
+[eval] loaded 204 examples
+[eval] example 0/204
+[eval] example 10/204
+[eval] example 20/204
+[eval] example 30/204
+[eval] example 40/204
+[eval] example 50/204
+[eval] example 60/204
+[eval] example 70/204
+[eval] example 80/204
+[eval] example 90/204
+[eval] example 100/204
+[eval] example 110/204
+[eval] example 120/204
+[eval] example 130/204
+[eval] example 140/204
+[eval] example 150/204
+[eval] example 160/204
+[eval] example 170/204
+[eval] example 180/204
+[eval] example 190/204
+[eval] example 200/204
+{
+  "n_examples": 204,
+  "masked_ce_loss": NaN,
+  "masked_ppl": Infinity,
+  "exact_match_rate": 0.0,
+  "ordered_exact_rate": 0.0,
+  "ordered_line_acc": 0.29411764705882354,
+  "set_micro_precision": 0.19065420560747665,
+  "set_micro_recall": 0.13877551020408163,
+  "set_micro_f1": 0.16062992125984252,
+  "set_micro_counts": {
+    "tp": 102,
+    "fp": 433,
+    "fn": 633
+  }
+}
+[eval] done.

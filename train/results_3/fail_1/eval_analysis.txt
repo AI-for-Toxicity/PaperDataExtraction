@@ -1,6 +1,6 @@
 
 ==========================================================================================
-[RECORD 1] id=None loss=0.6791079044342041
+[RECORD 1] id=None loss=nan
 Gold events: 13 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 13 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -8,7 +8,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 2] id=None loss=0.9820744395256042
+[RECORD 2] id=None loss=nan
 Gold events: 4 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -24,7 +24,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 4] id=None loss=0.7889640927314758
+[RECORD 4] id=None loss=nan
 Gold events: 2 | Pred events: 4
 0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
@@ -38,7 +38,7 @@ Top 4 pred events by score:
     68.0 chem✓ | 'ritanserin', MIE, 'Inverse agonism at 5-HT1A receptor'
 
 ==========================================================================================
-[RECORD 5] id=None loss=4.164226055145264
+[RECORD 5] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -46,7 +46,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 6] id=None loss=4.090541839599609
+[RECORD 6] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -54,7 +54,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 7] id=None loss=0.8191986680030823
+[RECORD 7] id=None loss=0.7132250666618347
 Gold events: 9 | Pred events: 1
 0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 9 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -65,7 +65,7 @@ Top 1 pred events by score:
     67.7 chem✓ | 'malathion', KE, 'Increased pyroglutamate (glutamate cyclization)'
 
 ==========================================================================================
-[RECORD 8] id=None loss=0.6578948497772217
+[RECORD 8] id=None loss=nan
 Gold events: 6 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -73,7 +73,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 9] id=None loss=0.8086563944816589
+[RECORD 9] id=None loss=nan
 Gold events: 4 | Pred events: 1
 0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -84,7 +84,7 @@ Top 1 pred events by score:
     98.3 chem✓ | 'permethrin', KE, 'Increased fatty acids'
 
 ==========================================================================================
-[RECORD 10] id=None loss=3.90864896774292
+[RECORD 10] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -92,7 +92,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 11] id=None loss=4.328997611999512
+[RECORD 11] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -100,7 +100,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 12] id=None loss=0.455997496843338
+[RECORD 12] id=None loss=nan
 Gold events: 9 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 9 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -116,7 +116,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 14] id=None loss=0.6921507120132446
+[RECORD 14] id=None loss=nan
 Gold events: 6 | Pred events: 7
 0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text (score>=50): 7 match, 0 don't match
@@ -133,7 +133,7 @@ Top 7 pred events by score:
     85.0 chem✓ | 'malathion', KE, 'Increased TCA cycle intermediates (24 h) vs control'
 
 ==========================================================================================
-[RECORD 15] id=None loss=4.06260347366333
+[RECORD 15] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -141,7 +141,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 16] id=None loss=3.9598896503448486
+[RECORD 16] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -149,7 +149,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 17] id=None loss=4.216940879821777
+[RECORD 17] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -157,7 +157,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 18] id=None loss=1.0641310214996338
+[RECORD 18] id=None loss=nan
 Gold events: 5 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -165,7 +165,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 19] id=None loss=4.001514434814453
+[RECORD 19] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -173,7 +173,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 20] id=None loss=1.0283067226409912
+[RECORD 20] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -181,7 +181,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 21] id=None loss=0.6524871587753296
+[RECORD 21] id=None loss=0.7137172222137451
 Gold events: 8 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 8 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -189,7 +189,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 22] id=None loss=1.360798954963684
+[RECORD 22] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -197,7 +197,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 23] id=None loss=1.4511654376983643
+[RECORD 23] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -205,7 +205,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 24] id=None loss=0.8504582047462463
+[RECORD 24] id=None loss=nan
 Gold events: 9 | Pred events: 4
 0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 9 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
@@ -219,7 +219,7 @@ Top 4 pred events by score:
     59.4 chem✓ | 'cypermethrin', KE, 'Altered neuronal development pathways (transcriptomics)'
 
 ==========================================================================================
-[RECORD 25] id=None loss=3.950070381164551
+[RECORD 25] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -227,7 +227,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 26] id=None loss=1.1836316585540771
+[RECORD 26] id=None loss=nan
 Gold events: 7 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 7 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -235,7 +235,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 27] id=None loss=3.643340826034546
+[RECORD 27] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -251,7 +251,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 29] id=None loss=4.5092949867248535
+[RECORD 29] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -259,7 +259,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 30] id=None loss=1.4996179342269897
+[RECORD 30] id=None loss=nan
 Gold events: 4 | Pred events: 8
 1 matches similar to gold ones (exact=0, fuzzy=1), 7 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 8 match, 0 don't match
@@ -280,7 +280,7 @@ Top 8 pred events by score:
     56.5 chem✓ | 'TCS', KE, 'Increased sphingolipid metabolites (Cer, Cer-1-P, GlcCer)'
 
 ==========================================================================================
-[RECORD 31] id=None loss=4.018779754638672
+[RECORD 31] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -288,7 +288,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 32] id=None loss=0.7275422811508179
+[RECORD 32] id=None loss=nan
 Gold events: 10 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 10 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -296,7 +296,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 33] id=None loss=4.037371635437012
+[RECORD 33] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -304,7 +304,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 34] id=None loss=0.5597035884857178
+[RECORD 34] id=None loss=nan
 Gold events: 6 | Pred events: 1
 1 matches similar to gold ones (exact=0, fuzzy=1), 0 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -318,7 +318,7 @@ Top 1 pred events by score:
     95.0 chem✓ | 'deltamethrin', KE, 'Increased Bdnf eIV-IX mRNA expression'
 
 ==========================================================================================
-[RECORD 35] id=None loss=1.201029896736145
+[RECORD 35] id=None loss=nan
 Gold events: 5 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -326,7 +326,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 36] id=None loss=3.894460439682007
+[RECORD 36] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -334,7 +334,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 37] id=None loss=4.19988489151001
+[RECORD 37] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -342,7 +342,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 38] id=None loss=3.968461751937866
+[RECORD 38] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -350,7 +350,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 39] id=None loss=3.840320348739624
+[RECORD 39] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -358,7 +358,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 40] id=None loss=3.8723042011260986
+[RECORD 40] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -366,7 +366,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 41] id=None loss=1.5827207565307617
+[RECORD 41] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -374,7 +374,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 42] id=None loss=0.6815728545188904
+[RECORD 42] id=None loss=nan
 Gold events: 3 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -382,7 +382,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 43] id=None loss=0.5565823912620544
+[RECORD 43] id=None loss=nan
 Gold events: 12 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 12 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -398,7 +398,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 45] id=None loss=1.1009963750839233
+[RECORD 45] id=None loss=nan
 Gold events: 6 | Pred events: 1
 0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -409,7 +409,7 @@ Top 1 pred events by score:
     74.7 chem✓ | 'Triclosan', KE, 'Reduced testosterone, estradiol, and vitellogenin'
 
 ==========================================================================================
-[RECORD 46] id=None loss=0.9773784279823303
+[RECORD 46] id=None loss=nan
 Gold events: 4 | Pred events: 3
 0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
@@ -422,7 +422,7 @@ Top 3 pred events by score:
     69.4 chem✓ | 'zotepine', KE, 'Similar binding arrangement to antagonists'
 
 ==========================================================================================
-[RECORD 47] id=None loss=3.998976707458496
+[RECORD 47] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -430,7 +430,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 48] id=None loss=3.851940155029297
+[RECORD 48] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -438,7 +438,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 49] id=None loss=3.797863006591797
+[RECORD 49] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -446,7 +446,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 50] id=None loss=4.246346950531006
+[RECORD 50] id=None loss=nan
 Gold events: 0 | Pred events: 11
 0 matches similar to gold ones (exact=0, fuzzy=0), 11 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 11 match, 0 don't match
@@ -464,7 +464,7 @@ Top 8 pred events by score:
     72.7 chem✓ | '5-HT', KE, 'Gq coupling via TM6'
 
 ==========================================================================================
-[RECORD 51] id=None loss=3.969109296798706
+[RECORD 51] id=None loss=nan
 Gold events: 0 | Pred events: 8
 0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 6 don't match
@@ -490,7 +490,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 53] id=None loss=3.8277604579925537
+[RECORD 53] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -510,7 +510,7 @@ Top 2 pred events by score:
     82.3 chem✓ | '25CN-NBOH', KE, 'Binding to 5-HT2A receptor (docking)'
 
 ==========================================================================================
-[RECORD 55] id=None loss=0.9813351631164551
+[RECORD 55] id=None loss=nan
 Gold events: 2 | Pred events: 1
 0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -521,7 +521,7 @@ Top 1 pred events by score:
     88.5 chem✓ | '25CN-NBOH', KE, 'Binding to 5-HT2A receptor'
 
 ==========================================================================================
-[RECORD 56] id=None loss=3.36141037940979
+[RECORD 56] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -529,7 +529,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 57] id=None loss=0.867390513420105
+[RECORD 57] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -537,7 +537,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 58] id=None loss=3.731069803237915
+[RECORD 58] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -545,7 +545,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 59] id=None loss=1.3789260387420654
+[RECORD 59] id=None loss=nan
 Gold events: 4 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -553,7 +553,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 60] id=None loss=3.8345797061920166
+[RECORD 60] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -561,7 +561,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 61] id=None loss=0.5996432304382324
+[RECORD 61] id=None loss=nan
 Gold events: 3 | Pred events: 4
 0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
@@ -575,7 +575,7 @@ Top 4 pred events by score:
     54.8 chem✓ | 'permethrin', KE, 'decreased cell viability (37.0% decrease)'
 
 ==========================================================================================
-[RECORD 62] id=None loss=1.157459020614624
+[RECORD 62] id=None loss=nan
 Gold events: 2 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -583,7 +583,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 63] id=None loss=1.2056667804718018
+[RECORD 63] id=None loss=nan
 Gold events: 4 | Pred events: 7
 0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text (score>=50): 7 match, 0 don't match
@@ -600,7 +600,7 @@ Top 7 pred events by score:
     74.1 chem✓ | 'Triclosan', AO, 'Microbiome-related pro-inflammatory effect'
 
 ==========================================================================================
-[RECORD 64] id=None loss=3.7373251914978027
+[RECORD 64] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -616,7 +616,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 66] id=None loss=2.1813759803771973
+[RECORD 66] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -632,7 +632,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 68] id=None loss=0.8685153126716614
+[RECORD 68] id=None loss=nan
 Gold events: 2 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -640,7 +640,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 69] id=None loss=4.210122108459473
+[RECORD 69] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -648,7 +648,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 70] id=None loss=1.563738465309143
+[RECORD 70] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -656,7 +656,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 71] id=None loss=1.5169183015823364
+[RECORD 71] id=None loss=nan
 Gold events: 1 | Pred events: 8
 1 matches similar to gold ones (exact=0, fuzzy=1), 7 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 8 match, 0 don't match
@@ -677,7 +677,7 @@ Top 8 pred events by score:
     92.6 chem✓ | 'sodium benzoate', KE, 'no effect on network parameters'
 
 ==========================================================================================
-[RECORD 72] id=None loss=0.5898188352584839
+[RECORD 72] id=None loss=nan
 Gold events: 7 | Pred events: 12
 0 matches similar to gold ones (exact=0, fuzzy=0), 12 matches not in gold, 7 matches from gold not found
 Pred grounded in chunk text (score>=50): 12 match, 0 don't match
@@ -695,7 +695,7 @@ Top 8 pred events by score:
     62.7 chem✓ | 'cypermethrin', KE, 'Reduced network spiking synchrony (NetSpPeak)'
 
 ==========================================================================================
-[RECORD 73] id=None loss=3.9549882411956787
+[RECORD 73] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -703,7 +703,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 74] id=None loss=3.5812947750091553
+[RECORD 74] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -711,7 +711,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 75] id=None loss=3.743492841720581
+[RECORD 75] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -719,7 +719,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 76] id=None loss=1.076140284538269
+[RECORD 76] id=None loss=nan
 Gold events: 6 | Pred events: 4
 1 matches similar to gold ones (exact=0, fuzzy=1), 3 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
@@ -736,7 +736,7 @@ Top 4 pred events by score:
     76.1 chem✓ | 'TCS', KE, 'Increased hepatic triacylglycerol accumulation'
 
 ==========================================================================================
-[RECORD 77] id=None loss=3.855118751525879
+[RECORD 77] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -744,7 +744,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 78] id=None loss=3.8621387481689453
+[RECORD 78] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -752,7 +752,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 79] id=None loss=3.7450485229492188
+[RECORD 79] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -760,7 +760,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 80] id=None loss=1.0300335884094238
+[RECORD 80] id=None loss=nan
 Gold events: 2 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -768,7 +768,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 81] id=None loss=3.8532724380493164
+[RECORD 81] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -784,7 +784,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 83] id=None loss=1.4294469356536865
+[RECORD 83] id=None loss=0.9613794088363647
 Gold events: 2 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -792,7 +792,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 84] id=None loss=1.0704917907714844
+[RECORD 84] id=None loss=nan
 Gold events: 4 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -800,7 +800,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 85] id=None loss=0.6470164060592651
+[RECORD 85] id=None loss=nan
 Gold events: 10 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 10 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -808,7 +808,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 86] id=None loss=4.077193737030029
+[RECORD 86] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -816,7 +816,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 87] id=None loss=4.154482364654541
+[RECORD 87] id=None loss=nan
 Gold events: 0 | Pred events: 2
 0 matches similar to gold ones (exact=0, fuzzy=0), 2 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
@@ -828,7 +828,7 @@ Top 2 pred events by score:
     53.9 chem✓ | 'malathion', KE, 'Altered metabolite profile (multiple metabolites)'
 
 ==========================================================================================
-[RECORD 88] id=None loss=0.6403304934501648
+[RECORD 88] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -836,7 +836,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 89] id=None loss=3.5873076915740967
+[RECORD 89] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -844,7 +844,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 90] id=None loss=3.8796606063842773
+[RECORD 90] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -852,7 +852,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 91] id=None loss=3.7253072261810303
+[RECORD 91] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -860,7 +860,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 92] id=None loss=1.1270387172698975
+[RECORD 92] id=None loss=nan
 Gold events: 8 | Pred events: 5
 1 matches similar to gold ones (exact=0, fuzzy=1), 4 matches not in gold, 7 matches from gold not found
 Pred grounded in chunk text (score>=50): 5 match, 0 don't match
@@ -878,7 +878,7 @@ Top 5 pred events by score:
     72.7 chem✓ | 'TCS', KE, 'Decreased testosterone'
 
 ==========================================================================================
-[RECORD 93] id=None loss=3.7285449504852295
+[RECORD 93] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -886,7 +886,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 94] id=None loss=1.9472230672836304
+[RECORD 94] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -894,7 +894,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 95] id=None loss=0.46340247988700867
+[RECORD 95] id=None loss=nan
 Gold events: 6 | Pred events: 13
 1 matches similar to gold ones (exact=0, fuzzy=1), 12 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text (score>=50): 13 match, 0 don't match
@@ -915,7 +915,7 @@ Top 8 pred events by score:
     76.6 chem✓ | 'malathion', KE, 'Decreased TCA cycle metabolites'
 
 ==========================================================================================
-[RECORD 96] id=None loss=3.832007884979248
+[RECORD 96] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -923,7 +923,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 97] id=None loss=0.761282205581665
+[RECORD 97] id=None loss=nan
 Gold events: 4 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -931,7 +931,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 98] id=None loss=0.9241558313369751
+[RECORD 98] id=None loss=nan
 Gold events: 17 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 17 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -939,7 +939,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 99] id=None loss=4.226269245147705
+[RECORD 99] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -947,7 +947,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 100] id=None loss=1.344923973083496
+[RECORD 100] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -955,7 +955,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 101] id=None loss=4.132084369659424
+[RECORD 101] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -963,7 +963,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 102] id=None loss=0.8956868648529053
+[RECORD 102] id=None loss=nan
 Gold events: 4 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -971,7 +971,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 103] id=None loss=1.470733404159546
+[RECORD 103] id=None loss=nan
 Gold events: 4 | Pred events: 1
 1 matches similar to gold ones (exact=0, fuzzy=1), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -993,7 +993,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 105] id=None loss=3.805229902267456
+[RECORD 105] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1001,7 +1001,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 106] id=None loss=0.8721680045127869
+[RECORD 106] id=None loss=nan
 Gold events: 7 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 7 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1009,7 +1009,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 107] id=None loss=0.43876978754997253
+[RECORD 107] id=None loss=nan
 Gold events: 7 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 7 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1017,7 +1017,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 108] id=None loss=3.565126657485962
+[RECORD 108] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1025,7 +1025,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 109] id=None loss=0.7167233824729919
+[RECORD 109] id=None loss=nan
 Gold events: 6 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1033,7 +1033,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 110] id=None loss=4.088311672210693
+[RECORD 110] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1057,7 +1057,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 113] id=None loss=3.91908860206604
+[RECORD 113] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1065,7 +1065,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 114] id=None loss=1.3334791660308838
+[RECORD 114] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1073,7 +1073,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 115] id=None loss=0.5516489744186401
+[RECORD 115] id=None loss=nan
 Gold events: 4 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1081,7 +1081,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 116] id=None loss=0.8139015436172485
+[RECORD 116] id=None loss=nan
 Gold events: 3 | Pred events: 1
 1 matches similar to gold ones (exact=0, fuzzy=1), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -1095,7 +1095,7 @@ Top 1 pred events by score:
     87.8 chem✓ | 'lisuride', KE, 'Partial efficacy at canonical Gq-mediated signaling'
 
 ==========================================================================================
-[RECORD 117] id=None loss=1.3133095502853394
+[RECORD 117] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1103,7 +1103,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 118] id=None loss=3.8816866874694824
+[RECORD 118] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1111,7 +1111,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 119] id=None loss=0.5381709933280945
+[RECORD 119] id=None loss=nan
 Gold events: 19 | Pred events: 10
 0 matches similar to gold ones (exact=0, fuzzy=0), 10 matches not in gold, 19 matches from gold not found
 Pred grounded in chunk text (score>=50): 10 match, 0 don't match
@@ -1129,7 +1129,7 @@ Top 8 pred events by score:
     69.2 chem✓ | 'TCS', KE, 'Suppressed testosterone production via testosterone biosynthesis'
 
 ==========================================================================================
-[RECORD 120] id=None loss=3.6667990684509277
+[RECORD 120] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1137,7 +1137,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 121] id=None loss=1.5994014739990234
+[RECORD 121] id=None loss=nan
 Gold events: 3 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1145,7 +1145,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 122] id=None loss=1.3958618640899658
+[RECORD 122] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1153,7 +1153,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 123] id=None loss=3.786700963973999
+[RECORD 123] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1161,7 +1161,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 124] id=None loss=0.7713637351989746
+[RECORD 124] id=None loss=nan
 Gold events: 13 | Pred events: 13
 1 matches similar to gold ones (exact=1, fuzzy=0), 12 matches not in gold, 12 matches from gold not found
 Pred grounded in chunk text (score>=50): 13 match, 0 don't match
@@ -1179,7 +1179,7 @@ Top 8 pred events by score:
     78.5 chem✓ | 'Carbamate fungicides', KE, 'Altered network development parameters'
 
 ==========================================================================================
-[RECORD 125] id=None loss=4.0939459800720215
+[RECORD 125] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1187,7 +1187,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 126] id=None loss=3.975369691848755
+[RECORD 126] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1195,7 +1195,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 127] id=None loss=4.132483959197998
+[RECORD 127] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1203,7 +1203,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 128] id=None loss=3.8967556953430176
+[RECORD 128] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1211,7 +1211,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 129] id=None loss=1.2931610345840454
+[RECORD 129] id=None loss=nan
 Gold events: 6 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1219,7 +1219,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 130] id=None loss=3.82741117477417
+[RECORD 130] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1235,7 +1235,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 132] id=None loss=3.6518895626068115
+[RECORD 132] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1243,7 +1243,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 133] id=None loss=3.8906209468841553
+[RECORD 133] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1251,7 +1251,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 134] id=None loss=4.060105323791504
+[RECORD 134] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1259,7 +1259,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 135] id=None loss=1.4722700119018555
+[RECORD 135] id=None loss=nan
 Gold events: 2 | Pred events: 2
 0 matches similar to gold ones (exact=0, fuzzy=0), 2 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 0 match, 2 don't match
@@ -1271,7 +1271,7 @@ Top 2 pred events by score:
     42.0 chem✓ | 'LSD', KE, 'Reduced Gq-mediated signaling'
 
 ==========================================================================================
-[RECORD 136] id=None loss=3.6004769802093506
+[RECORD 136] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1279,7 +1279,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 137] id=None loss=4.2258148193359375
+[RECORD 137] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1287,7 +1287,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 138] id=None loss=0.5184611082077026
+[RECORD 138] id=None loss=nan
 Gold events: 7 | Pred events: 6
 3 matches similar to gold ones (exact=1, fuzzy=2), 3 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text (score>=50): 5 match, 1 don't match
@@ -1307,7 +1307,7 @@ Top 6 pred events by score:
     48.2 chem✓ | 'Triclosan', KE, 'Decreased testosterone'
 
 ==========================================================================================
-[RECORD 139] id=None loss=4.038670063018799
+[RECORD 139] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1315,7 +1315,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 140] id=None loss=4.156879425048828
+[RECORD 140] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1323,7 +1323,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 141] id=None loss=3.8920724391937256
+[RECORD 141] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1339,7 +1339,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 143] id=None loss=3.8281147480010986
+[RECORD 143] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1347,7 +1347,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 144] id=None loss=3.862853527069092
+[RECORD 144] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1355,7 +1355,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 145] id=None loss=0.8810619115829468
+[RECORD 145] id=None loss=nan
 Gold events: 4 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1363,7 +1363,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 146] id=None loss=4.001297473907471
+[RECORD 146] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1371,7 +1371,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 147] id=None loss=0.7478490471839905
+[RECORD 147] id=None loss=nan
 Gold events: 11 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 11 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1379,7 +1379,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 148] id=None loss=4.046655654907227
+[RECORD 148] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1387,7 +1387,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 149] id=None loss=4.087039470672607
+[RECORD 149] id=None loss=nan
 Gold events: 0 | Pred events: 2
 0 matches similar to gold ones (exact=0, fuzzy=0), 2 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 0 match, 2 don't match
@@ -1399,7 +1399,7 @@ Top 2 pred events by score:
     41.0 chem✓ | 'DEHP', KE, 'No significant change in neurite outgrowth'
 
 ==========================================================================================
-[RECORD 150] id=None loss=4.164028644561768
+[RECORD 150] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1407,7 +1407,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 151] id=None loss=1.1225711107254028
+[RECORD 151] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1415,7 +1415,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 152] id=None loss=3.835068702697754
+[RECORD 152] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1423,7 +1423,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 153] id=None loss=0.3978668451309204
+[RECORD 153] id=None loss=nan
 Gold events: 5 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1431,7 +1431,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 154] id=None loss=1.840793251991272
+[RECORD 154] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1439,7 +1439,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 155] id=None loss=3.7079689502716064
+[RECORD 155] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1447,7 +1447,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 156] id=None loss=4.102126598358154
+[RECORD 156] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1455,7 +1455,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 157] id=None loss=3.9738948345184326
+[RECORD 157] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1463,7 +1463,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 158] id=None loss=4.043066501617432
+[RECORD 158] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1471,7 +1471,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 159] id=None loss=0.7253285646438599
+[RECORD 159] id=None loss=nan
 Gold events: 8 | Pred events: 3
 0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 8 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 1 don't match
@@ -1484,7 +1484,7 @@ Top 3 pred events by score:
     45.4 chem✓ | 'abamectin', KE, 'Decreased'
 
 ==========================================================================================
-[RECORD 160] id=None loss=4.4165239334106445
+[RECORD 160] id=None loss=nan
 Gold events: 0 | Pred events: 3
 0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
@@ -1497,7 +1497,7 @@ Top 3 pred events by score:
     50.1 chem✓ | '5-HT', MIE, 'Biased agonism (Gq-biased vs Gq-neutral)'
 
 ==========================================================================================
-[RECORD 161] id=None loss=0.5661718845367432
+[RECORD 161] id=None loss=nan
 Gold events: 13 | Pred events: 11
 7 matches similar to gold ones (exact=1, fuzzy=6), 4 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text (score>=50): 11 match, 0 don't match
@@ -1522,7 +1522,7 @@ Top 8 pred events by score:
     73.8 chem✓ | 'TCS', KE, 'DNA methylation acceleration'
 
 ==========================================================================================
-[RECORD 162] id=None loss=4.135545253753662
+[RECORD 162] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1530,7 +1530,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 163] id=None loss=1.5326236486434937
+[RECORD 163] id=None loss=nan
 Gold events: 1 | Pred events: 2
 1 matches similar to gold ones (exact=0, fuzzy=1), 1 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
@@ -1545,7 +1545,7 @@ Top 2 pred events by score:
     87.3 chem✓ | 'BDE-47', KE, 'Tipping point in network formation'
 
 ==========================================================================================
-[RECORD 164] id=None loss=4.210817813873291
+[RECORD 164] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1553,7 +1553,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 165] id=None loss=0.7716296911239624
+[RECORD 165] id=None loss=nan
 Gold events: 18 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 18 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1561,7 +1561,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 166] id=None loss=3.549471855163574
+[RECORD 166] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1569,7 +1569,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 167] id=None loss=0.7302098870277405
+[RECORD 167] id=None loss=nan
 Gold events: 2 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1577,7 +1577,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 168] id=None loss=3.9816341400146484
+[RECORD 168] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1585,7 +1585,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 169] id=None loss=3.9960696697235107
+[RECORD 169] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1593,7 +1593,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 170] id=None loss=1.345243215560913
+[RECORD 170] id=None loss=nan
 Gold events: 2 | Pred events: 1
 0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -1604,7 +1604,7 @@ Top 1 pred events by score:
     84.6 chem✓ | 'malathion', KE, 'Increased abundance of unknown metabolites'
 
 ==========================================================================================
-[RECORD 171] id=None loss=1.077247977256775
+[RECORD 171] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1612,7 +1612,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 172] id=None loss=3.982436418533325
+[RECORD 172] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1620,7 +1620,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 173] id=None loss=3.7531824111938477
+[RECORD 173] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1628,7 +1628,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 174] id=None loss=0.8014037609100342
+[RECORD 174] id=None loss=nan
 Gold events: 4 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1636,7 +1636,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 175] id=None loss=2.133173942565918
+[RECORD 175] id=None loss=nan
 Gold events: 2 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1644,7 +1644,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 176] id=None loss=3.880845308303833
+[RECORD 176] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1652,7 +1652,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 177] id=None loss=3.7471923828125
+[RECORD 177] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1660,7 +1660,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 178] id=None loss=3.7455146312713623
+[RECORD 178] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1668,7 +1668,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 179] id=None loss=3.7341034412384033
+[RECORD 179] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1676,7 +1676,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 180] id=None loss=0.6781947612762451
+[RECORD 180] id=None loss=nan
 Gold events: 11 | Pred events: 6
 5 matches similar to gold ones (exact=1, fuzzy=4), 1 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text (score>=50): 6 match, 0 don't match
@@ -1698,7 +1698,7 @@ Top 6 pred events by score:
     80.6 chem✓ | 'Triclosan', KE, 'Disturbed gut microbial communities (zebrafish)'
 
 ==========================================================================================
-[RECORD 181] id=None loss=0.8716897964477539
+[RECORD 181] id=None loss=nan
 Gold events: 3 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1706,7 +1706,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 182] id=None loss=1.0533528327941895
+[RECORD 182] id=None loss=nan
 Gold events: 2 | Pred events: 4
 0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
@@ -1720,7 +1720,7 @@ Top 4 pred events by score:
     50.7 chem✓ | 'malathion', KE, 'Decreased viability'
 
 ==========================================================================================
-[RECORD 183] id=None loss=4.089922904968262
+[RECORD 183] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1728,7 +1728,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 184] id=None loss=0.8434277176856995
+[RECORD 184] id=None loss=nan
 Gold events: 9 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 9 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1736,7 +1736,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 185] id=None loss=0.5008148550987244
+[RECORD 185] id=None loss=nan
 Gold events: 12 | Pred events: 10
 5 matches similar to gold ones (exact=1, fuzzy=4), 5 matches not in gold, 7 matches from gold not found
 Pred grounded in chunk text (score>=50): 10 match, 0 don't match
@@ -1760,7 +1760,7 @@ Top 8 pred events by score:
     92.4 chem✓ | 'TCS', KE, 'Metabolic and gut microbiota disturbance in offspring'
 
 ==========================================================================================
-[RECORD 186] id=None loss=3.7480931282043457
+[RECORD 186] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1768,7 +1768,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 187] id=None loss=1.370315432548523
+[RECORD 187] id=None loss=nan
 Gold events: 3 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1776,7 +1776,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 188] id=None loss=4.359724044799805
+[RECORD 188] id=None loss=nan
 Gold events: 0 | Pred events: 2
 0 matches similar to gold ones (exact=0, fuzzy=0), 2 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
@@ -1788,7 +1788,7 @@ Top 2 pred events by score:
     76.5 chem✓ | 'permethrin', KE, 'reduced cell viability'
 
 ==========================================================================================
-[RECORD 189] id=None loss=0.628498375415802
+[RECORD 189] id=None loss=nan
 Gold events: 4 | Pred events: 1
 0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
@@ -1799,7 +1799,7 @@ Top 1 pred events by score:
     93.5 chem✓ | 'malathion', KE, 'Increased TCA cycle intermediates'
 
 ==========================================================================================
-[RECORD 190] id=None loss=1.4000601768493652
+[RECORD 190] id=None loss=nan
 Gold events: 5 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1807,7 +1807,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 191] id=None loss=1.0483789443969727
+[RECORD 191] id=None loss=nan
 Gold events: 3 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1815,7 +1815,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 192] id=None loss=1.341242790222168
+[RECORD 192] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1823,7 +1823,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 193] id=None loss=3.6792192459106445
+[RECORD 193] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1831,7 +1831,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 194] id=None loss=1.330771565437317
+[RECORD 194] id=None loss=nan
 Gold events: 3 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1839,7 +1839,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 195] id=None loss=1.2068977355957031
+[RECORD 195] id=None loss=nan
 Gold events: 2 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1847,7 +1847,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 196] id=None loss=4.239364147186279
+[RECORD 196] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1855,7 +1855,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 197] id=None loss=1.0340408086776733
+[RECORD 197] id=None loss=nan
 Gold events: 3 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1863,7 +1863,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 198] id=None loss=0.4842499792575836
+[RECORD 198] id=None loss=nan
 Gold events: 55 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 55 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1879,7 +1879,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 200] id=None loss=3.8272292613983154
+[RECORD 200] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1887,7 +1887,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 201] id=None loss=1.9132003784179688
+[RECORD 201] id=None loss=nan
 Gold events: 1 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1903,7 +1903,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 203] id=None loss=4.156927108764648
+[RECORD 203] id=None loss=nan
 Gold events: 0 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text: no pred events to score
@@ -1911,7 +1911,7 @@ Pred grounded in chunk text: no pred events to score
 No parsable pred events to score (model probably output garbage/truncated lines).
 
 ==========================================================================================
-[RECORD 204] id=None loss=1.2073895931243896
+[RECORD 204] id=None loss=nan
 Gold events: 3 | Pred events: 0
 0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text: no pred events to score
