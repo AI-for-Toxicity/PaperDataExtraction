@@ -1,11 +1,23 @@
+'''
+This module implements a class that takes a list of PDF files and an output directory, and extracts text from the PDFs into markdown files.
+The extraction is ran with the run_text_extraction method.
+'''
+
+import re
 import collections, io, tempfile, fitz
 from pathlib import Path
-from PIL import Image
+import pytesseract
+from pytesseract import Output
+import cv2
+import numpy as np
+from PIL import Image, ImageOps
 from docling.datamodel.base_models import InputFormat
 from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 
 class PDFExtractor:
+  # INITIALIZATION
+
   def __init__(self, paper_files: list, output_dir: Path, skip_existing: bool = False, keep_divided_pdfs: bool = False, divided_folder: Path | None = None) -> None:
     print("### PDFExtractor - init ###")
     self.pipeline_options = PdfPipelineOptions(
@@ -32,6 +44,8 @@ class PDFExtractor:
   def __enter__(self):
     return self
 
+  # MAIN TEXT EXTRACTION
+
   '''
   Yield (page_idx, span_dict, page_height)
   '''
@@ -49,6 +63,9 @@ class PDFExtractor:
               continue
             yield (p_idx, span, line["bbox"], ph)
 
+  '''
+  Identify if a line (given by its bbox) is likely in the header or footer region of the page, based on a margin ratio.
+  '''
   def is_in_header_or_footer_region(self, line_bbox, page_height, margin_ratio=0.10):
     y0, y1 = line_bbox[1], line_bbox[3]
     return (y0 <= page_height * margin_ratio) or (y1 >= page_height * (1 - margin_ratio))
@@ -107,32 +124,6 @@ class PDFExtractor:
       print("dominant:", dom_size, "chars:", char_count)
 
     return dom_size
-
-  '''
-  Given spans as (page_idx, span_dict, line_bbox, page_height),
-  return the font size that covers the largest number of characters.
-  '''
-  def dominant_font_size_by_chars_old(self, spans):
-    char_counter = collections.Counter()
-    for _, span, _, _ in spans:
-      text = span.get("text", "")
-      if not text:
-          continue
-      size = round(span.get("size", 0), 1)
-      char_counter[size] += len(text)
-    if not char_counter:
-      return 0
-    # pick the size that accumulated the most characters
-    return max(char_counter.items(), key=lambda x: x[1])[0]
-
-  def dominant_font_size_by_spans(self, spans):
-    counter = collections.Counter()
-    for _, span, _, _ in spans:
-      size = span.get("size", 0)
-      counter[round(size, 1)] += 1
-    if not counter:
-      return 0
-    return max(counter.items(), key=lambda x: x[1])[0]
 
   '''
   Choose the body font size based on:
@@ -203,53 +194,8 @@ class PDFExtractor:
     return chosen_size
 
   '''
-  Create a new PDF containing only spans that match the condition:
-  keep_big=True  -> keep spans with size >= threshold
-  keep_big=False -> keep spans with size < threshold
-  Also skip repeated headers/footers.
-  We preserve page sizes and place text at original coordinates.
+  Collect rectangles representing the body text for each page.
   '''
-  def build_filtered_pdf(self, src_doc, spans, headers, footers, threshold, keep_big=True):
-    out_doc = fitz.open()
-    page_count = len(src_doc)
-
-    # we need spans per page to decide placement
-    spans_by_page = collections.defaultdict(list)
-    for (p_idx, span, line_bbox, ph) in spans:
-      spans_by_page[p_idx].append((span, line_bbox, ph))
-
-    for p_idx in range(page_count):
-      src_page = src_doc.load_page(p_idx)
-      rect = src_page.rect
-      new_page = out_doc.new_page(width=rect.width, height=rect.height)
-
-      page_spans = spans_by_page.get(p_idx, [])
-      for span, line_bbox, ph in page_spans:
-        text = span["text"].strip()
-        size = span.get("size", 0)
-        fontname = span.get("font", "helv")
-        x0, y0, x1, y1 = span["bbox"]
-
-        if text in headers or text in footers:
-          continue
-
-        if keep_big and size >= threshold:
-          new_page.insert_text(
-            (x0, y0),
-            text,
-            fontsize=size,
-            fontname="helv",
-          )
-        elif not keep_big and size < threshold:
-          new_page.insert_text(
-            (x0, y0),
-            text,
-            fontsize=size,
-            fontname="helv",
-          )
-
-    return out_doc
-
   def _collect_body_rects(self, spans, threshold, eps, padding_factor=1.5):
     body_rects_by_page = collections.defaultdict(list)
     lower = threshold - eps
@@ -279,6 +225,9 @@ class PDFExtractor:
 
     return body_rects_by_page
 
+  '''
+  Check if a bbox overlaps significantly with any of the body rects on the page.
+  '''
   def _overlaps_body(self, bbox, body_rects, min_overlap_ratio=0.2):
     if not body_rects:
         return False
@@ -361,103 +310,329 @@ class PDFExtractor:
 
     return doc
 
+  '''
+  Run Docling conversion on a PDF and return the markdown string.
+  '''
   def run_docling_on_pdf(self, path_str: str) -> str:
       res = self.docling_converter.convert(path_str)
       return res.document.export_to_markdown()
 
-  '''
-  Save a fitz.Pixmap to out_path as PNG. Handles CMYK and alpha.
-  '''
-  def save_pixmap_as_png(self, pix, out_path: Path):
-    if pix.n < 5:
-      # n < 5: grayscale (1), rgb (3), or with alpha (4)
-      pix.save(str(out_path))
-    else:
-      # CMYK or other: convert to RGB first
-      pix_rgb = fitz.Pixmap(fitz.csRGB, pix)
-      pix_rgb.save(str(out_path))
-      pix_rgb = None
-    pix = None
+  # TABLE EXTRACTION
 
-  def extract_images_from_pdf(self, doc, out_dir: Path, paper_id: str, min_size: int):
+  '''
+  Clean a cell value by normalizing whitespace and stripping.
+  '''
+  def _clean_cell(self, value) -> str:
+    if value is None:
+      return ""
+    text = str(value)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+  '''
+  Heuristic:
+    - header row should be mostly non-empty
+    - usually short textual labels, not mostly numeric
+  '''
+  def _looks_like_header_row(self, row) -> bool:
+    cleaned = [self._clean_cell(x) for x in row]
+    non_empty = [x for x in cleaned if x]
+    if len(non_empty) < max(1, len(cleaned) // 2):
+      return False
+
+    numeric_like = 0
+    for cell in non_empty:
+      if re.fullmatch(r"[%\d\.\,\-\+\(\)\/]+", cell):
+        numeric_like += 1
+
+    # if most cells are numeric, it's probably not a header
+    return numeric_like < len(non_empty) / 2
+
+  '''
+  Normalize a header cell, using "column N" as fallback if it looks empty after cleaning.
+  '''
+  def _normalize_header(self, header: str, fallback_idx: int) -> str:
+    header = self._clean_cell(header).lower()
+    if not header:
+      return f"column {fallback_idx}"
+    return header
+
+  '''
+  Convert a table (list of rows) into a serialized string:
+  Table N: header1 value1, header2 value2. header1 value1, header2 value2.
+  '''
+  def _serialize_table_rows(self, rows, table_label: str) -> str | None:
+    if not rows:
+      return None
+
+    # clean all rows
+    cleaned_rows = [
+      [self._clean_cell(cell) for cell in row]
+      for row in rows
+    ]
+
+    # remove completely empty rows
+    cleaned_rows = [
+      row for row in cleaned_rows
+      if any(cell for cell in row)
+    ]
+
+    if not cleaned_rows:
+      return None
+
+    # choose header
+    if len(cleaned_rows) >= 2 and self._looks_like_header_row(cleaned_rows[0]):
+      headers = [
+        self._normalize_header(h, idx + 1)
+        for idx, h in enumerate(cleaned_rows[0])
+      ]
+      data_rows = cleaned_rows[1:]
+    else:
+      max_cols = max(len(r) for r in cleaned_rows)
+      headers = [f"column {i+1}" for i in range(max_cols)]
+      data_rows = cleaned_rows
+
+    row_texts = []
+    for row in data_rows:
+      pieces = []
+      for idx, cell in enumerate(row):
+        cell = self._clean_cell(cell)
+        if not cell:
+          continue
+        header = headers[idx] if idx < len(headers) else f"column {idx+1}"
+        pieces.append(f"{header} {cell}")
+
+      if pieces:
+        row_texts.append(", ".join(pieces))
+
+    if not row_texts:
+      return None
+
+    return f"{table_label}: " + ". ".join(row_texts) + "."
+
+  '''
+  Return a list of serialized table strings extracted from the PDF.
+  Uses PyMuPDF's built-in table detection on each page.
+  '''
+  def extract_tables_from_pdf(self, doc, paper_id: str):
+    extracted_tables = []
+    global_table_idx = 1
+
+    for page_index in range(len(doc)):
+      page = doc[page_index]
+
+      try:
+        tabs = page.find_tables()
+      except Exception as e:
+        print(f"  [!] Could not detect tables on page {page_index+1} of {paper_id}: {e}")
+        continue
+
+      page_tables = getattr(tabs, "tables", [])
+      if not page_tables:
+        continue
+
+      for table in page_tables:
+        try:
+          rows = table.extract()
+        except Exception as e:
+          print(f"  [!] Could not extract table {global_table_idx} on page {page_index+1} of {paper_id}: {e}")
+          global_table_idx += 1
+          continue
+
+        label = f"Table {global_table_idx}"
+        serialized = self._serialize_table_rows(rows, label)
+        if serialized:
+          extracted_tables.append(serialized)
+
+        global_table_idx += 1
+
+    return extracted_tables
+
+  # IMAGE EXTRACTION
+
+  def _normalize_ocr_text(self, text: str) -> str:
+    """
+    Normalize OCR text by fixing form feeds, collapsing multiple newlines, and normalizing spaces.
+    """
+    text = text.replace("\x0c", " ")
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+  def _prepare_image_for_ocr(self, img: Image.Image) -> Image.Image:
+    """
+    Preprocess image for OCR: grayscale, upscale small images, 
+    adaptive contrast enhancement, and binarization.
+    """
+    img = ImageOps.exif_transpose(img)
+
+    if img.mode not in ("L", "RGB", "RGBA"):
+        img = img.convert("RGB")
+    if img.mode == "RGBA":
+        # Flatten alpha onto white background
+        background = Image.new("RGB", img.size, (255, 255, 255))
+        background.paste(img, mask=img.split()[3])
+        img = background
+    if img.mode != "L":
+        img = ImageOps.grayscale(img)
+
+    # Upscale small images — Tesseract performs poorly below ~200 DPI equivalent
+    w, h = img.size
+    min_dim = 1000
+    if w < min_dim or h < min_dim:
+        scale = max(min_dim / w, min_dim / h)
+        new_size = (int(w * scale), int(h * scale))
+        img = img.resize(new_size, Image.Resampling.LANCZOS)
+
+    # Adaptive histogram equalization for better contrast
+    img_np = np.array(img)
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    img_np = clahe.apply(img_np)
+
+    # Otsu binarization — separates text from background cleanly
+    _, img_np = cv2.threshold(img_np, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+    return Image.fromarray(img_np)
+
+  def _ocr_image_preserve_blocks(self, img: Image.Image, lang: str = "eng") -> str:
+    """
+    OCR one figure image using paragraph-aware block grouping.
+    Uses PSM 3 (auto page segmentation) instead of PSM 11 (sparse chars).
+
+    Output format:
+        block 1 paragraph text...
+
+        block 2 paragraph text...
+    """
+    img = self._prepare_image_for_ocr(img)
+
+    data = pytesseract.image_to_data(
+        img,
+        lang=lang,
+        output_type=Output.DICT,
+        config="--psm 3 --oem 1",  # PSM 3 = auto layout, OEM 1 = LSTM only
+    )
+
+    n = len(data["text"])
+    # Group words by (block, paragraph, line) while filtering low-confidence noise
+    grouped = collections.OrderedDict()
+
+    for i in range(n):
+        word = (data["text"][i] or "").strip()
+        if not word:
+            continue
+
+        try:
+            conf = float(data["conf"][i])
+        except (ValueError, TypeError):
+            conf = -1
+
+        # Raise threshold significantly — real text in figures is usually high-confidence
+        # -1 means Tesseract didn't score it (e.g. line-level entries), keep those
+        if conf != -1 and conf < 40:
+            continue
+
+        # Skip tokens that are pure punctuation/symbols with no alphanumeric content
+        if not re.search(r"[a-zA-Z0-9]", word):
+            continue
+
+        key = (data["block_num"][i], data["par_num"][i], data["line_num"][i])
+        grouped.setdefault(key, []).append(word)
+
+    if not grouped:
+        return ""
+
+    # Reconstruct: block -> paragraphs -> lines -> joined words
+    # Structure: blocks[block_num][par_num] = [line_text, ...]
+    blocks: dict = collections.OrderedDict()
+    for (block_num, par_num, line_num), words in grouped.items():
+        line_text = " ".join(words)
+        blocks.setdefault(block_num, collections.OrderedDict()) \
+              .setdefault(par_num, []) \
+              .append(line_text)
+
+    block_texts = []
+    for block_num, paragraphs in blocks.items():
+        para_texts = []
+        for par_num, lines in paragraphs.items():
+            # Join lines in a paragraph into a single flowing sentence
+            para_text = " ".join(line.strip() for line in lines if line.strip())
+            if para_text:
+                para_texts.append(para_text)
+        block_body = "\n".join(para_texts)
+        block_body = self._normalize_ocr_text(block_body)
+        if block_body:
+            block_texts.append(block_body)
+
+    return "\n\n".join(block_texts).strip()
+
+  '''
+  Extract embedded images from the PDF, OCR them, and return a list like:
+  ["Figure 1: ...", "Figure 2: ..."]
+  '''
+  def extract_figure_texts_from_pdf(self, doc, paper_id: str, min_size: int = 80, ocr_lang: str = "eng"):
+    figure_texts = []
+    seen_xrefs = set()
     counter = 1
-    seen_xrefs = set()  # avoid saving the same XObject twice on different pages
+
     for page_index in range(len(doc)):
       page = doc[page_index]
       images = page.get_images(full=True)
       if not images:
         continue
+
       for img_info in images:
         xref = img_info[0]
         if xref in seen_xrefs:
           continue
         seen_xrefs.add(xref)
+
         try:
-          pix = fitz.Pixmap(doc, xref)
+          base_image = doc.extract_image(xref)
         except Exception as e:
-          print(f"  [!] Could not make pixmap for xref {xref} on {paper_id}: {e}")
+          print(f"  [!] Could not extract image xref {xref} from {paper_id}: {e}")
           continue
 
-        width = pix.width
-        height = pix.height
+        img_bytes = base_image.get("image")
+        if not img_bytes:
+          continue
 
+        try:
+          img = Image.open(io.BytesIO(img_bytes))
+        except Exception as e:
+          print(f"  [!] Could not open image xref {xref} from {paper_id}: {e}")
+          continue
+
+        width, height = img.size
         if width < min_size or height < min_size:
-          # discard small images
-          pix = None
           continue
 
-        out_name = f"{paper_id}_image_{counter}.png"
-        out_path = out_dir / out_name
-
         try:
-          # Use PIL if conversion to PNG via bytes is preferred,
-          # but fitz.Pixmap.save also writes PNG reliably.
-          self.save_pixmap_as_png(pix, out_path)
+          ocr_text = self._ocr_image_preserve_blocks(img, lang=ocr_lang)
         except Exception as e:
-          # fallback via PIL (less direct, but sometimes helps)
-          try:
-            im_bytes = pix.tobytes(output="png")
-            im = Image.open(io.BytesIO(im_bytes))
-            im.save(out_path, format="PNG")
-          except Exception as e2:
-            print(f"  [!] Failed to save image xref {xref}: {e} / {e2}")
-            continue
-        finally:
-          pix = None
+          print(f"  [!] OCR failed for image xref {xref} in {paper_id}: {e}")
+          continue
 
-        print(f"    saved {out_name} ({width}x{height})")
+        if not ocr_text:
+          continue
+
+        label = f"Figure {counter}"
+        figure_texts.append(f"{label}:\n{ocr_text}")
         counter += 1
 
-    return counter - 1
+    return figure_texts
 
-  def extract_tables_from_pdf(self, doc, out_dir: Path, paper_id: str):
-    # Not implemented yet
-    pass
+  # FULL EXTRACTION PIPELINE
 
-  def debug_spans_for_word(self, spans, needle="variability"):
-    # group spans by (page, line bbox)
-    lines = collections.defaultdict(list)
-    for p_idx, span, line_bbox, ph in spans:
-      lines[(p_idx, tuple(line_bbox))].append(span)
-
-    for (p_idx, bbox), line_spans in lines.items():
-      # reconstruct the line text as PyMuPDF created it
-      line_text = "".join(s["text"] for s in line_spans)
-
-      # be generous with the match in case PDF splits weirdly
-      if needle in line_text or "variabi" in line_text:
-        print(f"\n=== Page {p_idx+1}, line bbox={bbox} ===")
-        print("FULL LINE:", repr(line_text))
-        for s in line_spans:
-          print(
-            "  span:",
-            repr(s["text"]),
-            "size=", s["size"],
-            "font=", s.get("font"),
-            "bbox=", s["bbox"],
-          )
-
-  def run_text_extraction(self, folder="markdown"):
+  '''
+  Iterates paper_files and extracts text into markdown files in output_dir/folder.
+  For each PDF it does the following:
+  1. Divide body text (font size >= threshold) from small text
+  2. Extract text from tables, trasforming each row into a sentence
+  3. Extract text from figures
+  4. Finally combines body text, small text, table text, and figure text in an output markdown with sections.
+  '''
+  def run_text_extraction(self, folder="markdown", ocr_figure_lang: str = "eng"):
     total = len(self.paper_files)
     print(f"Found {total} PDFs to process for text extraction.\n")
 
@@ -501,13 +676,30 @@ class PDFExtractor:
       big_md = self.run_docling_on_pdf(str(big_pdf_path)).strip()
       small_md = self.run_docling_on_pdf(str(small_pdf_path)).strip()
 
+      # tables from original PDF
+      table_texts = self.extract_tables_from_pdf(doc, name)
+
+      # images OCR from original PDF
+      figure_texts = self.extract_figure_texts_from_pdf(doc, name, ocr_lang=ocr_figure_lang)
+
       # combine
       combined = []
+
       if big_md:
         combined.append(big_md)
+
       if small_md:
         combined.append("\n# Small-font content\n")
         combined.append(small_md)
+
+      if table_texts:
+        combined.append("\n# Tables\n")
+        combined.extend(table_texts)
+
+      if figure_texts:
+          combined.append("\n# Figures\n")
+          combined.extend(figure_texts)
+
 
       final_md = "\n".join(combined).strip() + "\n"
 
@@ -516,48 +708,11 @@ class PDFExtractor:
 
     print("Text extraction complete")
 
-  def run_image_extraction(self, folder="images", min_size: int = 50):
-    total = len(self.paper_files)
-    print(f"Found {total} PDFs to process for image extraction.\n")
+  # CLEANUP
 
-    for i, pdf in enumerate(self.paper_files, 1):
-      print(f"[{i}/{total}] Processing {pdf.name}...")
-      parts = pdf.stem.split("_")
-      name = "_".join(parts[:2]) if len(parts) > 1 else parts[0]
-      out_dir = self.output_dir / folder
-      out_dir.mkdir(parents=True, exist_ok=True)
-
-      if self.skip_existing and any(out_dir.glob(f"{name}_image_*.png")):
-        print(f"Skipping {name} because images already exist in {out_dir}.")
-        continue
-
-      doc = fitz.open(pdf)
-      self.extract_images_from_pdf(doc, out_dir, name, min_size)
-      doc.close()
-
-    print("Image extraction complete")
-
-  def run_table_extraction(self, folder="tables"):
-    total = len(self.paper_files)
-    print(f"Found {total} PDFs to process for table extraction.\n")
-
-    for i, pdf in enumerate(self.paper_files, 1):
-      print(f"[{i}/{total}] Processing {pdf.name}...")
-      parts = pdf.stem.split("_")
-      name = "_".join(parts[:2]) if len(parts) > 1 else parts[0]
-      out_dir = self.output_dir / folder
-      out_dir.mkdir(parents=True, exist_ok=True)
-
-      if self.skip_existing and any(out_dir.glob(f"{name}_table_*.png")):
-        print(f"Skipping {name} because tables already exist in {out_dir}.")
-        continue
-
-      doc = fitz.open(pdf)
-      self.extract_tables_from_pdf(doc, out_dir, name)
-      doc.close()
-
-    print("Table extraction complete")
-
+  '''
+  Clean up temp dir if needed
+  '''
   def __exit__(self, exc_type, exc_value, traceback):
     if not self.keep_divided_pdfs:
       self.tmpdir.cleanup()
