@@ -1,15 +1,13 @@
-'''
-This module implements a class that takes a list of PDF files and an output directory, and extracts text from the PDFs into markdown files.
-The extraction is ran with the run_text_extraction method.
-'''
+"""
+This module implements a class that takes a list of PDF files and an output directory, and extracts all text from the PDFs into markdown files.
+The extraction is ran with the run_text_extraction method and includes body text, text from tables and text from images.
+"""
 
 import re
+import easyocr
+import numpy as np
 import collections, io, tempfile, fitz
 from pathlib import Path
-import pytesseract
-from pytesseract import Output
-import cv2
-import numpy as np
 from PIL import Image, ImageOps
 from docling.datamodel.base_models import InputFormat
 from docling.document_converter import DocumentConverter, PdfFormatOption
@@ -46,10 +44,10 @@ class PDFExtractor:
 
   # MAIN TEXT EXTRACTION
 
-  '''
-  Yield (page_idx, span_dict, page_height)
-  '''
-  def extract_spans(self, doc):
+  def _extract_spans(self, doc):
+    """
+    Yield (page_idx, span_dict, page_height)
+    """
     for p_idx, page in enumerate(doc):
       page_dict = page.get_text("dict")
       ph = page.rect.height
@@ -63,20 +61,20 @@ class PDFExtractor:
               continue
             yield (p_idx, span, line["bbox"], ph)
 
-  '''
-  Identify if a line (given by its bbox) is likely in the header or footer region of the page, based on a margin ratio.
-  '''
-  def is_in_header_or_footer_region(self, line_bbox, page_height, margin_ratio=0.10):
+  def _is_in_header_or_footer_region(self, line_bbox, page_height, margin_ratio=0.10):
+    """
+    Identify if a line (given by its bbox) is likely in the header or footer region of the page, based on a margin ratio.
+    """
     y0, y1 = line_bbox[1], line_bbox[3]
     return (y0 <= page_height * margin_ratio) or (y1 >= page_height * (1 - margin_ratio))
 
-  '''
-  Compute dominant font size weighted by number of characters.
-  Supports both span shapes:
-  1) (page_idx, span_dict, line_bbox, page_height)
-  2) (page_idx, text, size, y0, y1, page_height)
-  '''
-  def dominant_font_size_by_chars(self, spans, debug=False):
+  def _dominant_font_size_by_chars(self, spans, debug=False):
+    """
+    Compute dominant font size weighted by number of characters.
+    Supports both span shapes:
+    1) (page_idx, span_dict, line_bbox, page_height)
+    2) (page_idx, text, size, y0, y1, page_height)
+    """
     char_counter = collections.Counter()
 
     for item in spans:
@@ -113,7 +111,7 @@ class PDFExtractor:
 
     if not char_counter:
       if debug:
-        print("dominant_font_size_by_chars: no chars counted. spans sample:", spans[:5])
+        print("_dominant_font_size_by_chars: no chars counted. spans sample:", spans[:5])
       return 0.0
 
     # pick size with the highest total char count
@@ -125,15 +123,15 @@ class PDFExtractor:
 
     return dom_size
 
-  '''
-  Choose the body font size based on:
-  - how many pages a font size appears on (coverage)
-  - how many characters it has in total (tie-breaker)
+  def _pick_body_font_size(self, spans, headers=None, footers=None, debug=False):
+    """
+    Choose the body font size based on:
+    - how many pages a font size appears on (coverage)
+    - how many characters it has in total (tie-breaker)
 
-  spans must be like: (page_idx, span_dict, line_bbox, page_height)
-  headers/footers are sets of strings to ignore.
-  '''
-  def pick_body_font_size(self, spans, headers=None, footers=None, debug=False):
+    spans must be like: (page_idx, span_dict, line_bbox, page_height)
+    headers/footers are sets of strings to ignore.
+    """
     if headers is None:
       headers = set()
     if footers is None:
@@ -146,7 +144,7 @@ class PDFExtractor:
 
     for item in spans:
       if len(item) != 4:
-        # if your extract_spans has a different shape, fix that upstream
+        # if your _extract_spans has a different shape, fix that upstream
         continue
       page_idx, span, line_bbox, ph = item
       text = span.get("text", "")
@@ -193,10 +191,10 @@ class PDFExtractor:
 
     return chosen_size
 
-  '''
-  Collect rectangles representing the body text for each page.
-  '''
   def _collect_body_rects(self, spans, threshold, eps, padding_factor=1.5):
+    """
+    Collect rectangles representing the body text for each page.
+    """
     body_rects_by_page = collections.defaultdict(list)
     lower = threshold - eps
 
@@ -225,10 +223,10 @@ class PDFExtractor:
 
     return body_rects_by_page
 
-  '''
-  Check if a bbox overlaps significantly with any of the body rects on the page.
-  '''
   def _overlaps_body(self, bbox, body_rects, min_overlap_ratio=0.2):
+    """
+    Check if a bbox overlaps significantly with any of the body rects on the page.
+    """
     if not body_rects:
         return False
 
@@ -246,13 +244,13 @@ class PDFExtractor:
 
     return False
   
-  '''
-  Open original PDF, redact spans we DON'T want, keep the rest.
-  This preserves layout and fonts.
-  keep_big=True  -> keep size >= threshold, redact smaller
-  keep_big=False -> keep size < threshold, redact bigger
-  '''
-  def build_filtered_pdf_redaction(self, src_doc, spans, threshold, keep_big=True, eps=0.5):
+  def _build_filtered_pdf_redaction(self, src_doc, spans, threshold, keep_big=True, eps=0.5):
+    """
+    Open original PDF, redact spans we DON'T want, keep the rest.
+    This preserves layout and fonts.
+    keep_big=True  -> keep size >= threshold, redact smaller
+    keep_big=False -> keep size < threshold, redact bigger
+    """
     doc = src_doc
 
     # 1) rettangoli di testo "body" per pagina
@@ -277,7 +275,7 @@ class PDFExtractor:
         if not text:
           continue
 
-        #if is_in_header_or_footer_region(line_bbox, ph):
+        #if _is_in_header_or_footer_region(line_bbox, ph):
         #    page.add_redact_annot(fitz.Rect(span["bbox"]), fill=(1, 1, 1))
         #    continue
 
@@ -310,31 +308,31 @@ class PDFExtractor:
 
     return doc
 
-  '''
-  Run Docling conversion on a PDF and return the markdown string.
-  '''
   def run_docling_on_pdf(self, path_str: str) -> str:
-      res = self.docling_converter.convert(path_str)
-      return res.document.export_to_markdown()
+    """
+    Run Docling conversion on a PDF and return the markdown string.
+    """
+    res = self.docling_converter.convert(path_str)
+    return res.document.export_to_markdown()
 
   # TABLE EXTRACTION
 
-  '''
-  Clean a cell value by normalizing whitespace and stripping.
-  '''
   def _clean_cell(self, value) -> str:
+    """
+    Clean a cell value by normalizing whitespace and stripping.
+    """
     if value is None:
       return ""
     text = str(value)
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
-  '''
-  Heuristic:
+  def _looks_like_header_row(self, row) -> bool:
+    """
+    Heuristic:
     - header row should be mostly non-empty
     - usually short textual labels, not mostly numeric
-  '''
-  def _looks_like_header_row(self, row) -> bool:
+    """
     cleaned = [self._clean_cell(x) for x in row]
     non_empty = [x for x in cleaned if x]
     if len(non_empty) < max(1, len(cleaned) // 2):
@@ -348,20 +346,20 @@ class PDFExtractor:
     # if most cells are numeric, it's probably not a header
     return numeric_like < len(non_empty) / 2
 
-  '''
-  Normalize a header cell, using "column N" as fallback if it looks empty after cleaning.
-  '''
   def _normalize_header(self, header: str, fallback_idx: int) -> str:
+    """
+    Normalize a header cell, using "column N" as fallback if it looks empty after cleaning.
+    """
     header = self._clean_cell(header).lower()
     if not header:
       return f"column {fallback_idx}"
     return header
 
-  '''
-  Convert a table (list of rows) into a serialized string:
-  Table N: header1 value1, header2 value2. header1 value1, header2 value2.
-  '''
   def _serialize_table_rows(self, rows, table_label: str) -> str | None:
+    """
+    Convert a table (list of rows) into a serialized string:
+    Table N: header1 value1, header2 value2. header1 value1, header2 value2.
+    """
     if not rows:
       return None
 
@@ -410,11 +408,11 @@ class PDFExtractor:
 
     return f"{table_label}: " + ". ".join(row_texts) + "."
 
-  '''
-  Return a list of serialized table strings extracted from the PDF.
-  Uses PyMuPDF's built-in table detection on each page.
-  '''
   def extract_tables_from_pdf(self, doc, paper_id: str):
+    """
+    Return a list of serialized table strings extracted from the PDF.
+    Uses PyMuPDF's built-in table detection on each page.
+    """
     extracted_tables = []
     global_table_idx = 1
 
@@ -451,126 +449,308 @@ class PDFExtractor:
   # IMAGE EXTRACTION
 
   def _normalize_ocr_text(self, text: str) -> str:
-    """
-    Normalize OCR text by fixing form feeds, collapsing multiple newlines, and normalizing spaces.
-    """
     text = text.replace("\x0c", " ")
+    text = text.replace("\r", "\n")
+
+    # fix hyphenation across line breaks
+    text = re.sub(r"(\w)-\n(\w)", r"\1\2", text)
+
+    # preserve paragraph breaks
+    text = re.sub(r"\n{2,}", "<<<PARA>>>", text)
+
+    # single line breaks -> space
+    text = re.sub(r"[ \t]*\n[ \t]*", " ", text)
+
+    # restore paragraphs
+    text = text.replace("<<<PARA>>>", "\n\n")
+
+    # normalize spaces
     text = re.sub(r"[ \t]+", " ", text)
-    text = re.sub(r"\n{3,}", "\n\n", text)
+    text = re.sub(r" *\n\n *", "\n\n", text)
+
     return text.strip()
+  
+  def _prepare_image_for_ocr(self, img: Image.Image) -> np.ndarray:
+      img = ImageOps.exif_transpose(img)
 
-  def _prepare_image_for_ocr(self, img: Image.Image) -> Image.Image:
+      if img.mode == "RGBA":
+          bg = Image.new("RGB", img.size, (255, 255, 255))
+          bg.paste(img, mask=img.split()[3])
+          img = bg
+      elif img.mode != "RGB":
+          img = img.convert("RGB")
+
+      # Mild upscale for small images
+      w, h = img.size
+      min_dim = 1600
+      if min(w, h) < min_dim:
+          scale = min_dim / min(w, h)
+          img = img.resize((int(w * scale), int(h * scale)), Image.Resampling.LANCZOS)
+
+      return np.array(img)
+
+  def _get_easy_ocr(self, lang: list | None = None):
     """
-    Preprocess image for OCR: grayscale, upscale small images, 
-    adaptive contrast enhancement, and binarization.
+    Lazy init so you don't reload models for every figure.
     """
-    img = ImageOps.exif_transpose(img)
+    if lang is None:
+        lang = ["en"]
+    lang_key = tuple(sorted(lang))
 
-    if img.mode not in ("L", "RGB", "RGBA"):
-        img = img.convert("RGB")
-    if img.mode == "RGBA":
-        # Flatten alpha onto white background
-        background = Image.new("RGB", img.size, (255, 255, 255))
-        background.paste(img, mask=img.split()[3])
-        img = background
-    if img.mode != "L":
-        img = ImageOps.grayscale(img)
+    if not hasattr(self, "_easy_ocr_cache"):
+        self._easy_ocr_cache = {}
 
-    # Upscale small images — Tesseract performs poorly below ~200 DPI equivalent
-    w, h = img.size
-    min_dim = 1000
-    if w < min_dim or h < min_dim:
-        scale = max(min_dim / w, min_dim / h)
-        new_size = (int(w * scale), int(h * scale))
-        img = img.resize(new_size, Image.Resampling.LANCZOS)
+    if lang_key not in self._easy_ocr_cache:
+        self._easy_ocr_cache[lang_key] = easyocr.Reader(list(lang_key), gpu=False)
 
-    # Adaptive histogram equalization for better contrast
-    img_np = np.array(img)
-    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
-    img_np = clahe.apply(img_np)
+    return self._easy_ocr_cache[lang_key]
 
-    # Otsu binarization — separates text from background cleanly
-    _, img_np = cv2.threshold(img_np, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+  @staticmethod
+  def _polygon_to_bbox(poly):
+    xs = [p[0] for p in poly]
+    ys = [p[1] for p in poly]
+    x0, y0, x1, y1 = min(xs), min(ys), max(xs), max(ys)
+    return {
+        "x0": float(x0),
+        "y0": float(y0),
+        "x1": float(x1),
+        "y1": float(y1),
+        "w": float(x1 - x0),
+        "h": float(y1 - y0),
+        "cx": float((x0 + x1) / 2.0),
+        "cy": float((y0 + y1) / 2.0),
+    }
 
-    return Image.fromarray(img_np)
+  @staticmethod
+  def _alnum_ratio(text: str) -> float:
+    if not text:
+        return 0.0
+    alnum = sum(ch.isalnum() for ch in text)
+    return alnum / max(len(text), 1)
 
-  def _ocr_image_preserve_blocks(self, img: Image.Image, lang: str = "eng") -> str:
+  def _group_detected_text_boxes(self, items):
     """
-    OCR one figure image using paragraph-aware block grouping.
-    Uses PSM 3 (auto page segmentation) instead of PSM 11 (sparse chars).
+    Group OCR detections into text blocks using pairwise adjacency
+    instead of greedy sequential merging.
 
-    Output format:
-        block 1 paragraph text...
-
-        block 2 paragraph text...
+    Works much better for multiline text inside boxes.
     """
-    img = self._prepare_image_for_ocr(img)
+    if not items:
+        return []
 
-    data = pytesseract.image_to_data(
-        img,
-        lang=lang,
-        output_type=Output.DICT,
-        config="--psm 3 --oem 1",  # PSM 3 = auto layout, OEM 1 = LSTM only
-    )
+    items = sorted(items, key=lambda it: (it["bbox"]["y0"], it["bbox"]["x0"]))
 
-    n = len(data["text"])
-    # Group words by (block, paragraph, line) while filtering low-confidence noise
-    grouped = collections.OrderedDict()
+    heights = [it["bbox"]["h"] for it in items if it["bbox"]["h"] > 0]
+    avg_h = float(np.mean(heights)) if heights else 20.0
+
+    same_line_y_tol = max(8.0, avg_h * 0.55)
+    multiline_gap_tol = max(10.0, avg_h * 1.0)
+    horiz_gap_tol = max(18.0, avg_h * 1.5)
+    left_align_tol = max(12.0, avg_h * 0.9)
+
+    n = len(items)
+    adj = [[] for _ in range(n)]
+
+    def x_overlap(a, b):
+        return max(0.0, min(a["x1"], b["x1"]) - max(a["x0"], b["x0"]))
+
+    def y_overlap(a, b):
+        return max(0.0, min(a["y1"], b["y1"]) - max(a["y0"], b["y0"]))
+
+    def horiz_gap(a, b):
+        if a["x1"] < b["x0"]:
+            return b["x0"] - a["x1"]
+        if b["x1"] < a["x0"]:
+            return a["x0"] - b["x1"]
+        return 0.0
+
+    def vert_gap(a, b):
+        if a["y1"] < b["y0"]:
+            return b["y0"] - a["y1"]
+        if b["y1"] < a["y0"]:
+            return a["y0"] - b["y1"]
+        return 0.0
+
+    def should_link(box1, box2):
+        h1, h2 = box1["h"], box2["h"]
+        w1, w2 = box1["w"], box2["w"]
+
+        xo = x_overlap(box1, box2)
+        yo = y_overlap(box1, box2)
+        hg = horiz_gap(box1, box2)
+        vg = vert_gap(box1, box2)
+
+        # normalized overlaps
+        xo_ratio = xo / max(1.0, min(w1, w2))
+        yo_ratio = yo / max(1.0, min(h1, h2))
+
+        left_aligned = abs(box1["x0"] - box2["x0"]) <= left_align_tol
+        right_aligned = abs(box1["x1"] - box2["x1"]) <= left_align_tol
+
+        # same OCR line split into multiple chunks
+        same_line = (
+            abs(box1["cy"] - box2["cy"]) <= same_line_y_tol
+            and hg <= horiz_gap_tol
+        )
+
+        # two stacked lines of same multiline block
+        stacked_multiline = (
+            vg <= multiline_gap_tol
+            and (
+                xo_ratio >= 0.45
+                or left_aligned
+                or right_aligned
+            )
+        )
+
+        # Prevent absurd merges between far-apart columns
+        far_apart_columns = (
+            hg > max(40.0, avg_h * 3.0)
+            and xo_ratio < 0.15
+        )
+
+        if far_apart_columns:
+            return False
+
+        return same_line or stacked_multiline
+
+    # build adjacency graph
+    for i in range(n):
+        bi = items[i]["bbox"]
+        for j in range(i + 1, n):
+            bj = items[j]["bbox"]
+
+            # cheap early exit on vertical distance
+            if abs(bi["cy"] - bj["cy"]) > avg_h * 4.0 and vert_gap(bi, bj) > avg_h * 2.0:
+                continue
+
+            if should_link(bi, bj):
+                adj[i].append(j)
+                adj[j].append(i)
+
+    # connected components
+    visited = [False] * n
+    groups_idx = []
 
     for i in range(n):
-        word = (data["text"][i] or "").strip()
-        if not word:
+        if visited[i]:
+            continue
+        stack = [i]
+        visited[i] = True
+        comp = []
+
+        while stack:
+            u = stack.pop()
+            comp.append(u)
+            for v in adj[u]:
+                if not visited[v]:
+                    visited[v] = True
+                    stack.append(v)
+
+        groups_idx.append(comp)
+
+    # reconstruct text inside each component
+    block_texts = []
+
+    for comp in groups_idx:
+        group = [items[i] for i in comp]
+        group.sort(key=lambda it: (it["bbox"]["y0"], it["bbox"]["x0"]))
+
+        # local line clustering
+        local_lines = []
+
+        for it in group:
+            placed = False
+            for line in local_lines:
+                line_y = np.mean([x["bbox"]["cy"] for x in line])
+                if abs(it["bbox"]["cy"] - line_y) <= same_line_y_tol:
+                    line.append(it)
+                    placed = True
+                    break
+            if not placed:
+                local_lines.append([it])
+
+        local_lines.sort(key=lambda line: min(x["bbox"]["y0"] for x in line))
+
+        line_texts = []
+        for line in local_lines:
+            line.sort(key=lambda x: x["bbox"]["x0"])
+            txt = " ".join(x["text"] for x in line).strip()
+            txt = self._normalize_ocr_text(txt)
+            if txt:
+                line_texts.append(txt)
+
+        block = "\n".join(line_texts).strip()
+        if block:
+            block_texts.append({
+                "text": block,
+                "y": min(it["bbox"]["y0"] for it in group),
+                "x": min(it["bbox"]["x0"] for it in group),
+            })
+
+    block_texts.sort(key=lambda b: (b["y"], b["x"]))
+    return [b["text"] for b in block_texts]
+  
+  def _ocr_image_detect_text_blocks(self, img: Image.Image, lang: str = "en") -> str:
+    """
+    Detect text regions with EasyOCR, then group nearby detections into blocks.
+    Returns one block separated by blank lines.
+    """
+    arr = self._prepare_image_for_ocr(img)
+    reader = self._get_easy_ocr(lang=[lang])
+
+    # EasyOCR returns list of (bbox_points, text, confidence)
+    # bbox_points: [[x0,y0],[x1,y0],[x1,y1],[x0,y1]]
+    result = reader.readtext(arr)
+
+    items = []
+
+    for (poly, text, score) in result:
+        text = self._normalize_ocr_text(str(text or ""))
+        score = float(score) if score is not None else 0.0
+
+        if not text:
+            continue
+        if score < 0.35:
+            continue
+        if self._alnum_ratio(text) < 0.25:
             continue
 
-        try:
-            conf = float(data["conf"][i])
-        except (ValueError, TypeError):
-            conf = -1
-
-        # Raise threshold significantly — real text in figures is usually high-confidence
-        # -1 means Tesseract didn't score it (e.g. line-level entries), keep those
-        if conf != -1 and conf < 40:
+        bbox = self._polygon_to_bbox(poly)
+        if bbox["w"] < 6 or bbox["h"] < 6:
             continue
 
-        # Skip tokens that are pure punctuation/symbols with no alphanumeric content
-        if not re.search(r"[a-zA-Z0-9]", word):
-            continue
+        items.append({
+            "text": text,
+            "score": score,
+            "bbox": bbox,
+        })
 
-        key = (data["block_num"][i], data["par_num"][i], data["line_num"][i])
-        grouped.setdefault(key, []).append(word)
-
-    if not grouped:
+    if not items:
         return ""
 
-    # Reconstruct: block -> paragraphs -> lines -> joined words
-    # Structure: blocks[block_num][par_num] = [line_text, ...]
-    blocks: dict = collections.OrderedDict()
-    for (block_num, par_num, line_num), words in grouped.items():
-        line_text = " ".join(words)
-        blocks.setdefault(block_num, collections.OrderedDict()) \
-              .setdefault(par_num, []) \
-              .append(line_text)
+    blocks = self._group_detected_text_boxes(items)
 
-    block_texts = []
-    for block_num, paragraphs in blocks.items():
-        para_texts = []
-        for par_num, lines in paragraphs.items():
-            # Join lines in a paragraph into a single flowing sentence
-            para_text = " ".join(line.strip() for line in lines if line.strip())
-            if para_text:
-                para_texts.append(para_text)
-        block_body = "\n".join(para_texts)
-        block_body = self._normalize_ocr_text(block_body)
-        if block_body:
-            block_texts.append(block_body)
+    # final cleanup + dedup
+    final_blocks = []
+    seen = set()
+    for blk in blocks:
+        blk = self._normalize_ocr_text(blk)
+        key = re.sub(r"\s+", " ", blk).strip().lower()
+        if not key:
+            continue
+        if key in seen:
+            continue
+        seen.add(key)
+        final_blocks.append(blk)
 
-    return "\n\n".join(block_texts).strip()
+    return ". ".join(final_blocks).strip() + '.'
 
-  '''
-  Extract embedded images from the PDF, OCR them, and return a list like:
-  ["Figure 1: ...", "Figure 2: ..."]
-  '''
-  def extract_figure_texts_from_pdf(self, doc, paper_id: str, min_size: int = 80, ocr_lang: str = "eng"):
+  def extract_figure_texts_from_pdf(self, doc, paper_id: str, min_size: int = 200, ocr_lang: str = "en"):
+    """
+    Extract embedded images from the PDF, OCR them, and return a list like:
+    ["Figure 1: ...", "Figure 2: ..."]
+    """
     figure_texts = []
     seen_xrefs = set()
     counter = 1
@@ -608,7 +788,7 @@ class PDFExtractor:
           continue
 
         try:
-          ocr_text = self._ocr_image_preserve_blocks(img, lang=ocr_lang)
+          ocr_text = self._ocr_image_detect_text_blocks(img, lang=ocr_lang)
         except Exception as e:
           print(f"  [!] OCR failed for image xref {xref} in {paper_id}: {e}")
           continue
@@ -624,15 +804,15 @@ class PDFExtractor:
 
   # FULL EXTRACTION PIPELINE
 
-  '''
-  Iterates paper_files and extracts text into markdown files in output_dir/folder.
-  For each PDF it does the following:
-  1. Divide body text (font size >= threshold) from small text
-  2. Extract text from tables, trasforming each row into a sentence
-  3. Extract text from figures
-  4. Finally combines body text, small text, table text, and figure text in an output markdown with sections.
-  '''
-  def run_text_extraction(self, folder="markdown", ocr_figure_lang: str = "eng"):
+  def run_text_extraction(self, folder="markdown", ocr_figure_lang: str = "en", only_tables=False, only_figures=False):
+    """
+    Iterates paper_files and extracts text into markdown files in output_dir/folder.
+    For each PDF it does the following:
+    1. Divide body text (font size >= threshold) from small text
+    2. Extract text from tables, trasforming each row into a sentence
+    3. Extract text from figures
+    4. Finally combines body text, small text, table text, and figure text in an output markdown with sections.
+    """
     total = len(self.paper_files)
     print(f"Found {total} PDFs to process for text extraction.\n")
 
@@ -655,32 +835,38 @@ class PDFExtractor:
       doc = fitz.open(str(pdf))
 
       # first pass spans
-      spans = list(self.extract_spans(doc))
-      dom_size = self.dominant_font_size_by_chars(spans)
-      #dom_size = pick_body_font_size(spans, headers, footers, debug=False)
+      spans = list(self._extract_spans(doc))
+      dom_size = self._dominant_font_size_by_chars(spans)
+      #dom_size = _pick_body_font_size(spans, headers, footers, debug=False)
 
       # build two filtered PDFs in temp files
       big_doc = fitz.open()  # new empty
       big_doc.insert_pdf(doc) # clone
-      big_doc = self.build_filtered_pdf_redaction(big_doc, spans, dom_size, keep_big=True)
+      big_doc = self._build_filtered_pdf_redaction(big_doc, spans, dom_size, keep_big=True)
       big_doc.save(str(big_pdf_path))
       big_doc.close()
 
       small_doc = fitz.open()  # new empty
       small_doc.insert_pdf(doc) # clone
-      small_doc = self.build_filtered_pdf_redaction(small_doc, spans, dom_size, keep_big=False)
+      small_doc = self._build_filtered_pdf_redaction(small_doc, spans, dom_size, keep_big=False)
       small_doc.save(str(small_pdf_path))
       small_doc.close()
 
       # docling on both
-      big_md = self.run_docling_on_pdf(str(big_pdf_path)).strip()
-      small_md = self.run_docling_on_pdf(str(small_pdf_path)).strip()
+      big_md, small_md = None, None
+      if not only_tables and not only_figures:
+        big_md = self.run_docling_on_pdf(str(big_pdf_path)).strip()
+        small_md = self.run_docling_on_pdf(str(small_pdf_path)).strip()
 
       # tables from original PDF
-      table_texts = self.extract_tables_from_pdf(doc, name)
+      table_texts = None
+      if not only_figures:
+        table_texts = self.extract_tables_from_pdf(doc, name)
 
       # images OCR from original PDF
-      figure_texts = self.extract_figure_texts_from_pdf(doc, name, ocr_lang=ocr_figure_lang)
+      figure_texts = None
+      if not only_tables:
+        figure_texts = self.extract_figure_texts_from_pdf(doc, name, ocr_lang=ocr_figure_lang)
 
       # combine
       combined = []
@@ -710,10 +896,10 @@ class PDFExtractor:
 
   # CLEANUP
 
-  '''
-  Clean up temp dir if needed
-  '''
   def __exit__(self, exc_type, exc_value, traceback):
+    """
+    Clean up temp dir if needed
+    """
     if not self.keep_divided_pdfs:
       self.tmpdir.cleanup()
     print("### PDFExtractor - close ###")
