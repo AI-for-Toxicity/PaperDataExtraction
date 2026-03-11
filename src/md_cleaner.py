@@ -1,11 +1,12 @@
-import re, collections
+import re
 import unicodedata
 import re
 from pathlib import Path
-from wordfreq import word_frequency
 from spellchecker import SpellChecker
 
 class MarkdownCleaner:
+  # INITIALIZATION
+
   def __init__(self, md_files: list, output_dir: Path, skip_existing: bool = False) -> None:
     print("### MarkdownCleaner - init ###")
     self.spell = SpellChecker(language="en")
@@ -16,10 +17,12 @@ class MarkdownCleaner:
   def __enter__(self):
     return self
 
-  '''
-  Simple Levenshtein distance.
-  '''
-  def levenshtein(self, a: str, b: str) -> int:
+  # CLEANING HELPERS
+
+  def _levenshtein(self, a: str, b: str) -> int:
+    """
+    Simple _levenshtein distance.
+    """
     if a == b:
       return 0
     if len(a) < len(b):
@@ -36,195 +39,23 @@ class MarkdownCleaner:
       previous = current
     return previous[-1]
 
-  '''
-  Find 'broken' words like 'variabi ty' where even the joined form is not valid,
-  but is close to a valid dictionary word.
-
-  Returns a list of dicts:
-  {
-      "original": "variabi ty",
-      "joined": "variabity",
-      "fixed": "variability",
-      "token1": "variabi",
-      "token2": "ty",
-      "span": (start, end)
-  }
-  '''
-  def find_broken_words_with_correction(self, text: str, max_distance: int = 2, min_joined_len: int = 6):
-    # Tokenize into words and punctuation, keep spans
-    tokens = []
-    for m in re.finditer(r"\w+|[^\w\s]", text):
-      tok = m.group(0)
-      tokens.append({
-        "text": tok,
-        "start": m.start(),
-        "end": m.end(),
-        "is_word": bool(re.match(r"^\w+$", tok))
-      })
-
-    results = []
-
-    for i in range(len(tokens) - 1):
-      t1 = tokens[i]
-      t2 = tokens[i + 1]
-
-      if not (t1["is_word"] and t2["is_word"]):
-        continue
-
-      # Must be separated by whitespace only
-      gap = text[t1["end"]:t2["start"]]
-      if not gap or not gap.isspace():
-        continue
-
-      w1 = t1["text"]
-      w2 = t2["text"]
-      joined = (w1 + w2).lower()
-
-      if len(joined) < min_joined_len:
-        continue
-
-      # At least one fragment should look "wrong"
-      unknown1 = w1.lower() not in self.spell
-      unknown2 = w2.lower() not in self.spell
-      if not (unknown1 or unknown2):
-        # both look like valid words → probably not a broken word case
-        continue
-
-      # If joined is already a valid word, this is the previous simpler case,
-      # but your problem is when it is NOT, so skip if it's valid.
-      if joined in self.spell:
-        continue
-
-      # Get best correction candidate
-      candidate = self.spell.correction(joined)
-      if not candidate:
-        continue
-
-      # Require small edit distance
-      dist = self.levenshtein(joined, candidate)
-      if dist <= max_distance:
-        results.append({
-          "original": text[t1["start"]:t2["end"]],
-          "joined": joined,
-          "fixed": candidate,
-          "token1": w1,
-          "token2": w2,
-          "span": (t1["start"], t2["end"])
-        })
-
-    return results
-
-  '''
-  Find 'broken words' like 'variabi ty' in a text.
-
-  Logic:
-  - Take adjacent word tokens separated ONLY by whitespace.
-  - Join them: w_join = w1 + w2
-  - If w_join is a reasonably frequent word in the dictionary
-    and at least one of w1/w2 is rare, treat it as a broken word.
-
-  Returns list of dicts:
-  {
-      "original": "variabi ty",
-      "fixed": "variability",
-      "token1": "variabi",
-      "token2": "ty",
-      "span": (start, end)
-      }
-  '''
-  def find_broken_words(self, text: str, lang: str = "en", min_joined_len: int = 6, min_joined_freq: float = 1e-8):
-    # Tokenize: words + punctuation, keep spans
-    tokens = []
-    for m in re.finditer(r"\w+|[^\w\s]", text):
-      tok = m.group(0)
-      tokens.append({
-        "text": tok,
-        "start": m.start(),
-        "end": m.end(),
-        "is_word": bool(re.match(r"^\w+$", tok))
-      })
-
-    results = []
-
-    for i in range(len(tokens) - 1):
-      t1 = tokens[i]
-      t2 = tokens[i + 1]
-
-      # Need word + word
-      if not (t1["is_word"] and t2["is_word"]):
-        continue
-
-      # Make sure they are separated only by whitespace
-      gap = text[t1["end"]:t2["start"]]
-      if not gap or not gap.isspace():
-        continue
-
-      w1 = t1["text"]
-      w2 = t2["text"]
-      joined = (w1 + w2).lower()
-
-      if len(joined) < min_joined_len:
-        continue
-
-      # Frequencies
-      f1 = word_frequency(w1.lower(), lang)
-      f2 = word_frequency(w2.lower(), lang)
-      fj = word_frequency(joined, lang)
-
-      # Heuristic:
-      # - joined word must be reasonably common
-      # - at least one of the components must be rare
-      if fj >= min_joined_freq and (f1 < fj * 0.01 or f2 < fj * 0.01):
-        results.append({
-          "original": text[t1["start"]:t2["end"]],
-          "fixed": joined,
-          "token1": w1,
-          "token2": w2,
-          "span": (t1["start"], t2["end"])
-        })
-
-    return results
-
-  '''
-  Return text with broken words merged.
-  '''
-  def fix_broken_words(self, text: str, lang: str = "en", min_joined_len: int = 6, min_joined_freq: float = 1e-8) -> str:
-    corrections = self.find_broken_words(
-      text,
-      lang=lang,
-      min_joined_len=min_joined_len,
-      min_joined_freq=min_joined_freq,
-    )
-
-    if not corrections:
-      return text
-
-    # Apply from right to left to avoid shifting spans
-    corrected = text
-    for c in sorted(corrections, key=lambda x: x["span"][0], reverse=True):
-      start, end = c["span"]
-      corrected = corrected[:start] + c["fixed"] + corrected[end:]
-
-    return corrected
-
-  def guess_repeated_lines(self, lines, at_end=True, min_len=8, min_freq=0.15):
-    spots = [ln.strip() for ln in lines if len(ln.strip())>=min_len]
-    # footer/header candidates are lines that repeat a lot
-    counter = collections.Counter(spots)
-    total = len(lines)
-    reps = {k for k,v in counter.items() if v/total >= min_freq}
-    return reps
-
-  def dehyphenate(self, text):
-    # join foo-\nbar -> foobar, keep hyphenated terms like “endocrine-related” within a line
+  def _dehyphenate(self, text):
+    """
+    Join foo-\nbar -> foobar, keep hyphenated terms like “endocrine-related” within a line
+    """
     return re.sub(r'(\w)-\n(\w)', r'\1\2', text)
 
-  def fix_linebreaks(self, text):
-    # join mid-sentence line breaks into spaces, keep paragraph breaks
+  def _fix_linebreaks(self, text):
+    """
+    Join mid-sentence line breaks into spaces, keep paragraph breaks
+    """
     text = re.sub(r'([^\.\?\!:])\n(?!\n)', r'\1 ', text)
     return text
 
-  def remove_citations(self, text):
+  def _remove_citations(self, text):
+    """
+    Remove citations like [1], (Smith et al., 2020), etc.
+    """
     text = re.sub(
       r"\(\s*(?:[A-Z][A-Za-z'\-]+(?:\s+et\s+al\.)?"
       r"(?:,\s*(?:19|20)\d{2})"
@@ -247,7 +78,10 @@ class MarkdownCleaner:
     text = paren_cite_re.sub("", text)
     return text
 
-  def normalize_coding(self, text):
+  def _normalize_coding(self, text):
+    """
+    Normalize unicode characters, fix common OCR artifacts, and remove unrecognized control characters.
+    """
     norm = unicodedata.normalize("NFC", text)
     # Fix dashes and micro sign
     dash_map = {
@@ -304,10 +138,16 @@ class MarkdownCleaner:
 
     return norm
 
-  def strip_html_comments(self, text):
+  def _strip_html_comments(self, text):
+    """
+    Remove Docling's HTML comments like <!-- This is a comment -->
+    """
     return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
 
-  def strip_artifacts(self, text):
+  def _strip_artifacts(self, text):
+    """
+    Remove lines that consist solely of common OCR artifacts or decorative characters.
+    """
     lines = []
     cruft_re = re.compile(r"^[\-\=\·\•\*一、]+$")
     for line in text.splitlines():
@@ -317,16 +157,20 @@ class MarkdownCleaner:
     text = "\n".join(lines)
     return text
 
-  def strip_various(self, text):
-    # Remove lost 1 or 2 digit integer numbers with no measure unit after them (e.g., " 5 ", " 12 ")
-    # Check if a measure unit (like "mg", "cm", etc.) is present within 5 words before or after the number
-    
-    # Remove spaces before punctuation and multiple spaces
+  def _strip_various(self, text):
+    """
+    Remove lost 1 or 2 digit integer numbers with no measure unit after them (e.g., " 5 ", " 12 ")
+    Check if a measure unit (like "mg", "cm", etc.) is present within 5 words before or after the number
+    Remove spaces before punctuation and multiple spaces
+    """
     text = re.sub(r"\s+([.,;:!?])", r"\1", text)
     text = re.sub(r" {2,}", " ", text)
     return text
 
-  def normalize_headings(self, text: str) -> str:
+  def _normalize_headings(self, text: str) -> str:
+    """
+    Normalize headings by ensuring proper spacing and formatting.
+    """
     lines = text.splitlines()
     out = []
 
@@ -380,13 +224,19 @@ class MarkdownCleaner:
 
     return "\n".join(cleaned_out)
 
-  def fix_whitespace(self, text: str) -> str:
+  def _fix_whitespace(self, text: str) -> str:
+    """
+    Fix excessive whitespace by reducing multiple newlines to a maximum of two and stripping leading/trailing spaces from each line.
+    """
     text = re.sub(r'\n{3,}', '\n\n', text)
     # Strip every line
     lines = [ln.strip() for ln in text.splitlines()]
     return "\n".join(lines)
 
-  def join_broken_lines(self, text: str) -> str:
+  def _join_broken_lines(self, text: str) -> str:
+    """
+    Join lines that were broken in the middle of a sentence due to OCR or formatting issues.
+    """
     lines = text.splitlines()
     out = []
     i = 0
@@ -434,11 +284,11 @@ class MarkdownCleaner:
 
     return "\n".join(out)
 
-  '''
-  Remove lines that contain only one visible character (e.g. 'a', '.', '#', etc.)
-  Empty lines are preserved only if you want them; change as needed.
-  '''
-  def remove_meaningless_lines(self, text: str) -> str:
+  def _remove_meaningless_lines(self, text: str) -> str:
+    """
+    Remove lines that contain only one visible character (e.g. 'a', '.', '#', etc.)
+    Empty lines are preserved only if you want them; change as needed.
+    """
     cleaned = []
     for line in text.splitlines():
         stripped = line.strip()
@@ -447,14 +297,14 @@ class MarkdownCleaner:
             cleaned.append(line)
     return "\n".join(cleaned)
 
-  '''
-  Remove lines that are basically just a link (optionally with a leading number).
-  Examples removed:
-    '4  http://www.epa.gov/ncct/toxcast'
-    '1 https://doi.org/10.1016/j.taap.2019.114876'
-    'www.example.com'
-  '''
-  def remove_bare_link_lines(self, text: str) -> str:
+  def _remove_bare_link_lines(self, text: str) -> str:
+    """
+    Remove lines that are basically just a link (optionally with a leading number).
+    Examples removed:
+      '4  http://www.epa.gov/ncct/toxcast'
+      '1 https://doi.org/10.1016/j.taap.2019.114876'
+      'www.example.com'
+    """
     BARE_LINK_RE = re.compile(
       r"""^
         \s*
@@ -478,34 +328,34 @@ class MarkdownCleaner:
       cleaned.append(line)
     return "\n".join(cleaned)
 
-  '''
-  Remove dashes at the end of words when they are immediately followed by
-  a space or punctuation.
+  def _remove_trailing_dashes(self, text: str) -> str:
+    """
+    Remove dashes at the end of words when they are immediately followed by
+    a space or punctuation.
 
-  Examples:
-    'apple- .'   -> 'apple .'
-    'apple-.'    -> 'apple.'
-    'apple- ,'   -> 'apple ,'
-    'apple-,'    -> 'apple,'
-    'apple- and' -> 'apple and'
-  '''
-  def remove_trailing_dashes(self, text: str) -> str:
+    Examples:
+      'apple- .'   -> 'apple .'
+      'apple-.'    -> 'apple.'
+      'apple- ,'   -> 'apple ,'
+      'apple-,'    -> 'apple,'
+      'apple- and' -> 'apple and'
+    """
     # (\w)          capture last word character
     # -            literal dash
     # (?=\s|[.,;:!?])  only if next char is whitespace or punctuation
     return re.sub(r'(\w)-(?=\s|[.,;:!?])', r'\1', text)
 
-  '''
-  Remove GitHub-style markdown tables from a text.
+  def _remove_markdown_tables(self, text: str) -> str:
+    """
+    Remove GitHub-style markdown tables from a text.
 
-  A table is detected as:
-  - a header line starting with '|' 
-  - followed by a separator line made of |, -, :, + and spaces
-  - followed by 0+ lines starting with '|'
+    A table is detected as:
+    - a header line starting with '|' 
+    - followed by a separator line made of |, -, :, + and spaces
+    - followed by 0+ lines starting with '|'
 
-  The entire block is removed.
-  '''
-  def remove_markdown_tables(self, text: str) -> str:
+    The entire block is removed.
+    """
     lines = text.splitlines()
     out_lines = []
     i = 0
@@ -538,42 +388,34 @@ class MarkdownCleaner:
 
     return "\n".join(out_lines)
 
-  def inspect_lines(self, text: str, indices):
-    lines = text.splitlines()
-    for i in indices:
-      if 0 <= i < len(lines):
-        line = lines[i]
-        print(f"Line {i}: {repr(line)}")
-        print("  chars:", [f"{c} (U+{ord(c):04X})" for c in line])
-      else:
-        print(f"Line {i}: <out of range>")
+  # FULL CLEANING PIPELINE
 
   def clean_file(self, md_text: str) -> str:
-    # lines = md_text.splitlines()
-    # repeated = guess_repeated_lines(lines)
-    # lines = [ln for ln in lines if ln.strip() not in repeated]
-    # text = "\n".join(lines)
-    text = self.normalize_coding(md_text)
-    text = self.strip_html_comments(text)
-    text = self.remove_meaningless_lines(text)
-    text = self.remove_bare_link_lines(text)
-    text = self.strip_artifacts(text)
-    text = self.remove_markdown_tables(text)
-    text = self.dehyphenate(text)
-    text = self.fix_linebreaks(text)
-    text = self.remove_citations(text)
-    text = self.fix_whitespace(text)
-    text = self.strip_various(text)
-    text = self.normalize_headings(text)
-    text = self.join_broken_lines(text)
-    text = self.join_broken_lines(text)
-    text = self.remove_trailing_dashes(text)
-
-    #print(find_broken_words(text))
+    """
+    Run cleaning pipeline on a single markdown file.
+    """
+    text = self._normalize_coding(md_text)
+    text = self._strip_html_comments(text)
+    text = self._remove_meaningless_lines(text)
+    text = self._remove_bare_link_lines(text)
+    text = self._strip_artifacts(text)
+    text = self._remove_markdown_tables(text)
+    text = self._dehyphenate(text)
+    text = self._fix_linebreaks(text)
+    text = self._remove_citations(text)
+    text = self._fix_whitespace(text)
+    text = self._strip_various(text)
+    text = self._normalize_headings(text)
+    text = self._join_broken_lines(text)
+    text = self._join_broken_lines(text)
+    text = self._remove_trailing_dashes(text)
 
     return text.strip()
 
   def clean_markdowns(self, folder="cleaned_markdown"):
+    """
+    Run the full cleaning pipeline on all markdown files and save cleaned versions.
+    """
     total = len(self.md_files)
     print(f"Found {total} markdown files to process for markdown cleanup.\n")
 
@@ -594,6 +436,8 @@ class MarkdownCleaner:
         out.write(self.clean_file(md_text))
 
     print("Markdown cleanup complete")
+
+  # EXIT
 
   def __exit__(self, exc_type, exc_value, traceback):
     print("### MarkdownCleaner - exit ###")

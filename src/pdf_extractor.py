@@ -317,7 +317,6 @@ class PDFExtractor:
 
   # TABLE EXTRACTION
 
-
   def _clean_cell(self, value) -> str:
     """
     Clean a cell value by normalizing whitespace and stripping.
@@ -942,7 +941,7 @@ class PDFExtractor:
 
     print("Text extraction complete")
 
-  # CLEANUP
+  # EXIT
 
   def __exit__(self, exc_type, exc_value, traceback):
     """
