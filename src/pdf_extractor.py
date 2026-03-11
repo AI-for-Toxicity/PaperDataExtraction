@@ -317,12 +317,13 @@ class PDFExtractor:
 
   # TABLE EXTRACTION
 
+
   def _clean_cell(self, value) -> str:
     """
     Clean a cell value by normalizing whitespace and stripping.
     """
     if value is None:
-      return ""
+        return ""
     text = str(value)
     text = re.sub(r"\s+", " ", text).strip()
     return text
@@ -336,24 +337,65 @@ class PDFExtractor:
     cleaned = [self._clean_cell(x) for x in row]
     non_empty = [x for x in cleaned if x]
     if len(non_empty) < max(1, len(cleaned) // 2):
-      return False
+        return False
 
     numeric_like = 0
     for cell in non_empty:
-      if re.fullmatch(r"[%\d\.\,\-\+\(\)\/]+", cell):
-        numeric_like += 1
+        if re.fullmatch(r"[%\d\.\,\-\+\(\)\/]+", cell):
+            numeric_like += 1
 
-    # if most cells are numeric, it's probably not a header
     return numeric_like < len(non_empty) / 2
 
   def _normalize_header(self, header: str, fallback_idx: int) -> str:
     """
-    Normalize a header cell, using "column N" as fallback if it looks empty after cleaning.
+    Normalize a header cell.
     """
     header = self._clean_cell(header).lower()
     if not header:
-      return f"column {fallback_idx}"
+        return f""
     return header
+
+  def _pad_rows(self, rows):
+    """
+    Pad all rows to the same number of columns.
+    """
+    if not rows:
+        return rows
+    max_cols = max(len(r) for r in rows)
+    return [list(r) + [""] * (max_cols - len(r)) for r in rows]
+
+  def _forward_fill_rowspans(self, rows):
+    """
+    Forward-fill empty cells vertically to approximate rowspan behavior.
+
+    Example:
+    Female | mouse | x
+           | rat   | y
+           | human | z
+
+    becomes:
+    Female | mouse | x
+    Female | rat   | y
+    Female | human | z
+    """
+    if not rows:
+        return rows
+
+    rows = self._pad_rows(rows)
+    filled = [rows[0][:]]
+
+    for row_idx in range(1, len(rows)):
+        prev = filled[row_idx - 1]
+        curr = rows[row_idx][:]
+        for col_idx, cell in enumerate(curr):
+            if (
+                not self._clean_cell(cell)
+                and any(self._clean_cell(x) for j, x in enumerate(curr) if j != col_idx)
+            ):
+                curr[col_idx] = prev[col_idx]
+        filled.append(curr)
+
+    return filled
 
   def _serialize_table_rows(self, rows, table_label: str) -> str | None:
     """
@@ -361,52 +403,58 @@ class PDFExtractor:
     Table N: header1 value1, header2 value2. header1 value1, header2 value2.
     """
     if not rows:
-      return None
+        return None
 
-    # clean all rows
     cleaned_rows = [
-      [self._clean_cell(cell) for cell in row]
-      for row in rows
+        [self._clean_cell(cell) for cell in row]
+        for row in rows
     ]
 
-    # remove completely empty rows
     cleaned_rows = [
-      row for row in cleaned_rows
-      if any(cell for cell in row)
+        row for row in cleaned_rows
+        if any(cell for cell in row)
     ]
 
     if not cleaned_rows:
-      return None
+        return None
+
+    cleaned_rows = self._pad_rows(cleaned_rows)
 
     # choose header
     if len(cleaned_rows) >= 2 and self._looks_like_header_row(cleaned_rows[0]):
-      headers = [
-        self._normalize_header(h, idx + 1)
-        for idx, h in enumerate(cleaned_rows[0])
-      ]
-      data_rows = cleaned_rows[1:]
+        headers = [
+            self._normalize_header(h, idx + 1)
+            for idx, h in enumerate(cleaned_rows[0])
+        ]
+        data_rows = cleaned_rows[1:]
     else:
-      max_cols = max(len(r) for r in cleaned_rows)
-      headers = [f"column {i+1}" for i in range(max_cols)]
-      data_rows = cleaned_rows
+        max_cols = max(len(r) for r in cleaned_rows)
+        headers = ["" for i in range(max_cols)]
+        data_rows = cleaned_rows
+
+    if not data_rows:
+        return None
+
+    # fill vertically so merged cells spanning multiple rows are repeated
+    data_rows = self._forward_fill_rowspans(data_rows)
 
     row_texts = []
     for row in data_rows:
-      pieces = []
-      for idx, cell in enumerate(row):
-        cell = self._clean_cell(cell)
-        if not cell:
-          continue
-        header = headers[idx] if idx < len(headers) else f"column {idx+1}"
-        pieces.append(f"{header} {cell}")
+        pieces = []
+        for idx, cell in enumerate(row):
+            cell = self._clean_cell(cell)
+            if not cell:
+                continue
+            header = headers[idx] if idx < len(headers) else ""
+            pieces.append(f"{header}{' ' if len(header) > 0 else ''}{cell}")
 
-      if pieces:
-        row_texts.append(", ".join(pieces))
+        if pieces:
+            row_texts.append(", ".join(pieces))
 
     if not row_texts:
-      return None
+        return None
 
-    return f"{table_label}: " + ". ".join(row_texts) + "."
+    return f"{table_label}:\n" + ". ".join(row_texts) + "."
 
   def extract_tables_from_pdf(self, doc, paper_id: str):
     """
@@ -437,10 +485,10 @@ class PDFExtractor:
           global_table_idx += 1
           continue
 
-        label = f"Table {global_table_idx}"
+        label = f"## Table {global_table_idx}"
         serialized = self._serialize_table_rows(rows, label)
         if serialized:
-          extracted_tables.append(serialized)
+          extracted_tables.append(serialized + "\n")
 
         global_table_idx += 1
 
@@ -796,8 +844,8 @@ class PDFExtractor:
         if not ocr_text:
           continue
 
-        label = f"Figure {counter}"
-        figure_texts.append(f"{label}:\n{ocr_text}")
+        label = f"## Figure {counter}"
+        figure_texts.append(f"{label}:\n{ocr_text}\n")
         counter += 1
 
     return figure_texts
