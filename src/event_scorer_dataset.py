@@ -666,28 +666,22 @@ class EventScorer:
         para_dicts = [{"title": p.get("title", ""), "text": p.get("body", "")} for p in data.get("paragraphs", [])]
         chunks_dicts = [{"text": c.get("text", "")} for c in data.get("chunks", [])]
 
-        # Annotate chunks only
+        # Annotate everything
+        sentences_annotated, matched_sents = self.annotate_blocks(sent_dicts, events, "text", "sentence", top_k=1)
+        lines_annotated, matched_lines = self.annotate_blocks(line_dicts, events, "text", "line", top_k=1)
+        paragraphs_annotated, matched_paras = self.annotate_blocks(para_dicts, events, "text", "paragraph", top_k=1)
         chunks_annotated, matched_chunks = self.annotate_blocks(chunks_dicts, events, "text", "chunk", top_k=1)
         unmatched_events_chunk = [ev for ev in events if ev["event_id"] not in matched_chunks]
+        unmatched_events_any = [ev for ev in events if ev["event_id"] not in (matched_sents | matched_lines | matched_paras | matched_chunks)]
 
         # Annotate lines, then try unmatched events on sentences, then paragraphs, then chunks (incremental matching)
-        incr_sentences_annotated, incr_matched_sents = self.annotate_blocks(sent_dicts, events, "text", "sentence", top_k=1)
-        events_after_sents = [ev for ev in events if ev["event_id"] not in incr_matched_sents]
-        incr_lines_annotated, incr_matched_lines = self.annotate_blocks(line_dicts, events_after_sents, "text", "line", top_k=1)
-        events_after_lines = [ev for ev in events_after_sents if ev["event_id"] not in incr_matched_lines]
-        incr_paragraphs_annotated, incr_matched_paras = self.annotate_blocks(para_dicts, events_after_lines, "text", "paragraph", top_k=1)
-        events_after_paras = [ev for ev in events_after_lines if ev["event_id"] not in incr_matched_paras]
-        incr_chunks_annotated, incr_matched_chunks = self.annotate_blocks(chunks_dicts, events_after_paras, "text", "chunk", top_k=1)
-        unmatched_events_incr = [ev for ev in events_after_paras if ev["event_id"] not in incr_matched_chunks]
-
         output = {
+            "sentences": sentences_annotated,
+            "lines": lines_annotated,
+            "paragraphs": paragraphs_annotated,
             "chunks": chunks_annotated,
             "unmatched_events_chunk": unmatched_events_chunk,
-            "incr_sentences": incr_sentences_annotated,
-            "incr_lines": incr_lines_annotated,
-            "incr_paragraphs": incr_paragraphs_annotated,
-            "incr_chunks": incr_chunks_annotated,
-            "unmatched_events_incr": unmatched_events_incr,
+            "unmatched_events_any": unmatched_events_any
         }
 
         out_path = self.output_dir / f"{base}_events.json"

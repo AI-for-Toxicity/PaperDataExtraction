@@ -1,11 +1,12 @@
 import json
+import re
 import sys
 from pathlib import Path
 from collections import defaultdict
 from typing import Dict, Any, List
 from PySide6.QtCore import QTimer, Qt, Signal
 from PySide6.QtGui import (QAction, QColor, QKeySequence, QShortcut, QTextCharFormat, QTextCursor, QTextDocument)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel, QLineEdit, QMainWindow, QPushButton, QScrollArea, QTextBrowser, QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel, QLineEdit, QMainWindow, QPushButton, QScrollArea, QStackedWidget, QTextBrowser, QTextEdit, QVBoxLayout, QWidget)
 
 
 class EventsManager:
@@ -14,100 +15,154 @@ class EventsManager:
         self.events_data = self._load_events()
 
     def _load_events(self) -> Dict[str, List[Dict[str, Any]]]:
-      """
-      Read a json file and:
-      1. Scan these arrays if present:
-        - incr_sentences
-        - incr_lines
-        - incr_paragraphs
-        - incr_chunks
-      2. For each entry like:
-          {"text": "...", "events": [...]}
+        """
+        Read a json file and:
+        1. Scan these arrays if present:
+        - sentences
+        - lines
+        - paragraphs
+        - chunks
+        2. For each entry like:
+            {"text": "...", "events": [...]}
         if it has at least one event, extract each event and attach:
-          "matched_text": <entry text> | None
-      3. Group all extracted events by event["chemical"].
+            "matched_text": <entry text> | None
+        3. If the same event_id appears multiple times across sections, keep only:
+        - the one with the highest event["score"]
+        - if scores are equal, prefer:
+            sentences > lines > paragraphs > chunks
+        4. Group all extracted events by event["chemical"]
+        5. Add also unmatched events
 
-      Returns:
-          {
-              "CHEMICAL_A": [event1, event2, ...],
-              "CHEMICAL_B": [event3, event4, ...],
-              ...
-          }
-      """
-      with self.scored_events_file.open("r", encoding="utf-8") as f:
-          data = json.load(f)
+        Returns:
+            {
+                "CHEMICAL_A": [event1, event2, ...],
+                "CHEMICAL_B": [event3, event4, ...],
+                ...
+            }
+        """
+        with self.scored_events_file.open("r", encoding="utf-8") as f:
+            data = json.load(f)
 
-      sections = [
-          "incr_sentences",
-          "incr_lines",
-          "incr_paragraphs",
-          "incr_chunks",
-      ]
+        # Lower number = higher priority in tie-break
+        sections = [
+            ("sentences", 0),
+            ("lines", 1),
+            ("paragraphs", 2),
+            ("chunks", 3),
+        ]
 
-      all_events: List[Dict[str, Any]] = []
+        # event_id -> best extracted event
+        best_events_by_id: Dict[str, Dict[str, Any]] = {}
 
-      for section in sections:
-          found_in_section = 0
-          entries = data.get(section, [])
-          if not isinstance(entries, list):
-              continue
+        def _score_value(event: Dict[str, Any]) -> float:
+            score = event.get("score")
+            try:
+                if score is None:
+                    return float("-inf")
+                return float(score)
+            except (TypeError, ValueError):
+                return float("-inf")
 
-          for entry in entries:
-              if not isinstance(entry, dict):
-                  continue
+        def _is_better_candidate(
+            current_best: Dict[str, Any] | None,
+            candidate: Dict[str, Any],
+            candidate_section_priority: int,
+        ) -> bool:
+            if current_best is None:
+                return True
 
-              text = entry.get("text", "")
-              events = entry.get("events", [])
+            best_score = _score_value(current_best)
+            cand_score = _score_value(candidate)
 
-              if not events or not isinstance(events, list):
-                  continue
+            if cand_score > best_score:
+                return True
+            if cand_score < best_score:
+                return False
 
-              for event in events:
-                  if not isinstance(event, dict):
-                      continue
+            # Same score -> prefer earlier section priority
+            best_priority = current_best["_section_priority"]
+            return candidate_section_priority < best_priority
 
-                  extracted_event = {
-                      **event,
-                      "matched_text": text,
-                  }
-                  all_events.append(extracted_event)
-                  found_in_section += 1
+        for section_name, section_priority in sections:
+            found_in_section = 0
+            entries = data.get(section_name, [])
+            if not isinstance(entries, list):
+                continue
 
-          print(f"Found {found_in_section} events in section {section}")
+            for entry in entries:
+                if not isinstance(entry, dict):
+                    continue
 
-      events_by_chemical: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+                text = entry.get("text", "")
+                events = entry.get("events", [])
 
-      for event in all_events:
-          chemical = event.get("chemical")
-          if chemical is None:
-              continue
-          events_by_chemical[str(chemical)].append(event)
+                if not isinstance(events, list) or not events:
+                    continue
 
-      unmatched_events = data.get("unmatched_events_incr", [])
-      found_unmatched = len(unmatched_events) if isinstance(unmatched_events, list) else 0
-      print(f"Remaining {found_unmatched} unmatched events")
-      if isinstance(unmatched_events, list):
-          for event in unmatched_events:
-              if not isinstance(event, dict):
-                  continue
+                for event in events:
+                    if not isinstance(event, dict):
+                        continue
 
-              chemical = event.get("chemical")
-              if chemical is None:
-                  event.setdefault("chemical", "UNKNOWN")
-                  extracted_event = {
-                      **event,
-                      "matched_text": None,
-                  }
-              else:
+                    event_id = event.get("event_id")
+                    if event_id is None:
+                        # Skip section events without event_id, since dedup logic depends on it
+                        continue
+
+                    extracted_event = {
+                        **event,
+                        "matched_text": text,
+                        "_section_priority": section_priority,  # temporary helper field
+                    }
+
+                    event_id_str = str(event_id)
+                    current_best = best_events_by_id.get(event_id_str)
+
+                    if _is_better_candidate(current_best, extracted_event, section_priority):
+                        best_events_by_id[event_id_str] = extracted_event
+
+                    found_in_section += 1
+
+            print(f"Found {found_in_section} raw event occurrences in section {section_name}")
+
+        events_by_chemical: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+
+        # Add deduplicated matched events
+        for event in best_events_by_id.values():
+            event.pop("_section_priority", None)
+            chemical = event.get("chemical")
+            if chemical is None:
+                continue
+            events_by_chemical[str(chemical)].append(event)
+
+        unmatched_events = data.get("unmatched_events_any", [])
+        found_unmatched = len(unmatched_events) if isinstance(unmatched_events, list) else 0
+        print(f"Remaining {found_unmatched} unmatched events")
+
+        if isinstance(unmatched_events, list):
+            for event in unmatched_events:
+                if not isinstance(event, dict):
+                    continue
+
                 extracted_event = {
                     **event,
                     "matched_text": None,
                 }
 
-              events_by_chemical[str(chemical)].append(extracted_event)
+                chemical = extracted_event.get("chemical")
+                if chemical is None:
+                    extracted_event["chemical"] = "UNKNOWN"
+                    chemical = "UNKNOWN"
 
-      return dict(events_by_chemical)
-        
+                # If an unmatched event has the same event_id as an already matched one,
+                # keep the matched one and ignore the unmatched duplicate.
+                event_id = extracted_event.get("event_id")
+                if event_id is not None and str(event_id) in best_events_by_id:
+                    continue
+
+                events_by_chemical[str(chemical)].append(extracted_event)
+
+        return dict(events_by_chemical)
+
 class CollapsibleChemicalBox(QFrame):
     def __init__(self, chemical_name: str, events: list[dict], on_event_click, parent=None):
         super().__init__(parent)
@@ -354,6 +409,98 @@ class MarkdownViewer(QTextBrowser):
         self.current_query = ""
         self.setExtraSelections([])
 
+    @staticmethod
+    def _normalize_for_search(text: str) -> str:
+        """
+        Normalize text the same way for both the extracted sentence
+        and the QTextDocument plain text.
+
+        - normalize line endings
+        - collapse all whitespace runs (spaces, tabs, newlines) to one space
+        - strip ends
+        """
+        if not text:
+            return ""
+
+        text = text.replace("\r\n", "\n").replace("\r", "\n")
+        text = re.sub(r"\s+", " ", text)
+        return text.strip()
+
+    @staticmethod
+    def _build_normalized_index_map(original: str) -> tuple[str, list[int]]:
+        """
+        Convert original text to normalized text while keeping a map:
+        normalized_char_index -> original_char_index
+
+        This lets us find in normalized text and jump back to the
+        correct position in the original QTextDocument plain text.
+        """
+        original = original.replace("\r\n", "\n").replace("\r", "\n")
+
+        out = []
+        index_map = []
+
+        i = 0
+        last_was_space = False
+
+        while i < len(original):
+            ch = original[i]
+
+            if ch.isspace():
+                if out and not last_was_space:
+                    out.append(" ")
+                    index_map.append(i)
+                last_was_space = True
+            else:
+                out.append(ch)
+                index_map.append(i)
+                last_was_space = False
+
+            i += 1
+
+        normalized = "".join(out).strip()
+
+        # If strip removed leading/trailing spaces, trim index_map too
+        left_trim = 0
+        while left_trim < len(out) and out[left_trim] == " ":
+            left_trim += 1
+
+        right_trim = len(out)
+        while right_trim > left_trim and out[right_trim - 1] == " ":
+            right_trim -= 1
+
+        index_map = index_map[left_trim:right_trim]
+
+        return normalized, index_map
+
+    def find_normalized_in_document(self, doc, needle: str) -> QTextCursor:
+        """
+        Search a QTextDocument by comparing normalized plain text
+        instead of raw markdown source.
+
+        Returns a QTextCursor selecting the match, or a null cursor if not found.
+        """
+        plain = doc.toPlainText()
+
+        norm_plain, index_map = self._build_normalized_index_map(plain)
+        norm_needle = self._normalize_for_search(needle)
+
+        if not norm_needle:
+            return QTextCursor(doc)
+
+        start_norm = norm_plain.find(norm_needle)
+        if start_norm == -1:
+            return QTextCursor(doc)
+
+        start_orig = index_map[start_norm]
+        end_norm = start_norm + len(norm_needle) - 1
+        end_orig = index_map[end_norm] + 1
+
+        cursor = QTextCursor(doc)
+        cursor.setPosition(start_orig)
+        cursor.setPosition(end_orig, QTextCursor.MoveMode.KeepAnchor)
+        return cursor
+
     def showMatch(self, sentence: str) -> bool:
         """
         External jump-to-text function.
@@ -364,7 +511,9 @@ class MarkdownViewer(QTextBrowser):
         if not sentence:
             return False
 
-        cursor = self.document().find(sentence)
+        cursor = self.find_normalized_in_document(self.document(), sentence)
+        if not cursor.isNull() and cursor.hasSelection():
+            self.setTextCursor(cursor)
         if cursor.isNull():
             return False
 
@@ -570,19 +719,28 @@ class FileSelectionPage(QWidget):
         root_layout.addWidget(subtitle)
         root_layout.addWidget(scroll, 1)
 
-        self.setStyleSheet("background: #f5f6f8;")
+        self.setStyleSheet("""
+            FileSelectionPage, QWidget {
+                background: #ffffff;
+            }
+            QScrollArea {
+                background: #ffffff;
+                border: none;
+            }
+            QScrollArea > QWidget > QWidget {
+                background: #ffffff;
+            }
+        """)
 
-class MainWindow(QMainWindow):
-    def __init__(self, markdown_path: str, events_path: str):
-        super().__init__()
-        self.setWindowTitle("Split View Markdown Matcher")
+class ViewerPage(QWidget):
+    back_clicked = Signal()
 
-        root = QWidget()
-        self.setCentralWidget(root)
+    def __init__(self, markdown_path: str, events_path: str, filename: str, parent=None):
+        super().__init__(parent)
 
-        main_layout = QHBoxLayout(root)
-        main_layout.setContentsMargins(0, 0, 0, 0)
-        main_layout.setSpacing(0)
+        root_layout = QHBoxLayout(self)
+        root_layout.setContentsMargins(0, 0, 0, 0)
+        root_layout.setSpacing(0)
 
         # LEFT PANE
         left_pane = QWidget()
@@ -590,8 +748,36 @@ class MainWindow(QMainWindow):
         left_layout.setContentsMargins(16, 16, 16, 16)
         left_layout.setSpacing(12)
 
-        left_title = QLabel("Chemicals")
-        left_title.setStyleSheet("font-size: 24px; font-weight: 600; color: black;")
+        # Header row: title + close button
+        header_row = QHBoxLayout()
+        header_row.setContentsMargins(0, 0, 0, 0)
+        header_row.setSpacing(12)
+
+        left_title = QLabel(f"Extracted events from {filename}")
+        left_title.setStyleSheet("font-size: 18px; font-weight: 600; color: black;")
+        left_title.setWordWrap(True)
+
+        close_button = QPushButton("← Back")
+        close_button.setStyleSheet(
+            """
+            QPushButton {
+                font-size: 13px;
+                padding: 6px 14px;
+                color: #374151;
+                background: #e5e7eb;
+                border: 1px solid #d1d5db;
+                border-radius: 6px;
+            }
+            QPushButton:hover {
+                background: #d1d5db;
+            }
+            """
+        )
+        close_button.setCursor(Qt.CursorShape.PointingHandCursor)
+        close_button.clicked.connect(self.back_clicked.emit)
+
+        header_row.addWidget(left_title, 1)
+        header_row.addWidget(close_button, 0)
 
         self.result_label = QLabel("")
         self.result_label.setStyleSheet("color: #666;")
@@ -608,7 +794,7 @@ class MainWindow(QMainWindow):
 
         self.chemical_scroll.setWidget(self.chemical_container)
 
-        left_layout.addWidget(left_title)
+        left_layout.addLayout(header_row)
         left_layout.addWidget(self.result_label)
         left_layout.addWidget(self.chemical_scroll, 1)
 
@@ -646,8 +832,8 @@ class MainWindow(QMainWindow):
         right_layout.addWidget(self.md_viewer, 1)
 
         # Add panes
-        main_layout.addWidget(left_pane, 1)
-        main_layout.addWidget(right_container, 1)
+        root_layout.addWidget(left_pane, 1)
+        root_layout.addWidget(right_container, 1)
 
         left_pane.setStyleSheet(
             """
@@ -704,46 +890,19 @@ class MainWindow(QMainWindow):
         self.prev_button.clicked.connect(self._on_prev_clicked)
         self.clear_button.clicked.connect(self._on_clear_clicked)
 
-        # Shortcuts
-        self.shortcut_find = QShortcut(QKeySequence("Ctrl+F"), self)
-        self.shortcut_find.activated.connect(self._focus_search)
-
-        self.shortcut_next = QShortcut(QKeySequence("F3"), self)
-        self.shortcut_next.activated.connect(self._on_next_clicked)
-
-        self.shortcut_prev = QShortcut(QKeySequence("Shift+F3"), self)
-        self.shortcut_prev.activated.connect(self._on_prev_clicked)
-
-        self.shortcut_escape = QShortcut(QKeySequence("Escape"), self)
-        self.shortcut_escape.activated.connect(self._on_escape)
-
-        # Optional menu action too
-        find_action = QAction("Find", self)
-        find_action.setShortcut(QKeySequence("Ctrl+F"))
-        find_action.triggered.connect(self._focus_search)
-        self.addAction(find_action)
-
         # Events
         chemical_events = EventsManager(events_path).events_data
-        self.populate_chemical_list(chemical_events)
-
-    def _on_test_clicked(self):
-        found = self.md_viewer.showMatch("test")
-        if found:
-            self.result_label.setText("Found and highlighted: test")
-        else:
-            self.result_label.setText("Text not found: test")
-        self._update_match_label()
+        self._populate_chemical_list(chemical_events)
 
     def _on_search_changed(self, text: str):
         count = self.md_viewer.search_text(text)
-        self.result_label.setText("" if text.strip() else self.result_label.text())
-
         if text.strip():
             if count:
                 self.result_label.setText(f'Found {count} match(es) for "{text}"')
             else:
                 self.result_label.setText(f'No matches for "{text}"')
+        else:
+            self.result_label.setText("")
         self._update_match_label()
 
     def _on_return_pressed(self):
@@ -767,10 +926,6 @@ class MainWindow(QMainWindow):
         self.result_label.setText("")
         self._update_match_label()
 
-    def _on_escape(self):
-        if self.search_input.hasFocus() or self.search_input.text():
-            self._on_clear_clicked()
-
     def _focus_search(self):
         self.search_input.setFocus()
         self.search_input.selectAll()
@@ -779,52 +934,142 @@ class MainWindow(QMainWindow):
         current, total = self.md_viewer.get_search_status()
         self.match_label.setText(f"{current} / {total}")
 
-    def populate_chemical_list(self, chemical_dict: dict[str, list[dict]]):
-      # clear current layout
-      while self.chemical_layout.count():
-          item = self.chemical_layout.takeAt(0)
-          if item is not None:
-            widget = item.widget()
-            if widget is not None:
-              widget.deleteLater()
+    def _populate_chemical_list(self, chemical_dict: dict[str, list[dict]]):
+        while self.chemical_layout.count():
+            item = self.chemical_layout.takeAt(0)
+            if item is not None:
+                widget = item.widget()
+                if widget is not None:
+                    widget.deleteLater()
 
-      for chemical_name, events in chemical_dict.items():
-          chemical_box = CollapsibleChemicalBox(
-              chemical_name=chemical_name,
-              events=events,
-              on_event_click=self._on_event_clicked,
-          )
-          self.chemical_layout.addWidget(chemical_box)
+        for chemical_name, events in chemical_dict.items():
+            chemical_box = CollapsibleChemicalBox(
+                chemical_name=chemical_name,
+                events=events,
+                on_event_click=self._on_event_clicked,
+            )
+            self.chemical_layout.addWidget(chemical_box)
 
-      self.chemical_layout.addStretch()
+        self.chemical_layout.addStretch()
 
     def _on_event_clicked(self, event: dict):
-      matched_text = str(event.get("matched_text", "")).strip()
-      short_desc = str(event.get("event_description_short", "")).strip()
+        matched_text = str(event.get("matched_text", "")).strip()
+        short_desc = str(event.get("event_description_short", "")).strip()
 
-      if not matched_text:
-          self.result_label.setText(f'No matched_text for event: {short_desc}')
-          print(f"Event clicked without matched_text: {event}")
-          return
+        if not matched_text:
+            self.result_label.setText(f'No matched_text for event: {short_desc}')
+            self.result_label.setStyleSheet("color: #666;")
+            print(f"Event clicked without matched_text: {event}")
+            return
 
-      found = self.md_viewer.showMatch(matched_text)
-      if found:
-          self.result_label.setText(f'Jumped to: {short_desc}')
-          self.result_label.setStyleSheet("color: #1b7f3b;")
-      else:
-          self.result_label.setText(f'Could not find matched text for: {short_desc}')
-          self.result_label.setStyleSheet("color: #b42318;")
+        found = self.md_viewer.showMatch(matched_text)
+        if found:
+            self.result_label.setText(f'Jumped to: {short_desc}')
+            self.result_label.setStyleSheet("color: #1b7f3b;")
+        else:
+            self.result_label.setText(f'Could not find matched text for: {short_desc}')
+            self.result_label.setStyleSheet("color: #b42318;")
 
-      self._update_match_label()
+        self._update_match_label()
+
+class AppWindow(QMainWindow):
+    def __init__(self, matched_files: list[dict]):
+        super().__init__()
+        self.setWindowTitle("Paper Extraction Viewer")
+        self.matched_files = matched_files
+
+        self.stack = QStackedWidget()
+        self.stack.setStyleSheet("background: #ffffff;")
+        self.setCentralWidget(self.stack)
+
+        self.selection_page = FileSelectionPage(matched_files)
+        self.selection_page.file_selected.connect(self._on_file_selected)
+        self.stack.addWidget(self.selection_page)  # index 0
+
+        self._viewer_page: ViewerPage | None = None
+
+        # Shortcut Ctrl+F only active on viewer page
+        self.shortcut_find = QShortcut(QKeySequence("Ctrl+F"), self)
+        self.shortcut_find.activated.connect(self._on_ctrl_f)
+
+        self.shortcut_next = QShortcut(QKeySequence("F3"), self)
+        self.shortcut_next.activated.connect(self._on_f3)
+
+        self.shortcut_prev = QShortcut(QKeySequence("Shift+F3"), self)
+        self.shortcut_prev.activated.connect(self._on_shift_f3)
+
+        self.shortcut_escape = QShortcut(QKeySequence("Escape"), self)
+        self.shortcut_escape.activated.connect(self._on_escape)
+
+    def _on_file_selected(self, file_info: dict):
+        # Remove old viewer page if present
+        if self._viewer_page is not None:
+            self.stack.removeWidget(self._viewer_page)
+            self._viewer_page.deleteLater()
+            self._viewer_page = None
+
+        self._viewer_page = ViewerPage(
+            markdown_path=file_info["markdown_path"],
+            events_path=file_info["events_path"],
+            filename=file_info["filename"],
+        )
+        self._viewer_page.back_clicked.connect(self._go_back)
+        self.stack.addWidget(self._viewer_page)
+        self.stack.setCurrentWidget(self._viewer_page)
+
+    def _go_back(self):
+        self.stack.setCurrentWidget(self.selection_page)
+
+    def _on_ctrl_f(self):
+        if self._viewer_page and self.stack.currentWidget() is self._viewer_page:
+            self._viewer_page._focus_search()
+
+    def _on_f3(self):
+        if self._viewer_page and self.stack.currentWidget() is self._viewer_page:
+            self._viewer_page._on_next_clicked()
+
+    def _on_shift_f3(self):
+        if self._viewer_page and self.stack.currentWidget() is self._viewer_page:
+            self._viewer_page._on_prev_clicked()
+
+    def _on_escape(self):
+        if self._viewer_page and self.stack.currentWidget() is self._viewer_page:
+            si = self._viewer_page.search_input
+            if si.hasFocus() or si.text():
+                self._viewer_page._on_clear_clicked()
+
+
+def find_matched_files(md_folder: Path, events_folder: Path) -> list[dict]:
+    """
+    Match .md files in md_folder to *_events.json files in events_folder.
+    A markdown file `{stem}.md` matches `{stem}_events.json`.
+    """
+    matched = []
+    for md_file in sorted(md_folder.glob("*.md")):
+        events_file = events_folder / f"{md_file.stem}_events.json"
+        if events_file.exists():
+            matched.append({
+                "filename": md_file.stem,
+                "markdown_path": str(md_file),
+                "events_path": str(events_file),
+            })
+    return matched
 
 
 def main():
     app = QApplication(sys.argv)
 
-    markdown_file = r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\processed\cleaned_markdown\paper_0001.md"
-    events_file = r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\labels\scored\paper_0001_events.json"
+    if len(sys.argv) >= 3:
+        md_folder = Path(sys.argv[1])
+        events_folder = Path(sys.argv[2])
+    else:
+        # Defaults for development
+        md_folder = Path(r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\processed\cleaned_markdown")
+        events_folder = Path(r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\labels\scored")
 
-    window = MainWindow(markdown_file, events_file)
+    matched_files = find_matched_files(md_folder, events_folder)
+
+    window = AppWindow(matched_files)
     window.showMaximized()
 
     sys.exit(app.exec())
