@@ -104,8 +104,8 @@ class AOPRetriever:
         top_k: Number of AOP snippets to retrieve per query (default 6).
     """
 
-    def __init__(self, index_path: str, top_k: int = 6):
-        path = Path(index_path)
+    def __init__(self, index_path: Path, top_k: int = 6):
+        path = index_path
         if not path.exists():
             raise FileNotFoundError(
                 f"RAG index not found: {path}\n"

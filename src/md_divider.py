@@ -1,10 +1,29 @@
+"""
+This module implements a class that takes a list of markdown files and an output directory, and divides each markdown file (in a redundant way) into:
+- Lines
+- Sentences
+- Paragraphs (sections with title and body)
+- Sections (like paragraphs but with heading level and filtered by blacklist/heuristics)
+- Chunks (assembled from sentences, with a target size to comply with model token limits)
+The results are saved as JSON files. The division is based on markdown headings, with some heuristics to filter out uninformative sections (like references) and to keep sentence-like headings.
+"""
+
 import json
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import re
-import spacy
+
+HEADING_BLACKLIST = {
+  "references", "reference",
+  "bibliography", "citation", "citations",
+  "acknowledgements", "acknowledgments",
+  "funding", "conflicts of interest", "conflict of interest",
+  "author contributions", "ethical approval",
+  "supplementary material", "supplementary materials",
+}
 
 class MarkdownDivider:
+  # INITIALIZATION
   def __init__(self, md_files: List[Path], output_dir: Path, skip_existing: bool = False, min_tokens: int = 60, max_tokens: int = 250) -> None:
     print("### MarkdownDivider - init ###")
     self.md_files = md_files
@@ -15,33 +34,36 @@ class MarkdownDivider:
     self.min_tokens = min_tokens
     self.max_tokens = max_tokens
 
-    self._nlp = spacy.load("en_core_web_sm")
-
     # Section headings blacklist
-    self.blacklisted_headings = {
-      "references", "reference",
-      "bibliography", "citation", "citations",
-      "acknowledgements", "acknowledgments",
-      "funding", "conflicts of interest", "conflict of interest",
-      "author contributions", "ethical approval",
-      "supplementary material", "supplementary materials",
-    }
+    self.blacklisted_headings = HEADING_BLACKLIST
 
   def __enter__(self):
     return self
 
+  # DIVIDING HELPERS
+
   def _is_heading(self, line: str) -> bool:
-    # Basic: any line starting with '#' after left-stripping
+    """
+    Matches any line starting with '#' after left-stripping
+    """
     return line.lstrip().startswith("#")
 
   def _clean_heading(self, line: str) -> str:
-    # Remove leading '#' chars and surrounding whitespace
+    """
+    Remove leading '#' chars and surrounding whitespace
+    """
     return line.lstrip().lstrip("#").strip()
 
   def _normalize_heading(self, title: str) -> str:
+    """
+    Normalize heading by collapsing multiple spaces and converting to lowercase
+    """
     return re.sub(r"\s+", " ", title).strip().lower()
 
   def _is_blacklisted_heading(self, title: str) -> bool:
+    """
+    Check if the normalized heading is in the blacklist or starts with a blacklisted keyword.
+    """
     norm = self._normalize_heading(title)
     # exact match or starts with keyword
     if norm in self.blacklisted_headings:
@@ -77,17 +99,10 @@ class MarkdownDivider:
 
     return False
 
-  def _split_sentences_spacy(self, text: str) -> List[str]:
-    text = text.strip()
-    if not text:
-      return []
-
-    # Prefer spaCy if available
-    doc = self._nlp(text)
-    sents = [s.text.strip() for s in doc.sents if s.text.strip()]
-    return sents
-
   def _split_sentences(self, text: str) -> List[str]:
+    """
+    Naive sentence splitter based on periods followed by whitespace.
+    """
     # Remove trailing spaces first to avoid weird empty chunks
     text = text.strip()
     if not text:
@@ -164,7 +179,17 @@ class MarkdownDivider:
 
     return merged
 
+  # FULL DIVISION PIPELINE
+
   def divide_files(self, folder: str):
+    """
+    Run the full markdown division pipeline on the provided files, saving results to JSON.
+    Each JSON will contain:
+    - lines: all non-empty, non-heading lines
+    - sentences: all sentences from those lines
+    - paragraphs: sections with title and body (body is all text under that heading until next heading)
+    - sections: like paragraphs but with heading level and filtered by blacklist/heuristics
+    """
     total = len(self.md_files)
     print(f"Found {total} markdown files to process for markdown division.\n")
 
@@ -305,6 +330,8 @@ class MarkdownDivider:
     
     print("Markdown division complete")
   
+  # EXIT
+
   def __exit__(self, exc_type, exc_value, traceback):
     print("### MarkdownDivider - exit ###")
     pass

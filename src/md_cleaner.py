@@ -1,3 +1,9 @@
+"""
+This module implements a class that takes a list of markdown files and an output directory, and cleans each markdown file by stripping various boilerplate elements, normalizing whitespace, and applying heuristics to remove uninformative sections (like references).
+The cleaning process is designed to prepare the markdown files for subsequent division and processing steps.
+The cleaned markdown files are saved in the output directory with a "_cleaned.md" suffix.
+"""
+
 import re
 import unicodedata
 import re
