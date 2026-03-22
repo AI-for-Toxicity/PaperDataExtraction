@@ -1038,41 +1038,49 @@ class AppWindow(QMainWindow):
             if si.hasFocus() or si.text():
                 self._viewer_page._on_clear_clicked()
 
+class ResultsApp():
+    def __init__(self, md_folder: Path, events_folder: Path) -> None:
+        self.md_folder = md_folder
+        self.events_folder = events_folder
 
-def find_matched_files(md_folder: Path, events_folder: Path) -> list[dict]:
-    """
-    Match .md files in md_folder to *_events.json files in events_folder.
-    A markdown file `{stem}.md` matches `{stem}_events.json`.
-    """
-    matched = []
-    for md_file in sorted(md_folder.glob("*.md")):
-        events_file = events_folder / f"{md_file.stem}_events.json"
-        if events_file.exists():
-            matched.append({
-                "filename": md_file.stem,
-                "markdown_path": str(md_file),
-                "events_path": str(events_file),
-            })
-    return matched
+    def __enter__(self):
+        return self
+    
+    def _find_matched_files(self) -> list[dict]:
+        """
+        Match .md files in md_folder to *_events.json files in events_folder.
+        A markdown file `{stem}.md` matches `{stem}_events.json`.
+        """
+        matched = []
+        for md_file in sorted(self.md_folder.glob("*.md")):
+            events_file = self.events_folder / f"{md_file.stem}_events.json"
+            if events_file.exists():
+                matched.append({
+                    "filename": md_file.stem,
+                    "markdown_path": str(md_file),
+                    "events_path": str(events_file),
+                })
+        return matched
+
+    def run(self):
+        app = QApplication(sys.argv)
+
+        matched_files = self._find_matched_files()
+
+        window = AppWindow(matched_files)
+        window.showMaximized()
+
+        sys.exit(app.exec())
+
+    def __exit__(self, exc_type, exc, tb):
+        pass
 
 
 def main():
-    app = QApplication(sys.argv)
-
-    if len(sys.argv) >= 3:
-        md_folder = Path(sys.argv[1])
-        events_folder = Path(sys.argv[2])
-    else:
-        # Defaults for development
-        md_folder = Path(r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\processed\cleaned_markdown")
-        events_folder = Path(r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\labels\scored")
-
-    matched_files = find_matched_files(md_folder, events_folder)
-
-    window = AppWindow(matched_files)
-    window.showMaximized()
-
-    sys.exit(app.exec())
+    md_folder = Path(r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\processed\cleaned_markdown")
+    events_folder = Path(r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\labels\scored")
+    with ResultsApp(md_folder=md_folder, events_folder=events_folder) as app:
+        app.run()
 
 
 if __name__ == "__main__":
