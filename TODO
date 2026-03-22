@@ -1,1 +1,4 @@
+Improve event scoring and eval analysis, especially the fuzzy search (for event scoring, make it use long description)
+Implement event extractor module that either uses local BioMistral model or an LLM via API to generate extracted event list file 
+Finish up wiring the pipeline
 Turn into Docker
