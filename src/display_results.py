@@ -511,7 +511,7 @@ class MarkdownViewer(QTextBrowser):
         if not sentence:
             return False
 
-        cursor = self.find_normalized_in_document(self.document(), sentence)
+        cursor = self.document().find(sentence)
         if not cursor.isNull() and cursor.hasSelection():
             self.setTextCursor(cursor)
         if cursor.isNull():
