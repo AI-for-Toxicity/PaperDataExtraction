@@ -861,7 +861,7 @@ class PDFExtractor:
     4. Finally combines body text, small text, table text, and figure text in an output markdown with sections.
     """
     total = len(self.paper_files)
-    print(f"Found {total} PDFs to process for text extraction.\n")
+    print(f"Found {total} PDFs to process for text extraction.")
 
     for i, pdf in enumerate(self.paper_files, 1):
       print(f"[{i}/{total}] Processing {pdf.name}...")
@@ -872,7 +872,7 @@ class PDFExtractor:
       out_path = out_dir / f"{name}.md"
 
       if self.skip_existing and out_path.exists():
-        print(f"Skipping {name} because {out_path} exists.")
+        print(f"\tSkipping {name} because {out_path} exists.")
         continue
 
       tmpdir_path = Path(self.tmpdir.name)
@@ -939,7 +939,7 @@ class PDFExtractor:
       with out_path.open("w", encoding="utf-8") as out:
         out.write(final_md)
 
-    print("Text extraction complete")
+    print("Text extraction complete.")
 
   # EXIT
 

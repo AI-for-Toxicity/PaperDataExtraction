@@ -423,7 +423,7 @@ class MarkdownCleaner:
     Run the full cleaning pipeline on all markdown files and save cleaned versions.
     """
     total = len(self.md_files)
-    print(f"Found {total} markdown files to process for markdown cleanup.\n")
+    print(f"Found {total} markdown files to process for markdown cleanup.")
 
     for i, md_file in enumerate(self.md_files, 1):
       print(f"[{i}/{total}] Processing {md_file.name}...")
@@ -434,7 +434,7 @@ class MarkdownCleaner:
       out_path = out_dir / f"{name}.md"
 
       if self.skip_existing and out_path.exists():
-        print(f"Skipping {name} because {out_path} exists.")
+        print(f"\tSkipping {name} because {out_path} exists.")
         continue
 
       md_text: str = Path(md_file).read_text(encoding="utf-8", errors="ignore")
