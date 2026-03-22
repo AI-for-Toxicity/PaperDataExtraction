@@ -3,10 +3,11 @@ Usage: python main.py input_pdf_folder
 The p
 '''
 
-
-import json
 import logging
 from pathlib import Path
+from transformers import AutoTokenizer
+
+from display_results import ResultsApp
 
 VERBOSE = False
 DATA_BASE_DIR = Path("test_data") # command line arg
@@ -22,6 +23,17 @@ EVAL_RESULTS_BASE_DIR = Path("train/results_3") # command line arg
 EVAL_RESULTS_JSONL = EVAL_RESULTS_BASE_DIR / "eval_preds.jsonl"
 EVAL_ANALYSIS_RESULT = EVAL_RESULTS_BASE_DIR / "eval_analysis.txt"
 RAG_INDEX_PATH = "rag/aop_rag_index.json"
+
+TOKENIZER = AutoTokenizer.from_pretrained("BioMistral/BioMistral-7B", use_fast=True)
+MIN_CHUNK_TOKENS = 700
+TARGET_CHUNK_TOKENS = 1100
+MAX__CHUNK_TOKENS = 1400
+BIOMISTRAL_CONTEXT_TOKENS = 2048
+from event_scorer_dataset import PROMPT_INSTRUCTIONS
+RESERVED_PROMPT_TOKENS = len(TOKENIZER(PROMPT_INSTRUCTIONS, add_special_tokens=False)["input_ids"]) # 113
+RESERVED_OUTPUT_TOKENS = 400
+SAFETY_MARGIN_TOKENS = 96
+
 
 def test(do_scoring=True, do_dataset=False, do_eval_analysis=False):
   from event_scorer_dataset import PredEvaluator, EventScorer, DatasetBuilder
@@ -44,9 +56,6 @@ def test(do_scoring=True, do_dataset=False, do_eval_analysis=False):
 
 
 if __name__ == "__main__":
-  test()
-  exit(0)
-
   print("#####################")
   print("#   AOP Extractor   #")
   print("#####################")
@@ -58,7 +67,7 @@ if __name__ == "__main__":
     logging.getLogger("pymupdf").setLevel(logging.ERROR)
 
   # Extract text from pdfs and save as markdown files
-  print("\nLoading PDF Extractor module...\n\n")
+  print("\nLoading PDF Extractor module...")
   from pdf_extractor import PDFExtractor
   pdf_files = list(PDF_DIR.glob("*.pdf"))
   md_folder = "markdown"
@@ -67,7 +76,7 @@ if __name__ == "__main__":
     extractor.run_text_extraction(folder=md_folder)
   
   # Clean markdown files and save cleaned versions
-  print("\nLoading Markdown Cleaner module...\n\n")
+  print("\nLoading Markdown Cleaner module...")
   from md_cleaner import MarkdownCleaner
   md_files = list((PREPROCESSING_OUTPUT_DIR / md_folder).glob("*.md"))
   md_cleaned_folder = "cleaned_markdown"
@@ -75,15 +84,41 @@ if __name__ == "__main__":
     cleaner.clean_markdowns(folder=md_cleaned_folder)
 
   # Divide cleaned versions of markdown files and save as json files
-  print("\nLoading Markdown Divider module...\n\n")
+  print("\nLoading Markdown Divider module...")
   from md_divider import MarkdownDivider
   md_cleaned_files = list((PREPROCESSING_OUTPUT_DIR / md_cleaned_folder).glob("*.md"))
   divided_md_folder = "divided_markdown"
-  with MarkdownDivider(md_cleaned_files, PREPROCESSING_OUTPUT_DIR, skip_existing=True) as divider:
+  with MarkdownDivider(
+    md_cleaned_files,
+    PREPROCESSING_OUTPUT_DIR,
+    skip_existing=True,
+    min_chunk_tokens=MIN_CHUNK_TOKENS,
+    target_chunk_tokens=TARGET_CHUNK_TOKENS,
+    max_chunk_tokens=MAX__CHUNK_TOKENS,
+    model_context_tokens=BIOMISTRAL_CONTEXT_TOKENS,
+    reserved_prompt_tokens=RESERVED_PROMPT_TOKENS,
+    reserved_output_tokens=RESERVED_OUTPUT_TOKENS,
+    safety_margin_tokens=SAFETY_MARGIN_TOKENS,
+    tokenizer=TOKENIZER
+  ) as divider:
     divided_markdowns = divider.divide_files(folder=divided_md_folder)
   
-  # Processa markdown diviso con NER e BioMistral
-  json_divided_files = list((PREPROCESSING_OUTPUT_DIR / divided_md_folder).glob("*.json"))
+  # Processa markdown diviso con BioMistral
+  print("\nLoading Event Extractor module...")
+  pass
+
+  # Score events
+  print("\nLoading Event Scorer module...")
+  from event_scorer_dataset import EventScorer
+  with EventScorer(json_files_dir=DIVIDED_MD_DIR, labels_dir=LABELS_DIR, output_dir=SCORED_EVENTS_DIR) as scorer:
+    scorer.run_scoring()
+
   
-  print("Pipeline completed.")
-  print("#####################")
+  # Display results
+  print("\nLoading Display Results module...")
+  from display_results import ResultsApp
+  clean_md_folder = PREPROCESSING_OUTPUT_DIR / md_cleaned_folder
+  scored_events_folder = SCORED_EVENTS_DIR
+  with ResultsApp(md_folder=clean_md_folder, events_folder=scored_events_folder) as app:
+    app.run()
+  
