@@ -23,7 +23,8 @@ EVAL_RESULTS_JSONL = EVAL_RESULTS_BASE / "eval_preds.jsonl"
 EVAL_ANALYSIS_RESULT = EVAL_RESULTS_BASE / "eval_analysis.txt"
 RAG_INDEX_PATH = "new_data/aop_rag_index.json"
 
-INSTR = "You are an assistant specialized in extracting mechanistic toxicology events (MIE, KE, AO) from scientific text.\n\nGiven the following text from a toxicology article, extract all MIE, KE and AO events with the associated chemical and a concise description.\n\nReturn one event per line in the exact format:\n\"chemical\",\"event_type\",\"description\"\n\nIf the text does not contain any MIE, KE or AO events, return an empty output.\n\nText:\n"
+PROMPT_INSTRUCTIONS = "You are an assistant specialized in extracting mechanistic toxicology events (MIE, KE, AO) from scientific text.\n\nGiven the following text from a toxicology article, extract all MIE, KE and AO events with the associated chemical and a concise description.\n\nReturn one event per line in the exact format:\n\"chemical\",\"event_type\",\"description\"\n\nIf the text does not contain any MIE, KE or AO events, return an empty output.\n\nText:\n"
+RESPONSE_SUFFIX = "### END"
 
 # Utils
 
@@ -145,7 +146,7 @@ class PredEvaluator:
     def __init__(self, eval_jsonl_path: str | Path, output_path: str | Path) -> None:
         self.eval_jsonl_path = Path(eval_jsonl_path)
         self.output_dir = Path(output_path)
-        self.instruction_prefix = INSTR
+        self.instruction_prefix = PROMPT_INSTRUCTIONS
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
     def __enter__(self):
@@ -730,7 +731,7 @@ class DatasetBuilder:
         - user: prompt + chunk text
         - assistant: list of lines "chemical","event_type","description"
         """
-        user_prompt = f"{INSTR}{chunk_text}"
+        user_prompt = f"{PROMPT_INSTRUCTIONS}{chunk_text}"
 
         lines: List[str] = []
         for ev in events:
@@ -739,7 +740,7 @@ class DatasetBuilder:
             desc = csv_quote(ev["description"])
             lines.append(f"{chem},{etype},{desc}")
 
-        assistant_output = "\n".join(lines) + "\n### END"
+        assistant_output = "\n".join(lines) + "\n" + RESPONSE_SUFFIX
 
         return {
             "messages": [
@@ -752,11 +753,11 @@ class DatasetBuilder:
         """
         Negative example: chunk without events.
         - user: prompt + chunk text
-        - assistant: empty output (just "### END" to be consistent with the positive case, but no event lines)
+        - assistant: empty output (just RESPONSE_SUFFIX to be consistent with the positive case, but no event lines)
         """
-        user_prompt = f"{INSTR}{chunk_text}"
+        user_prompt = f"{PROMPT_INSTRUCTIONS}{chunk_text}"
 
-        assistant_output = "### END"  # nessun evento → output vuoto
+        assistant_output = RESPONSE_SUFFIX  # nessun evento → output vuoto
 
         return {
             "messages": [
