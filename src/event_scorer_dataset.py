@@ -94,32 +94,31 @@ def fuzzy_score(text: str, pattern: str) -> float:
 def compute_score(text: str, event: dict, block_kind: str) -> float:
     """
     Returns a score in 0..100 based on description matching only.
-    Perfect (100) only if short description exact match.
+    Perfect (100) only if long or short description exact match.
     Chemical presence is handled separately as a boolean flag.
     """
     desc_s = event.get("event_description_short", "")
     desc_l = event.get("event_description_long", "")
+    
+    # Remove "... ", " ... ", "... " from desc_long for better fuzzy matching, since these are often just truncation artifacts
+    desc_l = re.sub(r"\s*\.\.\.\s*", " ", desc_l)
+    # Also remove the single character "…" which is often used as an ellipsis
+    desc_l = desc_l.replace("…", " ")
+    # Remove 2+ spaces
+    desc_l = re.sub(r"\s{2,}", " ", desc_l)
 
-    # Perfect condition: short exact
-    if contains_normalized_substring(text, desc_s):
-        base = 95.0
-        # small sanity bonus for short blocks where exact short appears
-        if block_kind in {"line", "sentence"}:
-            base += 5.0
-        return min(100.0, base)
+    # Perfect condition: long or short exact
+    if contains_normalized_substring(text, desc_s) or contains_normalized_substring(text, desc_l):
+        return 100.0
 
     # Graded scoring based on fuzzy similarity
     fs = fuzzy_score(text, desc_s)  # 0..1
     fl = fuzzy_score(text, desc_l)  # 0..1
 
-    # Base anchored on short
+    # Base anchored on long
     score = 10.0
-    score += 70.0 * fs
-    score += 20.0 * fl
-
-    # Optional tiny structural bonus for short blocks when short fuzzy is high
-    if block_kind in {"line", "sentence"} and fs >= 0.75:
-        score += 3.0
+    score += 20.0 * fs
+    score += 60.0 * fl
 
     # Cap so that non-exact short never reaches 100
     return min(99.0, score)
@@ -675,7 +674,7 @@ class EventScorer:
         unmatched_events_chunk = [ev for ev in events if ev["event_id"] not in matched_chunks]
         unmatched_events_any = [ev for ev in events if ev["event_id"] not in (matched_sents | matched_lines | matched_paras | matched_chunks)]
 
-        # Annotate lines, then try unmatched events on sentences, then paragraphs, then chunks (incremental matching)
+        # Annotate lines, then sentences, then paragraphs, then chunks
         output = {
             "sentences": sentences_annotated,
             "lines": lines_annotated,
