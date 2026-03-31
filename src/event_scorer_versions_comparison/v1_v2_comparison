@@ -1,0 +1,122 @@
+================================================================================
+SCORER COMPARISON
+================================================================================
+v1 log: src\event_scored_v1_result
+v2 log: src\event_scored_v2_result
+Comparable files: 60
+Total events: 2834
+
+--------------------------------------------------------------------------------
+GLOBAL MATCH COUNTS
+--------------------------------------------------------------------------------
+v1 matched   : 2379
+v2 matched   : 2209
+delta matched: -170
+
+v1 unmatched   : 455
+v2 unmatched   : 625
+delta unmatched: +170
+
+v1 matched rate: 83.94%
+v2 matched rate: 77.95%
+rate delta     : -6.00 pp
+
+--------------------------------------------------------------------------------
+AVERAGE / MEDIAN SCORE METRICS
+--------------------------------------------------------------------------------
+avg ls v1: 58.444
+avg ls v2: 57.521
+avg ls Δ : -0.924
+
+med ls v1: 55.677
+med ls v2: 52.202
+
+avg hs v1: 94.676
+avg hs v2: 98.737
+avg hs Δ : 4.061
+
+med hs v1: 95.000
+med hs v2: 100.000
+
+ls std v1: 9.088
+ls std v2: 10.249
+hs std v1: 2.400
+hs std v2: 4.799
+
+--------------------------------------------------------------------------------
+PER-FILE WIN COUNTS
+--------------------------------------------------------------------------------
+matched improved in v2 : 2
+matched worsened in v2 : 34
+matched unchanged      : 24
+
+ls improved in v2      : 22
+ls worsened in v2      : 38
+ls unchanged           : 0
+
+hs improved in v2      : 56
+hs worsened in v2      : 4
+hs unchanged           : 0
+
+--------------------------------------------------------------------------------
+USEFUL COMBINED METRICS
+--------------------------------------------------------------------------------
+v2 matched more AND raised ls : 0
+v2 matched more BUT lowered ls: 2
+same matched count, higher ls : 9
+
+--------------------------------------------------------------------------------
+TOP MATCHED GAINS IN V2
+--------------------------------------------------------------------------------
+test_data_old\labels\scored\paper_0083_events.json | events=20 | matched 15->16 (+1) | ls 62.324->50.756 (-11.568) | hs 88.169->76.044 (-12.125)
+test_data_old\labels\scored\paper_2009_events.json | events=37 | matched 36->37 (+1) | ls 56.386->50.985 (-5.401) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0001_events.json | events=26 | matched 23->23 (+0) | ls 74.620->81.581 (6.961) | hs 95.902->100.000 (4.098)
+test_data_old\labels\scored\paper_0002_events.json | events=28 | matched 28->28 (+0) | ls 75.038->70.851 (-4.187) | hs 96.182->100.000 (3.818)
+test_data_old\labels\scored\paper_0003_events.json | events=16 | matched 9->9 (+0) | ls 57.360->53.280 (-4.080) | hs 88.578->100.000 (11.422)
+test_data_old\labels\scored\paper_0006_events.json | events=16 | matched 16->16 (+0) | ls 68.955->61.643 (-7.312) | hs 96.500->100.000 (3.500)
+test_data_old\labels\scored\paper_0009_events.json | events=37 | matched 33->33 (+0) | ls 68.777->73.312 (4.535) | hs 96.267->100.000 (3.733)
+test_data_old\labels\scored\paper_0012_events.json | events=13 | matched 13->13 (+0) | ls 76.266->71.997 (-4.269) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0021_events.json | events=61 | matched 52->52 (+0) | ls 58.496->50.790 (-7.706) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0022_events.json | events=39 | matched 38->38 (+0) | ls 58.189->57.790 (-0.399) | hs 95.000->100.000 (5.000)
+
+--------------------------------------------------------------------------------
+TOP MATCHED LOSSES IN V2
+--------------------------------------------------------------------------------
+test_data_old\labels\scored\paper_0174_events.json | events=158 | matched 68->40 (-28) | ls 51.283->50.084 (-1.199) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_2007_events.json | events=52 | matched 48->31 (-17) | ls 50.468->50.582 (0.114) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_1036_events.json | events=64 | matched 52->38 (-14) | ls 50.259->50.714 (0.455) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_1238_events.json | events=76 | matched 75->64 (-11) | ls 50.748->50.265 (-0.483) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0015_events.json | events=48 | matched 48->40 (-8) | ls 50.441->50.028 (-0.413) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0005_events.json | events=48 | matched 21->14 (-7) | ls 52.902->50.804 (-2.098) | hs 98.133->100.000 (1.867)
+test_data_old\labels\scored\paper_0087_events.json | events=84 | matched 65->58 (-7) | ls 50.433->50.331 (-0.102) | hs 90.088->100.000 (9.912)
+test_data_old\labels\scored\paper_2001_events.json | events=45 | matched 44->37 (-7) | ls 50.764->50.609 (-0.155) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0176_events.json | events=57 | matched 43->37 (-6) | ls 51.621->50.007 (-1.614) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_1171_events.json | events=126 | matched 52->46 (-6) | ls 51.367->51.742 (0.375) | hs 95.000->100.000 (5.000)
+
+--------------------------------------------------------------------------------
+TOP LS GAINS IN V2
+--------------------------------------------------------------------------------
+test_data_old\labels\scored\paper_2017_events.json | events=89 | matched 89->89 (+0) | ls 57.808->77.968 (20.160) | hs 97.103->100.000 (2.897)
+test_data_old\labels\scored\paper_0085_events.json | events=29 | matched 29->29 (+0) | ls 66.825->75.563 (8.738) | hs 92.392->100.000 (7.608)
+test_data_old\labels\scored\paper_2015_events.json | events=25 | matched 25->24 (-1) | ls 55.977->64.285 (8.308) | hs 95.211->100.000 (4.789)
+test_data_old\labels\scored\paper_0001_events.json | events=26 | matched 23->23 (+0) | ls 74.620->81.581 (6.961) | hs 95.902->100.000 (4.098)
+test_data_old\labels\scored\paper_1223_events.json | events=58 | matched 54->52 (-2) | ls 54.093->60.786 (6.693) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_1087_events.json | events=48 | matched 28->26 (-2) | ls 51.599->56.750 (5.151) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_2020_events.json | events=64 | matched 3->3 (+0) | ls 95.000->100.000 (5.000) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_1201_events.json | events=38 | matched 34->33 (-1) | ls 56.912->61.777 (4.865) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0009_events.json | events=37 | matched 33->33 (+0) | ls 68.777->73.312 (4.535) | hs 96.267->100.000 (3.733)
+test_data_old\labels\scored\paper_0010_events.json | events=34 | matched 34->29 (-5) | ls 51.072->54.429 (3.357) | hs 95.000->100.000 (5.000)
+
+--------------------------------------------------------------------------------
+TOP LS LOSSES IN V2
+--------------------------------------------------------------------------------
+test_data_old\labels\scored\paper_1121_events.json | events=16 | matched 16->16 (+0) | ls 67.992->54.587 (-13.405) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0083_events.json | events=20 | matched 15->16 (+1) | ls 62.324->50.756 (-11.568) | hs 88.169->76.044 (-12.125)
+test_data_old\labels\scored\paper_1110_events.json | events=23 | matched 18->17 (-1) | ls 59.632->50.207 (-9.425) | hs 95.374->100.000 (4.626)
+test_data_old\labels\scored\paper_1205_events.json | events=45 | matched 45->44 (-1) | ls 59.769->50.552 (-9.217) | hs 95.445->100.000 (4.555)
+test_data_old\labels\scored\paper_0178_events.json | events=49 | matched 49->49 (+0) | ls 62.598->54.551 (-8.047) | hs 96.708->100.000 (3.292)
+test_data_old\labels\scored\paper_0021_events.json | events=61 | matched 52->52 (+0) | ls 58.496->50.790 (-7.706) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_0006_events.json | events=16 | matched 16->16 (+0) | ls 68.955->61.643 (-7.312) | hs 96.500->100.000 (3.500)
+test_data_old\labels\scored\paper_0090_events.json | events=34 | matched 34->34 (+0) | ls 71.785->65.922 (-5.863) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_1059_events.json | events=13 | matched 13->13 (+0) | ls 59.582->53.992 (-5.590) | hs 95.000->100.000 (5.000)
+test_data_old\labels\scored\paper_2009_events.json | events=37 | matched 36->37 (+1) | ls 56.386->50.985 (-5.401) | hs 95.000->100.000 (5.000)

@@ -36,6 +36,14 @@ SAFETY_MARGIN_TOKENS = 96
 
 
 def test(do_scoring=True, do_dataset=False, do_eval_analysis=False):
+  divdir="test_data_old/processed/divided_markdown"
+  labdir="test_data_old/labels/aop_raw"
+  outdir="test_data_old/labels/scored"
+  from event_scorer_dataset import EventScorer
+  with EventScorer(json_files_dir=divdir, labels_dir=labdir, output_dir=outdir) as scorer:
+    scorer.run_scoring()
+  return
+
   from event_scorer_dataset import PredEvaluator, EventScorer, DatasetBuilder
   if do_scoring:
         with EventScorer(json_files_dir=DIVIDED_MD_DIR, labels_dir=LABELS_DIR, output_dir=SCORED_EVENTS_DIR) as scorer:
@@ -56,6 +64,10 @@ def test(do_scoring=True, do_dataset=False, do_eval_analysis=False):
 
 
 if __name__ == "__main__":
+  test()
+  exit(0)
+
+  
   print("#####################")
   print("#   AOP Extractor   #")
   print("#####################")

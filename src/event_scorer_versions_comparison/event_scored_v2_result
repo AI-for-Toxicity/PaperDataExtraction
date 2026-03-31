@@ -1,0 +1,66 @@
+# Fuzzy changes:
+# - now removes ellipses from long description (... only)
+# - now gives 100 score also when long matches perfectly
+# - now weights long more than short (60 vs 20)
+# - removed the small bonus for shorter blocks (lines and sentences)
+
+[OK] Saved test_data_old\labels\scored\paper_0001_events.json | events=26 matched=23 unmatched=3 ls=81.581 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0002_events.json | events=28 matched=28 unmatched=0 ls=70.851 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0003_events.json | events=16 matched=9 unmatched=7 ls=53.28 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0004_events.json | events=23 matched=11 unmatched=12 ls=55.121 hs=80.962
+[OK] Saved test_data_old\labels\scored\paper_0005_events.json | events=48 matched=14 unmatched=34 ls=50.804 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0006_events.json | events=16 matched=16 unmatched=0 ls=61.643 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0008_events.json | events=15 matched=13 unmatched=2 ls=50.55 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0009_events.json | events=37 matched=33 unmatched=4 ls=73.312 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0010_events.json | events=34 matched=29 unmatched=5 ls=54.429 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0012_events.json | events=13 matched=13 unmatched=0 ls=71.997 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0015_events.json | events=48 matched=40 unmatched=8 ls=50.028 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0018_events.json | events=33 matched=22 unmatched=11 ls=50.639 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0021_events.json | events=61 matched=52 unmatched=9 ls=50.79 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0022_events.json | events=39 matched=38 unmatched=1 ls=57.79 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0083_events.json | events=20 matched=16 unmatched=4 ls=50.756 hs=76.044
+[OK] Saved test_data_old\labels\scored\paper_0085_events.json | events=29 matched=29 unmatched=0 ls=75.563 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0087_events.json | events=84 matched=58 unmatched=26 ls=50.331 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0089_events.json | events=20 matched=20 unmatched=0 ls=75.216 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0090_events.json | events=34 matched=34 unmatched=0 ls=65.922 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0174_events.json | events=158 matched=40 unmatched=118 ls=50.084 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0176_events.json | events=57 matched=37 unmatched=20 ls=50.007 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0178_events.json | events=49 matched=49 unmatched=0 ls=54.551 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0181_events.json | events=12 matched=12 unmatched=0 ls=66.185 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_0182_events.json | events=30 matched=30 unmatched=0 ls=70.469 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1005_events.json | events=12 matched=10 unmatched=2 ls=50.322 hs=82.396
+[OK] Saved test_data_old\labels\scored\paper_1026_events.json | events=45 matched=42 unmatched=3 ls=53.777 hs=84.799
+[OK] Saved test_data_old\labels\scored\paper_1036_events.json | events=64 matched=38 unmatched=26 ls=50.714 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1051_events.json | events=41 matched=36 unmatched=5 ls=52.662 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1059_events.json | events=13 matched=13 unmatched=0 ls=53.992 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1087_events.json | events=48 matched=26 unmatched=22 ls=56.75 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1089_events.json | events=15 matched=15 unmatched=0 ls=67.779 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1102_events.json | events=80 matched=74 unmatched=6 ls=50.832 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1110_events.json | events=23 matched=17 unmatched=6 ls=50.207 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1121_events.json | events=16 matched=16 unmatched=0 ls=54.587 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1156_events.json | events=32 matched=32 unmatched=0 ls=53.92 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1171_events.json | events=126 matched=46 unmatched=80 ls=51.742 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1201_events.json | events=38 matched=33 unmatched=5 ls=61.777 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1205_events.json | events=45 matched=44 unmatched=1 ls=50.552 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1223_events.json | events=58 matched=52 unmatched=6 ls=60.786 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1232_events.json | events=27 matched=11 unmatched=16 ls=53.551 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1238_events.json | events=76 matched=64 unmatched=12 ls=50.265 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1253_events.json | events=19 matched=19 unmatched=0 ls=64.266 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_1269_events.json | events=69 matched=45 unmatched=24 ls=50.595 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2001_events.json | events=45 matched=37 unmatched=8 ls=50.609 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2002_events.json | events=30 matched=24 unmatched=6 ls=51.331 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2003_events.json | events=37 matched=35 unmatched=2 ls=50.633 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2004_events.json | events=96 matched=93 unmatched=3 ls=50.424 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2005_events.json | events=94 matched=85 unmatched=9 ls=51.559 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2006_events.json | events=49 matched=45 unmatched=4 ls=50.696 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2007_events.json | events=52 matched=31 unmatched=21 ls=50.582 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2008_events.json | events=41 matched=41 unmatched=0 ls=68.137 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2009_events.json | events=37 matched=37 unmatched=0 ls=50.985 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2012_events.json | events=25 matched=21 unmatched=4 ls=51.417 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2013_events.json | events=127 matched=112 unmatched=15 ls=50.006 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2014_events.json | events=102 matched=100 unmatched=2 ls=51.129 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2015_events.json | events=25 matched=24 unmatched=1 ls=64.285 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2016_events.json | events=75 matched=72 unmatched=3 ls=50.444 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2017_events.json | events=89 matched=89 unmatched=0 ls=77.968 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2018_events.json | events=69 matched=61 unmatched=8 ls=50.072 hs=100.0
+[OK] Saved test_data_old\labels\scored\paper_2020_events.json | events=64 matched=3 unmatched=61 ls=100.0 hs=100.0

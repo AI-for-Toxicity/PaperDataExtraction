@@ -91,36 +91,48 @@ def fuzzy_score(text: str, pattern: str) -> float:
     # blend: token_set helps paraphrase-y overlaps, partial helps near-substring
     return max(pr * 0.7 + ts * 0.3, ts * 0.6 + pr * 0.4)
 
-def compute_score(text: str, event: dict, block_kind: str) -> float:
+def compute_score(text: str, event: dict) -> float:
     """
     Returns a score in 0..100 based on description matching only.
     Perfect (100) only if long or short description exact match.
     Chemical presence is handled separately as a boolean flag.
+
+    desc_l is treated as a verbatim quote from the paper, so fuzz.partial_ratio
+    (best-window substring alignment) is used directly for it rather than
+    fuzzy_score (which blends token_set_ratio and would fire on shared domain
+    vocabulary across many unrelated chunks).
+    desc_s is a human-written label/paraphrase, so fuzzy_score (blend) is kept.
     """
     desc_s = event.get("event_description_short", "")
     desc_l = event.get("event_description_long", "")
-    
-    # Remove "... ", " ... ", "... " from desc_long for better fuzzy matching, since these are often just truncation artifacts
+
+    # Clean truncation artifacts from the long description
     desc_l = re.sub(r"\s*\.\.\.\s*", " ", desc_l)
-    # Also remove the single character "…" which is often used as an ellipsis
     desc_l = desc_l.replace("…", " ")
-    # Remove 2+ spaces
     desc_l = re.sub(r"\s{2,}", " ", desc_l)
 
-    # Perfect condition: long or short exact
+    # Perfect condition: long or short exact match
     if contains_normalized_substring(text, desc_s) or contains_normalized_substring(text, desc_l):
         return 100.0
 
-    # Graded scoring based on fuzzy similarity
-    fs = fuzzy_score(text, desc_s)  # 0..1
-    fl = fuzzy_score(text, desc_l)  # 0..1
+    t = norm(text)
+    p_s = norm(desc_s)
+    p_l = norm(desc_l)
 
-    # Base anchored on long
+    # Short description: blended fuzzy (partial_ratio + token_set_ratio)
+    pr_s = fuzz.partial_ratio(t, p_s) / 100.0
+    ts_s = fuzz.token_set_ratio(t, p_s) / 100.0
+    fs = max(pr_s * 0.7 + ts_s * 0.3, ts_s * 0.6 + pr_s * 0.4)
+
+    # Long description: pure partial_ratio — verbatim quote should align as a
+    # window inside the chunk text; token_set_ratio would produce false positives
+    # from shared domain terms (firing rate, network burst, etc.)
+    fl = fuzz.partial_ratio(t, p_l) / 100.0 if desc_l else fs
+
     score = 10.0
     score += 20.0 * fs
     score += 60.0 * fl
 
-    # Cap so that non-exact short never reaches 100
     return min(99.0, score)
 
 # Currently unused
@@ -338,7 +350,7 @@ class PredEvaluator:
                 "event_description_short": desc,
                 "event_description_long": desc,
             }
-            score = compute_score(chunk_text, fake_gold, "chunk")
+            score = compute_score(chunk_text, fake_gold)
 
             # chemical variant logic (same idea as annotate_blocks)
             chemical_norm = chem_raw.strip()
@@ -549,9 +561,8 @@ class EventScorer:
         blocks,
         events,
         key_text: str,
-        block_kind: str,
         *,
-        min_score: float = 50.0,
+        min_score: float = 65.0,
         require_chemical: bool = True,
         top_k: int | None = 2
     ):
@@ -573,7 +584,11 @@ class EventScorer:
             # Prepare possible chemical variants (DO NOT mutate ev)
             chemical_norm = chemical_raw.strip()
             chemical_abbr = None
-            if " (" in chemical_raw and chemical_raw.endswith(")"):
+            if " [" in chemical_raw and chemical_raw.endswith("]"):
+                last_bracket = chemical_raw.rfind(" [")
+                chemical_norm = chemical_raw[:last_bracket].strip()
+                chemical_abbr = chemical_raw[last_bracket + 2 : -1].strip()
+            elif " (" in chemical_raw and chemical_raw.endswith(")"):
                 last_paren = chemical_raw.rfind(" (")
                 chemical_norm = chemical_raw[:last_paren].strip()
                 chemical_abbr = chemical_raw[last_paren + 2 : -1].strip()
@@ -586,7 +601,7 @@ class EventScorer:
             for i, block in enumerate(blocks):
                 text = block.get(key_text, "") or ""
 
-                score = compute_score(text, ev, block_kind)
+                score = compute_score(text, ev)
 
                 # chemical_found computed per-block
                 chemical_found = False
@@ -625,7 +640,9 @@ class EventScorer:
                 ev_with_score = dict(ev)
                 ev_with_score["score"] = round(float(score), 3)
                 ev_with_score["chemical_found"] = bool(chem_found)
-                ev_with_score["chemical"] = matched_variant  # variant that matched THIS block
+                # Keep the original label chemical; record the variant that was
+                # actually found in this block separately so callers can choose.
+                ev_with_score["matched_chemical_variant"] = matched_variant
 
                 block_events_map[idx].append(ev_with_score)
 
@@ -664,13 +681,13 @@ class EventScorer:
         sent_dicts = [{"text": s} for s in data.get("sentences", [])]
         line_dicts = [{"text": ln} for ln in data.get("lines", [])]
         para_dicts = [{"title": p.get("title", ""), "text": p.get("body", "")} for p in data.get("paragraphs", [])]
-        chunks_dicts = [{"text": c.get("text", "")} for c in data.get("chunks", [])]
+        chunks_dicts = [dict(c) for c in data.get("chunks", [])]
 
         # Annotate everything
-        sentences_annotated, matched_sents = self.annotate_blocks(sent_dicts, events, "text", "sentence", top_k=1)
-        lines_annotated, matched_lines = self.annotate_blocks(line_dicts, events, "text", "line", top_k=1)
-        paragraphs_annotated, matched_paras = self.annotate_blocks(para_dicts, events, "text", "paragraph", top_k=1)
-        chunks_annotated, matched_chunks = self.annotate_blocks(chunks_dicts, events, "text", "chunk", top_k=1)
+        sentences_annotated, matched_sents = self.annotate_blocks(sent_dicts, events, "text", top_k=1)
+        lines_annotated, matched_lines = self.annotate_blocks(line_dicts, events, "text", top_k=1)
+        paragraphs_annotated, matched_paras = self.annotate_blocks(para_dicts, events, "text", top_k=1)
+        chunks_annotated, matched_chunks = self.annotate_blocks(chunks_dicts, events, "text", top_k=1)
         unmatched_events_chunk = [ev for ev in events if ev["event_id"] not in matched_chunks]
         unmatched_events_any = [ev for ev in events if ev["event_id"] not in (matched_sents | matched_lines | matched_paras | matched_chunks)]
 
