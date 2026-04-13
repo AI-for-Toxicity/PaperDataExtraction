@@ -859,7 +859,7 @@ class DatasetBuilder:
 
         return positive_examples, empty_chunks
 
-    def build_biomistral_chunk_dataset(self, test_ratio: float = 0.05, empty_ratio: float = 1.0, seed: int = 42, use_rag: bool = False,) -> None:
+    def build_biomistral_chunk_dataset(self, test_ratio: float = 0.05, empty_ratio: float = 1.0, seed: int = 42, use_rag: bool = False) -> None:
         input_dir_path = Path(self.input_dir)
         files = sorted(input_dir_path.glob("*_events.json"))
 
@@ -867,60 +867,52 @@ class DatasetBuilder:
             raise RuntimeError(f"No events .json files found in {input_dir_path}")
 
         rng = random.Random(seed)
-        bases = [fp.stem for fp in files]  # paper id proxy
-        rng.shuffle(bases)
-
-        n_test_papers = max(1, int(len(bases) * test_ratio)) if len(bases) > 1 else 0
-        test_bases = set(bases[:n_test_papers])
-        train_bases = set(bases[n_test_papers:])
-
-        # Load and build messages split-by-paper
-        train_pos_msgs, test_pos_msgs = [], []
-        train_empty, test_empty = [], []
-
-        # map stem -> path
         path_by_stem = {fp.stem: fp for fp in files}
+        paper_ids = list(path_by_stem.keys())
+        rng.shuffle(paper_ids)
 
-        def add_split(stem: str, pos_msgs: list, empty_list: list):
-            pos, empties = self.extract_chunk_examples_from_file(path_by_stem[stem])
-            for ex in pos:
-                pos_msgs.append(self.build_messages_for_chunk(ex["chunk_text"], ex["events"]))
-            empty_list.extend(empties)
+        # --- Paper-level split ---
+        n_test_papers = max(1, int(len(paper_ids) * test_ratio)) if len(paper_ids) > 1 else 0
+        test_paper_ids = paper_ids[:n_test_papers]
+        train_paper_ids = paper_ids[n_test_papers:]
 
-        for stem in train_bases:
-            add_split(stem, train_pos_msgs, train_empty)
-        for stem in test_bases:
-            add_split(stem, test_pos_msgs, test_empty)
+        # --- Extract examples per split ---
+        def collect_examples(stems: List[str]):
+            pos_msgs, empty_chunks = [], []
+            for stem in stems:
+                pos, empties = self.extract_chunk_examples_from_file(path_by_stem[stem])
+                for ex in pos:
+                    pos_msgs.append(self.build_messages_for_chunk(ex["chunk_text"], ex["events"]))
+                empty_chunks.extend(empties)
+            return pos_msgs, empty_chunks
+
+        train_pos_msgs, train_empty = collect_examples(train_paper_ids)
+        test_pos_msgs, test_empty = collect_examples(test_paper_ids)
 
         if not train_pos_msgs and not test_pos_msgs:
             raise RuntimeError("No positive (labeled) chunk examples found.")
 
-        # Add negatives per split (so negatives don't leak either)
-        def add_negatives(pos_msgs: list, empty_chunks: list, out_msgs: list):
-            out_msgs.extend(pos_msgs)
+        # --- Add negatives per split ---
+        def add_negatives(pos_msgs, empty_chunks):
+            out = list(pos_msgs)
             if empty_ratio <= 0 or not empty_chunks:
-                return
-
+                return out
             rng_local = random.Random(seed + 999)
             rng_local.shuffle(empty_chunks)
-
-            n_pos = len(pos_msgs)
-            n_neg_desired = int(n_pos * empty_ratio)
-            n_neg = min(n_neg_desired, len(empty_chunks))
-
+            n_neg = min(int(len(pos_msgs) * empty_ratio), len(empty_chunks))
             for t in empty_chunks[:n_neg]:
-                out_msgs.append(self.build_messages_for_empty_chunk(t))
+                out.append(self.build_messages_for_empty_chunk(t))
+            return out
 
-        train_examples, test_examples = [], []
-        add_negatives(train_pos_msgs, train_empty, train_examples)
-        add_negatives(test_pos_msgs, test_empty, test_examples)
+        train_examples = add_negatives(train_pos_msgs, train_empty)
+        test_examples = add_negatives(test_pos_msgs, test_empty)
 
         # Shuffle within split
         rng2 = random.Random(seed + 1)
         rng2.shuffle(train_examples)
         rng2.shuffle(test_examples)
 
-        # RAG augmentation: inject AOP Wiki context into each user message
+        # RAG augmentation
         if use_rag and self.rag_index_path:
             if _AOPRetriever is None:
                 print("[WARN] rag_index_path provided but AOPRetriever could not be imported; skipping RAG augmentation.")
@@ -932,13 +924,42 @@ class DatasetBuilder:
                             msg["content"] = retriever.augment(msg["content"])
                 print(f"[RAG] Augmented {len(train_examples)} train + {len(test_examples)} test examples.")
 
-        with Path(self.output_train_path).open("w", encoding="utf-8") as f_train:
+        # --- Write JSONL splits ---
+        with self.output_train_path.open("w", encoding="utf-8") as f:
             for ex in train_examples:
-                f_train.write(json.dumps(ex, ensure_ascii=False) + "\n")
+                f.write(json.dumps(ex, ensure_ascii=False) + "\n")
 
-        with Path(self.output_test_path).open("w", encoding="utf-8") as f_test:
+        with self.output_test_path.open("w", encoding="utf-8") as f:
             for ex in test_examples:
-                f_test.write(json.dumps(ex, ensure_ascii=False) + "\n")
+                f.write(json.dumps(ex, ensure_ascii=False) + "\n")
+
+        # --- Save split metadata ---
+        def build_split_info(stems: List[str], n_pos: int, n_total: int):
+            return {
+                "n_papers": len(stems),
+                "n_positive_examples": n_pos,
+                "n_total_examples": n_total,
+                "papers": [
+                    {"id": stem, "filename": path_by_stem[stem].name}
+                    for stem in sorted(stems)
+                ],
+            }
+
+        split_meta = {
+            "seed": seed,
+            "test_ratio": test_ratio,
+            "empty_ratio": empty_ratio,
+            "train": build_split_info(train_paper_ids, len(train_pos_msgs), len(train_examples)),
+            "test": build_split_info(test_paper_ids, len(test_pos_msgs), len(test_examples)),
+        }
+
+        meta_path = self.output_train_path.parent / "split_info.json"
+        with meta_path.open("w", encoding="utf-8") as f:
+            json.dump(split_meta, f, indent=2, ensure_ascii=False)
+
+        print(f"[DONE] Train: {len(train_examples)} examples from {len(train_paper_ids)} papers")
+        print(f"[DONE] Test:  {len(test_examples)} examples from {len(test_paper_ids)} papers")
+        print(f"[DONE] Split metadata saved to {meta_path}")
 
     def __exit__(self, exc_type, exc, tb):
         pass

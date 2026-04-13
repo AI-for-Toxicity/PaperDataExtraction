@@ -15,11 +15,13 @@ TRAIN_CMD='python src/biomistral/BioMistralTrain.py \
   --train_file train/train.jsonl \
   --eval_file train/test.jsonl \
   --output_dir outputs/biomistral_mie_ke_ao_qlora \
-  --num_train_epochs 3 \
-  --per_device_train_batch_size 4 \
-  --gradient_accumulation_steps 4 \
+  --num_train_epochs 5 \
+  --per_device_train_batch_size 1 \
+  --gradient_accumulation_steps 8 \
   --learning_rate 5e-5 \
-  --max_length 3072 \
+  --max_length 2048 \
+  --eval_steps 50 \
+  --save_steps 50 \
   --lora_r 32'
   # No --load_in_4bit: bf16 LoRA (A40 48GB; 7B model uses ~14GB in bf16)
 #######################################

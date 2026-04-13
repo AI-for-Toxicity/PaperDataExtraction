@@ -3,6 +3,7 @@ Usage: python main.py input_pdf_folder
 The p
 '''
 
+import json
 import logging
 from pathlib import Path
 from transformers import AutoTokenizer
@@ -35,15 +36,45 @@ RESERVED_OUTPUT_TOKENS = 400
 SAFETY_MARGIN_TOKENS = 96
 
 
-def test(do_scoring=True, do_dataset=False, do_eval_analysis=False):
-  divdir="test_data_old/processed/divided_markdown"
-  labdir="test_data_old/labels/aop_raw"
-  outdir="test_data_old/labels/scored"
-  from event_scorer_dataset import EventScorer
-  with EventScorer(json_files_dir=divdir, labels_dir=labdir, output_dir=outdir) as scorer:
-    scorer.run_scoring()
-  return
+def check_token_lengths(
+    train_path: str,
+    test_path: str,
+    max_tokens: int = BIOMISTRAL_CONTEXT_TOKENS,
+    tokenizer=TOKENIZER,
+) -> None:
+    """
+    Reads train/test JSONL files, tokenizes each example using the chat template,
+    and reports any entries exceeding max_tokens.
+    """
+    for split_name, path in [("train", train_path), ("test", test_path)]:
+        data = []
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    data.append(json.loads(line))
 
+        lengths = []
+        over_limit = []
+
+        for i, example in enumerate(data):
+            messages = example["messages"]
+            full_str = tokenizer.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=False
+            )
+            n_tokens = len(tokenizer.encode(full_str))
+            lengths.append(n_tokens)
+
+            if n_tokens > max_tokens:
+                over_limit.append((i, n_tokens))
+
+        print(f"\n--- {split_name} ({len(data)} examples) ---")
+        print(f"  Token range: {min(lengths)}-{max(lengths)}, median: {sorted(lengths)[len(lengths)//2]}")
+        print(f"  Exceeding {max_tokens}: {len(over_limit)}/{len(data)}")
+        for idx, n in over_limit:
+            print(f"    example {idx}: {n} tokens (+{n - max_tokens} over)")
+
+def test(do_scoring=False, do_dataset=True, do_eval_analysis=False):
   from event_scorer_dataset import PredEvaluator, EventScorer, DatasetBuilder
   if do_scoring:
         with EventScorer(json_files_dir=DIVIDED_MD_DIR, labels_dir=LABELS_DIR, output_dir=SCORED_EVENTS_DIR) as scorer:
@@ -52,8 +83,8 @@ def test(do_scoring=True, do_dataset=False, do_eval_analysis=False):
   if do_dataset:
       with DatasetBuilder(input_dir=SCORED_EVENTS_DIR, output_train_path=FINAL_JSON_TRAIN, output_test_path=FINAL_JSON_TEST, rag_index_path=RAG_INDEX_PATH) as builder:
           builder.build_biomistral_chunk_dataset(
-              test_ratio=0.1,
-              empty_ratio=1.0,   # 50% negatives (results_3)
+              test_ratio=0.15,
+              empty_ratio=100000000.0,   # Keep all empty chunks as negatives
               seed=42,
               use_rag=False
           )
@@ -64,7 +95,7 @@ def test(do_scoring=True, do_dataset=False, do_eval_analysis=False):
 
 
 if __name__ == "__main__":
-  test()
+  check_token_lengths(str(FINAL_JSON_TRAIN), str(FINAL_JSON_TEST), max_tokens=BIOMISTRAL_CONTEXT_TOKENS)
   exit(0)
 
   
@@ -86,7 +117,7 @@ if __name__ == "__main__":
   images_folder = "images"
   with PDFExtractor(pdf_files, PREPROCESSING_OUTPUT_DIR, skip_existing=True, keep_divided_pdfs=False) as extractor:
     extractor.run_text_extraction(folder=md_folder)
-  
+
   # Clean markdown files and save cleaned versions
   print("\nLoading Markdown Cleaner module...")
   from md_cleaner import MarkdownCleaner
@@ -125,6 +156,7 @@ if __name__ == "__main__":
   with EventScorer(json_files_dir=DIVIDED_MD_DIR, labels_dir=LABELS_DIR, output_dir=SCORED_EVENTS_DIR) as scorer:
     scorer.run_scoring()
 
+  exit(0)
   
   # Display results
   print("\nLoading Display Results module...")

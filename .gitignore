@@ -2,7 +2,7 @@
 data_bck/
 data/*
 eval/
-test_data/
+test_data*/
 mini_test_data/
 utils/__pycache__/
 __pycache__/

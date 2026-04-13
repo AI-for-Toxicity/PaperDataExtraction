@@ -1,3 +1,10 @@
+## Dataset
+Added papers, now 99 total (85 train / 14 test)
+Added tokens check, only one example slightly goes over the 2048 limit
+Empty-ratio set to 100000, keep all negative chunks
+Train/test split info is now saved
+
+## Train
 Quantization
 - Before: 4-bit NF4 (QLoRA) always
 - Now: bf16 by default; --load_in_4bit flag for low-VRAM
@@ -10,20 +17,33 @@ LoRA modules
 Gradient checkpointing
 - Before: always enabled
 - Now: removed
-
-
 Batch size
 - Before: 1
-- Now: 4
+- Now: 1
 Grad accumulation
 - Before: 8
-- Now: 4
+- Now: 8
 Effective batch
 - Before: 8
-- Now: 16
+- Now: 8
 max_length
-- Before: 3072 (already set)
-- Now: 3072
+- Before: 3072
+- Now: 2048
+eval_steps
+- Before: 200
+- Now: 50
+save_steps
+- Before: 200
+- Now: 50
 New arg
 - Before: —
 - Now: --lora_r 32
+
+## Eval
+Removed RAG
+max_new_tokens
+- Before: 256
+- Now: 512
+max_length
+- Before: 3072
+- Now: 2048
