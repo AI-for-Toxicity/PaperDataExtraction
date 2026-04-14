@@ -88,9 +88,10 @@ def canonicalize_events_text(text: str) -> str:
     if not text:
         return ""
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-    # Drop sentinel-y outputs if present
-    sentinels = {"no_events", "no event identified", "no aop identified"}
-    if len(lines) == 1 and lines[0].strip().lower() in sentinels:
+    # Drop sentinel-y outputs if present (including the ### END training suffix)
+    sentinels = {"no_events", "no event identified", "no aop identified", "### end"}
+    lines = [ln for ln in lines if ln.strip().lower() not in sentinels]
+    if not lines:
         return ""
     lines.sort(key=lambda s: s.lower())
     return "\n".join(lines)
@@ -98,7 +99,7 @@ def canonicalize_events_text(text: str) -> str:
 
 # ----------------- Parsing predicted/gold events -----------------
 
-_SENTINELS_RE = re.compile(r"^\s*(NO_EVENTS|NO\s+EVENT\s+IDENTIFIED|NO\s+AOP\s+IDENTIFIED)\s*$", re.IGNORECASE)
+_SENTINELS_RE = re.compile(r"^\s*(NO_EVENTS|NO\s+EVENT\s+IDENTIFIED|NO\s+AOP\s+IDENTIFIED|###\s*END)\s*$", re.IGNORECASE)
 
 def normalize_line(line: str) -> str:
     # Keep it strict-ish but not insane: trim and collapse internal spaces
@@ -370,7 +371,6 @@ def main():
 
         if out_f:
             out_f.write(json.dumps({
-                "id": ex.get("id", None),
                 "loss": ce,
                 "prompt": merged_user,
                 "gold": gold_assistant_canon,
@@ -408,17 +408,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-'''
-python eval.py \
-  --base_model BioMistral/BioMistral-7B \
-  --adapter_dir outputs/biomistral_mie_ke_ao_qlora \
-  --eval_file train/test.jsonl \
-  --load_in_4bit --bf16 \
-  --max_new_tokens 256 \
-  --save_preds eval_preds.jsonl
-'''
 
 '''
 Notes (so you don’t accidentally gaslight yourself with metrics)

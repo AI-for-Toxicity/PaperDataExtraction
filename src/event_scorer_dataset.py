@@ -156,9 +156,8 @@ class PredEvaluator:
     """
     def __init__(self, eval_jsonl_path: str | Path, output_path: str | Path) -> None:
         self.eval_jsonl_path = Path(eval_jsonl_path)
-        self.output_dir = Path(output_path)
+        self.output_path = Path(output_path)
         self.instruction_prefix = PROMPT_INSTRUCTIONS
-        self.output_dir.mkdir(parents=True, exist_ok=True)
 
     def __enter__(self):
         return self
@@ -406,7 +405,7 @@ class PredEvaluator:
         if not path.exists():
             raise FileNotFoundError(f"Eval jsonl not found: {path}")
 
-        out_path = self.output_dir
+        out_path = self.output_path
 
         lines_out: list[str] = []
 

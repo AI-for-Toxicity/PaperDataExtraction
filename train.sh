@@ -15,7 +15,7 @@ TRAIN_CMD='python src/biomistral/BioMistralTrain.py \
   --train_file train/train.jsonl \
   --eval_file train/test.jsonl \
   --output_dir outputs/biomistral_mie_ke_ao_qlora \
-  --num_train_epochs 5 \
+  --num_train_epochs 3 \
   --per_device_train_batch_size 1 \
   --gradient_accumulation_steps 8 \
   --learning_rate 5e-5 \

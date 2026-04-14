@@ -1,11 +1,11 @@
 {
   "seed": 42,
   "test_ratio": 0.15,
-  "empty_ratio": 100000000.0,
+  "empty_ratio": 1.0,
   "train": {
     "n_papers": 85,
     "n_positive_examples": 510,
-    "n_total_examples": 2910,
+    "n_total_examples": 1020,
     "papers": [
       {
         "id": "paper_0001_events",
@@ -352,7 +352,7 @@
   "test": {
     "n_papers": 14,
     "n_positive_examples": 79,
-    "n_total_examples": 455,
+    "n_total_examples": 158,
     "papers": [
       {
         "id": "paper_0002_events",

@@ -20,7 +20,7 @@ DIVIDED_MD_DIR = PREPROCESSING_OUTPUT_DIR / "divided_markdown" # to remove, get 
 TRAIN_TEST_BASE_DIR = Path("train") # command line arg
 FINAL_JSON_TRAIN = TRAIN_TEST_BASE_DIR / "train.jsonl"
 FINAL_JSON_TEST = TRAIN_TEST_BASE_DIR / "test.jsonl"
-EVAL_RESULTS_BASE_DIR = Path("train/results_3") # command line arg
+EVAL_RESULTS_BASE_DIR = Path("train/results_4") # command line arg
 EVAL_RESULTS_JSONL = EVAL_RESULTS_BASE_DIR / "eval_preds.jsonl"
 EVAL_ANALYSIS_RESULT = EVAL_RESULTS_BASE_DIR / "eval_analysis.txt"
 RAG_INDEX_PATH = "rag/aop_rag_index.json"
@@ -84,7 +84,7 @@ def test(do_scoring=False, do_dataset=True, do_eval_analysis=False):
       with DatasetBuilder(input_dir=SCORED_EVENTS_DIR, output_train_path=FINAL_JSON_TRAIN, output_test_path=FINAL_JSON_TEST, rag_index_path=RAG_INDEX_PATH) as builder:
           builder.build_biomistral_chunk_dataset(
               test_ratio=0.15,
-              empty_ratio=100000000.0,   # Keep all empty chunks as negatives
+              empty_ratio=1.0,   # Keep all empty chunks as negatives
               seed=42,
               use_rag=False
           )
@@ -95,7 +95,8 @@ def test(do_scoring=False, do_dataset=True, do_eval_analysis=False):
 
 
 if __name__ == "__main__":
-  check_token_lengths(str(FINAL_JSON_TRAIN), str(FINAL_JSON_TEST), max_tokens=BIOMISTRAL_CONTEXT_TOKENS)
+  #check_token_lengths(str(FINAL_JSON_TRAIN), str(FINAL_JSON_TEST), max_tokens=BIOMISTRAL_CONTEXT_TOKENS)
+  test()
   exit(0)
 
   

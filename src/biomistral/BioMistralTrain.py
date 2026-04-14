@@ -236,7 +236,7 @@ def load_model_and_tokenizer(base_model: str, load_in_4bit: bool = False, lora_r
         # Attention + MLP: covers both retrieval and generation behaviour
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                         "gate_proj", "up_proj", "down_proj"],
-        lora_dropout=0.05,
+        lora_dropout=0.1,
         bias="none",
         task_type="CAUSAL_LM",
     )
@@ -332,23 +332,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-'''
-python src/biomistral/BioMistralTrain.py \
-  --base_model BioMistral/BioMistral-7B \
-  --train_file train/train.jsonl \
-  --eval_file train/test.jsonl \
-  --output_dir outputs/biomistral_mie_ke_ao_qlora \
-  --num_train_epochs 3 \
-  --per_device_train_batch_size 1 \
-  --gradient_accumulation_steps 8 \
-  --learning_rate 5e-5 \
-  --max_length 2048
-
-Learning rate precedente era 2e-4, ma spesso troppo alto per set piccoli (causa output garbage dopo poche centinaia di step)
-
-python src/biomistral/BioMistralTrain.py --base_model BioMistral/BioMistral-7B --train_file train/train.jsonl --eval_file train/test.jsonl --output_dir outputs/biomistral_mie_ke_ao_qlora --num_train_epochs 3 --per_device_train_batch_size 1 --gradient_accumulation_steps 8 --learning_rate 5e-5 --max_length 2048
-'''
 
 '''
 If you see the model start outputting garbage formats after a few hundred steps, LR is usually the first suspect. Common stable range is 1e-4 to 3e-5 for instruction-ish extraction tasks, especially with noisy supervision.

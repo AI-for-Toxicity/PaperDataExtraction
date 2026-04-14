@@ -10,5 +10,10 @@ src/__pycache__/
 log.txt
 tde_log.txt
 test_data_old/
-train/results_*/outputs
 stuff/
+train/results_*/outputs
+train/results_*/epoch_*/outputs
+train/results_*/fail_*/outputs
+train/results_*/*.json*
+train/results_*/epoch_*/*.json*
+train/results_*/fail_*/*.json*
