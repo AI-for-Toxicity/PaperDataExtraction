@@ -181,6 +181,8 @@ def ordered_line_metrics(pred_lines: List[str], gold_lines: List[str]) -> Dict[s
 def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool, device_map: str="auto"):
     print("[eval] loading tokenizer...", flush=True)
     tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
 
     quant_cfg = None
     torch_dtype = torch.bfloat16 if bf16 else torch.float16
@@ -201,8 +203,11 @@ def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool
         quantization_config=quant_cfg,
         torch_dtype=torch_dtype,
     )
-    print("[eval] loading LoRA adapter...", flush=True)
-    model = PeftModel.from_pretrained(model, adapter_dir)
+
+    if adapter_dir:
+        print("[eval] loading LoRA adapter...", flush=True)
+        model = PeftModel.from_pretrained(model, adapter_dir)
+    
     model.eval()
     print("[eval] model ready.", flush=True)
     return model, tokenizer
@@ -260,7 +265,7 @@ def generate_answer(model, tokenizer, prompt_str: str, max_new_tokens: int, temp
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base_model", required=True, type=str)
-    ap.add_argument("--adapter_dir", required=True, type=str)
+    ap.add_argument("--adapter_dir", type=str, default="", help="optional LoRA adapter path")
     ap.add_argument("--eval_file", required=True, type=str)
 
     ap.add_argument("--max_length", type=int, default=2048)

@@ -20,7 +20,7 @@ DIVIDED_MD_DIR = PREPROCESSING_OUTPUT_DIR / "divided_markdown" # to remove, get 
 TRAIN_TEST_BASE_DIR = Path("train") # command line arg
 FINAL_JSON_TRAIN = TRAIN_TEST_BASE_DIR / "train.jsonl"
 FINAL_JSON_TEST = TRAIN_TEST_BASE_DIR / "test.jsonl"
-EVAL_RESULTS_BASE_DIR = Path("train/results_4") # command line arg
+EVAL_RESULTS_BASE_DIR = Path("train/results_5/epoch_5") # command line arg
 EVAL_RESULTS_JSONL = EVAL_RESULTS_BASE_DIR / "eval_preds.jsonl"
 EVAL_ANALYSIS_RESULT = EVAL_RESULTS_BASE_DIR / "eval_analysis.txt"
 RAG_INDEX_PATH = "rag/aop_rag_index.json"
@@ -74,7 +74,7 @@ def check_token_lengths(
         for idx, n in over_limit:
             print(f"    example {idx}: {n} tokens (+{n - max_tokens} over)")
 
-def test(do_scoring=False, do_dataset=True, do_eval_analysis=False):
+def test(do_scoring=False, do_dataset=False, do_eval_analysis=True):
   from event_scorer_dataset import PredEvaluator, EventScorer, DatasetBuilder
   if do_scoring:
         with EventScorer(json_files_dir=DIVIDED_MD_DIR, labels_dir=LABELS_DIR, output_dir=SCORED_EVENTS_DIR) as scorer:

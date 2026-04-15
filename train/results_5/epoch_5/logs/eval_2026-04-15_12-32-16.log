@@ -1,0 +1,61 @@
+[eval] loading tokenizer...
+[eval] loading base model (device_map=auto)...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Exception in thread Thread-auto_conversion:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 117, in auto_conversion
+    raise e
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 96, in auto_conversion
+    sha = get_conversion_pr_reference(api, pretrained_model_name_or_path, **cached_file_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 72, in get_conversion_pr_reference
+    spawn_conversion(token, private, model_id)
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/transformers/safetensors_conversion.py", line 48, in spawn_conversion
+    result = httpx.post(sse_url, follow_redirects=True, json=data).json()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/httpx/_models.py", line 832, in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   0%|          | 1/291 [00:01<06:35,  1.36s/it]Loading weights:   3%|▎         | 9/291 [00:01<00:35,  8.01it/s]Loading weights:   4%|▍         | 13/291 [00:02<00:44,  6.24it/s]Loading weights:   5%|▌         | 16/291 [00:02<00:37,  7.31it/s]Loading weights:   7%|▋         | 19/291 [00:02<00:31,  8.71it/s]Loading weights:   8%|▊         | 22/291 [00:03<00:37,  7.24it/s]Loading weights:  10%|▉         | 28/291 [00:03<00:27,  9.43it/s]Loading weights:  11%|█         | 31/291 [00:04<00:34,  7.58it/s]Loading weights:  11%|█▏        | 33/291 [00:04<00:38,  6.75it/s]Loading weights:  14%|█▎        | 40/291 [00:05<00:32,  7.64it/s]Loading weights:  14%|█▍        | 42/291 [00:05<00:30,  8.29it/s]Loading weights:  17%|█▋        | 49/291 [00:06<00:28,  8.41it/s]Loading weights:  19%|█▉        | 55/291 [00:06<00:19, 12.01it/s]Loading weights:  20%|█▉        | 58/291 [00:07<00:28,  8.06it/s]Loading weights:  23%|██▎       | 67/291 [00:08<00:26,  8.57it/s]Loading weights:  26%|██▌       | 76/291 [00:09<00:23,  9.14it/s]Loading weights:  29%|██▉       | 85/291 [00:10<00:21,  9.39it/s]Loading weights:  32%|███▏      | 94/291 [00:11<00:22,  8.70it/s]Loading weights:  34%|███▍      | 100/291 [00:11<00:18, 10.50it/s]Loading weights:  35%|███▌      | 103/291 [00:12<00:22,  8.31it/s]Loading weights:  36%|███▌      | 105/291 [00:12<00:21,  8.53it/s]Loading weights:  37%|███▋      | 109/291 [00:12<00:17, 10.68it/s]Loading weights:  38%|███▊      | 112/291 [00:13<00:22,  8.12it/s]Loading weights:  39%|███▉      | 114/291 [00:13<00:21,  8.15it/s]Loading weights:  41%|████      | 118/291 [00:13<00:15, 11.05it/s]Loading weights:  42%|████▏     | 121/291 [00:14<00:26,  6.42it/s]Loading weights:  44%|████▎     | 127/291 [00:15<00:16,  9.75it/s]Loading weights:  45%|████▍     | 130/291 [00:15<00:22,  7.19it/s]Loading weights:  45%|████▌     | 132/291 [00:16<00:21,  7.44it/s]Loading weights:  47%|████▋     | 136/291 [00:16<00:16,  9.53it/s]Loading weights:  48%|████▊     | 139/291 [00:16<00:20,  7.58it/s]Loading weights:  50%|████▉     | 145/291 [00:17<00:16,  8.76it/s]Loading weights:  51%|█████     | 148/291 [00:18<00:20,  6.98it/s]Loading weights:  52%|█████▏    | 150/291 [00:18<00:18,  7.51it/s]Loading weights:  53%|█████▎    | 154/291 [00:18<00:14,  9.18it/s]Loading weights:  54%|█████▍    | 157/291 [00:19<00:20,  6.51it/s]Loading weights:  56%|█████▌    | 163/291 [00:19<00:16,  7.97it/s]Loading weights:  57%|█████▋    | 166/291 [00:20<00:18,  6.89it/s]Loading weights:  59%|█████▉    | 172/291 [00:20<00:13,  8.93it/s]Loading weights:  60%|██████    | 175/291 [00:21<00:15,  7.49it/s]Loading weights:  62%|██████▏   | 181/291 [00:22<00:12,  8.77it/s]Loading weights:  63%|██████▎   | 184/291 [00:22<00:14,  7.25it/s]Loading weights:  65%|██████▌   | 190/291 [00:23<00:11,  9.00it/s]Loading weights:  66%|██████▋   | 193/291 [00:23<00:13,  7.00it/s]Loading weights:  67%|██████▋   | 195/291 [00:24<00:13,  7.07it/s]Loading weights:  69%|██████▉   | 202/291 [00:24<00:11,  8.00it/s]Loading weights:  70%|██████▉   | 203/291 [00:25<00:11,  7.48it/s]Loading weights:  73%|███████▎  | 211/291 [00:26<00:10,  7.41it/s]Loading weights:  76%|███████▌  | 220/291 [00:27<00:08,  8.27it/s]Loading weights:  78%|███████▊  | 226/291 [00:27<00:06,  9.58it/s]Loading weights:  79%|███████▊  | 229/291 [00:28<00:08,  7.30it/s]Loading weights:  79%|███████▉  | 230/291 [00:28<00:08,  7.41it/s]Loading weights:  81%|████████  | 235/291 [00:28<00:06,  8.60it/s]Loading weights:  82%|████████▏ | 238/291 [00:29<00:07,  7.35it/s]Loading weights:  84%|████████▍ | 244/291 [00:29<00:05,  9.24it/s]Loading weights:  85%|████████▍ | 247/291 [00:30<00:06,  7.25it/s]Loading weights:  87%|████████▋ | 252/291 [00:30<00:04,  9.58it/s]Loading weights:  88%|████████▊ | 256/291 [00:31<00:04,  7.41it/s]Loading weights:  89%|████████▊ | 258/291 [00:31<00:04,  7.76it/s]Loading weights:  90%|█████████ | 262/291 [00:32<00:02, 10.47it/s]Loading weights:  91%|█████████ | 265/291 [00:33<00:04,  6.16it/s]Loading weights:  93%|█████████▎| 271/291 [00:33<00:02,  9.08it/s]Loading weights:  94%|█████████▍| 274/291 [00:33<00:02,  7.32it/s]Loading weights:  95%|█████████▍| 276/291 [00:34<00:02,  7.47it/s]Loading weights:  96%|█████████▌| 280/291 [00:34<00:01, 10.03it/s]Loading weights:  97%|█████████▋| 283/291 [00:34<00:01,  7.85it/s]Loading weights:  99%|█████████▉| 289/291 [00:35<00:00, 11.72it/s]Loading weights: 100%|██████████| 291/291 [00:35<00:00,  8.28it/s]
+[eval] loading LoRA adapter...
+Traceback (most recent call last):
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/peft/config.py", line 317, in _get_peft_type
+    config_file = hf_hub_download(
+                  ^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 84, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 132, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'outputs/biomistral_mie_ke_ao_qlora/checkpoint-384'. Use `repo_type` argument if needed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/dave/PaperDataExtraction/src/biomistral/BioMistralEval.py", line 410, in <module>
+    main()
+  File "/workspace/dave/PaperDataExtraction/src/biomistral/BioMistralEval.py", line 282, in main
+    model, tokenizer = load_model(args.base_model, args.adapter_dir, args.load_in_4bit, args.bf16)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/src/biomistral/BioMistralEval.py", line 205, in load_model
+    model = PeftModel.from_pretrained(model, adapter_dir)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/peft/peft_model.py", line 459, in from_pretrained
+    config = PEFT_TYPE_TO_CONFIG_MAPPING[PeftConfig._get_peft_type(model_id, **hf_kwargs)].from_pretrained(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dave/PaperDataExtraction/.venv/lib/python3.12/site-packages/peft/config.py", line 323, in _get_peft_type
+    raise ValueError(f"Can't find '{CONFIG_NAME}' at '{model_id}'")
+ValueError: Can't find 'adapter_config.json' at 'outputs/biomistral_mie_ke_ao_qlora/checkpoint-384'
