@@ -1,0 +1,2541 @@
+
+==========================================================================================
+[RECORD 1] id=None loss=1.0104867219924927
+Gold events: 4 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 4 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=68.8 mean=75.2 max=87.3 | chemical_found=4/4
+Top 4 pred events by score:
+    87.3 chem✓ | 'diclofenac acyl glucuronide (DCF-AG)', "AO", '"inhibition of cyclooxygenase (COX) enzymes'
+    73.2 chem✓ | 'diclofenac acyl glucuronide (DCF-AG)', "MEI", '"formation of covalent adducts along the intestinal epithelia"'
+    71.6 chem✓ | 'diclofenac acyl glucuronide (DCF-AG)', "AO", '"induction of oxidative stress in vitro"'
+    68.8 chem✓ | 'diclofenac acyl glucuronide (DCF-AG)', "KE", '"inhibition of superoxide dismutase (SOD) with 100% inhibition at the highest tested dose of 1 mM"'
+
+==========================================================================================
+[RECORD 2] id=None loss=20.849910736083984
+Gold events: 0 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 8 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=45.6 mean=45.8 max=47.0 | chemical_found=7/8
+Top 8 pred events by score:
+    47.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    46.3 chem✓ | 'Stratagene Mx3000p Real-Time PCR system (Stratagene)', MIE, 'Interaction with biological macromolecules'
+    45.6 chem✓ | 'Acid guanidine phenol', MIE, 'Binding to biological macromolecules'
+    45.6 chem✓ | 'C2 SYBR Green QPCR master mix (Stratagene)', MIE, 'Binding to biological macromolecules'
+    45.6 chem✓ | 'Chloroform', MIE, 'Binding to biological macromolecules'
+    45.6 chem✓ | 'RNase-free DNase I (TaKaRa)', MIE, 'Binding to biological macromolecules'
+    45.6 chem✓ | 'SuperScript II (Invitrogen)', MIE, 'Binding to biological macromolecules'
+    45.6 chem✓ | 'TRIsure (BIOLINE)', MIE, 'Binding to biological macromolecules'
+
+==========================================================================================
+[RECORD 3] id=None loss=20.92774200439453
+Gold events: 0 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=49.1 mean=58.0 max=100.0 | chemical_found=0/8
+Top 8 pred events by score:
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    54.1 chem✗ | '6. "prochloraz"', AO, '"Inhibition of Testosterone production in H295R cells"'
+    53.7 chem✗ | '5. "prochloraz"', KE, '"Inhibition of aromatase enzyme'
+    53.5 chem✗ | '4. "forskolin"', AO, '"Induction of Testosterone production in H295R cells"'
+    53.5 chem✗ | '3. "forskolin"', AO, '"Induction of E2 hormone production in H295R cells"'
+    50.0 chem✗ | '2. "forskolin"', KE, '"Activation of adenylate cyclase'
+    50.0 chem✗ | '1. "DMSO"', MIE, '"Dissolution of the chemical in the cell culture medium"'
+    49.1 chem✗ | 'Also', THE TEXT DOES NOT PROVIDE A DIRECT DESCRIPTION FOR THE MIE EVENT OF DMSO, 'but it is generally understood that DMSO dissolves in the cell culture medium due to its solvent properties.'
+
+==========================================================================================
+[RECORD 4] id=None loss=1.6045286655426025
+Gold events: 4 | Pred events: 13
+0 matches similar to gold ones (exact=0, fuzzy=0), 13 matches not in gold, 4 matches from gold not found
+Pred grounded in chunk text (score>=50): 13 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=53.7 mean=72.1 max=100.0 | chemical_found=12/13
+Top 8 pred events by score:
+   100.0 chem✓ | '1,4-Benzoquinone', KE, 'Induction of micronuclei'
+   100.0 chem✗ | 'Colchicine and vincristine', KE, 'Inhibitory effects on the oxidative burst of leukocytes'
+    89.3 chem✓ | 'Arachidonic acid', KE, 'Produces only a minimal increase in hydroquinone binding in human and rodent bone marrow in vitro'
+    82.2 chem✓ | 'MPO (Myeloperoxidase)', KE, 'A more important role for MPO in the myelotoxicity observed following phenol and hydroquinone coadministration to mice'
+    82.2 chem✓ | 'Hydroquinone', MIE, 'Binding to DNA and protein'
+    72.3 chem✓ | '1,4-Benzoquinone', MIE, 'Peroxidase-dependent generation in the bone marrow'
+    65.3 chem✓ | 'Hydroquinone', KE, 'No adverse effect on a subpopulation of human myeloperoxidase when replicating normally'
+    62.5 chem✓ | 'PGS (Prostaglandin Synthase)', KE, 'Inhibits the cytochrome P450 component of PGS but has no effect on the hydroperoxidase component of this enzyme'
+
+==========================================================================================
+[RECORD 5] id=None loss=1.4019274711608887
+Gold events: 6 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 6 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=63.4 mean=76.7 max=87.2 | chemical_found=7/7
+Top 7 pred events by score:
+    87.2 chem✓ | 'Bisphenol-A and Atrazine', MIE, 'Induces intracellular toxicity in human cells'
+    87.2 chem✓ | 'Roundup (glyphosate)', MIE, 'Induces intracellular toxicity in human cells'
+    81.5 chem✓ | 'Roundup (glyphosate)', AO, 'Decreases mitochondrial succinate dehydrogenase activity'
+    81.2 chem✓ | 'Dig2', AO, 'Has a mild preventive effect on CYP3A4'
+    72.2 chem✓ | 'Roundup (glyphosate)', KE, 'Disrupts radiolabelled glyphosate entry into cells'
+    64.3 chem✓ | 'Dig2', KE, 'Prevents disruption of CYP1A2 activity caused by Roundup'
+    63.4 chem✓ | 'Dig2', AO, 'Partially restores HepG2 viability after Bisphenol-A/Atrazine intoxication'
+
+==========================================================================================
+[RECORD 6] id=None loss=0.9913259148597717
+Gold events: 4 | Pred events: 12
+1 matches similar to gold ones (exact=0, fuzzy=1), 11 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 12 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.957 | P: {'chemical': 'DAPT', 'event_type': 'KE', 'description': '"Increased neuronal numbers in hNPCs due to inhibition of the Notch receptor"'}  ->  G: {'chemical': 'DAPT (Notch inhibitor)', 'event_type': 'KE', 'description': 'increased neuronal numbers'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.7 mean=70.0 max=87.4 | chemical_found=12/12
+Top 8 pred events by score:
+    87.4 chem✓ | 'Rho-associated protein kinase (ROCK) pathway', KE, '"Reduced neurite outgrowth via the Rho-associated protein kinase (ROCK) pathway"'
+    82.4 chem✓ | 'β (III)tubulin + neurons', AO, '"Neuronal identity defined in the mixed-culture neurosphere migration area due to immunocytochemical stainings"'
+    75.0 chem✓ | 'contactin-1', KE, '"Increased RhoA activity and morphological alterations in rat cortical neurons due to contactin-1 knock-down"'
+    72.1 chem✓ | 'Rho GTPase RhoA', KE, '"Activation of RhoA leads to reduced neuronal differentiation"'
+    71.9 chem✓ | 'Notch signaling pathway', KE, '"Impaired neuronal differentiation in vivo with stimulated Notch pathway"'
+    71.0 chem✓ | 'Notch signaling pathway', KE, '"Accelerated neuronal differentiation in vitro and in vivo with inhibited Notch signaling"'
+    69.3 chem✓ | 'neurites', AO, '"Neurite outgrowth and branching during neuronal maturation"'
+    64.4 chem✓ | 'Notch signaling pathway', MIE, '"Activation of Notch signaling pathway in hNPCs"'
+
+==========================================================================================
+[RECORD 7] id=None loss=1.7569117546081543
+Gold events: 5 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 5 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=69.1 mean=80.5 max=87.3 | chemical_found=2/7
+Top 7 pred events by score:
+    87.3 chem✓ | 'CTR1', KE, '"Heightens cellular sensitivity to CuCl2induced aggregation of lipoylated proteins and Fe-S cluster degradation"'
+    85.6 chem✗ | 'Cu ions', KE, '"Binds to lipoylated TCA cycle proteins'
+    85.5 chem✗ | 'Cu ions', MIE, '"Accumulation of intracellular labile copper ions"'
+    85.4 chem✓ | 'FDX1', KE, '"Reduces Cu 2+ to the more cytotoxic Cu +"'
+    77.0 chem✗ | 'Cu ions', KE, '"Induces cell death in the presence of copper ionophores"'
+    73.6 chem✗ | 'Cu ions', KE, '"Suppresses cell death when exogenous chelator tetrathiomolybdate (TTM) is added"'
+    69.1 chem✗ | 'Cu ions', KE, '"Exacerbates elesclomol-induced cell death when endogenous copper chelator GSH is depleted"'
+
+==========================================================================================
+[RECORD 8] id=None loss=21.950820922851562
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=40.0 mean=40.0 max=40.0 | chemical_found=0/1
+Top 1 pred events by score:
+    40.0 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN EXPLICIT MIE (MOLECULAR INITIATED EVENTS), 'KE (Key Events)'
+
+==========================================================================================
+[RECORD 9] id=None loss=19.01946258544922
+Gold events: 0 | Pred events: 2
+0 matches similar to gold ones (exact=0, fuzzy=0), 2 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 1 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.1 mean=52.2 max=57.3 | chemical_found=0/2
+Top 2 pred events by score:
+    57.3 chem✗ | 'chemical', EVENT_TYPE, 'description'
+    47.1 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY SPECIFIC MECHANISTIC TOXICOLOGY EVENTS (MIE, 'KE'
+
+==========================================================================================
+[RECORD 10] id=None loss=2.0133447647094727
+Gold events: 2 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=52.8 mean=67.0 max=87.5 | chemical_found=7/7
+Top 7 pred events by score:
+    87.5 chem✓ | 'DCF', KE, '"Contributes to intestinal injury in conjunction to DCF-AG via COX inhibition'
+    82.6 chem✓ | 'DCF-AG', KE, '"Potentiates enteropathy via loss of PGE protection and interference of COX-2-directed wound healing"'
+    75.3 chem✓ | 'DCF-AG', KE, '"Results in sustained oxidative stress and cell death"'
+    61.9 chem✓ | 'DCF-AG', AO, '"Causes enteropathy"'
+    54.2 chem✓ | 'DCF', MIE, '"Inhibition of Cyclooxygenase (COX) enzymes"'
+    54.2 chem✓ | 'DCF-AG', MIE, '"Inhibition of Cyclooxygenase (COX) enzymes"'
+    52.8 chem✓ | 'DCF-AG', MIE, '"Inhibition of Superoxide Dismutase (SOD)"'
+
+==========================================================================================
+[RECORD 11] id=None loss=2.1150941848754883
+Gold events: 2 | Pred events: 8
+1 matches similar to gold ones (exact=0, fuzzy=1), 7 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.855 | P: {'chemical': 'Phenol', 'event_type': 'KE', 'description': 'Binding to protein in the presence of human MPO and H2O2, as well as with HRP'}  ->  G: {'chemical': 'Phenol', 'event_type': 'KE', 'description': 'Covalent binding to protein and DNA'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=63.3 mean=87.2 max=100.0 | chemical_found=8/8
+Top 8 pred events by score:
+   100.0 chem✓ | "2,2'-biphenol", AO, 'Likely to be the major DNA-binding species formed from phenol'
+   100.0 chem✓ | "4,4'-diphenoquinone", AO, 'Cytotoxic and genotoxic effects on human lymphocytes'
+   100.0 chem✓ | "4,4'-diphenoquinone", AO, 'Protein binding'
+    87.3 chem✓ | 'Phenol', KE, 'Conversion to covalently binding metabolites during the oxidative burst of stimulated human leukocytes'
+    87.2 chem✓ | 'Phenol', MIE, 'Reduction of H2O2 by peroxidases'
+    83.8 chem✓ | "4,4'-biphenol", AO, 'DNA binding'
+    76.2 chem✓ | 'Phenol', KE, 'Binding to protein in the presence of human MPO and H2O2, as well as with HRP'
+    63.3 chem✓ | 'Phenol', KE, "Conversion to 2,2'-biphenol, 4,4'-biphenol, and 4,4'-diphenoquinone by peroxidases"
+
+==========================================================================================
+[RECORD 12] id=None loss=1.1594650745391846
+Gold events: 6 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 6 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=67.4 mean=74.1 max=84.7 | chemical_found=6/6
+Top 6 pred events by score:
+    84.7 chem✓ | 'deltamethrin', KE, 'causes greater destruction of yeast cells at the logarithmic than at the stationary stage of growth'
+    78.8 chem✓ | 'pyrethroid', KE, 'increases the frequency of ρ-mutation in mitochondrial DNA of yeast cells'
+    76.1 chem✓ | 'pyrethroid', KE, 'increases the number of ρ-mutants in Saccharomyces cerevisiae yeast cells'
+    69.0 chem✓ | 'deltamethrin', MIE, 'is the most toxic pyrethroid to Saccharomyces cerevisiae yeast cells'
+    68.5 chem✓ | 'pyrethroid', KE, 'decreases survival rate of yeast cells'
+    67.4 chem✓ | 'pyrethroid', MIE, 'initiates cell destruction in Saccharomyces cerevisiae yeast cells'
+
+==========================================================================================
+[RECORD 13] id=None loss=20.587947845458984
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=52.2 mean=54.2 max=58.2 | chemical_found=3/3
+Top 3 pred events by score:
+    58.2 chem✓ | 'CuO', KE (KEY EVENT), '"Increases the level of cytokines in SAEC cell supernatants after treatment with 30 µg/mL for 24 hours"'
+    52.4 chem✓ | 'MS-WF', ME (MECHANISM OF INITIATING EVENT), '"Stimulates the production of cytokines in SAEC cells at a concentration of 30 µg/mL after 24 hours"'
+    52.2 chem✓ | 'PEPs', KE, '"Increases the level of cytokines in SAEC cell supernatants after treatment with an unspecified concentration for 24 hours"'
+
+==========================================================================================
+[RECORD 14] id=None loss=2.5017001628875732
+Gold events: 3 | Pred events: 11
+0 matches similar to gold ones (exact=0, fuzzy=0), 11 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 11 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=65.4 mean=76.5 max=87.9 | chemical_found=9/11
+Top 8 pred events by score:
+    87.9 chem✓ | 'MS-WF (lower dose)', KE, '"Transcriptional activation of L1 ORF1 and ORF2 and Alu (although'
+    87.7 chem✓ | 'CuO', KE, '"Profound reactivation of both L1 ORFs - ORF1 and ORF2 as well as SINE B1 and SINE B2 in RAW264.7"'
+    81.0 chem✗ | 'TiO2', AO, '"Increased transcripts of L1 ORF2 and Alu (although Alu in TiO treatment-insignificant) in SAEC cells"'
+    80.0 chem✓ | 'Peps', KE, '"Increased expression of Alu in SAEC cells"'
+    75.7 chem✓ | 'CuO', MIE, '"Activation of L1 ORFs - ORF1 and ORF2 and SINE B1 and SINE B2 in RAW264.7 cells"'
+    75.7 chem✗ | 'TiO2', MIE, '"Activation of L1 ORFs - ORF1 and ORF2 and SINE B1 and SINE B2 in RAW264.7 cells"'
+    74.0 chem✓ | 'MS-WF (higher dose)', KE, '"Transcriptional activation of L1 ORF1 and ORF2 in THP-1 cells"'
+    73.2 chem✓ | 'TiO2 (higher dose)', KE, '"Increased transcripts of L1 ORF2 in SAEC cells"'
+
+==========================================================================================
+[RECORD 15] id=None loss=1.5016511678695679
+Gold events: 5 | Pred events: 15
+0 matches similar to gold ones (exact=0, fuzzy=0), 15 matches not in gold, 5 matches from gold not found
+Pred grounded in chunk text (score>=50): 15 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=57.2 mean=71.7 max=84.7 | chemical_found=15/15
+Top 8 pred events by score:
+    84.7 chem✓ | 'NRF2', AO, '"Depleting NRF2 reverses MT1E/X upregulation and resensitizes cancer cells to radiotherapy"'
+    81.4 chem✓ | 'copper', KE, '"Increased mitochondrial copper levels lead to FDX1/LIAS degradation'
+    80.0 chem✓ | 'disulfiram', AO, '"Disulfiram depletes Fe-S/lipoylated proteins and triggers cuproptosis in radioresistant models"'
+    79.3 chem✓ | 'elesclomol', AO, '"Elesclomol depletes Fe-S/lipoylated proteins and triggers cuproptosis in radioresistant models"'
+    78.3 chem✓ | 'BACH1', AO, '"Restoring BACH1 reverses MT1E/X upregulation and resensitizes cancer cells to radiotherapy"'
+    76.4 chem✓ | 'elesclomol', KE, '"Elesclomol restores mitochondrial copper accumulation"'
+    75.5 chem✓ | 'MT1E/X', AO, '"MT1E/X upregulation reduces intracellular copper availability and suppresses cuproptosis"'
+    75.1 chem✓ | 'disulfiram', KE, '"Disulfiram restores mitochondrial copper accumulation"'
+
+==========================================================================================
+[RECORD 16] id=None loss=4.476441860198975
+Gold events: 1 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=80.3 mean=86.9 max=100.0 | chemical_found=3/3
+Top 3 pred events by score:
+   100.0 chem✓ | 'E2 and T', AO, 'impaired reproductive and sexual development'
+    80.3 chem✓ | 'cholesterol', MIE, 'conversion to a series of steroid hormones'
+    80.3 chem✓ | 'test substances', KE, 'effect on the synthesis of E2 and T'
+
+==========================================================================================
+[RECORD 17] id=None loss=19.89727783203125
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.0 mean=47.0 max=47.0 | chemical_found=0/1
+Top 1 pred events by score:
+    47.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+
+==========================================================================================
+[RECORD 18] id=None loss=3.9257235527038574
+Gold events: 1 | Pred events: 9
+0 matches similar to gold ones (exact=0, fuzzy=0), 9 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.8 mean=75.5 max=87.3 | chemical_found=9/9
+Top 8 pred events by score:
+    87.3 chem✓ | 'Copper', KE, '"Disruptions in copper homeostasis have been implicated in neurodegenerative disorders"'
+    84.0 chem✓ | 'Copper', KE, '"Results in oxidative stress and tissue damage"'
+    83.6 chem✓ | 'Copper', AO, '"Leads to conditions such as Menkes disease"'
+    77.4 chem✓ | 'Copper', KE, '"Impairs enzyme function"'
+    77.4 chem✓ | 'Copper', KE, '"Disruptions in copper homeostasis have been implicated in cancer progression"'
+    74.9 chem✓ | 'Copper', KE, '"Disruptions in copper homeostasis have been implicated in cardiovascular diseases"'
+    67.2 chem✓ | 'Copper', AO, '"Causes Wilson disease"'
+    64.8 chem✓ | 'Copper', MIE, '"Deficiency in distribution in living organisms"'
+
+==========================================================================================
+[RECORD 19] id=None loss=22.140518188476562
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=50.7 mean=64.8 max=73.0 | chemical_found=7/7
+Top 7 pred events by score:
+    73.0 chem✓ | 'MS-WF', MIE, '"Initiates a dose-dependent cytotoxic response in human epithelial cells'
+    73.0 chem✓ | 'PEPs', MIE, '"Initiates a dose-dependent cytotoxic response in human epithelial cells'
+    73.0 chem✓ | 'TiO', MIE, '"Initiates a dose-dependent cytotoxic response in human epithelial cells'
+    63.7 chem✓ | 'MS-WF', KE, '"Causes cytotoxicity in human epithelial cells'
+    63.7 chem✓ | 'TiO', KE, '"Causes cytotoxicity in human epithelial cells'
+    56.2 chem✓ | 'CuO', MIE, '"Initiates a dose-dependent cytotoxic response in human macrophages and murine macrophages when exposed at 0.5 and 30 µg/mL for 24 h. Does not initiate cytotoxicity in THP-1 cells at the same doses"'
+    50.7 chem✓ | 'CuO', KE, '"Does not cause cytotoxicity in THP-1 cells at doses of 0.5 and 30 µg/mL after 24 h of exposure. Causes cytotoxicity in RAW264.7 cells at the same doses'
+
+==========================================================================================
+[RECORD 20] id=None loss=21.368505477905273
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 2 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.8 mean=53.9 max=59.8 | chemical_found=3/3
+Top 3 pred events by score:
+    59.8 chem✓ | 'rotenone', MIE, 'Inhibits mitochondrial function by binding to the mitochondrial complex I'
+    54.1 chem✓ | 'rotenone', KE, 'Causes mitochondrial depolarization and decreased ATP production'
+    47.8 chem✓ | 'rotenone', AO, 'Leads to cellular energy depletion, oxidative stress, and eventually cell death at high concentrations'
+
+==========================================================================================
+[RECORD 21] id=None loss=0.927207887172699
+Gold events: 7 | Pred events: 16
+0 matches similar to gold ones (exact=0, fuzzy=0), 16 matches not in gold, 7 matches from gold not found
+Pred grounded in chunk text (score>=50): 16 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=58.3 mean=73.6 max=100.0 | chemical_found=16/16
+Top 8 pred events by score:
+   100.0 chem✓ | 'Letrozole', KE, 'Did not meet the efficacy cutoff criteria despite being statistically significant'
+   100.0 chem✓ | 'Prochloraz', KE, 'Did not meet the efficacy cutoff criteria despite being statistically significant'
+    83.5 chem✓ | 'Trilostane', KE, 'Active but exhibited cross-reactivity with the HTRF antibody-based hormone detection system'
+    80.3 chem✓ | 'Molinate', KE, 'Equivocal activity due to decreased confidence in the model fit'
+    74.3 chem✓ | 'Danazol', AO, 'Anticipated E2 antagonist but not identified as active by TCPL data modeling or statistical analysis'
+    74.3 chem✓ | 'Fenarimol', AO, 'Anticipated E2 antagonist but not identified as active by TCPL data modeling or statistical analysis'
+    74.3 chem✓ | 'Finasteride', AO, 'Anticipated E2 antagonist but not identified as active by TCPL data modeling or statistical analysis'
+    74.3 chem✓ | 'Ketoconazole', AO, 'Anticipated E2 antagonist but not identified as active by TCPL data modeling or statistical analysis'
+
+==========================================================================================
+[RECORD 22] id=None loss=20.587238311767578
+Gold events: 0 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 8 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=34.6 mean=39.4 max=45.7 | chemical_found=6/8
+Top 8 pred events by score:
+    45.7 chem✗ | 'These events suggest that the chemical Uxol causes membrane disruption', LEADING TO CELL DAMAGE AND SUBSEQUENT RELEASE OF CELLULAR COMPONENTS INTO THE URINE (AO). ADDITIONALLY, 'Digl and Dig2 are excreted in the urine (KE)'
+    42.1 chem✗ | 'Based on the provided text', I WAS ABLE TO IDENTIFY THE FOLLOWING MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+    40.8 chem✓ | 'Dig2', "KE", '"Accumulation in the urine (Ur] 20 2 indicates that Dig2 has been excreted in the urine)"'
+    40.8 chem✓ | 'Digl', "KE", '"Accumulation in the urine (Ur] 20 2 indicates that Digl has been excreted in the urine)"'
+    37.8 chem✓ | 'Uxol', "KE", '"Disruption of membrane integrity (Digl and Dig2 cause membrane damage as indicated by the splitting [Spl] and circularization [Circl] of the membrane)"'
+    37.5 chem✓ | 'Digl', "AO", '"Tubular necrosis (Dig? Cicl indicates tubular damage and necrosis)"'
+    36.1 chem✓ | 'Uxol', "MIE", '"Interaction with biological membranes (diglycol methyl ether [Digl] and di(2-ethylhexyl) phthalate [Dig2] dissolve in the membrane)"'
+    34.6 chem✓ | 'Uxol', "AO", '"Urinary excretion (Uro] indicates that the disrupted membranes have led to cell damage and subsequent release of cellular components into the urine)"'
+
+==========================================================================================
+[RECORD 23] id=None loss=1.1264705657958984
+Gold events: 11 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 11 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=59.7 mean=70.5 max=80.3 | chemical_found=7/7
+Top 7 pred events by score:
+    80.3 chem✓ | 'cypermethrin', MIE, 'Induction of enzyme activities (WST-1 test)'
+    80.3 chem✓ | 'permethrin', MIE, 'Induction of enzyme activities (WST-1 test)'
+    80.3 chem✓ | 'pyrethrin', MIE, 'Induction of enzyme activities (WST-1 test)'
+    67.8 chem✓ | 'cypermethrin', KE, 'Decrease in total ATP at lower concentrations compared to WST-1 method'
+    62.4 chem✓ | 'permethrin', KE, 'Decrease in total ATP at higher concentrations'
+    62.4 chem✓ | 'pyrethrin', KE, 'Decrease in total ATP at higher concentrations'
+    59.7 chem✓ | 'cypermethrin', AO, 'Cell death at high concentrations (100 𝛍 M)'
+
+==========================================================================================
+[RECORD 24] id=None loss=0.8454915285110474
+Gold events: 2 | Pred events: 5
+1 matches similar to gold ones (exact=1, fuzzy=0), 4 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=64.8 mean=81.6 max=100.0 | chemical_found=5/5
+Top 5 pred events by score:
+   100.0 chem✓ | '1,4-Benzoquinone', AO, 'Cytotoxic effect on one subpopulation of cells'
+   100.0 chem✓ | '1,4-Benzoquinone', KE, 'Induction of micronuclei'
+    72.3 chem✓ | '1,4-Benzoquinone', MIE, 'Peroxidase-dependent generation in the bone marrow'
+    71.1 chem✓ | '1,4-Benzoquinone', AO, 'Induction of multiple micronuclei in a small and highly selective subpopulation'
+    64.8 chem✓ | 'trans,trans-Muconaldehyde', MIE, 'Not explicitly mentioned, but implied as a putative toxic metabolite of benzene'
+
+==========================================================================================
+[RECORD 25] id=None loss=18.987186431884766
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.1 mean=68.2 max=84.1 | chemical_found=6/6
+Top 6 pred events by score:
+    84.1 chem✓ | 'DCF-AG', AO (ADVERSE OUTCOME), '"Cytotoxicity as a result of ROS generation"'
+    82.2 chem✓ | 'DCF-AG', KE (KEY EVENT), '"OATP2B1-mediated uptake of DCF-AG"'
+    67.0 chem✓ | 'DCF-AG', AO, '"Inhibition of COX enzymes"'
+    64.5 chem✓ | 'DCF-AG', ME (MECHANISM OF INITIATING EVENT), '"Mediation of intestinal toxicity through parallel or independent pathways"'
+    64.3 chem✓ | 'DCF-AG', AO, '"Inhibition of SOD enzymes"'
+    47.1 chem✓ | 'DCF-AG', KE, '"Generation of Reactive Oxygen Species (ROS)"'
+
+==========================================================================================
+[RECORD 26] id=None loss=21.279556274414062
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 4 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=43.6 mean=48.3 max=53.7 | chemical_found=7/7
+Top 7 pred events by score:
+    53.7 chem✓ | 'bFGF (basic Fibroblast Growth Factor)', KE, '"Stimulates proliferation and differentiation of NPCs (Neural Progenitor Cells)"'
+    53.7 chem✓ | 'EGF (Epidermal Growth Factor)', KE, '"Stimulates proliferation and differentiation of NPCs (Neural Progenitor Cells)"'
+    51.0 chem✓ | 'CO (Carbon Monoxide)', KE, '"Maintains NPC (Neural Progenitor Cells) cultures at 5% in the atmosphere"'
+    46.3 chem✓ | 'Glutamax', KE, '"Provides essential nutrients for the growth and maintenance of NPCs (Neural Progenitor Cells)"'
+    46.3 chem✓ | 'KnockOut DMEM/F12', KE, '"Provides essential nutrients for the growth and maintenance of NPCs (Neural Progenitor Cells)"'
+    43.6 chem✓ | 'Laminin', MIE, '"Supports adhesion of NPCs (Neural Progenitor Cells) on the culture surface"'
+    43.6 chem✓ | 'Poly-l-ornithine', MIE, '"Supports adhesion of NPCs (Neural Progenitor Cells) on the culture surface"'
+
+==========================================================================================
+[RECORD 27] id=None loss=2.7126617431640625
+Gold events: 1 | Pred events: 0
+0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text: no pred events to score
+
+No parsable pred events to score (model probably output garbage/truncated lines).
+
+==========================================================================================
+[RECORD 28] id=None loss=2.212989330291748
+Gold events: 1 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=55.0 mean=71.4 max=83.5 | chemical_found=4/4
+Top 4 pred events by score:
+    83.5 chem✓ | 'Cadmium chloride', KE, '"Decreases hNPC proliferation'
+    83.5 chem✓ | 'PD153035', KE, '"Decreases hNPC proliferation'
+    63.8 chem✓ | 'Cadmium chloride', MIE, '"Interferes with hNPC proliferation"'
+    55.0 chem✓ | 'PD153035', MIE, '"Inhibits EGFR'
+
+==========================================================================================
+[RECORD 29] id=None loss=1.5238800048828125
+Gold events: 2 | Pred events: 7
+1 matches similar to gold ones (exact=0, fuzzy=1), 6 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.907 | P: {'chemical': 'Cadmium', 'event_type': 'MIE', 'description': '"Induction of oxidative stress"'}  ->  G: {'chemical': 'cadmium chloride', 'event_type': 'MIE', 'description': 'oxidative stress induction'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.6 mean=75.0 max=86.3 | chemical_found=7/7
+Top 7 pred events by score:
+    86.3 chem✓ | 'Cadmium', KE, '"Influences the expression of genes related to cell growth'
+    84.3 chem✓ | 'Cadmium', AO, '"Concentration-dependent inhibition of hNPC proliferation"'
+    82.6 chem✓ | 'Cadmium', MIE, '"Induction of oxidative stress"'
+    71.4 chem✓ | 'hNPC (exposed to Cadmium chloride)', AO, '"Observed inhibition of proliferation compared to the solvent control without any observed cytotoxicity"'
+    70.5 chem✓ | 'Cadmium', KE, '"Causes cell death"'
+    67.1 chem✓ | 'Cadmium', KE, '"Affects mTOR'
+    62.6 chem✓ | 'hNPC (NPC1b)', AO, '"More pronounced effects on BrdU incorporation compared to NPC1a (sphere size)'
+
+==========================================================================================
+[RECORD 30] id=None loss=0.6467670798301697
+Gold events: 4 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 4 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=100.0 mean=100.0 max=100.0 | chemical_found=0/4
+Top 4 pred events by score:
+   100.0 chem✗ | '1. "Ascorbic Acid (Asc)"', AO, 'Increased the percentage of OLs in the differentiated culture'
+   100.0 chem✗ | '2. "DAPT"', KE, 'Concentration-dependently decreased OL differentiation compared to the solvent control'
+   100.0 chem✗ | '3. "Deltamethrin"', KE, 'Concentration-dependently decreased OL differentiation compared to the solvent control'
+   100.0 chem✗ | '4. "Tetrabromobisphenol A (TBBPA)"', KE, 'Concentration-dependently decreased OL differentiation compared to the solvent control'
+
+==========================================================================================
+[RECORD 31] id=None loss=18.62016487121582
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.4 mean=47.4 max=47.4 | chemical_found=0/1
+Top 1 pred events by score:
+    47.4 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY SPECIFIC MECHANISTIC EVENTS (MIE, 'KE'
+
+==========================================================================================
+[RECORD 32] id=None loss=3.7672455310821533
+Gold events: 1 | Pred events: 15
+0 matches similar to gold ones (exact=0, fuzzy=0), 15 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 14 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=46.9 mean=65.8 max=87.7 | chemical_found=15/15
+Top 8 pred events by score:
+    87.7 chem✓ | 'Brimonidine', KE, '"Abnormal saturation and cells expressing different AR subtypes with varying ligand affinity"'
+    78.9 chem✓ | 'Brimonidine', MIE, '"Barrier dysfunction leading to increased skin concentrations of brimonidine"'
+    78.1 chem✓ | 'Brimonidine', MIE, '"Differences in AR subtypes with varying ligand affinity"'
+    74.4 chem✓ | 'Brimonidine', AO, '"Erythema (redness of the skin) due to abnormal saturation and cells expressing different AR subtypes with varying ligand affinity"'
+    70.6 chem✓ | 'Brimonidine', MIE, '"Presence of perivascular inflammatory cells"'
+    70.4 chem✓ | 'Brimonidine', KE, '"Increased skin concentrations of brimonidine due to barrier dysfunction"'
+    66.5 chem✓ | 'Brimonidine', KE, '"Local inflammation due to the presence of perivascular inflammatory cells"'
+    65.1 chem✓ | 'Brimonidine', KE, '"Increased vasodilation due to activation of endothelial and presynaptic receptors"'
+
+==========================================================================================
+[RECORD 33] id=None loss=1.7887336015701294
+Gold events: 3 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=71.7 mean=91.2 max=100.0 | chemical_found=4/5
+Top 5 pred events by score:
+   100.0 chem✗ | 'Natural pyrethrin, Permethrin, Cypermethrin (specific chemicals)', KE, 'Dose-dependent cytotoxicity'
+   100.0 chem✓ | 'Pyrethroids (general)', AO, 'Neurotoxic effects on the mammalian central nervous system (CNS)'
+   100.0 chem✓ | 'Pyrethroids without an -cyano group (specific chemicals)', KE, 'Weakest physiological effect'
+    84.4 chem✓ | 'Pyrethroids (general)', AO, 'Cell toxicity dependent on the chemical structure'
+    71.7 chem✓ | 'Pyrethroids (general)', KE, 'Induction of enzyme activities at low concentrations'
+
+==========================================================================================
+[RECORD 34] id=None loss=21.071426391601562
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=38.8 mean=52.8 max=60.5 | chemical_found=0/6
+Top 6 pred events by score:
+    60.5 chem✗ | '3. "Forskolin (10 LM)"', KEY EVENT (KE), 'Decreases cell density (107) at concentrations 1.5 - 15'
+    59.2 chem✗ | '1. "178-Estradiol"', KEY EVENT (KE), 'Decreases cell density (107) at concentrations 2.0 - 20'
+    58.6 chem✗ | '2. "Testosterone"', KEY EVENT (KE), 'Decreases cell density (104) at concentration 15'
+    56.2 chem✗ | '4. "Forskolin (10 pM)"', KEY EVENT (KE), 'Decreases cell density (104) at concentrations 3 - 10'
+    43.4 chem✗ | 'These events are based on the observation that the chemicals cause a decrease in cell density at certain concentrations. However', WITHOUT MORE CONTEXT OR SPECIFIC INFORMATION ABOUT THE MECHANISMS INVOLVED, 'these are only inferred key events.'
+    38.8 chem✗ | 'Based on the provided text', IT APPEARS TO BE A CELL DENSITY EXPERIMENT WITH VARIOUS CHEMICALS, 'but it does not explicitly state mechanistic toxicology events (MIE'
+
+==========================================================================================
+[RECORD 35] id=None loss=0.8441128730773926
+Gold events: 6 | Pred events: 11
+1 matches similar to gold ones (exact=0, fuzzy=1), 10 matches not in gold, 5 matches from gold not found
+Pred grounded in chunk text (score>=50): 11 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.869 | P: {'chemical': '7-iodo-5-chloro-8-hydroxyquinoline (CQ)', 'event_type': 'KE', 'description': '"targets the proteasome and induces the degradation of X-linked inhibitor of apoptosis protein (XIAP)'}  ->  G: {'chemical': '5-chloro-8-hydroxyquinoline (Clioquinol)', 'event_type': 'KE', 'description': 'Degradation of XIAP'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=56.3 mean=72.5 max=88.7 | chemical_found=11/11
+Top 8 pred events by score:
+    88.7 chem✓ | '7-iodo-5-chloro-8-hydroxyquinoline (CQ)', KE, '"targets the proteasome and induces the degradation of X-linked inhibitor of apoptosis protein (XIAP)'
+    87.1 chem✓ | 'diacetyl-bis(N4-methylthiosemicarbazone) (ATSM)', KE, '"releases copper ions in the reductive tumor microenvironment'
+    87.1 chem✓ | 'glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)', KE, '"releases copper ions in the reductive tumor microenvironment'
+    82.3 chem✓ | '7-iodo-5-chloro-8-hydroxyquinoline (CQ)', MIE, '"forms a complex with copper (CQ-Cu)"'
+    80.2 chem✓ | 'elesclomol', KE, '"induces multimodal cell death mechanisms'
+    69.0 chem✓ | 'glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)', AO, '"causes cell death in prostate cancer cells"'
+    65.1 chem✓ | 'diacetyl-bis(N4-methylthiosemicarbazone) (ATSM)', AO, '"causes cell death in prostate cancer PC3 cells"'
+    63.9 chem✓ | 'elesclomol', MIE, '"binds to copper ions"'
+
+==========================================================================================
+[RECORD 36] id=None loss=19.50284194946289
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 2 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=39.3 mean=57.0 max=73.4 | chemical_found=2/3
+Top 3 pred events by score:
+    73.4 chem✓ | 'Defined plant extracts', "KE", '"Provide protection against combined xenobiotic effects"'
+    58.5 chem✓ | 'Defined plant extracts', "MIE", '"Interact with human cells"'
+    39.3 chem✗ | 'The text provides information about the interaction of defined plant extracts with human cells', WHICH IS THE MECHANISM OF INITIAL EVENT (MIE). IT ALSO MENTIONS THAT THESE EXTRACTS PROVIDE PROTECTION AGAINST COMBINED XENOBIOTIC EFFECTS, 'which is a Key Event (KE). However'
+
+==========================================================================================
+[RECORD 37] id=None loss=20.9976749420166
+Gold events: 0 | Pred events: 11
+0 matches similar to gold ones (exact=0, fuzzy=0), 11 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 7 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=40.2 mean=48.7 max=55.2 | chemical_found=0/11
+Top 8 pred events by score:
+    55.2 chem✗ | '10. "APV"', KE, 'Activation of CaRE1,2,3m regulatory element in Bdnf-pIV (CaRE1,2,3m'
+    52.2 chem✗ | '7. "Nicardipine"', KE, 'Activation of CaRE3m regulatory element in Bdnf-plV (wild type)'
+    51.0 chem✗ | '8. "APV"', KE, 'Activation of CaRE1,2,3m regulatory element in Bdnf-pIV (wild type)'
+    50.7 chem✗ | '2. "APV"', MIE, 'Activation of Bdnf-pIV promoter'
+    49.8 chem✗ | '9. "Nicardipine"', KE, 'Activation of CaRE3m regulatory element in Bdnf-plV (CaRE3m transgenic)'
+    48.3 chem✗ | '1. "Nicardipine"', MIE, 'Activation of Bdnf-plV promoter'
+    48.1 chem✗ | '4. "APV"', KE, 'Activation of CaRE1 regulatory element in Bdnf-pIV'
+    47.4 chem✗ | '6. "APV"', KE, 'Activation of CaRE2 regulatory element in Bdnf-pIV'
+
+==========================================================================================
+[RECORD 38] id=None loss=20.57368278503418
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 4 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=44.6 mean=50.5 max=60.0 | chemical_found=0/7
+Top 7 pred events by score:
+    60.0 chem✗ | '3. "Phthalates"', "AO", '"Alteration of gene expression in placenta"'
+    55.0 chem✗ | '4. "Phthalates"', "AO", '"Alteration of DNA methylation in placenta"'
+    54.2 chem✗ | '1. "Phthalates"', "MIE", '"Excretion into urine"'
+    47.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    47.0 chem✗ | 'Please note that these events are inferred from the context and the given data', BUT THE TEXT DOES NOT EXPLICITLY STATE THESE AS MIE, 'KE'
+    45.8 chem✗ | 'Also', THE GRAPH IN SECTION B SEEMS TO REPRESENT URINE PHTHALATE LEVELS AT DIFFERENT GESTATIONAL WEEKS, 'but it does not directly relate to MIE'
+    44.6 chem✗ | '2. "Phthalates"', "KE", '"Accumulation in placenta (inferred from urine levels)"'
+
+==========================================================================================
+[RECORD 39] id=None loss=0.5230181217193604
+Gold events: 6 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 6 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.0 mean=68.7 max=82.3 | chemical_found=5/5
+Top 5 pred events by score:
+    82.3 chem✓ | 'DCF-AG', KE, '"Inhibits PGE2 synthesis'
+    67.6 chem✓ | 'DuP-691', MIE, '"Inhibits COX-2 synthesis of PGE from AA"'
+    67.6 chem✓ | 'SC-560', MIE, '"Inhibits COX-1 synthesis of PGE from AA"'
+    63.7 chem✓ | 'OH-DCF', KE, '"Inhibits COX-1 and COX-2 synthesis of PGE from AA'
+    62.0 chem✓ | 'DCF', KE, '"Inhibits both COX-1 and COX-2 synthesis of PGE from AA"'
+
+==========================================================================================
+[RECORD 40] id=None loss=4.16943359375
+Gold events: 1 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=66.3 mean=70.0 max=73.5 | chemical_found=3/3
+Top 3 pred events by score:
+    73.5 chem✓ | 'brimonidine', KE, '"Activates pre-synaptic a -ARs on nerve terminals"'
+    70.1 chem✓ | 'brimonidine', MIE, '"Interacts with G protein-coupled receptors (GPCRs)"'
+    66.3 chem✓ | 'brimonidine', AO, '"Causes vasoconstriction in the skin by activating post-synaptic b -ARs on vascular smooth muscle and mobilizing calcium stores'
+
+==========================================================================================
+[RECORD 41] id=None loss=21.586416244506836
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 2 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=48.4 mean=54.5 max=64.1 | chemical_found=3/3
+Top 3 pred events by score:
+    64.1 chem✓ | 'Rotenone', KE, 'Accumulation of RNA in BrainSpheres after exposure for 2, 4 and 8 weeks'
+    50.9 chem✓ | 'Rotenone', AO, 'Alteration of gene expression as indicated by changes in mRNA levels detected by quantitative RT-PCR'
+    48.4 chem✓ | 'Rotenone', MIE, 'Inhibits RNA synthesis'
+
+==========================================================================================
+[RECORD 42] id=None loss=2.235929489135742
+Gold events: 3 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.7 mean=66.5 max=76.5 | chemical_found=5/5
+Top 5 pred events by score:
+    76.5 chem✓ | '1,4-benzoquinone', AO, '"induction of multiple micronuclei in human lymphocytes"'
+    66.8 chem✓ | 'benzene', MIE, '"conversion to 4'
+    64.9 chem✓ | 'benzene', AO, '"decrease in bone marrow cellularity in B6C3F mice following repeated coadministration of phenol and hydroquinone"'
+    63.8 chem✓ | 'benzene', KE, '"stimulation of the conversion of hydroquinone to 1'
+    60.7 chem✓ | '1,4-benzoquinone', AO, '"damage to DNA"'
+
+==========================================================================================
+[RECORD 43] id=None loss=19.427568435668945
+Gold events: 0 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=56.5 mean=73.5 max=79.0 | chemical_found=0/8
+Top 8 pred events by score:
+    79.0 chem✗ | '2. "Arsenic trioxide (As2O3)"', NOT APPLICABLE (NOT A MIE, KE, OR AO EVENT), 'Listed as a chemical used in the experimental part'
+    79.0 chem✗ | '3. "Di(2-ethylhexyl) phthalate (DEHP)"', NOT APPLICABLE (NOT A MIE, KE, OR AO EVENT), 'Listed as a chemical used in the experimental part'
+    79.0 chem✗ | '4. "Methyl mercury chloride (MeHgCl)"', NOT APPLICABLE (NOT A MIE, KE, OR AO EVENT), 'Listed as a chemical used in the experimental part'
+    79.0 chem✗ | '5. "Lead acetate (Pb(C2H3O2)2)"', NOT APPLICABLE (NOT A MIE, KE, OR AO EVENT), 'Listed as a chemical used in the experimental part'
+    79.0 chem✗ | '6. "Sodium arsenite (NaAsO2)"', NOT APPLICABLE (NOT A MIE, KE, OR AO EVENT), 'Listed as a chemical used in the experimental part'
+    79.0 chem✗ | '7. "Tributyltin chloride (TBTCl)"', NOT APPLICABLE (NOT A MIE, KE, OR AO EVENT), 'Listed as a chemical used in the experimental part'
+    57.6 chem✗ | '1. "Chemical"', EVENT_TYPE, 'Description'
+    56.5 chem✗ | 'This text does not provide specific mechanistic events (MIE', KE, "AO) related to toxicology. It only lists chemicals used in the experiment. Here's the information about the chemicals:"
+
+==========================================================================================
+[RECORD 44] id=None loss=19.817157745361328
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.1 mean=47.1 max=47.1 | chemical_found=0/1
+Top 1 pred events by score:
+    47.1 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY SPECIFIC MECHANISTIC EVENTS (MIE, 'KE'
+
+==========================================================================================
+[RECORD 45] id=None loss=3.3013718128204346
+Gold events: 1 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.4 mean=72.7 max=81.0 | chemical_found=2/3
+Top 3 pred events by score:
+    81.0 chem✓ | 'BDNF', MIE, '"The influx of Ca²⁺ into neurons through L-type voltage-dependent Ca²⁺ channel (L-VDCC)'
+    76.6 chem✓ | 'BDNF-pI and -pIV', KE, '"Activation by Ca²⁺ signals evoked via L-VDCC through Ca²⁺ signal-responsive cis -elements including a cAMP-response element (CRE) which binds the CRE-binding protein (CREB)."'
+    60.4 chem✗ | 'Bdnf eIV-IX mRNA expression', AO, '"Increased by more than 100 times the control level in cultured rat cortical neurons due to the administration of deltamethrin (DM)'
+
+==========================================================================================
+[RECORD 46] id=None loss=1.587286114692688
+Gold events: 2 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=58.8 mean=72.2 max=87.2 | chemical_found=4/5
+Top 5 pred events by score:
+    87.2 chem✓ | 'Cadmium chloride', AO, '"Adverse effects on hNPC proliferation'
+    81.2 chem✓ | 'Zika virus', MIE, '"Linkage to prenatal exposure'
+    69.7 chem✓ | 'EGF and FGF basic (20 ng/ml each)', KE, '"Stimulation of hNPC proliferation in vitro"'
+    64.1 chem✓ | 'Quinazoline PD153035', KE, '"Inhibition of EGFR-mediated hNPC proliferation'
+    58.8 chem✗ | 'L-2-hydroxyglutaric acid', MIE, '"Association with megalencephaly in metabolic disorders"'
+
+==========================================================================================
+[RECORD 47] id=None loss=19.483301162719727
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=54.7 mean=78.1 max=100.0 | chemical_found=0/6
+Top 6 pred events by score:
+   100.0 chem✗ | 'From the provided text', THE FOLLOWING MIE, 'KE'
+    87.8 chem✗ | '4. "Mast cells"', AO, '"Antimicrobial activity is mediated by expression of cathelicidin antimicrobial peptide"'
+    83.4 chem✗ | '1. "TLR2"', MIE, '"Expression is increased in rosacea"'
+    82.9 chem✗ | '3. "NF-kappaB"', KE, '"Regulation in the immune system"'
+    59.9 chem✗ | 'These events suggest that increased expression of TLR2 in rosacea may stimulate the production of serine protease by keratinocytes', WHICH COULD CONTRIBUTE TO THE DEVELOPMENT OF ROSACEA. ADDITIONALLY, 'NF-kappaB regulation and mast cell antimicrobial activity are also involved in the immune response related to rosacea.'
+    54.7 chem✗ | '2. "Keratinocytes"', KE, '"Production of serine protease is stimulated by TLR2"'
+
+==========================================================================================
+[RECORD 48] id=None loss=0.7540461421012878
+Gold events: 6 | Pred events: 9
+5 matches similar to gold ones (exact=0, fuzzy=5), 4 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=1.000 | P: {'chemical': 'Di(2-ethylhexyl) phthalate (DEHP)', 'event_type': 'AO', 'description': 'Associated with significantly earlier menopause in women'}  ->  G: {'chemical': 'di(2-ethylhexyl) phthalate (DEHP)', 'event_type': 'AO', 'description': 'Earlier menopause'}
+  sim=0.954 | P: {'chemical': 'Phthalate', 'event_type': 'AO', 'description': 'Associated with low birth weight'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'AO', 'description': 'Low birth weight'}
+  sim=0.954 | P: {'chemical': 'Phthalate', 'event_type': 'AO', 'description': 'Associated with pregnancy loss'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'AO', 'description': 'Pregnancy loss'}
+  sim=0.954 | P: {'chemical': 'Phthalate', 'event_type': 'AO', 'description': 'Associated with preterm birth'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'AO', 'description': 'Preterm birth'}
+  sim=0.890 | P: {'chemical': 'Phthalate', 'event_type': 'AO', 'description': 'Associated with decreased couple fecundity'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'AO', 'description': 'Decreased fecundity'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=65.2 mean=82.4 max=100.0 | chemical_found=9/9
+Top 8 pred events by score:
+   100.0 chem✓ | 'Di(2-ethylhexyl) phthalate (DEHP)', AO, 'Associated with significantly earlier menopause in women'
+   100.0 chem✓ | 'Phthalate', AO, 'Associated with decreased couple fecundity'
+   100.0 chem✓ | 'Phthalate', MIE, 'Alters the first trimester placental methylome'
+    86.4 chem✓ | 'Phthalate', KE, 'Modulates the expression of critical placental genes through epigenetic regulation'
+    82.0 chem✓ | 'Phthalate', KE, 'Impacts placental gene methylation'
+    71.9 chem✓ | 'Phthalate', AO, 'Associated with pregnancy loss'
+    68.9 chem✓ | 'Phthalate', AO, 'Associated with preterm birth'
+    67.3 chem✓ | 'Phthalate', KE, 'Impacts placental gene expression'
+
+==========================================================================================
+[RECORD 49] id=None loss=20.95952033996582
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 2 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=46.6 mean=51.5 max=54.9 | chemical_found=3/3
+Top 3 pred events by score:
+    54.9 chem✓ | 'Rotenone', KE, 'Decreases the fluorescence of resorufin, a product of resazurin reduction, indicating reduced cell viability'
+    53.0 chem✓ | 'Rotenone', AO, 'Reduces cell viability as demonstrated by a significant decrease in fluorescence in the AB (resazurin) assay compared to control groups, as determined by one-way ANOVA test with posthoc Bonferroni test'
+    46.6 chem✓ | 'Rotenone', MIE, 'Inhibits cell viability by interfering with the electron transport chain in mitochondria'
+
+==========================================================================================
+[RECORD 50] id=None loss=2.456263542175293
+Gold events: 1 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=52.6 mean=67.9 max=82.3 | chemical_found=2/3
+Top 3 pred events by score:
+    82.3 chem✓ | 'Deltamethrin', "KE", '"Neurotrophic effects on neurons"'
+    68.9 chem✓ | 'Deltamethrin', "MIE", '"Activation of Bdnf promoter in neurons"'
+    52.6 chem✗ | 'Note: AO (Adverse Outcome) events are not directly mentioned in the provided text. AO events would typically describe the harmful effects of a chemical on an organism or population', SUCH AS DEATH, 'disease'
+
+==========================================================================================
+[RECORD 51] id=None loss=19.18124008178711
+Gold events: 0 | Pred events: 10
+0 matches similar to gold ones (exact=0, fuzzy=0), 10 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.9 mean=71.8 max=86.7 | chemical_found=10/10
+Top 8 pred events by score:
+    86.7 chem✓ | 'YL21 (YL21Cu complexes)', AO, '"Induces oxidative and ER stress'
+    85.0 chem✓ | 'Copper', KE, '"Activates systemic antitumor immune responses"'
+    80.7 chem✓ | 'Copper', MIE, '"Disrupts mitochondrial function"'
+    79.8 chem✓ | 'Elesclomol and Cu 2+ (nanoparticles)', AO, '"Induce ICD'
+    78.8 chem✓ | 'Copper', MIE, '"Triggers oxidative stress"'
+    72.5 chem✓ | 'TPP-CuET', AO, '"Induces ICD by amplifying immunogenic cuproptosis'
+    69.0 chem✓ | 'Copper', AO, '"Induces immunogenic cell death (ICD) in cancer cells"'
+    63.1 chem✓ | 'HMGB1', AO, '"Released during copper overload in CRC'
+
+==========================================================================================
+[RECORD 52] id=None loss=1.253134846687317
+Gold events: 6 | Pred events: 9
+0 matches similar to gold ones (exact=0, fuzzy=0), 9 matches not in gold, 6 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.4 mean=73.0 max=88.6 | chemical_found=9/9
+Top 8 pred events by score:
+    88.6 chem✓ | 'Pyrethroids', KE, '"Act on a variety of biochemical and physiological target sites'
+    86.7 chem✓ | 'Pyrethroids', KE, '"Bring about delayed and prolonged openings of sodium channels"'
+    85.5 chem✓ | 'Pyrethroids', MIE, '"Taken up by biological membranes and tissues"'
+    74.9 chem✓ | 'Pyrethroids', KE, '"Form reactive oxygen species and may produce oxidative stress and alteration in antioxidant enzymes"'
+    73.6 chem✓ | 'Pyrethroids', AO, '"Decrease in mitochondrial functions"'
+    63.3 chem✓ | 'Pyrethroids', AO, '"Dose-dependent cytotoxicity in SH-SY5Y neuronal cells"'
+    62.0 chem✓ | 'Cypermethrin', AO, '"Highest level of cell toxicity among the pyrethroids studied"'
+    61.9 chem✓ | 'Natural pyrethrin', AO, '"The lowest level of cell toxicity among the pyrethroids studied"'
+
+==========================================================================================
+[RECORD 53] id=None loss=2.1298739910125732
+Gold events: 2 | Pred events: 12
+1 matches similar to gold ones (exact=0, fuzzy=1), 11 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 12 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.857 | P: {'chemical': 'deltamethrin', 'event_type': 'KE', 'description': 'prolonged activation of Bdnf promoter in neurons'}  ->  G: {'chemical': 'deltamethrin', 'event_type': 'KE', 'description': 'Continuous Ca2+ signaling drives prolonged Bdnf promoter activation'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.2 mean=79.5 max=100.0 | chemical_found=10/12
+Top 8 pred events by score:
+   100.0 chem✓ | 'deltamethrin', KE, 'prolonged activation of Bdnf promoter in neurons'
+    88.4 chem✗ | 'Ca ²⁺-responsive elements including a CRE', AO, 'involved in the DM-induced activation of the Bdnf promoter IV (Bdnf-pIV)'
+    87.5 chem✓ | 'GABA', KE, 'reduces the elevated activity of Bdnf-pIV'
+    86.7 chem✓ | 'deltamethrin', MIE, 'enhances the expression of brain-derived neurotrophic factor (BDNF) exon IV-IX (Bdnf eIV-IX) mRNA'
+    85.1 chem✓ | 'deltamethrin', KE, 'increases cell survival'
+    80.6 chem✗ | 'Ca ²⁺', KE, 'elevated intracellular concentration'
+    78.5 chem✓ | 'calcineurin and ERK/MAPK pathways', KE, 'involved in DM-induced Bdnf eIV-IX mRNA expression'
+    77.5 chem✓ | 'GABA', KE, 'reduces neurite complexity and length'
+
+==========================================================================================
+[RECORD 54] id=None loss=1.0853803157806396
+Gold events: 4 | Pred events: 4
+1 matches similar to gold ones (exact=0, fuzzy=1), 3 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.884 | P: {'chemical': 'NH-3', 'event_type': 'KE', 'description': '"Decreases the QM compared to 3 nM T3 and impairs T3-dependent OL maturation"'}  ->  G: {'chemical': 'NH-3 (Thyroid hormone receptor antagonist)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=63.7 mean=74.7 max=79.9 | chemical_found=4/4
+Top 4 pred events by score:
+    79.9 chem✓ | 'NH-3', KE, '"Decreases the QM compared to 3 nM T3 and impairs T3-dependent OL maturation"'
+    79.9 chem✓ | 'TBBPA', KE, '"Decreases the QM compared to 3 nM T3 and impairs T3-dependent OL maturation"'
+    75.2 chem✓ | 'T3', MIE, '"Activates TH-dependent oligodendrocyte maturation"'
+    63.7 chem✓ | 'T3', KE, '"Increases the maturation quotient (QM) compared to the solvent control"'
+
+==========================================================================================
+[RECORD 55] id=None loss=2.3042490482330322
+Gold events: 1 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=61.6 mean=68.5 max=73.2 | chemical_found=4/4
+Top 4 pred events by score:
+    73.2 chem✓ | 'DCF-AG', KE, '"Is subjected to active transport process by OATP2B1"'
+    72.4 chem✓ | 'DCF-AG', MIE, '"Forms covalent adducts within the intestinal villi"'
+    66.6 chem✓ | 'DCF-AG', AO, '"Causes cytotoxicity'
+    61.6 chem✓ | 'DCF-AG', AO, '"Induces reactive oxygen species (ROS) production"'
+
+==========================================================================================
+[RECORD 56] id=None loss=20.440868377685547
+Gold events: 0 | Pred events: 12
+0 matches similar to gold ones (exact=0, fuzzy=0), 12 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 12 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=67.8 mean=82.4 max=100.0 | chemical_found=12/12
+Top 8 pred events by score:
+   100.0 chem✓ | 'AKT1', KE, 'Phosphorylated in response to elesclomol-Cu treatment'
+    89.4 chem✓ | 'FDX1', AO, 'Promotes glycolysis, as evidenced by increased pyruvate and lactate production, enhanced extracellular acidification rates (ECAR), and upregulation of glycolytic enzymes such as GLUT1, HK2, PKM2, and LDHA'
+    88.9 chem✓ | 'FDX1', AO, 'Suppresses mitochondrial respiration, leading to reduced oxygen consumption rates (OCR) and ATP production via OXPHOS'
+    88.7 chem✓ | 'AKT1', AO, 'Sensitizes TNBC cells to cuproptosis, restoring DLAT lipoylation and oligomerization'
+    88.6 chem✓ | 'FDX1', AO, 'Impairs its interaction with DLAT, leading to defective protein lipoylation and subsequent resistance to copper-induced proteotoxic stress'
+    88.2 chem✓ | 'FDX1', MEI, 'Promotes lipoylation of DLAT and other TCA cycle enzymes'
+    78.1 chem✓ | 'AKT1', AO, 'Inhibits AKT1 sensitizes TNBC cells to cuproptosis'
+    76.8 chem✓ | 'FDX1', KE, 'Phosphorylated at Ser63 by AKT1'
+
+==========================================================================================
+[RECORD 57] id=None loss=20.874435424804688
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=51.0 mean=63.6 max=100.0 | chemical_found=0/5
+Top 5 pred events by score:
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    60.7 chem✗ | '2. "DMSO"', "KE", '"Affects cytotoxicity (normalization and analysis)"'
+    53.7 chem✗ | '3. "Chemicals"', "AO", '"Potential bioactivity (hit call)"'
+    52.3 chem✗ | 'Description: The chemicals are tested for potential bioactivity based on the hit call', WHICH IS DETERMINED BY COMPARING THE CHEMICAL CONCENTRATION-RESPONSE SERIES TO VARIOUS MODELS AND ESTABLISHING A CUTOFF THRESHOLD USING THE DMSO CONTROL. A HIT CALL OF 0.9 OR HIGHER IS CONSIDERED POSITIVE FOR BIOACTIVITY, 'while a hit call of 0 is considered negative. A hit call between 0 and 0.9 is equivocal.'
+    51.0 chem✗ | '1. "DMSO"', "MIE", '"Induces baseline for normalization (fold change calculation)"'
+
+==========================================================================================
+[RECORD 58] id=None loss=19.639490127563477
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.0 mean=71.9 max=84.5 | chemical_found=0/6
+Top 6 pred events by score:
+    84.5 chem✗ | '3. "DM (Dibutyryl cAMP)"', AO, 'Prolongs the activation of Bdnf-pIV in rat cortical neurons'
+    81.9 chem✗ | '4. "Nicardipine"', AO, 'Inhibits the prolonged activation of Bdnf-pIV in rat cortical neurons induced by DM'
+    81.9 chem✗ | '5. "GABA (Gamma-Aminobutyric acid)"', AO, 'Inhibits the prolonged activation of Bdnf-pIV in rat cortical neurons induced by DM'
+    73.1 chem✗ | '2. "DM (Dibutyryl cAMP)"', KE, 'Increases Ca2+ influx into neurons'
+    63.0 chem✗ | '1. "DM (Dibutyryl cAMP)"', MIE, 'Activates Bdnf-pIV'
+    47.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+
+==========================================================================================
+[RECORD 59] id=None loss=20.30971908569336
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 5 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=34.6 mean=36.5 max=37.8 | chemical_found=1/5
+Top 5 pred events by score:
+    37.8 chem✗ | 'Reactive Oxygen Species (ROS)', "KE", '"Increases intracellular ROS levels"'
+    37.6 chem✗ | 'DNA damage', "AO", '"Leads to apoptosis and cell death"'
+    37.1 chem✗ | "Here's an example of what the output could look like if the text contained MIE", KE, 'and AO events:'
+    35.3 chem✗ | 'Based on the provided text', IT APPEARS THAT THE ARTICLE DOES NOT CONTAIN EXPLICIT MIE (MOLECULAR INITIATED EVENTS), 'KE (Key Events)'
+    34.6 chem✓ | 'Biospray', "MIE", '"Interacts with cell membrane and disrupts its integrity"'
+
+==========================================================================================
+[RECORD 60] id=None loss=19.385032653808594
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.1 mean=70.6 max=100.0 | chemical_found=0/7
+Top 7 pred events by score:
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    85.6 chem✗ | '1. "Arsenite"', "MIE", '"Interrupts neurodevelopmental processes in human and rat neural progenitor cells"'
+    72.8 chem✗ | '3. "Arsenite"', "AO", '"Disrupts neurodevelopment in human and rat neural progenitor cells"'
+    68.7 chem✗ | '2. "Arsenite"', "KE", '"Increases reactive oxygen species in human and rat neural progenitor cells"'
+    67.9 chem✗ | '4. "As-induced reactive oxygen species"', "KE", '"Causes oxidative stress in human and rat neural progenitor cells"'
+    52.1 chem✗ | 'Please note that these events are inferred from the text and may require further confirmation. The text does not provide explicit MIE', KE, 'or AO events for other chemicals mentioned.'
+    47.1 chem✗ | '5. "As-induced oxidative stress"', "AO", '"Damages DNA'
+
+==========================================================================================
+[RECORD 61] id=None loss=20.034055709838867
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.1 mean=47.1 max=47.1 | chemical_found=0/1
+Top 1 pred events by score:
+    47.1 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY SPECIFIC MECHANISTIC EVENTS (MIE, 'KE'
+
+==========================================================================================
+[RECORD 62] id=None loss=20.77663803100586
+Gold events: 0 | Pred events: 14
+0 matches similar to gold ones (exact=0, fuzzy=0), 14 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 13 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=48.5 mean=76.6 max=100.0 | chemical_found=0/14
+Top 8 pred events by score:
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    88.3 chem✗ | '13. "Phthalates"', "AO", '"Reduced expression of the epidermal growth factor signaling system in preecl'
+    86.6 chem✗ | '4. "Phthalates"', "KE", '"Variability in urinary phthalate metabolite levels across pregnancy"'
+    84.3 chem✗ | '6. "Phthalates"', "AO", '"Effect on early developmental and evolutionary origins of gene body DNA methylation patterns in mammalian placentas"'
+    80.5 chem✗ | '3. "Phthalates"', "KE", '"Association of maternal phthalate exposure during early pregnancy and at delivery with gestational age and size at birth"'
+    80.0 chem✗ | '5. "Phthalates"', "AO", '"Influence on differential gene expression at the maternal-fetal interface in preeclampsia"'
+    79.4 chem✗ | '9. "Phthalates"', "AO", '"Correlation between trophoblast subtype-specific EGFR/ERBB4 expression and cell cycle progression and hyperplasia in complete hydatidiform moles"'
+    77.8 chem✗ | '11. "Phthalates"', "AO", '"Differential modification of genomic regions in late-onset severe preeclampsia"'
+
+==========================================================================================
+[RECORD 63] id=None loss=3.708003282546997
+Gold events: 1 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=48.3 mean=60.1 max=65.3 | chemical_found=5/5
+Top 5 pred events by score:
+    65.3 chem✓ | 'PD153035', KE, '"Inhibits EGF receptor'
+    64.8 chem✓ | 'EGF', MIE, '"Activates hNPC neurosphere differentiation"'
+    63.5 chem✓ | 'Hoechst33258', AO, '"Stains cell nuclei'
+    58.8 chem✓ | 'PP2', KE, '"Inhibits Src-kinase'
+    48.3 chem✓ | 'MeHg', KE, '"Interacts with biological systems'
+
+==========================================================================================
+[RECORD 64] id=None loss=0.8390911817550659
+Gold events: 7 | Pred events: 12
+0 matches similar to gold ones (exact=0, fuzzy=0), 12 matches not in gold, 7 matches from gold not found
+Pred grounded in chunk text (score>=50): 12 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.9 mean=65.0 max=67.6 | chemical_found=12/12
+Top 8 pred events by score:
+    67.6 chem✓ | 'bifenthrin', KE, '"Increase in yeast cell mortality rate at the logarithmic stage to over 50% at a concentration of 40µg·cm -3"'
+    67.6 chem✓ | 'cypermethrin', KE, '"Increase in yeast cell mortality rate at the logarithmic stage to over 50% at a concentration of 40µg·cm -3"'
+    67.0 chem✓ | 'deltamethrin', KE, '"Increase in yeast cell mortality rate at the logarithmic stage to over 50% at a concentration of 20µg·cm -3"'
+    65.3 chem✓ | 'bifenthrin', KE, '"Increase in yeast cell mortality rate at the stationary stage to over 50% at a concentration of 140 µg·cm -3"'
+    65.1 chem✓ | 'bifenthrin', MIE, '"Induction of yeast cell death at the logarithmic stage at a concentration of 60 µg·cm -3"'
+    65.1 chem✓ | 'cypermethrin', MIE, '"Induction of yeast cell death at the logarithmic stage at a concentration of 60 µg·cm -3"'
+    64.9 chem✓ | 'deltamethrin', KE, '"Increase in yeast cell mortality rate at the stationary stage to over 50% at a concentration of 80µg·cm -3"'
+    64.8 chem✓ | 'deltamethrin', MIE, '"Induction of yeast cell death at the logarithmic stage at a concentration of 40µg·cm -3"'
+
+==========================================================================================
+[RECORD 65] id=None loss=19.145748138427734
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 2 match, 3 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=35.3 mean=58.4 max=100.0 | chemical_found=0/5
+Top 5 pred events by score:
+   100.0 chem✗ | '1. "NPC1', NPC3, 'NPC6'
+    68.6 chem✗ | '2. "NPCZa (chemical not specified in the text)', KE", '"Impaired radial glia migration"'
+    47.2 chem✗ | '3. "Neuronal e (chemical not specified in the text)', AO", '"Altered neuronal development or function"'
+    41.3 chem✗ | 'However', IF WE MAKE AN ASSUMPTION THAT THE CONTEXT IS ABOUT THE TOXICITY OF CERTAIN CHEMICALS ON NEURAL PROGENITOR CELLS (NPCS), "we can infer potential events based on the information given. Here's an example of how such inferences might look:"
+    35.3 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN EXPLICIT MIE (MOLECULAR INITIATING EVENTS), 'KE (Key Events)'
+
+==========================================================================================
+[RECORD 66] id=None loss=19.96513557434082
+Gold events: 0 | Pred events: 21
+0 matches similar to gold ones (exact=0, fuzzy=0), 21 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 18 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=38.6 mean=43.4 max=51.4 | chemical_found=0/21
+Top 8 pred events by score:
+    51.4 chem✗ | '1. "PA"', MIE, 'Detection in urine'
+    51.4 chem✗ | '13. "mBP"', KE, 'Detection in urine'
+    51.4 chem✗ | '14. "mIBP"', KE, 'Detection in urine'
+    47.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    43.0 chem✗ | '10. "mCINP"', KE, 'Metabolism to form metabolite CINP'
+    43.0 chem✗ | '9. "mCIOP"', KE, 'Metabolism to form metabolite CIOP'
+    42.8 chem✗ | '11. "mPeP"', AO, 'Accumulation below the limit of detection (<LOD)'
+    42.8 chem✗ | '12. "mIPrP"', AO, 'Accumulation below the limit of detection (<LOD)'
+
+==========================================================================================
+[RECORD 67] id=None loss=19.700286865234375
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=53.9 mean=66.2 max=76.0 | chemical_found=0/6
+Top 6 pred events by score:
+    76.0 chem✗ | 'Norepinephrine', MIE, 'Activates a-ARs on endothelial cells'
+    73.9 chem✗ | 'Norepinephrine', AO, 'Results in decreased adrenergic neurotransmission via negative feedback'
+    67.9 chem✗ | 'Norepinephrine', KE, 'Causes endothelial cells to release nitric oxide (NO)'
+    65.3 chem✗ | 'Norepinephrine', MIE, 'Activates presynaptic a-ARs on nerve terminals'
+    60.0 chem✗ | 'Norepinephrine', KE, 'Inhibits release of norepinephrine from presynaptic nerve terminals'
+    53.9 chem✗ | 'Norepinephrine', AO, 'Results in vasodilation (relaxation of blood vessels)'
+
+==========================================================================================
+[RECORD 68] id=None loss=1.2856518030166626
+Gold events: 3 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=68.5 mean=86.2 max=100.0 | chemical_found=8/8
+Top 8 pred events by score:
+   100.0 chem✓ | 'pyrethrins (natural)', AO, 'more active poisons via dermal contacts than when ingested'
+   100.0 chem✓ | 'pyrethroids', KE, 'capability to bioconcentrate'
+   100.0 chem✓ | 'Type I pyrethroids (pyrethrin, permethrin)', AO, 'hyperexcitation, ataxia, convulsions, and paralysis'
+   100.0 chem✓ | 'Type II pyrethroids (cypermethrin)', AO, 'hypersensitivity, tremors, and paralysis'
+    78.4 chem✓ | 'pyrethroids', KE, 'bioconcentration mitigated by metabolism and subsequent elimination'
+    72.9 chem✓ | 'pyrethroids', MIE, 'high affinity to soil and sediment particulate matter, low mobility in soil, absorption to the sediments of natural water systems'
+    70.0 chem✓ | 'pyrethroids', AO, 'acute pyrethroid poisonings after dermal contact'
+    68.5 chem✓ | 'synthetic pyrethroids', AO, 'human toxicity associated with allergenic properties, particular potency when ingested'
+
+==========================================================================================
+[RECORD 69] id=None loss=20.134429931640625
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=36.8 mean=36.8 max=36.8 | chemical_found=0/1
+Top 1 pred events by score:
+    36.8 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY CLEAR MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+
+==========================================================================================
+[RECORD 70] id=None loss=20.48836898803711
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 1 match, 4 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=41.4 mean=46.2 max=52.4 | chemical_found=2/5
+Top 5 pred events by score:
+    52.4 chem✓ | 'Estrogen', MIE, 'Activation of estrogen receptor'
+    47.4 chem✓ | 'Estrogen', KE, 'Alteration of gene expression'
+    47.3 chem✗ | "Here's an example of how the information might be formatted if MIE", KE, 'and AO events were present:'
+    42.6 chem✗ | 'In the provided text', THERE ARE NO EXPLICIT MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+    41.4 chem✗ | 'Altered gene expression', AO, 'Disruption of reproductive system development'
+
+==========================================================================================
+[RECORD 71] id=None loss=21.78375244140625
+Gold events: 0 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 4 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=42.0 mean=44.5 max=48.2 | chemical_found=0/4
+Top 4 pred events by score:
+    48.2 chem✗ | '2. "Diclofenac"', "KE", '"Formation of protein adducts with critical cellular proteins"'
+    44.2 chem✗ | '1. "Diclofenac"', "MIE", '"Activation by cytochrome P450 enzymes to reactive intermediates"'
+    43.5 chem✗ | '3. "Diclofenac"', "AO", '"Liver toxicity due to protein adduct formation and oxidative stress"'
+    42.0 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN EXPLICIT DETAILS ABOUT MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+
+==========================================================================================
+[RECORD 72] id=None loss=2.355686902999878
+Gold events: 1 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.2 mean=78.0 max=88.2 | chemical_found=6/6
+Top 6 pred events by score:
+    88.2 chem✓ | 'tetrabromobisphenol A', AO, '"deregulation of a gene cluster involved in cholesterol metabolism'
+    85.5 chem✓ | 'ascorbic acid', AO, '"increasing the percentage of O4 + oligodendrocytes within the NPC5 assay by approximately 60%"'
+    83.2 chem✓ | 'deltamethrin', MIE, '"prolonged opening of voltage-gated sodium channels (VGSC) in OPCs"'
+    82.9 chem✓ | 'deltamethrin', AO, '"diminishing the number of O4 + oligodendrocytes concentration-dependently"'
+    80.9 chem✓ | 'ascorbic acid', KE, '"enhancing differentiation of primary mouse NPC-derived OPCs into OLs and promoting expression of OL lineage markers O4'
+    47.2 chem✓ | 'ascorbic acid', MIE, '"scavenging reactive oxygen species (ROS)"'
+
+==========================================================================================
+[RECORD 73] id=None loss=1.9572393894195557
+Gold events: 1 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=71.4 mean=78.5 max=85.4 | chemical_found=5/5
+Top 5 pred events by score:
+    85.4 chem✓ | 'hydroquinone', MIE, '"Two-electron oxidation to 1'
+    79.3 chem✓ | 'phenol', KE, '"Direct oxidation of hydroquinone to its semiquinone radical"'
+    78.8 chem✓ | 'hydroquinone', AO, '"Removal during the process stimulated by the presence of phenol"'
+    77.8 chem✓ | 'phenol', AO, '"Stimulation of hydroquinone metabolism by HRP or MPO"'
+    71.4 chem✓ | 'phenol', MIE, '"Enzymatic oxidation to its phenoxy radical"'
+
+==========================================================================================
+[RECORD 74] id=None loss=21.181827545166016
+Gold events: 0 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=59.5 mean=76.8 max=88.3 | chemical_found=4/4
+Top 4 pred events by score:
+    88.3 chem✓ | 'ENMs', "AO", '"Observed epigenetic alterations are associated with the development of human pathologies'
+    85.2 chem✓ | 'ENMs', "MIE", '"Exposure to ENMs modestly affect DNA methylation"'
+    74.1 chem✓ | 'ENMs', "KE", '"Exposure to ENMs suppresses the expression of DNA methylation machinery"'
+    59.5 chem✓ | 'ENMs', "KE", '"Exposure to ENMs selectively enhances transcription of most abundant Transposable Elements (TE)"'
+
+==========================================================================================
+[RECORD 75] id=None loss=1.2677607536315918
+Gold events: 2 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=75.0 mean=77.2 max=78.2 | chemical_found=7/7
+Top 7 pred events by score:
+    78.2 chem✓ | 'Bis-I (PKC inhibitor)', KE, '"Decrease in neurite area and subneurite length compared to the solvent control"'
+    78.2 chem✓ | 'narciclasine (RhoA activator)', AO, '"Decrease in neurite area and subneurite length compared to the solvent control"'
+    78.0 chem✓ | 'Bis-I (PKC inhibitor)', MIE, '"Disruption of neuronal differentiation in hNPCs"'
+    78.0 chem✓ | 'DAPT (Notch inhibitor)', MIE, '"Disruption of neuronal differentiation in hNPCs"'
+    78.0 chem✓ | 'narciclasine (RhoA activator)', MIE, '"Disruption of neuronal differentiation in hNPCs"'
+    75.0 chem✓ | 'DAPT (Notch inhibitor)', KE, '"Decrease in neuronal differentiation percentage compared to the solvent control"'
+    75.0 chem✓ | 'narciclasine (RhoA activator)', KE, '"Decrease in neuronal differentiation percentage compared to the solvent control"'
+
+==========================================================================================
+[RECORD 76] id=None loss=19.928112030029297
+Gold events: 0 | Pred events: 16
+0 matches similar to gold ones (exact=0, fuzzy=0), 16 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 15 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=46.9 mean=83.1 max=100.0 | chemical_found=0/16
+Top 8 pred events by score:
+   100.0 chem✗ | '11. "p53"', MIE, 'Regulation of iron homeostasis'
+   100.0 chem✗ | '14. "Ferredoxin reductase"', AO, 'Affects p53-dependent, 5 fluorouracil-induced apoptosis in colorectal cancer cells'
+   100.0 chem✗ | '15. "Ferredoxin reductase"', AO, 'Sensitizes cells to oxidative stress-induced apoptosis'
+   100.0 chem✗ | '2. "p53 mutant"', KE, 'Promotes cell growth and cancer cell metabolism via inhibition of AMPK activation'
+   100.0 chem✗ | '8. "AMPK"', KE, 'Phosphorylates and inhibits SREBP activity to attenuate hepatic steatosis and atherosclerosis'
+    85.0 chem✗ | '13. "p53"', MIE, 'Direct regulation of the human frataxin gene and its lack of regulation in tumor cells decreases the utilization of mitochondrial iron'
+    84.2 chem✗ | '3. "p53"', MIE, 'Regulation of energy metabolism and antioxidant function'
+    82.5 chem✗ | '9. "p53"', MIE, 'Induction of Lpin1 and regulation of fatty acid oxidation in response to nutritional stress'
+
+==========================================================================================
+[RECORD 77] id=None loss=21.49935531616211
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=41.7 mean=52.1 max=61.7 | chemical_found=0/7
+Top 7 pred events by score:
+    61.7 chem✗ | '4. "TiOz"', "MIE", '"Binding to LINE-1 ORF1"'
+    56.6 chem✗ | '2. "Cuo"', "KE", '"Inhibition of gene expression (LINE-1 ORF1 and LINE-1 ORF2)"'
+    54.6 chem✗ | '6. "TiOz"', "AO", '"Alteration of gene expression (LINE-1 5\'UTR)"'
+    52.7 chem✗ | '1. "Cuo"', "MIE", '"Binding to SINE B2"'
+    50.3 chem✗ | '5. "TiOz"', "KE", '"Inhibition of gene expression (LINE-1 ORF1)"'
+    47.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    41.7 chem✗ | '3. "Cuo"', "AO", '"Alteration of gene expression (Alu)"'
+
+==========================================================================================
+[RECORD 78] id=None loss=1.675834059715271
+Gold events: 2 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=55.8 mean=80.0 max=100.0 | chemical_found=0/5
+Top 5 pred events by score:
+   100.0 chem✗ | '1. "Glyphosate (G)"', MIE, 'Entry into cells'
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    77.5 chem✗ | '2. "Glyphosate (G)"', KE, 'Inhibition of Mitochondrial Succinate Dehydrogenase Activity'
+    66.8 chem✗ | '4. "Dig2"', AO, 'Curative Effect after Toxicity (R or BPA-Az)'
+    55.8 chem✗ | '3. "Dig2"', AO, 'Protective Effect against Toxicity (R or BPA-Az)'
+
+==========================================================================================
+[RECORD 79] id=None loss=2.841670036315918
+Gold events: 2 | Pred events: 3
+1 matches similar to gold ones (exact=0, fuzzy=1), 2 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=1.000 | P: {'chemical': 'copper ions', 'event_type': 'KE', 'description': 'induce aggregation of lipoylated proteins and mitochondrial dysfunction'}  ->  G: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Aggregation of lipoylated proteins'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=85.6 mean=91.2 max=100.0 | chemical_found=3/3
+Top 3 pred events by score:
+   100.0 chem✓ | 'copper ions', AO, 'ultimately leading to cell death'
+    88.0 chem✓ | 'copper ions', KE, 'induce aggregation of lipoylated proteins and mitochondrial dysfunction'
+    85.6 chem✓ | 'copper ions', MIE, 'excessive binding to key enzymes in the mitochondrial tricarboxylic acid (TCA) cycle, such as lipoylated dihydrolipoamide S-acetyltransferase (DLAT)'
+
+==========================================================================================
+[RECORD 80] id=None loss=1.5208135843276978
+Gold events: 2 | Pred events: 13
+0 matches similar to gold ones (exact=0, fuzzy=0), 13 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 13 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=77.2 mean=87.7 max=100.0 | chemical_found=13/13
+Top 8 pred events by score:
+   100.0 chem✓ | 'GLS2', MIE, 'depletion synergizes with copper'
+   100.0 chem✓ | 'RAS oncogene family member RAB18', MIE, 'suppresses lipophagy and promotes DLD succinylation'
+   100.0 chem✓ | 'TWIST1', MIE, 'stabilizes HK2'
+   100.0 chem✓ | 'YTH N6-methyladenosine RNA binding protein F2 (YTHDF2)', MIE, 'destabilizes LIPT1 mRNA'
+    86.9 chem✓ | 'disulfiram', KE, 'induces endoplasmic reticulum (ER) stress'
+    85.8 chem✓ | 'YTHDF2', KE, 'suppresses lipoic acid metabolism and cuproptosis'
+    84.7 chem✓ | 'GLS2', KE, 'reprograms TCA cycle and enhances radiosensitivity'
+    84.6 chem✓ | 'enzalutamide', KE, 'causes lipoylated protein aggregation and Fe-S cluster destabilization'
+
+==========================================================================================
+[RECORD 81] id=None loss=20.67559814453125
+Gold events: 0 | Pred events: 18
+0 matches similar to gold ones (exact=0, fuzzy=0), 18 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 18 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=71.2 mean=96.1 max=100.0 | chemical_found=17/18
+Top 8 pred events by score:
+   100.0 chem✓ | 'ATOX1', KE, 'Transports copper to ATP7A/B transporters in the Golgi for subsequent distribution or efflux'
+   100.0 chem✓ | 'ATP7A/B', AO, 'Confer chemoresistance in cancers through copper-dependent mechanisms and drug efflux'
+   100.0 chem✓ | 'ATP7A/B', AO, 'Dynamically relocate to export copper via lysosomal exocytosis or plasma membrane trafficking'
+   100.0 chem✓ | 'CCS', KE, 'Activates SOD1 by copper insertion'
+   100.0 chem✓ | 'CCS', KE, 'Transfers copper to MEK kinases in oncogenic signaling'
+   100.0 chem✓ | 'Copper', KE, 'Endocytosis represents an alternative pathway -CD44 mediates the internalization of Cu 2 + in macrophages'
+   100.0 chem✓ | 'Copper', KE, 'Intracellular copper distribution relies on various chaperones'
+   100.0 chem✓ | 'Copper', KE, 'Under low SLC31A1 activity, compensatory uptake occurs via SLC31A2 or SLC11A2'
+
+==========================================================================================
+[RECORD 82] id=None loss=1.9993633031845093
+Gold events: 3 | Pred events: 8
+2 matches similar to gold ones (exact=0, fuzzy=2), 6 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=1.000 | P: {'chemical': 'rotenone', 'event_type': 'KE', 'description': 'down-regulation of Calcium Reabsorption pathway (in all groups)'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Down-regulation of Calcium Reabsorption pathway'}
+  sim=0.877 | P: {'chemical': 'rotenone', 'event_type': 'KE', 'description': 'down-regulation of synapse function pathways (at 4 and 8 weeks)'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Down-regulation of synapse function/synaptogenesis'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.9 mean=74.9 max=100.0 | chemical_found=8/8
+Top 8 pred events by score:
+   100.0 chem✓ | 'rotenone', MIE, 'alters the transcriptional profile of BrainSpheres'
+    78.4 chem✓ | 'rotenone', AO, 'up-regulation of SSTR2 at 2 weeks, up-regulation of OLFM1 at 4 and 8 weeks, and up-regulation of PDE1A at 8 weeks (in neuronal populations)'
+    77.6 chem✓ | 'rotenone', KE, 'up-regulation of p53 (at 2 weeks)'
+    76.7 chem✓ | 'rotenone', AO, 'down-regulation of CNTNAP2, a neuronal gene involved in complex neurological disorders such as autism and schizophrenia (during the course of BrainSpheres maturation)'
+    72.2 chem✓ | 'rotenone', AO, 'down-regulation of NR4A2, an important player of mesencephalic dopaminergic neurons (at all time-points)'
+    71.0 chem✓ | 'rotenone', AO, 'affects neuronal populations throughout BrainSphere development, with a more pronounced effect on dopaminergic neurons'
+    62.8 chem✓ | 'rotenone', KE, 'down-regulation of Calcium Reabsorption pathway (in all groups)'
+    60.9 chem✓ | 'rotenone', KE, 'down-regulation of synapse function pathways (at 4 and 8 weeks)'
+
+==========================================================================================
+[RECORD 83] id=None loss=20.911361694335938
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=46.6 mean=83.3 max=100.0 | chemical_found=0/6
+Top 6 pred events by score:
+   100.0 chem✗ | '- Reference: Zagoura D', CANOVAS-JORDA D, 'Pistollato F'
+   100.0 chem✗ | '4. "Rotenone"', KE, 'Activation of the Nrf2 pathway in a neuronal model derived from human induced pluripotent stem cells'
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    80.3 chem✗ | '3. "Rotenone"', KE, 'Induction of apoptosis in human neuroblastoma SH-SY5Y cells'
+    73.0 chem✗ | '2. "Rotenone"', KE, 'Activation of Ca2+ signaling'
+    46.6 chem✗ | '1. "Rotenone"', MIE, 'Inhibition of mitochondrial complex I'
+
+==========================================================================================
+[RECORD 84] id=None loss=1.5443816184997559
+Gold events: 1 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=49.6 mean=60.6 max=79.4 | chemical_found=0/6
+Top 6 pred events by score:
+    79.4 chem✗ | '2. "Forskolin"', MIE, 'Stimulation of steroidogenic enzyme expression'
+    64.5 chem✗ | '4. "H295R cells"', KE, 'Increased T production'
+    62.6 chem✗ | '3. "H295R cells"', KE, 'Increased E2 production'
+    54.7 chem✗ | '1. "H295R cells"', MIE, 'Cell attachment and morphology maintenance'
+    52.9 chem✗ | '5. "H295R cells"', AO, 'Altered hormone production'
+    49.6 chem✗ | 'In this text', THE FOLLOWING MECHANISTIC INFORMATION EVENTS (MIE), 'Key Events (KE)'
+
+==========================================================================================
+[RECORD 85] id=None loss=20.052396774291992
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=51.8 mean=59.2 max=66.9 | chemical_found=5/5
+Top 5 pred events by score:
+    66.9 chem✓ | 'DCF', AO, 'Production of reactive oxygen species (ROS)'
+    64.5 chem✓ | 'DCF-AG', AO, 'Conversion to 4 9 -hydroxy diclofenac (OH-DCF)'
+    59.8 chem✓ | 'DCF-AG', KE, 'Intracellular accumulation'
+    52.9 chem✓ | 'DCF-AG', MIE, 'Activation by cells'
+    51.8 chem✓ | 'DCF-AG', KE, 'Transport across cell membrane via OATP2B1'
+
+==========================================================================================
+[RECORD 86] id=None loss=1.7174456119537354
+Gold events: 3 | Pred events: 13
+0 matches similar to gold ones (exact=0, fuzzy=0), 13 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 13 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=61.2 mean=72.9 max=84.1 | chemical_found=13/13
+Top 8 pred events by score:
+    84.1 chem✓ | 'T', AO, 'Poor sensitivity for classifying T bioactivity'
+    77.8 chem✓ | 'T', KE, 'Inhibition of T synthesis by prochloraz'
+    77.0 chem✓ | 'T', KE, 'Induction of T synthesis above guidance levels following stimulation with 10 µM forskolin'
+    76.6 chem✓ | 'E2', AO, 'Greater variability in E2 concentrations as a function of forskolin exposure'
+    76.4 chem✓ | 'E2', KE, 'Induction of E2 synthesis above guidance levels following stimulation with 10 µM forskolin'
+    76.4 chem✓ | 'T', AO, 'Greater variability in T concentrations as a function of forskolin exposure'
+    75.8 chem✓ | 'E2', AO, 'Discordance noted for butylparaben and letrozole for T biosynthesis'
+    74.7 chem✓ | 'E2', KE, 'Inhibition of E2 synthesis by prochloraz'
+
+==========================================================================================
+[RECORD 87] id=None loss=21.730121612548828
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 1 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=39.4 mean=56.1 max=81.6 | chemical_found=0/3
+Top 3 pred events by score:
+    81.6 chem✗ | '1. "2', 2'-DIALLYL-4, '4\'_ sulfonyldiphenol"'
+    47.1 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    39.4 chem✗ | '2. "Bis-O-cresol A"', "KE", '"Alters potassium channel (BPP)"'
+
+==========================================================================================
+[RECORD 88] id=None loss=1.1474778652191162
+Gold events: 5 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 5 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.6 mean=63.3 max=76.1 | chemical_found=8/8
+Top 8 pred events by score:
+    76.1 chem✓ | 'methylmercury', "MIE", '"Disturbs neural migration in hiNPCs"'
+    68.6 chem✓ | 'methylmercury', "AO", '"Affects migration of hiNPCs similarly to primary hNPCs"'
+    66.4 chem✓ | 'PP2 (SRC-kinase inhibitor)', "KE", '"Reduces migration distance of differentiating hiNPCs"'
+    65.0 chem✓ | 'narciclasine', "AO", '"Impairs migration of hiNPCs by hyperstabilizing the cytoskeleton"'
+    63.5 chem✓ | 'EGF', "KE", '"Increases migration of hiNPCs"'
+    60.7 chem✓ | 'PD153035', "KE", '"Antagonizes the effect of EGF on hiNPC migration"'
+    58.4 chem✓ | 'narciclasine', "MIE", '"Activates RhoA GTPase in hiNPCs"'
+    47.6 chem✓ | 'EGF (Epidermal Growth Factor)', "MIE", '"Activates EGFR (Epidermal Growth Factor Receptor) in hiNPCs"'
+
+==========================================================================================
+[RECORD 89] id=None loss=1.4155089855194092
+Gold events: 5 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 5 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=78.6 mean=81.2 max=86.1 | chemical_found=5/5
+Top 5 pred events by score:
+    86.1 chem✓ | 'rotenone', KE, 'induces dopaminergic-neuron selective toxicity at non-cytotoxic concentrations (1 µM)'
+    82.1 chem✓ | 'rotenone', AO, 'disrupts Ca2+ reabsorption, synaptogenesis and PPAR pathway'
+    79.9 chem✓ | 'rotenone', KE, 'causes astrocytes and other neuronal cell types toxicity at general cytotoxic concentrations (25 µM)'
+    79.3 chem✓ | 'rotenone', AO, 'potentially causes developmental neurotoxicity'
+    78.6 chem✓ | 'rotenone', MIE, 'generates reactive oxygen species (ROS) and causes mitochondrial dysfunction'
+
+==========================================================================================
+[RECORD 90] id=None loss=20.469890594482422
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=36.6 mean=55.6 max=71.9 | chemical_found=5/5
+Top 5 pred events by score:
+    71.9 chem✓ | 'T3', AO, 'Decrease in mRNA copy numbers of MBP in oligodendrocytes'
+    71.9 chem✓ | 'TBBPA', AO, 'Decrease in mRNA copy numbers of MBP in oligodendrocytes'
+    55.9 chem✓ | 'NH-3', KE, 'Inhibition of mRNA transcription of MBP in oligodendrocytes'
+    41.6 chem✓ | 'Hoecbst', MIE, 'Activation of the HOECBS sensor'
+    36.6 chem✓ | 'Hoecbst', KE, 'Increase in reactive oxygen species (ROS) production'
+
+==========================================================================================
+[RECORD 91] id=None loss=17.566436767578125
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=32.7 mean=32.7 max=32.7 | chemical_found=0/1
+Top 1 pred events by score:
+    32.7 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+
+==========================================================================================
+[RECORD 92] id=None loss=1.4489896297454834
+Gold events: 4 | Pred events: 6
+2 matches similar to gold ones (exact=0, fuzzy=2), 4 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.975 | P: {'chemical': 'UM4118', 'event_type': 'MIE', 'description': '"exhibits copper-specific ionophore activity"'}  ->  G: {'chemical': 'S767 / UM4118', 'event_type': 'MIE', 'description': 'Copper-specific ionophore activity'}
+  sim=0.926 | P: {'chemical': 'UM4118', 'event_type': 'KE', 'description': '"impaires mitochondrial respiration'}  ->  G: {'chemical': 'S767 / UM4118', 'event_type': 'KE', 'description': 'Impairment of mitochondrial respiration'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=67.5 mean=81.5 max=87.7 | chemical_found=6/6
+Top 6 pred events by score:
+    87.7 chem✓ | 'S767', MIE, '"disrupts intracellular metal homeostasis by depleting iron and elevating copper and zinc"'
+    86.3 chem✓ | 'SF3B1 mutations', AO, '"drive ABCB7 mis-splicing and downregulation'
+    83.4 chem✓ | 'UM4118', MIE, '"exhibits copper-specific ionophore activity"'
+    83.0 chem✓ | 'UM4118', KE, '"impaires mitochondrial respiration'
+    80.9 chem✓ | 'S767', KE, '"causes biosynthesis and transport of Fe-S cluster to be critical determinants of S767 sensitivity"'
+    67.5 chem✓ | 'S767', AO, '"induces cell toxicity selectively in poor-prognosis AML subtypes'
+
+==========================================================================================
+[RECORD 93] id=None loss=1.0344024896621704
+Gold events: 4 | Pred events: 10
+2 matches similar to gold ones (exact=0, fuzzy=2), 8 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 10 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.961 | P: {'chemical': '1,4-benzoquinone', 'event_type': 'KE', 'description': 'Interferes with microtubule assembly'}  ->  G: {'chemical': '1,4-Benzoquinone', 'event_type': 'KE', 'description': 'Interference with microtubule assembly'}
+  sim=0.924 | P: {'chemical': '1,4-benzoquinone', 'event_type': 'KE', 'description': 'Inhibits DNA and RNA synthesis'}  ->  G: {'chemical': '1,4-Benzoquinone', 'event_type': 'KE', 'description': 'Inhibition of DNA and RNA synthesis'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.2 mean=86.7 max=100.0 | chemical_found=10/10
+Top 8 pred events by score:
+   100.0 chem✓ | '1,4-benzoquinone', AO, 'Causes single-stranded DNA breaks'
+   100.0 chem✓ | '1,4-benzoquinone', AO, 'Inhibits cell division resulting in pyknosis of t chromosomes during metaphase with the growth of bone marrow stromal cells with lymphocyte blastogenesis and agglutination'
+   100.0 chem✓ | '1,4-benzoquinone', KE, 'Interferes with microtubule assembly'
+   100.0 chem✓ | '1,4-benzoquinone', MIE, 'Binds to DNA and protein'
+    88.8 chem✓ | '1,4-benzoquinone', KE, 'Blocks the thiol-sensitive GTP binding site on microtubules with remarkable potency'
+    86.3 chem✓ | '1,4-benzoquinone', KE, 'Inhibits DNA and RNA synthesis'
+    83.6 chem✓ | '1,4-benzoquinone', AO, 'Causes chromosomal fragmentation during cell division'
+    81.8 chem✓ | '1,4-benzoquinone', AO, 'May cause mutations, chromosomal breaks, and potentially aneuploidy'
+
+==========================================================================================
+[RECORD 94] id=None loss=20.699403762817383
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=69.3 mean=75.7 max=86.5 | chemical_found=1/7
+Top 7 pred events by score:
+    86.5 chem✓ | 'Chemical (not specified in text)', AO, '"Cytotoxicity upon chemical exposure'
+    79.8 chem✗ | 'Lead Compound', KE, '"Disruption of thyroid hormone-dependent oligodendrocyte maturation (NPC6)'
+    76.9 chem✗ | 'Lead Compound', KE, '"Disruption of oligodendrocyte differentiation (NPC5)'
+    73.8 chem✗ | 'Lead Compound', KE, '"Disturbances in neuronal differentiation (NPC3)'
+    73.1 chem✗ | 'Lead Compound', MIE, '"Disruption of radial glia cell migration (NPC2a)'
+    70.9 chem✗ | 'Lead Compound', MIE, '"Disruption of human NPC proliferation (NPC1ab)'
+    69.3 chem✗ | 'Lead Compound', KE, '"Disturbances in neurite outgrowth (NPC4)'
+
+==========================================================================================
+[RECORD 95] id=None loss=1.413988709449768
+Gold events: 5 | Pred events: 9
+0 matches similar to gold ones (exact=0, fuzzy=0), 9 matches not in gold, 5 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=61.9 mean=79.0 max=88.2 | chemical_found=8/9
+Top 8 pred events by score:
+    88.2 chem✓ | 'Iodine (Brimonidine)', "ADVERSE OUTCOME (AO)", '"Allergic contact dermatitis-redness (usually accompanied by other signs'
+    88.0 chem✓ | 'Iodine (Brimonidine)', "ADVERSE OUTCOME (AO)", '"Paradoxical erythema-redness appearing within 6 h after the application of brimonidine (can be worse than baseline)"'
+    87.4 chem✓ | 'Immune cells (e.g., perivascular inflammatory cells)', "KEY EVENT (KE)", '"Increased or modified Brimonidine-responsive ARs'
+    87.4 chem✓ | 'Iodine (Brimonidine)', "ADVERSE OUTCOME (AO)", '"Exaggerated recurrence of erythema-redness greater than baseline that occurs as therapy wears off (10-12 h post-application)"'
+    86.5 chem✓ | 'Iodine (Brimonidine)', "MECHANISM OF TOXICITY (MIE)", '"Selectively binds to -adrenergic receptors (ARs) on vascular smooth muscle'
+    84.5 chem✓ | 'Cathelicidin LL37', "KEY EVENT (KE)", '"Stimulation of the release of cytokines and other mediators that secondarily activate neurovascular changes'
+    63.6 chem✓ | 'Endothelial cells, keratinocytes, and immune cells', "KEY EVENT (KE)", '"Release of immune mediators resulting in chronic inflammation in non-transient erythema of rosacea"'
+    63.6 chem✓ | 'Pathogens, toll-like receptor-2 (TLR-2)', "KEY EVENT (KE)", '"Activation and upregulation of antimicrobial peptides (e.g.'
+
+==========================================================================================
+[RECORD 96] id=None loss=1.3468451499938965
+Gold events: 5 | Pred events: 8
+1 matches similar to gold ones (exact=0, fuzzy=1), 7 matches not in gold, 4 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.926 | P: {'chemical': 'Rotenone', 'event_type': 'MIE', 'description': 'inhibits mitochondrial Complex I of the electron transport chain'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'MIE', 'description': 'Inhibition of mitochondrial Complex I'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=71.5 mean=83.4 max=100.0 | chemical_found=8/8
+Top 8 pred events by score:
+   100.0 chem✓ | 'Rotenone', MIE, 'inhibits mitochondrial Complex I of the electron transport chain'
+    89.2 chem✓ | 'Rotenone', AO, 'produces progressive neurodegeneration of dopaminergic and non-dopaminergic neurons'
+    86.6 chem✓ | 'Rotenone', AO, 'decreases Dopamine (DA) tyrosine hydroxylase positive (TH +) neuronal cells'
+    84.9 chem✓ | 'Rotenone', AO, 'induces astrocyte reactivity, reduction of neurite length and neuronal cell number'
+    80.7 chem✓ | 'Rotenone', AO, 'affects not only the adult Central Nervous System (CNS) but also the developing brain likely through induction of oxidative stress that can trigger neuronal cell death and alteration of calcium pathways'
+    77.7 chem✓ | 'Rotenone', AO, 'has a persistent and lasting broader effect on BrainSpheres differentiation'
+    76.3 chem✓ | 'Rotenone', KE, 'activates the Keap1-Nrf2ARE pathway'
+    71.5 chem✓ | 'Rotenone', AO, 'responds with higher reactive oxygen species (ROS) production at 2 weeks of BrainSpheres maturation'
+
+==========================================================================================
+[RECORD 97] id=None loss=2.5142743587493896
+Gold events: 2 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=66.2 mean=78.2 max=86.1 | chemical_found=5/5
+Top 5 pred events by score:
+    86.1 chem✓ | 'PEPs', AO, '"Upregulates HO-1 expression only in SAEC at the 30 µg/mL dose ( p < 0.01)"'
+    82.9 chem✓ | 'MSWF', AO, '"Markedly increases HO-1 expression in both SAEC and RAW264.7 at the same dosage"'
+    78.9 chem✓ | 'CuO', AO, '"Significantly increases more than 20-fold of HO-1 expression in both THP-1 and RAW264.7 at 30 µg/mL dose compared to the control group"'
+    76.7 chem✓ | 'ENMs', KE, '"Increases the expression levels of heme oxygenase 1 (HO-1) in all three cell lines (SAEC'
+    66.2 chem✓ | 'ENMs', MIE, '"Induces production of Reactive Oxygen Species (ROS) in PEPs-treated SAEC and CuO-treated THP-1 at high dose"'
+
+==========================================================================================
+[RECORD 98] id=None loss=1.5698264837265015
+Gold events: 4 | Pred events: 9
+0 matches similar to gold ones (exact=0, fuzzy=0), 9 matches not in gold, 4 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=61.5 mean=77.7 max=88.1 | chemical_found=9/9
+Top 8 pred events by score:
+    88.1 chem✓ | 'ENMs', "AO", '"May lead to epigenetic changes that affect the genome by causing alterations in DNA methylation patterns"'
+    84.0 chem✓ | 'ENMs', "MIE", '"Causes epigenetic alterations in the target cells - macrophages and lung epithelium"'
+    84.0 chem✓ | 'ENMs', "KE", '"Alters methylation of two most abundant in mammalian genomes TEs - L1 and Alu/SINE'
+    81.5 chem✓ | 'ENMs', "KE", '"Generates oxidative stress'
+    79.6 chem✓ | 'ENMs', "AO", '"May cause loss of TEs-associated DNA methylation'
+    76.9 chem✓ | 'ENMs', "AO", '"May cause reactivation of L1 and Alu /SINEs'
+    73.0 chem✓ | 'ENMs', "AO", '"May cause hypermethylation of TEs'
+    70.6 chem✓ | 'ENMs', "KE", '"Induces inflammatory response"'
+
+==========================================================================================
+[RECORD 99] id=None loss=20.045047760009766
+Gold events: 0 | Pred events: 19
+0 matches similar to gold ones (exact=0, fuzzy=0), 19 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 19 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=56.7 mean=66.5 max=79.5 | chemical_found=19/19
+Top 8 pred events by score:
+    79.5 chem✓ | 'CuO', MIE, 'Sonication energy breaks powder agglomerates in deionized water to achieve stable monodispersed agglomerates'
+    79.5 chem✓ | 'MS-WF', MIE, 'Sonication energy breaks powder agglomerates in deionized water to achieve stable monodispersed agglomerates'
+    79.5 chem✓ | 'PEPs', MIE, 'Sonication energy breaks powder agglomerates in deionized water to achieve stable monodispersed agglomerates'
+    79.5 chem✓ | 'TiO', MIE, 'Sonication energy breaks powder agglomerates in deionized water to achieve stable monodispersed agglomerates'
+    69.4 chem✓ | 'CuO', KE, 'Increases in hydrodynamic diameter and polydispersity index due to sonication'
+    69.4 chem✓ | 'MS-WF', KE, 'Increases in hydrodynamic diameter and polydispersity index due to sonication'
+    69.4 chem✓ | 'PEPs', KE, 'Increases in hydrodynamic diameter and polydispersity index due to sonication'
+    69.4 chem✓ | 'TiO', KE, 'Increases in hydrodynamic diameter and polydispersity index due to sonication'
+
+==========================================================================================
+[RECORD 100] id=None loss=21.331981658935547
+Gold events: 0 | Pred events: 0
+0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text: no pred events to score
+
+No parsable pred events to score (model probably output garbage/truncated lines).
+
+==========================================================================================
+[RECORD 101] id=None loss=18.062057495117188
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.5 mean=47.5 max=47.5 | chemical_found=0/1
+Top 1 pred events by score:
+    47.5 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY SPECIFIC MECHANISTIC EVENTS (MIE, 'KE'
+
+==========================================================================================
+[RECORD 102] id=None loss=20.449888229370117
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=63.4 mean=71.6 max=79.0 | chemical_found=6/6
+Top 6 pred events by score:
+    79.0 chem✓ | 'Horseradish Peroxidase (HRP)', KE, "Catalyzes the metabolism of phenol to biphenols and 4,4'-diphenoquinone"
+    79.0 chem✓ | 'Human Myeloperoxidase (MPO)', KE, "Catalyzes the metabolism of phenol to biphenols and 4,4'-diphenoquinone"
+    76.2 chem✓ | 'Phenol', MIE, 'Undergoes peroxidase-dependent metabolism to biphenols'
+    68.2 chem✓ | 'Phenol', KE, "Produces 4,4'-diphenoquinone through peroxidase-dependent metabolism"
+    63.7 chem✓ | 'Phenol', KE, 'Produces 2,2 Biphenol through peroxidase-dependent metabolism'
+    63.4 chem✓ | 'Phenol', KE, 'Produces Polymeric Coupling Products through peroxidase-dependent metabolism'
+
+==========================================================================================
+[RECORD 103] id=None loss=20.891403198242188
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.3 mean=72.7 max=82.8 | chemical_found=5/5
+Top 5 pred events by score:
+    82.8 chem✓ | 'Rotenone', AO, '"Inhibits proliferation of hiNPCs in a concentration-dependent manner"'
+    81.2 chem✓ | 'Rotenone', MIE, '"Inhibits mitochondrial complex I of the electron transport chain'
+    70.8 chem✓ | 'EGF', MIE, '"Activates proliferation of hiNPCs"'
+    66.5 chem✓ | 'PD153035', KE, '"Inhibits EGFR-dependent proliferation of hiNPCs"'
+    62.3 chem✓ | 'EGFR', KE, '"Mediates EGF-dependent proliferation of hiNPCs"'
+
+==========================================================================================
+[RECORD 104] id=None loss=4.942166328430176
+Gold events: 1 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.5 mean=68.8 max=81.8 | chemical_found=6/6
+Top 6 pred events by score:
+    81.8 chem✓ | 'Brimonidine', "AO", '"causes paradoxical worsening phenomenon within hours of brimonidine application due to high concentrations of brimonidine within skin that leads to the saturation of receptors and \'spillover\' effect to other a -AR subtypes with unwanted effects (vasodilation)"'
+    70.7 chem✓ | 'Brimonidine', "MIE", '"activates a -ARs of vessels and to a lesser extent activates a -ARs"'
+    67.2 chem✓ | 'Brimonidine', "AO", '"increases local concentrations of brimonidine when skin barrier dysfunction is present"'
+    66.7 chem✓ | 'Brimonidine', "KE", '"promotes vasodilation on ARs on other tissues such as endothelium'
+    66.1 chem✓ | 'Brimonidine', "AO", '"causes worsening erythema events in some patients due to receptor desensitization and internalization'
+    60.5 chem✓ | 'Brimonidine', "KE", '"causes vasoconstriction"'
+
+==========================================================================================
+[RECORD 105] id=None loss=20.58222770690918
+Gold events: 0 | Pred events: 14
+0 matches similar to gold ones (exact=0, fuzzy=0), 14 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 14 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=40.0 mean=48.8 max=50.0 | chemical_found=12/14
+Top 8 pred events by score:
+    50.0 chem✓ | "LXR-2,2'-Diallyl-4,4'-sulfonyldiphenol", INTERACTION, 'Binding to LXR receptor'
+    50.0 chem✓ | 'LXR-Bis-O-cresol', INTERACTION, 'Binding to LXR receptor'
+    50.0 chem✓ | 'LXR-BPA', INTERACTION, 'Binding to LXR receptor'
+    50.0 chem✓ | 'LXR-BPAF', INTERACTION, 'Binding to LXR receptor'
+    50.0 chem✓ | 'LXR-BPAP', INTERACTION, 'Binding to LXR receptor'
+    50.0 chem✓ | 'LXR-BPP', INTERACTION, 'Binding to LXR receptor'
+    50.0 chem✓ | 'LXR-BPPH', INTERACTION, 'Binding to LXR receptor'
+    50.0 chem✓ | 'LXR-BPSP', INTERACTION, 'Binding to LXR receptor'
+
+==========================================================================================
+[RECORD 106] id=None loss=1.5248301029205322
+Gold events: 4 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 4 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=51.4 mean=73.0 max=86.2 | chemical_found=0/4
+Top 4 pred events by score:
+    86.2 chem✗ | 'Cupric ion (Cu+2)', MIE, '"Induces aggregation of lipoylated tricarboxylic acid (TCA) cycle enzymes"'
+    84.7 chem✗ | 'Cu+2', KE, '"Modulates antitumor immunity through effects on the tumor microenvironment"'
+    69.6 chem✗ | 'Cupric ion (Cu+2)', KE, '"Causes mitochondrial dysfunction and destabilization of iron-sulfur cluster proteins"'
+    51.4 chem✗ | 'Cupric ion (Cu+2)', AO, '"Triggers proteotoxic stress and cell death (cuproptosis)"'
+
+==========================================================================================
+[RECORD 107] id=None loss=20.1311092376709
+Gold events: 0 | Pred events: 9
+0 matches similar to gold ones (exact=0, fuzzy=0), 9 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=55.9 mean=87.7 max=100.0 | chemical_found=0/9
+Top 8 pred events by score:
+   100.0 chem✗ | '- Reference: 308. Huang Q-X', LIANG J-L, 'Chen Q-W'
+   100.0 chem✗ | '- Reference: 309. Du C', GUO X, 'Qiu X'
+   100.0 chem✗ | '- Reference: 310. Lu S', TIAN H, 'Li B'
+   100.0 chem✗ | '- Reference: 312. Bao J', WANG J, 'Chen S'
+   100.0 chem✗ | 'From the provided text', THE FOLLOWING MIE, 'KE'
+    84.5 chem✗ | '4. "Cu"', KE, 'Triggering cuproptosis-augmented chemotherapy'
+    82.1 chem✗ | '3. "Cu"', KE, 'Causing overcoming cancer chemoresistance'
+    67.0 chem✗ | '1. "Cu"', MIE, 'Induction of cuproptosis'
+
+==========================================================================================
+[RECORD 108] id=None loss=20.181787490844727
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.1 mean=47.1 max=47.1 | chemical_found=0/1
+Top 1 pred events by score:
+    47.1 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY SPECIFIC MECHANISTIC TOXICOLOGY EVENTS (MIE, 'KE'
+
+==========================================================================================
+[RECORD 109] id=None loss=1.8876103162765503
+Gold events: 6 | Pred events: 15
+0 matches similar to gold ones (exact=0, fuzzy=0), 15 matches not in gold, 6 matches from gold not found
+Pred grounded in chunk text (score>=50): 15 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.6 mean=79.4 max=100.0 | chemical_found=15/15
+Top 8 pred events by score:
+   100.0 chem✓ | 'permethrin', KE, 'Disappearance of neuritis'
+   100.0 chem✓ | 'pyrethrin', KE, 'Disappearance of neuritis'
+    85.7 chem✓ | 'permethrin', MIE, 'Appearance of intracellular vacuoles and aggregates of cells'
+    83.7 chem✓ | 'natural pyrethrin', KE, 'Aggregation of cells'
+    83.7 chem✓ | 'permethrin', KE, 'Aggregation of cells'
+    83.7 chem✓ | 'pyrethrin', KE, 'Aggregation of cells'
+    83.0 chem✓ | 'cypermethrin', KE, 'Aggregation of damaged and dying cells'
+    82.8 chem✓ | 'pyrethrin', MIE, 'Appearance of intracellular vacuoles'
+
+==========================================================================================
+[RECORD 110] id=None loss=21.89546775817871
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=48.8 mean=61.2 max=68.7 | chemical_found=5/6
+Top 6 pred events by score:
+    68.7 chem✓ | 'FK506', KE, '"Inhibits the DM-induced Bdnf eIV-IX mRNA expression by inhibiting calcineurin"'
+    66.2 chem✓ | 'MU0126', KE, '"Partially inhibits the DM-induced Bdnf eIV-IX mRNA expression by inhibiting MEK1/2"'
+    63.4 chem✓ | 'MBAPTAAM', KE, '"Represses the induction of Bdnf eIV-IX mRNA expression caused by Ca 2+ influx through L-VDCCs"'
+    61.8 chem✓ | 'MBayK8644', KE, '"Enhances the mRNA expression of Bdnf eIV-IX induced by Ca 2+ influx through L-VDCCs"'
+    58.3 chem✓ | 'DM (Dexmedetomidine)', AO, '"Induces the expression of Bdnf eIV-IX mRNA through Ca 2+ influx through L-VDCCs'
+    48.8 chem✗ | 'Ca 2+', MIE, '"Influx through L-Voltage-Dependent Calcium Channels (L-VDCCs)"'
+
+==========================================================================================
+[RECORD 111] id=None loss=2.1243133544921875
+Gold events: 1 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.0 mean=69.7 max=78.6 | chemical_found=3/4
+Top 4 pred events by score:
+    78.6 chem✓ | 'MGABA', AO, '"Reduction in DM-induced Bdnf eIV-IX mRNA expression"'
+    78.6 chem✗ | 'muscimol', AO, '"Reduction in DM-induced Bdnf eIV-IX mRNA expression"'
+    61.7 chem✓ | 'GABA', KE, '"Reduction in Bdnf eIV-IX mRNA expression leads to decreased neurite complexity and length"'
+    60.0 chem✓ | 'GABA', MIE, '"Activation of GABA receptors inhibits Bdnf eIV-IX mRNA expression"'
+
+==========================================================================================
+[RECORD 112] id=None loss=1.387226939201355
+Gold events: 5 | Pred events: 9
+0 matches similar to gold ones (exact=0, fuzzy=0), 9 matches not in gold, 5 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.0 mean=73.2 max=86.4 | chemical_found=9/9
+Top 8 pred events by score:
+    86.4 chem✓ | 'brimonidine', AO, '"increased release of vasodilatory mediators'
+    85.4 chem✓ | 'brimonidine', KE, '"saturation of a1-receptors on vascular smooth muscle'
+    81.6 chem✓ | 'brimonidine', KE, '"chronic agonism of a1-ARs'
+    75.3 chem✓ | 'brimonidine', AO, '"promotion of local vasodilation (a1-mediated) and worsening erythema"'
+    70.6 chem✓ | 'brimonidine', MIE, '"disturbance of epidermal barrier function and reduction of stratum corneum hydration"'
+    69.1 chem✓ | 'brimonidine', AO, '"promotion of NO-mediated vasodilation by acting on at least one endothelial receptor (a1-AR and other subtypes)"'
+    67.0 chem✓ | 'brimonidine', AO, '"reflexive vasodilation via vasodilatatory a1-ARs due to chronic a1-AR agonism"'
+    63.0 chem✓ | 'brimonidine', AO, '"reduced vasoconstriction (a2- and a3-mediated) by acting on presynaptic ARs of nerve terminals"'
+
+==========================================================================================
+[RECORD 113] id=None loss=1.9767639636993408
+Gold events: 2 | Pred events: 9
+2 matches similar to gold ones (exact=0, fuzzy=2), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.892 | P: {'chemical': 'CuO', 'event_type': 'KE', 'description': '"Modest hypermethylation of SINE B1 elements in RAW264.7 after exposure to virtually all ENMs"'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Hypermethylation of repetitive elements'}
+  sim=0.855 | P: {'chemical': 'PEPs', 'event_type': 'KE', 'description': '"Hypomethylation of ORF1 in SAEC cells after exposure to higher dose of PEPs"'}  ->  G: {'chemical': 'PEPs (Printer-Emitted Engineered Nanoparticles)', 'event_type': 'KE', 'description': 'Hypomethylation of LINE-1 ORF1'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=66.6 mean=73.8 max=87.1 | chemical_found=9/9
+Top 8 pred events by score:
+    87.1 chem✓ | 'CuO', KE, '"Hypermethylation of Alu elements in SAEC after exposure to higher dose of CuO"'
+    87.0 chem✓ | 'PEPs', KE, '"Hypomethylation of ORF1 in SAEC cells after exposure to higher dose of PEPs"'
+    72.8 chem✓ | 'CuO', KE, '"Weak hypomethylation in 5\'-UTR and 3\'-UTR of RAW264.7 after low dose CuO treatment"'
+    71.8 chem✓ | 'CuO', KE, '"Hypermethylation of ORF2 of THP-1 after exposure to high dose of CuO"'
+    71.2 chem✓ | 'PEPs', MIE, '"Decrease in methylation of ORF1 in SAEC cells"'
+    71.1 chem✓ | 'CuO', KE, '"Hypermethylation of 5\'-UTR'
+    69.7 chem✓ | 'CuO', KE, '"Alu hypermethylation in THP-1 after exposure to both doses of CuO"'
+    66.9 chem✓ | 'CuO', AO, '"No significant changes in methylation of SINE B2 in RAW264.7 after exposure to ENMs"'
+
+==========================================================================================
+[RECORD 114] id=None loss=21.050914764404297
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=57.8 mean=65.3 max=74.7 | chemical_found=6/6
+Top 6 pred events by score:
+    74.7 chem✓ | 'LXR β', MIE, '"Undergoes conformational changes upon interaction with various BPA analogs'
+    65.3 chem✓ | 'BPA', MIE, '"Binds to LXR β and maintains stable conformation'
+    65.3 chem✓ | 'G58', KE, '"Binds to LXR β and maintains stable conformation'
+    64.4 chem✓ | "BPA analogs (G58, BPPH, BPP, Pergafst201, BPSP, BXA, BPZ, Bis-o-cresol A, BPAF, 2,2'-Diallyl-4,4'-sulfonyldiphenol, BPAP)", KE, '"Bind to LXR β and maintain stable conformation within the binding pocket'
+    64.3 chem✓ | 'LXR β', KE, '"Experiences changes in compactness upon interaction with various BPA analogs'
+    57.8 chem✓ | 'LXR β', KE, '"Demonstrates increased residue flexibility upon interaction with various BPA analogs'
+
+==========================================================================================
+[RECORD 115] id=None loss=2.094358444213867
+Gold events: 2 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=67.7 mean=81.9 max=88.7 | chemical_found=7/8
+Top 8 pred events by score:
+    88.7 chem✗ | 'BPA analogs - LXR β complexes', AO, '"are associated with changes in the conformational dynamics of LXR β'
+    88.5 chem✓ | 'BPA', AO, '"can cross the blood-brain barrier and can also inhibit protective efflux transporters like BCRP'
+    88.3 chem✓ | 'BPA analogs', KE, '"exhibit greater predicted binding affinity for LXR β than BPA'
+    85.4 chem✓ | 'Some BPA analogs', AO, '"show positive Ames toxicity in the predictions'
+    80.1 chem✓ | 'BPA analogs', AO, '"show comparable ADME and toxicity profiles'
+    79.1 chem✓ | 'BPA', MIE, '"oral exposure disrupts the gut-liver-hormone axis"'
+    77.8 chem✓ | 'BPA', KE, '"affects multiple organs'
+    67.7 chem✓ | 'BPA', KE, '"activates Liver X receptor (LXR)'
+
+==========================================================================================
+[RECORD 116] id=None loss=21.08456802368164
+Gold events: 0 | Pred events: 20
+0 matches similar to gold ones (exact=0, fuzzy=0), 20 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 20 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=57.6 mean=78.2 max=86.6 | chemical_found=20/20
+Top 8 pred events by score:
+    86.6 chem✓ | 'calcineurin pathway', KE, '"involved in the control of DM-induced Bdnf eIV-IX mRNA expression"'
+    86.2 chem✓ | 'GABA', KE, '"reduces the increases in neurite complexity and length induced by DM"'
+    86.2 chem✓ | 'Nicardipine', KE, '"reduces the increases in neurite complexity and length induced by DM"'
+    86.2 chem✓ | 'TrkB/Fc', KE, '"reduces the increases in neurite complexity and length induced by DM"'
+    85.5 chem✓ | 'ERK/MAPK pathway', KE, '"induces the phosphorylation of CREB at Ser133"'
+    85.4 chem✓ | 'BAPTA-AM', KE, '"reduces the DM-induced increase in Bdnf eIV-IX mRNA expression"'
+    85.4 chem✓ | 'GABA', KE, '"reduces the DM-induced increase in Bdnf eIV-IX mRNA expression"'
+    85.4 chem✓ | 'Nicardipine', KE, '"reduces the DM-induced increase in Bdnf eIV-IX mRNA expression"'
+
+==========================================================================================
+[RECORD 117] id=None loss=2.210280418395996
+Gold events: 1 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=80.1 mean=83.4 max=87.0 | chemical_found=2/5
+Top 5 pred events by score:
+    87.0 chem✗ | 'nanoparticles', KE (KEY EVENT), '"Allow for controlled copper release in the tumor microenvironment"'
+    84.5 chem✓ | 'disulfiram', ME (MECHANISM OF INITIAL EVENT), '"Selectively shuttles extracellular copper into cancer cells"'
+    84.5 chem✓ | 'elesclomol', ME (MECHANISM OF INITIAL EVENT), '"Selectively shuttles extracellular copper into cancer cells"'
+    81.1 chem✗ | 'nanoparticles', KE (KEY EVENT), '"Reduce systemic toxicity"'
+    80.1 chem✗ | 'nanoparticles', KE (KEY EVENT), '"Improve tumor targeting"'
+
+==========================================================================================
+[RECORD 118] id=None loss=18.310510635375977
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.4 mean=47.4 max=47.4 | chemical_found=0/1
+Top 1 pred events by score:
+    47.4 chem✗ | 'In this text', THERE IS NO EXPLICIT MENTION OF MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+
+==========================================================================================
+[RECORD 119] id=None loss=20.818321228027344
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 2 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.1 mean=55.2 max=59.2 | chemical_found=0/3
+Top 3 pred events by score:
+    59.2 chem✗ | '1. "Nicardipine"', MIE, 'Activates promoter assay'
+    59.2 chem✗ | '2. "GABA"', MIE, 'Activates promoter assay'
+    47.1 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+
+==========================================================================================
+[RECORD 120] id=None loss=20.138113021850586
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 1 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=52.5 mean=52.5 max=52.5 | chemical_found=0/1
+Top 1 pred events by score:
+    52.5 chem✗ | 'Based on the provided text', THERE ARE NO MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+
+==========================================================================================
+[RECORD 121] id=None loss=3.9681925773620605
+Gold events: 1 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 1 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=45.9 mean=49.4 max=55.8 | chemical_found=1/3
+Top 3 pred events by score:
+    55.8 chem✓ | 'Benzene', MIE, '"Benzene is metabolized by peroxidases to form phenolic metabolites"'
+    46.5 chem✗ | 'Benzene phenolic metabolites', KE, '"Undergo oxidation and form reactive intermediates"'
+    45.9 chem✗ | 'Reactive intermediates of benzene phenolic metabolites', AO, '"Cause DNA damage'
+
+==========================================================================================
+[RECORD 122] id=None loss=19.606487274169922
+Gold events: 0 | Pred events: 9
+0 matches similar to gold ones (exact=0, fuzzy=0), 9 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=55.7 mean=77.4 max=100.0 | chemical_found=0/9
+Top 8 pred events by score:
+   100.0 chem✗ | 'Schütz E, Identification of a pharmacologically active metabolite of mycophenolic acid', AO, 'Identification of a pharmacologically active metabolite of mycophenolic acid in plasma of transplant recipients treated with mycophenolate mofetil'
+    87.4 chem✗ | 'Poirier A, Prediction of pharmacokinetic profile of valsartan in human', KE, 'Prediction of the pharmacokinetic profile of valsartan in human based on in vitro uptake transport data'
+    84.0 chem✗ | 'Sai Y, Kato Y, Estrone-3-sulfate uptake by human intestinal Caco-2 cells', AO, 'Investigation of the predominant contribution of organic anion transporting polypeptide OATP-B (OATP2B1) to apical uptake of estrone-3-sulfate by human intestinal Caco-2 cells'
+    81.3 chem✗ | 'Schmassmann A, Role of cyclooxygenase and nitric oxide synthase during gastric ulcer healing', KE, 'Examination of the role of different isoforms of cyclooxygenase and nitric oxide synthase during gastric ulcer healing'
+    79.9 chem✗ | 'Seitz S, Diclofenac glucuronide protein adduct formation', AO, 'Investigation of selective protein adduct formation of diclofenac glucuronide'
+    73.8 chem✗ | 'Osborne R, Morphine-6-glucuronide, Analgesic activity', AO, 'Demonstration of analgesic activity of morphine-6-glucuronide'
+    73.2 chem✗ | 'Scialis RJ, Diclofenac acute toxicity protection', KE, 'Investigation of the role of Multidrug Resistance Associated Protein 3 in protection against acute toxicity of Diclofenac'
+    61.1 chem✗ | 'Seitz S, Diclofenac acyl glucuronide small intestinal injury', AO, "Demonstration of diclofenac acyl glucuronide's involvement in small intestinal injury in rats"
+
+==========================================================================================
+[RECORD 123] id=None loss=19.77326202392578
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=49.5 mean=53.2 max=54.9 | chemical_found=2/5
+Top 5 pred events by score:
+    54.9 chem✗ | '(not specified)', "AO", '"Potential toxicological effects due to binding of BPA analogs to LXR β"'
+    54.1 chem✓ | 'BPA analogs', "KE", '"Binding to LXR β"'
+    54.1 chem✓ | 'BPA', "MIE", '"Binding to LXR β"'
+    53.4 chem✗ | 'Please note that the text primarily focuses on computational methods and calculations', NOT DIRECTLY ON TOXICOLOGICAL EVENTS. HOWEVER, 'the binding of BPA analogs to LXR β can be considered as a potential Key Event (KE) leading to potential Adverse Outcomes (AO)'
+    49.5 chem✗ | 'From the provided text', THE FOLLOWING MECHANISM OF INITIAL EVENTS (MIE), 'Key Events (KE)'
+
+==========================================================================================
+[RECORD 124] id=None loss=20.844655990600586
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 5 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=35.2 mean=40.3 max=48.7 | chemical_found=2/5
+Top 5 pred events by score:
+    48.7 chem✓ | 'Ripcord pM', "KE", '"Decrease in total ATP levels"'
+    40.4 chem✓ | 'Ripcord pM', "AO", '"Potential cell damage or death due to ATP depletion"'
+    39.7 chem✗ | 'The first event suggests that exposure to Ripcord pM may lead to a key event of decreased ATP levels', WHICH IS OFTEN ASSOCIATED WITH CELLULAR STRESS OR DYSFUNCTION. THE SECOND EVENT IS A POTENTIAL ADVERSE OUTCOME, 'assuming that ATP depletion in cells can lead to cell damage or death.'
+    37.5 chem✗ | 'Again', THESE ARE INFERENCES BASED ON THE INFORMATION PROVIDED, 'and they should be confirmed through further research and analysis.'
+    35.2 chem✗ | 'Based on the provided text', IT APPEARS THAT THE ARTICLE DOES NOT CONTAIN EXPLICIT MIE (MOLECULAR INITIATED EVENTS), 'KE (Key Events)'
+
+==========================================================================================
+[RECORD 125] id=None loss=1.3171132802963257
+Gold events: 4 | Pred events: 5
+1 matches similar to gold ones (exact=0, fuzzy=1), 4 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.850 | P: {'chemical': 'phthalates', 'event_type': 'AO', 'description': '"Inversely correlated to birth weight and positively associated with the methylation of LINE-1 and IGF-2 in term placenta'}  ->  G: {'chemical': 'phthalates (prenatal exposure; term placenta literature cited)', 'event_type': 'AO', 'description': 'Reduced birth weight'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=68.2 mean=79.3 max=89.1 | chemical_found=5/5
+Top 5 pred events by score:
+    89.1 chem✓ | 'phthalates', AO, '"Inversely correlated to birth weight and positively associated with the methylation of LINE-1 and IGF-2 in term placenta'
+    88.4 chem✓ | 'bisphenol A (BPA)', AO, '"Alters the methylation of imprinted genes in the mouse placenta'
+    78.4 chem✓ | 'phthalates', MIE, '"Addition of methyl groups to cytosine residues in DNA regions called CpG sites"'
+    72.3 chem✓ | 'phthalates', KE, '"DNA methylation leads to transcriptional repression"'
+    68.2 chem✓ | 'phthalates', KE, '"Alteration of placental DNA methylation leads to altered placental transcriptome"'
+
+==========================================================================================
+[RECORD 126] id=None loss=2.7085630893707275
+Gold events: 1 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 1 match, 3 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=46.3 mean=57.4 max=87.9 | chemical_found=0/4
+Top 4 pred events by score:
+    87.9 chem✗ | '3. "Rotenone"', "ADVERSE OUTCOME (AO)", '"Developmental neurotoxicity in a human brain spheroid model'
+    48.2 chem✗ | '2. "Rotenone"', "KEY EVENT (KE)", '"Disruption of neuronal development due to energy depletion and oxidative stress"'
+    47.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    46.3 chem✗ | '1. "Rotenone"', "MECHANISM OF INJURY (MIE)", '"Inhibition of the mitochondrial electron transport chain complex I'
+
+==========================================================================================
+[RECORD 127] id=None loss=1.1525295972824097
+Gold events: 10 | Pred events: 17
+4 matches similar to gold ones (exact=0, fuzzy=4), 13 matches not in gold, 6 matches from gold not found
+Pred grounded in chunk text (score>=50): 17 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.922 | P: {'chemical': 'triadimenol', 'event_type': 'KE', 'description': 'Inhibited testosterone biosynthesis in rat testis cultures'}  ->  G: {'chemical': 'Triadimefon', 'event_type': 'KE', 'description': 'inhibits testosterone biosynthesis in rat testis cultures (reported)'}
+  sim=0.903 | P: {'chemical': 'cyproconazole', 'event_type': 'KE', 'description': 'Decreased E2 in a concentration-dependent manner (borderline negative call)'}  ->  G: {'chemical': 'Cyproconazole', 'event_type': 'KE', 'description': 'decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)'}
+  sim=0.903 | P: {'chemical': 'myclobutanil', 'event_type': 'KE', 'description': 'Decreased E2 in a concentration-dependent manner (borderline negative call)'}  ->  G: {'chemical': 'Myclobutanil', 'event_type': 'KE', 'description': 'decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)'}
+  sim=0.888 | P: {'chemical': 'letrozole', 'event_type': 'KE', 'description': 'Decrease in activity at the highest tested concentration'}  ->  G: {'chemical': 'Letrozole', 'event_type': 'KE', 'description': 'decreased testosterone (T) activity at highest concentration'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=55.2 mean=75.4 max=100.0 | chemical_found=17/17
+Top 8 pred events by score:
+   100.0 chem✓ | 'danazol', KE, 'Significant induction, in opposition to the expected inhibition'
+   100.0 chem✓ | 'letrozole', KE, 'Decrease in activity at the highest tested concentration'
+   100.0 chem✓ | 'piperonyl butoxide', AO, 'Inactive in this study for reasons that are unclear'
+    86.3 chem✓ | 'triadimenol', KE, 'Inhibited testosterone biosynthesis in rat testis cultures'
+    85.3 chem✓ | 'flusilazole', KE, 'Inhibited T synthesis in murine Leydig cells'
+    80.6 chem✓ | 'ketoconazole', KE, 'Modest inhibition trend but did not recapitulate the approximate 0.6-fold change inhibition reported at the LOEC in the OECD study'
+    79.4 chem✓ | 'di(2-ethylhexyl) phthalate', KE, 'Modest induction trends in contrast to the approximate 2.5-3 fold noted in the OECD report'
+    79.4 chem✓ | 'mifepristone', KE, 'Modest induction trends in contrast to the approximate 2.5-3 fold noted in the OECD report'
+
+==========================================================================================
+[RECORD 128] id=None loss=1.3563119173049927
+Gold events: 2 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=49.5 mean=69.5 max=100.0 | chemical_found=7/8
+Top 8 pred events by score:
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MECHANISTIC EVENTS (MIE, 'KE'
+    75.7 chem✓ | 'DCF-AG', "AO", '"Inhibits SOD activity"'
+    67.6 chem✓ | 'DCF-AG', "AO", '"Induces greater cell death compared to DCF"'
+    67.3 chem✓ | 'DCF-AG', "KE", '"Time- and concentration-dependent uptake by OATP2B1"'
+    66.8 chem✓ | 'DCF-AG', "AO", '"Induces ROS production"'
+    65.4 chem✓ | 'DCF-AG', "MIE", '"Uptake by OATP2B1 transporter"'
+    63.8 chem✓ | 'DCF', "AO", '"Induces cell death"'
+    49.5 chem✓ | 'DCF-AG', "AO", '"Does not show inhibition of COX activity" (Assuming no information about COX inhibition is considered as no inhibition)'
+
+==========================================================================================
+[RECORD 129] id=None loss=20.46967887878418
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=42.3 mean=42.3 max=42.3 | chemical_found=0/1
+Top 1 pred events by score:
+    42.3 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY SPECIFIC DETAILS ABOUT MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+
+==========================================================================================
+[RECORD 130] id=None loss=22.287296295166016
+Gold events: 0 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=70.9 mean=80.2 max=84.8 | chemical_found=6/6
+Top 6 pred events by score:
+    84.8 chem✓ | 'Ambient Particulate Matter (PM and PM2.5)', "AO", '"induces hypomethylation of TEs in blood/buccal cells"'
+    84.1 chem✓ | 'Nano-silicon dioxide', "MIE", '"induces dose-dependent global genomic hypomethylation"'
+    82.5 chem✓ | 'Cadmium Telluride (CdTe)', "AO", '"induces alterations in miRNA expression"'
+    79.6 chem✓ | 'Nano-silicon dioxide', "AO", '"induces alterations in DNA methylation machinery"'
+    79.4 chem✓ | 'Cadmium Telluride (CdTe)', "KE", '"induces histone hypoacetylation"'
+    70.9 chem✓ | 'Cadmium Telluride (CdTe)', "AO", '"induces alterations in microRNAome"'
+
+==========================================================================================
+[RECORD 131] id=None loss=0.935634434223175
+Gold events: 5 | Pred events: 11
+1 matches similar to gold ones (exact=0, fuzzy=1), 10 matches not in gold, 4 matches from gold not found
+Pred grounded in chunk text (score>=50): 11 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.904 | P: {'chemical': 'Disulfiram', 'event_type': 'KE', 'description': '"targeting the NPL4 subunit of the p97 segregase to disrupt the ubiquitin-proteasome system'}  ->  G: {'chemical': 'Disulfiram', 'event_type': 'KE', 'description': 'Targeting NPL4 subunit of p97 segregase'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=72.4 mean=83.9 max=88.5 | chemical_found=11/11
+Top 8 pred events by score:
+    88.5 chem✓ | 'Disulfiram', MIE, '"binds to copper to form the metabolite bis-diethyldithiocarbamate-copper (CuET)'
+    88.0 chem✓ | 'Elesclomol', MIE, '"binds to extracellular Cu 2+ to form a complex that facilitates copper transport into tumor cells"'
+    88.0 chem✓ | 'Disulfiram-Cu complexes', AO, '"demonstrated efficacy in overcoming resistance to cisplatin'
+    86.8 chem✓ | 'Disulfiram-Cu', AO, '"induces ICD characterized by HMGB1 release'
+    86.8 chem✓ | 'Elesclomol-Cu complex', KE, '"potentially delivers copper to non-mitochondrial cuproproteins to activate non-canonical death pathways"'
+    86.5 chem✓ | 'Disulfiram', KE, '"targeting the NPL4 subunit of the p97 segregase to disrupt the ubiquitin-proteasome system'
+    85.8 chem✓ | 'Disulfiram-Cu complexes', AO, '"selectively eliminates ALDH + CSCs'
+    84.3 chem✓ | 'Elesclomol-Cu complex', KE, '"elevates ROS levels'
+
+==========================================================================================
+[RECORD 132] id=None loss=2.5037989616394043
+Gold events: 2 | Pred events: 6
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 6 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=74.0 mean=88.4 max=100.0 | chemical_found=6/6
+Top 6 pred events by score:
+   100.0 chem✓ | 'Benzene', KE, 'formation of 1,4-benzoquinone in the bone marrow'
+   100.0 chem✓ | 'Benzene', KE, 'localized phenol-dependent stimulation of hydroquinone oxidation in the bone marrow'
+   100.0 chem✓ | 'Benzene', MIE, 'hepatic conversion of benzene to phenol and hydroquinone'
+    80.9 chem✓ | 'Phenol', AO, 'competition for conjugating enzymes and co-factors with hydroquinone, raising their free concentration in the plasma and presumably the bone marrow following coadministration'
+    75.3 chem✓ | 'Benzene', AO, 'stimulation of hydroquinone metabolism in the bone marrow by MPO, leading to the formation of 1,4-benzoquinone'
+    74.0 chem✓ | 'Benzene', KE, 'selective accumulation of phenol and hydroquinone in the bone marrow'
+
+==========================================================================================
+[RECORD 133] id=None loss=0.7572441101074219
+Gold events: 4 | Pred events: 9
+0 matches similar to gold ones (exact=0, fuzzy=0), 9 matches not in gold, 4 matches from gold not found
+Pred grounded in chunk text (score>=50): 9 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=50.6 mean=66.0 max=86.9 | chemical_found=7/9
+Top 8 pred events by score:
+    86.9 chem✓ | 'CuO', AO, '"Decreases expression of DNA methylation machinery in a cell'
+    86.9 chem✗ | 'TiO2', AO, '"Decreases expression of DNA methylation machinery in a cell'
+    72.3 chem✓ | 'CuO', KE, '"Results in modest alterations in DNA methylation of LINE-1 and Alu /SINE in a cell'
+    72.3 chem✗ | 'TiO2', KE, '"Results in modest alterations in DNA methylation of LINE-1 and Alu /SINE in a cell'
+    64.6 chem✓ | 'PEPs', KE, '"Induces oxidative stress in SAEC"'
+    58.9 chem✓ | 'CuO', MIE, '"Induces oxidative stress in THP-1 cells"'
+    50.6 chem✓ | 'MS-WF (mild steel welding fumes)', AO, '"Not explicitly mentioned in the text"'
+    50.6 chem✓ | 'MS-WF (mild steel welding fumes)', KE, '"Not explicitly mentioned in the text"'
+
+==========================================================================================
+[RECORD 134] id=None loss=2.074293375015259
+Gold events: 3 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.6 mean=66.3 max=72.9 | chemical_found=8/8
+Top 8 pred events by score:
+    72.9 chem✓ | 'danazol', KE, 'Active in this study, but not in the OECD study for Testosterone (T) decrease'
+    70.5 chem✓ | 'letrozole', KE, 'Not flagged as an inhibitor of Testosterone (T)'
+    67.6 chem✓ | 'piperonyl butoxide', KE, 'Not identified as an inhibitor of Testosterone (T) decrease'
+    64.9 chem✓ | 'mifepristone', KE, 'Equivocal hit call for Testosterone (T) agonist'
+    64.8 chem✓ | 'butylparaben', MIE, 'Decrease in Testosterone (T)'
+    63.7 chem✓ | 'bisphenol A', AO, 'Identified as active for Testosterone (T) increase'
+    63.7 chem✓ | 'genistein', AO, 'Identified as active for Testosterone (T) increase'
+    62.6 chem✓ | 'danazol', AO, 'Found to be active for Testosterone (T) decrease'
+
+==========================================================================================
+[RECORD 135] id=None loss=1.9682058095932007
+Gold events: 3 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 3 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=70.3 mean=90.3 max=100.0 | chemical_found=0/7
+Top 7 pred events by score:
+   100.0 chem✗ | 'rotone', AO, 'Abnormalities in Ca reabsorption'
+   100.0 chem✗ | 'rotone', AO, 'Neurite impairment'
+   100.0 chem✗ | 'rotone', KE, 'Increase in ROS production'
+   100.0 chem✗ | 'rotone', MIE, 'Inhibition of mitochondrial complex I'
+    84.3 chem✗ | 'rotone', KE, 'Down-regulation of calcium re-absorption pathway'
+    77.2 chem✗ | 'rotone', AO, 'Modification of the PPAR pathway'
+    70.3 chem✗ | 'rotone', AO, 'Abnormalities in synaptogenesis'
+
+==========================================================================================
+[RECORD 136] id=None loss=18.752769470214844
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 5 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=39.8 mean=43.0 max=48.2 | chemical_found=0/5
+Top 5 pred events by score:
+    48.2 chem✗ | 'Neurotoxicity', "AO", '"Long-term exposure to arsenic trioxide leads to neurotoxic effects"'
+    44.2 chem✗ | 'Arsenic trioxide', "MIE", '"Arsenic trioxide is absorbed by cells"'
+    42.2 chem✗ | 'Arsenic trioxide', "KE", '"Arsenic trioxide inhibits DNA synthesis"'
+    40.4 chem✗ | 'In the provided text', THERE ARE NO MECHANISTIC INITIAL EVENTS (MIE), 'Key Events (KE)'
+    39.8 chem✗ | 'Here is an example of how the output would look if MIE', KE, 'or AO events were present:'
+
+==========================================================================================
+[RECORD 137] id=None loss=2.491370439529419
+Gold events: 1 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=56.9 mean=67.7 max=77.3 | chemical_found=4/4
+Top 4 pred events by score:
+    77.3 chem✓ | 'ENMs', MIE, '"Alters the expression of DNMT1'
+    69.5 chem✓ | 'ENMs', KE, '"Decreases the expression of DNMT1 in all tested cell lines except SAEC after exposure to high dose of CuO'
+    67.0 chem✓ | 'ENMs', KE, '"Affects the expression of DNMT3A and DNMT3B'
+    56.9 chem✓ | 'ENMs', KE, '"Affects the expression of UHRF1 in a manner less pronounced than DNMT1"'
+
+==========================================================================================
+[RECORD 138] id=None loss=19.309526443481445
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=37.1 mean=37.1 max=37.1 | chemical_found=0/1
+Top 1 pred events by score:
+    37.1 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN EXPLICIT DETAILS ABOUT MECHANISM OF INITIAL EVENT (MIE), 'Key Event (KE)'
+
+==========================================================================================
+[RECORD 139] id=None loss=20.828746795654297
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 2 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=49.2 mean=53.8 max=56.5 | chemical_found=3/3
+Top 3 pred events by score:
+    56.5 chem✓ | 'ENMs (Engineered Nanomaterials)', AO, 'Cause oxidative stress in cells, leading to increased fluorescence intensity when cells are incubated with Dihydroethidium (DHE)'
+    55.7 chem✓ | 'Dihydroethidium (DHE)', KE, 'Increases fluorescence intensity in response to superoxide, indicating oxidative stress'
+    49.2 chem✓ | '15% Hydrogen Peroxide (15% H O 4.9 mol/L)', MIE, 'Generates reactive oxygen species (superoxide) in cells'
+
+==========================================================================================
+[RECORD 140] id=None loss=0.696905791759491
+Gold events: 12 | Pred events: 10
+0 matches similar to gold ones (exact=0, fuzzy=0), 10 matches not in gold, 12 matches from gold not found
+Pred grounded in chunk text (score>=50): 10 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=64.3 mean=82.0 max=88.7 | chemical_found=10/10
+Top 8 pred events by score:
+    88.7 chem✓ | 'Bisphenol A (BPA)', "AO", '"Induces dose/time-dependent triglyceride accumulation in adipocytes and human liver cancer cells'
+    88.6 chem✓ | 'Bisphenol S, Bisphenol F, Bisphenol AF, and Bisphenol B', "KE", '"Bind to endocrine and metabolic receptors with binding affinities comparable to or even higher than BPA"'
+    87.5 chem✓ | 'BPA analogs', "MIE", '"Accumulate in biological systems with potencies comparable to or exceeding BPA itself"'
+    87.1 chem✓ | 'Bisphenol A (BPA)', "KE", '"Disrupts liver cell metabolism by inducing endoplasmic reticulum stress"'
+    84.2 chem✓ | 'Bisphenol A (BPA)', "AO", '"Causes oxidative damage to mitochondria"'
+    83.0 chem✓ | 'Bisphenol A (BPA)', "KE", '"Increases the production of reactive oxygen species"'
+    81.3 chem✓ | 'Bisphenol A (BPA)', "KE", '"Reduces the β -oxidation of fatty acids"'
+    80.9 chem✓ | 'Bisphenol A (BPA)', "MIE", '"Accumulates in biological systems"'
+
+==========================================================================================
+[RECORD 141] id=None loss=3.680475950241089
+Gold events: 1 | Pred events: 13
+1 matches similar to gold ones (exact=0, fuzzy=1), 12 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 13 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=1.000 | P: {'chemical': 'Elesclomol', 'event_type': 'AO', 'description': '"Triggers immunogenic cell death (ICD) to release damage-associated molecular patterns (DAMPs) that recruit and activate macrophages'}  ->  G: {'chemical': 'Elesclomol', 'event_type': 'AO', 'description': 'Immunogenic cell death (ICD)'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=59.3 mean=81.3 max=88.3 | chemical_found=12/13
+Top 8 pred events by score:
+    88.3 chem✓ | 'TTM (Copper chelator)', AO, '"Increased CD8 + T cell and natural killer (NK) cell infiltration'
+    88.0 chem✓ | 'Copper-based nanoparticles (e.g., CuTCPP@MOF nanodots@Mannosamine)', AO, '"Induce cuproptosis and ferroptosis in macrophages'
+    87.6 chem✓ | 'Elesclomol', AO, '"Triggers immunogenic cell death (ICD) to release damage-associated molecular patterns (DAMPs) that recruit and activate macrophages'
+    87.4 chem✓ | 'CuNG', AO, '"Induces MDSC apoptosis and shift CD4 + T cells toward Th1 phenotypes'
+    86.3 chem✓ | 'Cu-THBQ/AX', AO, '"Converts M2-like TAMs to antitumor M1 phenotypes'
+    86.3 chem✗ | 'CuO nanoparticles', KE, '"Stimulates T cell proliferation and T helper type 1 (Th1)/Th2 cytokine secretion"'
+    85.4 chem✓ | 'TTM (Copper chelator)', KE, '"Downregulates PD-L1 expression via the inhibition of the JAK/STAT and EGFR pathways"'
+    85.3 chem✓ | 'MetaCell (engineered nanoparticles)', AO, '"Induces cuproptosis and ferroptosis in tumors while evading immune detection"'
+
+==========================================================================================
+[RECORD 142] id=None loss=19.811513900756836
+Gold events: 0 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 2 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.0 mean=60.3 max=76.1 | chemical_found=0/4
+Top 4 pred events by score:
+    76.1 chem✗ | '3. "BPA"', "KE", '"Inhibits the transporter function of the blood-brain barrier" - (78) Engdahl'
+    69.1 chem✗ | '1. "BPA"', "MIE", '"Interacts with nuclear receptors" - (81) Li'
+    49.0 chem✗ | '2. "BPA"', "KE", '"Alters liver function" - (48) Usman'
+    47.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+
+==========================================================================================
+[RECORD 143] id=None loss=20.699535369873047
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=43.7 mean=65.6 max=100.0 | chemical_found=0/5
+Top 5 pred events by score:
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    69.6 chem✗ | '2. "OATP2B1"', "KEY EVENT (KE)", '"Mediation of DCF-AG uptake kinetics"'
+    66.9 chem✗ | '3. "DCF-AG"', "ADVERSE OUTCOME (AO)", '"Concentration-dependent cell death in HEK-OATP2B1 cells"'
+    47.6 chem✗ | '1. "DCF-AG"', "MECHANISM OF INTERACTION (MIE)", '"Inhibition of COX enzyme (IC50 calculation)"'
+    43.7 chem✗ | 'Additionally', THE TEXT MENTIONS A KEY EVENT (KE) RELATED TO THE PH DEPENDENCE OF DCF-AG UPTAKE KINETICS, 'but it does not specify the chemical involved in this event'
+
+==========================================================================================
+[RECORD 144] id=None loss=21.153656005859375
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=71.4 mean=74.0 max=78.2 | chemical_found=3/3
+Top 3 pred events by score:
+    78.2 chem✓ | 'diclofenac acyl glucuronide (DCF-AG)', "KINETIC EVENT (KE)", '"Has a maximal velocity (Vmax) of 17.6 pmol/min per milligram and Km of 14.3 mM"'
+    72.4 chem✓ | 'diclofenac acyl glucuronide (DCF-AG)', "MECHANISM OF INJURY (MIE)", '"Causes a 6-fold increase in reactive oxygen species production"'
+    71.4 chem✓ | 'diclofenic acyl glucuronide (DCF-AG)', "ADVERSE OUTCOME (AO)", '"Causes cytotoxicity within 1 -3 hours of exposure"'
+
+==========================================================================================
+[RECORD 145] id=None loss=20.321670532226562
+Gold events: 0 | Pred events: 1
+0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=47.2 mean=47.2 max=47.2 | chemical_found=0/1
+Top 1 pred events by score:
+    47.2 chem✗ | 'Based on the provided text', IT DOES NOT CONTAIN ANY SPECIFIC DETAILS ABOUT MECHANISTIC TOXICOLOGY EVENTS (MIE, 'KE'
+
+==========================================================================================
+[RECORD 146] id=None loss=20.79018211364746
+Gold events: 0 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=55.2 mean=67.8 max=100.0 | chemical_found=0/8
+Top 8 pred events by score:
+   100.0 chem✗ | 'Based on the provided text', THE FOLLOWING MIE, 'KE'
+    73.3 chem✗ | '5. "BPA"', AO, '"May cause human diseases"'
+    67.3 chem✗ | '7. "BPA"', AO, '"May be present in recycled plastics"'
+    67.1 chem✗ | '2. "BPA"', KE, '"Forms van der Waals'
+    60.0 chem✗ | '6. "BPA"', AO, '"May be present in foodstuffs and pose risks to public health"'
+    59.7 chem✗ | '4. "BPA"', AO, '"Predicted to have adverse (geno)toxic effects in hepatic 3D cell models"'
+    59.6 chem✗ | '3. "BPA"', AO, '"Predicted to cause neurological effects"'
+    55.2 chem✗ | '1. "BPA"', MIE, '"Interacts with LXR β through hydrogen bond formation"'
+
+==========================================================================================
+[RECORD 147] id=None loss=0.9011554718017578
+Gold events: 10 | Pred events: 8
+1 matches similar to gold ones (exact=0, fuzzy=1), 7 matches not in gold, 9 matches from gold not found
+Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.887 | P: {'chemical': 'phthalates', 'event_type': 'MIE', 'description': '"increase the production of reactive oxygen species"'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'MIE', 'description': 'Increased reactive oxygen species'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=68.6 mean=82.0 max=88.2 | chemical_found=8/8
+Top 8 pred events by score:
+    88.2 chem✓ | 'EGFR', MIE, '"induces cell cycle progression in placental trophoblasts and has been proposed as a marker for proliferation in trophoblasts"'
+    87.5 chem✓ | 'phthalates', KE, '"inhibit binding of methyl-CpG binding proteins and alter DNA methyltransferase function"'
+    87.2 chem✓ | 'EGF', MIE, '"stimulates placental growth and function'
+    85.8 chem✓ | 'phthalates', MIE, '"increase the production of reactive oxygen species"'
+    81.4 chem✓ | 'phthalates', AO, '"alteration of DNA methylation of growth-related genes in the term human placenta'
+    80.8 chem✓ | 'phthalates', AO, '"disruption of ErbB signaling pathway'
+    76.7 chem✓ | 'phthalates', AO, '"alteration of DNA methylation patterns at EGFR'
+    68.6 chem✓ | 'phthalates', AO, '"disruption of placental ErbB signaling'
+
+==========================================================================================
+[RECORD 148] id=None loss=20.369211196899414
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=57.9 mean=72.8 max=87.6 | chemical_found=7/7
+Top 7 pred events by score:
+    87.6 chem✓ | 'p53', KE, 'inhibition of glycolysis via the repression of glucose transporters (GLUTs), glycolytic enzymes such as hexokinase 2 (HK2), phosphofructokinase (PFK1), and lactate dehydrogenase A (LDHA), and HIF-1 α'
+    85.1 chem✓ | 'p53', AO, 'enhancement of Fe-S biogenesis by upregulating scaffold proteins, such as Fe-S cluster assembly enzyme (ISCU) and'
+    83.1 chem✓ | 'p53', AO, 'promotion of cuproptosis sensitivity by supporting mitochondrial respiration'
+    70.7 chem✓ | 'circFRMD4A', KE, 'inhibition of pyruvate kinase M2 (PKM2) tetramerization and enzymatic activity, redirecting glycolytic flux from lactate production to the TCA cycle and mitochondrial metabolism'
+    64.1 chem✓ | 'p53', KE, 'promotion of mitochondrial oxidative capacity through the induction of glutaminase (GLS2), aspartate transporter solute carrier family 1 member 3 (SLC1A3), SCO2, apoptosis inducing factor mitochondria associated 1 (AIFM1), and promotion of fatty acid oxidation while suppressing lipogenesis'
+    61.1 chem✓ | 'p53', KE, 'transcriptional activation of the expression of circFRMD4A, FRMD4A, glucose transporters (GLUTs), glycolytic enzymes such as hexokinase 2 (HK2), phosphofructokinase (PFK1), and lactate dehydrogenase A (LDHA), glutaminase (GLS2), aspartate transporter solute carrier family 1 member 3 (SLC1A3), SCO2, apoptosis inducing factor mitochondria associated 1 (AIFM1), Fe-S cluster assembly enzyme (ISCU), frataxin (FXN), and ferredoxin reductase (FDXR)'
+    57.9 chem✓ | 'copper', MIE, 'induction of cuproptosis through the formation of lethal lipid peroxidation'
+
+==========================================================================================
+[RECORD 149] id=None loss=19.463714599609375
+Gold events: 0 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 3 match, 2 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=44.6 mean=52.7 max=63.7 | chemical_found=0/5
+Top 5 pred events by score:
+    63.7 chem✗ | 'Qiagen AllPrep Mini Kit', MIE, 'Initiates the extraction of RNA and DNA from cells'
+    55.0 chem✗ | 'DNA concentration analysis by Nanodrop 2000', KE, 'Quantifies the amount of DNA extracted'
+    54.9 chem✗ | 'DNA integrity evaluation on 1% agarose gel', KE, 'Assesses the quality and integrity of the extracted DNA'
+    45.0 chem✗ | 'In this text', THERE ARE NO EXPLICIT MIE (MOLECULAR INITIATING EVENTS), 'KE (Key Events)'
+    44.6 chem✗ | 'Here is an example of how the text might be interpreted if it did contain MIE', KE, 'or AO events:'
+
+==========================================================================================
+[RECORD 150] id=None loss=2.6364898681640625
+Gold events: 1 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=62.6 mean=70.9 max=84.4 | chemical_found=5/7
+Top 7 pred events by score:
+    84.4 chem✓ | 'PKC', KE, '"Induction of neurite outgrowth in rat pheochromocytoma (PC-12) cells and primary rat spinal cord neurons from embryonic day 14"'
+    75.3 chem✗ | 'Notch signaling pathway', KE, '"Regulation of NPC differentiation into OPCs"'
+    72.7 chem✓ | 'Bis-I', KE, '"Inhibition of neurite growth in PC-12 cells'
+    70.4 chem✓ | 'Bis-I', AO, '"Reduction of neurite length and area in hNPCs compared to the solvent control in the NPC4 assay"'
+    66.0 chem✓ | 'PKC', MIE, '"Activation of protein kinase C (PKC) by phosphorylation of substrate molecules"'
+    64.8 chem✓ | 'BMP 2 and 7', AO, '"Negative regulation of oligodendrocyte differentiation in hNPCs and reduction of myelin gene expression in Schwann cells"'
+    62.6 chem✗ | 'Notch signaling pathway', AO, '"Decrease in the percentage of O4 cells (OLs) in hNPCs when differentiated in presence of the Notch inhibitor DAPT"'
+
+==========================================================================================
+[RECORD 151] id=None loss=2.4180006980895996
+Gold events: 1 | Pred events: 10
+1 matches similar to gold ones (exact=0, fuzzy=1), 9 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 10 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.915 | P: {'chemical': 'CuO', 'event_type': 'KE', 'description': 'Led to increased levels of cytokines (FGF-2, PDGF-BB, IL-7)'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Cytokine release (FGF-2, PDGF-BB, IL-7)'}
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.0 mean=66.9 max=100.0 | chemical_found=9/10
+Top 8 pred events by score:
+   100.0 chem✗ | 'TiO2', MIE, 'Found less toxic compared to other ENMs in the panel'
+    66.9 chem✓ | 'CuO', AO, 'Decreased the level of cytokine (EGF)'
+    66.9 chem✓ | 'MS-WF', AO, 'Decreased the level of cytokine (EGF)'
+    66.9 chem✓ | 'PEPs', AO, 'Decreased the level of cytokine (EGF)'
+    61.7 chem✓ | 'CuO', KE, 'Led to increased levels of cytokines (FGF-2, PDGF-BB, IL-7)'
+    61.7 chem✓ | 'MS-WF', KE, 'Led to increased levels of cytokines (FGF-2, PDGF-BB, IL-7)'
+    61.7 chem✓ | 'PEPs', KE, 'Led to increased levels of cytokines (FGF-2, PDGF-BB, IL-7)'
+    61.6 chem✓ | 'MS-WF', KE, 'Led to significantly elevated levels of ten cytokines (GM-CSF, fractalkine, GRO, IL-6, IL-8, MCP-1) over 88-fold when compared with the control group'
+
+==========================================================================================
+[RECORD 152] id=None loss=18.840167999267578
+Gold events: 0 | Pred events: 8
+0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 1 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=43.8 mean=86.4 max=100.0 | chemical_found=0/8
+Top 8 pred events by score:
+   100.0 chem✗ | '- Reference: Vatine', G. D., 'Shelest'
+   100.0 chem✗ | '- Reference: Wang', J. T., 'Song'
+   100.0 chem✗ | '- Reference: Yang', J., 'Wu'
+    87.3 chem✗ | '3. "RhoA"', "KE", '"Inhibits Neural Differentiation in Murine Stem Cells through Multiple Mechanisms"'
+    87.2 chem✗ | '2. "Src"', "KE", '"Controls Neuronal Migration by Regulating the Activity of FAK and Cofilin"'
+    87.1 chem✗ | '1. "MCT8"', "MIE", '"Transport of Thyroid Hormone across Brain Barriers and the Plasma Membrane"'
+    85.7 chem✗ | '4. "Notch"', "KE", '"Regulates Neurite Outgrowth in Spinal Cord Neurons"'
+    43.8 chem✗ | 'From the provided text', I HAVE IDENTIFIED SEVERAL EVENTS RELATED TO NEUROBIOLOGY AND CELL DEVELOPMENT, 'but not all of them are directly related to mechanistic toxicology. Here are the events that are relevant to mechanistic toxicology:'
+
+==========================================================================================
+[RECORD 153] id=None loss=4.9849982261657715
+Gold events: 1 | Pred events: 4
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=83.9 mean=92.8 max=100.0 | chemical_found=4/4
+Top 4 pred events by score:
+   100.0 chem✓ | 'several BPA analogs', AO (ADVERSE OUTCOME), 'raises concerns about their potential hepatotoxicity'
+   100.0 chem✓ | 'several BPA analogs', KE, 'exhibited predicted stronger binding activities to LXR β than BPA'
+    87.1 chem✓ | 'bisphenol A (BPA)', KE (KEY EVENT), 'interferes with normal liver metabolism'
+    83.9 chem✓ | 'bisphenol A (BPA)', ME (MECHANISM OF INITIATING EVENT), 'interacts with Liver X Receptor-beta (LXR β)'
+
+==========================================================================================
+[RECORD 154] id=None loss=2.239706516265869
+Gold events: 1 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 1 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=54.8 mean=65.4 max=86.8 | chemical_found=0/7
+Top 7 pred events by score:
+    86.8 chem✗ | '7. "ACTB (fw: CAGGAAGTCCCTTGCCATCC', REV: ACCAAAAGCCTTCATACATCTCA) AND MBP (FW: CAGAGC GTCCGACTATAAATCG, 'rev: GGTGGGTTTTCAGCGTCT A)"'
+    73.9 chem✗ | '2. "NH-3"', KE, '"Inhibits thyroid hormone receptor'
+    67.5 chem✗ | '3. "TBBPA"', KE, '"Interferes with hNPC differentiation'
+    59.1 chem✗ | '1. "T3"', MIE, '"Activates hNPC differentiation into oligodendrocytes"'
+    59.1 chem✗ | '6. "TBBPA"', AO, '"Inhibits oligodendrocyte maturation through unknown mechanisms"'
+    56.3 chem✗ | '5. "NH-3"', AO, '"Inhibits oligodendrocyte maturation by disrupting T3-induced hNPC differentiation"'
+    54.8 chem✗ | '4. "T3"', AO, '"Promotes oligodendrocyte maturation when present in appropriate concentrations"'
+
+==========================================================================================
+[RECORD 155] id=None loss=19.281856536865234
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=56.2 mean=68.8 max=83.9 | chemical_found=7/7
+Top 7 pred events by score:
+    83.9 chem✓ | 'Betarbet R, Sherer TB, MacKenzie G, Garcia-Osuna M, Panov AV, Greenamyre JT', MIE, '"Chronic systemic pesticide exposure"'
+    81.0 chem✓ | 'Borland MK, Trimmer PA, Rubinstein JD, Keeney PM, Mohanakumar K, Liu L, Bennett JP Jr', KE, '"Reproduction of Lewy neurites found in early stages of Parkinson\'s disease'
+    79.5 chem✓ | 'Boldyrev AA, Carpenter DO, Huentelman MJ, Peters CM, Johnson P', KE, '"Production of reactive oxygen species in excitotoxin stimulated cerebellar granule cells"'
+    64.8 chem✓ | 'Berridge MJ', MIE, '"Activation of neuronal calcium signaling"'
+    59.1 chem✓ | 'Brumback AC, Ellwood IT, Kjaerby C, Iafrati J, Robinson S, Lee AT, Patel T, Nagaraj S, Davatolhagh F, Sohal', AO, '"Abnormalities in physiology and social behavior associated with specific prefrontal neurons in autism"'
+    57.2 chem✓ | 'Brookes PS, Yoon Y, Robotham JL, Anders MW, Sheu SS', KE, '"Interaction between calcium'
+    56.2 chem✓ | 'Cabezas R, El-Bachá RS, González J, Barreto GE', AO, '"Oxidative damage by rotenone in astrocytes leading to potential neuroprotective implications"'
+
+==========================================================================================
+[RECORD 156] id=None loss=22.398855209350586
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=60.7 mean=69.3 max=100.0 | chemical_found=7/7
+Top 7 pred events by score:
+   100.0 chem✓ | 'rotenone', MIE, 'Reduction in cell viability'
+    66.5 chem✓ | 'rotenone', KE, 'Decrease in cell viability at 50 µM (33% reduction at 4 weeks, 25% less than for 2-week BrainSpheres)'
+    65.2 chem✓ | 'rotenone', KE, 'Decrease in number of viable cells at 4 weeks of differentiation (48 h exposure, not statistically significant)'
+    65.1 chem✓ | 'rotenone', KE, 'Decrease in cell viability at 10 µM (26% reduction)'
+    64.2 chem✓ | 'rotenone', AO, 'No statistically significant changes in cell viability at concentrations of 0.1, 1 and 5 µM at all 3 time points studied'
+    63.7 chem✓ | 'rotenone', KE, 'Decrease in cell viability at 50 µM (58% reduction after 24 h at 2 weeks)'
+    60.7 chem✓ | 'rotenone', KE, 'Decrease in cell viability at 50 µM (61% reduction after 48 h at 2 weeks, not statistically significant)'
+
+==========================================================================================
+[RECORD 157] id=None loss=20.4818115234375
+Gold events: 0 | Pred events: 7
+0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 7 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=31.2 mean=38.4 max=44.6 | chemical_found=0/7
+Top 7 pred events by score:
+    44.6 chem✗ | '3. "TiOz"', "KE", '"Tissue oxidation"'
+    42.6 chem✗ | '5. "Alu"', "KE", '"Integration into genomic DNA"'
+    41.2 chem✗ | '4. "Cuo"', "AO", '"Generation of reactive oxygen species"'
+    37.1 chem✗ | '1. "Cuo"', "MIE", '"Chemical uptake or absorption"'
+    36.8 chem✗ | '7. "PEP"', "AO", '"Lipid peroxidation"'
+    35.0 chem✗ | '6. "Cuo"', "AO", '"DNA damage"'
+    31.2 chem✗ | '2. "PEP"', "KE", '"Phospholipid hydrolysis"'
+
+==========================================================================================
+[RECORD 158] id=None loss=19.92263412475586
+Gold events: 0 | Pred events: 3
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 0 matches from gold not found
+Pred grounded in chunk text (score>=50): 0 match, 3 don't match
+
+Pred relevance on chunk (description score 0..100):
+  score: min=35.5 mean=40.7 max=44.3 | chemical_found=3/3
+Top 3 pred events by score:
+    44.3 chem✓ | 'norepinephrine', MIE, 'Activation of β-adrenergic receptors'
+    42.3 chem✓ | 'norepinephrine', AO, 'Induction of apoptosis in cardiac myocytes'
+    35.5 chem✓ | 'norepinephrine', KE, 'Increased intracellular Ca2+ levels'
+
+##########################################################################################
+[SUMMARY]
+Records: 158
+Total gold events: 261 | Total pred events: 1059
+Total similar-to-gold: 31 | Total not-in-gold (FP): 1028 | Total gold-not-found (FN): 230
+Total pred grounded in text: 903 match, 156 don't match (threshold=50)
+Precision≈0.029 Recall≈0.119 F1≈0.047
