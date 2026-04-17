@@ -18,7 +18,7 @@ TRAIN_CMD='python src/biomistral/BioMistralTrain.py \
   --num_train_epochs 5 \
   --per_device_train_batch_size 1 \
   --gradient_accumulation_steps 8 \
-  --learning_rate 5e-5 \
+  --learning_rate 2e-5 \
   --max_length 2048 \
   --eval_steps 50 \
   --save_steps 50 \
