@@ -1,0 +1,9 @@
+model,precision,recall,fp1,#gold_events,#pred_events,#grounded_in_text,TP,FP,FN
+BioMistral-7B (Zero-shot),0.019,0.008,0.011,261,103,87,2,101,259
+BioMistral-7B (Fine-tuned - 3 epochs),0.111,0.161,0.132,261,377,373,42,335,219
+BioMistral-7B (Fine-tuned - 5 epochs),0.147,0.215,0.174,261,381,378,56,325,205
+Mistral-7B-Instruct-v0.3 (Zero-shot),0.029,0.119,0.047,261,1059,903,31,1028,230
+Mistral-7B-Instruct-v0.3  (Fine-tuned - 5 epochs),0.148,0.211,0.174,261,372,369,55,317,206
+Llama-3.1-8B-Instruct (Zero-shot),0.017,0.077,0.028,261,1184,1068,20,1164,241
+Llama-3.1-8B-Instruct (Fine-tuned - 1.56 epochs),0.100,0.195,0.133,261,508,508,51,457,210
+Llama-3.1-8B-Instruct (Fine-tuned - 5 epochs),0.160,0.199,0.177,261,325,324,52,273,209
