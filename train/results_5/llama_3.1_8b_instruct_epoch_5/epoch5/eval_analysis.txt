@@ -653,8 +653,11 @@ Top 1 pred events by score:
 ==========================================================================================
 [RECORD 54] id=None loss=0.9302698373794556
 Gold events: 4 | Pred events: 1
-0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 4 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 0 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.911 | P: {'chemical': 'TBBPA', 'event_type': 'KE', 'description': 'Impairment of T3-dependent OL maturation'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=74.5 mean=74.5 max=74.5 | chemical_found=1/1
@@ -1041,13 +1044,11 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 92] id=None loss=0.5563662648200989
 Gold events: 4 | Pred events: 3
-3 matches similar to gold ones (exact=0, fuzzy=3), 0 matches not in gold, 1 matches from gold not found
+3 matches similar to gold ones (exact=2, fuzzy=1), 0 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
   sim=1.000 | P: {'chemical': 'UM4118', 'event_type': 'KE', 'description': 'DLAT aggregation'}  ->  G: {'chemical': 'S767 / UM4118', 'event_type': 'KE', 'description': 'Induction of DLAT aggregation'}
-  sim=1.000 | P: {'chemical': 'UM4118', 'event_type': 'KE', 'description': 'Impairment of mitochondrial respiration'}  ->  G: {'chemical': 'S767 / UM4118', 'event_type': 'KE', 'description': 'Impairment of mitochondrial respiration'}
-  sim=1.000 | P: {'chemical': 'UM4118', 'event_type': 'MIE', 'description': 'Copper-specific ionophore activity'}  ->  G: {'chemical': 'S767 / UM4118', 'event_type': 'MIE', 'description': 'Copper-specific ionophore activity'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=76.1 mean=92.0 max=100.0 | chemical_found=3/3
@@ -1132,8 +1133,12 @@ Top 8 pred events by score:
 ==========================================================================================
 [RECORD 97] id=None loss=2.104299545288086
 Gold events: 2 | Pred events: 3
-0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 2 matches from gold not found
+2 matches similar to gold ones (exact=0, fuzzy=2), 1 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.863 | P: {'chemical': 'Copper oxide (CuO)', 'event_type': 'KE', 'description': 'Increased HO-1 expression'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Upregulation of HO-1 expression'}
+  sim=0.863 | P: {'chemical': 'Polyethyleneimine-coated silver nanoparticles (PEPs)', 'event_type': 'KE', 'description': 'Increased HO-1 expression'}  ->  G: {'chemical': 'PEPs (Printer-Emitted Engineered Nanoparticles)', 'event_type': 'KE', 'description': 'Upregulation of HO-1 expression'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=100.0 mean=100.0 max=100.0 | chemical_found=2/3
@@ -1586,8 +1591,11 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 137] id=None loss=2.010044813156128
 Gold events: 1 | Pred events: 1
-0 matches similar to gold ones (exact=0, fuzzy=0), 1 matches not in gold, 1 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 0 matches not in gold, 0 matches from gold not found
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.922 | P: {'chemical': 'Copper oxide (CuO)', 'event_type': 'KE', 'description': 'Increased DNMT1 expression in SAEC at high dose'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Increased expression of DNMT1'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=63.5 mean=63.5 max=63.5 | chemical_found=1/1
@@ -1816,6 +1824,6 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 [SUMMARY]
 Records: 158
 Total gold events: 261 | Total pred events: 325
-Total similar-to-gold: 52 | Total not-in-gold (FP): 273 | Total gold-not-found (FN): 209
+Total similar-to-gold: 56 | Total not-in-gold (FP): 269 | Total gold-not-found (FN): 205
 Total pred grounded in text: 324 match, 1 don't match (threshold=50)
-Precision≈0.160 Recall≈0.199 F1≈0.177
+Precision≈0.172 Recall≈0.215 F1≈0.191

@@ -13,7 +13,10 @@ tde_log.txt
 test_data_old/
 stuff/
 train/results_*/outputs
+train/results_*/full_analysis
 train/results_*/*/outputs
+train/results_*/*/full_analysis
 train/results_*/*/*/outputs
+train/results_*/*/*/full_analysis
 train/results_*/*.json*
 train/results_*/*/*.json*

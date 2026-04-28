@@ -20,9 +20,10 @@ DIVIDED_MD_DIR = PREPROCESSING_OUTPUT_DIR / "divided_markdown" # to remove, get 
 TRAIN_TEST_BASE_DIR = Path("train") # command line arg
 FINAL_JSON_TRAIN = TRAIN_TEST_BASE_DIR / "train.jsonl"
 FINAL_JSON_TEST = TRAIN_TEST_BASE_DIR / "test.jsonl"
-EVAL_RESULTS_BASE_DIR = Path("train/results_5/llama_3.1_8b_instruct_epoch_5/epoch5") # command line arg
+EVAL_RESULTS_BASE_DIR = Path("train/results_5/mistral_7b_instruct_epoch_5/") # command line arg
 EVAL_RESULTS_JSONL = EVAL_RESULTS_BASE_DIR / "eval_preds.jsonl"
 EVAL_ANALYSIS_RESULT = EVAL_RESULTS_BASE_DIR / "eval_analysis.txt"
+EVAL_RESULTS_FULL_ANALYSIS_DIR = EVAL_RESULTS_BASE_DIR / "full_analysis"
 RAG_INDEX_PATH = "rag/aop_rag_index.json"
 
 TOKENIZER = AutoTokenizer.from_pretrained("BioMistral/BioMistral-7B", use_fast=True)
@@ -74,7 +75,7 @@ def check_token_lengths(
         for idx, n in over_limit:
             print(f"    example {idx}: {n} tokens (+{n - max_tokens} over)")
 
-def test(do_scoring=False, do_dataset=False, do_eval_analysis=True):
+def test(do_scoring=False, do_dataset=True, do_eval_analysis=False):
   from event_scorer_dataset import PredEvaluator, EventScorer, DatasetBuilder
   if do_scoring:
         with EventScorer(json_files_dir=DIVIDED_MD_DIR, labels_dir=LABELS_DIR, output_dir=SCORED_EVENTS_DIR) as scorer:
@@ -90,7 +91,7 @@ def test(do_scoring=False, do_dataset=False, do_eval_analysis=True):
           )
       
   if do_eval_analysis:
-      with PredEvaluator(EVAL_RESULTS_JSONL, output_path=EVAL_ANALYSIS_RESULT) as evaluator:
+      with PredEvaluator(EVAL_RESULTS_JSONL, output_path=EVAL_ANALYSIS_RESULT, full_eval_analysis_folder_path=EVAL_RESULTS_FULL_ANALYSIS_DIR) as evaluator:
             evaluator.analyze_eval_jsonl()
 
 

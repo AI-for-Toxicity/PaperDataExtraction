@@ -1,0 +1,415 @@
+{
+  "seed": 42,
+  "test_ratio": 0.15,
+  "empty_ratio": 1.0,
+  "train": {
+    "n_papers": 85,
+    "n_positive_examples": 510,
+    "n_total_examples": 1020,
+    "papers": [
+      {
+        "id": "paper_0001_events",
+        "filename": "paper_0001_events.json"
+      },
+      {
+        "id": "paper_0003_events",
+        "filename": "paper_0003_events.json"
+      },
+      {
+        "id": "paper_0004_events",
+        "filename": "paper_0004_events.json"
+      },
+      {
+        "id": "paper_0005_events",
+        "filename": "paper_0005_events.json"
+      },
+      {
+        "id": "paper_0006_events",
+        "filename": "paper_0006_events.json"
+      },
+      {
+        "id": "paper_0008_events",
+        "filename": "paper_0008_events.json"
+      },
+      {
+        "id": "paper_0009_events",
+        "filename": "paper_0009_events.json"
+      },
+      {
+        "id": "paper_0010_events",
+        "filename": "paper_0010_events.json"
+      },
+      {
+        "id": "paper_0018_events",
+        "filename": "paper_0018_events.json"
+      },
+      {
+        "id": "paper_0021_events",
+        "filename": "paper_0021_events.json"
+      },
+      {
+        "id": "paper_0022_events",
+        "filename": "paper_0022_events.json"
+      },
+      {
+        "id": "paper_0083_events",
+        "filename": "paper_0083_events.json"
+      },
+      {
+        "id": "paper_0087_events",
+        "filename": "paper_0087_events.json"
+      },
+      {
+        "id": "paper_0089_events",
+        "filename": "paper_0089_events.json"
+      },
+      {
+        "id": "paper_0090_events",
+        "filename": "paper_0090_events.json"
+      },
+      {
+        "id": "paper_0174_events",
+        "filename": "paper_0174_events.json"
+      },
+      {
+        "id": "paper_0176_events",
+        "filename": "paper_0176_events.json"
+      },
+      {
+        "id": "paper_0178_events",
+        "filename": "paper_0178_events.json"
+      },
+      {
+        "id": "paper_0181_events",
+        "filename": "paper_0181_events.json"
+      },
+      {
+        "id": "paper_0182_events",
+        "filename": "paper_0182_events.json"
+      },
+      {
+        "id": "paper_1005_events",
+        "filename": "paper_1005_events.json"
+      },
+      {
+        "id": "paper_1026_events",
+        "filename": "paper_1026_events.json"
+      },
+      {
+        "id": "paper_1051_events",
+        "filename": "paper_1051_events.json"
+      },
+      {
+        "id": "paper_1059_events",
+        "filename": "paper_1059_events.json"
+      },
+      {
+        "id": "paper_1087_events",
+        "filename": "paper_1087_events.json"
+      },
+      {
+        "id": "paper_1089_events",
+        "filename": "paper_1089_events.json"
+      },
+      {
+        "id": "paper_1102_events",
+        "filename": "paper_1102_events.json"
+      },
+      {
+        "id": "paper_1110_events",
+        "filename": "paper_1110_events.json"
+      },
+      {
+        "id": "paper_1156_events",
+        "filename": "paper_1156_events.json"
+      },
+      {
+        "id": "paper_1171_events",
+        "filename": "paper_1171_events.json"
+      },
+      {
+        "id": "paper_1201_events",
+        "filename": "paper_1201_events.json"
+      },
+      {
+        "id": "paper_1205_events",
+        "filename": "paper_1205_events.json"
+      },
+      {
+        "id": "paper_1223_events",
+        "filename": "paper_1223_events.json"
+      },
+      {
+        "id": "paper_1232_events",
+        "filename": "paper_1232_events.json"
+      },
+      {
+        "id": "paper_1238_events",
+        "filename": "paper_1238_events.json"
+      },
+      {
+        "id": "paper_1253_events",
+        "filename": "paper_1253_events.json"
+      },
+      {
+        "id": "paper_1269_events",
+        "filename": "paper_1269_events.json"
+      },
+      {
+        "id": "paper_2001_events",
+        "filename": "paper_2001_events.json"
+      },
+      {
+        "id": "paper_2002_events",
+        "filename": "paper_2002_events.json"
+      },
+      {
+        "id": "paper_2003_events",
+        "filename": "paper_2003_events.json"
+      },
+      {
+        "id": "paper_2004_events",
+        "filename": "paper_2004_events.json"
+      },
+      {
+        "id": "paper_2005_events",
+        "filename": "paper_2005_events.json"
+      },
+      {
+        "id": "paper_2006_events",
+        "filename": "paper_2006_events.json"
+      },
+      {
+        "id": "paper_2007_events",
+        "filename": "paper_2007_events.json"
+      },
+      {
+        "id": "paper_2008_events",
+        "filename": "paper_2008_events.json"
+      },
+      {
+        "id": "paper_2009_events",
+        "filename": "paper_2009_events.json"
+      },
+      {
+        "id": "paper_2013_events",
+        "filename": "paper_2013_events.json"
+      },
+      {
+        "id": "paper_2014_events",
+        "filename": "paper_2014_events.json"
+      },
+      {
+        "id": "paper_2015_events",
+        "filename": "paper_2015_events.json"
+      },
+      {
+        "id": "paper_2016_events",
+        "filename": "paper_2016_events.json"
+      },
+      {
+        "id": "paper_2017_events",
+        "filename": "paper_2017_events.json"
+      },
+      {
+        "id": "paper_2018_events",
+        "filename": "paper_2018_events.json"
+      },
+      {
+        "id": "paper_2020_events",
+        "filename": "paper_2020_events.json"
+      },
+      {
+        "id": "paper_3002_events",
+        "filename": "paper_3002_events.json"
+      },
+      {
+        "id": "paper_3004_events",
+        "filename": "paper_3004_events.json"
+      },
+      {
+        "id": "paper_3005_events",
+        "filename": "paper_3005_events.json"
+      },
+      {
+        "id": "paper_3006_events",
+        "filename": "paper_3006_events.json"
+      },
+      {
+        "id": "paper_3007_events",
+        "filename": "paper_3007_events.json"
+      },
+      {
+        "id": "paper_3008_events",
+        "filename": "paper_3008_events.json"
+      },
+      {
+        "id": "paper_3009_events",
+        "filename": "paper_3009_events.json"
+      },
+      {
+        "id": "paper_3010_events",
+        "filename": "paper_3010_events.json"
+      },
+      {
+        "id": "paper_3011_events",
+        "filename": "paper_3011_events.json"
+      },
+      {
+        "id": "paper_3012_events",
+        "filename": "paper_3012_events.json"
+      },
+      {
+        "id": "paper_3014_events",
+        "filename": "paper_3014_events.json"
+      },
+      {
+        "id": "paper_3016_events",
+        "filename": "paper_3016_events.json"
+      },
+      {
+        "id": "paper_3017_events",
+        "filename": "paper_3017_events.json"
+      },
+      {
+        "id": "paper_3018_events",
+        "filename": "paper_3018_events.json"
+      },
+      {
+        "id": "paper_3019_events",
+        "filename": "paper_3019_events.json"
+      },
+      {
+        "id": "paper_3021_events",
+        "filename": "paper_3021_events.json"
+      },
+      {
+        "id": "paper_3022_events",
+        "filename": "paper_3022_events.json"
+      },
+      {
+        "id": "paper_3023_events",
+        "filename": "paper_3023_events.json"
+      },
+      {
+        "id": "paper_3024_events",
+        "filename": "paper_3024_events.json"
+      },
+      {
+        "id": "paper_3025_events",
+        "filename": "paper_3025_events.json"
+      },
+      {
+        "id": "paper_3026_events",
+        "filename": "paper_3026_events.json"
+      },
+      {
+        "id": "paper_3027_events",
+        "filename": "paper_3027_events.json"
+      },
+      {
+        "id": "paper_3028_events",
+        "filename": "paper_3028_events.json"
+      },
+      {
+        "id": "paper_3029_events",
+        "filename": "paper_3029_events.json"
+      },
+      {
+        "id": "paper_3032_events",
+        "filename": "paper_3032_events.json"
+      },
+      {
+        "id": "paper_3034_events",
+        "filename": "paper_3034_events.json"
+      },
+      {
+        "id": "paper_3035_events",
+        "filename": "paper_3035_events.json"
+      },
+      {
+        "id": "paper_3036_events",
+        "filename": "paper_3036_events.json"
+      },
+      {
+        "id": "paper_3037_events",
+        "filename": "paper_3037_events.json"
+      },
+      {
+        "id": "paper_3038_events",
+        "filename": "paper_3038_events.json"
+      },
+      {
+        "id": "paper_3039_events",
+        "filename": "paper_3039_events.json"
+      },
+      {
+        "id": "paper_3040_events",
+        "filename": "paper_3040_events.json"
+      }
+    ]
+  },
+  "test": {
+    "n_papers": 14,
+    "n_positive_examples": 79,
+    "n_total_examples": 158,
+    "papers": [
+      {
+        "id": "paper_0002_events",
+        "filename": "paper_0002_events.json"
+      },
+      {
+        "id": "paper_0012_events",
+        "filename": "paper_0012_events.json"
+      },
+      {
+        "id": "paper_0015_events",
+        "filename": "paper_0015_events.json"
+      },
+      {
+        "id": "paper_0085_events",
+        "filename": "paper_0085_events.json"
+      },
+      {
+        "id": "paper_1036_events",
+        "filename": "paper_1036_events.json"
+      },
+      {
+        "id": "paper_1121_events",
+        "filename": "paper_1121_events.json"
+      },
+      {
+        "id": "paper_2012_events",
+        "filename": "paper_2012_events.json"
+      },
+      {
+        "id": "paper_3001_events",
+        "filename": "paper_3001_events.json"
+      },
+      {
+        "id": "paper_3003_events",
+        "filename": "paper_3003_events.json"
+      },
+      {
+        "id": "paper_3013_events",
+        "filename": "paper_3013_events.json"
+      },
+      {
+        "id": "paper_3015_events",
+        "filename": "paper_3015_events.json"
+      },
+      {
+        "id": "paper_3020_events",
+        "filename": "paper_3020_events.json"
+      },
+      {
+        "id": "paper_3030_events",
+        "filename": "paper_3030_events.json"
+      },
+      {
+        "id": "paper_3031_events",
+        "filename": "paper_3031_events.json"
+      }
+    ]
+  }
+}

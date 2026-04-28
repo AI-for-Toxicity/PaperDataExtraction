@@ -433,7 +433,7 @@ Gold events: 6 | Pred events: 7
 Pred grounded in chunk text (score>=50): 7 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.899 | P: {'chemical': 'GTSM', 'event_type': 'AO', 'description': 'Selective killing of cancer cells with high ROS/low GSH'}  ->  G: {'chemical': 'Glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)', 'event_type': 'AO', 'description': 'Selective killing of cancer cells'}
+  sim=1.000 | P: {'chemical': 'GTSM', 'event_type': 'AO', 'description': 'Selective killing of cancer cells with high ROS/low GSH'}  ->  G: {'chemical': 'Glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)', 'event_type': 'AO', 'description': 'Selective killing of cancer cells'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=59.8 mean=80.6 max=100.0 | chemical_found=7/7
@@ -660,11 +660,12 @@ Top 1 pred events by score:
 ==========================================================================================
 [RECORD 54] id=None loss=1.2192282676696777
 Gold events: 4 | Pred events: 2
-1 matches similar to gold ones (exact=0, fuzzy=1), 1 matches not in gold, 3 matches from gold not found
+2 matches similar to gold ones (exact=0, fuzzy=2), 0 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
   sim=0.911 | P: {'chemical': 'NH-3', 'event_type': 'KE', 'description': 'Impairment of T3-dependent OL maturation'}  ->  G: {'chemical': 'NH-3 (Thyroid hormone receptor antagonist)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
+  sim=0.911 | P: {'chemical': 'TBBPA', 'event_type': 'KE', 'description': 'Impairment of T3-dependent OL maturation'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=74.5 mean=74.5 max=74.5 | chemical_found=2/2
@@ -1816,7 +1817,7 @@ Gold events: 1 | Pred events: 2
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.924 | P: {'chemical': 'Bisindolylmaleimide 1 (Bis-I)', 'event_type': 'MIE', 'description': 'Protein kinase C inhibition'}  ->  G: {'chemical': 'bisindolylmaleimide I (Bis-I)', 'event_type': 'MIE', 'description': 'PKC inhibition'}
+  sim=0.938 | P: {'chemical': 'Bisindolylmaleimide 1 (Bis-I)', 'event_type': 'MIE', 'description': 'Protein kinase C inhibition'}  ->  G: {'chemical': 'bisindolylmaleimide I (Bis-I)', 'event_type': 'MIE', 'description': 'PKC inhibition'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=64.8 mean=82.4 max=100.0 | chemical_found=2/2
@@ -1912,6 +1913,6 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 [SUMMARY]
 Records: 158
 Total gold events: 261 | Total pred events: 372
-Total similar-to-gold: 55 | Total not-in-gold (FP): 317 | Total gold-not-found (FN): 206
+Total similar-to-gold: 56 | Total not-in-gold (FP): 316 | Total gold-not-found (FN): 205
 Total pred grounded in text: 369 match, 3 don't match (threshold=50)
-Precision≈0.148 Recall≈0.211 F1≈0.174
+Precision≈0.151 Recall≈0.215 F1≈0.177

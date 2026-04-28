@@ -154,9 +154,10 @@ class PredEvaluator:
     """
     Helper class to analyze eval results in a structured way.
     """
-    def __init__(self, eval_jsonl_path: str | Path, output_path: str | Path) -> None:
+    def __init__(self, eval_jsonl_path: str | Path, output_path: str | Path, full_eval_analysis_folder_path: str | Path) -> None:
         self.eval_jsonl_path = Path(eval_jsonl_path)
         self.output_path = Path(output_path)
+        self.full_eval_analysis_folder_path = Path(full_eval_analysis_folder_path)
         self.instruction_prefix = PROMPT_INSTRUCTIONS
 
     def __enter__(self):
@@ -215,6 +216,41 @@ class PredEvaluator:
 
         return deduped
 
+    @staticmethod
+    def _chemical_variants(chem: str) -> list[str]:
+        """
+        Return all normalized name variants for a chemical string.
+        Handles parenthetical abbreviations and slash separators:
+          'Diclofenac acyl glucuronide (DCF-AG)' -> ['diclofenac acyl glucuronide (dcf-ag)', 'diclofenac acyl glucuronide', 'dcf-ag']
+          'Roundup / glyphosate' -> ['roundup / glyphosate', 'roundup', 'glyphosate']
+        """
+        chem = (chem or "").strip()
+        if not chem:
+            return []
+
+        variants: set[str] = {norm(chem)}
+
+        if "(" in chem and chem.endswith(")"):
+            last_paren = chem.rfind("(")
+            base = chem[:last_paren].strip()
+            abbr = chem[last_paren + 1:-1].strip()
+            if base:
+                variants.add(norm(base))
+            if abbr:
+                variants.add(norm(abbr))
+
+        if " / " in chem:
+            for part in chem.split(" / "):
+                if part.strip():
+                    variants.add(norm(part.strip()))
+
+        return list(variants)
+
+    @classmethod
+    def _chemicals_match(cls, chem_a: str, chem_b: str) -> bool:
+        """True if any normalized variant of chem_a matches any normalized variant of chem_b."""
+        return bool(set(cls._chemical_variants(chem_a)) & set(cls._chemical_variants(chem_b)))
+
     def event_similarity(self, pred_ev: dict, gold_ev: dict) -> float:
         """
         Returns a similarity score 0..1.
@@ -231,7 +267,8 @@ class PredEvaluator:
         desc_p = pred_ev.get("description", "")
         desc_g = gold_ev.get("description", "")
 
-        chem_sim = fuzzy_score(chem_p, chem_g)  # 0..1
+        # Exact variant match gives full chemical score; otherwise fall back to fuzzy
+        chem_sim = 1.0 if self._chemicals_match(chem_p, chem_g) else fuzzy_score(chem_p, chem_g)
         desc_sim = fuzzy_score(desc_p, desc_g)  # 0..1
 
         # Description matters more than chemical string casing/variants
@@ -281,19 +318,31 @@ class PredEvaluator:
         - gold_not_found: count of gold events not matched by any pred
 
         Uses greedy one-to-one matching on best similarity.
+        Exact match uses chemical variant normalization (_chemicals_match) so that
+        e.g. 'Roundup (glyphosate)' and 'Roundup' are treated as the same chemical.
         """
-        # Exact match shortcut
-        gold_keys = {(norm(e["chemical"]), e["event_type"], norm(e["description"])) for e in gold_events}
-        pred_keys = {(norm(e["chemical"]), e["event_type"], norm(e["description"])) for e in pred_events}
+        # Exact match with chemical variant awareness (greedy one-to-one)
+        exact_matched_gold: set[int] = set()
+        exact_matched_pred: set[int] = set()
+        for pi, pe in enumerate(pred_events):
+            for gi, ge in enumerate(gold_events):
+                if gi in exact_matched_gold:
+                    continue
+                if (
+                    (pe.get("event_type") or "").upper() == (ge.get("event_type") or "").upper()
+                    and norm(pe.get("description", "")) == norm(ge.get("description", ""))
+                    and self._chemicals_match(pe.get("chemical", ""), ge.get("chemical", ""))
+                ):
+                    exact_matched_gold.add(gi)
+                    exact_matched_pred.add(pi)
+                    break
 
-        exact_hits = pred_keys & gold_keys
+        # Build remaining lists for fuzzy pass
+        gold_remaining = [e for i, e in enumerate(gold_events) if i not in exact_matched_gold]
+        pred_remaining = [e for i, e in enumerate(pred_events) if i not in exact_matched_pred]
 
-        # Build lists excluding exact matches (so fuzzy matching doesn't double count)
-        gold_remaining = [e for e in gold_events if (norm(e["chemical"]), e["event_type"], norm(e["description"])) not in exact_hits]
-        pred_remaining = [e for e in pred_events if (norm(e["chemical"]), e["event_type"], norm(e["description"])) not in exact_hits]
-
-        matched_gold = set()  # indices in gold_remaining
-        matched_pred = set()  # indices in pred_remaining
+        matched_gold: set[int] = set()
+        matched_pred: set[int] = set()
 
         # Score all pairs (could be big, but usually gold is small)
         candidates = []
@@ -313,15 +362,15 @@ class PredEvaluator:
             matched_gold.add(gi)
             fuzzy_matches.append((sim, pred_remaining[pi], gold_remaining[gi]))
 
-        similar_to_gold = len(exact_hits) + len(fuzzy_matches)
+        similar_to_gold = len(exact_matched_pred) + len(fuzzy_matches)
         not_in_gold = len(pred_events) - similar_to_gold
-        gold_not_found = len(gold_events) - similar_to_gold  # because one-to-one matching
+        gold_not_found = len(gold_events) - similar_to_gold
 
         return {
             "similar_to_gold": similar_to_gold,
             "not_in_gold": not_in_gold,
             "gold_not_found": gold_not_found,
-            "exact_hits": len(exact_hits),
+            "exact_hits": len(exact_matched_pred),
             "fuzzy_hits": len(fuzzy_matches),
             "fuzzy_matches": fuzzy_matches,
         }
@@ -382,13 +431,58 @@ class PredEvaluator:
         out.sort(key=lambda x: x["score"], reverse=True)
         return out
 
+    @staticmethod
+    def _sort_events(events: list[dict]) -> list[dict]:
+        """Sort events by chemical (alpha), event_type (MIE→KE→AO), description (alpha)."""
+        order = {"MIE": 0, "KE": 1, "AO": 2}
+        return sorted(
+            events,
+            key=lambda e: (
+                (e.get("chemical") or "").lower(),
+                order.get((e.get("event_type") or "").upper(), 99),
+                (e.get("description") or "").lower(),
+            ),
+        )
+
+    def generate_chunk_md_files(
+        self,
+        folder: Path,
+        chunk_text: str,
+        gold_events: list[dict],
+        pred_events: list[dict],
+        chunk_index: int,
+    ) -> None:
+        """Write a markdown file for one chunk into *folder*."""
+        folder.mkdir(parents=True, exist_ok=True)
+
+        def events_md(events: list[dict]) -> str:
+            if not events:
+                return "_none_\n"
+            lines = []
+            for ev in self._sort_events(events):
+                chem = ev.get("chemical", "")
+                etype = (ev.get("event_type") or "").upper()
+                desc = ev.get("description", "")
+                lines.append(f"- **{chem}** | {etype} | {desc}")
+            return "\n".join(lines) + "\n"
+
+        md = (
+            f"# Chunk {chunk_index}\n\n"
+            f"## Text\n\n{chunk_text}\n\n"
+            f"## Gold events\n\n{events_md(gold_events)}\n"
+            f"## Pred events\n\n{events_md(pred_events)}\n"
+        )
+
+        out_file = folder / f"chunk_{chunk_index:04d}.md"
+        out_file.write_text(md, encoding="utf-8")
+
     def analyze_eval_jsonl(
         self,
         sim_threshold: float = 0.85,
         text_match_threshold: float = 50.0,
         show_top_scored_pred: int = 8,
         show_top_fuzzy: int = 5,
-        limit: int | None = None
+        limit: int | None = None,
     ) -> None:
         """
         Reads a jsonl of records like:
@@ -406,6 +500,7 @@ class PredEvaluator:
             raise FileNotFoundError(f"Eval jsonl not found: {path}")
 
         out_path = self.output_path
+        md_folder = self.full_eval_analysis_folder_path
 
         lines_out: list[str] = []
 
@@ -495,6 +590,9 @@ class PredEvaluator:
                 tot_gold += len(gold_events)
                 tot_pred += len(pred_events)
 
+                if md_folder is not None:
+                    self.generate_chunk_md_files(md_folder, chunk_text, gold_events, pred_events, n)
+
                 if limit is not None and n >= limit:
                     break
 
@@ -518,6 +616,7 @@ class PredEvaluator:
             fout.write("\n".join(lines_out) + "\n")
 
         print(f"Analysis saved to {out_path}")
+        print(f"Full per-record analysis markdown files saved to {md_folder}")
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass
@@ -781,7 +880,7 @@ class DatasetBuilder:
             ]
         }
 
-    def extract_chunk_examples_from_file(self,path: Path) -> Tuple[List[Dict[str, Any]], List[str]]:
+    def extract_chunk_examples_from_file(self, path: Path) -> Tuple[List[Dict[str, Any]], List[str]]:
         """
         Reads an *_events.json file and returns:
         - list of POSITIVE examples:
@@ -876,35 +975,44 @@ class DatasetBuilder:
         train_paper_ids = paper_ids[n_test_papers:]
 
         # --- Extract examples per split ---
+        # Each example is tagged with "_paper_stem" to track its source paper.
+        # The tag is stripped before writing to jsonl so the output format is unchanged.
         def collect_examples(stems: List[str]):
-            pos_msgs, empty_chunks = [], []
+            pos_msgs, tagged_empty = [], []
             for stem in stems:
                 pos, empties = self.extract_chunk_examples_from_file(path_by_stem[stem])
                 for ex in pos:
-                    pos_msgs.append(self.build_messages_for_chunk(ex["chunk_text"], ex["events"]))
-                empty_chunks.extend(empties)
-            return pos_msgs, empty_chunks
+                    msg = self.build_messages_for_chunk(ex["chunk_text"], ex["events"])
+                    msg["_paper_stem"] = stem
+                    pos_msgs.append(msg)
+                for t in empties:
+                    tagged_empty.append((stem, t))
+            return pos_msgs, tagged_empty
 
-        train_pos_msgs, train_empty = collect_examples(train_paper_ids)
-        test_pos_msgs, test_empty = collect_examples(test_paper_ids)
+        train_pos_msgs, train_tagged_empty = collect_examples(train_paper_ids)
+        test_pos_msgs, test_tagged_empty = collect_examples(test_paper_ids)
 
         if not train_pos_msgs and not test_pos_msgs:
             raise RuntimeError("No positive (labeled) chunk examples found.")
 
         # --- Add negatives per split ---
-        def add_negatives(pos_msgs, empty_chunks):
+        def add_negatives(pos_msgs, tagged_empty_chunks):
             out = list(pos_msgs)
-            if empty_ratio <= 0 or not empty_chunks:
+            if empty_ratio <= 0 or not tagged_empty_chunks:
                 return out
             rng_local = random.Random(seed + 999)
-            rng_local.shuffle(empty_chunks)
-            n_neg = min(int(len(pos_msgs) * empty_ratio), len(empty_chunks))
-            for t in empty_chunks[:n_neg]:
-                out.append(self.build_messages_for_empty_chunk(t))
+            indices = list(range(len(tagged_empty_chunks)))
+            rng_local.shuffle(indices)
+            n_neg = min(int(len(pos_msgs) * empty_ratio), len(tagged_empty_chunks))
+            for i in indices[:n_neg]:
+                stem, t = tagged_empty_chunks[i]
+                msg = self.build_messages_for_empty_chunk(t)
+                msg["_paper_stem"] = stem
+                out.append(msg)
             return out
 
-        train_examples = add_negatives(train_pos_msgs, train_empty)
-        test_examples = add_negatives(test_pos_msgs, test_empty)
+        train_examples = add_negatives(train_pos_msgs, train_tagged_empty)
+        test_examples = add_negatives(test_pos_msgs, test_tagged_empty)
 
         # Shuffle within split
         rng2 = random.Random(seed + 1)
@@ -923,23 +1031,41 @@ class DatasetBuilder:
                             msg["content"] = retriever.augment(msg["content"])
                 print(f"[RAG] Augmented {len(train_examples)} train + {len(test_examples)} test examples.")
 
-        # --- Write JSONL splits ---
+        # --- Build paper→chunk IDs mapping from final jsonl order (1-based line numbers) ---
+        def build_paper_to_ids(examples: List[Dict[str, Any]]) -> Dict[str, List[int]]:
+            mapping: Dict[str, List[int]] = {}
+            for idx, ex in enumerate(examples):
+                stem = ex.get("_paper_stem")
+                if stem is not None:
+                    mapping.setdefault(stem, []).append(idx + 1)
+            return mapping
+
+        train_paper_to_ids = build_paper_to_ids(train_examples)
+        test_paper_to_ids = build_paper_to_ids(test_examples)
+
+        # --- Write JSONL splits (strip internal tracking tag) ---
         with self.output_train_path.open("w", encoding="utf-8") as f:
             for ex in train_examples:
-                f.write(json.dumps(ex, ensure_ascii=False) + "\n")
+                record = {k: v for k, v in ex.items() if k != "_paper_stem"}
+                f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
         with self.output_test_path.open("w", encoding="utf-8") as f:
             for ex in test_examples:
-                f.write(json.dumps(ex, ensure_ascii=False) + "\n")
+                record = {k: v for k, v in ex.items() if k != "_paper_stem"}
+                f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
         # --- Save split metadata ---
-        def build_split_info(stems: List[str], n_pos: int, n_total: int):
+        def build_split_info(stems: List[str], n_pos: int, n_total: int, paper_to_ids: Dict[str, List[int]]):
             return {
                 "n_papers": len(stems),
                 "n_positive_examples": n_pos,
                 "n_total_examples": n_total,
                 "papers": [
-                    {"id": stem, "filename": path_by_stem[stem].name}
+                    {
+                        "id": stem,
+                        "filename": path_by_stem[stem].name,
+                        "chunk_ids": paper_to_ids.get(stem, []),
+                    }
                     for stem in sorted(stems)
                 ],
             }
@@ -948,8 +1074,8 @@ class DatasetBuilder:
             "seed": seed,
             "test_ratio": test_ratio,
             "empty_ratio": empty_ratio,
-            "train": build_split_info(train_paper_ids, len(train_pos_msgs), len(train_examples)),
-            "test": build_split_info(test_paper_ids, len(test_pos_msgs), len(test_examples)),
+            "train": build_split_info(train_paper_ids, len(train_pos_msgs), len(train_examples), train_paper_to_ids),
+            "test": build_split_info(test_paper_ids, len(test_pos_msgs), len(test_examples), test_paper_to_ids),
         }
 
         meta_path = self.output_train_path.parent / "split_info.json"
