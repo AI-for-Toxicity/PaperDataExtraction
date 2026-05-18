@@ -154,11 +154,12 @@ class PredEvaluator:
     """
     Helper class to analyze eval results in a structured way.
     """
-    def __init__(self, eval_jsonl_path: str | Path, output_path: str | Path, full_eval_analysis_folder_path: str | Path) -> None:
+    def __init__(self, eval_jsonl_path: str | Path, output_path: str | Path, full_eval_analysis_folder_path: str | Path, split_info_path: str | Path,) -> None:
         self.eval_jsonl_path = Path(eval_jsonl_path)
         self.output_path = Path(output_path)
         self.full_eval_analysis_folder_path = Path(full_eval_analysis_folder_path)
         self.instruction_prefix = PROMPT_INSTRUCTIONS
+        self.split_info_path = Path(split_info_path)
 
     def __enter__(self):
         return self
@@ -618,6 +619,156 @@ class PredEvaluator:
         print(f"Analysis saved to {out_path}")
         print(f"Full per-record analysis markdown files saved to {md_folder}")
 
+    def analyze_eval_jsonl_per_paper(
+        self,
+        sim_threshold: float = 0.85,
+    ) -> None:
+        """
+        Groups eval JSONL records by paper using split_info.json, deduplicates gold and pred
+        events across all chunks of each paper, then runs compare_gold_pred at paper level.
+
+        The chunk_ids in split_info.json are 1-based line numbers in the eval JSONL file,
+        so record at line N corresponds to chunk_id N.
+
+        Outputs eval_analysis_papers.json next to eval_analysis.txt.
+        """
+        split_info_path = self.split_info_path
+        if not split_info_path.exists():
+            raise FileNotFoundError(f"split_info.json not found: {split_info_path}")
+
+        with split_info_path.open("r", encoding="utf-8") as f:
+            split_info = json.load(f)
+
+        # Build chunk_id (1-based line number) → paper_id from the test split
+        chunk_to_paper: dict[int, str] = {}
+        for paper in split_info.get("test", {}).get("papers", []):
+            paper_id = paper["id"]
+            for cid in paper.get("chunk_ids", []):
+                chunk_to_paper[cid] = paper_id
+
+        if not chunk_to_paper:
+            raise RuntimeError("No chunk→paper mapping found in split_info.json (test split).")
+
+        path = self.eval_jsonl_path
+        if not path.exists():
+            raise FileNotFoundError(f"Eval jsonl not found: {path}")
+
+        # Group (gold_events, pred_events) pairs by paper
+        paper_chunks: dict[str, list[tuple[list, list]]] = {}
+        with path.open("r", encoding="utf-8") as f:
+            line_idx = 0
+            for line in f:
+                if not line.strip():
+                    continue
+                rec = json.loads(line)
+                line_idx += 1  # 1-based chunk id
+                paper_id = chunk_to_paper.get(line_idx)
+                if paper_id is None:
+                    continue
+                gold_events = self.parse_event_lines_to_list(rec.get("gold", "") or "")
+                pred_events = self.parse_event_lines_to_list(rec.get("pred", "") or "")
+                paper_chunks.setdefault(paper_id, []).append((gold_events, pred_events))
+
+        # Per-paper analysis: deduplicate events across chunks then compare
+        results = []
+        tot_sim = tot_fp = tot_fn = tot_gold = tot_pred = 0
+
+        for paper_id, chunks in sorted(paper_chunks.items()):
+            seen_gold: set[tuple] = set()
+            deduped_gold: list[dict] = []
+            seen_pred: set[tuple] = set()
+            deduped_pred: list[dict] = []
+
+            for gold_evs, pred_evs in chunks:
+                for ev in gold_evs:
+                    key = (norm(ev.get("chemical", "")), (ev.get("event_type") or "").upper(), norm(ev.get("description", "")))
+                    if key not in seen_gold:
+                        seen_gold.add(key)
+                        deduped_gold.append(ev)
+                for ev in pred_evs:
+                    key = (norm(ev.get("chemical", "")), (ev.get("event_type") or "").upper(), norm(ev.get("description", "")))
+                    if key not in seen_pred:
+                        seen_pred.add(key)
+                        deduped_pred.append(ev)
+
+            cmp = self.compare_gold_pred(deduped_gold, deduped_pred, sim_threshold=sim_threshold)
+
+            n_gold = len(deduped_gold)
+            n_pred = len(deduped_pred)
+            sim = cmp["similar_to_gold"]
+            fp = cmp["not_in_gold"]
+            fn = cmp["gold_not_found"]
+            prec = sim / n_pred if n_pred else 0.0
+            rec = sim / n_gold if n_gold else 0.0
+            f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) else 0.0
+
+            def _events_text(events: list[dict]) -> str:
+                if not events:
+                    return "(none)"
+                return "\n".join(
+                    f'{ev.get("chemical","")} | {(ev.get("event_type") or "").upper()} | {ev.get("description","")}'
+                    for ev in self._sort_events(events)
+                )
+
+            results.append({
+                "paper_id": paper_id,
+                "n_chunks": len(chunks),
+                "n_gold_events": n_gold,
+                "n_pred_events": n_pred,
+                "similar_to_gold": sim,
+                "not_in_gold_fp": fp,
+                "gold_not_found_fn": fn,
+                "exact_hits": cmp["exact_hits"],
+                "fuzzy_hits": cmp["fuzzy_hits"],
+                "precision": round(prec, 4),
+                "recall": round(rec, 4),
+                "f1": round(f1, 4),
+                "gold_events": self._sort_events(deduped_gold),
+                "pred_events": self._sort_events(deduped_pred),
+                "gold_events_text": _events_text(deduped_gold),
+                "pred_events_text": _events_text(deduped_pred),
+            })
+
+            tot_sim += sim
+            tot_fp += fp
+            tot_fn += fn
+            tot_gold += n_gold
+            tot_pred += n_pred
+
+        agg_prec = tot_sim / tot_pred if tot_pred else 0.0
+        agg_rec = tot_sim / tot_gold if tot_gold else 0.0
+        agg_f1 = (2 * agg_prec * agg_rec / (agg_prec + agg_rec)) if (agg_prec + agg_rec) else 0.0
+
+        output = {
+            "summary": {
+                "n_papers": len(results),
+                "total_gold_events": tot_gold,
+                "total_pred_events": tot_pred,
+                "total_similar_to_gold": tot_sim,
+                "total_not_in_gold_fp": tot_fp,
+                "total_gold_not_found_fn": tot_fn,
+                "precision": round(agg_prec, 4),
+                "recall": round(agg_rec, 4),
+                "f1": round(agg_f1, 4),
+            },
+            "papers": results,
+        }
+
+        full_analysis_papers_folder = self.full_eval_analysis_folder_path / "papers"
+        full_analysis_papers_folder.mkdir(parents=True, exist_ok=True)
+        for paper in results:
+            with full_analysis_papers_folder.joinpath(f"paper_{paper['paper_id']}_gold_events.txt").open("w", encoding="utf-8") as fout:
+                fout.write(paper["gold_events_text"])
+            with full_analysis_papers_folder.joinpath(f"paper_{paper['paper_id']}_pred_events.txt").open("w", encoding="utf-8") as fout:
+                fout.write(paper["pred_events_text"])
+
+        out_path = self.output_path.parent / "eval_analysis_papers.json"
+        with out_path.open("w", encoding="utf-8") as fout:
+            json.dump(output, fout, indent=2, ensure_ascii=False)
+
+        print(f"Per-paper analysis saved to {out_path}")
+        print(f"Papers: {len(results)} | Gold: {tot_gold} | Pred: {tot_pred} | Precision≈{agg_prec:.3f} Recall≈{agg_rec:.3f} F1≈{agg_f1:.3f}")
+
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass
 
@@ -975,8 +1126,8 @@ class DatasetBuilder:
         train_paper_ids = paper_ids[n_test_papers:]
 
         # --- Extract examples per split ---
-        # Each example is tagged with "_paper_stem" to track its source paper.
-        # The tag is stripped before writing to jsonl so the output format is unchanged.
+        # Each example is tagged with "_paper_stem", "_chunk_text", "_events" for stats.
+        # All "_"-prefixed tags are stripped before writing to jsonl.
         def collect_examples(stems: List[str]):
             pos_msgs, tagged_empty = [], []
             for stem in stems:
@@ -984,6 +1135,8 @@ class DatasetBuilder:
                 for ex in pos:
                     msg = self.build_messages_for_chunk(ex["chunk_text"], ex["events"])
                     msg["_paper_stem"] = stem
+                    msg["_chunk_text"] = ex["chunk_text"]
+                    msg["_events"] = ex["events"]
                     pos_msgs.append(msg)
                 for t in empties:
                     tagged_empty.append((stem, t))
@@ -1008,6 +1161,8 @@ class DatasetBuilder:
                 stem, t = tagged_empty_chunks[i]
                 msg = self.build_messages_for_empty_chunk(t)
                 msg["_paper_stem"] = stem
+                msg["_chunk_text"] = t
+                msg["_events"] = []
                 out.append(msg)
             return out
 
@@ -1043,23 +1198,48 @@ class DatasetBuilder:
         train_paper_to_ids = build_paper_to_ids(train_examples)
         test_paper_to_ids = build_paper_to_ids(test_examples)
 
-        # --- Write JSONL splits (strip internal tracking tag) ---
+        # --- Write JSONL splits (strip all internal tracking tags) ---
+        _internal_keys = {"_paper_stem", "_chunk_text", "_events"}
         with self.output_train_path.open("w", encoding="utf-8") as f:
             for ex in train_examples:
-                record = {k: v for k, v in ex.items() if k != "_paper_stem"}
+                record = {k: v for k, v in ex.items() if k not in _internal_keys}
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
         with self.output_test_path.open("w", encoding="utf-8") as f:
             for ex in test_examples:
-                record = {k: v for k, v in ex.items() if k != "_paper_stem"}
+                record = {k: v for k, v in ex.items() if k not in _internal_keys}
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
         # --- Save split metadata ---
-        def build_split_info(stems: List[str], n_pos: int, n_total: int, paper_to_ids: Dict[str, List[int]]):
+        def compute_split_stats(examples: List[Dict[str, Any]]) -> Dict[str, Any]:
+            total_events = 0
+            event_type_distribution = {"MIE": 0, "KE": 0, "AO": 0}
+            chunk_lengths = []
+            for ex in examples:
+                text = ex.get("_chunk_text", "")
+                events = ex.get("_events") or []
+                chunk_lengths.append(len(text))
+                total_events += len(events)
+                for ev in events:
+                    et = ev.get("event_type", "")
+                    if et in event_type_distribution:
+                        event_type_distribution[et] += 1
+            n_pos = sum(1 for ex in examples if ex.get("_events"))
+            avg_len = round(sum(chunk_lengths) / len(chunk_lengths), 1) if chunk_lengths else 0.0
             return {
-                "n_papers": len(stems),
-                "n_positive_examples": n_pos,
-                "n_total_examples": n_total,
+                "total_positive_chunks": n_pos,
+                "total_negative_chunks": len(examples) - n_pos,
+                "total_events": total_events,
+                "average_chunk_length": avg_len,
+                "event_type_distribution": event_type_distribution,
+            }
+
+        def build_split_info(stems: List[str], examples: List[Dict[str, Any]], paper_to_ids: Dict[str, List[int]]):
+            stats = compute_split_stats(examples)
+            return {
+                "total_papers": len(stems),
+                "total_chunks": len(examples),
+                **stats,
                 "papers": [
                     {
                         "id": stem,
@@ -1070,12 +1250,20 @@ class DatasetBuilder:
                 ],
             }
 
+        train_info = build_split_info(train_paper_ids, train_examples, train_paper_to_ids)
+        test_info = build_split_info(test_paper_ids, test_examples, test_paper_to_ids)
+
+        all_examples = train_examples + test_examples
+        global_stats = compute_split_stats(all_examples)
         split_meta = {
             "seed": seed,
             "test_ratio": test_ratio,
             "empty_ratio": empty_ratio,
-            "train": build_split_info(train_paper_ids, len(train_pos_msgs), len(train_examples), train_paper_to_ids),
-            "test": build_split_info(test_paper_ids, len(test_pos_msgs), len(test_examples), test_paper_to_ids),
+            "total_papers": len(paper_ids),
+            "total_chunks": len(all_examples),
+            **global_stats,
+            "train": train_info,
+            "test": test_info,
         }
 
         meta_path = self.output_train_path.parent / "split_info.json"
