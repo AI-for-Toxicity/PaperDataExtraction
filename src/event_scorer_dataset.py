@@ -3,6 +3,8 @@ import csv
 import random
 import re
 import sys
+import torch
+from sentence_transformers import SentenceTransformer, util
 from rapidfuzz import fuzz
 from typing import List, Dict, Any, Tuple
 from pathlib import Path
@@ -160,6 +162,7 @@ class PredEvaluator:
         self.full_eval_analysis_folder_path = Path(full_eval_analysis_folder_path)
         self.instruction_prefix = PROMPT_INSTRUCTIONS
         self.split_info_path = Path(split_info_path)
+        self.embedder = SentenceTransformer('all-MiniLM-L6-v2')
 
     def __enter__(self):
         return self
@@ -275,6 +278,25 @@ class PredEvaluator:
         # Description matters more than chemical string casing/variants
         return 0.4 * chem_sim + 0.6 * desc_sim
 
+    def event_cosine_similarity(self, pred_ev: dict, gold_ev: dict) -> float:
+        if (pred_ev.get("event_type") or "").upper() != (gold_ev.get("event_type") or "").upper():
+            return 0.0
+
+        chem_p = pred_ev.get("chemical", "")
+        chem_g = gold_ev.get("chemical", "")
+        desc_p = pred_ev.get("description", "")
+        desc_g = gold_ev.get("description", "")
+
+        # Chemical match
+        chem_sim = 1.0 if self._chemicals_match(chem_p, chem_g) else fuzzy_score(chem_p, chem_g)
+        
+        # Semantic Description match
+        emb_p = self.embedder.encode(desc_p, convert_to_tensor=True)
+        emb_g = self.embedder.encode(desc_g, convert_to_tensor=True)
+        desc_sim = util.cos_sim(emb_p, emb_g).item() # Returns a score from -1 to 1
+
+        return 0.4 * chem_sim + 0.6 * desc_sim
+
     def extract_chunk_text_from_prompt(self, prompt: str) -> str:
         """
         Prompts look like:
@@ -349,7 +371,7 @@ class PredEvaluator:
         candidates = []
         for pi, pe in enumerate(pred_remaining):
             for gi, ge in enumerate(gold_remaining):
-                sim = self.event_similarity(pe, ge)
+                sim = self.event_cosine_similarity(pe, ge)
                 if sim >= sim_threshold:
                     candidates.append((sim, pi, gi))
 
