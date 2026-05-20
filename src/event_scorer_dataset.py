@@ -1,3 +1,4 @@
+from collections import defaultdict
 import json
 import csv
 import random
@@ -167,19 +168,16 @@ class PredEvaluator:
     def __enter__(self):
         return self
 
-    def parse_event_lines_to_list(self, s: str) -> list[dict]:
+    def parse_event_lines_to_list(self, s: str, dedup_threshold: float = 0.85) -> list[dict]:
         """
         Parses a string containing lines like:
         "chemical","event_type","description"
 
         Returns list of dicts:
         {"chemical": ..., "event_type": ..., "description": ...}
-
-        Robustness:
-        - Ignores empty lines
-        - Ignores malformed/truncated lines (len < 3)
-        - Strips whitespace
-        - Uppercases event_type
+        
+        Includes semantic deduplication to merge redundant predictions 
+        (e.g., "Inhibition of X" and "Decreased X") for the same chemical and event type.
         """
         if not s:
             return []
@@ -190,7 +188,6 @@ class PredEvaluator:
             if not line:
                 continue
 
-            # csv.reader handles quotes/commas properly
             try:
                 row = next(csv.reader([line]))
             except Exception:
@@ -208,16 +205,38 @@ class PredEvaluator:
 
             events.append({"chemical": chem, "event_type": etype, "description": desc})
 
-        # Deduplicate (case/space-insensitive on chem/desc)
-        seen = set()
+        # --- SEMANTIC DEDUPLICATION LOGIC ---
         deduped = []
+        
+        # 1. Group events by (normalized chemical, event_type)
+        grouped_events = defaultdict(list)
         for ev in events:
-            key = (norm(ev["chemical"]), ev["event_type"], norm(ev["description"]))
-            if key in seen:
-                continue
-            seen.add(key)
-            deduped.append(ev)
-
+            group_key = (norm(ev["chemical"]), ev["event_type"])
+            grouped_events[group_key].append(ev)
+            
+        # 2. Deduplicate descriptions within each group using Cosine Similarity
+        for group_key, ev_list in grouped_events.items():
+            unique_in_group = []
+            
+            for ev in ev_list:
+                desc = ev["description"]
+                # Encode the description
+                emb = self.embedder.encode(desc, convert_to_tensor=True)
+                
+                is_duplicate = False
+                # Compare against already accepted unique events in this group
+                for unique_ev, unique_emb in unique_in_group:
+                    sim = util.cos_sim(emb, unique_emb).item()
+                    
+                    # If the semantic similarity hits the threshold, toss it as a duplicate
+                    if sim >= dedup_threshold:
+                        is_duplicate = True
+                        break
+                        
+                if not is_duplicate:
+                    unique_in_group.append((ev, emb))
+                    deduped.append(ev)
+                    
         return deduped
 
     @staticmethod
