@@ -148,8 +148,11 @@ Top 2 pred events by score:
 ==========================================================================================
 [RECORD 10] id=None loss=2.0133447647094727
 Gold events: 2 | Pred events: 7
-0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 2 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 6 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.860 | P: {'chemical': 'DCF-AG', 'event_type': 'KE', 'description': '"Results in sustained oxidative stress and cell death"'}  ->  G: {'chemical': 'Diclofenac Acyl Glucuronide (DCF-AG)', 'event_type': 'KE', 'description': 'Oxidative stress induction'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=52.8 mean=67.0 max=87.5 | chemical_found=7/7
@@ -215,8 +218,11 @@ Top 3 pred events by score:
 ==========================================================================================
 [RECORD 14] id=None loss=2.5017001628875732
 Gold events: 3 | Pred events: 11
-0 matches similar to gold ones (exact=0, fuzzy=0), 11 matches not in gold, 3 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 10 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 11 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.915 | P: {'chemical': 'MS-WF (higher dose)', 'event_type': 'KE', 'description': '"Transcriptional activation of L1 ORF2 in SAEC cells"'}  ->  G: {'chemical': 'MS-WF (Mild Steel Welding Fumes)', 'event_type': 'KE', 'description': 'Transcriptional activation of TEs'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=65.4 mean=76.5 max=87.9 | chemical_found=9/11
@@ -846,11 +852,12 @@ Top 8 pred events by score:
 ==========================================================================================
 [RECORD 54] id=None loss=1.0853803157806396
 Gold events: 4 | Pred events: 4
-1 matches similar to gold ones (exact=0, fuzzy=1), 3 matches not in gold, 3 matches from gold not found
+2 matches similar to gold ones (exact=0, fuzzy=2), 2 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
   sim=0.884 | P: {'chemical': 'NH-3', 'event_type': 'KE', 'description': '"Decreases the QM compared to 3 nM T3 and impairs T3-dependent OL maturation"'}  ->  G: {'chemical': 'NH-3 (Thyroid hormone receptor antagonist)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
+  sim=0.884 | P: {'chemical': 'TBBPA', 'event_type': 'KE', 'description': '"Decreases the QM compared to 3 nM T3 and impairs T3-dependent OL maturation"'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=63.7 mean=74.7 max=79.9 | chemical_found=4/4
@@ -1172,8 +1179,11 @@ Top 4 pred events by score:
 ==========================================================================================
 [RECORD 75] id=None loss=1.2677607536315918
 Gold events: 2 | Pred events: 7
-0 matches similar to gold ones (exact=0, fuzzy=0), 7 matches not in gold, 2 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 6 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text (score>=50): 7 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.901 | P: {'chemical': 'Bis-I (PKC inhibitor)', 'event_type': 'KE', 'description': '"Decrease in neurite area and subneurite length compared to the solvent control"'}  ->  G: {'chemical': 'bisindolylmaleimide I (Bis-I)', 'event_type': 'KE', 'description': 'reduction of neurite area and subneurite length'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=75.0 mean=77.2 max=78.2 | chemical_found=7/7
@@ -2536,6 +2546,6 @@ Top 3 pred events by score:
 [SUMMARY]
 Records: 158
 Total gold events: 261 | Total pred events: 1059
-Total similar-to-gold: 31 | Total not-in-gold (FP): 1028 | Total gold-not-found (FN): 230
+Total similar-to-gold: 35 | Total not-in-gold (FP): 1024 | Total gold-not-found (FN): 226
 Total pred grounded in text: 903 match, 156 don't match (threshold=50)
-Precision≈0.029 Recall≈0.119 F1≈0.047
+Precision≈0.033 Recall≈0.134 F1≈0.053

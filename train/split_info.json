@@ -2,10 +2,29 @@
   "seed": 42,
   "test_ratio": 0.15,
   "empty_ratio": 1.0,
+  "total_papers": 99,
+  "total_chunks": 1178,
+  "total_positive_chunks": 589,
+  "total_negative_chunks": 589,
+  "total_events": 2457,
+  "average_chunk_length": 2369.0,
+  "event_type_distribution": {
+    "MIE": 330,
+    "KE": 1532,
+    "AO": 595
+  },
   "train": {
-    "n_papers": 85,
-    "n_positive_examples": 510,
-    "n_total_examples": 1020,
+    "total_papers": 85,
+    "total_chunks": 1020,
+    "total_positive_chunks": 510,
+    "total_negative_chunks": 510,
+    "total_events": 2196,
+    "average_chunk_length": 2377.4,
+    "event_type_distribution": {
+      "MIE": 289,
+      "KE": 1356,
+      "AO": 551
+    },
     "papers": [
       {
         "id": "paper_0001_events",
@@ -1540,9 +1559,17 @@
     ]
   },
   "test": {
-    "n_papers": 14,
-    "n_positive_examples": 79,
-    "n_total_examples": 158,
+    "total_papers": 14,
+    "total_chunks": 158,
+    "total_positive_chunks": 79,
+    "total_negative_chunks": 79,
+    "total_events": 261,
+    "average_chunk_length": 2315.3,
+    "event_type_distribution": {
+      "MIE": 41,
+      "KE": 176,
+      "AO": 44
+    },
     "papers": [
       {
         "id": "paper_0002_events",

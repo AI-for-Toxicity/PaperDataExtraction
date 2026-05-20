@@ -1,0 +1,39 @@
+Bisindolylmaleimide 1 (Bis-I) | MIE | Protein kinase C inhibition
+Bisindolylmaleimide 1 (Bis-I) | KE | Reduced neurite length and area
+Cadmium | MIE | Induction of oxidative stress
+Cadmium | KE | Concentration-dependent decrease of hNPC proliferation
+Cadmium | KE | Inhibition of hNPC proliferation
+Cadmium | AO | Lower child intelligence score / memory deficits / learning disabilities
+Cadmium | AO | Neurotoxicological changes / behavioral changes
+DAPT | KE | Inhibition of Notch signaling decreases neuronal differentiation
+DAPT (N-[N-(3,5-Difluorophenacetyl)L-alanyl]-S-phenylglycine t-butyl ester) | KE | Increased neuronal numbers
+Deltamethrin | KE | Inhibition of oligodendrocyte differentiation
+deltamethrin (DM) | MIE | Voltage-gated sodium channel (VGSC) expression in OPCs
+deltamethrin (DM) | KE | Prolonged opening of voltage-gated sodium channels (VGSC)
+deltamethrin (DM) | AO | ADHD-like and anxiety-like behavior
+deltamethrin (DM) | AO | Deficits in working memory and spatial learning
+EGF | KE | Inhibition of RG migration
+Lead | KE | Altered neurite outgrowth (association)
+Lead | KE | Altered neuronal differentiation (association)
+Lead | KE | Altered radial glia migration (association)
+Lead | KE | Microcephaly (association)
+Lead | AO | Developmental brain disorders (association)
+methylmercury (MeHg) | KE | Inhibition of RG migration
+Narciclasine | KE | Cytoskeleton stabilization
+narciclasine | KE | Reduced neurite area and length
+narciclasine | KE | Reduced neuronal differentiation
+narciclasine | KE | RhoA pathway activation decreases neuronal differentiation
+NH-3 | KE | Impairment of T3-dependent OL maturation
+NH-3 | KE | Inhibition of oligodendrocyte maturation
+PD153035 | KE | Concentration-dependent decrease of hNPC proliferation
+PD153035 (EGFR inhibitor) | KE | Antagonizes EGF-induced hNPC proliferation
+PD153035 (EGFR inhibitor) | KE | No cytotoxicity in hNPC
+PP2 | KE | Inhibition of RG migration
+PP2 | KE | Reduced migration
+Rotenone | KE | Inhibition of mitochondrial complex I
+Rotenone | KE | Reduced mitochondrial activity
+TBBPA | KE | Impairment of T3-dependent OL maturation
+TBBPA | KE | Inhibition of oligodendrocyte maturation
+tetrabromobisphenol A (TBBPA) | MIE | Lipotoxicity
+tetrabromobisphenol A (TBBPA) | KE | Cholesterol metabolism deregulation
+Tetrabromobisphenol A (TBBPA) | KE | Inhibition of oligodendrocyte differentiation

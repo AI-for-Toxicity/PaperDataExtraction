@@ -1,0 +1,28 @@
+ascorbic acid | KE | increased oligodendrocyte differentiation
+bisindolylmaleimide I (Bis-I) | MIE | PKC inhibition
+bisindolylmaleimide I (Bis-I) | KE | reduction of neurite area and subneurite length
+cadmium chloride | MIE | oxidative stress induction
+cadmium chloride | KE | inhibition of hNPC proliferation
+DAPT (Notch inhibitor) | MIE | Notch pathway inhibition
+DAPT (Notch inhibitor) | KE | decreased oligodendrocyte differentiation
+DAPT (Notch inhibitor) | KE | increased neuronal numbers
+deltamethrin | KE | decreased oligodendrocyte differentiation
+EGF (Epidermal Growth Factor) | KE | increased hNPC proliferation
+EGF (Epidermal Growth Factor) | KE | increased migration
+methylmercury (MeHg) | KE | reduced NPC migration
+narciclasine | MIE | RhoA activation
+narciclasine | KE | reduced hiNPC migration
+narciclasine | KE | reduced neuronal differentiation
+narciclasine | KE | reduction of neurite area and subneurite length
+NH-3 (Thyroid hormone receptor antagonist) | MIE | thyroid hormone receptor antagonism
+NH-3 (Thyroid hormone receptor antagonist) | KE | decreased T3-dependent OL maturation
+PD153035 (EGFR inhibitor) | MIE | EGFR inhibition
+PD153035 (EGFR inhibitor) | KE | antagonized EGF-induced migration
+PD153035 (EGFR inhibitor) | KE | antagonized EGF-induced proliferation
+PP2 (SRC-kinase inhibitor) | MIE | SRC-kinase inhibition
+PP2 (SRC-kinase inhibitor) | KE | reduced cell migration
+T3 (Triiodothyronine) | KE | increased MBP expression
+T3 (Triiodothyronine) | KE | increased oligodendrocyte maturation
+TETRABROMOBISPHENOL A (TBBPA) | MIE | lipotoxicity via cholesterol metabolism disruption
+TETRABROMOBISPHENOL A (TBBPA) | KE | decreased oligodendrocyte differentiation
+TETRABROMOBISPHENOL A (TBBPA) | KE | decreased T3-dependent OL maturation
