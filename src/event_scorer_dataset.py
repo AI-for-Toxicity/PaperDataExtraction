@@ -351,7 +351,7 @@ class PredEvaluator:
         gold_events: list[dict],
         pred_events: list[dict],
         *,
-        sim_threshold: float = 0.85
+        sim_threshold: float = 0.65
     ) -> dict:
         """
         Computes:
@@ -520,7 +520,6 @@ class PredEvaluator:
 
     def analyze_eval_jsonl(
         self,
-        sim_threshold: float = 0.85,
         text_match_threshold: float = 50.0,
         show_top_scored_pred: int = 8,
         show_top_fuzzy: int = 5,
@@ -554,6 +553,16 @@ class PredEvaluator:
         tot_text_match = tot_text_no_match = 0
         n = 0
 
+        # Load paper→chunk mapping for deduplicated summary
+        chunk_to_paper: dict[int, str] = {}
+        if self.split_info_path.exists():
+            with self.split_info_path.open("r", encoding="utf-8") as f:
+                split_info = json.load(f)
+            for paper in split_info.get("test", {}).get("papers", []):
+                for cid in paper.get("chunk_ids", []):
+                    chunk_to_paper[cid] = paper["id"]
+        paper_chunks: dict[str, list[tuple[list, list]]] = {}
+
         with path.open("r", encoding="utf-8") as f:
             for line in f:
                 if not line.strip():
@@ -568,7 +577,7 @@ class PredEvaluator:
 
                 chunk_text = self.extract_chunk_text_from_prompt(prompt)
 
-                cmp = self.compare_gold_pred(gold_events, pred_events, sim_threshold=sim_threshold)
+                cmp = self.compare_gold_pred(gold_events, pred_events)
                 scored_pred = self.score_pred_events_on_chunk(chunk_text, pred_events)
 
                 # per-record report
@@ -632,6 +641,10 @@ class PredEvaluator:
                 tot_gold += len(gold_events)
                 tot_pred += len(pred_events)
 
+                paper_id = chunk_to_paper.get(n)
+                if paper_id is not None:
+                    paper_chunks.setdefault(paper_id, []).append((gold_events, pred_events))
+
                 if md_folder is not None:
                     self.generate_chunk_md_files(md_folder, chunk_text, gold_events, pred_events, n)
 
@@ -642,16 +655,46 @@ class PredEvaluator:
         emit("#" * 90)
         emit("[SUMMARY]")
         emit(f"Records: {n}")
-        emit(f"Total gold events: {tot_gold} | Total pred events: {tot_pred}")
+        emit(f"Total gold events (chunk-level): {tot_gold} | Total pred events (chunk-level): {tot_pred}")
         emit(f"Total similar-to-gold: {tot_sim} | Total not-in-gold (FP): {tot_fp} | Total gold-not-found (FN): {tot_fn}")
         emit(
             f"Total pred grounded in text: {tot_text_match} match, {tot_text_no_match} don't match "
             f"(threshold={text_match_threshold:.0f})"
         )
 
-        prec = (tot_sim / tot_pred) if tot_pred else 0.0
-        rec = (tot_sim / tot_gold) if tot_gold else 0.0
-        f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) else 0.0
+        # Deduplicated paper-level P/R/F1
+        if paper_chunks:
+            ded_sim = ded_fp = ded_fn = ded_gold = ded_pred = 0
+            for _, chunks in sorted(paper_chunks.items()):
+                seen_gold: set[tuple] = set()
+                deduped_gold: list[dict] = []
+                seen_pred: set[tuple] = set()
+                deduped_pred: list[dict] = []
+                for gold_evs, pred_evs in chunks:
+                    for ev in gold_evs:
+                        key = (norm(ev.get("chemical", "")), (ev.get("event_type") or "").upper(), norm(ev.get("description", "")))
+                        if key not in seen_gold:
+                            seen_gold.add(key)
+                            deduped_gold.append(ev)
+                    for ev in pred_evs:
+                        key = (norm(ev.get("chemical", "")), (ev.get("event_type") or "").upper(), norm(ev.get("description", "")))
+                        if key not in seen_pred:
+                            seen_pred.add(key)
+                            deduped_pred.append(ev)
+                cmp_ded = self.compare_gold_pred(deduped_gold, deduped_pred)
+                ded_sim += cmp_ded["similar_to_gold"]
+                ded_fp += cmp_ded["not_in_gold"]
+                ded_fn += cmp_ded["gold_not_found"]
+                ded_gold += len(deduped_gold)
+                ded_pred += len(deduped_pred)
+            emit(f"Paper-level dedup — Gold: {ded_gold} | Pred: {ded_pred} | TP: {ded_sim} | FP: {ded_fp} | FN: {ded_fn}")
+            prec = (ded_sim / ded_pred) if ded_pred else 0.0
+            rec = (ded_sim / ded_gold) if ded_gold else 0.0
+            f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) else 0.0
+        else:
+            prec = (tot_sim / tot_pred) if tot_pred else 0.0
+            rec = (tot_sim / tot_gold) if tot_gold else 0.0
+            f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) else 0.0
         emit(f"Precision≈{prec:.3f} Recall≈{rec:.3f} F1≈{f1:.3f}")
 
         with out_path.open("w", encoding="utf-8") as fout:
@@ -662,7 +705,6 @@ class PredEvaluator:
 
     def analyze_eval_jsonl_per_paper(
         self,
-        sim_threshold: float = 0.85,
     ) -> None:
         """
         Groups eval JSONL records by paper using split_info.json, deduplicates gold and pred
@@ -732,7 +774,7 @@ class PredEvaluator:
                         seen_pred.add(key)
                         deduped_pred.append(ev)
 
-            cmp = self.compare_gold_pred(deduped_gold, deduped_pred, sim_threshold=sim_threshold)
+            cmp = self.compare_gold_pred(deduped_gold, deduped_pred)
 
             n_gold = len(deduped_gold)
             n_pred = len(deduped_pred)
