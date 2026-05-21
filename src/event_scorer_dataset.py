@@ -366,6 +366,7 @@ class PredEvaluator:
         # Exact match with chemical variant awareness (greedy one-to-one)
         exact_matched_gold: set[int] = set()
         exact_matched_pred: set[int] = set()
+        exact_match_pairs: list[tuple[dict, dict]] = []  # (gold_ev, pred_ev)
         for pi, pe in enumerate(pred_events):
             for gi, ge in enumerate(gold_events):
                 if gi in exact_matched_gold:
@@ -377,6 +378,7 @@ class PredEvaluator:
                 ):
                     exact_matched_gold.add(gi)
                     exact_matched_pred.add(pi)
+                    exact_match_pairs.append((ge, pe))
                     break
 
         # Build remaining lists for fuzzy pass
@@ -408,6 +410,12 @@ class PredEvaluator:
         not_in_gold = len(pred_events) - similar_to_gold
         gold_not_found = len(gold_events) - similar_to_gold
 
+        matched_pairs: list[tuple[dict, dict]] = (
+            exact_match_pairs + [(ge, pe) for _, pe, ge in fuzzy_matches]
+        )
+        unmatched_gold = [e for i, e in enumerate(gold_remaining) if i not in matched_gold]
+        unmatched_pred = [e for i, e in enumerate(pred_remaining) if i not in matched_pred]
+
         return {
             "similar_to_gold": similar_to_gold,
             "not_in_gold": not_in_gold,
@@ -415,6 +423,9 @@ class PredEvaluator:
             "exact_hits": len(exact_matched_pred),
             "fuzzy_hits": len(fuzzy_matches),
             "fuzzy_matches": fuzzy_matches,
+            "matched_pairs": matched_pairs,
+            "unmatched_gold": unmatched_gold,
+            "unmatched_pred": unmatched_pred,
         }
 
     def score_pred_events_on_chunk(
@@ -785,12 +796,20 @@ class PredEvaluator:
             rec = sim / n_gold if n_gold else 0.0
             f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) else 0.0
 
+            def _ev_line(ev: dict) -> str:
+                return f'{ev.get("chemical","")} | {(ev.get("event_type") or "").upper()} | {ev.get("description","")}'
+
             def _events_text(events: list[dict]) -> str:
                 if not events:
                     return "(none)"
-                return "\n".join(
-                    f'{ev.get("chemical","")} | {(ev.get("event_type") or "").upper()} | {ev.get("description","")}'
-                    for ev in self._sort_events(events)
+                return "\n".join(_ev_line(ev) for ev in self._sort_events(events))
+
+            def _matched_text(pairs: list[tuple[dict, dict]]) -> str:
+                if not pairs:
+                    return "(none)"
+                return "\n\n".join(
+                    f"[GOLD] {_ev_line(ge)}\n[PRED] {_ev_line(pe)}"
+                    for ge, pe in pairs
                 )
 
             results.append({
@@ -808,8 +827,9 @@ class PredEvaluator:
                 "f1": round(f1, 4),
                 "gold_events": self._sort_events(deduped_gold),
                 "pred_events": self._sort_events(deduped_pred),
-                "gold_events_text": _events_text(deduped_gold),
-                "pred_events_text": _events_text(deduped_pred),
+                "matched_text": _matched_text(cmp["matched_pairs"]),
+                "unmatched_gold_text": _events_text(cmp["unmatched_gold"]),
+                "unmatched_pred_text": _events_text(cmp["unmatched_pred"]),
             })
 
             tot_sim += sim
@@ -822,6 +842,7 @@ class PredEvaluator:
         agg_rec = tot_sim / tot_gold if tot_gold else 0.0
         agg_f1 = (2 * agg_prec * agg_rec / (agg_prec + agg_rec)) if (agg_prec + agg_rec) else 0.0
 
+        _text_keys = {"matched_text", "unmatched_gold_text", "unmatched_pred_text"}
         output = {
             "summary": {
                 "n_papers": len(results),
@@ -834,16 +855,19 @@ class PredEvaluator:
                 "recall": round(agg_rec, 4),
                 "f1": round(agg_f1, 4),
             },
-            "papers": results,
+            "papers": [{k: v for k, v in p.items() if k not in _text_keys} for p in results],
         }
 
         full_analysis_papers_folder = self.full_eval_analysis_folder_path / "papers"
         full_analysis_papers_folder.mkdir(parents=True, exist_ok=True)
         for paper in results:
-            with full_analysis_papers_folder.joinpath(f"paper_{paper['paper_id']}_gold_events.txt").open("w", encoding="utf-8") as fout:
-                fout.write(paper["gold_events_text"])
-            with full_analysis_papers_folder.joinpath(f"paper_{paper['paper_id']}_pred_events.txt").open("w", encoding="utf-8") as fout:
-                fout.write(paper["pred_events_text"])
+            pid = paper["paper_id"]
+            with full_analysis_papers_folder.joinpath(f"paper_{pid}_matched.txt").open("w", encoding="utf-8") as fout:
+                fout.write(paper["matched_text"])
+            with full_analysis_papers_folder.joinpath(f"paper_{pid}_gold.txt").open("w", encoding="utf-8") as fout:
+                fout.write(paper["unmatched_gold_text"])
+            with full_analysis_papers_folder.joinpath(f"paper_{pid}_pred.txt").open("w", encoding="utf-8") as fout:
+                fout.write(paper["unmatched_pred_text"])
 
         out_path = self.output_path.parent / "eval_analysis_papers.json"
         with out_path.open("w", encoding="utf-8") as fout:
