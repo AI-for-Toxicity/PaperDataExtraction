@@ -253,10 +253,10 @@ class PredEvaluator:
 
         variants: set[str] = {norm(chem)}
 
-        if "(" in chem and chem.endswith(")"):
-            last_paren = chem.rfind("(")
+        if " (" in chem and chem.endswith(")"):
+            last_paren = chem.rfind(" (")
             base = chem[:last_paren].strip()
-            abbr = chem[last_paren + 1:-1].strip()
+            abbr = chem[last_paren + 2:-1].strip()
             if base:
                 variants.add(norm(base))
             if abbr:
@@ -918,7 +918,7 @@ class EventScorer:
         events,
         key_text: str,
         *,
-        min_score: float = 65.0,
+        min_score: float = 68.0,
         require_chemical: bool = True,
         top_k: int | None = 2
     ):
@@ -1043,7 +1043,7 @@ class EventScorer:
         sentences_annotated, matched_sents = self.annotate_blocks(sent_dicts, events, "text", top_k=1)
         lines_annotated, matched_lines = self.annotate_blocks(line_dicts, events, "text", top_k=1)
         paragraphs_annotated, matched_paras = self.annotate_blocks(para_dicts, events, "text", top_k=1)
-        chunks_annotated, matched_chunks = self.annotate_blocks(chunks_dicts, events, "text", top_k=1)
+        chunks_annotated, matched_chunks = self.annotate_blocks(chunks_dicts, events, "text", top_k=None)
         unmatched_events_chunk = [ev for ev in events if ev["event_id"] not in matched_chunks]
         unmatched_events_any = [ev for ev in events if ev["event_id"] not in (matched_sents | matched_lines | matched_paras | matched_chunks)]
 
