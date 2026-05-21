@@ -1215,26 +1215,24 @@ class DatasetBuilder:
 
         return positive_examples, empty_chunks
 
-    def build_biomistral_chunk_dataset(self, test_ratio: float = 0.05, empty_ratio: float = 1.0, seed: int = 42, use_rag: bool = False) -> None:
-        input_dir_path = Path(self.input_dir)
-        files = sorted(input_dir_path.glob("*_events.json"))
-
-        if not files:
-            raise RuntimeError(f"No events .json files found in {input_dir_path}")
-
-        rng = random.Random(seed)
-        path_by_stem = {fp.stem: fp for fp in files}
-        paper_ids = list(path_by_stem.keys())
-        rng.shuffle(paper_ids)
-
-        # --- Paper-level split ---
-        n_test_papers = max(1, int(len(paper_ids) * test_ratio)) if len(paper_ids) > 1 else 0
-        test_paper_ids = paper_ids[:n_test_papers]
-        train_paper_ids = paper_ids[n_test_papers:]
-
+    def _write_split(
+        self,
+        train_paper_ids: List[str],
+        test_paper_ids: List[str],
+        path_by_stem: Dict[str, Path],
+        train_path: Path,
+        test_path: Path,
+        meta_path: Path,
+        empty_ratio: float,
+        seed: int,
+        use_rag: bool,
+        extra_meta: Dict[str, Any] | None = None,
+    ) -> None:
+        """
+        Given explicit train/test paper ID lists, collects examples, writes JSONL splits
+        and a split_info JSON. Called once for a standard split or k times for k-fold.
+        """
         # --- Extract examples per split ---
-        # Each example is tagged with "_paper_stem", "_chunk_text", "_events" for stats.
-        # All "_"-prefixed tags are stripped before writing to jsonl.
         def collect_examples(stems: List[str]):
             pos_msgs, tagged_empty = [], []
             for stem in stems:
@@ -1307,12 +1305,15 @@ class DatasetBuilder:
 
         # --- Write JSONL splits (strip all internal tracking tags) ---
         _internal_keys = {"_paper_stem", "_chunk_text", "_events"}
-        with self.output_train_path.open("w", encoding="utf-8") as f:
+        train_path.parent.mkdir(parents=True, exist_ok=True)
+        test_path.parent.mkdir(parents=True, exist_ok=True)
+
+        with train_path.open("w", encoding="utf-8") as f:
             for ex in train_examples:
                 record = {k: v for k, v in ex.items() if k not in _internal_keys}
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-        with self.output_test_path.open("w", encoding="utf-8") as f:
+        with test_path.open("w", encoding="utf-8") as f:
             for ex in test_examples:
                 record = {k: v for k, v in ex.items() if k not in _internal_keys}
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
@@ -1362,24 +1363,103 @@ class DatasetBuilder:
 
         all_examples = train_examples + test_examples
         global_stats = compute_split_stats(all_examples)
-        split_meta = {
+        split_meta: Dict[str, Any] = {
             "seed": seed,
-            "test_ratio": test_ratio,
             "empty_ratio": empty_ratio,
-            "total_papers": len(paper_ids),
+            "total_papers": len(train_paper_ids) + len(test_paper_ids),
             "total_chunks": len(all_examples),
             **global_stats,
+            **(extra_meta or {}),
             "train": train_info,
             "test": test_info,
         }
 
-        meta_path = self.output_train_path.parent / "split_info.json"
         with meta_path.open("w", encoding="utf-8") as f:
             json.dump(split_meta, f, indent=2, ensure_ascii=False)
 
         print(f"[DONE] Train: {len(train_examples)} examples from {len(train_paper_ids)} papers")
         print(f"[DONE] Test:  {len(test_examples)} examples from {len(test_paper_ids)} papers")
         print(f"[DONE] Split metadata saved to {meta_path}")
+
+    def build_biomistral_chunk_dataset(
+        self,
+        test_ratio: float = 0.05,
+        empty_ratio: float = 1.0,
+        seed: int = 42,
+        use_rag: bool = False,
+        k_folds: int | None = None,
+    ) -> None:
+        """
+        Builds JSONL train/test splits for fine-tuning.
+
+        When k_folds is None (default): a single stratified split using test_ratio.
+        When k_folds=k: produces k separate folds; test_ratio is ignored.
+          Each paper appears in exactly one test fold.
+          Output files are named with a _fold_{i} suffix:
+            train_fold_0.jsonl, test_fold_0.jsonl, split_info_fold_0.json, ...
+        """
+        input_dir_path = Path(self.input_dir)
+        files = sorted(input_dir_path.glob("*_events.json"))
+
+        if not files:
+            raise RuntimeError(f"No events .json files found in {input_dir_path}")
+
+        rng = random.Random(seed)
+        path_by_stem = {fp.stem: fp for fp in files}
+        paper_ids = list(path_by_stem.keys())
+        rng.shuffle(paper_ids)
+
+        if k_folds is not None:
+            if k_folds < 2:
+                raise ValueError("k_folds must be >= 2")
+            if k_folds > len(paper_ids):
+                raise ValueError(f"k_folds ({k_folds}) > number of papers ({len(paper_ids)})")
+
+            # Distribute papers round-robin into k folds so sizes differ by at most 1
+            folds: List[List[str]] = [paper_ids[i::k_folds] for i in range(k_folds)]
+
+            for fold_idx, test_ids in enumerate(folds):
+                train_ids = [p for i, f in enumerate(folds) for p in f if i != fold_idx]
+
+                train_path = self.output_train_path.with_stem(
+                    f"{self.output_train_path.stem}_fold_{fold_idx}"
+                )
+                test_path = self.output_test_path.with_stem(
+                    f"{self.output_test_path.stem}_fold_{fold_idx}"
+                )
+                meta_path = self.output_train_path.parent / f"split_info_fold_{fold_idx}.json"
+
+                print(f"\n[K-FOLD {fold_idx + 1}/{k_folds}] test papers: {len(test_ids)}, train papers: {len(train_ids)}")
+                self._write_split(
+                    train_ids,
+                    test_ids,
+                    path_by_stem,
+                    train_path,
+                    test_path,
+                    meta_path,
+                    empty_ratio,
+                    seed + fold_idx,
+                    use_rag,
+                    extra_meta={"k_folds": k_folds, "fold_index": fold_idx},
+                )
+        else:
+            n_test_papers = max(1, int(len(paper_ids) * test_ratio)) if len(paper_ids) > 1 else 0
+            test_paper_ids = paper_ids[:n_test_papers]
+            train_paper_ids = paper_ids[n_test_papers:]
+            meta_path = self.output_train_path.parent / "split_info.json"
+
+            self._write_split(
+                train_paper_ids,
+                test_paper_ids,
+                path_by_stem,
+                self.output_train_path,
+                self.output_test_path,
+                meta_path,
+                empty_ratio,
+                seed,
+                use_rag,
+                extra_meta={"test_ratio": test_ratio},
+            )
 
     def __exit__(self, exc_type, exc, tb):
         pass
