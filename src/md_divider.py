@@ -333,10 +333,9 @@ class MarkdownDivider:
     units: List[str] = []
 
     # preserve heading context explicitly
-    heading_prefix = f"[SECTION] {title}" if title else ""
-
-    if heading_prefix:
-        units.append(heading_prefix)
+    if title:
+        suffix = "" if title[-1] in ".!?:" else "."
+        units.append(f"## {title}{suffix}\n")
 
     if body:
         for line in body.split("\n"):
@@ -414,14 +413,20 @@ class MarkdownDivider:
     cur: List[str] = []
 
     def cur_text() -> str:
-        return " ".join(cur).strip()
+        result = ""
+        for u in cur:
+            if result and not result.endswith("\n"):
+                result += " "
+            result += u
+        return result
 
     for unit in normalized_units:
         if not cur:
             cur = [unit]
             continue
 
-        candidate = f"{cur_text()} {unit}".strip()
+        ct = cur_text()
+        candidate = ct + ("" if ct.endswith("\n") else " ") + unit
         candidate_tokens = self._count_tokens(candidate)
 
         # grow until hard max
@@ -448,7 +453,8 @@ class MarkdownDivider:
             continue
 
         nxt = chunks[i + 1]
-        candidate = f"{current} {nxt}".strip()
+        sep = "" if current.endswith("\n") else " "
+        candidate = f"{current}{sep}{nxt}".strip()
         if self._count_tokens(candidate) <= self.max_chunk_tokens:
             merged.append(candidate)
             i += 2
