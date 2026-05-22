@@ -851,7 +851,7 @@ class PDFExtractor:
 
   # FULL EXTRACTION PIPELINE
 
-  def run_text_extraction(self, folder="markdown", ocr_figure_lang: str = "en", only_tables=False, only_figures=False):
+  def run_text_extraction(self, folder="markdown", ocr_figure_lang: str = "en", only_tables=True, only_figures=False):
     """
     Iterates paper_files and extracts text into markdown files in output_dir/folder.
     For each PDF it does the following:

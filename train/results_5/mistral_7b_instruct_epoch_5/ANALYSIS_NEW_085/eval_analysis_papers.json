@@ -1,0 +1,3415 @@
+{
+  "summary": {
+    "n_papers": 14,
+    "total_gold_events": 258,
+    "total_pred_events": 366,
+    "total_similar_to_gold": 61,
+    "total_not_in_gold_fp": 305,
+    "total_gold_not_found_fn": 197,
+    "precision": 0.1667,
+    "recall": 0.2364,
+    "f1": 0.1955
+  },
+  "papers": [
+    {
+      "paper_id": "paper_0002_events",
+      "n_chunks": 23,
+      "n_gold_events": 28,
+      "n_pred_events": 39,
+      "similar_to_gold": 11,
+      "not_in_gold_fp": 28,
+      "gold_not_found_fn": 17,
+      "exact_hits": 1,
+      "fuzzy_hits": 10,
+      "precision": 0.2821,
+      "recall": 0.3929,
+      "f1": 0.3284,
+      "gold_events": [
+        {
+          "chemical": "ascorbic acid",
+          "event_type": "KE",
+          "description": "increased oligodendrocyte differentiation"
+        },
+        {
+          "chemical": "bisindolylmaleimide I (Bis-I)",
+          "event_type": "MIE",
+          "description": "PKC inhibition"
+        },
+        {
+          "chemical": "bisindolylmaleimide I (Bis-I)",
+          "event_type": "KE",
+          "description": "reduction of neurite area and subneurite length"
+        },
+        {
+          "chemical": "cadmium chloride",
+          "event_type": "MIE",
+          "description": "oxidative stress induction"
+        },
+        {
+          "chemical": "cadmium chloride",
+          "event_type": "KE",
+          "description": "inhibition of hNPC proliferation"
+        },
+        {
+          "chemical": "DAPT (Notch inhibitor)",
+          "event_type": "MIE",
+          "description": "Notch pathway inhibition"
+        },
+        {
+          "chemical": "DAPT (Notch inhibitor)",
+          "event_type": "KE",
+          "description": "decreased oligodendrocyte differentiation"
+        },
+        {
+          "chemical": "DAPT (Notch inhibitor)",
+          "event_type": "KE",
+          "description": "increased neuronal numbers"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "decreased oligodendrocyte differentiation"
+        },
+        {
+          "chemical": "EGF (Epidermal Growth Factor)",
+          "event_type": "KE",
+          "description": "increased hNPC proliferation"
+        },
+        {
+          "chemical": "EGF (Epidermal Growth Factor)",
+          "event_type": "KE",
+          "description": "increased migration"
+        },
+        {
+          "chemical": "methylmercury (MeHg)",
+          "event_type": "KE",
+          "description": "reduced NPC migration"
+        },
+        {
+          "chemical": "narciclasine",
+          "event_type": "MIE",
+          "description": "RhoA activation"
+        },
+        {
+          "chemical": "narciclasine",
+          "event_type": "KE",
+          "description": "reduced hiNPC migration"
+        },
+        {
+          "chemical": "narciclasine",
+          "event_type": "KE",
+          "description": "reduced neuronal differentiation"
+        },
+        {
+          "chemical": "narciclasine",
+          "event_type": "KE",
+          "description": "reduction of neurite area and subneurite length"
+        },
+        {
+          "chemical": "NH-3 (Thyroid hormone receptor antagonist)",
+          "event_type": "MIE",
+          "description": "thyroid hormone receptor antagonism"
+        },
+        {
+          "chemical": "NH-3 (Thyroid hormone receptor antagonist)",
+          "event_type": "KE",
+          "description": "decreased T3-dependent OL maturation"
+        },
+        {
+          "chemical": "PD153035 (EGFR inhibitor)",
+          "event_type": "MIE",
+          "description": "EGFR inhibition"
+        },
+        {
+          "chemical": "PD153035 (EGFR inhibitor)",
+          "event_type": "KE",
+          "description": "antagonized EGF-induced migration"
+        },
+        {
+          "chemical": "PD153035 (EGFR inhibitor)",
+          "event_type": "KE",
+          "description": "antagonized EGF-induced proliferation"
+        },
+        {
+          "chemical": "PP2 (SRC-kinase inhibitor)",
+          "event_type": "MIE",
+          "description": "SRC-kinase inhibition"
+        },
+        {
+          "chemical": "PP2 (SRC-kinase inhibitor)",
+          "event_type": "KE",
+          "description": "reduced cell migration"
+        },
+        {
+          "chemical": "T3 (Triiodothyronine)",
+          "event_type": "KE",
+          "description": "increased MBP expression"
+        },
+        {
+          "chemical": "T3 (Triiodothyronine)",
+          "event_type": "KE",
+          "description": "increased oligodendrocyte maturation"
+        },
+        {
+          "chemical": "TETRABROMOBISPHENOL A (TBBPA)",
+          "event_type": "MIE",
+          "description": "lipotoxicity via cholesterol metabolism disruption"
+        },
+        {
+          "chemical": "TETRABROMOBISPHENOL A (TBBPA)",
+          "event_type": "KE",
+          "description": "decreased oligodendrocyte differentiation"
+        },
+        {
+          "chemical": "TETRABROMOBISPHENOL A (TBBPA)",
+          "event_type": "KE",
+          "description": "decreased T3-dependent OL maturation"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Bisindolylmaleimide 1 (Bis-I)",
+          "event_type": "MIE",
+          "description": "Protein kinase C inhibition"
+        },
+        {
+          "chemical": "Bisindolylmaleimide 1 (Bis-I)",
+          "event_type": "KE",
+          "description": "Reduced neurite length and area"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "MIE",
+          "description": "Induction of oxidative stress"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Concentration-dependent decrease of hNPC proliferation"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Inhibition of hNPC proliferation"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "AO",
+          "description": "Lower child intelligence score / memory deficits / learning disabilities"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "AO",
+          "description": "Neurotoxicological changes / behavioral changes"
+        },
+        {
+          "chemical": "DAPT",
+          "event_type": "KE",
+          "description": "Inhibition of Notch signaling decreases neuronal differentiation"
+        },
+        {
+          "chemical": "DAPT (N-[N-(3,5-Difluorophenacetyl)L-alanyl]-S-phenylglycine t-butyl ester)",
+          "event_type": "KE",
+          "description": "Increased neuronal numbers"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Inhibition of oligodendrocyte differentiation"
+        },
+        {
+          "chemical": "deltamethrin (DM)",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channel (VGSC) expression in OPCs"
+        },
+        {
+          "chemical": "deltamethrin (DM)",
+          "event_type": "KE",
+          "description": "Prolonged opening of voltage-gated sodium channels (VGSC)"
+        },
+        {
+          "chemical": "deltamethrin (DM)",
+          "event_type": "AO",
+          "description": "ADHD-like and anxiety-like behavior"
+        },
+        {
+          "chemical": "deltamethrin (DM)",
+          "event_type": "AO",
+          "description": "Deficits in working memory and spatial learning"
+        },
+        {
+          "chemical": "EGF",
+          "event_type": "KE",
+          "description": "Inhibition of RG migration"
+        },
+        {
+          "chemical": "Lead",
+          "event_type": "KE",
+          "description": "Altered neurite outgrowth (association)"
+        },
+        {
+          "chemical": "Lead",
+          "event_type": "KE",
+          "description": "Altered neuronal differentiation (association)"
+        },
+        {
+          "chemical": "Lead",
+          "event_type": "KE",
+          "description": "Altered radial glia migration (association)"
+        },
+        {
+          "chemical": "Lead",
+          "event_type": "KE",
+          "description": "Microcephaly (association)"
+        },
+        {
+          "chemical": "Lead",
+          "event_type": "AO",
+          "description": "Developmental brain disorders (association)"
+        },
+        {
+          "chemical": "methylmercury (MeHg)",
+          "event_type": "KE",
+          "description": "Inhibition of RG migration"
+        },
+        {
+          "chemical": "Narciclasine",
+          "event_type": "KE",
+          "description": "Cytoskeleton stabilization"
+        },
+        {
+          "chemical": "narciclasine",
+          "event_type": "KE",
+          "description": "Reduced neurite area and length"
+        },
+        {
+          "chemical": "narciclasine",
+          "event_type": "KE",
+          "description": "Reduced neuronal differentiation"
+        },
+        {
+          "chemical": "narciclasine",
+          "event_type": "KE",
+          "description": "RhoA pathway activation decreases neuronal differentiation"
+        },
+        {
+          "chemical": "NH-3",
+          "event_type": "KE",
+          "description": "Impairment of T3-dependent OL maturation"
+        },
+        {
+          "chemical": "NH-3",
+          "event_type": "KE",
+          "description": "Inhibition of oligodendrocyte maturation"
+        },
+        {
+          "chemical": "PD153035",
+          "event_type": "KE",
+          "description": "Concentration-dependent decrease of hNPC proliferation"
+        },
+        {
+          "chemical": "PD153035 (EGFR inhibitor)",
+          "event_type": "KE",
+          "description": "Antagonizes EGF-induced hNPC proliferation"
+        },
+        {
+          "chemical": "PD153035 (EGFR inhibitor)",
+          "event_type": "KE",
+          "description": "No cytotoxicity in hNPC"
+        },
+        {
+          "chemical": "PP2",
+          "event_type": "KE",
+          "description": "Inhibition of RG migration"
+        },
+        {
+          "chemical": "PP2",
+          "event_type": "KE",
+          "description": "Reduced migration"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Inhibition of mitochondrial complex I"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Reduced mitochondrial activity"
+        },
+        {
+          "chemical": "TBBPA",
+          "event_type": "KE",
+          "description": "Impairment of T3-dependent OL maturation"
+        },
+        {
+          "chemical": "TBBPA",
+          "event_type": "KE",
+          "description": "Inhibition of oligodendrocyte maturation"
+        },
+        {
+          "chemical": "tetrabromobisphenol A (TBBPA)",
+          "event_type": "MIE",
+          "description": "Lipotoxicity"
+        },
+        {
+          "chemical": "tetrabromobisphenol A (TBBPA)",
+          "event_type": "KE",
+          "description": "Cholesterol metabolism deregulation"
+        },
+        {
+          "chemical": "Tetrabromobisphenol A (TBBPA)",
+          "event_type": "KE",
+          "description": "Inhibition of oligodendrocyte differentiation"
+        }
+      ],
+      "gold_events_text": "ascorbic acid | KE | increased oligodendrocyte differentiation\nbisindolylmaleimide I (Bis-I) | MIE | PKC inhibition\nbisindolylmaleimide I (Bis-I) | KE | reduction of neurite area and subneurite length\ncadmium chloride | MIE | oxidative stress induction\ncadmium chloride | KE | inhibition of hNPC proliferation\nDAPT (Notch inhibitor) | MIE | Notch pathway inhibition\nDAPT (Notch inhibitor) | KE | decreased oligodendrocyte differentiation\nDAPT (Notch inhibitor) | KE | increased neuronal numbers\ndeltamethrin | KE | decreased oligodendrocyte differentiation\nEGF (Epidermal Growth Factor) | KE | increased hNPC proliferation\nEGF (Epidermal Growth Factor) | KE | increased migration\nmethylmercury (MeHg) | KE | reduced NPC migration\nnarciclasine | MIE | RhoA activation\nnarciclasine | KE | reduced hiNPC migration\nnarciclasine | KE | reduced neuronal differentiation\nnarciclasine | KE | reduction of neurite area and subneurite length\nNH-3 (Thyroid hormone receptor antagonist) | MIE | thyroid hormone receptor antagonism\nNH-3 (Thyroid hormone receptor antagonist) | KE | decreased T3-dependent OL maturation\nPD153035 (EGFR inhibitor) | MIE | EGFR inhibition\nPD153035 (EGFR inhibitor) | KE | antagonized EGF-induced migration\nPD153035 (EGFR inhibitor) | KE | antagonized EGF-induced proliferation\nPP2 (SRC-kinase inhibitor) | MIE | SRC-kinase inhibition\nPP2 (SRC-kinase inhibitor) | KE | reduced cell migration\nT3 (Triiodothyronine) | KE | increased MBP expression\nT3 (Triiodothyronine) | KE | increased oligodendrocyte maturation\nTETRABROMOBISPHENOL A (TBBPA) | MIE | lipotoxicity via cholesterol metabolism disruption\nTETRABROMOBISPHENOL A (TBBPA) | KE | decreased oligodendrocyte differentiation\nTETRABROMOBISPHENOL A (TBBPA) | KE | decreased T3-dependent OL maturation",
+      "pred_events_text": "Bisindolylmaleimide 1 (Bis-I) | MIE | Protein kinase C inhibition\nBisindolylmaleimide 1 (Bis-I) | KE | Reduced neurite length and area\nCadmium | MIE | Induction of oxidative stress\nCadmium | KE | Concentration-dependent decrease of hNPC proliferation\nCadmium | KE | Inhibition of hNPC proliferation\nCadmium | AO | Lower child intelligence score / memory deficits / learning disabilities\nCadmium | AO | Neurotoxicological changes / behavioral changes\nDAPT | KE | Inhibition of Notch signaling decreases neuronal differentiation\nDAPT (N-[N-(3,5-Difluorophenacetyl)L-alanyl]-S-phenylglycine t-butyl ester) | KE | Increased neuronal numbers\nDeltamethrin | KE | Inhibition of oligodendrocyte differentiation\ndeltamethrin (DM) | MIE | Voltage-gated sodium channel (VGSC) expression in OPCs\ndeltamethrin (DM) | KE | Prolonged opening of voltage-gated sodium channels (VGSC)\ndeltamethrin (DM) | AO | ADHD-like and anxiety-like behavior\ndeltamethrin (DM) | AO | Deficits in working memory and spatial learning\nEGF | KE | Inhibition of RG migration\nLead | KE | Altered neurite outgrowth (association)\nLead | KE | Altered neuronal differentiation (association)\nLead | KE | Altered radial glia migration (association)\nLead | KE | Microcephaly (association)\nLead | AO | Developmental brain disorders (association)\nmethylmercury (MeHg) | KE | Inhibition of RG migration\nNarciclasine | KE | Cytoskeleton stabilization\nnarciclasine | KE | Reduced neurite area and length\nnarciclasine | KE | Reduced neuronal differentiation\nnarciclasine | KE | RhoA pathway activation decreases neuronal differentiation\nNH-3 | KE | Impairment of T3-dependent OL maturation\nNH-3 | KE | Inhibition of oligodendrocyte maturation\nPD153035 | KE | Concentration-dependent decrease of hNPC proliferation\nPD153035 (EGFR inhibitor) | KE | Antagonizes EGF-induced hNPC proliferation\nPD153035 (EGFR inhibitor) | KE | No cytotoxicity in hNPC\nPP2 | KE | Inhibition of RG migration\nPP2 | KE | Reduced migration\nRotenone | KE | Inhibition of mitochondrial complex I\nRotenone | KE | Reduced mitochondrial activity\nTBBPA | KE | Impairment of T3-dependent OL maturation\nTBBPA | KE | Inhibition of oligodendrocyte maturation\ntetrabromobisphenol A (TBBPA) | MIE | Lipotoxicity\ntetrabromobisphenol A (TBBPA) | KE | Cholesterol metabolism deregulation\nTetrabromobisphenol A (TBBPA) | KE | Inhibition of oligodendrocyte differentiation"
+    },
+    {
+      "paper_id": "paper_0012_events",
+      "n_chunks": 2,
+      "n_gold_events": 13,
+      "n_pred_events": 3,
+      "similar_to_gold": 0,
+      "not_in_gold_fp": 3,
+      "gold_not_found_fn": 13,
+      "exact_hits": 0,
+      "fuzzy_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "gold_events": [
+        {
+          "chemical": "bifenthrin",
+          "event_type": "KE",
+          "description": "greater toxicity in logarithmic phase"
+        },
+        {
+          "chemical": "bifenthrin",
+          "event_type": "KE",
+          "description": "increased ρ-mutation frequency"
+        },
+        {
+          "chemical": "bifenthrin",
+          "event_type": "KE",
+          "description": "mutation of mitochondrial DNA"
+        },
+        {
+          "chemical": "bifenthrin",
+          "event_type": "KE",
+          "description": "reduced survival rate"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "greater toxicity in logarithmic phase"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "increased ρ-mutation frequency"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "mutation of mitochondrial DNA"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "reduced survival rate"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "greater toxicity in logarithmic phase"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "greater toxicity than other pyrethroids"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "increased ρ-mutation frequency"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "mutation of mitochondrial DNA"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "reduced survival rate"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "bifenthrin",
+          "event_type": "AO",
+          "description": "Increased frequency of ρ-mutation in survivors"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "AO",
+          "description": "Increased frequency of ρ-mutation in survivors"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Increased frequency of ρ-mutation in survivors"
+        }
+      ],
+      "gold_events_text": "bifenthrin | KE | greater toxicity in logarithmic phase\nbifenthrin | KE | increased ρ-mutation frequency\nbifenthrin | KE | mutation of mitochondrial DNA\nbifenthrin | KE | reduced survival rate\ncypermethrin | KE | greater toxicity in logarithmic phase\ncypermethrin | KE | increased ρ-mutation frequency\ncypermethrin | KE | mutation of mitochondrial DNA\ncypermethrin | KE | reduced survival rate\ndeltamethrin | KE | greater toxicity in logarithmic phase\ndeltamethrin | KE | greater toxicity than other pyrethroids\ndeltamethrin | KE | increased ρ-mutation frequency\ndeltamethrin | KE | mutation of mitochondrial DNA\ndeltamethrin | KE | reduced survival rate",
+      "pred_events_text": "bifenthrin | AO | Increased frequency of ρ-mutation in survivors\ncypermethrin | AO | Increased frequency of ρ-mutation in survivors\ndeltamethrin | AO | Increased frequency of ρ-mutation in survivors"
+    },
+    {
+      "paper_id": "paper_0015_events",
+      "n_chunks": 11,
+      "n_gold_events": 5,
+      "n_pred_events": 9,
+      "similar_to_gold": 0,
+      "not_in_gold_fp": 9,
+      "gold_not_found_fn": 5,
+      "exact_hits": 0,
+      "fuzzy_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "gold_events": [
+        {
+          "chemical": "deltamethrin",
+          "event_type": "MIE",
+          "description": "Modulation of voltage-sensitive sodium channels"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Activation of Bdnf promoter IV via Ca2+-responsive elements"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Continuous Ca2+ signaling drives prolonged Bdnf promoter activation"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Neurotrophic effects on neurons"
+        },
+        {
+          "chemical": "GABA",
+          "event_type": "KE",
+          "description": "Inhibition of deltamethrin-induced Bdnf eIV-IX mRNA expression"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Baclofen",
+          "event_type": "KE",
+          "description": "Did not reduce DM-induced Bdnf eIV-IX mRNA expression"
+        },
+        {
+          "chemical": "Bay K8644",
+          "event_type": "KE",
+          "description": "Weak increase in Bdnf eIV-IX mRNA expression"
+        },
+        {
+          "chemical": "Deltamethrin (DM)",
+          "event_type": "KE",
+          "description": "Continuous Ca2+ influx via L-VDCC"
+        },
+        {
+          "chemical": "Deltamethrin (DM)",
+          "event_type": "KE",
+          "description": "Depolarization of neurons"
+        },
+        {
+          "chemical": "deltamethrin (DM)",
+          "event_type": "KE",
+          "description": "Increase in Bdnf eIV-IX mRNA expression"
+        },
+        {
+          "chemical": "deltamethrin (DM)",
+          "event_type": "KE",
+          "description": "Prolonged activation of Bdnf promoter IV"
+        },
+        {
+          "chemical": "FK506",
+          "event_type": "KE",
+          "description": "Inhibition of DM-induced Bdnf eIV-IX mRNA expression"
+        },
+        {
+          "chemical": "Muscimol",
+          "event_type": "KE",
+          "description": "Reduced DM-induced Bdnf eIV-IX mRNA expression"
+        },
+        {
+          "chemical": "U0126",
+          "event_type": "KE",
+          "description": "Partial inhibition of DM-induced Bdnf eIV-IX mRNA expression"
+        }
+      ],
+      "gold_events_text": "deltamethrin | MIE | Modulation of voltage-sensitive sodium channels\ndeltamethrin | KE | Activation of Bdnf promoter IV via Ca2+-responsive elements\ndeltamethrin | KE | Continuous Ca2+ signaling drives prolonged Bdnf promoter activation\ndeltamethrin | AO | Neurotrophic effects on neurons\nGABA | KE | Inhibition of deltamethrin-induced Bdnf eIV-IX mRNA expression",
+      "pred_events_text": "Baclofen | KE | Did not reduce DM-induced Bdnf eIV-IX mRNA expression\nBay K8644 | KE | Weak increase in Bdnf eIV-IX mRNA expression\nDeltamethrin (DM) | KE | Continuous Ca2+ influx via L-VDCC\nDeltamethrin (DM) | KE | Depolarization of neurons\ndeltamethrin (DM) | KE | Increase in Bdnf eIV-IX mRNA expression\ndeltamethrin (DM) | KE | Prolonged activation of Bdnf promoter IV\nFK506 | KE | Inhibition of DM-induced Bdnf eIV-IX mRNA expression\nMuscimol | KE | Reduced DM-induced Bdnf eIV-IX mRNA expression\nU0126 | KE | Partial inhibition of DM-induced Bdnf eIV-IX mRNA expression"
+    },
+    {
+      "paper_id": "paper_0085_events",
+      "n_chunks": 9,
+      "n_gold_events": 29,
+      "n_pred_events": 28,
+      "similar_to_gold": 4,
+      "not_in_gold_fp": 24,
+      "gold_not_found_fn": 25,
+      "exact_hits": 0,
+      "fuzzy_hits": 4,
+      "precision": 0.1429,
+      "recall": 0.1379,
+      "f1": 0.1404,
+      "gold_events": [
+        {
+          "chemical": "cypermethrin",
+          "event_type": "MIE",
+          "description": "Delayed/prolonged sodium channel opening (general pyrethroid mechanism)"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "MIE",
+          "description": "Membrane ATPases as potential neurotoxic target (general statement)"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "MIE",
+          "description": "Sodium channel target (general pyrethroid mechanism)"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Decreased total ATP"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity in SH-SY5Y cells"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Early detectable toxicity at low micromolar levels"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Early morphological cell damage"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Mitochondrial enzyme activity changes"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Morphological evidence of high toxicity"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Oxidative stress potential (general statement)"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "AO",
+          "description": "Severe loss of viability at higher concentrations"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "MIE",
+          "description": "Delayed/prolonged sodium channel opening (general pyrethroid mechanism)"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "MIE",
+          "description": "Sodium channel target (general pyrethroid mechanism)"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Decreased total ATP"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity in SH-SY5Y cells"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Early morphological cell damage"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Mitochondrial enzyme activity changes"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Morphological toxicity precedes ATP changes"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Oxidative stress potential (general statement)"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Toxicity detected by ATP and WST-1 at higher concentrations"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "AO",
+          "description": "Near-complete loss of viability at high concentration"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "MIE",
+          "description": "Delayed/prolonged sodium channel opening (general pyrethroid mechanism)"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "MIE",
+          "description": "Sodium channel target (general pyrethroid mechanism)"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Decreased total ATP"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity in SH-SY5Y cells"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Dose-dependent morphological cytotoxicity"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Early morphological cell damage"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Marked reduction in WST-1/ATP at high concentration"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Mitochondrial enzyme activity changes"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Biokill",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channel modification"
+        },
+        {
+          "chemical": "Biospray S",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channel modification"
+        },
+        {
+          "chemical": "Cypermethrin",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channel modification"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "MIE",
+          "description": "α-cyano group enhances toxicity"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Intracellular vacuoles and cell aggregates"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Marked decrease of total ATP at 15 and 25 µM"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Rounding-up of cells"
+        },
+        {
+          "chemical": "Cypermethrin",
+          "event_type": "KE",
+          "description": "stronger toxicity than permethrin"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "MIE",
+          "description": "action on peripheral nervous system"
+        },
+        {
+          "chemical": "Permethrin",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channel modification"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Intracellular vacuoles and cell aggregates"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Marked decrease of total ATP at 50 and 100 µM"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "Rounding-up of cells"
+        },
+        {
+          "chemical": "Permethrin",
+          "event_type": "KE",
+          "description": "weaker toxicity than cypermethrin"
+        },
+        {
+          "chemical": "Pyrethrin",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channel modification"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Intracellular vacuoles and cell aggregates"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Marked decrease of total ATP and WST-1 at 100 µM"
+        },
+        {
+          "chemical": "pyrethrin",
+          "event_type": "KE",
+          "description": "Rounding-up of cells"
+        },
+        {
+          "chemical": "Pyrethrin",
+          "event_type": "KE",
+          "description": "weakest physiological effect among three pyrethroids"
+        },
+        {
+          "chemical": "pyrethroids (general)",
+          "event_type": "MIE",
+          "description": "interaction with sodium channels"
+        },
+        {
+          "chemical": "pyrethroids (general)",
+          "event_type": "MIE",
+          "description": "reactive oxygen species formation"
+        },
+        {
+          "chemical": "pyrethroids (general)",
+          "event_type": "KE",
+          "description": "altered antioxidant enzymes"
+        },
+        {
+          "chemical": "pyrethroids (general)",
+          "event_type": "KE",
+          "description": "delayed/prolonged Na+ channel openings"
+        },
+        {
+          "chemical": "pyrethroids (general)",
+          "event_type": "KE",
+          "description": "membrane ATPases involved"
+        },
+        {
+          "chemical": "pyrethroids (general)",
+          "event_type": "KE",
+          "description": "oxidative stress"
+        }
+      ],
+      "gold_events_text": "cypermethrin | MIE | Delayed/prolonged sodium channel opening (general pyrethroid mechanism)\ncypermethrin | MIE | Membrane ATPases as potential neurotoxic target (general statement)\ncypermethrin | MIE | Sodium channel target (general pyrethroid mechanism)\ncypermethrin | KE | Decreased total ATP\ncypermethrin | KE | Dose-dependent cytotoxicity in SH-SY5Y cells\ncypermethrin | KE | Early detectable toxicity at low micromolar levels\ncypermethrin | KE | Early morphological cell damage\ncypermethrin | KE | Mitochondrial enzyme activity changes\ncypermethrin | KE | Morphological evidence of high toxicity\ncypermethrin | KE | Oxidative stress potential (general statement)\ncypermethrin | AO | Severe loss of viability at higher concentrations\npermethrin | MIE | Delayed/prolonged sodium channel opening (general pyrethroid mechanism)\npermethrin | MIE | Sodium channel target (general pyrethroid mechanism)\npermethrin | KE | Decreased total ATP\npermethrin | KE | Dose-dependent cytotoxicity in SH-SY5Y cells\npermethrin | KE | Early morphological cell damage\npermethrin | KE | Mitochondrial enzyme activity changes\npermethrin | KE | Morphological toxicity precedes ATP changes\npermethrin | KE | Oxidative stress potential (general statement)\npermethrin | KE | Toxicity detected by ATP and WST-1 at higher concentrations\npermethrin | AO | Near-complete loss of viability at high concentration\npyrethrin | MIE | Delayed/prolonged sodium channel opening (general pyrethroid mechanism)\npyrethrin | MIE | Sodium channel target (general pyrethroid mechanism)\npyrethrin | KE | Decreased total ATP\npyrethrin | KE | Dose-dependent cytotoxicity in SH-SY5Y cells\npyrethrin | KE | Dose-dependent morphological cytotoxicity\npyrethrin | KE | Early morphological cell damage\npyrethrin | KE | Marked reduction in WST-1/ATP at high concentration\npyrethrin | KE | Mitochondrial enzyme activity changes",
+      "pred_events_text": "Biokill | MIE | Voltage-gated sodium channel modification\nBiospray S | MIE | Voltage-gated sodium channel modification\nCypermethrin | MIE | Voltage-gated sodium channel modification\ncypermethrin | MIE | α-cyano group enhances toxicity\ncypermethrin | KE | Dose-dependent cytotoxicity\ncypermethrin | KE | Intracellular vacuoles and cell aggregates\ncypermethrin | KE | Marked decrease of total ATP at 15 and 25 µM\ncypermethrin | KE | Rounding-up of cells\nCypermethrin | KE | stronger toxicity than permethrin\npermethrin | MIE | action on peripheral nervous system\nPermethrin | MIE | Voltage-gated sodium channel modification\npermethrin | KE | Dose-dependent cytotoxicity\npermethrin | KE | Intracellular vacuoles and cell aggregates\npermethrin | KE | Marked decrease of total ATP at 50 and 100 µM\npermethrin | KE | Rounding-up of cells\nPermethrin | KE | weaker toxicity than cypermethrin\nPyrethrin | MIE | Voltage-gated sodium channel modification\npyrethrin | KE | Dose-dependent cytotoxicity\npyrethrin | KE | Intracellular vacuoles and cell aggregates\npyrethrin | KE | Marked decrease of total ATP and WST-1 at 100 µM\npyrethrin | KE | Rounding-up of cells\nPyrethrin | KE | weakest physiological effect among three pyrethroids\npyrethroids (general) | MIE | interaction with sodium channels\npyrethroids (general) | MIE | reactive oxygen species formation\npyrethroids (general) | KE | altered antioxidant enzymes\npyrethroids (general) | KE | delayed/prolonged Na+ channel openings\npyrethroids (general) | KE | membrane ATPases involved\npyrethroids (general) | KE | oxidative stress"
+    },
+    {
+      "paper_id": "paper_1036_events",
+      "n_chunks": 11,
+      "n_gold_events": 25,
+      "n_pred_events": 24,
+      "similar_to_gold": 2,
+      "not_in_gold_fp": 22,
+      "gold_not_found_fn": 23,
+      "exact_hits": 0,
+      "fuzzy_hits": 2,
+      "precision": 0.0833,
+      "recall": 0.08,
+      "f1": 0.0816,
+      "gold_events": [
+        {
+          "chemical": "2,4-Dinitrophenol",
+          "event_type": "KE",
+          "description": "non-specific cytotoxicity"
+        },
+        {
+          "chemical": "Azole fungicides (class)",
+          "event_type": "MIE",
+          "description": "cytochrome P450 (CYP) enzyme inhibition"
+        },
+        {
+          "chemical": "Azole fungicides (class)",
+          "event_type": "AO",
+          "description": "endocrine disruption"
+        },
+        {
+          "chemical": "Butylparaben",
+          "event_type": "KE",
+          "description": "decreased testosterone (T) levels"
+        },
+        {
+          "chemical": "Cyproconazole",
+          "event_type": "KE",
+          "description": "decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)"
+        },
+        {
+          "chemical": "Danazol",
+          "event_type": "KE",
+          "description": "decreased testosterone (T) (active in this study)"
+        },
+        {
+          "chemical": "Danazol",
+          "event_type": "KE",
+          "description": "increased 17β-estradiol (E2) (discordant; possible assay cross-reactivity)"
+        },
+        {
+          "chemical": "Ethylene dimethanesulfonate",
+          "event_type": "KE",
+          "description": "non-specific cytotoxicity"
+        },
+        {
+          "chemical": "Fenarimol",
+          "event_type": "KE",
+          "description": "17β-estradiol (E2) inhibition detected with forskolin co-exposure"
+        },
+        {
+          "chemical": "Flusilazole",
+          "event_type": "KE",
+          "description": "inhibits testosterone (T) synthesis (reported in Leydig cells)"
+        },
+        {
+          "chemical": "Forskolin",
+          "event_type": "KE",
+          "description": "stimulates steroidogenic enzyme expression"
+        },
+        {
+          "chemical": "Glyphosate",
+          "event_type": "KE",
+          "description": "non-specific cytotoxicity"
+        },
+        {
+          "chemical": "Ketoconazole",
+          "event_type": "KE",
+          "description": "17β-estradiol (E2) inhibition detected with forskolin co-exposure"
+        },
+        {
+          "chemical": "Ketoconazole",
+          "event_type": "KE",
+          "description": "17β-estradiol (E2) inhibition trend"
+        },
+        {
+          "chemical": "Letrozole",
+          "event_type": "KE",
+          "description": "decreased testosterone (T) activity at highest concentration"
+        },
+        {
+          "chemical": "Mifepristone",
+          "event_type": "KE",
+          "description": "increased testosterone (T) (equivocal)"
+        },
+        {
+          "chemical": "Molinate",
+          "event_type": "KE",
+          "description": "increased 17β-estradiol (E2) biosynthesis (equivocal)"
+        },
+        {
+          "chemical": "Myclobutanil",
+          "event_type": "KE",
+          "description": "decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)"
+        },
+        {
+          "chemical": "Piperonyl butoxide",
+          "event_type": "KE",
+          "description": "equivocal 17β-estradiol (E2) induction (discordant)"
+        },
+        {
+          "chemical": "Prochloraz",
+          "event_type": "KE",
+          "description": "decreased 17β-estradiol (E2) biosynthesis (downward trend; threshold issue noted)"
+        },
+        {
+          "chemical": "Triadimefon",
+          "event_type": "KE",
+          "description": "decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)"
+        },
+        {
+          "chemical": "Triadimefon",
+          "event_type": "KE",
+          "description": "inhibits testosterone biosynthesis in rat testis cultures (reported)"
+        },
+        {
+          "chemical": "Triadimenol",
+          "event_type": "KE",
+          "description": "persistent degradation metabolite relationship (mechanistic context)"
+        },
+        {
+          "chemical": "Tricresyl phosphate",
+          "event_type": "KE",
+          "description": "non-specific cytotoxicity"
+        },
+        {
+          "chemical": "Trilostane",
+          "event_type": "KE",
+          "description": "increased 17β-estradiol (E2) (active; likely assay cross-reactivity)"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "azole fungicides",
+          "event_type": "KE",
+          "description": "Altered steroidogenesis"
+        },
+        {
+          "chemical": "Bisphenol A",
+          "event_type": "MIE",
+          "description": "Estrogen receptor agonist"
+        },
+        {
+          "chemical": "Bisphenol A",
+          "event_type": "KE",
+          "description": "Increase in testosterone"
+        },
+        {
+          "chemical": "cyproconazole",
+          "event_type": "KE",
+          "description": "Decreased estradiol in a concentration-dependent manner (borderline negative call)"
+        },
+        {
+          "chemical": "Danazol",
+          "event_type": "KE",
+          "description": "Increase in testosterone"
+        },
+        {
+          "chemical": "danazol",
+          "event_type": "KE",
+          "description": "Increased estradiol in H295R-HTRF assay (opposition to expected inhibition)"
+        },
+        {
+          "chemical": "Fenarimol",
+          "event_type": "KE",
+          "description": "Increase in testosterone"
+        },
+        {
+          "chemical": "Finasteride",
+          "event_type": "KE",
+          "description": "Increase in testosterone"
+        },
+        {
+          "chemical": "flusilazole",
+          "event_type": "KE",
+          "description": "Inhibited testosterone synthesis in murine Leydig cells (reported)"
+        },
+        {
+          "chemical": "forskolin",
+          "event_type": "KE",
+          "description": "Induction of steroidogenesis"
+        },
+        {
+          "chemical": "forskolin (for)",
+          "event_type": "KE",
+          "description": "Increased E2 in H295R cells"
+        },
+        {
+          "chemical": "forskolin (FOR)",
+          "event_type": "KE",
+          "description": "Increased testosterone (T) in H295R cells (positive control)"
+        },
+        {
+          "chemical": "Genistein",
+          "event_type": "MIE",
+          "description": "Estrogen receptor agonist"
+        },
+        {
+          "chemical": "Genistein",
+          "event_type": "KE",
+          "description": "Increase in testosterone"
+        },
+        {
+          "chemical": "Ketoconazole",
+          "event_type": "KE",
+          "description": "Increase in testosterone"
+        },
+        {
+          "chemical": "Mifepristone",
+          "event_type": "KE",
+          "description": "Equivocal hit call"
+        },
+        {
+          "chemical": "myclobutanil",
+          "event_type": "KE",
+          "description": "Decreased estradiol in a concentration-dependent manner (borderline negative call)"
+        },
+        {
+          "chemical": "piperonyl butoxide",
+          "event_type": "KE",
+          "description": "No estradiol inhibition in this study (unclear reasons)"
+        },
+        {
+          "chemical": "prochloraz",
+          "event_type": "KE",
+          "description": "Inhibition of steroidogenesis"
+        },
+        {
+          "chemical": "prochloraz (CPC)",
+          "event_type": "KE",
+          "description": "Inhibited estradiol (E2) synthesis (as expected)"
+        },
+        {
+          "chemical": "Prometon",
+          "event_type": "MIE",
+          "description": "Estrogen receptor agonist"
+        },
+        {
+          "chemical": "Spironolactone",
+          "event_type": "KE",
+          "description": "Increase in testosterone"
+        },
+        {
+          "chemical": "triadimefon",
+          "event_type": "KE",
+          "description": "Inhibits testosterone biosynthesis in rat testis cultures"
+        },
+        {
+          "chemical": "triadimenol",
+          "event_type": "KE",
+          "description": "Persistent degradation metabolite of triadimefon; inhibits testosterone biosynthesis in rat testis cultures"
+        }
+      ],
+      "gold_events_text": "2,4-Dinitrophenol | KE | non-specific cytotoxicity\nAzole fungicides (class) | MIE | cytochrome P450 (CYP) enzyme inhibition\nAzole fungicides (class) | AO | endocrine disruption\nButylparaben | KE | decreased testosterone (T) levels\nCyproconazole | KE | decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)\nDanazol | KE | decreased testosterone (T) (active in this study)\nDanazol | KE | increased 17β-estradiol (E2) (discordant; possible assay cross-reactivity)\nEthylene dimethanesulfonate | KE | non-specific cytotoxicity\nFenarimol | KE | 17β-estradiol (E2) inhibition detected with forskolin co-exposure\nFlusilazole | KE | inhibits testosterone (T) synthesis (reported in Leydig cells)\nForskolin | KE | stimulates steroidogenic enzyme expression\nGlyphosate | KE | non-specific cytotoxicity\nKetoconazole | KE | 17β-estradiol (E2) inhibition detected with forskolin co-exposure\nKetoconazole | KE | 17β-estradiol (E2) inhibition trend\nLetrozole | KE | decreased testosterone (T) activity at highest concentration\nMifepristone | KE | increased testosterone (T) (equivocal)\nMolinate | KE | increased 17β-estradiol (E2) biosynthesis (equivocal)\nMyclobutanil | KE | decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)\nPiperonyl butoxide | KE | equivocal 17β-estradiol (E2) induction (discordant)\nProchloraz | KE | decreased 17β-estradiol (E2) biosynthesis (downward trend; threshold issue noted)\nTriadimefon | KE | decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)\nTriadimefon | KE | inhibits testosterone biosynthesis in rat testis cultures (reported)\nTriadimenol | KE | persistent degradation metabolite relationship (mechanistic context)\nTricresyl phosphate | KE | non-specific cytotoxicity\nTrilostane | KE | increased 17β-estradiol (E2) (active; likely assay cross-reactivity)",
+      "pred_events_text": "azole fungicides | KE | Altered steroidogenesis\nBisphenol A | MIE | Estrogen receptor agonist\nBisphenol A | KE | Increase in testosterone\ncyproconazole | KE | Decreased estradiol in a concentration-dependent manner (borderline negative call)\nDanazol | KE | Increase in testosterone\ndanazol | KE | Increased estradiol in H295R-HTRF assay (opposition to expected inhibition)\nFenarimol | KE | Increase in testosterone\nFinasteride | KE | Increase in testosterone\nflusilazole | KE | Inhibited testosterone synthesis in murine Leydig cells (reported)\nforskolin | KE | Induction of steroidogenesis\nforskolin (for) | KE | Increased E2 in H295R cells\nforskolin (FOR) | KE | Increased testosterone (T) in H295R cells (positive control)\nGenistein | MIE | Estrogen receptor agonist\nGenistein | KE | Increase in testosterone\nKetoconazole | KE | Increase in testosterone\nMifepristone | KE | Equivocal hit call\nmyclobutanil | KE | Decreased estradiol in a concentration-dependent manner (borderline negative call)\npiperonyl butoxide | KE | No estradiol inhibition in this study (unclear reasons)\nprochloraz | KE | Inhibition of steroidogenesis\nprochloraz (CPC) | KE | Inhibited estradiol (E2) synthesis (as expected)\nPrometon | MIE | Estrogen receptor agonist\nSpironolactone | KE | Increase in testosterone\ntriadimefon | KE | Inhibits testosterone biosynthesis in rat testis cultures\ntriadimenol | KE | Persistent degradation metabolite of triadimefon; inhibits testosterone biosynthesis in rat testis cultures"
+    },
+    {
+      "paper_id": "paper_1121_events",
+      "n_chunks": 11,
+      "n_gold_events": 13,
+      "n_pred_events": 16,
+      "similar_to_gold": 5,
+      "not_in_gold_fp": 11,
+      "gold_not_found_fn": 8,
+      "exact_hits": 2,
+      "fuzzy_hits": 3,
+      "precision": 0.3125,
+      "recall": 0.3846,
+      "f1": 0.3448,
+      "gold_events": [
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Expected return of erythema to baseline as drug wears off"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Immune-cell activation leading to vasodilatory mediator release"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Increased local brimonidine concentration due to barrier dysfunction"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Local inflammation with perivascular inflammatory cells driving mediator release and sustained vasodilation"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Local transient vasoconstriction"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Receptor desensitization/internalization as drug effect wanes (proposed)"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Receptor downregulation/desensitization from chronic agonism"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Receptor saturation / spillover to other receptor subtypes or cell types"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Reduced vasoconstriction via presynaptic AR effects"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "KE",
+          "description": "Vascular smooth muscle contraction"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "AO",
+          "description": "Allergic contact dermatitis"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "AO",
+          "description": "Exaggerated recurrence of erythema"
+        },
+        {
+          "chemical": "brimonidine",
+          "event_type": "AO",
+          "description": "Paradoxical erythema"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Barrier dysfunction and increased skin concentrations"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Chronic agonism and receptor downregulation/desensitization"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Local inflammation and perivascular inflammatory cells"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Local inflammation with increased/modified brimonidine-responsive ARs"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Paradoxical worsening erythema"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Receptor desensitization and internalization"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Skin barrier dysfunction increases local concentration"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Sustained vasodilatation"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "KE",
+          "description": "Vasodilatation"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "AO",
+          "description": "Allergic contact dermatitis"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "AO",
+          "description": "Paradoxical erythema"
+        },
+        {
+          "chemical": "Brimonidine",
+          "event_type": "AO",
+          "description": "Worsening of redness / flushing"
+        },
+        {
+          "chemical": "Cathelicidin LL37",
+          "event_type": "KE",
+          "description": "Induction of inflammation and vascular responses"
+        },
+        {
+          "chemical": "Cathelicidin LL37",
+          "event_type": "KE",
+          "description": "Release of cytokines and mediators"
+        },
+        {
+          "chemical": "epinephrine",
+          "event_type": "KE",
+          "description": "Vasoconstriction"
+        },
+        {
+          "chemical": "Toll-like receptor-2 (TLR-2)",
+          "event_type": "KE",
+          "description": "Activation by pathogens"
+        }
+      ],
+      "gold_events_text": "brimonidine | KE | Expected return of erythema to baseline as drug wears off\nbrimonidine | KE | Immune-cell activation leading to vasodilatory mediator release\nbrimonidine | KE | Increased local brimonidine concentration due to barrier dysfunction\nbrimonidine | KE | Local inflammation with perivascular inflammatory cells driving mediator release and sustained vasodilation\nbrimonidine | KE | Local transient vasoconstriction\nbrimonidine | KE | Receptor desensitization/internalization as drug effect wanes (proposed)\nbrimonidine | KE | Receptor downregulation/desensitization from chronic agonism\nbrimonidine | KE | Receptor saturation / spillover to other receptor subtypes or cell types\nbrimonidine | KE | Reduced vasoconstriction via presynaptic AR effects\nbrimonidine | KE | Vascular smooth muscle contraction\nbrimonidine | AO | Allergic contact dermatitis\nbrimonidine | AO | Exaggerated recurrence of erythema\nbrimonidine | AO | Paradoxical erythema",
+      "pred_events_text": "Brimonidine | KE | Barrier dysfunction and increased skin concentrations\nBrimonidine | KE | Chronic agonism and receptor downregulation/desensitization\nBrimonidine | KE | Local inflammation and perivascular inflammatory cells\nBrimonidine | KE | Local inflammation with increased/modified brimonidine-responsive ARs\nBrimonidine | KE | Paradoxical worsening erythema\nBrimonidine | KE | Receptor desensitization and internalization\nBrimonidine | KE | Skin barrier dysfunction increases local concentration\nBrimonidine | KE | Sustained vasodilatation\nBrimonidine | KE | Vasodilatation\nBrimonidine | AO | Allergic contact dermatitis\nBrimonidine | AO | Paradoxical erythema\nBrimonidine | AO | Worsening of redness / flushing\nCathelicidin LL37 | KE | Induction of inflammation and vascular responses\nCathelicidin LL37 | KE | Release of cytokines and mediators\nepinephrine | KE | Vasoconstriction\nToll-like receptor-2 (TLR-2) | KE | Activation by pathogens"
+    },
+    {
+      "paper_id": "paper_2012_events",
+      "n_chunks": 7,
+      "n_gold_events": 20,
+      "n_pred_events": 14,
+      "similar_to_gold": 5,
+      "not_in_gold_fp": 9,
+      "gold_not_found_fn": 15,
+      "exact_hits": 0,
+      "fuzzy_hits": 5,
+      "precision": 0.3571,
+      "recall": 0.25,
+      "f1": 0.2941,
+      "gold_events": [
+        {
+          "chemical": "bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Altered expression of imprinted genes in mouse placenta"
+        },
+        {
+          "chemical": "bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Altered methylation of imprinted genes in mouse placenta"
+        },
+        {
+          "chemical": "bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Reduced genome-wide methylation in mouse placenta"
+        },
+        {
+          "chemical": "di(2-ethylhexyl) phthalate (DEHP)",
+          "event_type": "AO",
+          "description": "Earlier menopause"
+        },
+        {
+          "chemical": "di(2-ethylhexyl) phthalate (DEHP)",
+          "event_type": "AO",
+          "description": "Negative impact on reproduction"
+        },
+        {
+          "chemical": "mono(2-ethyl-5-hydroxyhexyl) phthalate (MEHHP)",
+          "event_type": "KE",
+          "description": "Altered IGF2 DNA methylation"
+        },
+        {
+          "chemical": "mono(2-ethyl-5-oxohexyl) phthalate (MEOHP)",
+          "event_type": "KE",
+          "description": "Altered IGF2 DNA methylation"
+        },
+        {
+          "chemical": "phthalates (general)",
+          "event_type": "MIE",
+          "description": "Increased reactive oxygen species"
+        },
+        {
+          "chemical": "phthalates (general)",
+          "event_type": "AO",
+          "description": "Decreased fecundity"
+        },
+        {
+          "chemical": "phthalates (general)",
+          "event_type": "AO",
+          "description": "Low birth weight"
+        },
+        {
+          "chemical": "phthalates (general)",
+          "event_type": "AO",
+          "description": "Pregnancy loss"
+        },
+        {
+          "chemical": "phthalates (general)",
+          "event_type": "AO",
+          "description": "Preterm birth"
+        },
+        {
+          "chemical": "phthalates (prenatal exposure; term placenta literature cited)",
+          "event_type": "KE",
+          "description": "Increased IGF-2 methylation in term placenta"
+        },
+        {
+          "chemical": "phthalates (prenatal exposure; term placenta literature cited)",
+          "event_type": "KE",
+          "description": "Increased LINE-1 methylation in term placenta"
+        },
+        {
+          "chemical": "phthalates (prenatal exposure; term placenta literature cited)",
+          "event_type": "AO",
+          "description": "Reduced birth weight"
+        },
+        {
+          "chemical": "total phthalate exposure (TP; 23 urinary metabolites; first trimester placenta)",
+          "event_type": "KE",
+          "description": "Altered placental methylome"
+        },
+        {
+          "chemical": "total phthalate exposure (TP; 23 urinary metabolites; first trimester placenta)",
+          "event_type": "KE",
+          "description": "Decreased EGFR expression in placenta"
+        },
+        {
+          "chemical": "total phthalate exposure (TP; 23 urinary metabolites; first trimester placenta)",
+          "event_type": "KE",
+          "description": "EGFR hypermethylation in placenta"
+        },
+        {
+          "chemical": "total phthalate exposure (TP; 23 urinary metabolites; first trimester placenta)",
+          "event_type": "KE",
+          "description": "ErbB signaling pathway altered"
+        },
+        {
+          "chemical": "total phthalate exposure (TP; 23 urinary metabolites; first trimester placenta)",
+          "event_type": "KE",
+          "description": "Genes with both methylation and expression changes"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "DEHP (di(2-ethylhexyl) phthalate)",
+          "event_type": "AO",
+          "description": "Decreased couple fecundity"
+        },
+        {
+          "chemical": "DEHP (di(2-ethylhexyl) phthalate)",
+          "event_type": "AO",
+          "description": "Low birth weight"
+        },
+        {
+          "chemical": "DEHP (di(2-ethylhexyl) phthalate)",
+          "event_type": "AO",
+          "description": "Pregnancy loss"
+        },
+        {
+          "chemical": "DEHP (di(2-ethylhexyl) phthalate)",
+          "event_type": "AO",
+          "description": "Preterm birth"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "MIE",
+          "description": "Endocrine disruption"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "MIE",
+          "description": "Increased production of reactive oxygen species (ROS)"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "KE",
+          "description": "Altered placental methylome"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "KE",
+          "description": "Altered placental transcriptome"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "KE",
+          "description": "Epidermal growth factor receptor (EGFR) altered expression"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "KE",
+          "description": "Epidermal growth factor receptor (EGFR) altered methylation"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "KE",
+          "description": "LINE-1 and IGF-2 methylation"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "KE",
+          "description": "Placental ErbB signaling alteration"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "AO",
+          "description": "Adverse obstetrical outcomes"
+        },
+        {
+          "chemical": "Phthalates",
+          "event_type": "AO",
+          "description": "IUGR association"
+        }
+      ],
+      "gold_events_text": "bisphenol A (BPA) | KE | Altered expression of imprinted genes in mouse placenta\nbisphenol A (BPA) | KE | Altered methylation of imprinted genes in mouse placenta\nbisphenol A (BPA) | KE | Reduced genome-wide methylation in mouse placenta\ndi(2-ethylhexyl) phthalate (DEHP) | AO | Earlier menopause\ndi(2-ethylhexyl) phthalate (DEHP) | AO | Negative impact on reproduction\nmono(2-ethyl-5-hydroxyhexyl) phthalate (MEHHP) | KE | Altered IGF2 DNA methylation\nmono(2-ethyl-5-oxohexyl) phthalate (MEOHP) | KE | Altered IGF2 DNA methylation\nphthalates (general) | MIE | Increased reactive oxygen species\nphthalates (general) | AO | Decreased fecundity\nphthalates (general) | AO | Low birth weight\nphthalates (general) | AO | Pregnancy loss\nphthalates (general) | AO | Preterm birth\nphthalates (prenatal exposure; term placenta literature cited) | KE | Increased IGF-2 methylation in term placenta\nphthalates (prenatal exposure; term placenta literature cited) | KE | Increased LINE-1 methylation in term placenta\nphthalates (prenatal exposure; term placenta literature cited) | AO | Reduced birth weight\ntotal phthalate exposure (TP; 23 urinary metabolites; first trimester placenta) | KE | Altered placental methylome\ntotal phthalate exposure (TP; 23 urinary metabolites; first trimester placenta) | KE | Decreased EGFR expression in placenta\ntotal phthalate exposure (TP; 23 urinary metabolites; first trimester placenta) | KE | EGFR hypermethylation in placenta\ntotal phthalate exposure (TP; 23 urinary metabolites; first trimester placenta) | KE | ErbB signaling pathway altered\ntotal phthalate exposure (TP; 23 urinary metabolites; first trimester placenta) | KE | Genes with both methylation and expression changes",
+      "pred_events_text": "DEHP (di(2-ethylhexyl) phthalate) | AO | Decreased couple fecundity\nDEHP (di(2-ethylhexyl) phthalate) | AO | Low birth weight\nDEHP (di(2-ethylhexyl) phthalate) | AO | Pregnancy loss\nDEHP (di(2-ethylhexyl) phthalate) | AO | Preterm birth\nPhthalates | MIE | Endocrine disruption\nPhthalates | MIE | Increased production of reactive oxygen species (ROS)\nPhthalates | KE | Altered placental methylome\nPhthalates | KE | Altered placental transcriptome\nPhthalates | KE | Epidermal growth factor receptor (EGFR) altered expression\nPhthalates | KE | Epidermal growth factor receptor (EGFR) altered methylation\nPhthalates | KE | LINE-1 and IGF-2 methylation\nPhthalates | KE | Placental ErbB signaling alteration\nPhthalates | AO | Adverse obstetrical outcomes\nPhthalates | AO | IUGR association"
+    },
+    {
+      "paper_id": "paper_3001_events",
+      "n_chunks": 11,
+      "n_gold_events": 15,
+      "n_pred_events": 11,
+      "similar_to_gold": 3,
+      "not_in_gold_fp": 8,
+      "gold_not_found_fn": 12,
+      "exact_hits": 1,
+      "fuzzy_hits": 2,
+      "precision": 0.2727,
+      "recall": 0.2,
+      "f1": 0.2308,
+      "gold_events": [
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "MIE",
+          "description": "LXRβ receptor binding"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "MIE",
+          "description": "Upregulation of LXR mRNA"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Cellular dysfunction and insulin resistance"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Disruption of glucose and lipid metabolism"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Endoplasmic reticulum (ER) stress induction"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Hypoglycemia"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Increased ROS production"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Mitochondrial oxidative damage"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Reduced fatty acid β-oxidation"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Triglyceride accumulation"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "AO",
+          "description": "Impaired liver function"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "AO",
+          "description": "Liver steatosis"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "AO",
+          "description": "Metabolic dysfunction"
+        },
+        {
+          "chemical": "BPA Analogs",
+          "event_type": "AO",
+          "description": "Hepatotoxicity"
+        },
+        {
+          "chemical": "BPA Analogs",
+          "event_type": "AO",
+          "description": "Liver steatosis"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "MIE",
+          "description": "Interaction with Liver X Receptor-beta (LXRβ)"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Disruption of glucose metabolism"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Hypoglycemia"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Impaired liver function"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Interference with normal liver metabolism (LXRβ context)"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "AO",
+          "description": "Association with metabolic disorders and liver disease"
+        },
+        {
+          "chemical": "Bisphenol B (BPB)",
+          "event_type": "MIE",
+          "description": "Binding to endocrine/metabolic receptors"
+        },
+        {
+          "chemical": "Bisphenol F (BPF)",
+          "event_type": "MIE",
+          "description": "Binding to endocrine/metabolic receptors"
+        },
+        {
+          "chemical": "Bisphenol S (BPS)",
+          "event_type": "MIE",
+          "description": "Binding to endocrine/metabolic receptors"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Increased protein-ligand distance (RMSD)"
+        },
+        {
+          "chemical": "BXA",
+          "event_type": "KE",
+          "description": "Increased protein-ligand distance (RMSD)"
+        }
+      ],
+      "gold_events_text": "Bisphenol A (BPA) | MIE | LXRβ receptor binding\nBisphenol A (BPA) | MIE | Upregulation of LXR mRNA\nBisphenol A (BPA) | KE | Cellular dysfunction and insulin resistance\nBisphenol A (BPA) | KE | Disruption of glucose and lipid metabolism\nBisphenol A (BPA) | KE | Endoplasmic reticulum (ER) stress induction\nBisphenol A (BPA) | KE | Hypoglycemia\nBisphenol A (BPA) | KE | Increased ROS production\nBisphenol A (BPA) | KE | Mitochondrial oxidative damage\nBisphenol A (BPA) | KE | Reduced fatty acid β-oxidation\nBisphenol A (BPA) | KE | Triglyceride accumulation\nBisphenol A (BPA) | AO | Impaired liver function\nBisphenol A (BPA) | AO | Liver steatosis\nBisphenol A (BPA) | AO | Metabolic dysfunction\nBPA Analogs | AO | Hepatotoxicity\nBPA Analogs | AO | Liver steatosis",
+      "pred_events_text": "Bisphenol A (BPA) | MIE | Interaction with Liver X Receptor-beta (LXRβ)\nBisphenol A (BPA) | KE | Disruption of glucose metabolism\nBisphenol A (BPA) | KE | Hypoglycemia\nBisphenol A (BPA) | KE | Impaired liver function\nBisphenol A (BPA) | KE | Interference with normal liver metabolism (LXRβ context)\nBisphenol A (BPA) | AO | Association with metabolic disorders and liver disease\nBisphenol B (BPB) | MIE | Binding to endocrine/metabolic receptors\nBisphenol F (BPF) | MIE | Binding to endocrine/metabolic receptors\nBisphenol S (BPS) | MIE | Binding to endocrine/metabolic receptors\nBPA | KE | Increased protein-ligand distance (RMSD)\nBXA | KE | Increased protein-ligand distance (RMSD)"
+    },
+    {
+      "paper_id": "paper_3003_events",
+      "n_chunks": 4,
+      "n_gold_events": 8,
+      "n_pred_events": 1,
+      "similar_to_gold": 0,
+      "not_in_gold_fp": 1,
+      "gold_not_found_fn": 8,
+      "exact_hits": 0,
+      "fuzzy_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "gold_events": [
+        {
+          "chemical": "Atrazine",
+          "event_type": "KE",
+          "description": "Reduction of mitochondrial succinate dehydrogenase activity"
+        },
+        {
+          "chemical": "Atrazine",
+          "event_type": "AO",
+          "description": "Loss of hepatic cell viability"
+        },
+        {
+          "chemical": "Bisphenol-A",
+          "event_type": "KE",
+          "description": "Reduction of mitochondrial succinate dehydrogenase activity"
+        },
+        {
+          "chemical": "Bisphenol-A",
+          "event_type": "AO",
+          "description": "Loss of hepatic cell viability"
+        },
+        {
+          "chemical": "Roundup",
+          "event_type": "MIE",
+          "description": "Cell entry of glyphosate"
+        },
+        {
+          "chemical": "Roundup",
+          "event_type": "KE",
+          "description": "Reduction of mitochondrial succinate dehydrogenase activity"
+        },
+        {
+          "chemical": "Roundup",
+          "event_type": "AO",
+          "description": "Cell mortality"
+        },
+        {
+          "chemical": "Roundup",
+          "event_type": "AO",
+          "description": "Loss of embryonic cell viability"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Roundup 450 GT+",
+          "event_type": "KE",
+          "description": "Disruption of CYP1A2 activity"
+        }
+      ],
+      "gold_events_text": "Atrazine | KE | Reduction of mitochondrial succinate dehydrogenase activity\nAtrazine | AO | Loss of hepatic cell viability\nBisphenol-A | KE | Reduction of mitochondrial succinate dehydrogenase activity\nBisphenol-A | AO | Loss of hepatic cell viability\nRoundup | MIE | Cell entry of glyphosate\nRoundup | KE | Reduction of mitochondrial succinate dehydrogenase activity\nRoundup | AO | Cell mortality\nRoundup | AO | Loss of embryonic cell viability",
+      "pred_events_text": "Roundup 450 GT+ | KE | Disruption of CYP1A2 activity"
+    },
+    {
+      "paper_id": "paper_3013_events",
+      "n_chunks": 18,
+      "n_gold_events": 17,
+      "n_pred_events": 43,
+      "similar_to_gold": 3,
+      "not_in_gold_fp": 40,
+      "gold_not_found_fn": 14,
+      "exact_hits": 0,
+      "fuzzy_hits": 3,
+      "precision": 0.0698,
+      "recall": 0.1765,
+      "f1": 0.1,
+      "gold_events": [
+        {
+          "chemical": "CuO (Copper Oxide)",
+          "event_type": "KE",
+          "description": "Cytokine release (FGF-2, PDGF-BB, IL-7)"
+        },
+        {
+          "chemical": "CuO (Copper Oxide)",
+          "event_type": "KE",
+          "description": "Decreased expression of DNA methylation machinery"
+        },
+        {
+          "chemical": "CuO (Copper Oxide)",
+          "event_type": "KE",
+          "description": "Hypermethylation of repetitive elements"
+        },
+        {
+          "chemical": "CuO (Copper Oxide)",
+          "event_type": "KE",
+          "description": "Increased expression of DNMT1"
+        },
+        {
+          "chemical": "CuO (Copper Oxide)",
+          "event_type": "KE",
+          "description": "Transcriptional reactivation of TEs"
+        },
+        {
+          "chemical": "CuO (Copper Oxide)",
+          "event_type": "KE",
+          "description": "Upregulation of HO-1 expression"
+        },
+        {
+          "chemical": "CuO (Copper Oxide)",
+          "event_type": "AO",
+          "description": "Pulmonary hypertension"
+        },
+        {
+          "chemical": "MS-WF (Mild Steel Welding Fumes)",
+          "event_type": "KE",
+          "description": "Decreased expression of DNA methylation machinery"
+        },
+        {
+          "chemical": "MS-WF (Mild Steel Welding Fumes)",
+          "event_type": "KE",
+          "description": "Transcriptional activation of TEs"
+        },
+        {
+          "chemical": "PEPs (Printer-Emitted Engineered Nanoparticles)",
+          "event_type": "KE",
+          "description": "Decreased expression of DNA methylation machinery"
+        },
+        {
+          "chemical": "PEPs (Printer-Emitted Engineered Nanoparticles)",
+          "event_type": "KE",
+          "description": "Hypomethylation of LINE-1 ORF1"
+        },
+        {
+          "chemical": "PEPs (Printer-Emitted Engineered Nanoparticles)",
+          "event_type": "KE",
+          "description": "Intracellular generation of ROS"
+        },
+        {
+          "chemical": "PEPs (Printer-Emitted Engineered Nanoparticles)",
+          "event_type": "KE",
+          "description": "Transcriptional activation of Alu"
+        },
+        {
+          "chemical": "PEPs (Printer-Emitted Engineered Nanoparticles)",
+          "event_type": "KE",
+          "description": "Upregulation of HO-1 expression"
+        },
+        {
+          "chemical": "PEPs (Printer-Emitted Engineered Nanoparticles)",
+          "event_type": "AO",
+          "description": "Asthma and chronic obstructive pulmonary disease"
+        },
+        {
+          "chemical": "PEPs (Printer-Emitted Engineered Nanoparticles)",
+          "event_type": "AO",
+          "description": "Lung cancer"
+        },
+        {
+          "chemical": "TiO2 (Titanium Dioxide)",
+          "event_type": "KE",
+          "description": "Decreased expression of DNA methylation machinery"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Cadmium telluride quantum dots (CdTe QDs)",
+          "event_type": "KE",
+          "description": "Histone hypoacetylation"
+        },
+        {
+          "chemical": "carbon black",
+          "event_type": "KE",
+          "description": "Downregulation of DNMT1"
+        },
+        {
+          "chemical": "carbon nanotube",
+          "event_type": "KE",
+          "description": "Downregulation of DNMT1"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Cytotoxicity in RAW264.7 but not THP-1"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Decrease in EGF"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Hypermethylation of Alu elements"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Hypermethylation of SINE B1 elements"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Hypermethylation of specific L1 elements"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Increase in FGF-2 and PDGF-BB"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Increase in IL-7"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Increased DNMT1 expression in SAEC at high dose"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Increased intracellular ROS at high dose (SAEC and THP-1)"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Modest hypermethylation in RAW264.7 SINE B1"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Modest hypermethylation in SAEC L1 ORF1/ORF2"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Modest hypermethylation in THP-1 Alu"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Modest hypermethylation in THP-1 L1 ORF2"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Oxidative stress in THP-1"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Reactivation of L1 and Alu/SINE"
+        },
+        {
+          "chemical": "Engineered nanomaterials (ENMs)",
+          "event_type": "KE",
+          "description": "Intracellular generation of ROS"
+        },
+        {
+          "chemical": "Engineered nanomaterials (ENMs)",
+          "event_type": "KE",
+          "description": "Loss of DNA methylation"
+        },
+        {
+          "chemical": "Engineered nanomaterials (ENMs)",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "Gold nanoparticles",
+          "event_type": "KE",
+          "description": "Altered miRNA expression"
+        },
+        {
+          "chemical": "Iron (III) oxide nanoparticles",
+          "event_type": "KE",
+          "description": "Altered miRNA expression"
+        },
+        {
+          "chemical": "MS-WF",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity in macrophages and epithelial cells"
+        },
+        {
+          "chemical": "MS-WF",
+          "event_type": "KE",
+          "description": "Elevation of multiple cytokines (GM-CSF, fractalkine, GRO, IL-6, IL-8, MCP-1)"
+        },
+        {
+          "chemical": "MS-WF",
+          "event_type": "KE",
+          "description": "Reactivation of L1 and Alu/SINE"
+        },
+        {
+          "chemical": "MSWF",
+          "event_type": "KE",
+          "description": "Increased intracellular ROS at high dose (SAEC and RAW264.7)"
+        },
+        {
+          "chemical": "MSWF",
+          "event_type": "KE",
+          "description": "Marked HO-1 upregulation in SAEC and RAW264.7 at 30 µg/mL"
+        },
+        {
+          "chemical": "Multi-walled carbon nanotubes",
+          "event_type": "KE",
+          "description": "Altered miRNA expression"
+        },
+        {
+          "chemical": "multiwall carbon nanotube",
+          "event_type": "KE",
+          "description": "Downregulation of DNMT1"
+        },
+        {
+          "chemical": "Nano-silicon dioxide",
+          "event_type": "KE",
+          "description": "Dose-dependent global genomic hypomethylation"
+        },
+        {
+          "chemical": "Particulate Matter (PM2.5/PM10)",
+          "event_type": "KE",
+          "description": "TE hypomethylation"
+        },
+        {
+          "chemical": "PEN",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity in macrophages and epithelial cells"
+        },
+        {
+          "chemical": "PEPs",
+          "event_type": "KE",
+          "description": "Elevation of multiple cytokines (GM-CSF, fractalkine, GRO, IL-6, IL-8, MCP-1)"
+        },
+        {
+          "chemical": "PEPs",
+          "event_type": "KE",
+          "description": "HO-1 upregulation in SAEC at 30 µg/mL"
+        },
+        {
+          "chemical": "PEPs",
+          "event_type": "KE",
+          "description": "Hypomethylation of L1 ORF1"
+        },
+        {
+          "chemical": "PEPs",
+          "event_type": "KE",
+          "description": "LINE-1 and Alu/SINE transcriptional reactivation"
+        },
+        {
+          "chemical": "PEPs",
+          "event_type": "KE",
+          "description": "Oxidative stress in SAEC"
+        },
+        {
+          "chemical": "PEPs",
+          "event_type": "KE",
+          "description": "Reduced expression of DNMT3B"
+        },
+        {
+          "chemical": "TiO",
+          "event_type": "KE",
+          "description": "Dose-dependent cytotoxicity in macrophages and epithelial cells"
+        },
+        {
+          "chemical": "TiO",
+          "event_type": "KE",
+          "description": "Increased particle agglomerate size over 24 h in media"
+        },
+        {
+          "chemical": "TiO",
+          "event_type": "KE",
+          "description": "Reactivation of L1 and Alu/SINE"
+        },
+        {
+          "chemical": "TiO2",
+          "event_type": "KE",
+          "description": "Reduced expression of DNMT3B"
+        }
+      ],
+      "gold_events_text": "CuO (Copper Oxide) | KE | Cytokine release (FGF-2, PDGF-BB, IL-7)\nCuO (Copper Oxide) | KE | Decreased expression of DNA methylation machinery\nCuO (Copper Oxide) | KE | Hypermethylation of repetitive elements\nCuO (Copper Oxide) | KE | Increased expression of DNMT1\nCuO (Copper Oxide) | KE | Transcriptional reactivation of TEs\nCuO (Copper Oxide) | KE | Upregulation of HO-1 expression\nCuO (Copper Oxide) | AO | Pulmonary hypertension\nMS-WF (Mild Steel Welding Fumes) | KE | Decreased expression of DNA methylation machinery\nMS-WF (Mild Steel Welding Fumes) | KE | Transcriptional activation of TEs\nPEPs (Printer-Emitted Engineered Nanoparticles) | KE | Decreased expression of DNA methylation machinery\nPEPs (Printer-Emitted Engineered Nanoparticles) | KE | Hypomethylation of LINE-1 ORF1\nPEPs (Printer-Emitted Engineered Nanoparticles) | KE | Intracellular generation of ROS\nPEPs (Printer-Emitted Engineered Nanoparticles) | KE | Transcriptional activation of Alu\nPEPs (Printer-Emitted Engineered Nanoparticles) | KE | Upregulation of HO-1 expression\nPEPs (Printer-Emitted Engineered Nanoparticles) | AO | Asthma and chronic obstructive pulmonary disease\nPEPs (Printer-Emitted Engineered Nanoparticles) | AO | Lung cancer\nTiO2 (Titanium Dioxide) | KE | Decreased expression of DNA methylation machinery",
+      "pred_events_text": "Cadmium telluride quantum dots (CdTe QDs) | KE | Histone hypoacetylation\ncarbon black | KE | Downregulation of DNMT1\ncarbon nanotube | KE | Downregulation of DNMT1\nCuO | KE | Cytotoxicity in RAW264.7 but not THP-1\nCuO | KE | Decrease in EGF\nCuO | KE | Hypermethylation of Alu elements\nCuO | KE | Hypermethylation of SINE B1 elements\nCuO | KE | Hypermethylation of specific L1 elements\nCuO | KE | Increase in FGF-2 and PDGF-BB\nCuO | KE | Increase in IL-7\nCuO | KE | Increased DNMT1 expression in SAEC at high dose\nCuO | KE | Increased intracellular ROS at high dose (SAEC and THP-1)\nCuO | KE | Modest hypermethylation in RAW264.7 SINE B1\nCuO | KE | Modest hypermethylation in SAEC L1 ORF1/ORF2\nCuO | KE | Modest hypermethylation in THP-1 Alu\nCuO | KE | Modest hypermethylation in THP-1 L1 ORF2\nCuO | KE | Oxidative stress in THP-1\nCuO | KE | Reactivation of L1 and Alu/SINE\nEngineered nanomaterials (ENMs) | KE | Intracellular generation of ROS\nEngineered nanomaterials (ENMs) | KE | Loss of DNA methylation\nEngineered nanomaterials (ENMs) | KE | Oxidative stress\nGold nanoparticles | KE | Altered miRNA expression\nIron (III) oxide nanoparticles | KE | Altered miRNA expression\nMS-WF | KE | Dose-dependent cytotoxicity in macrophages and epithelial cells\nMS-WF | KE | Elevation of multiple cytokines (GM-CSF, fractalkine, GRO, IL-6, IL-8, MCP-1)\nMS-WF | KE | Reactivation of L1 and Alu/SINE\nMSWF | KE | Increased intracellular ROS at high dose (SAEC and RAW264.7)\nMSWF | KE | Marked HO-1 upregulation in SAEC and RAW264.7 at 30 µg/mL\nMulti-walled carbon nanotubes | KE | Altered miRNA expression\nmultiwall carbon nanotube | KE | Downregulation of DNMT1\nNano-silicon dioxide | KE | Dose-dependent global genomic hypomethylation\nParticulate Matter (PM2.5/PM10) | KE | TE hypomethylation\nPEN | KE | Dose-dependent cytotoxicity in macrophages and epithelial cells\nPEPs | KE | Elevation of multiple cytokines (GM-CSF, fractalkine, GRO, IL-6, IL-8, MCP-1)\nPEPs | KE | HO-1 upregulation in SAEC at 30 µg/mL\nPEPs | KE | Hypomethylation of L1 ORF1\nPEPs | KE | LINE-1 and Alu/SINE transcriptional reactivation\nPEPs | KE | Oxidative stress in SAEC\nPEPs | KE | Reduced expression of DNMT3B\nTiO | KE | Dose-dependent cytotoxicity in macrophages and epithelial cells\nTiO | KE | Increased particle agglomerate size over 24 h in media\nTiO | KE | Reactivation of L1 and Alu/SINE\nTiO2 | KE | Reduced expression of DNMT3B"
+    },
+    {
+      "paper_id": "paper_3015_events",
+      "n_chunks": 10,
+      "n_gold_events": 19,
+      "n_pred_events": 23,
+      "similar_to_gold": 6,
+      "not_in_gold_fp": 17,
+      "gold_not_found_fn": 13,
+      "exact_hits": 1,
+      "fuzzy_hits": 5,
+      "precision": 0.2609,
+      "recall": 0.3158,
+      "f1": 0.2857,
+      "gold_events": [
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Binding to DNA and protein"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Cytotoxicity"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Induction of DNA strand breaks"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Induction of micronuclei"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Inhibition of cell division"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Inhibition of DNA and RNA synthesis"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Interference with bone marrow stromal cells"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Interference with microtubule assembly"
+        },
+        {
+          "chemical": "Benzene",
+          "event_type": "MIE",
+          "description": "Hepatic metabolism to phenolic metabolites"
+        },
+        {
+          "chemical": "Benzene",
+          "event_type": "KE",
+          "description": "Accumulation of metabolites in bone marrow"
+        },
+        {
+          "chemical": "Benzene",
+          "event_type": "KE",
+          "description": "Genotoxicity"
+        },
+        {
+          "chemical": "Benzene",
+          "event_type": "AO",
+          "description": "Carcinogenicity"
+        },
+        {
+          "chemical": "Benzene",
+          "event_type": "AO",
+          "description": "Myelotoxicity"
+        },
+        {
+          "chemical": "Hydroquinone",
+          "event_type": "KE",
+          "description": "Covalent binding to macromolecules"
+        },
+        {
+          "chemical": "Hydroquinone",
+          "event_type": "KE",
+          "description": "Peroxidase-dependent oxidation to 1,4-benzoquinone"
+        },
+        {
+          "chemical": "Phenol",
+          "event_type": "KE",
+          "description": "Covalent binding to protein and DNA"
+        },
+        {
+          "chemical": "Phenol",
+          "event_type": "KE",
+          "description": "Peroxidase-dependent conversion to biphenols"
+        },
+        {
+          "chemical": "Phenol",
+          "event_type": "KE",
+          "description": "Stimulation of hydroquinone oxidation"
+        },
+        {
+          "chemical": "trans,trans-Muconaldehyde",
+          "event_type": "KE",
+          "description": "Biological toxicity"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Single-stranded DNA breaks"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "AO",
+          "description": "Chromosomal fragmentation during metaphase"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "AO",
+          "description": "Cytotoxicity"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "AO",
+          "description": "Genetic damage"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "AO",
+          "description": "Interferes with lymphocyte blastogenesis and agglutination"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "AO",
+          "description": "Micronucleus formation"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "AO",
+          "description": "Pyknosis of chromosomes during metaphase"
+        },
+        {
+          "chemical": "1,4-Benzoquinone (BQ)",
+          "event_type": "KE",
+          "description": "Chromosomal fragmentation"
+        },
+        {
+          "chemical": "1,4-Benzoquinone (BQ)",
+          "event_type": "KE",
+          "description": "Micronuclei formation"
+        },
+        {
+          "chemical": "1,4-Benzoquinone (BQ)",
+          "event_type": "KE",
+          "description": "Single-stranded DNA breaks"
+        },
+        {
+          "chemical": "1,4-Benzoquinone (BQ)",
+          "event_type": "AO",
+          "description": "Aneuploidy (potential)"
+        },
+        {
+          "chemical": "Benzene",
+          "event_type": "MIE",
+          "description": "Hepatic conversion to phenol and hydroquinone"
+        },
+        {
+          "chemical": "Benzene",
+          "event_type": "KE",
+          "description": "Localized phenol-dependent stimulation of hydroquinone oxidation"
+        },
+        {
+          "chemical": "Benzene",
+          "event_type": "AO",
+          "description": "Myelotoxicity"
+        },
+        {
+          "chemical": "H2O2",
+          "event_type": "KE",
+          "description": "Generation of phenoxy radical"
+        },
+        {
+          "chemical": "HRP",
+          "event_type": "MIE",
+          "description": "Catalysis of phenol to 2,2'-biphenol and 4,4'-biphenol"
+        },
+        {
+          "chemical": "HRP",
+          "event_type": "MIE",
+          "description": "Catalysis of phenol to 4,4'-diphenoquinone"
+        },
+        {
+          "chemical": "HRP",
+          "event_type": "MIE",
+          "description": "Catalysis of phenol to DNA/protein-binding metabolites"
+        },
+        {
+          "chemical": "Hydrogen peroxide",
+          "event_type": "KE",
+          "description": "Catalyzes phenol and hydroquinone oxidation by peroxidases"
+        },
+        {
+          "chemical": "Hydroquinone",
+          "event_type": "KE",
+          "description": "Two-electron oxidation to 1,4-benzoquinone"
+        },
+        {
+          "chemical": "Indomethacin",
+          "event_type": "KE",
+          "description": "Interferes with microtubule assembly"
+        },
+        {
+          "chemical": "MPO",
+          "event_type": "MIE",
+          "description": "Catalysis of phenol to covalent protein binding"
+        },
+        {
+          "chemical": "Phenol",
+          "event_type": "KE",
+          "description": "Stimulates hydroquinone oxidation to 1,4-benzoquinone by peroxidases"
+        }
+      ],
+      "gold_events_text": "1,4-Benzoquinone | KE | Binding to DNA and protein\n1,4-Benzoquinone | KE | Cytotoxicity\n1,4-Benzoquinone | KE | Induction of DNA strand breaks\n1,4-Benzoquinone | KE | Induction of micronuclei\n1,4-Benzoquinone | KE | Inhibition of cell division\n1,4-Benzoquinone | KE | Inhibition of DNA and RNA synthesis\n1,4-Benzoquinone | KE | Interference with bone marrow stromal cells\n1,4-Benzoquinone | KE | Interference with microtubule assembly\nBenzene | MIE | Hepatic metabolism to phenolic metabolites\nBenzene | KE | Accumulation of metabolites in bone marrow\nBenzene | KE | Genotoxicity\nBenzene | AO | Carcinogenicity\nBenzene | AO | Myelotoxicity\nHydroquinone | KE | Covalent binding to macromolecules\nHydroquinone | KE | Peroxidase-dependent oxidation to 1,4-benzoquinone\nPhenol | KE | Covalent binding to protein and DNA\nPhenol | KE | Peroxidase-dependent conversion to biphenols\nPhenol | KE | Stimulation of hydroquinone oxidation\ntrans,trans-Muconaldehyde | KE | Biological toxicity",
+      "pred_events_text": "1,4-Benzoquinone | KE | Single-stranded DNA breaks\n1,4-Benzoquinone | AO | Chromosomal fragmentation during metaphase\n1,4-Benzoquinone | AO | Cytotoxicity\n1,4-Benzoquinone | AO | Genetic damage\n1,4-Benzoquinone | AO | Interferes with lymphocyte blastogenesis and agglutination\n1,4-Benzoquinone | AO | Micronucleus formation\n1,4-Benzoquinone | AO | Pyknosis of chromosomes during metaphase\n1,4-Benzoquinone (BQ) | KE | Chromosomal fragmentation\n1,4-Benzoquinone (BQ) | KE | Micronuclei formation\n1,4-Benzoquinone (BQ) | KE | Single-stranded DNA breaks\n1,4-Benzoquinone (BQ) | AO | Aneuploidy (potential)\nBenzene | MIE | Hepatic conversion to phenol and hydroquinone\nBenzene | KE | Localized phenol-dependent stimulation of hydroquinone oxidation\nBenzene | AO | Myelotoxicity\nH2O2 | KE | Generation of phenoxy radical\nHRP | MIE | Catalysis of phenol to 2,2'-biphenol and 4,4'-biphenol\nHRP | MIE | Catalysis of phenol to 4,4'-diphenoquinone\nHRP | MIE | Catalysis of phenol to DNA/protein-binding metabolites\nHydrogen peroxide | KE | Catalyzes phenol and hydroquinone oxidation by peroxidases\nHydroquinone | KE | Two-electron oxidation to 1,4-benzoquinone\nIndomethacin | KE | Interferes with microtubule assembly\nMPO | MIE | Catalysis of phenol to covalent protein binding\nPhenol | KE | Stimulates hydroquinone oxidation to 1,4-benzoquinone by peroxidases"
+    },
+    {
+      "paper_id": "paper_3020_events",
+      "n_chunks": 11,
+      "n_gold_events": 12,
+      "n_pred_events": 28,
+      "similar_to_gold": 3,
+      "not_in_gold_fp": 25,
+      "gold_not_found_fn": 9,
+      "exact_hits": 0,
+      "fuzzy_hits": 3,
+      "precision": 0.1071,
+      "recall": 0.25,
+      "f1": 0.15,
+      "gold_events": [
+        {
+          "chemical": "4'-hydroxy diclofenac (OH-DCF)",
+          "event_type": "MIE",
+          "description": "COX-1 inhibition"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "MIE",
+          "description": "COX-1 inhibition"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "Cytotoxicity"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "Reactive oxygen species (ROS) generation"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "AO",
+          "description": "Gastrointestinal (GI) injury"
+        },
+        {
+          "chemical": "Diclofenac Acyl Glucuronide (DCF-AG)",
+          "event_type": "MIE",
+          "description": "Active uptake via OATP2B1"
+        },
+        {
+          "chemical": "Diclofenac Acyl Glucuronide (DCF-AG)",
+          "event_type": "MIE",
+          "description": "Covalent adduct formation"
+        },
+        {
+          "chemical": "Diclofenac Acyl Glucuronide (DCF-AG)",
+          "event_type": "MIE",
+          "description": "COX-1 inhibition"
+        },
+        {
+          "chemical": "Diclofenac Acyl Glucuronide (DCF-AG)",
+          "event_type": "MIE",
+          "description": "SOD inhibition"
+        },
+        {
+          "chemical": "Diclofenac Acyl Glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Cytotoxicity"
+        },
+        {
+          "chemical": "Diclofenac Acyl Glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Oxidative stress induction"
+        },
+        {
+          "chemical": "Diclofenac Acyl Glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Reactive oxygen species (ROS) generation"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "DCF-AG",
+          "event_type": "MIE",
+          "description": "ROS generation mechanism"
+        },
+        {
+          "chemical": "DCF-AG",
+          "event_type": "KE",
+          "description": "Dose-dependent ROS production"
+        },
+        {
+          "chemical": "DCF-AG",
+          "event_type": "KE",
+          "description": "Inhibition of SOD enzymatic activity"
+        },
+        {
+          "chemical": "DCF-AG",
+          "event_type": "KE",
+          "description": "Time- and concentration-dependent uptake via OATP2B1"
+        },
+        {
+          "chemical": "DCF-AG",
+          "event_type": "AO",
+          "description": "Greater cell death than DCF"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "MIE",
+          "description": "COX inhibition"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "Covalent adduct formation in liver"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "COX inhibition"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "Decreased PGE2 signaling"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "Increased intracellular DCF over time"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "ROS generation"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "ROS generation after 2 hours of exposure"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "KE",
+          "description": "Weak ROS induction"
+        },
+        {
+          "chemical": "Diclofenac (DCF)",
+          "event_type": "AO",
+          "description": "GI ulceration"
+        },
+        {
+          "chemical": "Diclofenac acyl glucuronide (DCF-AG)",
+          "event_type": "MIE",
+          "description": "COX inhibition"
+        },
+        {
+          "chemical": "Diclofenac acyl glucuronide (DCF-AG)",
+          "event_type": "MIE",
+          "description": "Generation of ROS"
+        },
+        {
+          "chemical": "Diclofenac acyl glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "COX-1 inhibition"
+        },
+        {
+          "chemical": "Diclofenac acyl glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Cytotoxicity occurs within 1–3 hours of exposure"
+        },
+        {
+          "chemical": "Diclofenac acyl glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Increased reactive oxygen species (ROS)"
+        },
+        {
+          "chemical": "Diclofenac acyl glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Inhibition of SOD"
+        },
+        {
+          "chemical": "Diclofenac acyl glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "SOD inhibition"
+        },
+        {
+          "chemical": "Diclofenac acyl glucuronide (DCF-AG)",
+          "event_type": "AO",
+          "description": "Enteropathy"
+        },
+        {
+          "chemical": "Diclofenac-glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Cytotoxicity manifesting within 3 hours of exposure"
+        },
+        {
+          "chemical": "Diclofenac-glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Dose-dependent increase in ROS"
+        },
+        {
+          "chemical": "Diclofenac-glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "Greater cytotoxicity in OATP2B1-expressing cells"
+        },
+        {
+          "chemical": "Diclofenac-glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "ROS activity"
+        },
+        {
+          "chemical": "Diclofenac-glucuronide (DCF-AG)",
+          "event_type": "KE",
+          "description": "ROS generation"
+        },
+        {
+          "chemical": "H2O2",
+          "event_type": "KE",
+          "description": "Dose-dependent increase in ROS signal"
+        }
+      ],
+      "gold_events_text": "4'-hydroxy diclofenac (OH-DCF) | MIE | COX-1 inhibition\nDiclofenac (DCF) | MIE | COX-1 inhibition\nDiclofenac (DCF) | KE | Cytotoxicity\nDiclofenac (DCF) | KE | Reactive oxygen species (ROS) generation\nDiclofenac (DCF) | AO | Gastrointestinal (GI) injury\nDiclofenac Acyl Glucuronide (DCF-AG) | MIE | Active uptake via OATP2B1\nDiclofenac Acyl Glucuronide (DCF-AG) | MIE | Covalent adduct formation\nDiclofenac Acyl Glucuronide (DCF-AG) | MIE | COX-1 inhibition\nDiclofenac Acyl Glucuronide (DCF-AG) | MIE | SOD inhibition\nDiclofenac Acyl Glucuronide (DCF-AG) | KE | Cytotoxicity\nDiclofenac Acyl Glucuronide (DCF-AG) | KE | Oxidative stress induction\nDiclofenac Acyl Glucuronide (DCF-AG) | KE | Reactive oxygen species (ROS) generation",
+      "pred_events_text": "DCF-AG | MIE | ROS generation mechanism\nDCF-AG | KE | Dose-dependent ROS production\nDCF-AG | KE | Inhibition of SOD enzymatic activity\nDCF-AG | KE | Time- and concentration-dependent uptake via OATP2B1\nDCF-AG | AO | Greater cell death than DCF\nDiclofenac (DCF) | MIE | COX inhibition\nDiclofenac (DCF) | KE | Covalent adduct formation in liver\nDiclofenac (DCF) | KE | COX inhibition\nDiclofenac (DCF) | KE | Decreased PGE2 signaling\nDiclofenac (DCF) | KE | Increased intracellular DCF over time\nDiclofenac (DCF) | KE | ROS generation\nDiclofenac (DCF) | KE | ROS generation after 2 hours of exposure\nDiclofenac (DCF) | KE | Weak ROS induction\nDiclofenac (DCF) | AO | GI ulceration\nDiclofenac acyl glucuronide (DCF-AG) | MIE | COX inhibition\nDiclofenac acyl glucuronide (DCF-AG) | MIE | Generation of ROS\nDiclofenac acyl glucuronide (DCF-AG) | KE | COX-1 inhibition\nDiclofenac acyl glucuronide (DCF-AG) | KE | Cytotoxicity occurs within 1–3 hours of exposure\nDiclofenac acyl glucuronide (DCF-AG) | KE | Increased reactive oxygen species (ROS)\nDiclofenac acyl glucuronide (DCF-AG) | KE | Inhibition of SOD\nDiclofenac acyl glucuronide (DCF-AG) | KE | SOD inhibition\nDiclofenac acyl glucuronide (DCF-AG) | AO | Enteropathy\nDiclofenac-glucuronide (DCF-AG) | KE | Cytotoxicity manifesting within 3 hours of exposure\nDiclofenac-glucuronide (DCF-AG) | KE | Dose-dependent increase in ROS\nDiclofenac-glucuronide (DCF-AG) | KE | Greater cytotoxicity in OATP2B1-expressing cells\nDiclofenac-glucuronide (DCF-AG) | KE | ROS activity\nDiclofenac-glucuronide (DCF-AG) | KE | ROS generation\nH2O2 | KE | Dose-dependent increase in ROS signal"
+    },
+    {
+      "paper_id": "paper_3030_events",
+      "n_chunks": 18,
+      "n_gold_events": 37,
+      "n_pred_events": 94,
+      "similar_to_gold": 8,
+      "not_in_gold_fp": 86,
+      "gold_not_found_fn": 29,
+      "exact_hits": 0,
+      "fuzzy_hits": 8,
+      "precision": 0.0851,
+      "recall": 0.2162,
+      "f1": 0.1221,
+      "gold_events": [
+        {
+          "chemical": "5-chloro-8-hydroxyquinoline (Clioquinol)",
+          "event_type": "MIE",
+          "description": "Formation of CQ-Cu complex"
+        },
+        {
+          "chemical": "5-chloro-8-hydroxyquinoline (Clioquinol)",
+          "event_type": "KE",
+          "description": "Degradation of XIAP"
+        },
+        {
+          "chemical": "5-chloro-8-hydroxyquinoline (Clioquinol)",
+          "event_type": "KE",
+          "description": "Proteasome inhibition"
+        },
+        {
+          "chemical": "5-chloro-8-hydroxyquinoline (Clioquinol)",
+          "event_type": "AO",
+          "description": "Cancer cell apoptosis"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "MIE",
+          "description": "Binding to lipoylated TCA cycle enzymes"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "MIE",
+          "description": "Inhibition of VHL-mediated ubiquitination"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Aggregation of lipoylated proteins"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Destabilization of iron-sulfur (Fe-S) cluster proteins"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Induction of oxidative stress"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Proteotoxic stress"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "Diallyl trisulfides",
+          "event_type": "MIE",
+          "description": "Facilitation of RAB18 phase separation"
+        },
+        {
+          "chemical": "Diallyl trisulfides",
+          "event_type": "AO",
+          "description": "Induction of hepatic stellate cell death"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "MIE",
+          "description": "Formation of CuET metabolite"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Activation of stress-related signaling pathways"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Targeting NPL4 subunit of p97 segregase"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Apoptosis"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Ferroptosis"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "MIE",
+          "description": "Shuttling extracellular copper into cells"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Degradation of ATP7A"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Elevation of ROS levels"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Reduction of mitochondrial spare respiratory capacity"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Immunogenic cell death (ICD)"
+        },
+        {
+          "chemical": "Glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)",
+          "event_type": "MIE",
+          "description": "Release of copper ions in reductive environment"
+        },
+        {
+          "chemical": "Glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)",
+          "event_type": "AO",
+          "description": "Selective killing of cancer cells"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "MIE",
+          "description": "Generation of ROS and DNA damage"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "KE",
+          "description": "CTR1 upregulation"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "KE",
+          "description": "Elevation of mitochondrial copper levels"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "KE",
+          "description": "Mitochondrial GSH depletion"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "S767 / UM4118",
+          "event_type": "MIE",
+          "description": "Copper-specific ionophore activity"
+        },
+        {
+          "chemical": "S767 / UM4118",
+          "event_type": "KE",
+          "description": "Impairment of mitochondrial respiration"
+        },
+        {
+          "chemical": "S767 / UM4118",
+          "event_type": "KE",
+          "description": "Induction of DLAT aggregation"
+        },
+        {
+          "chemical": "S767 / UM4118",
+          "event_type": "AO",
+          "description": "Selective toxicity to AML subtypes"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "ATSM",
+          "event_type": "KE",
+          "description": "Weaker anticancer effects due to limited copper release"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "MIE",
+          "description": "Copper overload"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "MIE",
+          "description": "Excessive copper triggers FDX1-dependent events"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Aggregation of lipoylated TCA cycle enzymes"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Aggregation of lipoylated TCA cycle proteins"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Destabilization of Fe-S cluster proteins"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Destabilization of iron-sulfur cluster proteins"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "AO",
+          "description": "Neurodegenerative disorders"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "AO",
+          "description": "Tissue damage"
+        },
+        {
+          "chemical": "CQ",
+          "event_type": "MIE",
+          "description": "Forms complex with copper (CQ-Cu)"
+        },
+        {
+          "chemical": "CQ",
+          "event_type": "KE",
+          "description": "Targets proteasome and induces XIAP degradation"
+        },
+        {
+          "chemical": "CQ",
+          "event_type": "AO",
+          "description": "Broad-spectrum toxicity (e.g., neuropathy)"
+        },
+        {
+          "chemical": "Cu2+",
+          "event_type": "KE",
+          "description": "Induction of cuproptosis"
+        },
+        {
+          "chemical": "CuO nanoparticles",
+          "event_type": "KE",
+          "description": "T cell proliferation and Th1/Th2 cytokine secretion"
+        },
+        {
+          "chemical": "CuTCPP@MOF nanodots@Mannosamine",
+          "event_type": "KE",
+          "description": "Cuproptosis and ferroptosis in macrophages"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "MIE",
+          "description": "Binding to copper to form CuET"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "MIE",
+          "description": "Cu2+ ionophore activity"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "MIE",
+          "description": "Cuproptosis triggering"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Cisplatin resistance overcome"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Cuproptosis induction"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Disruption of ubiquitin-proteasome system"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "JNK/p38 and NF-κB activation"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Oxidative stress via ROS generation"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Restoration of mitochondrial copper accumulation"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Selective elimination of ALDH+ CSCs"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "System xc sustains GSH synthesis"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Advanced NSCLC: improved median OS with disulfiram-Cu plus cisplatin/vinorelbine"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Dual ferroptosis and cuproptosis"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Germ cell tumors: no restored cisplatin sensitivity"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Glioblastoma: no significant 6-month OS benefit"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Metastatic pancreatic cancer: ongoing trial with gemcitabine"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Newly diagnosed glioblastoma: ongoing trial with disulfiram-Cu in perioperative regimen"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "MIE",
+          "description": "Binding to extracellular Cu2+"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "MIE",
+          "description": "Cu ionophore-mediated intracellular copper accumulation"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "MIE",
+          "description": "Cu2+ ionophore activity"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "MIE",
+          "description": "Cuproptosis induction"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "MIE",
+          "description": "Cuproptosis triggering"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Cuproptosis-like effects"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Disruption of intracellular copper homeostasis"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Elevated ROS levels"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Immunogenic cell death and DAMP recruitment/activation"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Non-canonical death pathway activation"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Reduces spare respiratory capacity of mitochondria"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Restoration of mitochondrial copper accumulation"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Advanced melanoma: failed primary PFS endpoint in phase III"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Induces cell death"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Ovarian cancer: objective response rate, PFS, and OS with elesclomol/paclitaxel combination"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Pretreated melanoma: prolonged PFS with elesclomol plus paclitaxel"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "MIE",
+          "description": "Cuproptosis induction"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "KE",
+          "description": "Sustained AKT1 signaling"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "AO",
+          "description": "Tumor suppression"
+        },
+        {
+          "chemical": "elésclomol / Cu2+ nanoparticles",
+          "event_type": "MIE",
+          "description": "Encapsulated Cu2+ released in response to intracellular conditions"
+        },
+        {
+          "chemical": "elésclomol / Cu2+ nanoparticles",
+          "event_type": "KE",
+          "description": "Infibrosarcoma: M1 macrophage polarization"
+        },
+        {
+          "chemical": "elésclomol / Cu2+ nanoparticles",
+          "event_type": "KE",
+          "description": "Infibrosarcoma: releases DAMPs and activates DCs"
+        },
+        {
+          "chemical": "elésclomol / Cu2+ nanoparticles",
+          "event_type": "AO",
+          "description": "Robust tumor regression"
+        },
+        {
+          "chemical": "Enzalutamide",
+          "event_type": "KE",
+          "description": "Mitochondrial dependency and Fe-S cluster destabilization"
+        },
+        {
+          "chemical": "Excessive copper ions",
+          "event_type": "KE",
+          "description": "Binding to TCA cycle enzymes"
+        },
+        {
+          "chemical": "Excessive copper ions",
+          "event_type": "KE",
+          "description": "Induction of lipoylated protein aggregation"
+        },
+        {
+          "chemical": "Excessive copper ions",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "G5-PBA@CuS/cGAMP",
+          "event_type": "KE",
+          "description": "DC maturation and systemic antitumor immunity"
+        },
+        {
+          "chemical": "GLUT1 inhibition (BAY876)",
+          "event_type": "AO",
+          "description": "Enhanced cell death"
+        },
+        {
+          "chemical": "GTSM",
+          "event_type": "KE",
+          "description": "Cytotoxicity enhanced by physiological copper"
+        },
+        {
+          "chemical": "GTSM",
+          "event_type": "KE",
+          "description": "Releases copper ions in reductive tumor microenvironment"
+        },
+        {
+          "chemical": "GTSM",
+          "event_type": "AO",
+          "description": "Selective killing of cancer cells with high ROS/low GSH"
+        },
+        {
+          "chemical": "HIF-1 α",
+          "event_type": "MIE",
+          "description": "Hypoxia signaling"
+        },
+        {
+          "chemical": "HIF-1 α",
+          "event_type": "KE",
+          "description": "Induces MT2A expression"
+        },
+        {
+          "chemical": "HIF-1 α",
+          "event_type": "KE",
+          "description": "Stabilization by copper"
+        },
+        {
+          "chemical": "Imiquimod",
+          "event_type": "MIE",
+          "description": "TLR7 agonist (immune adjuvant)"
+        },
+        {
+          "chemical": "Imiquimod",
+          "event_type": "AO",
+          "description": "Enhances immune cell infiltration and tumor suppression (in combination)"
+        },
+        {
+          "chemical": "MetaCell",
+          "event_type": "KE",
+          "description": "Cuproptosis/ferroptosis in tumors (neutrophil-mediated)"
+        },
+        {
+          "chemical": "Metallothionein-2A (MT2A)",
+          "event_type": "KE",
+          "description": "Chelates mitochondrial copper"
+        },
+        {
+          "chemical": "Nutlin-3",
+          "event_type": "MIE",
+          "description": "p53 activation"
+        },
+        {
+          "chemical": "PDK1/3",
+          "event_type": "MIE",
+          "description": "Role in DLAT degradation"
+        },
+        {
+          "chemical": "PDK1/3",
+          "event_type": "KE",
+          "description": "Phosphorylate DLAT at Ser100"
+        },
+        {
+          "chemical": "RAB18",
+          "event_type": "KE",
+          "description": "Suppression of lipophagy and promotion of DLD succinylation"
+        },
+        {
+          "chemical": "RAB18",
+          "event_type": "AO",
+          "description": "HSC death"
+        },
+        {
+          "chemical": "S767",
+          "event_type": "KE",
+          "description": "Disrupts intracellular metal homeostasis (Fe, Cu, Zn)"
+        },
+        {
+          "chemical": "S767",
+          "event_type": "KE",
+          "description": "Selective toxicity to poor-prognosis AML subtypes"
+        },
+        {
+          "chemical": "TPP-CuET",
+          "event_type": "KE",
+          "description": "Disrupts TCA cycle, ATP synthesis, and electron transport"
+        },
+        {
+          "chemical": "TPP-CuET",
+          "event_type": "KE",
+          "description": "M1 macrophage polarization"
+        },
+        {
+          "chemical": "TPP-CuET",
+          "event_type": "KE",
+          "description": "Upregulates MHC-I-mediated antigen presentation"
+        },
+        {
+          "chemical": "Tumor-associated macrophages (TAMs)",
+          "event_type": "KE",
+          "description": "Cuproptosis/ferroptosis vulnerability"
+        },
+        {
+          "chemical": "Tumor-associated macrophages (TAMs)",
+          "event_type": "AO",
+          "description": "Immunosuppression in TME"
+        },
+        {
+          "chemical": "Twist family bHLH transcription factor 1 (TWIST1)",
+          "event_type": "KE",
+          "description": "Stabilization of HK2"
+        },
+        {
+          "chemical": "UM4118",
+          "event_type": "KE",
+          "description": "Copper-specific ionophore activity"
+        },
+        {
+          "chemical": "UM4118",
+          "event_type": "KE",
+          "description": "Impaired mitochondrial respiration"
+        },
+        {
+          "chemical": "UM4118",
+          "event_type": "KE",
+          "description": "Reduced maximal oxygen consumption"
+        },
+        {
+          "chemical": "YL21",
+          "event_type": "MIE",
+          "description": "Complex with copper ions to form YL21Cu"
+        },
+        {
+          "chemical": "YL21",
+          "event_type": "KE",
+          "description": "Disrupts mitochondrial respiration and promotes lipoylated DLAT oligomerization"
+        },
+        {
+          "chemical": "YL21",
+          "event_type": "KE",
+          "description": "Induces oxidative and ER stress"
+        },
+        {
+          "chemical": "YL21",
+          "event_type": "AO",
+          "description": "Inhibits tumor growth and activates antitumor immunity (breast cancer models)"
+        },
+        {
+          "chemical": "YTH N6-methyladenosine RNA binding protein F2 (YTHDF2)",
+          "event_type": "KE",
+          "description": "Destabilization of LIPT1 mRNA"
+        }
+      ],
+      "gold_events_text": "5-chloro-8-hydroxyquinoline (Clioquinol) | MIE | Formation of CQ-Cu complex\n5-chloro-8-hydroxyquinoline (Clioquinol) | KE | Degradation of XIAP\n5-chloro-8-hydroxyquinoline (Clioquinol) | KE | Proteasome inhibition\n5-chloro-8-hydroxyquinoline (Clioquinol) | AO | Cancer cell apoptosis\nCopper | MIE | Binding to lipoylated TCA cycle enzymes\nCopper | MIE | Inhibition of VHL-mediated ubiquitination\nCopper | KE | Aggregation of lipoylated proteins\nCopper | KE | Destabilization of iron-sulfur (Fe-S) cluster proteins\nCopper | KE | Induction of oxidative stress\nCopper | KE | Mitochondrial dysfunction\nCopper | KE | Proteotoxic stress\nCopper | AO | Cuproptosis\nDiallyl trisulfides | MIE | Facilitation of RAB18 phase separation\nDiallyl trisulfides | AO | Induction of hepatic stellate cell death\nDisulfiram | MIE | Formation of CuET metabolite\nDisulfiram | KE | Activation of stress-related signaling pathways\nDisulfiram | KE | Targeting NPL4 subunit of p97 segregase\nDisulfiram | AO | Apoptosis\nDisulfiram | AO | Cuproptosis\nDisulfiram | AO | Ferroptosis\nElesclomol | MIE | Shuttling extracellular copper into cells\nElesclomol | KE | Degradation of ATP7A\nElesclomol | KE | Elevation of ROS levels\nElesclomol | KE | Reduction of mitochondrial spare respiratory capacity\nElesclomol | AO | Cuproptosis\nElesclomol | AO | Immunogenic cell death (ICD)\nGlyoxal-bis(N4-methylthiosemicarbazone) (GTSM) | MIE | Release of copper ions in reductive environment\nGlyoxal-bis(N4-methylthiosemicarbazone) (GTSM) | AO | Selective killing of cancer cells\nRadiotherapy | MIE | Generation of ROS and DNA damage\nRadiotherapy | KE | CTR1 upregulation\nRadiotherapy | KE | Elevation of mitochondrial copper levels\nRadiotherapy | KE | Mitochondrial GSH depletion\nRadiotherapy | AO | Cuproptosis\nS767 / UM4118 | MIE | Copper-specific ionophore activity\nS767 / UM4118 | KE | Impairment of mitochondrial respiration\nS767 / UM4118 | KE | Induction of DLAT aggregation\nS767 / UM4118 | AO | Selective toxicity to AML subtypes",
+      "pred_events_text": "ATSM | KE | Weaker anticancer effects due to limited copper release\nCopper | MIE | Copper overload\nCopper | MIE | Excessive copper triggers FDX1-dependent events\nCopper | KE | Aggregation of lipoylated TCA cycle enzymes\nCopper | KE | Aggregation of lipoylated TCA cycle proteins\nCopper | KE | Destabilization of Fe-S cluster proteins\nCopper | KE | Destabilization of iron-sulfur cluster proteins\nCopper | KE | Oxidative stress\nCopper | AO | Neurodegenerative disorders\nCopper | AO | Tissue damage\nCQ | MIE | Forms complex with copper (CQ-Cu)\nCQ | KE | Targets proteasome and induces XIAP degradation\nCQ | AO | Broad-spectrum toxicity (e.g., neuropathy)\nCu2+ | KE | Induction of cuproptosis\nCuO nanoparticles | KE | T cell proliferation and Th1/Th2 cytokine secretion\nCuTCPP@MOF nanodots@Mannosamine | KE | Cuproptosis and ferroptosis in macrophages\nDisulfiram | MIE | Binding to copper to form CuET\nDisulfiram | MIE | Cu2+ ionophore activity\nDisulfiram | MIE | Cuproptosis triggering\nDisulfiram | KE | Cisplatin resistance overcome\nDisulfiram | KE | Cuproptosis induction\nDisulfiram | KE | Disruption of ubiquitin-proteasome system\nDisulfiram | KE | JNK/p38 and NF-κB activation\nDisulfiram | KE | Oxidative stress via ROS generation\nDisulfiram | KE | Restoration of mitochondrial copper accumulation\nDisulfiram | KE | Selective elimination of ALDH+ CSCs\nDisulfiram | KE | System xc sustains GSH synthesis\nDisulfiram | AO | Advanced NSCLC: improved median OS with disulfiram-Cu plus cisplatin/vinorelbine\nDisulfiram | AO | Dual ferroptosis and cuproptosis\nDisulfiram | AO | Germ cell tumors: no restored cisplatin sensitivity\nDisulfiram | AO | Glioblastoma: no significant 6-month OS benefit\nDisulfiram | AO | Metastatic pancreatic cancer: ongoing trial with gemcitabine\nDisulfiram | AO | Newly diagnosed glioblastoma: ongoing trial with disulfiram-Cu in perioperative regimen\nElesclomol | MIE | Binding to extracellular Cu2+\nElesclomol | MIE | Cu ionophore-mediated intracellular copper accumulation\nElesclomol | MIE | Cu2+ ionophore activity\nElesclomol | MIE | Cuproptosis induction\nElesclomol | MIE | Cuproptosis triggering\nElesclomol | KE | Cuproptosis-like effects\nElesclomol | KE | Disruption of intracellular copper homeostasis\nElesclomol | KE | Elevated ROS levels\nElesclomol | KE | Immunogenic cell death and DAMP recruitment/activation\nElesclomol | KE | Non-canonical death pathway activation\nElesclomol | KE | Oxidative stress\nElesclomol | KE | Reduces spare respiratory capacity of mitochondria\nElesclomol | KE | Restoration of mitochondrial copper accumulation\nElesclomol | AO | Advanced melanoma: failed primary PFS endpoint in phase III\nElesclomol | AO | Induces cell death\nElesclomol | AO | Ovarian cancer: objective response rate, PFS, and OS with elesclomol/paclitaxel combination\nElesclomol | AO | Pretreated melanoma: prolonged PFS with elesclomol plus paclitaxel\nElesclomol-Cu | MIE | Cuproptosis induction\nElesclomol-Cu | KE | Sustained AKT1 signaling\nElesclomol-Cu | AO | Tumor suppression\nelésclomol / Cu2+ nanoparticles | MIE | Encapsulated Cu2+ released in response to intracellular conditions\nelésclomol / Cu2+ nanoparticles | KE | Infibrosarcoma: M1 macrophage polarization\nelésclomol / Cu2+ nanoparticles | KE | Infibrosarcoma: releases DAMPs and activates DCs\nelésclomol / Cu2+ nanoparticles | AO | Robust tumor regression\nEnzalutamide | KE | Mitochondrial dependency and Fe-S cluster destabilization\nExcessive copper ions | KE | Binding to TCA cycle enzymes\nExcessive copper ions | KE | Induction of lipoylated protein aggregation\nExcessive copper ions | KE | Mitochondrial dysfunction\nG5-PBA@CuS/cGAMP | KE | DC maturation and systemic antitumor immunity\nGLUT1 inhibition (BAY876) | AO | Enhanced cell death\nGTSM | KE | Cytotoxicity enhanced by physiological copper\nGTSM | KE | Releases copper ions in reductive tumor microenvironment\nGTSM | AO | Selective killing of cancer cells with high ROS/low GSH\nHIF-1 α | MIE | Hypoxia signaling\nHIF-1 α | KE | Induces MT2A expression\nHIF-1 α | KE | Stabilization by copper\nImiquimod | MIE | TLR7 agonist (immune adjuvant)\nImiquimod | AO | Enhances immune cell infiltration and tumor suppression (in combination)\nMetaCell | KE | Cuproptosis/ferroptosis in tumors (neutrophil-mediated)\nMetallothionein-2A (MT2A) | KE | Chelates mitochondrial copper\nNutlin-3 | MIE | p53 activation\nPDK1/3 | MIE | Role in DLAT degradation\nPDK1/3 | KE | Phosphorylate DLAT at Ser100\nRAB18 | KE | Suppression of lipophagy and promotion of DLD succinylation\nRAB18 | AO | HSC death\nS767 | KE | Disrupts intracellular metal homeostasis (Fe, Cu, Zn)\nS767 | KE | Selective toxicity to poor-prognosis AML subtypes\nTPP-CuET | KE | Disrupts TCA cycle, ATP synthesis, and electron transport\nTPP-CuET | KE | M1 macrophage polarization\nTPP-CuET | KE | Upregulates MHC-I-mediated antigen presentation\nTumor-associated macrophages (TAMs) | KE | Cuproptosis/ferroptosis vulnerability\nTumor-associated macrophages (TAMs) | AO | Immunosuppression in TME\nTwist family bHLH transcription factor 1 (TWIST1) | KE | Stabilization of HK2\nUM4118 | KE | Copper-specific ionophore activity\nUM4118 | KE | Impaired mitochondrial respiration\nUM4118 | KE | Reduced maximal oxygen consumption\nYL21 | MIE | Complex with copper ions to form YL21Cu\nYL21 | KE | Disrupts mitochondrial respiration and promotes lipoylated DLAT oligomerization\nYL21 | KE | Induces oxidative and ER stress\nYL21 | AO | Inhibits tumor growth and activates antitumor immunity (breast cancer models)\nYTH N6-methyladenosine RNA binding protein F2 (YTHDF2) | KE | Destabilization of LIPT1 mRNA"
+    },
+    {
+      "paper_id": "paper_3031_events",
+      "n_chunks": 12,
+      "n_gold_events": 17,
+      "n_pred_events": 33,
+      "similar_to_gold": 11,
+      "not_in_gold_fp": 22,
+      "gold_not_found_fn": 6,
+      "exact_hits": 2,
+      "fuzzy_hits": 9,
+      "precision": 0.3333,
+      "recall": 0.6471,
+      "f1": 0.44,
+      "gold_events": [
+        {
+          "chemical": "Rotenone",
+          "event_type": "MIE",
+          "description": "Inhibition of mitochondrial Complex I"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Astrocyte reactivity and death"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Down-regulation of Axon guidance"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Down-regulation of Calcium Reabsorption pathway"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Down-regulation of synapse function/synaptogenesis"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Increased intracellular calcium levels"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Increased reactive oxygen species (ROS) production"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Oxidative stress induction"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "p53 signaling pathway activation"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "PPAR pathway disruption"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Reduction of neurite length"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Selective toxicity to dopaminergic (TH+) neurons"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Developmental neurotoxicity"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Embryotoxic effects"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Hyperactivity"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Parkinson's Disease pathology"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Rotenone",
+          "event_type": "MIE",
+          "description": "Inhibition of mitochondrial Complex I"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "MIE",
+          "description": "Mitochondrial complex I inhibition"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Astrocyte reactivity"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Axon guidance down-regulated"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Ca2+ reabsorption changes"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Calcium pathway alteration"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Calcium re-absorption pathway down-regulated"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "DA tyrosine hydroxylase positive (TH+) neuronal decrease"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Down-regulation of CNTNAP2"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Down-regulation of DCX"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Down-regulation of NR4A2"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Increased apoptosis"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Increased intracellular Ca levels"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Induction of oxidative stress"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Mitochondrial membrane potential impairment"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Neurite length reduction"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Neurite outgrowth impairment"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Neuronal cell death"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "PPAR pathway affected"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "PPAR pathway disruption"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Reduced cell viability"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Reduced resazurin (viability indicator) in brain spheres"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Reduction of neuronal cell number"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "ROS production"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "KE",
+          "description": "Synaptogenesis changes"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Cardiac edema"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Delay characterized by lack of tail detachment, delayed somite formation, yolk sac absorption, and lack of pigmentation"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Developmental affect in fish, chick and rat"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "General delay"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Hyperactivity during juvenile stage"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Loss of equilibrium"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Parkinson's disease"
+        },
+        {
+          "chemical": "Rotenone",
+          "event_type": "AO",
+          "description": "Tail deformities"
+        }
+      ],
+      "gold_events_text": "Rotenone | MIE | Inhibition of mitochondrial Complex I\nRotenone | KE | Astrocyte reactivity and death\nRotenone | KE | Down-regulation of Axon guidance\nRotenone | KE | Down-regulation of Calcium Reabsorption pathway\nRotenone | KE | Down-regulation of synapse function/synaptogenesis\nRotenone | KE | Increased intracellular calcium levels\nRotenone | KE | Increased reactive oxygen species (ROS) production\nRotenone | KE | Mitochondrial dysfunction\nRotenone | KE | Oxidative stress induction\nRotenone | KE | p53 signaling pathway activation\nRotenone | KE | PPAR pathway disruption\nRotenone | KE | Reduction of neurite length\nRotenone | KE | Selective toxicity to dopaminergic (TH+) neurons\nRotenone | AO | Developmental neurotoxicity\nRotenone | AO | Embryotoxic effects\nRotenone | AO | Hyperactivity\nRotenone | AO | Parkinson's Disease pathology",
+      "pred_events_text": "Rotenone | MIE | Inhibition of mitochondrial Complex I\nRotenone | MIE | Mitochondrial complex I inhibition\nRotenone | KE | Astrocyte reactivity\nRotenone | KE | Axon guidance down-regulated\nRotenone | KE | Ca2+ reabsorption changes\nRotenone | KE | Calcium pathway alteration\nRotenone | KE | Calcium re-absorption pathway down-regulated\nRotenone | KE | DA tyrosine hydroxylase positive (TH+) neuronal decrease\nRotenone | KE | Down-regulation of CNTNAP2\nRotenone | KE | Down-regulation of DCX\nRotenone | KE | Down-regulation of NR4A2\nRotenone | KE | Increased apoptosis\nRotenone | KE | Increased intracellular Ca levels\nRotenone | KE | Induction of oxidative stress\nRotenone | KE | Mitochondrial membrane potential impairment\nRotenone | KE | Neurite length reduction\nRotenone | KE | Neurite outgrowth impairment\nRotenone | KE | Neuronal cell death\nRotenone | KE | PPAR pathway affected\nRotenone | KE | PPAR pathway disruption\nRotenone | KE | Reduced cell viability\nRotenone | KE | Reduced resazurin (viability indicator) in brain spheres\nRotenone | KE | Reduction of neuronal cell number\nRotenone | KE | ROS production\nRotenone | KE | Synaptogenesis changes\nRotenone | AO | Cardiac edema\nRotenone | AO | Delay characterized by lack of tail detachment, delayed somite formation, yolk sac absorption, and lack of pigmentation\nRotenone | AO | Developmental affect in fish, chick and rat\nRotenone | AO | General delay\nRotenone | AO | Hyperactivity during juvenile stage\nRotenone | AO | Loss of equilibrium\nRotenone | AO | Parkinson's disease\nRotenone | AO | Tail deformities"
+    }
+  ]
+}

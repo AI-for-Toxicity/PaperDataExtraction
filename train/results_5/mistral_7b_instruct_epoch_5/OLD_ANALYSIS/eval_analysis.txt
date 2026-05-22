@@ -2,8 +2,11 @@
 ==========================================================================================
 [RECORD 1] id=None loss=0.6300269365310669
 Gold events: 4 | Pred events: 8
-0 matches similar to gold ones (exact=0, fuzzy=0), 8 matches not in gold, 4 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 7 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 8 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.928 | P: {'chemical': 'Diclofenac acyl glucuronide (DCF-AG)', 'event_type': 'MIE', 'description': 'COX inhibition'}  ->  G: {'chemical': 'Diclofenac Acyl Glucuronide (DCF-AG)', 'event_type': 'MIE', 'description': 'SOD inhibition'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=78.0 mean=93.4 max=100.0 | chemical_found=8/8
@@ -67,11 +70,8 @@ Top 1 pred events by score:
 ==========================================================================================
 [RECORD 6] id=None loss=0.8581336736679077
 Gold events: 4 | Pred events: 3
-2 matches similar to gold ones (exact=1, fuzzy=1), 1 matches not in gold, 2 matches from gold not found
+1 matches similar to gold ones (exact=1, fuzzy=0), 2 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.777 | P: {'chemical': 'DAPT (N-[N-(3,5-Difluorophenacetyl)L-alanyl]-S-phenylglycine t-butyl ester)', 'event_type': 'KE', 'description': 'Increased neuronal numbers'}  ->  G: {'chemical': 'DAPT (Notch inhibitor)', 'event_type': 'KE', 'description': 'increased neuronal numbers'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=79.0 mean=88.8 max=100.0 | chemical_found=3/3
@@ -83,12 +83,11 @@ Top 3 pred events by score:
 ==========================================================================================
 [RECORD 7] id=None loss=0.7846187353134155
 Gold events: 5 | Pred events: 5
-2 matches similar to gold ones (exact=0, fuzzy=2), 3 matches not in gold, 3 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 4 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text (score>=50): 5 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.947 | P: {'chemical': 'Elesclomol', 'event_type': 'KE', 'description': 'Reduces spare respiratory capacity of mitochondria'}  ->  G: {'chemical': 'Elesclomol', 'event_type': 'KE', 'description': 'Reduction of mitochondrial spare respiratory capacity'}
-  sim=0.658 | P: {'chemical': 'Elesclomol', 'event_type': 'AO', 'description': 'Induces cell death'}  ->  G: {'chemical': 'Elesclomol', 'event_type': 'AO', 'description': 'Cuproptosis'}
+  sim=0.904 | P: {'chemical': 'Elesclomol', 'event_type': 'KE', 'description': 'Reduces spare respiratory capacity of mitochondria'}  ->  G: {'chemical': 'Elesclomol', 'event_type': 'KE', 'description': 'Reduction of mitochondrial spare respiratory capacity'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=81.8 mean=90.1 max=100.0 | chemical_found=5/5
@@ -117,17 +116,18 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 
 ==========================================================================================
 [RECORD 10] id=None loss=1.151628851890564
-Gold events: 2 | Pred events: 4
-0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 2 matches from gold not found
-Pred grounded in chunk text (score>=50): 4 match, 0 don't match
+Gold events: 2 | Pred events: 5
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 2 matches from gold not found
+Pred grounded in chunk text (score>=50): 5 match, 0 don't match
 
 Pred relevance on chunk (description score 0..100):
-  score: min=81.5 mean=95.4 max=100.0 | chemical_found=4/4
-Top 4 pred events by score:
+  score: min=81.5 mean=92.6 max=100.0 | chemical_found=5/5
+Top 5 pred events by score:
    100.0 chem✓ | 'Diclofenac (DCF)', KE, 'COX inhibition'
    100.0 chem✓ | 'Diclofenac (DCF)', KE, 'ROS generation'
    100.0 chem✓ | 'Diclofenac acyl glucuronide (DCF-AG)', KE, 'SOD inhibition'
     81.5 chem✓ | 'Diclofenac acyl glucuronide (DCF-AG)', KE, 'COX-1 inhibition'
+    81.5 chem✓ | 'Diclofenac acyl glucuronide (DCF-AG)', KE, 'COX-2 inhibition'
 
 ==========================================================================================
 [RECORD 11] id=None loss=1.4282408952713013
@@ -176,11 +176,8 @@ Top 3 pred events by score:
 ==========================================================================================
 [RECORD 15] id=None loss=1.0009424686431885
 Gold events: 5 | Pred events: 4
-1 matches similar to gold ones (exact=0, fuzzy=1), 3 matches not in gold, 4 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.664 | P: {'chemical': 'Disulfiram', 'event_type': 'KE', 'description': 'Restoration of mitochondrial copper accumulation'}  ->  G: {'chemical': 'Radiotherapy', 'event_type': 'KE', 'description': 'Elevation of mitochondrial copper levels'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=64.5 mean=70.0 max=75.6 | chemical_found=4/4
@@ -216,7 +213,7 @@ Gold events: 1 | Pred events: 3
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.932 | P: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Oxidative stress'}  ->  G: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Induction of oxidative stress'}
+  sim=1.000 | P: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Oxidative stress'}  ->  G: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Induction of oxidative stress'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=100.0 mean=100.0 max=100.0 | chemical_found=3/3
@@ -274,15 +271,13 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 23] id=None loss=0.8786861300468445
 Gold events: 11 | Pred events: 6
-6 matches similar to gold ones (exact=0, fuzzy=6), 0 matches not in gold, 5 matches from gold not found
+3 matches similar to gold ones (exact=0, fuzzy=3), 3 matches not in gold, 8 matches from gold not found
 Pred grounded in chunk text (score>=50): 6 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.932 | P: {'chemical': 'pyrethrin', 'event_type': 'KE', 'description': 'Marked decrease of total ATP and WST-1 at 100 µM'}  ->  G: {'chemical': 'pyrethrin', 'event_type': 'KE', 'description': 'Marked reduction in WST-1/ATP at high concentration'}
-  sim=0.820 | P: {'chemical': 'cypermethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity'}  ->  G: {'chemical': 'cypermethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity in SH-SY5Y cells'}
-  sim=0.820 | P: {'chemical': 'permethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity'}  ->  G: {'chemical': 'permethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity in SH-SY5Y cells'}
-  sim=0.820 | P: {'chemical': 'pyrethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity'}  ->  G: {'chemical': 'pyrethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity in SH-SY5Y cells'}
-  sim=0.692 | P: {'chemical': 'permethrin', 'event_type': 'KE', 'description': 'Marked decrease of total ATP at 50 and 100 µM'}  ->  G: {'chemical': 'permethrin', 'event_type': 'KE', 'description': 'Toxicity detected by ATP and WST-1 at higher concentrations'}
+  sim=1.000 | P: {'chemical': 'cypermethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity'}  ->  G: {'chemical': 'cypermethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity in SH-SY5Y cells'}
+  sim=1.000 | P: {'chemical': 'permethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity'}  ->  G: {'chemical': 'permethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity in SH-SY5Y cells'}
+  sim=1.000 | P: {'chemical': 'pyrethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity'}  ->  G: {'chemical': 'pyrethrin', 'event_type': 'KE', 'description': 'Dose-dependent cytotoxicity in SH-SY5Y cells'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=64.3 mean=82.6 max=100.0 | chemical_found=6/6
@@ -362,7 +357,7 @@ Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
   sim=1.000 | P: {'chemical': 'Cadmium', 'event_type': 'KE', 'description': 'Inhibition of hNPC proliferation'}  ->  G: {'chemical': 'cadmium chloride', 'event_type': 'KE', 'description': 'inhibition of hNPC proliferation'}
-  sim=0.977 | P: {'chemical': 'Cadmium', 'event_type': 'MIE', 'description': 'Induction of oxidative stress'}  ->  G: {'chemical': 'cadmium chloride', 'event_type': 'MIE', 'description': 'oxidative stress induction'}
+  sim=0.943 | P: {'chemical': 'Cadmium', 'event_type': 'MIE', 'description': 'Induction of oxidative stress'}  ->  G: {'chemical': 'cadmium chloride', 'event_type': 'MIE', 'description': 'oxidative stress induction'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=100.0 mean=100.0 max=100.0 | chemical_found=2/2
@@ -377,8 +372,8 @@ Gold events: 4 | Pred events: 2
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.930 | P: {'chemical': 'Deltamethrin', 'event_type': 'KE', 'description': 'Inhibition of oligodendrocyte differentiation'}  ->  G: {'chemical': 'deltamethrin', 'event_type': 'KE', 'description': 'decreased oligodendrocyte differentiation'}
-  sim=0.930 | P: {'chemical': 'Tetrabromobisphenol A (TBBPA)', 'event_type': 'KE', 'description': 'Inhibition of oligodendrocyte differentiation'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'KE', 'description': 'decreased oligodendrocyte differentiation'}
+  sim=0.923 | P: {'chemical': 'Deltamethrin', 'event_type': 'KE', 'description': 'Inhibition of oligodendrocyte differentiation'}  ->  G: {'chemical': 'deltamethrin', 'event_type': 'KE', 'description': 'decreased oligodendrocyte differentiation'}
+  sim=0.923 | P: {'chemical': 'Tetrabromobisphenol A (TBBPA)', 'event_type': 'KE', 'description': 'Inhibition of oligodendrocyte differentiation'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'KE', 'description': 'decreased oligodendrocyte differentiation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=76.2 mean=76.2 max=76.2 | chemical_found=2/2
@@ -434,12 +429,11 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 35] id=None loss=0.6710582375526428
 Gold events: 6 | Pred events: 7
-2 matches similar to gold ones (exact=0, fuzzy=2), 5 matches not in gold, 4 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 6 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text (score>=50): 7 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.847 | P: {'chemical': 'GTSM', 'event_type': 'AO', 'description': 'Selective killing of cancer cells with high ROS/low GSH'}  ->  G: {'chemical': 'Glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)', 'event_type': 'AO', 'description': 'Selective killing of cancer cells'}
-  sim=0.660 | P: {'chemical': 'CQ', 'event_type': 'MIE', 'description': 'Forms complex with copper (CQ-Cu)'}  ->  G: {'chemical': '5-chloro-8-hydroxyquinoline (Clioquinol)', 'event_type': 'MIE', 'description': 'Formation of CQ-Cu complex'}
+  sim=1.000 | P: {'chemical': 'GTSM', 'event_type': 'AO', 'description': 'Selective killing of cancer cells with high ROS/low GSH'}  ->  G: {'chemical': 'Glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)', 'event_type': 'AO', 'description': 'Selective killing of cancer cells'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=59.8 mean=80.6 max=100.0 | chemical_found=7/7
@@ -478,8 +472,8 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 
 ==========================================================================================
 [RECORD 39] id=None loss=0.5150555372238159
-Gold events: 3 | Pred events: 0
-0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 3 matches from gold not found
+Gold events: 6 | Pred events: 0
+0 matches similar to gold ones (exact=0, fuzzy=0), 0 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text: no pred events to score
 
 No parsable pred events to score (model probably output garbage/truncated lines).
@@ -549,7 +543,7 @@ Gold events: 2 | Pred events: 5
 Pred grounded in chunk text (score>=50): 5 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.853 | P: {'chemical': 'PD153035 (EGFR inhibitor)', 'event_type': 'KE', 'description': 'Antagonizes EGF-induced hNPC proliferation'}  ->  G: {'chemical': 'PD153035 (EGFR inhibitor)', 'event_type': 'KE', 'description': 'antagonized EGF-induced proliferation'}
+  sim=0.929 | P: {'chemical': 'PD153035 (EGFR inhibitor)', 'event_type': 'KE', 'description': 'Antagonizes EGF-induced hNPC proliferation'}  ->  G: {'chemical': 'PD153035 (EGFR inhibitor)', 'event_type': 'KE', 'description': 'antagonized EGF-induced proliferation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=68.0 mean=74.7 max=84.6 | chemical_found=5/5
@@ -571,14 +565,13 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 48] id=None loss=0.37701013684272766
 Gold events: 6 | Pred events: 10
-4 matches similar to gold ones (exact=0, fuzzy=4), 6 matches not in gold, 2 matches from gold not found
+3 matches similar to gold ones (exact=0, fuzzy=3), 7 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 10 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
   sim=0.855 | P: {'chemical': 'DEHP (di(2-ethylhexyl) phthalate)', 'event_type': 'AO', 'description': 'Low birth weight'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'AO', 'description': 'Low birth weight'}
   sim=0.855 | P: {'chemical': 'DEHP (di(2-ethylhexyl) phthalate)', 'event_type': 'AO', 'description': 'Pregnancy loss'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'AO', 'description': 'Pregnancy loss'}
   sim=0.855 | P: {'chemical': 'DEHP (di(2-ethylhexyl) phthalate)', 'event_type': 'AO', 'description': 'Preterm birth'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'AO', 'description': 'Preterm birth'}
-  sim=0.705 | P: {'chemical': 'DEHP (di(2-ethylhexyl) phthalate)', 'event_type': 'AO', 'description': 'Decreased couple fecundity'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'AO', 'description': 'Decreased fecundity'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=68.1 mean=88.2 max=100.0 | chemical_found=10/10
@@ -632,12 +625,11 @@ Top 8 pred events by score:
 ==========================================================================================
 [RECORD 52] id=None loss=0.9411230087280273
 Gold events: 6 | Pred events: 8
-2 matches similar to gold ones (exact=0, fuzzy=2), 6 matches not in gold, 4 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 7 matches not in gold, 5 matches from gold not found
 Pred grounded in chunk text (score>=50): 8 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.774 | P: {'chemical': 'pyrethroids (general)', 'event_type': 'KE', 'description': 'oxidative stress'}  ->  G: {'chemical': 'permethrin', 'event_type': 'KE', 'description': 'Oxidative stress potential (general statement)'}
-  sim=0.659 | P: {'chemical': 'pyrethroids (general)', 'event_type': 'MIE', 'description': 'interaction with sodium channels'}  ->  G: {'chemical': 'pyrethrin', 'event_type': 'MIE', 'description': 'Delayed/prolonged sodium channel opening (general pyrethroid mechanism)'}
+  sim=0.861 | P: {'chemical': 'pyrethroids (general)', 'event_type': 'KE', 'description': 'oxidative stress'}  ->  G: {'chemical': 'permethrin', 'event_type': 'KE', 'description': 'Oxidative stress potential (general statement)'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=62.2 mean=74.5 max=100.0 | chemical_found=8/8
@@ -658,7 +650,7 @@ Gold events: 2 | Pred events: 1
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.842 | P: {'chemical': 'deltamethrin (DM)', 'event_type': 'KE', 'description': 'Prolonged activation of Bdnf promoter IV'}  ->  G: {'chemical': 'deltamethrin', 'event_type': 'KE', 'description': 'Continuous Ca2+ signaling drives prolonged Bdnf promoter activation'}
+  sim=0.914 | P: {'chemical': 'deltamethrin (DM)', 'event_type': 'KE', 'description': 'Prolonged activation of Bdnf promoter IV'}  ->  G: {'chemical': 'deltamethrin', 'event_type': 'KE', 'description': 'Activation of Bdnf promoter IV via Ca2+-responsive elements'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=88.3 mean=88.3 max=88.3 | chemical_found=1/1
@@ -672,8 +664,8 @@ Gold events: 4 | Pred events: 2
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.954 | P: {'chemical': 'NH-3', 'event_type': 'KE', 'description': 'Impairment of T3-dependent OL maturation'}  ->  G: {'chemical': 'NH-3 (Thyroid hormone receptor antagonist)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
-  sim=0.954 | P: {'chemical': 'TBBPA', 'event_type': 'KE', 'description': 'Impairment of T3-dependent OL maturation'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
+  sim=0.911 | P: {'chemical': 'NH-3', 'event_type': 'KE', 'description': 'Impairment of T3-dependent OL maturation'}  ->  G: {'chemical': 'NH-3 (Thyroid hormone receptor antagonist)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
+  sim=0.911 | P: {'chemical': 'TBBPA', 'event_type': 'KE', 'description': 'Impairment of T3-dependent OL maturation'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'KE', 'description': 'decreased T3-dependent OL maturation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=74.5 mean=74.5 max=74.5 | chemical_found=2/2
@@ -811,13 +803,8 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 68] id=None loss=0.7955619692802429
 Gold events: 3 | Pred events: 5
-3 matches similar to gold ones (exact=0, fuzzy=3), 2 matches not in gold, 0 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 5 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.679 | P: {'chemical': 'Cypermethrin', 'event_type': 'MIE', 'description': 'Voltage-gated sodium channel modification'}  ->  G: {'chemical': 'cypermethrin', 'event_type': 'MIE', 'description': 'Sodium channel target (general pyrethroid mechanism)'}
-  sim=0.679 | P: {'chemical': 'Permethrin', 'event_type': 'MIE', 'description': 'Voltage-gated sodium channel modification'}  ->  G: {'chemical': 'permethrin', 'event_type': 'MIE', 'description': 'Sodium channel target (general pyrethroid mechanism)'}
-  sim=0.679 | P: {'chemical': 'Pyrethrin', 'event_type': 'MIE', 'description': 'Voltage-gated sodium channel modification'}  ->  G: {'chemical': 'pyrethrin', 'event_type': 'MIE', 'description': 'Sodium channel target (general pyrethroid mechanism)'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=56.4 mean=56.4 max=56.4 | chemical_found=5/5
@@ -859,7 +846,7 @@ Gold events: 1 | Pred events: 6
 Pred grounded in chunk text (score>=50): 6 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.867 | P: {'chemical': 'tetrabromobisphenol A (TBBPA)', 'event_type': 'MIE', 'description': 'Lipotoxicity'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'MIE', 'description': 'lipotoxicity via cholesterol metabolism disruption'}
+  sim=1.000 | P: {'chemical': 'tetrabromobisphenol A (TBBPA)', 'event_type': 'MIE', 'description': 'Lipotoxicity'}  ->  G: {'chemical': 'TETRABROMOBISPHENOL A (TBBPA)', 'event_type': 'MIE', 'description': 'lipotoxicity via cholesterol metabolism disruption'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=74.5 mean=91.9 max=100.0 | chemical_found=6/6
@@ -878,7 +865,7 @@ Gold events: 1 | Pred events: 1
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.881 | P: {'chemical': 'Hydroquinone', 'event_type': 'KE', 'description': 'Two-electron oxidation to 1,4-benzoquinone'}  ->  G: {'chemical': 'Hydroquinone', 'event_type': 'KE', 'description': 'Peroxidase-dependent oxidation to 1,4-benzoquinone'}
+  sim=0.905 | P: {'chemical': 'Hydroquinone', 'event_type': 'KE', 'description': 'Two-electron oxidation to 1,4-benzoquinone'}  ->  G: {'chemical': 'Hydroquinone', 'event_type': 'KE', 'description': 'Peroxidase-dependent oxidation to 1,4-benzoquinone'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=100.0 mean=100.0 max=100.0 | chemical_found=1/1
@@ -936,7 +923,7 @@ Gold events: 2 | Pred events: 3
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.950 | P: {'chemical': 'Excessive copper ions', 'event_type': 'KE', 'description': 'Induction of lipoylated protein aggregation'}  ->  G: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Aggregation of lipoylated proteins'}
+  sim=0.901 | P: {'chemical': 'Excessive copper ions', 'event_type': 'KE', 'description': 'Induction of lipoylated protein aggregation'}  ->  G: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Aggregation of lipoylated proteins'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=60.7 mean=76.7 max=100.0 | chemical_found=3/3
@@ -973,8 +960,12 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 82] id=None loss=1.4713698625564575
 Gold events: 3 | Pred events: 3
-0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 3 matches from gold not found
+2 matches similar to gold ones (exact=0, fuzzy=2), 1 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.962 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Down-regulation of DCX'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Down-regulation of Calcium Reabsorption pathway'}
+  sim=0.930 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Down-regulation of NR4A2'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Down-regulation of synapse function/synaptogenesis'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=81.5 mean=88.1 max=100.0 | chemical_found=3/3
@@ -1013,11 +1004,8 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 86] id=None loss=1.637258768081665
 Gold events: 3 | Pred events: 2
-1 matches similar to gold ones (exact=0, fuzzy=1), 1 matches not in gold, 2 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 2 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.653 | P: {'chemical': 'prochloraz', 'event_type': 'KE', 'description': 'Inhibition of steroidogenesis'}  ->  G: {'chemical': 'Prochloraz', 'event_type': 'KE', 'description': 'decreased 17β-estradiol (E2) biosynthesis (downward trend; threshold issue noted)'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=58.5 mean=61.6 max=64.7 | chemical_found=2/2
@@ -1040,7 +1028,7 @@ Gold events: 5 | Pred events: 2
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.764 | P: {'chemical': 'PP2', 'event_type': 'KE', 'description': 'Reduced migration'}  ->  G: {'chemical': 'PP2 (SRC-kinase inhibitor)', 'event_type': 'KE', 'description': 'reduced cell migration'}
+  sim=0.958 | P: {'chemical': 'PP2', 'event_type': 'KE', 'description': 'Reduced migration'}  ->  G: {'chemical': 'PP2 (SRC-kinase inhibitor)', 'event_type': 'KE', 'description': 'reduced cell migration'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=62.2 mean=68.1 max=74.0 | chemical_found=2/2
@@ -1084,7 +1072,7 @@ Gold events: 4 | Pred events: 5
 Pred grounded in chunk text (score>=50): 5 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.981 | P: {'chemical': 'UM4118', 'event_type': 'KE', 'description': 'Impaired mitochondrial respiration'}  ->  G: {'chemical': 'S767 / UM4118', 'event_type': 'KE', 'description': 'Impairment of mitochondrial respiration'}
+  sim=0.933 | P: {'chemical': 'UM4118', 'event_type': 'KE', 'description': 'Impaired mitochondrial respiration'}  ->  G: {'chemical': 'S767 / UM4118', 'event_type': 'KE', 'description': 'Impairment of mitochondrial respiration'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=75.5 mean=88.2 max=100.0 | chemical_found=5/5
@@ -1098,12 +1086,8 @@ Top 5 pred events by score:
 ==========================================================================================
 [RECORD 93] id=None loss=0.9094407558441162
 Gold events: 4 | Pred events: 4
-2 matches similar to gold ones (exact=0, fuzzy=2), 2 matches not in gold, 2 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.862 | P: {'chemical': '1,4-Benzoquinone (BQ)', 'event_type': 'KE', 'description': 'Single-stranded DNA breaks'}  ->  G: {'chemical': '1,4-Benzoquinone', 'event_type': 'KE', 'description': 'Induction of DNA strand breaks'}
-  sim=0.656 | P: {'chemical': '1,4-Benzoquinone (BQ)', 'event_type': 'KE', 'description': 'Micronuclei formation'}  ->  G: {'chemical': '1,4-Benzoquinone', 'event_type': 'KE', 'description': 'Interference with microtubule assembly'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=53.9 mean=80.2 max=100.0 | chemical_found=4/4
@@ -1131,12 +1115,11 @@ Top 5 pred events by score:
 ==========================================================================================
 [RECORD 95] id=None loss=1.07927405834198
 Gold events: 5 | Pred events: 8
-3 matches similar to gold ones (exact=1, fuzzy=2), 5 matches not in gold, 2 matches from gold not found
+2 matches similar to gold ones (exact=1, fuzzy=1), 6 matches not in gold, 3 matches from gold not found
 Pred grounded in chunk text (score>=50): 8 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.868 | P: {'chemical': 'Brimonidine', 'event_type': 'AO', 'description': 'Paradoxical erythema'}  ->  G: {'chemical': 'brimonidine', 'event_type': 'AO', 'description': 'Exaggerated recurrence of erythema'}
-  sim=0.808 | P: {'chemical': 'Brimonidine', 'event_type': 'KE', 'description': 'Sustained vasodilatation'}  ->  G: {'chemical': 'brimonidine', 'event_type': 'KE', 'description': 'Local transient vasoconstriction'}
+  sim=0.900 | P: {'chemical': 'Brimonidine', 'event_type': 'KE', 'description': 'Sustained vasodilatation'}  ->  G: {'chemical': 'brimonidine', 'event_type': 'KE', 'description': 'Local inflammation with perivascular inflammatory cells driving mediator release and sustained vasodilation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=68.8 mean=83.5 max=100.0 | chemical_found=8/8
@@ -1157,10 +1140,10 @@ Gold events: 5 | Pred events: 11
 Pred grounded in chunk text (score>=50): 11 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.983 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Neurite length reduction'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Reduction of neurite length'}
-  sim=0.977 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Induction of oxidative stress'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Oxidative stress induction'}
-  sim=0.923 | P: {'chemical': 'Rotenone', 'event_type': 'AO', 'description': "Parkinson's disease"}  ->  G: {'chemical': 'Rotenone', 'event_type': 'AO', 'description': "Parkinson's Disease pathology"}
-  sim=0.889 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Astrocyte reactivity'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Astrocyte reactivity and death'}
+  sim=1.000 | P: {'chemical': 'Rotenone', 'event_type': 'AO', 'description': "Parkinson's disease"}  ->  G: {'chemical': 'Rotenone', 'event_type': 'AO', 'description': "Parkinson's Disease pathology"}
+  sim=1.000 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Astrocyte reactivity'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Astrocyte reactivity and death'}
+  sim=0.943 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Induction of oxidative stress'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Oxidative stress induction'}
+  sim=0.937 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Neurite length reduction'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Reduction of neurite length'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=69.1 mean=83.9 max=100.0 | chemical_found=11/11
@@ -1177,11 +1160,8 @@ Top 8 pred events by score:
 ==========================================================================================
 [RECORD 97] id=None loss=2.030979871749878
 Gold events: 2 | Pred events: 4
-1 matches similar to gold ones (exact=0, fuzzy=1), 3 matches not in gold, 1 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 4 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.747 | P: {'chemical': 'PEPs', 'event_type': 'KE', 'description': 'HO-1 upregulation in SAEC at 30 µg/mL'}  ->  G: {'chemical': 'PEPs (Printer-Emitted Engineered Nanoparticles)', 'event_type': 'KE', 'description': 'Upregulation of HO-1 expression'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=57.6 mean=63.8 max=70.1 | chemical_found=4/4
@@ -1260,7 +1240,7 @@ Gold events: 1 | Pred events: 3
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.900 | P: {'chemical': 'Brimonidine', 'event_type': 'KE', 'description': 'Receptor desensitization and internalization'}  ->  G: {'chemical': 'brimonidine', 'event_type': 'KE', 'description': 'Receptor desensitization/internalization as drug effect wanes (proposed)'}
+  sim=0.917 | P: {'chemical': 'Brimonidine', 'event_type': 'KE', 'description': 'Receptor desensitization and internalization'}  ->  G: {'chemical': 'brimonidine', 'event_type': 'KE', 'description': 'Receptor desensitization/internalization as drug effect wanes (proposed)'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=73.7 mean=85.5 max=100.0 | chemical_found=3/3
@@ -1284,7 +1264,7 @@ Gold events: 4 | Pred events: 3
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.979 | P: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Destabilization of iron-sulfur cluster proteins'}  ->  G: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Destabilization of iron-sulfur (Fe-S) cluster proteins'}
+  sim=0.964 | P: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Destabilization of iron-sulfur cluster proteins'}  ->  G: {'chemical': 'Copper', 'event_type': 'KE', 'description': 'Destabilization of iron-sulfur (Fe-S) cluster proteins'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=72.0 mean=90.7 max=100.0 | chemical_found=3/3
@@ -1341,11 +1321,8 @@ Top 3 pred events by score:
 ==========================================================================================
 [RECORD 111] id=None loss=1.5299263000488281
 Gold events: 1 | Pred events: 2
-1 matches similar to gold ones (exact=0, fuzzy=1), 1 matches not in gold, 0 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 2 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.688 | P: {'chemical': 'Baclofen', 'event_type': 'KE', 'description': 'Did not reduce DM-induced Bdnf eIV-IX mRNA expression'}  ->  G: {'chemical': 'GABA', 'event_type': 'KE', 'description': 'Inhibition of deltamethrin-induced Bdnf eIV-IX mRNA expression'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=73.9 mean=76.8 max=79.7 | chemical_found=1/2
@@ -1360,7 +1337,7 @@ Gold events: 5 | Pred events: 1
 Pred grounded in chunk text (score>=50): 1 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.990 | P: {'chemical': 'Brimonidine', 'event_type': 'KE', 'description': 'Chronic agonism and receptor downregulation/desensitization'}  ->  G: {'chemical': 'brimonidine', 'event_type': 'KE', 'description': 'Receptor downregulation/desensitization from chronic agonism'}
+  sim=0.938 | P: {'chemical': 'Brimonidine', 'event_type': 'KE', 'description': 'Chronic agonism and receptor downregulation/desensitization'}  ->  G: {'chemical': 'brimonidine', 'event_type': 'KE', 'description': 'Receptor downregulation/desensitization from chronic agonism'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=66.5 mean=66.5 max=66.5 | chemical_found=1/1
@@ -1374,8 +1351,8 @@ Gold events: 2 | Pred events: 8
 Pred grounded in chunk text (score>=50): 8 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.897 | P: {'chemical': 'PEPs', 'event_type': 'KE', 'description': 'Hypomethylation of L1 ORF1'}  ->  G: {'chemical': 'PEPs (Printer-Emitted Engineered Nanoparticles)', 'event_type': 'KE', 'description': 'Hypomethylation of LINE-1 ORF1'}
-  sim=0.823 | P: {'chemical': 'CuO', 'event_type': 'KE', 'description': 'Hypermethylation of specific L1 elements'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Hypermethylation of repetitive elements'}
+  sim=0.947 | P: {'chemical': 'PEPs', 'event_type': 'KE', 'description': 'Hypomethylation of L1 ORF1'}  ->  G: {'chemical': 'PEPs (Printer-Emitted Engineered Nanoparticles)', 'event_type': 'KE', 'description': 'Hypomethylation of LINE-1 ORF1'}
+  sim=0.930 | P: {'chemical': 'CuO', 'event_type': 'KE', 'description': 'Hypermethylation of Alu elements'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Hypermethylation of repetitive elements'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=66.8 mean=81.0 max=100.0 | chemical_found=8/8
@@ -1408,7 +1385,7 @@ Gold events: 2 | Pred events: 3
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.941 | P: {'chemical': 'Bisphenol A (BPA)', 'event_type': 'KE', 'description': 'Disruption of glucose metabolism'}  ->  G: {'chemical': 'Bisphenol A (BPA)', 'event_type': 'KE', 'description': 'Disruption of glucose and lipid metabolism'}
+  sim=0.961 | P: {'chemical': 'Bisphenol A (BPA)', 'event_type': 'KE', 'description': 'Disruption of glucose metabolism'}  ->  G: {'chemical': 'Bisphenol A (BPA)', 'event_type': 'KE', 'description': 'Disruption of glucose and lipid metabolism'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=100.0 mean=100.0 max=100.0 | chemical_found=3/3
@@ -1432,11 +1409,8 @@ Top 2 pred events by score:
 ==========================================================================================
 [RECORD 117] id=None loss=1.7228798866271973
 Gold events: 1 | Pred events: 3
-1 matches similar to gold ones (exact=0, fuzzy=1), 2 matches not in gold, 0 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 3 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text (score>=50): 3 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.720 | P: {'chemical': 'Elesclomol', 'event_type': 'MIE', 'description': 'Cu2+ ionophore activity'}  ->  G: {'chemical': 'Elesclomol', 'event_type': 'MIE', 'description': 'Shuttling extracellular copper into cells'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=52.4 mean=56.0 max=63.1 | chemical_found=2/3
@@ -1508,7 +1482,7 @@ Gold events: 4 | Pred events: 2
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.779 | P: {'chemical': 'Phthalates', 'event_type': 'KE', 'description': 'LINE-1 and IGF-2 methylation'}  ->  G: {'chemical': 'phthalates (prenatal exposure; term placenta literature cited)', 'event_type': 'KE', 'description': 'Increased IGF-2 methylation in term placenta'}
+  sim=0.887 | P: {'chemical': 'Phthalates', 'event_type': 'KE', 'description': 'LINE-1 and IGF-2 methylation'}  ->  G: {'chemical': 'phthalates (prenatal exposure; term placenta literature cited)', 'event_type': 'KE', 'description': 'Increased IGF-2 methylation in term placenta'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=58.6 mean=64.6 max=70.6 | chemical_found=2/2
@@ -1527,15 +1501,14 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 127] id=None loss=0.9268813729286194
 Gold events: 10 | Pred events: 7
-6 matches similar to gold ones (exact=0, fuzzy=6), 1 matches not in gold, 4 matches from gold not found
+4 matches similar to gold ones (exact=0, fuzzy=4), 3 matches not in gold, 6 matches from gold not found
 Pred grounded in chunk text (score>=50): 7 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.998 | P: {'chemical': 'triadimefon', 'event_type': 'KE', 'description': 'Inhibits testosterone biosynthesis in rat testis cultures'}  ->  G: {'chemical': 'Triadimefon', 'event_type': 'KE', 'description': 'inhibits testosterone biosynthesis in rat testis cultures (reported)'}
-  sim=0.967 | P: {'chemical': 'flusilazole', 'event_type': 'KE', 'description': 'Inhibited testosterone synthesis in murine Leydig cells (reported)'}  ->  G: {'chemical': 'Flusilazole', 'event_type': 'KE', 'description': 'inhibits testosterone (T) synthesis (reported in Leydig cells)'}
-  sim=0.840 | P: {'chemical': 'cyproconazole', 'event_type': 'KE', 'description': 'Decreased estradiol in a concentration-dependent manner (borderline negative call)'}  ->  G: {'chemical': 'Cyproconazole', 'event_type': 'KE', 'description': 'decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)'}
-  sim=0.840 | P: {'chemical': 'myclobutanil', 'event_type': 'KE', 'description': 'Decreased estradiol in a concentration-dependent manner (borderline negative call)'}  ->  G: {'chemical': 'Myclobutanil', 'event_type': 'KE', 'description': 'decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)'}
-  sim=0.759 | P: {'chemical': 'danazol', 'event_type': 'KE', 'description': 'Increased estradiol in H295R-HTRF assay (opposition to expected inhibition)'}  ->  G: {'chemical': 'Danazol', 'event_type': 'KE', 'description': 'increased 17β-estradiol (E2) (discordant; possible assay cross-reactivity)'}
+  sim=1.000 | P: {'chemical': 'triadimefon', 'event_type': 'KE', 'description': 'Inhibits testosterone biosynthesis in rat testis cultures'}  ->  G: {'chemical': 'Triadimefon', 'event_type': 'KE', 'description': 'inhibits testosterone biosynthesis in rat testis cultures (reported)'}
+  sim=0.947 | P: {'chemical': 'cyproconazole', 'event_type': 'KE', 'description': 'Decreased estradiol in a concentration-dependent manner (borderline negative call)'}  ->  G: {'chemical': 'Cyproconazole', 'event_type': 'KE', 'description': 'decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)'}
+  sim=0.947 | P: {'chemical': 'myclobutanil', 'event_type': 'KE', 'description': 'Decreased estradiol in a concentration-dependent manner (borderline negative call)'}  ->  G: {'chemical': 'Myclobutanil', 'event_type': 'KE', 'description': 'decreased 17β-estradiol (E2) in a concentration-dependent manner (borderline)'}
+  sim=0.913 | P: {'chemical': 'flusilazole', 'event_type': 'KE', 'description': 'Inhibited testosterone synthesis in murine Leydig cells (reported)'}  ->  G: {'chemical': 'Flusilazole', 'event_type': 'KE', 'description': 'inhibits testosterone (T) synthesis (reported in Leydig cells)'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=59.9 mean=71.3 max=100.0 | chemical_found=7/7
@@ -1551,11 +1524,8 @@ Top 7 pred events by score:
 ==========================================================================================
 [RECORD 128] id=None loss=0.8912549614906311
 Gold events: 2 | Pred events: 6
-1 matches similar to gold ones (exact=0, fuzzy=1), 5 matches not in gold, 1 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 6 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 6 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.747 | P: {'chemical': 'DCF-AG', 'event_type': 'KE', 'description': 'Dose-dependent ROS production'}  ->  G: {'chemical': 'Diclofenac Acyl Glucuronide (DCF-AG)', 'event_type': 'KE', 'description': 'Reactive oxygen species (ROS) generation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=67.0 mean=74.0 max=83.0 | chemical_found=5/6
@@ -1594,12 +1564,11 @@ Top 6 pred events by score:
 ==========================================================================================
 [RECORD 131] id=None loss=0.5937438011169434
 Gold events: 5 | Pred events: 21
-2 matches similar to gold ones (exact=0, fuzzy=2), 19 matches not in gold, 3 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 20 matches not in gold, 4 matches from gold not found
 Pred grounded in chunk text (score>=50): 21 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.897 | P: {'chemical': 'Elesclomol', 'event_type': 'KE', 'description': 'Elevated ROS levels'}  ->  G: {'chemical': 'Elesclomol', 'event_type': 'KE', 'description': 'Elevation of ROS levels'}
-  sim=0.674 | P: {'chemical': 'Disulfiram', 'event_type': 'MIE', 'description': 'Binding to copper to form CuET'}  ->  G: {'chemical': 'Disulfiram', 'event_type': 'MIE', 'description': 'Formation of CuET metabolite'}
+  sim=0.867 | P: {'chemical': 'Elesclomol', 'event_type': 'KE', 'description': 'Elevated ROS levels'}  ->  G: {'chemical': 'Elesclomol', 'event_type': 'KE', 'description': 'Elevation of ROS levels'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=62.9 mean=74.4 max=100.0 | chemical_found=21/21
@@ -1616,12 +1585,8 @@ Top 8 pred events by score:
 ==========================================================================================
 [RECORD 132] id=None loss=1.2090096473693848
 Gold events: 2 | Pred events: 2
-2 matches similar to gold ones (exact=0, fuzzy=2), 0 matches not in gold, 0 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 2 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.851 | P: {'chemical': 'Benzene', 'event_type': 'MIE', 'description': 'Hepatic conversion to phenol and hydroquinone'}  ->  G: {'chemical': 'Benzene', 'event_type': 'MIE', 'description': 'Hepatic metabolism to phenolic metabolites'}
-  sim=0.700 | P: {'chemical': 'Benzene', 'event_type': 'KE', 'description': 'Localized phenol-dependent stimulation of hydroquinone oxidation'}  ->  G: {'chemical': 'Phenol', 'event_type': 'KE', 'description': 'Stimulation of hydroquinone oxidation'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=73.4 mean=86.7 max=100.0 | chemical_found=2/2
@@ -1632,8 +1597,12 @@ Top 2 pred events by score:
 ==========================================================================================
 [RECORD 133] id=None loss=0.49059879779815674
 Gold events: 4 | Pred events: 5
-0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 4 matches from gold not found
+2 matches similar to gold ones (exact=0, fuzzy=2), 3 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 5 match, 0 don't match
+
+Top fuzzy matches (pred -> gold):
+  sim=0.859 | P: {'chemical': 'PEPs', 'event_type': 'KE', 'description': 'Reduced expression of DNMT3B'}  ->  G: {'chemical': 'PEPs (Printer-Emitted Engineered Nanoparticles)', 'event_type': 'KE', 'description': 'Decreased expression of DNA methylation machinery'}
+  sim=0.859 | P: {'chemical': 'TiO2', 'event_type': 'KE', 'description': 'Reduced expression of DNMT3B'}  ->  G: {'chemical': 'TiO2 (Titanium Dioxide)', 'event_type': 'KE', 'description': 'Decreased expression of DNA methylation machinery'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=73.7 mean=74.9 max=75.9 | chemical_found=4/5
@@ -1647,12 +1616,11 @@ Top 5 pred events by score:
 ==========================================================================================
 [RECORD 134] id=None loss=2.0019373893737793
 Gold events: 3 | Pred events: 8
-2 matches similar to gold ones (exact=0, fuzzy=2), 6 matches not in gold, 1 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 7 matches not in gold, 2 matches from gold not found
 Pred grounded in chunk text (score>=50): 8 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.826 | P: {'chemical': 'Danazol', 'event_type': 'KE', 'description': 'Increase in testosterone'}  ->  G: {'chemical': 'Danazol', 'event_type': 'KE', 'description': 'decreased testosterone (T) (active in this study)'}
-  sim=0.724 | P: {'chemical': 'Fenarimol', 'event_type': 'KE', 'description': 'Increase in testosterone'}  ->  G: {'chemical': 'Mifepristone', 'event_type': 'KE', 'description': 'increased testosterone (T) (equivocal)'}
+  sim=0.885 | P: {'chemical': 'Danazol', 'event_type': 'KE', 'description': 'Increase in testosterone'}  ->  G: {'chemical': 'Danazol', 'event_type': 'KE', 'description': 'decreased testosterone (T) (active in this study)'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=70.2 mean=73.9 max=100.0 | chemical_found=8/8
@@ -1673,8 +1641,8 @@ Gold events: 3 | Pred events: 12
 Pred grounded in chunk text (score>=50): 12 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.965 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Axon guidance down-regulated'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Down-regulation of Axon guidance'}
-  sim=0.932 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Increased intracellular Ca levels'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Increased intracellular calcium levels'}
+  sim=0.959 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Increased intracellular Ca levels'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Increased intracellular calcium levels'}
+  sim=0.864 | P: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Axon guidance down-regulated'}  ->  G: {'chemical': 'Rotenone', 'event_type': 'KE', 'description': 'Down-regulation of Axon guidance'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=68.1 mean=89.0 max=100.0 | chemical_found=12/12
@@ -1703,7 +1671,7 @@ Gold events: 1 | Pred events: 4
 Pred grounded in chunk text (score>=50): 4 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.880 | P: {'chemical': 'CuO', 'event_type': 'KE', 'description': 'Increased DNMT1 expression in SAEC at high dose'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Increased expression of DNMT1'}
+  sim=0.922 | P: {'chemical': 'CuO', 'event_type': 'KE', 'description': 'Increased DNMT1 expression in SAEC at high dose'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Increased expression of DNMT1'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=58.1 mean=59.5 max=63.5 | chemical_found=1/4
@@ -1810,12 +1778,11 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ==========================================================================================
 [RECORD 147] id=None loss=0.9489899277687073
 Gold events: 10 | Pred events: 2
-2 matches similar to gold ones (exact=0, fuzzy=2), 0 matches not in gold, 8 matches from gold not found
+1 matches similar to gold ones (exact=0, fuzzy=1), 1 matches not in gold, 9 matches from gold not found
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.903 | P: {'chemical': 'Phthalates', 'event_type': 'MIE', 'description': 'Increased production of reactive oxygen species (ROS)'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'MIE', 'description': 'Increased reactive oxygen species'}
-  sim=0.721 | P: {'chemical': 'Phthalates', 'event_type': 'KE', 'description': 'Placental ErbB signaling alteration'}  ->  G: {'chemical': 'total phthalate exposure (TP; 23 urinary metabolites; first trimester placenta)', 'event_type': 'KE', 'description': 'ErbB signaling pathway altered'}
+  sim=0.949 | P: {'chemical': 'Phthalates', 'event_type': 'MIE', 'description': 'Increased production of reactive oxygen species (ROS)'}  ->  G: {'chemical': 'phthalates (general)', 'event_type': 'MIE', 'description': 'Increased reactive oxygen species'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=74.2 mean=77.4 max=80.6 | chemical_found=2/2
@@ -1850,7 +1817,7 @@ Gold events: 1 | Pred events: 2
 Pred grounded in chunk text (score>=50): 2 match, 0 don't match
 
 Top fuzzy matches (pred -> gold):
-  sim=0.811 | P: {'chemical': 'Bisindolylmaleimide 1 (Bis-I)', 'event_type': 'MIE', 'description': 'Protein kinase C inhibition'}  ->  G: {'chemical': 'bisindolylmaleimide I (Bis-I)', 'event_type': 'MIE', 'description': 'PKC inhibition'}
+  sim=0.938 | P: {'chemical': 'Bisindolylmaleimide 1 (Bis-I)', 'event_type': 'MIE', 'description': 'Protein kinase C inhibition'}  ->  G: {'chemical': 'bisindolylmaleimide I (Bis-I)', 'event_type': 'MIE', 'description': 'PKC inhibition'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=64.8 mean=82.4 max=100.0 | chemical_found=2/2
@@ -1861,11 +1828,8 @@ Top 2 pred events by score:
 ==========================================================================================
 [RECORD 151] id=None loss=2.2458534240722656
 Gold events: 1 | Pred events: 5
-1 matches similar to gold ones (exact=0, fuzzy=1), 4 matches not in gold, 0 matches from gold not found
+0 matches similar to gold ones (exact=0, fuzzy=0), 5 matches not in gold, 1 matches from gold not found
 Pred grounded in chunk text (score>=50): 5 match, 0 don't match
-
-Top fuzzy matches (pred -> gold):
-  sim=0.751 | P: {'chemical': 'CuO', 'event_type': 'KE', 'description': 'Increase in FGF-2 and PDGF-BB'}  ->  G: {'chemical': 'CuO (Copper Oxide)', 'event_type': 'KE', 'description': 'Cytokine release (FGF-2, PDGF-BB, IL-7)'}
 
 Pred relevance on chunk (description score 0..100):
   score: min=50.3 mean=56.1 max=64.5 | chemical_found=5/5
@@ -1948,8 +1912,7 @@ No parsable pred events to score (model probably output garbage/truncated lines)
 ##########################################################################################
 [SUMMARY]
 Records: 158
-Total gold events (chunk-level): 258 | Total pred events (chunk-level): 371
-Total similar-to-gold: 79 | Total not-in-gold (FP): 292 | Total gold-not-found (FN): 179
-Total pred grounded in text: 368 match, 3 don't match (threshold=50)
-Paper-level dedup — Gold: 258 | Pred: 366 | TP: 116 | FP: 250 | FN: 142
-Precision≈0.317 Recall≈0.450 F1≈0.372
+Total gold events: 261 | Total pred events: 372
+Total similar-to-gold: 56 | Total not-in-gold (FP): 316 | Total gold-not-found (FN): 205
+Total pred grounded in text: 369 match, 3 don't match (threshold=50)
+Precision≈0.151 Recall≈0.215 F1≈0.177

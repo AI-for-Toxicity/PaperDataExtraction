@@ -41,6 +41,9 @@ def csv_quote(value: str) -> str:
     value = value.replace('"', '""')
     return f'"{value}"'
 
+def normalize_for_chem_match(s):
+    return s
+
 def normalize_whitespace(text: str) -> str:
     """
     Basic whitespace normalization to avoid duplicates.
@@ -956,6 +959,7 @@ class EventScorer:
             scored = []
             for i, block in enumerate(blocks):
                 text = block.get(key_text, "") or ""
+                clean_text = normalize_for_chem_match(text)
 
                 score = compute_score(text, ev)
 
@@ -964,18 +968,36 @@ class EventScorer:
                 matched_variant = chemical_raw
 
                 if chemical_raw:
-                    if contains_wordbound(text, chemical_raw):
+                    # Prepare the normalized chemical strings
+                    norm_raw = normalize_for_chem_match(chemical_raw)
+                    norm_norm = normalize_for_chem_match(chemical_norm) if chemical_norm else ""
+                    norm_abbr = normalize_for_chem_match(chemical_abbr) if chemical_abbr else ""
+
+                    # 1. Word-boundary matches on artifact-normalized strings
+                    if norm_raw and contains_wordbound(clean_text, norm_raw):
                         chemical_found = True
                         matched_variant = chemical_raw
-                    elif chemical_norm and chemical_norm != chemical_raw and contains_wordbound(text, chemical_norm):
+                    elif norm_norm and norm_norm != norm_raw and contains_wordbound(clean_text, norm_norm):
                         chemical_found = True
                         matched_variant = chemical_norm
-                    elif chemical_abbr and chemical_abbr != chemical_raw and contains_wordbound(text, chemical_abbr):
+                    elif norm_abbr and norm_abbr != norm_raw and contains_wordbound(clean_text, norm_abbr):
                         chemical_found = True
                         matched_variant = chemical_abbr
+                    
+                    # 2. Compound plurals / "No. X" aliases
+                    if not chemical_found and chemical_norm:
+                        # Extract the number from your label (e.g., "compound 5" -> "5")
+                        match = re.search(r'(?:compound|no[.:]?)\s*(\d+)', chemical_norm, re.IGNORECASE)
+                        if match:
+                            num = match.group(1)
+                            # Look for "compound(s)" OR "No." OR "No:" followed by the number in the ORIGINAL text
+                            pattern = r'(?:compound[s]?|no[.:]?)\s*[\d,and\s]*\b' + num + r'\b'
+                            if re.search(pattern, text, re.IGNORECASE):
+                                chemical_found = True
+                                matched_variant = chemical_norm
 
                 scored.append((score, i, chemical_found, matched_variant))
-
+                
             # Filter by threshold
             kept = []
             for score, idx, chem_found, matched_variant in scored:
@@ -1022,6 +1044,11 @@ class EventScorer:
         - Saves the annotated results and unmatched events to output_dir
         """
         base = json_path.name.replace("_divided.json", "")
+        out_path = self.output_dir / f"{base}_events.json"
+        if out_path.exists():
+            print(f"[SKIP] {out_path} already exists")
+            return
+
         label_path = self.labels_dir / f"{base}.txt"
 
         if not label_path.exists():
@@ -1057,7 +1084,6 @@ class EventScorer:
             "unmatched_events_any": unmatched_events_any
         }
 
-        out_path = self.output_dir / f"{base}_events.json"
         with open(out_path, "w", encoding="utf8") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
 
@@ -1179,7 +1205,7 @@ class DatasetBuilder:
                 if event_type not in {"MIE", "KE", "AO"}:
                     continue
 
-                chemical = normalize_whitespace(ev.get("chemical", ""))
+                chemical = normalize_whitespace(ev.get("matched_chemical_variant") or ev.get("chemical", ""))
                 short_desc = normalize_whitespace(ev.get("event_description_short", ""))
                 # long_desc = normalize_whitespace(ev.get("event_description_long", ""))
 
