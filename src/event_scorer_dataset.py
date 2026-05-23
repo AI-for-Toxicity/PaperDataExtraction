@@ -586,7 +586,9 @@ class PredEvaluator:
                 gold_s = rec.get("gold", "") or ""
                 pred_s = rec.get("pred", "") or ""
 
-                gold_events = self.parse_event_lines_to_list(gold_s)
+                # threshold=1.1 disables semantic dedup for gold — deduplicating gold events
+                # can collapse legitimately distinct annotations, deflating recall unfairly.
+                gold_events = self.parse_event_lines_to_list(gold_s, dedup_threshold=1.1)
                 pred_events = self.parse_event_lines_to_list(pred_s)
 
                 chunk_text = self.extract_chunk_text_from_prompt(prompt)
@@ -762,7 +764,7 @@ class PredEvaluator:
                 paper_id = chunk_to_paper.get(line_idx)
                 if paper_id is None:
                     continue
-                gold_events = self.parse_event_lines_to_list(rec.get("gold", "") or "")
+                gold_events = self.parse_event_lines_to_list(rec.get("gold", "") or "", dedup_threshold=1.1)
                 pred_events = self.parse_event_lines_to_list(rec.get("pred", "") or "")
                 paper_chunks.setdefault(paper_id, []).append((gold_events, pred_events))
 

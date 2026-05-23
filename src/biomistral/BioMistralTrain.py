@@ -30,10 +30,14 @@ class PadWithLabels:
             padding=True,
             return_tensors="pt",
         )
-        # tokenizer.pad will pad "labels" too, but with pad_token_id, not -100
-        if "labels" in batch:
+        # tokenizer.pad will pad "labels" too, but with pad_token_id, not -100.
+        # We must use attention_mask to identify padding positions, NOT the token value,
+        # because pad_token_id == eos_token_id — replacing by value would also mask the
+        # real EOS at the end of the assistant response, preventing the model from
+        # learning to generate </s> to terminate output.
+        if "labels" in batch and "attention_mask" in batch:
             labels = batch["labels"]
-            labels[labels == self.tokenizer.pad_token_id] = -100
+            labels[batch["attention_mask"] == 0] = -100
             batch["labels"] = labels
         return batch
 
@@ -160,10 +164,14 @@ class EventsChatDataset(Dataset):
             return_tensors="pt",
         )
 
+        # Do NOT truncate the prompt here: we need the true prompt token count to correctly
+        # place the label mask boundary. The min() below handles the case where the prompt
+        # alone exceeds max_length (all labels become -100 and that example contributes no
+        # gradient — acceptable). Using truncation=True here would cap prompt_len at
+        # max_length even when full_tokens is shorter, corrupting the mask.
         prompt_tokens = self.tokenizer(
             prompt_str,
-            truncation=True,
-            max_length=self.max_length,
+            truncation=False,
             padding=False,
             return_tensors="pt",
         )
