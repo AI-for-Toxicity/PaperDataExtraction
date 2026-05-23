@@ -10,11 +10,11 @@ WORKDIR="/workspace/dave/PaperDataExtraction"
 VENV_ACTIVATE="/workspace/dave/PaperDataExtraction/.venv/bin/activate"
 
 # Full command you want to run (hardcoded)
-TRAIN_CMD='python src/model/train.py \
+TRAIN_CMD='python src/biomistral/BioMistralTrain.py \
   --base_model meta-llama/Llama-3.1-8B-Instruct \
-  --train_file train/dataset/train_fold_0.jsonl \
-  --eval_file train/dataset/test_fold_0.jsonl \
-  --output_dir outputs/llama/fold_0 \
+  --train_file train/train.jsonl \
+  --eval_file train/test.jsonl \
+  --output_dir outputs/llama \
   --num_train_epochs 5 \
   --per_device_train_batch_size 1 \
   --gradient_accumulation_steps 8 \
@@ -27,8 +27,6 @@ TRAIN_CMD='python src/model/train.py \
 #######################################
 
 mkdir -p "${WORKDIR}/logs"
-mkdir -p "${WORKDIR}/outputs/llama"
-mkdir -p "${WORKDIR}/outputs/llama/fold_0"
 
 TS="$(date +%F_%H-%M-%S)"
 LOG_FILE="${WORKDIR}/logs/train_${TS}.log"

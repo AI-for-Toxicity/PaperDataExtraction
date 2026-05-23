@@ -1,3 +1,4 @@
+# Runpod template: Torch 2.8.0
 cd /workspace/
 mkdir dave
 cd dave/

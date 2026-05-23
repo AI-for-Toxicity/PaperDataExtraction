@@ -10,29 +10,19 @@ WORKDIR="/workspace/dave/PaperDataExtraction"
 VENV_ACTIVATE="/workspace/dave/PaperDataExtraction/.venv/bin/activate"
 
 # Full command you want to run (hardcoded)
-TRAIN_CMD='python src/model/train.py \
+TRAIN_CMD='python src/biomistral/BioMistralEval.py \
   --base_model meta-llama/Llama-3.1-8B-Instruct \
-  --train_file train/dataset/train_fold_0.jsonl \
-  --eval_file train/dataset/test_fold_0.jsonl \
-  --output_dir outputs/llama/fold_0 \
-  --num_train_epochs 5 \
-  --per_device_train_batch_size 1 \
-  --gradient_accumulation_steps 8 \
-  --learning_rate 2e-5 \
+  --eval_file train/test.jsonl \
   --max_length 2048 \
-  --eval_steps 50 \
-  --save_steps 50 \
-  --lora_r 32'
-  # No --load_in_4bit: bf16 LoRA (A40 48GB; 7B model uses ~14GB in bf16)
+  --max_new_tokens 512 \
+  --save_preds eval_preds_llama_zeroshot.jsonl'
 #######################################
 
 mkdir -p "${WORKDIR}/logs"
-mkdir -p "${WORKDIR}/outputs/llama"
-mkdir -p "${WORKDIR}/outputs/llama/fold_0"
 
 TS="$(date +%F_%H-%M-%S)"
-LOG_FILE="${WORKDIR}/logs/train_${TS}.log"
-PID_FILE="${WORKDIR}/logs/train_${TS}.pid"
+LOG_FILE="${WORKDIR}/logs/eval_${TS}.log"
+PID_FILE="${WORKDIR}/logs/eval_${TS}.pid"
 
 # One-liner runner executed by a detached shell.
 # Important bits:
@@ -74,7 +64,7 @@ start_detached() {
 
 start_detached
 
-echo "Started training detached from SSH."
+echo "Started evaluation detached from SSH."
 echo "PID:      $PID"
 echo "LOG FILE: $LOG_FILE"
 echo

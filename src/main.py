@@ -105,8 +105,8 @@ def test(do_scoring=False, do_dataset=True, do_eval_analysis=False):
 
 if __name__ == "__main__":
   #check_token_lengths(str(FINAL_JSON_TRAIN), str(FINAL_JSON_TEST), max_tokens=BIOMISTRAL_CONTEXT_TOKENS)
-  #test()
-  #exit(0)
+  test()
+  exit(0)
 
   
   print("#####################")

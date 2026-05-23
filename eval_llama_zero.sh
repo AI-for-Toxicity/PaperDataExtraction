@@ -10,12 +10,12 @@ WORKDIR="/workspace/dave/PaperDataExtraction"
 VENV_ACTIVATE="/workspace/dave/PaperDataExtraction/.venv/bin/activate"
 
 # Full command you want to run (hardcoded)
-TRAIN_CMD='python src/biomistral/BioMistralEval.py \
+TRAIN_CMD='python src/model/eval.py \
   --base_model meta-llama/Llama-3.1-8B-Instruct \
-  --eval_file train/test.jsonl \
+  --eval_file train/dataset/test_fold_0.jsonl \
   --max_length 2048 \
   --max_new_tokens 512 \
-  --save_preds eval_preds_llama_zeroshot.jsonl'
+  --save_preds outputs/llama/fold_0/eval_preds_zeroshot.jsonl'
 #######################################
 
 mkdir -p "${WORKDIR}/logs"
