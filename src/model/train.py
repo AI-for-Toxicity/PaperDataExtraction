@@ -14,10 +14,28 @@ from transformers import (
     DataCollatorForLanguageModeling,
     DataCollatorWithPadding,
     BitsAndBytesConfig,
+    TrainerCallback
 )
+
 
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 import bitsandbytes as bnb
+
+
+CHECKPOINT_EPOCHS = {3, 5, 8}
+
+
+class EpochCheckpointCallback(TrainerCallback):
+    """Save checkpoints only at specific epochs."""
+
+    def on_epoch_end(self, args, state, control, **kwargs):
+        epoch = round(state.epoch)
+        if epoch in CHECKPOINT_EPOCHS:
+            control.should_save = True
+        else:
+            control.should_save = False
+        return control
+
 
 class PadWithLabels:
     def __init__(self, tokenizer):
@@ -244,7 +262,7 @@ def load_model_and_tokenizer(base_model: str, load_in_4bit: bool = False, lora_r
         # Attention + MLP: covers both retrieval and generation behaviour
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                         "gate_proj", "up_proj", "down_proj"],
-        lora_dropout=0.1,
+        lora_dropout=0.15,
         bias="none",
         task_type="CAUSAL_LM",
     )
@@ -277,7 +295,6 @@ def main():
     parser.add_argument("--warmup_ratio", type=float, default=0.03)
     parser.add_argument("--weight_decay", type=float, default=0.0)
     parser.add_argument("--logging_steps", type=int, default=10)
-    parser.add_argument("--save_steps", type=int, default=200)
     parser.add_argument("--eval_steps", type=int, default=200)
     parser.add_argument("--seed", type=int, default=42)
 
@@ -312,13 +329,10 @@ def main():
         weight_decay=args.weight_decay,
         logging_steps=args.logging_steps,
         eval_steps=args.eval_steps,
-        save_steps=args.save_steps,
         eval_strategy="steps",
-        save_strategy="steps",
+        save_strategy="epoch",
         load_best_model_at_end=False,
-        metric_for_best_model="eval_loss",
-        greater_is_better=False,
-        save_total_limit=2,
+        save_total_limit=len(CHECKPOINT_EPOCHS),
         bf16=True,
         lr_scheduler_type="cosine",
         report_to="none",
@@ -331,6 +345,7 @@ def main():
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         data_collator=data_collator,
+        callbacks=[EpochCheckpointCallback()],
     )
 
     trainer.train()
