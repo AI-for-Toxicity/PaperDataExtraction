@@ -18,11 +18,8 @@ TRAIN_CMD='python src/model/train.py \
   --num_train_epochs 8 \
   --per_device_train_batch_size 1 \
   --gradient_accumulation_steps 16 \
-  --lora_dropout 0.1 \
   --learning_rate 5e-6 \
   --max_length 2048 \
-  --eval_steps 50 \
-  --save_steps 50 \
   --lora_r 32'
   # No --load_in_4bit: bf16 LoRA (A40 48GB; 7B model uses ~14GB in bf16)
 #######################################

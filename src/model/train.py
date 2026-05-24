@@ -295,7 +295,6 @@ def main():
     parser.add_argument("--warmup_ratio", type=float, default=0.03)
     parser.add_argument("--weight_decay", type=float, default=0.0)
     parser.add_argument("--logging_steps", type=int, default=10)
-    parser.add_argument("--eval_steps", type=int, default=200)
     parser.add_argument("--seed", type=int, default=42)
 
     args = parser.parse_args()
@@ -328,8 +327,7 @@ def main():
         warmup_ratio=args.warmup_ratio,
         weight_decay=args.weight_decay,
         logging_steps=args.logging_steps,
-        eval_steps=args.eval_steps,
-        eval_strategy="steps",
+        eval_strategy="epoch",
         save_strategy="epoch",
         load_best_model_at_end=False,
         save_total_limit=len(CHECKPOINT_EPOCHS),
