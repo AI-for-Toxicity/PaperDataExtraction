@@ -27,6 +27,11 @@ EVAL_ANALYSIS_RESULT = EVAL_RESULTS_BASE / "eval_analysis.txt"
 RAG_INDEX_PATH = "new_data/aop_rag_index.json"
 
 PROMPT_INSTRUCTIONS = "You are an assistant specialized in extracting mechanistic toxicology events (MIE, KE, AO) from scientific text.\n\nGiven the following text from a toxicology article, extract all MIE, KE and AO events with the associated chemical and a concise description.\n\nReturn one event per line in the exact format:\n\"chemical\",\"event_type\",\"description\"\n\nIf the text does not contain any MIE, KE or AO events, return an empty output.\n\nText:\n"
+
+# Minimum fuzzy chemical similarity required to allow a fuzzy event match.
+# Prevents unrelated chemicals (e.g. "carbaryl" vs "Parathion") from matching
+# solely because they share the same event description.
+MIN_CHEM_SIM = 0.4
 RESPONSE_SUFFIX = "### END"
 
 # Utils
@@ -280,42 +285,53 @@ class PredEvaluator:
     def event_similarity(self, pred_ev: dict, gold_ev: dict) -> float:
         """
         Returns a similarity score 0..1.
-        Hard requirement: event_type must match (MIE/KE/AO), otherwise 0.
-        Then blend chemical similarity + description similarity.
-
-        This is intentionally conservative, because your model loves hallucinating.
+        Event type is ignored — a correct chemical+description pair counts regardless
+        of whether MIE/KE/AO is predicted correctly.
+        Chemical similarity is used as a hard gate (MIN_CHEM_SIM) to prevent
+        unrelated chemicals from matching via description alone.
         """
-        if (pred_ev.get("event_type") or "").upper() != (gold_ev.get("event_type") or "").upper():
-            return 0.0
-
         chem_p = pred_ev.get("chemical", "")
         chem_g = gold_ev.get("chemical", "")
         desc_p = pred_ev.get("description", "")
         desc_g = gold_ev.get("description", "")
 
         # Exact variant match gives full chemical score; otherwise fall back to fuzzy
-        chem_sim = 1.0 if self._chemicals_match(chem_p, chem_g) else fuzzy_score(chem_p, chem_g)
+        if self._chemicals_match(chem_p, chem_g):
+            chem_sim = 1.0
+        else:
+            chem_sim = fuzzy_score(chem_p, chem_g)
+            if chem_sim < MIN_CHEM_SIM:
+                return 0.0
+
         desc_sim = fuzzy_score(desc_p, desc_g)  # 0..1
 
         # Description matters more than chemical string casing/variants
         return 0.4 * chem_sim + 0.6 * desc_sim
 
     def event_cosine_similarity(self, pred_ev: dict, gold_ev: dict) -> float:
-        if (pred_ev.get("event_type") or "").upper() != (gold_ev.get("event_type") or "").upper():
-            return 0.0
-
+        """
+        Event type is ignored — a correct chemical+description pair counts regardless
+        of whether MIE/KE/AO is predicted correctly.
+        Chemical similarity is used as a hard gate (MIN_CHEM_SIM) to prevent
+        unrelated chemicals from matching via description alone.
+        """
         chem_p = pred_ev.get("chemical", "")
         chem_g = gold_ev.get("chemical", "")
         desc_p = pred_ev.get("description", "")
         desc_g = gold_ev.get("description", "")
 
-        # Chemical match
-        chem_sim = 1.0 if self._chemicals_match(chem_p, chem_g) else fuzzy_score(chem_p, chem_g)
-        
-        # Semantic Description match
+        # Chemical match — gate on minimum string similarity to block unrelated chemicals
+        if self._chemicals_match(chem_p, chem_g):
+            chem_sim = 1.0
+        else:
+            chem_sim = fuzzy_score(chem_p, chem_g)
+            if chem_sim < MIN_CHEM_SIM:
+                return 0.0
+
+        # Semantic description match
         emb_p = self.embedder.encode(desc_p, convert_to_tensor=True)
         emb_g = self.embedder.encode(desc_g, convert_to_tensor=True)
-        desc_sim = util.cos_sim(emb_p, emb_g).item() # Returns a score from -1 to 1
+        desc_sim = util.cos_sim(emb_p, emb_g).item()
 
         return 0.4 * chem_sim + 0.6 * desc_sim
 
@@ -375,8 +391,7 @@ class PredEvaluator:
                 if gi in exact_matched_gold:
                     continue
                 if (
-                    (pe.get("event_type") or "").upper() == (ge.get("event_type") or "").upper()
-                    and norm(pe.get("description", "")) == norm(ge.get("description", ""))
+                    norm(pe.get("description", "")) == norm(ge.get("description", ""))
                     and self._chemicals_match(pe.get("chemical", ""), ge.get("chemical", ""))
                 ):
                     exact_matched_gold.add(gi)
