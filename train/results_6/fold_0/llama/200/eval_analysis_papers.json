@@ -1,0 +1,6329 @@
+{
+  "summary": {
+    "n_papers": 20,
+    "total_gold_events": 448,
+    "total_pred_events": 743,
+    "total_similar_to_gold": 156,
+    "total_not_in_gold_fp": 587,
+    "total_gold_not_found_fn": 292,
+    "precision": 0.21,
+    "recall": 0.3482,
+    "f1": 0.262
+  },
+  "papers": [
+    {
+      "paper_id": "paper_0001_events",
+      "n_chunks": 16,
+      "n_gold_events": 23,
+      "n_pred_events": 21,
+      "similar_to_gold": 8,
+      "not_in_gold_fp": 13,
+      "gold_not_found_fn": 15,
+      "exact_hits": 1,
+      "fuzzy_hits": 7,
+      "precision": 0.381,
+      "recall": 0.3478,
+      "f1": 0.3636,
+      "gold_events": [
+        {
+          "chemical": "BIC",
+          "event_type": "KE",
+          "description": "Increased network burst percentage"
+        },
+        {
+          "chemical": "BIC",
+          "event_type": "KE",
+          "description": "Increased network synchronicity"
+        },
+        {
+          "chemical": "BIC",
+          "event_type": "KE",
+          "description": "Increased neural network activity"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "MIE",
+          "description": "Protein kinase C inhibition"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "KE",
+          "description": "Inhibited network parameters"
+        },
+        {
+          "chemical": "CNQX",
+          "event_type": "KE",
+          "description": "Impaired burst duration and synchronicity"
+        },
+        {
+          "chemical": "CNQX",
+          "event_type": "KE",
+          "description": "Inhibited network activity and organization"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "MIE",
+          "description": "Interference with voltage-gated sodium channels"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Altered neural network function"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Disruption of action potential"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Disruption of sodium channel gate kinetics"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Impaired behavioral function"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Neurodevelopmental disorders (association)"
+        },
+        {
+          "chemical": "metaflumizone",
+          "event_type": "KE",
+          "description": "Altered network parameters at <9 µM"
+        },
+        {
+          "chemical": "penthiopyrad",
+          "event_type": "KE",
+          "description": "Additively increased burst frequency with spirodiclofen"
+        },
+        {
+          "chemical": "penthiopyrad",
+          "event_type": "KE",
+          "description": "Decreased spikes per burst"
+        },
+        {
+          "chemical": "penthiopyrad",
+          "event_type": "KE",
+          "description": "Increased burst frequency"
+        },
+        {
+          "chemical": "rotenone",
+          "event_type": "KE",
+          "description": "Reduced multiple network parameters"
+        },
+        {
+          "chemical": "spirodiclofen",
+          "event_type": "KE",
+          "description": "Increased burst frequency (additive)"
+        },
+        {
+          "chemical": "β-cyfluthrin",
+          "event_type": "KE",
+          "description": "Effect on multiple network parameters"
+        },
+        {
+          "chemical": "β-cyfluthrin",
+          "event_type": "KE",
+          "description": "Reduced mean firing rate"
+        },
+        {
+          "chemical": "β-cyfluthrin",
+          "event_type": "KE",
+          "description": "Reduced network synchronicity"
+        },
+        {
+          "chemical": "β-cypermethrin",
+          "event_type": "KE",
+          "description": "Effect on multiple network parameters"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Acetaminophen",
+          "event_type": "KE",
+          "description": "No effect on network activity"
+        },
+        {
+          "chemical": "BIC",
+          "event_type": "KE",
+          "description": "Increased firing rate"
+        },
+        {
+          "chemical": "BIC",
+          "event_type": "KE",
+          "description": "Increased network burst percentage"
+        },
+        {
+          "chemical": "BIC",
+          "event_type": "KE",
+          "description": "Increased synchronicity"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "KE",
+          "description": "Decreased firing and bursting rates"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "KE",
+          "description": "decreased firing/bursting rates"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "KE",
+          "description": "decreased neurite outgrowth"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "KE",
+          "description": "Impaired network bursting"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "KE",
+          "description": "Reduced network burst percentage"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "KE",
+          "description": "Reduced network parameters (burst duration, network burst percentage, network synchronicity)"
+        },
+        {
+          "chemical": "Bis-I",
+          "event_type": "KE",
+          "description": "Reduced network synchronicity"
+        },
+        {
+          "chemical": "CNQX",
+          "event_type": "KE",
+          "description": "Impaired burst duration"
+        },
+        {
+          "chemical": "CNQX",
+          "event_type": "KE",
+          "description": "Impaired synchronicity"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Impaired behavioral function"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Impaired neural network function"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Sodium channel gate kinetics disrupted"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Voltage-gated sodium channel interference"
+        },
+        {
+          "chemical": "β-cyfluthrin",
+          "event_type": "KE",
+          "description": "reduced mean firing rate (time- and concentration-dependent)"
+        },
+        {
+          "chemical": "β-cyfluthrin",
+          "event_type": "KE",
+          "description": "reduced mean firing rate (time- and concentration-dependent) (AUNCC) (trapezoidal AUC)"
+        },
+        {
+          "chemical": "β-cyfluthrin",
+          "event_type": "KE",
+          "description": "reduced mean firing rate (trapezoidal AUC) (BMC) (upper and lower confidence limits)"
+        },
+        {
+          "chemical": "β-cyfluthrin",
+          "event_type": "KE",
+          "description": "reduced mean firing rate (trapezoidal AUC) (BMC) (upper and lower confidence limits) (BMR50) (50% change) (network parameter affected) (no cyt"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_0005_events",
+      "n_chunks": 10,
+      "n_gold_events": 6,
+      "n_pred_events": 2,
+      "similar_to_gold": 2,
+      "not_in_gold_fp": 0,
+      "gold_not_found_fn": 4,
+      "exact_hits": 0,
+      "fuzzy_hits": 2,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "gold_events": [
+        {
+          "chemical": "Acetaminophen",
+          "event_type": "KE",
+          "description": "No appreciable impact on network activity"
+        },
+        {
+          "chemical": "Acetaminophen",
+          "event_type": "KE",
+          "description": "No meaningful scalar perturbation across development"
+        },
+        {
+          "chemical": "Emamectin benzoate",
+          "event_type": "KE",
+          "description": "High cytotoxicity at concentrations lower than tipping point"
+        },
+        {
+          "chemical": "Haloperidol",
+          "event_type": "KE",
+          "description": "Apparent network failure at highest concentrations"
+        },
+        {
+          "chemical": "Haloperidol",
+          "event_type": "KE",
+          "description": "Perturbation of normal network development with partial recovery at intermediate concentrations"
+        },
+        {
+          "chemical": "Mevastatin",
+          "event_type": "KE",
+          "description": "High cytotoxicity at concentrations lower than tipping point"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "acetaminophen",
+          "event_type": "KE",
+          "description": "No network activity perturbation observed"
+        },
+        {
+          "chemical": "haloperidol",
+          "event_type": "KE",
+          "description": "Network failure at highest concentrations"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_0010_events",
+      "n_chunks": 12,
+      "n_gold_events": 16,
+      "n_pred_events": 33,
+      "similar_to_gold": 3,
+      "not_in_gold_fp": 30,
+      "gold_not_found_fn": 13,
+      "exact_hits": 0,
+      "fuzzy_hits": 3,
+      "precision": 0.0909,
+      "recall": 0.1875,
+      "f1": 0.1224,
+      "gold_events": [
+        {
+          "chemical": "carbaryl",
+          "event_type": "MIE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "carbaryl",
+          "event_type": "KE",
+          "description": "synergism with triazophos"
+        },
+        {
+          "chemical": "carbofuran",
+          "event_type": "MIE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "carbofuran",
+          "event_type": "KE",
+          "description": "synergism with triazophos"
+        },
+        {
+          "chemical": "chlorpyrifos",
+          "event_type": "MIE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "chlorpyrifos",
+          "event_type": "KE",
+          "description": "strong synergism when combined with pyrethroids"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "MIE",
+          "description": "non-AChE neurotoxic mechanism"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "no AChE inhibition alone"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "no AChE inhibition alone"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "strong synergism with OPs"
+        },
+        {
+          "chemical": "malathion",
+          "event_type": "MIE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "monocrotophos",
+          "event_type": "KE",
+          "description": "synergism with carbaryl and carbofuran"
+        },
+        {
+          "chemical": "profenofos",
+          "event_type": "MIE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "profenofos",
+          "event_type": "KE",
+          "description": "antagonism with CRB"
+        },
+        {
+          "chemical": "triazophos",
+          "event_type": "MIE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "triazophos",
+          "event_type": "KE",
+          "description": "strong synergism with carbamates"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Carbaryl",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "Carbofuran",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "CBs",
+          "event_type": "KE",
+          "description": "Increased potency in binary combinations"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "MIE",
+          "description": "AChE phosphorylation (irreversible)"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "MIE",
+          "description": "Aging of phosphorylated AChE"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "MIE",
+          "description": "Oxon metabolite formation"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "MIE",
+          "description": "Slow spontaneous reactivation of AChE"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "MIE",
+          "description": "Type I pyrethroid mechanism"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium and chloride channels"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channels (Type II pyrethroid mechanism)"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channels (Type II)"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "KE",
+          "description": "Aging of phosphorylated AChE"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "KE",
+          "description": "Oxon metabolite formation"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "KE",
+          "description": "Phosphorylation of AChE"
+        },
+        {
+          "chemical": "Chlorpyrifos",
+          "event_type": "KE",
+          "description": "Slow spontaneous reactivation of AChE"
+        },
+        {
+          "chemical": "CPF",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "CPF",
+          "event_type": "KE",
+          "description": "AChE inhibition (binary mixtures)"
+        },
+        {
+          "chemical": "CPF",
+          "event_type": "KE",
+          "description": "AChE inhibition (binary mixtures) with DLT/CYP"
+        },
+        {
+          "chemical": "CPF",
+          "event_type": "KE",
+          "description": "AChE inhibition (binary mixtures) with PYR (no increase in EC/EC50 with PYR)"
+        },
+        {
+          "chemical": "CRB",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "CRB",
+          "event_type": "KE",
+          "description": "AChE inhibition (binary combination) (oxidised)"
+        },
+        {
+          "chemical": "CRB",
+          "event_type": "KE",
+          "description": "AChE inhibition (binary combination) (un-oxidised) (stronger synergism) (TU) (CA) (antagonism) (oxidised) (CA) (additive) (TU) (CA) (additive)"
+        },
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "malathion",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "MLT",
+          "event_type": "KE",
+          "description": "Increased potency in binary combinations"
+        },
+        {
+          "chemical": "monocrotophos",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "OPs",
+          "event_type": "KE",
+          "description": "Increased potency in binary combinations"
+        },
+        {
+          "chemical": "profenofos",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "SPs",
+          "event_type": "KE",
+          "description": "Increased potency in binary combinations"
+        },
+        {
+          "chemical": "triazophos",
+          "event_type": "KE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "TRZ",
+          "event_type": "KE",
+          "description": "Increased potency in binary combinations"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_0174_events",
+      "n_chunks": 10,
+      "n_gold_events": 22,
+      "n_pred_events": 14,
+      "similar_to_gold": 1,
+      "not_in_gold_fp": 13,
+      "gold_not_found_fn": 21,
+      "exact_hits": 0,
+      "fuzzy_hits": 1,
+      "precision": 0.0714,
+      "recall": 0.0455,
+      "f1": 0.0556,
+      "gold_events": [
+        {
+          "chemical": "acetaminophen",
+          "event_type": "KE",
+          "description": "No significant change in neuronal network firing rate"
+        },
+        {
+          "chemical": "acrylamide",
+          "event_type": "KE",
+          "description": "Increased neuronal network firing rate"
+        },
+        {
+          "chemical": "aldicarb",
+          "event_type": "MIE",
+          "description": "AChE inhibition"
+        },
+        {
+          "chemical": "bifenthrin",
+          "event_type": "KE",
+          "description": "Increased neuronal network firing rate"
+        },
+        {
+          "chemical": "chlordane",
+          "event_type": "KE",
+          "description": "Increased neuronal network firing rate"
+        },
+        {
+          "chemical": "dieldrin",
+          "event_type": "KE",
+          "description": "Increased neuronal network firing rate"
+        },
+        {
+          "chemical": "endosulfan",
+          "event_type": "KE",
+          "description": "Increased neuronal network firing rate"
+        },
+        {
+          "chemical": "fluconazole",
+          "event_type": "KE",
+          "description": "Increased firing rate at highest concentration in concentration-response"
+        },
+        {
+          "chemical": "genistein",
+          "event_type": "MIE",
+          "description": "Estrogen receptor agonism"
+        },
+        {
+          "chemical": "hexaconazole",
+          "event_type": "KE",
+          "description": "Concentration-dependent changes in firing rate"
+        },
+        {
+          "chemical": "imidacloprid",
+          "event_type": "MIE",
+          "description": "Nicotinic receptor agonism"
+        },
+        {
+          "chemical": "imidacloprid",
+          "event_type": "KE",
+          "description": "Concentration-dependent changes in firing rate"
+        },
+        {
+          "chemical": "lindane",
+          "event_type": "KE",
+          "description": "Increased neuronal network firing rate"
+        },
+        {
+          "chemical": "nicotine",
+          "event_type": "MIE",
+          "description": "Nicotinic receptor agonism"
+        },
+        {
+          "chemical": "pharma 2",
+          "event_type": "KE",
+          "description": "Concentration-dependent changes in firing rate"
+        },
+        {
+          "chemical": "saccharin",
+          "event_type": "KE",
+          "description": "Decreased neuronal network firing rate"
+        },
+        {
+          "chemical": "saccharin",
+          "event_type": "KE",
+          "description": "No significant change in neuronal network firing rate"
+        },
+        {
+          "chemical": "tetraconazole",
+          "event_type": "KE",
+          "description": "Concentration-dependent changes in firing rate"
+        },
+        {
+          "chemical": "thiacloprid",
+          "event_type": "KE",
+          "description": "No effect in concentration-response"
+        },
+        {
+          "chemical": "thiamethoxam",
+          "event_type": "MIE",
+          "description": "Nicotinic receptor agonism"
+        },
+        {
+          "chemical": "tributyltin",
+          "event_type": "KE",
+          "description": "Cytotoxicity in cortical cultures"
+        },
+        {
+          "chemical": "vinclozolin",
+          "event_type": "MIE",
+          "description": "Androgen receptor antagonism"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "aldicarb",
+          "event_type": "KE",
+          "description": "no change in wMFR"
+        },
+        {
+          "chemical": "cyazofamid",
+          "event_type": "KE",
+          "description": "altered network function"
+        },
+        {
+          "chemical": "cyproconazole",
+          "event_type": "KE",
+          "description": "decreased wMFR"
+        },
+        {
+          "chemical": "fluconazole",
+          "event_type": "KE",
+          "description": "increased MFR at high concentration"
+        },
+        {
+          "chemical": "fluconazole",
+          "event_type": "KE",
+          "description": "no effect on MEA"
+        },
+        {
+          "chemical": "flusilazole",
+          "event_type": "KE",
+          "description": "altered network function"
+        },
+        {
+          "chemical": "genistein",
+          "event_type": "KE",
+          "description": "decreased wMFR"
+        },
+        {
+          "chemical": "heptachlor epoxide",
+          "event_type": "KE",
+          "description": "no hit in initial screen"
+        },
+        {
+          "chemical": "imazalil",
+          "event_type": "KE",
+          "description": "altered network function"
+        },
+        {
+          "chemical": "mepiquat",
+          "event_type": "KE",
+          "description": "no effect on MEA"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "no change in wMFR"
+        },
+        {
+          "chemical": "permethrin",
+          "event_type": "KE",
+          "description": "no effect in MEA (previous studies)"
+        },
+        {
+          "chemical": "spiroxamine",
+          "event_type": "KE",
+          "description": "altered network function"
+        },
+        {
+          "chemical": "vinclozolin",
+          "event_type": "KE",
+          "description": "decreased wMFR"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_1005_events",
+      "n_chunks": 12,
+      "n_gold_events": 7,
+      "n_pred_events": 7,
+      "similar_to_gold": 3,
+      "not_in_gold_fp": 4,
+      "gold_not_found_fn": 4,
+      "exact_hits": 0,
+      "fuzzy_hits": 3,
+      "precision": 0.4286,
+      "recall": 0.4286,
+      "f1": 0.4286,
+      "gold_events": [
+        {
+          "chemical": "Leukotriene B4 (LTB4)",
+          "event_type": "KE",
+          "description": "Leukocyte activation"
+        },
+        {
+          "chemical": "Leukotriene B4 (LTB4)",
+          "event_type": "AO",
+          "description": "Inflammatory disease association"
+        },
+        {
+          "chemical": "LTB4",
+          "event_type": "KE",
+          "description": "Granulocyte accumulation in vivo (BLT1 overexpression model)"
+        },
+        {
+          "chemical": "Retinoic acid",
+          "event_type": "KE",
+          "description": "Differentiation of HL-60 cells"
+        },
+        {
+          "chemical": "Sp1",
+          "event_type": "MIE",
+          "description": "Sp1 binding to BLT1 promoter GC box"
+        },
+        {
+          "chemical": "Sp1",
+          "event_type": "KE",
+          "description": "Activation of basal BLT1 transcription"
+        },
+        {
+          "chemical": "Sp1",
+          "event_type": "KE",
+          "description": "Reduced promoter activity when Sp1 site is mutated"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "LTB4",
+          "event_type": "KE",
+          "description": "Activation of granulocytes, eosinophils, and macrophages"
+        },
+        {
+          "chemical": "LTB4",
+          "event_type": "KE",
+          "description": "Activation of leukocytes"
+        },
+        {
+          "chemical": "LTB4",
+          "event_type": "KE",
+          "description": "Chemotaxis"
+        },
+        {
+          "chemical": "LTB4",
+          "event_type": "KE",
+          "description": "Degranulation"
+        },
+        {
+          "chemical": "LTB4",
+          "event_type": "KE",
+          "description": "Production of superoxide anions"
+        },
+        {
+          "chemical": "LTB4",
+          "event_type": "AO",
+          "description": "Inflammatory diseases"
+        },
+        {
+          "chemical": "LTB4",
+          "event_type": "AO",
+          "description": "Postischemic tissue injuries"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_1089_events",
+      "n_chunks": 16,
+      "n_gold_events": 13,
+      "n_pred_events": 0,
+      "similar_to_gold": 0,
+      "not_in_gold_fp": 0,
+      "gold_not_found_fn": 13,
+      "exact_hits": 0,
+      "fuzzy_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "gold_events": [
+        {
+          "chemical": "C8H15NO6",
+          "event_type": "MIE",
+          "description": "Binding to protein as positive control (docking)"
+        },
+        {
+          "chemical": "TDCs",
+          "event_type": "KE",
+          "description": "Coupling of MIT and DIT to produce T3/T4"
+        },
+        {
+          "chemical": "TDCs",
+          "event_type": "KE",
+          "description": "Disruption of normal TH synthesis"
+        },
+        {
+          "chemical": "TDCs",
+          "event_type": "KE",
+          "description": "Formation of MIT and DIT"
+        },
+        {
+          "chemical": "TDCs",
+          "event_type": "KE",
+          "description": "Interference with thyroid hormone (TH) synthesis"
+        },
+        {
+          "chemical": "TDCs",
+          "event_type": "KE",
+          "description": "Iodination of thyroglobulin tyrosyl residues"
+        },
+        {
+          "chemical": "TDCs",
+          "event_type": "KE",
+          "description": "Oxidation of iodide to iodine (TPO activity)"
+        },
+        {
+          "chemical": "TDCs",
+          "event_type": "AO",
+          "description": "Hypothyroidism"
+        },
+        {
+          "chemical": "thyroid-disrupting chemicals (TDCs)",
+          "event_type": "MIE",
+          "description": "Targeting thyroid peroxidase (TPO)"
+        },
+        {
+          "chemical": "thyroid-disrupting chemicals (TDCs)",
+          "event_type": "AO",
+          "description": "Thyroid dysfunction"
+        },
+        {
+          "chemical": "train496",
+          "event_type": "MIE",
+          "description": "Binding affinity to protein 1CXP (docking score)"
+        },
+        {
+          "chemical": "train496",
+          "event_type": "MIE",
+          "description": "Hydrogen bond + nonbonded contacts with protein 1CXP (docking)"
+        },
+        {
+          "chemical": "train496",
+          "event_type": "MIE",
+          "description": "Predicted binding to TPO-like domain (docking)"
+        }
+      ],
+      "pred_events": []
+    },
+    {
+      "paper_id": "paper_1171_events",
+      "n_chunks": 10,
+      "n_gold_events": 22,
+      "n_pred_events": 6,
+      "similar_to_gold": 0,
+      "not_in_gold_fp": 6,
+      "gold_not_found_fn": 22,
+      "exact_hits": 0,
+      "fuzzy_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "gold_events": [
+        {
+          "chemical": "17-Methyltestosterone",
+          "event_type": "MIE",
+          "description": "AR agonist activity (high potency)"
+        },
+        {
+          "chemical": "17beta-Trenbolone",
+          "event_type": "MIE",
+          "description": "AR agonist activity (high potency)"
+        },
+        {
+          "chemical": "Abamectin",
+          "event_type": "KE",
+          "description": "No statistically significant antagonist potency shift in confirmation assay"
+        },
+        {
+          "chemical": "Chlorothalonil",
+          "event_type": "KE",
+          "description": "No statistically significant antagonist potency shift in confirmation assay"
+        },
+        {
+          "chemical": "Cyfluthrin",
+          "event_type": "AO",
+          "description": "Ambiguous in vivo results (mixed study calls)"
+        },
+        {
+          "chemical": "Di (2-ethylhexyl) phthalate (DEHP)",
+          "event_type": "KE",
+          "description": "Parent not antiandrogenic; metabolites implicated; may not form in vitro"
+        },
+        {
+          "chemical": "Ethoprop",
+          "event_type": "KE",
+          "description": "Inactive in all in vitro assays"
+        },
+        {
+          "chemical": "Ethoprop",
+          "event_type": "AO",
+          "description": "Potential confounding general toxicity at LOEL near LD50"
+        },
+        {
+          "chemical": "Fenarimol",
+          "event_type": "MIE",
+          "description": "AR antagonist activity signal (reference chemical)"
+        },
+        {
+          "chemical": "Finasteride",
+          "event_type": "MIE",
+          "description": "5α-reductase inhibition"
+        },
+        {
+          "chemical": "Finasteride",
+          "event_type": "MIE",
+          "description": "Possible direct AR activity at higher concentrations"
+        },
+        {
+          "chemical": "Finasteride",
+          "event_type": "KE",
+          "description": "Reduced dihydrotestosterone formation from testosterone"
+        },
+        {
+          "chemical": "Finasteride",
+          "event_type": "KE",
+          "description": "Weak in vitro activity in multiple AR-related assays"
+        },
+        {
+          "chemical": "Folpet",
+          "event_type": "KE",
+          "description": "In vitro activity only near top of tested range (possible artifact/cytotoxicity confound)"
+        },
+        {
+          "chemical": "Hydroxyflutamide",
+          "event_type": "MIE",
+          "description": "AR antagonist (reference scaling chemical)"
+        },
+        {
+          "chemical": "Methoxychlor",
+          "event_type": "MIE",
+          "description": "AR antagonist activity signal (reference chemical)"
+        },
+        {
+          "chemical": "Mifepristone",
+          "event_type": "MIE",
+          "description": "AR antagonist activity (high potency)"
+        },
+        {
+          "chemical": "Norethindrone",
+          "event_type": "MIE",
+          "description": "AR agonist activity (high potency)"
+        },
+        {
+          "chemical": "Octylbicycloheptenedicarboximide",
+          "event_type": "KE",
+          "description": "In vitro activity only near top of tested range (possible artifact/cytotoxicity confound)"
+        },
+        {
+          "chemical": "Permethrin",
+          "event_type": "AO",
+          "description": "Ambiguous in vivo results (mixed study calls)"
+        },
+        {
+          "chemical": "Propargite",
+          "event_type": "AO",
+          "description": "Single positive Hershberger study cited as basis for positive call"
+        },
+        {
+          "chemical": "Zearalenone",
+          "event_type": "KE",
+          "description": "AR nuclear translocation assay activity"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Ethoprop",
+          "event_type": "KE",
+          "description": "Hershberger assay positive"
+        },
+        {
+          "chemical": "Ethoprop",
+          "event_type": "KE",
+          "description": "Hershberger LOEL"
+        },
+        {
+          "chemical": "Ethoprop",
+          "event_type": "KE",
+          "description": "Hershberger LOEL (mg/kg/day)"
+        },
+        {
+          "chemical": "Ethoprop",
+          "event_type": "KE",
+          "description": "Hershberger LOEL (predicted internal concentration)"
+        },
+        {
+          "chemical": "Ethoprop",
+          "event_type": "KE",
+          "description": "Hershberger LOEL close to LD50"
+        },
+        {
+          "chemical": "Ethoprop",
+          "event_type": "KE",
+          "description": "Hershberger LOEL equivalent to predicted internal concentration (µM) (16 mg/kg/day)"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_1201_events",
+      "n_chunks": 50,
+      "n_gold_events": 24,
+      "n_pred_events": 20,
+      "similar_to_gold": 5,
+      "not_in_gold_fp": 15,
+      "gold_not_found_fn": 19,
+      "exact_hits": 0,
+      "fuzzy_hits": 5,
+      "precision": 0.25,
+      "recall": 0.2083,
+      "f1": 0.2273,
+      "gold_events": [
+        {
+          "chemical": "capsaicin",
+          "event_type": "MIE",
+          "description": "TRPV1 receptor agonism"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "Biphasic enkephalin release dynamics (early diminished tone)"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "Reversal to boosted enkephalin release above baseline during prolonged pain"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "AO",
+          "description": "Protracted pain state induced"
+        },
+        {
+          "chemical": "CFA",
+          "event_type": "KE",
+          "description": "3 days post-CFA increases noxious heat-related MOR neuron activity; 3 weeks post-CFA looks pre-injury-like"
+        },
+        {
+          "chemical": "CFA",
+          "event_type": "KE",
+          "description": "Attenuation of nociceptive suppression of enkephalin tone weeks after inflammatory pain induction"
+        },
+        {
+          "chemical": "CFA",
+          "event_type": "KE",
+          "description": "Elevated vlPAG MOR+ calcium activity 3 days post-CFA"
+        },
+        {
+          "chemical": "CFA",
+          "event_type": "KE",
+          "description": "Loss of noxious heat-induced reduction in enkephalin tone at 3 weeks post-CFA"
+        },
+        {
+          "chemical": "CFA",
+          "event_type": "KE",
+          "description": "Noxious-temp MOR+ calcium elevation at day 3 and antagonist challenge but not day 21"
+        },
+        {
+          "chemical": "CFA",
+          "event_type": "KE",
+          "description": "Sustained elevation of MOR+ calcium activity at innocuous temps (days 3, 21, 24)"
+        },
+        {
+          "chemical": "CFA",
+          "event_type": "AO",
+          "description": "Allodynia and thermal hypersensitivity (inflammatory pain)"
+        },
+        {
+          "chemical": "CFA",
+          "event_type": "AO",
+          "description": "Persistent inflammation confirmed by paw size"
+        },
+        {
+          "chemical": "glutamate",
+          "event_type": "KE",
+          "description": "Increased RVM cellular activity when microinfused into vlPAG"
+        },
+        {
+          "chemical": "glutamate",
+          "event_type": "AO",
+          "description": "Reduced nociceptive reflexive paw withdrawal"
+        },
+        {
+          "chemical": "met-enkephalin",
+          "event_type": "KE",
+          "description": "Released by vlPAG electrical stimulation"
+        },
+        {
+          "chemical": "met-enkephalin",
+          "event_type": "AO",
+          "description": "Pain relief (partly blocked by MOR antagonists)"
+        },
+        {
+          "chemical": "morphine",
+          "event_type": "KE",
+          "description": "Blunted noxious-evoked vlPAG MOR+ calcium activity"
+        },
+        {
+          "chemical": "morphine",
+          "event_type": "KE",
+          "description": "Reduced spontaneous vlPAG MOR+ calcium transients (reduced excitability)"
+        },
+        {
+          "chemical": "naloxone",
+          "event_type": "MIE",
+          "description": "MOR antagonism unmasks latent sensitization pain phenotype"
+        },
+        {
+          "chemical": "naloxone",
+          "event_type": "KE",
+          "description": "Suppressed SNC 162-evoked δLight response"
+        },
+        {
+          "chemical": "naltrexone",
+          "event_type": "KE",
+          "description": "Elevated vlPAG MOR+ calcium signal at antagonist challenge timepoint (noxious temps)"
+        },
+        {
+          "chemical": "SNC 162",
+          "event_type": "MIE",
+          "description": "δ opioid receptor agonism"
+        },
+        {
+          "chemical": "SNC 162",
+          "event_type": "KE",
+          "description": "Dose-scaled increase in δLight fluorescence"
+        },
+        {
+          "chemical": "SNC 162",
+          "event_type": "KE",
+          "description": "Significant δLight signal increase at 2.5 and 5.0 mg/kg"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "Biphasic change in enkephalin release dynamics"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "Early phase: diminished enkephalin tone"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "Late phase: heightened enkephalin release"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "No change in enkephalin tone observed in saline-treated mice"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "No change in enkephalin tone observed in δ Light0-expressing mice"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "Noxious hot water-related reduction in enkephalin tone"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "Rapid shifts in vlPAG enkephalin release define transitions from acute to protracted pain states"
+        },
+        {
+          "chemical": "capsaicin",
+          "event_type": "KE",
+          "description": "Transient receptor potential vanilloid 1 (TRPV-1) receptor agonist"
+        },
+        {
+          "chemical": "Complete Freund's Adjuvant (CFA)",
+          "event_type": "KE",
+          "description": "Endogenous opioid upregulation"
+        },
+        {
+          "chemical": "Complete Freund's Adjuvant (CFA)",
+          "event_type": "KE",
+          "description": "Latent sensitization"
+        },
+        {
+          "chemical": "Complete Freund's Adjuvant (CFA)",
+          "event_type": "KE",
+          "description": "MOR plasticity renders receptors constitutively active"
+        },
+        {
+          "chemical": "Complete Freund's Adjuvant (CFA)",
+          "event_type": "KE",
+          "description": "MORs in spinal cord undergo plasticity"
+        },
+        {
+          "chemical": "Complete Freund's Adjuvant (CFA)",
+          "event_type": "KE",
+          "description": "Naloxone reverts uninjured-like mechanical sensitivity to injured state"
+        },
+        {
+          "chemical": "Complete Freund's Adjuvant (CFA)",
+          "event_type": "KE",
+          "description": "Paw thickness and width increased at 3 weeks post-CFA"
+        },
+        {
+          "chemical": "Complete Freund's Adjuvant (CFA)",
+          "event_type": "KE",
+          "description": "Thermal hypersensitivity and allodynia"
+        },
+        {
+          "chemical": "Complete Freund's Adjuvant (CFA)",
+          "event_type": "KE",
+          "description": "Uninjured-like mechanical sensitivity at 3 weeks post-CFA"
+        },
+        {
+          "chemical": "Morphine",
+          "event_type": "KE",
+          "description": "Blunted noxious-related fluorescent signal"
+        },
+        {
+          "chemical": "Morphine",
+          "event_type": "KE",
+          "description": "Reduced spontaneous calcium-related transients"
+        },
+        {
+          "chemical": "Morphine",
+          "event_type": "AO",
+          "description": "Analgesic efficacy"
+        },
+        {
+          "chemical": "Noxious hot water",
+          "event_type": "KE",
+          "description": "Increased Oprm1 transcripts in vlPAG"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_1223_events",
+      "n_chunks": 23,
+      "n_gold_events": 43,
+      "n_pred_events": 75,
+      "similar_to_gold": 10,
+      "not_in_gold_fp": 65,
+      "gold_not_found_fn": 33,
+      "exact_hits": 0,
+      "fuzzy_hits": 10,
+      "precision": 0.1333,
+      "recall": 0.2326,
+      "f1": 0.1695,
+      "gold_events": [
+        {
+          "chemical": "2,5-dimethoxy-4-iodoamphetamine (DOI)",
+          "event_type": "MIE",
+          "description": "5-HT2 receptor selective agonism (behavioral assay context)"
+        },
+        {
+          "chemical": "2,5-dimethoxy-4-iodoamphetamine (DOI)",
+          "event_type": "KE",
+          "description": "HTR unaffected in β-arrestin2 knockout mice"
+        },
+        {
+          "chemical": "2,5-dimethoxy-4-iodoamphetamine (DOI)",
+          "event_type": "KE",
+          "description": "Reduced HTR when Gq is knocked out"
+        },
+        {
+          "chemical": "2,5-dimethoxy-4-iodoamphetamine (DOI)",
+          "event_type": "AO",
+          "description": "Induces head twitch response (HTR) in mice"
+        },
+        {
+          "chemical": "2,5-dimethoxy-4-methylamphetamine",
+          "event_type": "MIE",
+          "description": "5-HT2A receptor agonism (behavioral effect context)"
+        },
+        {
+          "chemical": "2,5-dimethoxy-4-methylamphetamine",
+          "event_type": "KE",
+          "description": "Head twitch behaviors mediated via Gβγ with ERK and cAMP signaling"
+        },
+        {
+          "chemical": "2,5-dimethoxy-4-methylamphetamine",
+          "event_type": "AO",
+          "description": "Induces head twitch behaviors"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "Potent/selective 5-HT2A receptor agonist candidate"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "Increased firing frequency in layer 5 pyramidal neurons"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "Salt bridge interaction with D3.32(155) in 5-HT2A receptor binding pocket"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Induces phosphoinositide (PI) hydrolysis via 5-HT2 receptors"
+        },
+        {
+          "chemical": "altanserin",
+          "event_type": "MIE",
+          "description": "5-HT2A receptor ligand in selective antagonism study"
+        },
+        {
+          "chemical": "bufotenine",
+          "event_type": "KE",
+          "description": "Amine too far for hydrogen bonding to S3.36(159) (vs serotonin)"
+        },
+        {
+          "chemical": "clozapine",
+          "event_type": "MIE",
+          "description": "Inverse agonist (5-HT2A context)"
+        },
+        {
+          "chemical": "clozapine",
+          "event_type": "KE",
+          "description": "Activates Akt through nonarrestin dependent mechanisms"
+        },
+        {
+          "chemical": "clozapine",
+          "event_type": "KE",
+          "description": "Induces receptor internalization"
+        },
+        {
+          "chemical": "dimethyltryptamine",
+          "event_type": "MIE",
+          "description": "5-HT2A receptor agonism (psychedelic target)"
+        },
+        {
+          "chemical": "dimethyltryptamine",
+          "event_type": "AO",
+          "description": "Long-lasting therapeutic efficacy in clinical trials"
+        },
+        {
+          "chemical": "FR900359",
+          "event_type": "MIE",
+          "description": "Selective Gq-inhibitor"
+        },
+        {
+          "chemical": "FR900359",
+          "event_type": "KE",
+          "description": "Blocks psilocin/25CN-NBOH-induced increased firing frequency"
+        },
+        {
+          "chemical": "ketanserin",
+          "event_type": "KE",
+          "description": "Partial agonism exclusively at Gαq/11 proteins (postmortem human brain)"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "MIE",
+          "description": "5-HT2A receptor agonist"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "KE",
+          "description": "Partial efficacy (<70%) at canonical Gq-mediated signaling (proposed reason for lack of HTR)"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "AO",
+          "description": "Does not produce characteristic psychedelic behavioral effects / no HTR"
+        },
+        {
+          "chemical": "LSD",
+          "event_type": "KE",
+          "description": "Activates G protein-mediated signaling and β-arrestin signaling; shows β-arrestin bias over time"
+        },
+        {
+          "chemical": "LSD",
+          "event_type": "KE",
+          "description": "Unusually slow binding kinetics due to ECL2 ‘lid’"
+        },
+        {
+          "chemical": "LSD",
+          "event_type": "AO",
+          "description": "Head twitch response in mice (behavioral effect)"
+        },
+        {
+          "chemical": "lumateperone",
+          "event_type": "MIE",
+          "description": "Inverse agonist stabilizing non-coupling conformation"
+        },
+        {
+          "chemical": "lysergic acid diethylamide (LSD)",
+          "event_type": "MIE",
+          "description": "5-HT2A receptor agonism (psychedelic target)"
+        },
+        {
+          "chemical": "pimavanserin",
+          "event_type": "MIE",
+          "description": "5-HT2A receptor inverse agonist"
+        },
+        {
+          "chemical": "pimavanserin",
+          "event_type": "KE",
+          "description": "Decreases basal activation of Gαi1 but not Gαq/11 (postmortem human brain)"
+        },
+        {
+          "chemical": "pimavanserin",
+          "event_type": "AO",
+          "description": "Treatment of psychosis associated with Parkinson’s disease"
+        },
+        {
+          "chemical": "psilocin",
+          "event_type": "KE",
+          "description": "Increased firing frequency in layer 5 pyramidal neurons"
+        },
+        {
+          "chemical": "psilocybin",
+          "event_type": "AO",
+          "description": "Long-lasting therapeutic efficacy in clinical trials"
+        },
+        {
+          "chemical": "psilocybin",
+          "event_type": "AO",
+          "description": "Rapid and sustained antidepressant effects"
+        },
+        {
+          "chemical": "risperidone",
+          "event_type": "KE",
+          "description": "Inactive-state motif shifts <1 Å (DRY, NPxxY, sodium site)"
+        },
+        {
+          "chemical": "serotonin",
+          "event_type": "KE",
+          "description": "Necessary for T-cell maturation"
+        },
+        {
+          "chemical": "serotonin",
+          "event_type": "KE",
+          "description": "Proinflammatory actions via 5-HT2A receptors"
+        },
+        {
+          "chemical": "serotonin",
+          "event_type": "KE",
+          "description": "Recruitment of eosinophils to sites of inflammation"
+        },
+        {
+          "chemical": "YM-254890",
+          "event_type": "MIE",
+          "description": "Selective inhibitor of Gq"
+        },
+        {
+          "chemical": "YM-254890",
+          "event_type": "KE",
+          "description": "Dose-dependent inhibition of the head twitch response"
+        },
+        {
+          "chemical": "zotepine",
+          "event_type": "MIE",
+          "description": "Inverse agonist (inactive-state representation)"
+        },
+        {
+          "chemical": "zotepine",
+          "event_type": "KE",
+          "description": "Inactive-state motif shifts <1 Å (with risperidone comparison)"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "2,5-dimethoxy-4-iodoamphetamine (DOI)",
+          "event_type": "AO",
+          "description": "head twitch response (HTR)"
+        },
+        {
+          "chemical": "2,5-dimethoxy-4-methylamphetamine",
+          "event_type": "AO",
+          "description": "head twitch response (HTR)"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "D3.32(155) essential for binding"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "Hydrogen bonding of 5-methoxy with N6.55(343)"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "Lone pair-pi bond between 2-methoxy and F6.52(340)"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "Pi-pi interaction between 2-hydroxyphenyl and W6.48(336) (via structural water)"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "Pi-pi interaction between indole ring and F6.52(340)"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "S3.36(159) more important for binding than D3.32(155)"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "S3.36(159) mutation affects potency and efficacy"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "MIE",
+          "description": "W6.48(336) toggle switch translocation"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "b-arrestin recruitment increased"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "Gq activation reduced"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "Large pivot of W6.48(336) for outward movement of TM6"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "Movement of F6.44(332) side chain in PIF motif"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "Outward movement of TM6"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "Pivot of W6.48(336)"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "potency reduced by S3.36(159) mutation"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "Rotation of W6.48(336)"
+        },
+        {
+          "chemical": "25CN-NBOH",
+          "event_type": "KE",
+          "description": "W6.48(336) toggle switch translocated"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "MIE",
+          "description": "D3.32(155) essential for binding"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "MIE",
+          "description": "S3.36(159) involved in binding"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Anti-inflammatory effects"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "b-arrestin recruitment increased"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Calcium release"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Gq activation"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Gq activation reduced"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Increases in brain dopamine signaling"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Inhibition of brain dopamine signaling"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Involvement in learning and memory"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Involvement in reward processes"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "PI hydrolysis"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Proinflammatory effects"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Protein kinase C activation"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "S3.36(159) mutation reduces affinity"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Second messenger pathways"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "Stimulation of PLCβ"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "T-cell maturation"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "KE",
+          "description": "T-cell recruitment"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "AO",
+          "description": "Anxiety"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "AO",
+          "description": "Depression"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "AO",
+          "description": "Obsessive compulsive disorder"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "AO",
+          "description": "Schizophrenia"
+        },
+        {
+          "chemical": "5-HT",
+          "event_type": "AO",
+          "description": "Substance use disorders"
+        },
+        {
+          "chemical": "altanserin",
+          "event_type": "KE",
+          "description": "decreased basal Gαs activation"
+        },
+        {
+          "chemical": "clozapine",
+          "event_type": "KE",
+          "description": "Akt activation (non-arrestin dependent)"
+        },
+        {
+          "chemical": "clozapine",
+          "event_type": "KE",
+          "description": "receptor internalization"
+        },
+        {
+          "chemical": "haloperidol",
+          "event_type": "KE",
+          "description": "no receptor internalization"
+        },
+        {
+          "chemical": "ketanserin",
+          "event_type": "KE",
+          "description": "partial agonism at Gα proteins"
+        },
+        {
+          "chemical": "ketanserin",
+          "event_type": "KE",
+          "description": "receptor downregulation"
+        },
+        {
+          "chemical": "ketanserin",
+          "event_type": "KE",
+          "description": "receptor internalization (dynamin-dependent)"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "MIE",
+          "description": "ligand recognition by L7.35(362) affects bias"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "MIE",
+          "description": "rotation of diethyl group due to Y7.43(370) steric extension"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "MIE",
+          "description": "Y7.43(370) contacts only one ethyl group"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "MIE",
+          "description": "Y7.43(370) st"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "MIE",
+          "description": "Y7.43(370) steric extension increases b-arrestin2 agonism"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "KE",
+          "description": "b-arrestin2 agonism increased"
+        },
+        {
+          "chemical": "lisuride",
+          "event_type": "KE",
+          "description": "partial efficacy at canonical Gq-mediated signaling"
+        },
+        {
+          "chemical": "LSD",
+          "event_type": "MIE",
+          "description": "D3.32(155) essential for binding"
+        },
+        {
+          "chemical": "LSD",
+          "event_type": "MIE",
+          "description": "S3.36(159) not involved in binding"
+        },
+        {
+          "chemical": "LSD",
+          "event_type": "KE",
+          "description": "b-arrestin bias"
+        },
+        {
+          "chemical": "LSD",
+          "event_type": "KE",
+          "description": "Gq activation reduced"
+        },
+        {
+          "chemical": "LSD",
+          "event_type": "KE",
+          "description": "S3.36(159) mutation does not reduce affinity"
+        },
+        {
+          "chemical": "lumateperone",
+          "event_type": "MIE",
+          "description": "Prevents receptor activation movement"
+        },
+        {
+          "chemical": "lumateperone",
+          "event_type": "KE",
+          "description": "Prevents agonist binding"
+        },
+        {
+          "chemical": "lumateperone",
+          "event_type": "KE",
+          "description": "Stabilizes inactive receptor conformation"
+        },
+        {
+          "chemical": "pimavanserin",
+          "event_type": "KE",
+          "description": "decreased basal Gαs activation"
+        },
+        {
+          "chemical": "Psilocybin",
+          "event_type": "AO",
+          "description": "Long-lasting therapeutic efficacy for psychiatric disorders"
+        },
+        {
+          "chemical": "risperidone",
+          "event_type": "MIE",
+          "description": "Prevents receptor activation movement"
+        },
+        {
+          "chemical": "risperidone",
+          "event_type": "KE",
+          "description": "Prevents agonist binding"
+        },
+        {
+          "chemical": "risperidone",
+          "event_type": "KE",
+          "description": "Stabilizes inactive receptor conformation"
+        },
+        {
+          "chemical": "volinanserin",
+          "event_type": "KE",
+          "description": "decreased basal Gαs and Gαi activation"
+        },
+        {
+          "chemical": "volinanserin",
+          "event_type": "KE",
+          "description": "no receptor internalization"
+        },
+        {
+          "chemical": "zotepine",
+          "event_type": "MIE",
+          "description": "Prevents receptor activation movement"
+        },
+        {
+          "chemical": "zotepine",
+          "event_type": "KE",
+          "description": "Prevents agonist binding"
+        },
+        {
+          "chemical": "zotepine",
+          "event_type": "KE",
+          "description": "Stabilizes inactive receptor conformation"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_1269_events",
+      "n_chunks": 11,
+      "n_gold_events": 39,
+      "n_pred_events": 19,
+      "similar_to_gold": 1,
+      "not_in_gold_fp": 18,
+      "gold_not_found_fn": 38,
+      "exact_hits": 0,
+      "fuzzy_hits": 1,
+      "precision": 0.0526,
+      "recall": 0.0256,
+      "f1": 0.0345,
+      "gold_events": [
+        {
+          "chemical": "acetylcholine",
+          "event_type": "KE",
+          "description": "Desensitization and loss of responsiveness"
+        },
+        {
+          "chemical": "acetylcholine",
+          "event_type": "KE",
+          "description": "Desensitized state: channel closed during prolonged ligand binding"
+        },
+        {
+          "chemical": "acetylcholine",
+          "event_type": "KE",
+          "description": "nAChR channel opening and ion flow"
+        },
+        {
+          "chemical": "acetylcholine (ACh)",
+          "event_type": "MIE",
+          "description": "Orthosteric binding to nAChR"
+        },
+        {
+          "chemical": "amyloid beta (Aβ)",
+          "event_type": "KE",
+          "description": "Aβ inhibits ACh responses via α7β2 sensitivity"
+        },
+        {
+          "chemical": "amyloid beta (Aβ)",
+          "event_type": "KE",
+          "description": "Microglial degradation supports Aβ removal"
+        },
+        {
+          "chemical": "amyloid beta (Aβ)",
+          "event_type": "KE",
+          "description": "Reduced microglial phagocytosis with aging"
+        },
+        {
+          "chemical": "amyloid beta (Aβ)",
+          "event_type": "KE",
+          "description": "Reduced α7 nAChR availability in later AD stages"
+        },
+        {
+          "chemical": "amyloid beta (Aβ)",
+          "event_type": "AO",
+          "description": "Neuronal degeneration and further neurotoxicity (feedback loop)"
+        },
+        {
+          "chemical": "AQW051",
+          "event_type": "AO",
+          "description": "Inconclusive results; compound discontinued"
+        },
+        {
+          "chemical": "AQW051",
+          "event_type": "AO",
+          "description": "No significant effects in L-DOPA-induced dyskinesia"
+        },
+        {
+          "chemical": "AZD0328",
+          "event_type": "AO",
+          "description": "Failed primary endpoints in schizophrenia phase 2"
+        },
+        {
+          "chemical": "AZD0328",
+          "event_type": "AO",
+          "description": "Improved operant responding acquisition and novel object recognition (mice)"
+        },
+        {
+          "chemical": "cholinesterase inhibitors",
+          "event_type": "KE",
+          "description": "Reduced Aβ accumulation and improved AD symptoms (suggested)"
+        },
+        {
+          "chemical": "cholinesterase inhibitors",
+          "event_type": "AO",
+          "description": "Limited cognitive improvement; cholinergic side effects limit use"
+        },
+        {
+          "chemical": "conotoxins",
+          "event_type": "MIE",
+          "description": "Selective, reversible α7 nAChR targeting"
+        },
+        {
+          "chemical": "encenicline",
+          "event_type": "KE",
+          "description": "Poor target engagement on PET occupancy studies"
+        },
+        {
+          "chemical": "encenicline",
+          "event_type": "AO",
+          "description": "Clinically meaningful cognition improvements in schizophrenia phase 2"
+        },
+        {
+          "chemical": "encenicline",
+          "event_type": "AO",
+          "description": "Cognitive improvements (early trials)"
+        },
+        {
+          "chemical": "encenicline",
+          "event_type": "AO",
+          "description": "Enhanced cognitive and functional outcomes in phase 2 AD"
+        },
+        {
+          "chemical": "encenicline",
+          "event_type": "AO",
+          "description": "Gastrointestinal adverse effects leading to phase 3 suspension in AD"
+        },
+        {
+          "chemical": "encenicline",
+          "event_type": "AO",
+          "description": "Phase 3 schizophrenia failed primary endpoints"
+        },
+        {
+          "chemical": "galantamine",
+          "event_type": "AO",
+          "description": "Selective benefits but no overall cognitive enhancement (12-week trial)"
+        },
+        {
+          "chemical": "galantamine",
+          "event_type": "AO",
+          "description": "Small but significant cognitive improvement in schizophrenia (meta-analysis)"
+        },
+        {
+          "chemical": "memantine",
+          "event_type": "MIE",
+          "description": "α7 nAChR antagonism"
+        },
+        {
+          "chemical": "memantine",
+          "event_type": "AO",
+          "description": "Unclear benefit in AD"
+        },
+        {
+          "chemical": "nicotine",
+          "event_type": "MIE",
+          "description": "Orthosteric binding to nAChR"
+        },
+        {
+          "chemical": "nicotine",
+          "event_type": "KE",
+          "description": "Accelerated hepatic metabolism via CYP450 (chronic exposure)"
+        },
+        {
+          "chemical": "nicotine",
+          "event_type": "AO",
+          "description": "Increased risk of cognitive impairment and AD (smoking)"
+        },
+        {
+          "chemical": "PHA543613",
+          "event_type": "AO",
+          "description": "Higher doses ineffective"
+        },
+        {
+          "chemical": "PHA543613",
+          "event_type": "AO",
+          "description": "Low doses improved cognitive performance and enhanced PFC neuronal activity"
+        },
+        {
+          "chemical": "RG3487",
+          "event_type": "AO",
+          "description": "Failed to improve cognition in schizophrenia phase 2"
+        },
+        {
+          "chemical": "RG3487",
+          "event_type": "AO",
+          "description": "Larger AD trial inconclusive; results not fully published"
+        },
+        {
+          "chemical": "RG3487",
+          "event_type": "AO",
+          "description": "Positive outcomes in small AD phase 2"
+        },
+        {
+          "chemical": "SSR180711",
+          "event_type": "AO",
+          "description": "Trial terminated early (unfavourable risk–benefit ratio)"
+        },
+        {
+          "chemical": "α7 nAChR agonist",
+          "event_type": "KE",
+          "description": "Calcium influx mediates fast excitatory signalling"
+        },
+        {
+          "chemical": "α7 nAChR agonist",
+          "event_type": "KE",
+          "description": "Desensitization after prolonged agonist exposure"
+        },
+        {
+          "chemical": "α7 nAChR agonist",
+          "event_type": "KE",
+          "description": "Metabotropic signalling via intracellular G-proteins in glia"
+        },
+        {
+          "chemical": "α7 nAChR agonist",
+          "event_type": "KE",
+          "description": "Tachyphylaxis risk with prolonged/repeated exposure"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "ABT 126",
+          "event_type": "KE",
+          "description": "No significant cognitive improvement in schizophrenia (failed to confirm previous trend)"
+        },
+        {
+          "chemical": "ABT 126",
+          "event_type": "KE",
+          "description": "Trend toward cognitive improvement in mild to moderate AD (12 week phase 2 trial) (failed to confirm in larger trial)"
+        },
+        {
+          "chemical": "encenicline",
+          "event_type": "KE",
+          "description": "poor target engagement"
+        },
+        {
+          "chemical": "GTS 21",
+          "event_type": "KE",
+          "description": "Different receptor response between rat and human α7 nAChR"
+        },
+        {
+          "chemical": "Nicotine",
+          "event_type": "KE",
+          "description": "Anti-inflammatory properties"
+        },
+        {
+          "chemical": "Nicotine",
+          "event_type": "KE",
+          "description": "Aβ clearance"
+        },
+        {
+          "chemical": "Nicotine",
+          "event_type": "KE",
+          "description": "Neuroprotection"
+        },
+        {
+          "chemical": "Nicotine",
+          "event_type": "KE",
+          "description": "Reversal of pro-inflammatory microglial state"
+        },
+        {
+          "chemical": "Nicotine",
+          "event_type": "AO",
+          "description": "Cognitive impairment"
+        },
+        {
+          "chemical": "Nicotine",
+          "event_type": "AO",
+          "description": "Increased risk of Alzheimer's disease"
+        },
+        {
+          "chemical": "PHA543613",
+          "event_type": "KE",
+          "description": "receptor desensitization"
+        },
+        {
+          "chemical": "PHA543613",
+          "event_type": "KE",
+          "description": "receptor desensitization (described as temporary inactivity) / functional antagonism"
+        },
+        {
+          "chemical": "α7 nAChR agonists",
+          "event_type": "KE",
+          "description": "Increased presynaptic release of glutamate and GABA"
+        },
+        {
+          "chemical": "α7 nAChR agonists",
+          "event_type": "KE",
+          "description": "Modulation of glutamatergic and GABAergic transmission"
+        },
+        {
+          "chemical": "α7 nAChR agonists",
+          "event_type": "KE",
+          "description": "Regulation of synaptic remodelling"
+        },
+        {
+          "chemical": "α7 nAChR agonists",
+          "event_type": "KE",
+          "description": "Suppression of pro-inflammatory cytokine release"
+        },
+        {
+          "chemical": "α7 nAChR agonists",
+          "event_type": "AO",
+          "description": "Improved memory formation"
+        },
+        {
+          "chemical": "α7 nAChR agonists",
+          "event_type": "AO",
+          "description": "Improved synaptic plasticity"
+        },
+        {
+          "chemical": "α7 nAChR antagonists",
+          "event_type": "AO",
+          "description": "Impaired cognitive function"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_2002_events",
+      "n_chunks": 14,
+      "n_gold_events": 31,
+      "n_pred_events": 26,
+      "similar_to_gold": 9,
+      "not_in_gold_fp": 17,
+      "gold_not_found_fn": 22,
+      "exact_hits": 3,
+      "fuzzy_hits": 6,
+      "precision": 0.3462,
+      "recall": 0.2903,
+      "f1": 0.3158,
+      "gold_events": [
+        {
+          "chemical": "2,2-BPF",
+          "event_type": "MIE",
+          "description": "PPARγ antagonist (human)"
+        },
+        {
+          "chemical": "2,2-BPF",
+          "event_type": "KE",
+          "description": "Cell proliferation (Tox21) below cytotoxicity limit"
+        },
+        {
+          "chemical": "2,4-BPF",
+          "event_type": "MIE",
+          "description": "PPARγ antagonist (human)"
+        },
+        {
+          "chemical": "2,4-BPF",
+          "event_type": "KE",
+          "description": "Cell proliferation (Tox21) below cytotoxicity limit"
+        },
+        {
+          "chemical": "4,4-BPF",
+          "event_type": "MIE",
+          "description": "PPARγ antagonist (human)"
+        },
+        {
+          "chemical": "4,4-BPF",
+          "event_type": "KE",
+          "description": "Cell proliferation (Tox21) below cytotoxicity limit"
+        },
+        {
+          "chemical": "Bisphenol F",
+          "event_type": "AO",
+          "description": "Cancer"
+        },
+        {
+          "chemical": "Bisphenol F",
+          "event_type": "AO",
+          "description": "Thyroid cancer"
+        },
+        {
+          "chemical": "Bisphenol F (BPF)",
+          "event_type": "AO",
+          "description": "Cancer"
+        },
+        {
+          "chemical": "Bisphenol F (BPF)",
+          "event_type": "AO",
+          "description": "Thyroid cancer"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "MIE",
+          "description": "ERα activation"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "MIE",
+          "description": "Inhibition of catalase"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "MIE",
+          "description": "PPARγ binding"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Absence of activation of p27"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Absence of activation of TRAIL"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Absence of inhibition of cyclin D1 by catalase"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Absence of inhibition of Cyclin D1/Cdk4 complex by p27"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Absence of ubiquitination of FLIP"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Allergic contact dermatitis challenge"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Antiandrogenic effects in human cell lines"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Decreased apoptosis"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Estrogenic effects in human cell lines"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Increase cell proliferation"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Progression of G1 phase / increased cell proliferation"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Reduced basal testosterone secretion (human ex vivo fetal testis model)"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Breast cancer"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Cancer"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Endometrial carcinoma"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Increase, site of contact nasal tumors"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Liver steatosis"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Thyroid cancer"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "MIE",
+          "description": "Endocrine disruption"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Activation of nuclear receptors"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Regulation of non-genomic pathways"
+        },
+        {
+          "chemical": "Bisphenol F",
+          "event_type": "AO",
+          "description": "Thyroid cancer"
+        },
+        {
+          "chemical": "Bisphenol F (BPF)",
+          "event_type": "KE",
+          "description": "Linkage to AOP network"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "MIE",
+          "description": "Estrogen receptor alpha (ERα) activation"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Activation of ERα"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Antagonism of PPARγ"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Cell proliferation"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Endocrine-related cancer associations"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Endocrine-related pathways"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Increase cell proliferation"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Inflammation association"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Inhibition of catalase"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Linkage to obesity and metabolic disruptions"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Lipid metabolism-related pathways"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Obesity"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Signaling by cortisol"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Signaling by estrogen"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Signaling by parathyroid hormone"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Signaling by thyroid hormone"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "KE",
+          "description": "Steroid hormone biosynthesis"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Endometrial cancer"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Endometrial cancer promotion (proliferation of tumoral clone)"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Endometrial cancer promotion (proliferation of tumoral clone) (KE) (KE1182)"
+        },
+        {
+          "chemical": "BPF",
+          "event_type": "AO",
+          "description": "Thyroid cancer"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_2003_events",
+      "n_chunks": 18,
+      "n_gold_events": 12,
+      "n_pred_events": 39,
+      "similar_to_gold": 11,
+      "not_in_gold_fp": 28,
+      "gold_not_found_fn": 1,
+      "exact_hits": 5,
+      "fuzzy_hits": 6,
+      "precision": 0.2821,
+      "recall": 0.9167,
+      "f1": 0.4314,
+      "gold_events": [
+        {
+          "chemical": "BPA",
+          "event_type": "MIE",
+          "description": "Estrogen antagonism"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Aberrant synaptic formation/plasticity in hippocampus"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Hippocampus dysfunction"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Increased oxidative stress in the brain"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Interfere with cAMP signaling pathway"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "AO",
+          "description": "Autism-like behavior"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "MIE",
+          "description": "Decreased NMDAR expression"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Aberrant synaptic formation/plasticity in hippocampus"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Hippocampus dysfunction"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Increased oxidative stress in the brain"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Interfere with cAMP signaling pathway"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Autism-like behavior"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Bisphenol A",
+          "event_type": "KE",
+          "description": "Decreased expression of NMDAR"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Decreased N-methyl-D-aspartate receptor (NMDAR)"
+        },
+        {
+          "chemical": "Bisphenol A (BPA)",
+          "event_type": "KE",
+          "description": "Estrogen antagonism"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "MIE",
+          "description": "Antagonism, estrogen"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Antagonism of estrogen"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Antagonism of estrogen (KE)"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Antagonism; estrogen"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Decreased expression of NMDAR"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Dysfunction, hippocampus"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Estrogen antagonism"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Hippocampus dysfunction"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Modulation of chemical synaptic transmission"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Perturbance of signaling pathways"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Positive regulation of excitatory postsynaptic potential"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "Post NMDA receptor activation events"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "KE",
+          "description": "VEG signaling"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "AO",
+          "description": "Autism spectrum disorder (ASD)"
+        },
+        {
+          "chemical": "BPA",
+          "event_type": "AO",
+          "description": "Autism-like behavior"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "MIE",
+          "description": "Decreased NMDAR expression"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Aberrant synaptic formation and plasticity in the hippocampus"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Antagonism of androgen"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Antagonism of androgen (KE)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decreased expression of NMDAR"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decreased NMDAR expression"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Dysfunction, hippocampus"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Hippocampus dysfunction"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Impaired cochlear development"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Impaired hearing"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Modulation of chemical synaptic transmission"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Positive regulation of excitatory postsynaptic potential"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Post NMDA receptor activation events"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reduction of NMDAR expression"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "VEG signaling"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Autism spectrum disorder (ASD)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Autism-like behavior"
+        },
+        {
+          "chemical": "Di-(2-ethylhexyl) phthalate (DEHP)",
+          "event_type": "KE",
+          "description": "Decreased N-methyl-D-aspartate receptor (NMDAR)"
+        },
+        {
+          "chemical": "Di-(2-ethylhexyl) phthalate (DEHP)",
+          "event_type": "KE",
+          "description": "Estrogen antagonism"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_2007_events",
+      "n_chunks": 22,
+      "n_gold_events": 31,
+      "n_pred_events": 38,
+      "similar_to_gold": 17,
+      "not_in_gold_fp": 21,
+      "gold_not_found_fn": 14,
+      "exact_hits": 3,
+      "fuzzy_hits": 14,
+      "precision": 0.4474,
+      "recall": 0.5484,
+      "f1": 0.4928,
+      "gold_events": [
+        {
+          "chemical": "cypermethrin",
+          "event_type": "MIE",
+          "description": "Cholinesterase interaction at anionic substrate binding site (in silico/read-across discussion)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "MIE",
+          "description": "Enhanced production of reactive oxygen species (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "MIE",
+          "description": "Impairment of voltage-gated sodium channels and inhibition of ATPase enzymes"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "MIE",
+          "description": "Toxicant alters acetylcholine binding sites (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "MIE",
+          "description": "Toxicant alters acetylcholine binding sites on AChE (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "MIE",
+          "description": "Voltage-gated sodium channel kinetic alteration / increased Na+ permeability"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Accumulation of acetylcholine at neuromuscular junction / nAChR desensitization (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Altered nerve signaling in muscles and gills (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Behavioral changes characterized by increased activity and low anxiety"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Brief cessation of respiration"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Decrease production of energy (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Decreased oxygen consumption"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Disturbance in buoyant behavior and increased rigidity"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Fatigue in gill muscle (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Impacts on gills and liver (general statement)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Increased LPO and reduced GSH/CAT in gills causing necrotic lamella (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Increased opercular movement / respiratory distress indicator"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Inhibition of oxidative phosphorylation (proposed within paper text)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Mucus secretion"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Pathologies causing muscle denervation (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Respiratory disruption attributable to gill toxicity (general statement)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Somersaulting behavior"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Suppressed acetylcholinesterase activity (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Suppression of AChE hydrolyzing activity (AOP)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Uncoordinated/unbalanced/unpredictable swimming and inactivity"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Wheezing and repeated turning of opercula"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Decreased survival"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Increased mortality (population level)"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Loss of ability to adapt and eventual death"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Mortality / death"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Respiratory insufficiency"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "cypermethrin",
+          "event_type": "KE",
+          "description": "Choline esterase inhibitory properties"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Altered behavioral responses"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Altered gill pathology"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Altered nerve signaling in muscles and gills"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Cholinergic effects"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Cholinergic toxicity"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Decrease production of energy"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Decreased acetylcholinesterase activity"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Decreased foraging"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Decreased oxygen consumption"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Endocrine disruption"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Enhanced production of ROS"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Fatigue in gill muscle"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Impaired cellular immunity"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Impaired voltage-gated sodium channel function"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Impairing ATPase enzymes"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Impairment in neuronal transmission"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Increased oxygen consumption"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Reduced GSH and CAT levels in gills"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "KE",
+          "description": "Sodium channel blockade"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "KE",
+          "description": "Suppressed AChE activity"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Behavioral alterations"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Behavioral changes"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Behavioral toxicity"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Decreased survival rate"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "AO",
+          "description": "Increased mortality"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Increased mucus secretion"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Irregular swimming"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "AO",
+          "description": "Loss of ability to adapt and eventual death"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Low anxiety"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Mortality"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Opercular movement increased"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Respiratory distress"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "AO",
+          "description": "Respiratory effects"
+        },
+        {
+          "chemical": "Deltamethrin",
+          "event_type": "AO",
+          "description": "Respiratory insufficiency"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Stochastic death"
+        },
+        {
+          "chemical": "deltamethrin",
+          "event_type": "AO",
+          "description": "Uncoordinated swimming"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_2008_events",
+      "n_chunks": 18,
+      "n_gold_events": 37,
+      "n_pred_events": 29,
+      "similar_to_gold": 23,
+      "not_in_gold_fp": 6,
+      "gold_not_found_fn": 14,
+      "exact_hits": 4,
+      "fuzzy_hits": 19,
+      "precision": 0.7931,
+      "recall": 0.6216,
+      "f1": 0.697,
+      "gold_events": [
+        {
+          "chemical": "DEHP",
+          "event_type": "MIE",
+          "description": "Estrogen receptor (ER) modified"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "MIE",
+          "description": "Inhibition of aromatase"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "MIE",
+          "description": "NR1I2 modified"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "MIE",
+          "description": "Oxidative stress as potential MIE"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "MIE",
+          "description": "Thyroid hormone receptor modified"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Activation of cysteine-type endopeptidase activity in apoptotic process (altered)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Altered primary follicle assembly"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Apoptosis"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decreased cell proliferation"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decreased GnRH release"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decreased LH release"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decreased oogenesis"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decreased ovarian estradiol (E2)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Estrogen biosynthetic process (altered)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Increase in DNA strand breaks"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Increased caspase expression"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Increased pro-apoptotic protein expression"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Inhibition of steroid production in granulosa cells"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Intrinsic apoptotic signaling pathway in response to DNA damage (altered)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Irregularities of ovarian cycle"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Ovarian follicle pool reduced"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Positive regulation of intrinsic apoptotic signaling pathway (altered)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Prevent proliferation of granulosa cells"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reactive oxygen species (ROS) / oxidative stress detected"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reduced E2 in circulation"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reduced E2 production leading to apoptosis in granulosa cells"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reduced fertilization capability of oocytes"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reduced number of oocytes and follicles"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reduced ovulation / reduced ovulated oocytes"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "ROS/oxidative stress decreases aromatase expression"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Steroid biosynthetic process (altered)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Adverse IVF outcomes (association)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Decreased pregnancy rate (association)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Endometriosis (association)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Impaired fertility"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Increased risk of miscarriage (association)"
+        },
+        {
+          "chemical": "MEHP",
+          "event_type": "KE",
+          "description": "Increased AHR mRNA expression"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Activation of cysteine-type endopeptidase activity involved in apoptotic process"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Altered cellular proliferation"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Altered expression of ovarian genes"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Apoptosis"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Apoptosis promotion in granulosa cells"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decrease in E2 production"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Decreased ovarian E2"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "DNA strand breaks"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Immune disruption"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Impaired oocyte maturation"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Impaired oocyte quality"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Inappropriate cellular death"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Inhibition of steroidogenesis"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Intrinsic apoptotic signaling pathway in response to DNA damage"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Ovarian follicle pool reduced"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Positive regulation of intrinsic apoptotic signaling pathway"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Prevention of granulosa cell proliferation"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reduced E2 in circulation"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Reduced ovulation"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "KE",
+          "description": "Steroid biosynthetic process"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Decreased pregnancy rate"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Endometriosis"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Impaired fertility"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Impaired puberty onset"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Impaired puberty onset (high dose)"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Increased risk of miscarriage"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Negative effects on female reproductive system"
+        },
+        {
+          "chemical": "DEHP",
+          "event_type": "AO",
+          "description": "Negative effects on IVF outcome (biochemical pregnancy, failed clinical pregnancy, decreased live births)"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_3005_events",
+      "n_chunks": 11,
+      "n_gold_events": 14,
+      "n_pred_events": 55,
+      "similar_to_gold": 13,
+      "not_in_gold_fp": 42,
+      "gold_not_found_fn": 1,
+      "exact_hits": 2,
+      "fuzzy_hits": 11,
+      "precision": 0.2364,
+      "recall": 0.9286,
+      "f1": 0.3768,
+      "gold_events": [
+        {
+          "chemical": "Methylmercury",
+          "event_type": "KE",
+          "description": "Changes in feeding behavior"
+        },
+        {
+          "chemical": "Methylmercury",
+          "event_type": "KE",
+          "description": "Changes in swimming behavior"
+        },
+        {
+          "chemical": "Methylmercury",
+          "event_type": "KE",
+          "description": "Specific brain gene expression changes"
+        },
+        {
+          "chemical": "Methylmercury",
+          "event_type": "AO",
+          "description": "No significant growth or survival effects"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Altered brain gene expression"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Altered swimming behavior"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Altered swimming state transitions"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Differential gene expression"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Increased prey handling time"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Lower physical activity levels"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Perturbation of metabolic pathway"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Reduced prey capture efficiency"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "AO",
+          "description": "Decreased cohort growth"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "AO",
+          "description": "Decreased cohort survival"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Altered feeding metrics"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Altered swimming behaviors"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Increased capture rates"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Increased prey detection distance"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Upregulation of genes involved in nucleic and cellular brain functions"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Upregulation of klhl6"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Upregulation of nerve maintenance, development, and neurotransmitters"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Upregulation of numerous genes"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Upregulation of scamp1"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Upregulation of si:ch211-186j3.6"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "KE",
+          "description": "Upregulation of si:dkey21c1.4"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Altered larval behavior end points"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Decreased total distance traveled"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Decreased total time swimming"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Decreased transition probability from medium to slow state"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Decreased variation in medium state turning angle"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Decreased variation in VMR period 3"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Higher mean"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Higher mean medium step length"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Higher mean turning angle"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Higher step length"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Higher total distance traveled"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Higher total time swimming"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Increased capture attempt ratio"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Increased capture probability"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Increased reaction distance"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Increased swimming bout duration"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Increased swimming bout frequency"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Increased swimming bout turning angle"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Increased swimming probability in fast/medium state"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Reduced cohort growth"
+        },
+        {
+          "chemical": "MeHg",
+          "event_type": "AO",
+          "description": "Reduced simulated cohort survival"
+        },
+        {
+          "chemical": "methylmercury",
+          "event_type": "KE",
+          "description": "Brain gene expression changes"
+        },
+        {
+          "chemical": "methylmercury",
+          "event_type": "KE",
+          "description": "Changes in feeding and swimming behaviors"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Altered brain gene expression"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Altered expression of AhR2 in brain"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Altered feeding metrics"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Altered stamina swimming type behaviors"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Altered swimming behaviors"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Decreased capture attempts"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Decreased growth in SCOKF"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Decreased survival in SCOKF and NBHKF"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Decreased total distance traveled"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Decreased total time swimming"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Downregulation of scamp1"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "General upregulation of nucleic and cellular brain gene sets"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Lower physical activity levels"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Perturbation of oxidative phosphorylation pathway"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Upregulation of 16 genes"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Upregulation of genes involved in nucleic and cellular brain functions"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Upregulation of nerve maintenance, development, and neurotransmitters"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "KE",
+          "description": "Upregulation of numerous genes"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "AO",
+          "description": "Reduced cohort growth"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "AO",
+          "description": "Reduced simulated cohort survival"
+        },
+        {
+          "chemical": "PCB126",
+          "event_type": "AO",
+          "description": "Substantial sublethal effects in both SCOKF and NBHKF"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_3007_events",
+      "n_chunks": 12,
+      "n_gold_events": 15,
+      "n_pred_events": 41,
+      "similar_to_gold": 13,
+      "not_in_gold_fp": 28,
+      "gold_not_found_fn": 2,
+      "exact_hits": 2,
+      "fuzzy_hits": 11,
+      "precision": 0.3171,
+      "recall": 0.8667,
+      "f1": 0.4643,
+      "gold_events": [
+        {
+          "chemical": "Cadmium",
+          "event_type": "MIE",
+          "description": "Affinity for soft donor atoms"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Accumulation in proximal tubules"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "DNA damage and repair interference"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Production of reactive oxygen species (ROS)"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Stimulation of metallothionein (MT) proteins"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "AO",
+          "description": "Genomic instability and tumorgenicity"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "AO",
+          "description": "Renal dysfunction"
+        },
+        {
+          "chemical": "Cd(L1)2.CH3OH",
+          "event_type": "KE",
+          "description": "Cell cycle arrest in G2/M phase"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "MIE",
+          "description": "Binding to DNA"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Activation of the intrinsic apoptosis pathway"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Cell cycle arrest in S-phase"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "DNA damage"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "AO",
+          "description": "Nephrotoxicity"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "AO",
+          "description": "Neurotoxicity"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "AO",
+          "description": "Ototoxicity"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Cadmium",
+          "event_type": "MIE",
+          "description": "Binding to soft donor atoms"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "MIE",
+          "description": "Chelation by metallothionein"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "MIE",
+          "description": "DNA damage"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Affects cell proliferation"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Affects differentiation"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Affects DNA repair"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Affects production of ROS"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Apoptosis"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Cell cycle arrest"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Cell cycle-specific chemotherapeutic agent (CCSS)"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Cytotoxicity in cancer cell lines"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Cytotoxicity in renal proximal tubule epithelial cells"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "DNA damage"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Genotoxicity"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Induction of apoptosis"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Induction of caspase-independent cell death"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Reactive oxygen species (ROS) production"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Stimulation of metallothionein synthesis"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "KE",
+          "description": "Systemic accumulation"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "AO",
+          "description": "Genomic instability"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "AO",
+          "description": "Nephrotoxicity"
+        },
+        {
+          "chemical": "Cadmium",
+          "event_type": "AO",
+          "description": "Tumorgenicity"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "MIE",
+          "description": "DNA damage"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Activation of intrinsic apoptosis pathway"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Affects cell proliferation"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Affects differentiation"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Affects DNA repair"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Affects production of ROS"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Apoptosis"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Cell cycle arrest"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Cell cycle-specific chemotherapeutic agent (CCSS)"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "DNA damage"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "G2/M phase arrest"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Genotoxicity"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Nephrotoxicity"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Reactive oxygen species (ROS) production"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Systemic accumulation"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "AO",
+          "description": "Cytotoxicity"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "AO",
+          "description": "Genomic instability"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "AO",
+          "description": "Nephrotoxicity"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "AO",
+          "description": "Tumorgenicity"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_3014_events",
+      "n_chunks": 22,
+      "n_gold_events": 15,
+      "n_pred_events": 22,
+      "similar_to_gold": 5,
+      "not_in_gold_fp": 17,
+      "gold_not_found_fn": 10,
+      "exact_hits": 0,
+      "fuzzy_hits": 5,
+      "precision": 0.2273,
+      "recall": 0.3333,
+      "f1": 0.2703,
+      "gold_events": [
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "MIE",
+          "description": "Physical interaction with chromosomes"
+        },
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "MIE",
+          "description": "Release of reactive oxygen species (ROS) and reactive nitrogen"
+        },
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "KE",
+          "description": "Activation of survival signaling pathways"
+        },
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "KE",
+          "description": "Chronic inflammation"
+        },
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "KE",
+          "description": "Genetic and epigenetic alterations"
+        },
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "KE",
+          "description": "Impairment of DNA repair mechanisms"
+        },
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "KE",
+          "description": "Resistance to apoptosis"
+        },
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "AO",
+          "description": "Malignant pleural mesothelioma (MPM)"
+        },
+        {
+          "chemical": "erionite",
+          "event_type": "AO",
+          "description": "Malignant pleural mesothelioma"
+        },
+        {
+          "chemical": "fluoro-edenite",
+          "event_type": "AO",
+          "description": "Malignant pleural mesothelioma"
+        },
+        {
+          "chemical": "Hyaluronic acid",
+          "event_type": "MIE",
+          "description": "Interaction with CD44 receptor"
+        },
+        {
+          "chemical": "Hyaluronic acid",
+          "event_type": "KE",
+          "description": "Inhibition of Hippo core kinases"
+        },
+        {
+          "chemical": "Hyaluronic acid",
+          "event_type": "AO",
+          "description": "Tumor progression"
+        },
+        {
+          "chemical": "Ionizing radiation",
+          "event_type": "AO",
+          "description": "Malignant pleural mesothelioma"
+        },
+        {
+          "chemical": "Refractory ceramic fibers",
+          "event_type": "AO",
+          "description": "Malignant pleural mesothelioma"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "abemaciclib",
+          "event_type": "KE",
+          "description": "p16 loss/inactivation"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "KE",
+          "description": "Carcinogenesis"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "KE",
+          "description": "Chromosomal aberrations and mutations"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "KE",
+          "description": "Chronic inflammation"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "KE",
+          "description": "Epigenetic alterations"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "KE",
+          "description": "Impaired DNA repair mechanisms"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "KE",
+          "description": "Reactive oxygen species (ROS) and nitrogen species"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "KE",
+          "description": "Uncontrolled growth and resistance to apoptosis"
+        },
+        {
+          "chemical": "Asbestos",
+          "event_type": "AO",
+          "description": "Malignant pleural mesothelioma (MPM)"
+        },
+        {
+          "chemical": "Asbestos fibers",
+          "event_type": "KE",
+          "description": "p53 stabilization via phosphorylation or acetylation"
+        },
+        {
+          "chemical": "bevacizumab",
+          "event_type": "KE",
+          "description": "Increased intra-tumoral microvessel density"
+        },
+        {
+          "chemical": "bevacizumab",
+          "event_type": "KE",
+          "description": "Increased VEGF expression"
+        },
+        {
+          "chemical": "bevacizumab",
+          "event_type": "AO",
+          "description": "Improved OS and PFS"
+        },
+        {
+          "chemical": "Met",
+          "event_type": "KE",
+          "description": "Mutations in juxta-membrane domain detected in 3-16% of MPM cases"
+        },
+        {
+          "chemical": "Met",
+          "event_type": "KE",
+          "description": "Overexpression detected in 74-100% of MPM cases"
+        },
+        {
+          "chemical": "Met",
+          "event_type": "KE",
+          "description": "Predominant membrane localization associated with better prognosis"
+        },
+        {
+          "chemical": "MST1",
+          "event_type": "KE",
+          "description": "reduced basal apoptotic activity"
+        },
+        {
+          "chemical": "palbociclib",
+          "event_type": "KE",
+          "description": "p16 loss/inactivation"
+        },
+        {
+          "chemical": "ribociclib",
+          "event_type": "KE",
+          "description": "p16 loss/inactivation"
+        },
+        {
+          "chemical": "WIF1",
+          "event_type": "KE",
+          "description": "Overexpression of Wnt proteins"
+        },
+        {
+          "chemical": "WIF1",
+          "event_type": "KE",
+          "description": "Promotion of Wnt signaling pathway activation"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_3027_events",
+      "n_chunks": 7,
+      "n_gold_events": 23,
+      "n_pred_events": 39,
+      "similar_to_gold": 12,
+      "not_in_gold_fp": 27,
+      "gold_not_found_fn": 11,
+      "exact_hits": 1,
+      "fuzzy_hits": 11,
+      "precision": 0.3077,
+      "recall": 0.5217,
+      "f1": 0.3871,
+      "gold_events": [
+        {
+          "chemical": "Hydrochloric acid",
+          "event_type": "AO",
+          "description": "Tissue corrosion"
+        },
+        {
+          "chemical": "Strong inorganic acid mists",
+          "event_type": "AO",
+          "description": "Skin and eye damage"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "MIE",
+          "description": "Absorption and deposition in airways"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Altered molecular diffusion"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Chronic inflammation and free radicals"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Chronic tissue irritation"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Genetic damage"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Genotoxicity from low pH"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Impaired pH homeostasis"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Localized reduction of pH"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Membrane crystalline polymorphism"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Protein denaturation and necrosis"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Respiratory physiological changes"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Systemic entry of ions"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Tumorigenesis"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Death"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Laryngeal cancer"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Lung cancer"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Nasal sinus cancer"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Nasopharyngeal and gastric cardia cancers"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Respiratory tract cancer"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Severe skin and eye damage"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Skin symptoms"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "Sulfuric acid",
+          "event_type": "KE",
+          "description": "Corrosion"
+        },
+        {
+          "chemical": "Sulfuric acid",
+          "event_type": "KE",
+          "description": "Skin corrosion / burns"
+        },
+        {
+          "chemical": "Sulfuric acid",
+          "event_type": "AO",
+          "description": "Carcinogenicity"
+        },
+        {
+          "chemical": "Sulfuric acid",
+          "event_type": "AO",
+          "description": "Respiratory tract cancer"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Chromosomal aberrations"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Chronic inflammation"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Chronic tissue irritation"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Coagulation and necrosis"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Corrosiveness"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Cytoplasmic pH disturbance"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Delayed mucociliary clearance"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Denaturation of proteins"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Dermatitis (skin corrosion)"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Dermatitis (skin irritation)"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Dermatitis (skin redness)"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Dermatitis (skin ulceration)"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Dermatitis (skin vesicles)"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Excessive exposure leading to death"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Extracellular pH decrease"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Free radical release"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Genotoxicity (DNA damage)"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Genotoxicity (genomic instability)"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Impaired gas exchange"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Impaired macrophage function"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Increased airway resistance"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Increased mucus viscosity"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Low intracellular pH"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Necrosis"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Protein crystallinity changes"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Rapid coagulation"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "KE",
+          "description": "Severe burns"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "AO",
+          "description": "Carcinogenicity"
+        },
+        {
+          "chemical": "Sulfuric acid mist",
+          "event_type": "AO",
+          "description": "Carcinogenicity (nasopharyngeal and gastric cardia cancers)"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "MIE",
+          "description": "Low pH"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Genetic damage"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Genetic instability"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "KE",
+          "description": "Genotoxic effects of low pH"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Carcinogenicity"
+        },
+        {
+          "chemical": "Sulfuric acid mists",
+          "event_type": "AO",
+          "description": "Increased risk of respiratory cancer"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_3030_events",
+      "n_chunks": 50,
+      "n_gold_events": 37,
+      "n_pred_events": 234,
+      "similar_to_gold": 17,
+      "not_in_gold_fp": 217,
+      "gold_not_found_fn": 20,
+      "exact_hits": 3,
+      "fuzzy_hits": 14,
+      "precision": 0.0726,
+      "recall": 0.4595,
+      "f1": 0.1255,
+      "gold_events": [
+        {
+          "chemical": "5-chloro-8-hydroxyquinoline",
+          "event_type": "MIE",
+          "description": "Formation of CQ-Cu complex"
+        },
+        {
+          "chemical": "5-chloro-8-hydroxyquinoline",
+          "event_type": "KE",
+          "description": "Degradation of XIAP"
+        },
+        {
+          "chemical": "5-chloro-8-hydroxyquinoline",
+          "event_type": "KE",
+          "description": "Proteasome inhibition"
+        },
+        {
+          "chemical": "5-chloro-8-hydroxyquinoline",
+          "event_type": "AO",
+          "description": "Cancer cell apoptosis"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "MIE",
+          "description": "Binding to lipoylated TCA cycle enzymes"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "MIE",
+          "description": "Inhibition of VHL-mediated ubiquitination"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Aggregation of lipoylated proteins"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Destabilization of iron-sulfur (Fe-S) cluster proteins"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Induction of oxidative stress"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Proteotoxic stress"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "Diallyl trisulfides",
+          "event_type": "MIE",
+          "description": "Facilitation of RAB18 phase separation"
+        },
+        {
+          "chemical": "Diallyl trisulfides",
+          "event_type": "AO",
+          "description": "Induction of hepatic stellate cell death"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "MIE",
+          "description": "Formation of CuET metabolite"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Activation of stress-related signaling pathways"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Targeting NPL4 subunit of p97 segregase"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Apoptosis"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Ferroptosis"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "MIE",
+          "description": "Shuttling extracellular copper into cells"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Degradation of ATP7A"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Elevation of ROS levels"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Reduction of mitochondrial spare respiratory capacity"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Immunogenic cell death (ICD)"
+        },
+        {
+          "chemical": "Glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)",
+          "event_type": "MIE",
+          "description": "Release of copper ions in reductive environment"
+        },
+        {
+          "chemical": "Glyoxal-bis(N4-methylthiosemicarbazone) (GTSM)",
+          "event_type": "AO",
+          "description": "Selective killing of cancer cells"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "MIE",
+          "description": "Generation of ROS and DNA damage"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "KE",
+          "description": "CTR1 upregulation"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "KE",
+          "description": "Elevation of mitochondrial copper levels"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "KE",
+          "description": "Mitochondrial GSH depletion"
+        },
+        {
+          "chemical": "Radiotherapy",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "S767",
+          "event_type": "MIE",
+          "description": "Copper-specific ionophore activity"
+        },
+        {
+          "chemical": "S767",
+          "event_type": "KE",
+          "description": "Impairment of mitochondrial respiration"
+        },
+        {
+          "chemical": "S767",
+          "event_type": "KE",
+          "description": "Induction of DLAT aggregation"
+        },
+        {
+          "chemical": "S767",
+          "event_type": "AO",
+          "description": "Selective toxicity to AML subtypes"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "5-FU",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "AGK2",
+          "event_type": "MIE",
+          "description": "S"
+        },
+        {
+          "chemical": "AGK2",
+          "event_type": "MIE",
+          "description": "SIRT2 inhibition"
+        },
+        {
+          "chemical": "AGK2",
+          "event_type": "KE",
+          "description": "SIRT2 inhibition increases METTL16 lactylation and FDX1-driven cuproptosis"
+        },
+        {
+          "chemical": "AGK2",
+          "event_type": "KE",
+          "description": "Synergistic induction of cuproptosis with elesclomol"
+        },
+        {
+          "chemical": "AGK2",
+          "event_type": "KE",
+          "description": "Synergistic suppression of tumor growth with elesclomol"
+        },
+        {
+          "chemical": "APG-115",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "ATOX1",
+          "event_type": "KE",
+          "description": "Copper-dependent activation of MDC1 and LOX proenzyme"
+        },
+        {
+          "chemical": "ATOX1",
+          "event_type": "KE",
+          "description": "Nuclear copper transport"
+        },
+        {
+          "chemical": "ATOX1",
+          "event_type": "KE",
+          "description": "Upregulation enhances genotoxic drug resistance and promotes cancer cell migration"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Copper export via ATP hydrolysis"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Inhibition of ATP7A trafficking by MTs"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Localization to plasma membrane during copper overload"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Modulation by copper levels"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Modulation by KEAP1 inactivation"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Modulation by KRAS signaling"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Modulation by metallothioneins"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Modulation by NRF2"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Modulation by oxidative stress"
+        },
+        {
+          "chemical": "ATP7A",
+          "event_type": "KE",
+          "description": "Modulation by TFEB signaling"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Copper efflux restoration"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Copper export via ATP hydrolysis"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Copper exporter induction"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Copper exporter transcriptional induction"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Copper exporter upregulation in CSCs"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "DLAT oligomerization suppression"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Intracellular copper elevation"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Localization to plasma membrane during copper overload"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Modulation"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Modulation by copper levels"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Modulation by KEAP1 inactivation"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Modulation by metallothioneins"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Modulation by NRF2"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Modulation by oxidative stress"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Modulation by TFEB signaling"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Reduced labile copper pools"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "TCF4-deficient cell rescue"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Wnt/β-catenin axis reinforcement"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Wnt/β-catenin axis transcriptional induction"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Wnt/β-catenin axis transcriptional upregulation in CSCs"
+        },
+        {
+          "chemical": "ATP7B",
+          "event_type": "KE",
+          "description": "Wnt/β-catenin axis upreg"
+        },
+        {
+          "chemical": "ATSM",
+          "event_type": "MIE",
+          "description": "Decreased reduction capacity of copper complex"
+        },
+        {
+          "chemical": "ATSM",
+          "event_type": "KE",
+          "description": "Limited copper release"
+        },
+        {
+          "chemical": "ATSM",
+          "event_type": "KE",
+          "description": "Weaker anticancer effects"
+        },
+        {
+          "chemical": "ATSM-Cu",
+          "event_type": "MIE",
+          "description": "Decreased reduction capacity of copper complex"
+        },
+        {
+          "chemical": "ATSM-Cu",
+          "event_type": "KE",
+          "description": "Weaker anticancer effects"
+        },
+        {
+          "chemical": "CCS",
+          "event_type": "KE",
+          "description": "Copper-dependent activation of MEK1 and MEK2"
+        },
+        {
+          "chemical": "CCS",
+          "event_type": "KE",
+          "description": "Insertion of copper into SOD1 active site"
+        },
+        {
+          "chemical": "CCS",
+          "event_type": "KE",
+          "description": "Misfolding of SOD1 associated with ALS"
+        },
+        {
+          "chemical": "CCS",
+          "event_type": "KE",
+          "description": "Nuclear copper transport"
+        },
+        {
+          "chemical": "CCS",
+          "event_type": "KE",
+          "description": "Promotes proper folding and subcellular localization of SOD1"
+        },
+        {
+          "chemical": "CCS",
+          "event_type": "KE",
+          "description": "Transfer of copper to MEK1 and MEK2"
+        },
+        {
+          "chemical": "Cisplatin",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Copper overload causes mitochondrial dysfunction"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Copper-induced aggregation of lipoylated TCA cycle enzymes"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Copper-induced destabilization of iron-sulfur cluster proteins"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Cytosolic copper chaperones capture Cu+"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "End"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Endocytic pathway for copper uptake"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Endocytosis of copper-prion protein complex"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Endocytosis of hyaluronic acid-Cu2+ complexes"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Endocytosis of metal ions via CD44"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Endocytosis of STEAP1-bound Cu2+"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Endocytosis of STEAP1-bound Cu2+ via CD44 (activated macrophages)"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Mitochondrial membrane crosslinking and destruction"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Proteotoxic stress"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "KE",
+          "description": "Proteotoxic stress triggered by copper-induced aggregation"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "AO",
+          "description": "Cancer immunotherapy"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "AO",
+          "description": "Cancer immunotherapy potential"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "AO",
+          "description": "Cancer therapy"
+        },
+        {
+          "chemical": "Copper",
+          "event_type": "AO",
+          "description": "Impaired mitochondrial oxidative phosphorylation"
+        },
+        {
+          "chemical": "CQ",
+          "event_type": "MIE",
+          "description": "Targets proteasome"
+        },
+        {
+          "chemical": "CQ",
+          "event_type": "KE",
+          "description": "Selective XIAP depletion in prostate cancer cells"
+        },
+        {
+          "chemical": "CQ",
+          "event_type": "KE",
+          "description": "Targets proteasome"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Copper homeostasis"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Immune cell modulation"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Immune checkpoint regulation"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Therapeutic strategies"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Tumor immunity influence"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Tumor microenvironment influence"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Tumor processes regulation"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Upregulation of"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Upregulation of PD-L1"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "MIE",
+          "description": "Upregulation of PD-L1/CTLA4"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "KE",
+          "description": "Upregulation"
+        },
+        {
+          "chemical": "CTA4",
+          "event_type": "KE",
+          "description": "Upregulation of PD-L1"
+        },
+        {
+          "chemical": "Cu-BiSex",
+          "event_type": "KE",
+          "description": "Cuproptosis promotion"
+        },
+        {
+          "chemical": "Cu-BiSex",
+          "event_type": "KE",
+          "description": "Intracellular copper increase"
+        },
+        {
+          "chemical": "Cu-BiSex",
+          "event_type": "KE",
+          "description": "Peroxidase-like activity"
+        },
+        {
+          "chemical": "Cu-BiSex",
+          "event_type": "KE",
+          "description": "Synergistic ROS generation"
+        },
+        {
+          "chemical": "Cu-BiSex",
+          "event_type": "KE",
+          "description": "Therapeutic efficacy"
+        },
+        {
+          "chemical": "Cu-CQ",
+          "event_type": "KE",
+          "description": "Selective XIAP depletion in prostate cancer cells"
+        },
+        {
+          "chemical": "Cu-CQ",
+          "event_type": "KE",
+          "description": "Targets proteasome"
+        },
+        {
+          "chemical": "Cu-GTSM",
+          "event_type": "MIE",
+          "description": "Copper release in reductive tumor microenvironment"
+        },
+        {
+          "chemical": "Cu-GTSM",
+          "event_type": "KE",
+          "description": "Cytotoxicity against PC3 cells"
+        },
+        {
+          "chemical": "Cu-GTSM",
+          "event_type": "KE",
+          "description": "Reduces LD50 with copper supplementation"
+        },
+        {
+          "chemical": "Cu2(PO4)(OH)",
+          "event_type": "KE",
+          "description": "Cuproptosis promotion"
+        },
+        {
+          "chemical": "Cu2(PO4)(OH)",
+          "event_type": "KE",
+          "description": "Degradation into ultrasmall Cu9S8"
+        },
+        {
+          "chemical": "Cu2(PO4)(OH)",
+          "event_type": "KE",
+          "description": "Intracellular copper increase"
+        },
+        {
+          "chemical": "Cu2(PO4)(OH)",
+          "event_type": "KE",
+          "description": "Tumor microenvironment-responsive"
+        },
+        {
+          "chemical": "Cu2(PO4)(OH)",
+          "event_type": "KE",
+          "description": "Ultrasmall Cu9S8 release"
+        },
+        {
+          "chemical": "Cu2+",
+          "event_type": "MIE",
+          "description": "Disruption of mitochondrial function"
+        },
+        {
+          "chemical": "Cu2+",
+          "event_type": "MIE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "Cu2+",
+          "event_type": "MIE",
+          "description": "Release of DAMPs"
+        },
+        {
+          "chemical": "Cu2+",
+          "event_type": "KE",
+          "description": "Disruption of mitochondrial function"
+        },
+        {
+          "chemical": "Cu2+",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "Cu2+",
+          "event_type": "KE",
+          "description": "Release of DAMPs"
+        },
+        {
+          "chemical": "Cu2O",
+          "event_type": "KE",
+          "description": "Cuproptosis promotion"
+        },
+        {
+          "chemical": "Cu2O",
+          "event_type": "KE",
+          "description": "Elevated CTR1 expression"
+        },
+        {
+          "chemical": "Cu2O",
+          "event_type": "KE",
+          "description": "Intracellular copper increase"
+        },
+        {
+          "chemical": "Cu2O",
+          "event_type": "KE",
+          "description": "ROS-mediated ATPase inhibition"
+        },
+        {
+          "chemical": "Cu9S8",
+          "event_type": "KE",
+          "description": "Cuproptosis promotion"
+        },
+        {
+          "chemical": "Cu9S8",
+          "event_type": "KE",
+          "description": "Intracellular copper increase"
+        },
+        {
+          "chemical": "Cu9S8",
+          "event_type": "KE",
+          "description": "Ultrasmall size"
+        },
+        {
+          "chemical": "CuCl2",
+          "event_type": "MIE",
+          "description": "Aggregation of lipoylated TCA cycle proteins via disulfide bonds"
+        },
+        {
+          "chemical": "CuCl2",
+          "event_type": "MIE",
+          "description": "Destabilization of Fe-S cluster proteins"
+        },
+        {
+          "chemical": "CuCl2",
+          "event_type": "MIE",
+          "description": "Reduction of Cu2+ to Cu+"
+        },
+        {
+          "chemical": "CuCl2",
+          "event_type": "KE",
+          "description": "Aggregation of lipoylated proteins"
+        },
+        {
+          "chemical": "CuCl2",
+          "event_type": "KE",
+          "description": "Destabilization of Fe-S cluster proteins"
+        },
+        {
+          "chemical": "CuCl2",
+          "event_type": "KE",
+          "description": "Increased sensitivity to cuproptosis"
+        },
+        {
+          "chemical": "CuET-TPP",
+          "event_type": "MIE",
+          "description": "Disruption of TCA cycle / ATP synthesis / electron transport"
+        },
+        {
+          "chemical": "CuET-TPP",
+          "event_type": "MIE",
+          "description": "Mitochondrial targeting"
+        },
+        {
+          "chemical": "CuET-TPP",
+          "event_type": "MIE",
+          "description": "Upregulation of MHC-I-mediated antigen presentation"
+        },
+        {
+          "chemical": "CuET-TPP",
+          "event_type": "KE",
+          "description": "Amplified DAMP release"
+        },
+        {
+          "chemical": "CuET-TPP",
+          "event_type": "KE",
+          "description": "M1 macrophage polarization"
+        },
+        {
+          "chemical": "CuET-TPP",
+          "event_type": "KE",
+          "description": "Upregulation of MHC-I-mediated antigen presentation"
+        },
+        {
+          "chemical": "CuH",
+          "event_type": "KE",
+          "description": "Cuproptosis promotion"
+        },
+        {
+          "chemical": "CuH",
+          "event_type": "KE",
+          "description": "Improved purity and solubility"
+        },
+        {
+          "chemical": "CuH",
+          "event_type": "KE",
+          "description": "Intracellular copper increase"
+        },
+        {
+          "chemical": "CuNG",
+          "event_type": "KE",
+          "description": "MDSC apoptosis"
+        },
+        {
+          "chemical": "CuNG",
+          "event_type": "KE",
+          "description": "Th1 shift in CD4+ T cells"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Cuproptosis promotion"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Intracellular copper increase"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Lysosomal acidity-mediated copper release"
+        },
+        {
+          "chemical": "CuO",
+          "event_type": "KE",
+          "description": "Stimulates T cell proliferation and Th1/Th2 cytokine secretion"
+        },
+        {
+          "chemical": "CuO NPs",
+          "event_type": "KE",
+          "description": "T cell activation"
+        },
+        {
+          "chemical": "CuO NPs",
+          "event_type": "KE",
+          "description": "T cell activation (moderate copper)"
+        },
+        {
+          "chemical": "Cuproptosis",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "Cuproptosis",
+          "event_type": "KE",
+          "description": "Mitochondrial TCA cycle enzyme aggregation"
+        },
+        {
+          "chemical": "Cuproptosis",
+          "event_type": "KE",
+          "description": "Mitochondrial TCA cycle enzyme binding by copper ions"
+        },
+        {
+          "chemical": "Cuproptosis",
+          "event_type": "KE",
+          "description": "Mitochondrial TCA cycle enzyme lipoylation"
+        },
+        {
+          "chemical": "CuS",
+          "event_type": "KE",
+          "description": "Cuproptosis promotion"
+        },
+        {
+          "chemical": "CuS",
+          "event_type": "KE",
+          "description": "Intracellular copper increase"
+        },
+        {
+          "chemical": "CuS",
+          "event_type": "KE",
+          "description": "Photothermal conversion"
+        },
+        {
+          "chemical": "CuSO4",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "CuTCPP@MOF nanodots@Mannosamine",
+          "event_type": "KE",
+          "description": "Induces cuproptosis and ferroptosis in macrophages via oxidative stress"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Activation of JNK"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Alleviation of tumor hypoxia"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "KE",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "KE",
+          "description": "Disrupted ubiquitin-proteasome system"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "KE",
+          "description": "Elevated ROS"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Ferroptosis"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "KE",
+          "description": "HMGB1 release"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Impairment of mitochondria functions"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Inhibition of NF-κB"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Inhibition of Nrf2"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "KE",
+          "description": "JNK/p38 and NF-κB activation"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Reversal of compensatory NRF2 increase"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "KE",
+          "description": "Stress-related signaling pathways"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "KE",
+          "description": "Targeting cancer stem-like cells"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "KE",
+          "description": "Targeting NPL4 subunit of p97 segregase"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Antitumor immune response"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Cytotoxicity"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "AO",
+          "description": "Improved median overall survival (OS)"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "AO",
+          "description": "No restored cisplatin sensitivity"
+        },
+        {
+          "chemical": "disulfiram",
+          "event_type": "AO",
+          "description": "No significant 6-month OS benefit"
+        },
+        {
+          "chemical": "Disulfiram",
+          "event_type": "AO",
+          "description": "Reversal of resistance"
+        },
+        {
+          "chemical": "Disulfiram-Cu",
+          "event_type": "KE",
+          "description": "Upregulation of PD-L1 via HIF-1 signaling"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "MIE",
+          "description": "Aggregation of lipoylated TCA cycle proteins via disulfide bonds"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "MIE",
+          "description": "Destabilization of Fe-S cluster proteins"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "MIE",
+          "description": "increased mitochondrial copper"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "MIE",
+          "description": "Reduction of Cu2+ to Cu+"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Aggregation of lipoylated proteins"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Copper-dependent degradation of ATP7A"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Destabilization of Fe-S cluster proteins"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Elevated ROS"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Increased sensitivity to cuproptosis"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Multi-pathway regulation"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Potential delivery of copper to non-mitochondrial cuproproteins"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Reduced proliferation marker Ki-67"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "Reduced spare respiratory capacity"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "KE",
+          "description": "Reduced TCA cycle proteins"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "restored mitochondrial copper accumulation"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "KE",
+          "description": "triggered cuproptosis"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "AO",
+          "description": "Failed to meet primary PFS endpoint"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "AO",
+          "description": "Improved median PFS"
+        },
+        {
+          "chemical": "elesclomol",
+          "event_type": "AO",
+          "description": "No significant OS benefit"
+        },
+        {
+          "chemical": "Elesclomol",
+          "event_type": "AO",
+          "description": "Tumor growth inhibition"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "KE",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "KE",
+          "description": "Enhanced AKT1-PDK1 interaction"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "KE",
+          "description": "Enhances DC activation via cGAS-STING pathway"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "KE",
+          "description": "Hepatotoxicity avoidance"
+        },
+        {
+          "chemical": "elesclomol-Cu",
+          "event_type": "KE",
+          "description": "Hypoxia-cuproptosis axis targeting"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "KE",
+          "description": "Phosphorylation of AKT1"
+        },
+        {
+          "chemical": "elesclomol-Cu",
+          "event_type": "KE",
+          "description": "Synergy with GLUT1 inhibition"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "AO",
+          "description": "Cuproptosis"
+        },
+        {
+          "chemical": "Elesclomol-Cu",
+          "event_type": "AO",
+          "description": "Tumor suppression"
+        },
+        {
+          "chemical": "enzalutamide",
+          "event_type": "MIE",
+          "description": "Fe-S cluster destabilization"
+        },
+        {
+          "chemical": "enzalutamide",
+          "event_type": "KE",
+          "description": "lipoylated protein aggregation"
+        },
+        {
+          "chemical": "enzalutamide",
+          "event_type": "KE",
+          "description": "mitochondrial dependency enhancement"
+        },
+        {
+          "chemical": "enzalutamide",
+          "event_type": "KE",
+          "description": "sensitization to copper ionophores"
+        },
+        {
+          "chemical": "enzalutamide",
+          "event_type": "KE",
+          "description": "sensitization to cuproptosis"
+        },
+        {
+          "chemical": "GTSM",
+          "event_type": "MIE",
+          "description": "Copper release in reductive tumor microenvironment"
+        },
+        {
+          "chemical": "GTSM",
+          "event_type": "KE",
+          "description": "Cytotoxicity against PC3 cells"
+        },
+        {
+          "chemical": "GTSM",
+          "event_type": "KE",
+          "description": "Reduces LD50 with copper supplementation"
+        },
+        {
+          "chemical": "JYFY-001",
+          "event_type": "KE",
+          "description": "Enhanced PD-1 blockade efficacy"
+        },
+        {
+          "chemical": "NSC319726",
+          "event_type": "MIE",
+          "description": "Aggregation of lipoylated TCA cycle proteins via disulfide bonds"
+        },
+        {
+          "chemical": "NSC319726",
+          "event_type": "MIE",
+          "description": "Destabilization of Fe-S cluster proteins"
+        },
+        {
+          "chemical": "NSC319726",
+          "event_type": "MIE",
+          "description": "Reduction of Cu2+ to Cu+"
+        },
+        {
+          "chemical": "NSC319726",
+          "event_type": "KE",
+          "description": "Aggregation of lipoylated proteins"
+        },
+        {
+          "chemical": "NSC319726",
+          "event_type": "KE",
+          "description": "Destabilization of Fe-S cluster proteins"
+        },
+        {
+          "chemical": "NSC319726",
+          "event_type": "KE",
+          "description": "Increased sensitivity to cuproptosis"
+        },
+        {
+          "chemical": "Nutlin-3",
+          "event_type": "KE",
+          "description": "Mitochondrial dysfunction"
+        },
+        {
+          "chemical": "radiotherapy",
+          "event_type": "MIE",
+          "description": "generated reactive oxygen species (ROS)"
+        },
+        {
+          "chemical": "radiotherapy",
+          "event_type": "KE",
+          "description": "induced cuproptosis"
+        },
+        {
+          "chemical": "UM4118",
+          "event_type": "KE",
+          "description": "DLAT aggregation"
+        },
+        {
+          "chemical": "UM4118",
+          "event_type": "KE",
+          "description": "Impaired mitochondrial respiration"
+        },
+        {
+          "chemical": "UM4118",
+          "event_type": "KE",
+          "description": "Reduced maximal oxygen consumption"
+        },
+        {
+          "chemical": "ZnCl2",
+          "event_type": "AO",
+          "description": "Rescue of systemic zinc deficiency and lethality"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Cu2+ transport activity distinct from other ZnTs"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Cu2+ transport independent of CTR1"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Dual roles in Cu2+ import and Zn2+ export"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Extracellular Zn2+ inhibits Cu2+ transport"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Homodimeric architecture stabilized by inter-subunit disulfide bond"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Loss of Lgr5+ stem cells in intestinal epithelial-specific KO mice"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Reduced proliferation of transit-amplifying cells in intestinal epithelial-specific KO mice"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Rescue of systemic zinc deficiency and lethality with ZnCl2 supplementation"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Role in Cu2+ uptake for epithelial maintenance"
+        },
+        {
+          "chemical": "ZnT1",
+          "event_type": "KE",
+          "description": "Systemic copper deficiency in enterocytes of intestinal epithelial-specific KO mice"
+        }
+      ]
+    },
+    {
+      "paper_id": "paper_4000_events",
+      "n_chunks": 16,
+      "n_gold_events": 18,
+      "n_pred_events": 23,
+      "similar_to_gold": 3,
+      "not_in_gold_fp": 20,
+      "gold_not_found_fn": 15,
+      "exact_hits": 1,
+      "fuzzy_hits": 2,
+      "precision": 0.1304,
+      "recall": 0.1667,
+      "f1": 0.1463,
+      "gold_events": [
+        {
+          "chemical": "1,2-Naphthoquinone",
+          "event_type": "MIE",
+          "description": "Covalent modification of PTP1B"
+        },
+        {
+          "chemical": "1,2-Naphthoquinone",
+          "event_type": "KE",
+          "description": "Inactivation of PTP1B"
+        },
+        {
+          "chemical": "1,2-Naphthoquinone",
+          "event_type": "AO",
+          "description": "Trachea contraction"
+        },
+        {
+          "chemical": "9,10-Phenanthrenequinone",
+          "event_type": "MIE",
+          "description": "Oxidation of thiols"
+        },
+        {
+          "chemical": "9,10-Phenanthrenequinone",
+          "event_type": "MIE",
+          "description": "Reduction of oxygen"
+        },
+        {
+          "chemical": "9,10-Phenanthrenequinone",
+          "event_type": "AO",
+          "description": "Toxicity"
+        },
+        {
+          "chemical": "Acrolein",
+          "event_type": "MIE",
+          "description": "Covalent bond formation with nucleophiles"
+        },
+        {
+          "chemical": "Acrolein",
+          "event_type": "KE",
+          "description": "Activation of nociceptive systems"
+        },
+        {
+          "chemical": "Particulate Matter",
+          "event_type": "KE",
+          "description": "HO-1 expression"
+        },
+        {
+          "chemical": "Particulate Matter (PM)",
+          "event_type": "MIE",
+          "description": "Hydrogen peroxide generation"
+        },
+        {
+          "chemical": "Particulate Matter (PM)",
+          "event_type": "KE",
+          "description": "Mitochondrial damage"
+        },
+        {
+          "chemical": "PM",
+          "event_type": "KE",
+          "description": "HO-1 expression"
+        },
+        {
+          "chemical": "PM",
+          "event_type": "KE",
+          "description": "Mitochondrial damage"
+        },
+        {
+          "chemical": "PM",
+          "event_type": "AO",
+          "description": "Cell death"
+        },
+        {
+          "chemical": "PM",
+          "event_type": "AO",
+          "description": "Inflammation"
+        },
+        {
+          "chemical": "VOCs",
+          "event_type": "MIE",
+          "description": "Covalent bond formation"
+        },
+        {
+          "chemical": "VOCs",
+          "event_type": "AO",
+          "description": "Anti-inflammatory actions"
+        },
+        {
+          "chemical": "Volatile Organic Compounds",
+          "event_type": "KE",
+          "description": "Nrf2 activation"
+        }
+      ],
+      "pred_events": [
+        {
+          "chemical": "1,2-naphthoquinone",
+          "event_type": "KE",
+          "description": "Inactivation of PTP1B"
+        },
+        {
+          "chemical": "1,4-benzoquinone",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "1,4-benzoquinone",
+          "event_type": "KE",
+          "description": "Pro-oxidant activity"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Protein modification via Michael addition"
+        },
+        {
+          "chemical": "1,4-benzoquinone",
+          "event_type": "KE",
+          "description": "Reactive electrophile"
+        },
+        {
+          "chemical": "1,4-Benzoquinone",
+          "event_type": "KE",
+          "description": "Redox cycling"
+        },
+        {
+          "chemical": "1,4-BQ",
+          "event_type": "KE",
+          "description": "Inactivation of GAPDH"
+        },
+        {
+          "chemical": "9,10-phenanthrenequinone",
+          "event_type": "KE",
+          "description": "Oxidative stress"
+        },
+        {
+          "chemical": "9,10-phenanthrenequinone",
+          "event_type": "KE",
+          "description": "Pro-oxidant activity"
+        },
+        {
+          "chemical": "9,10-phenanthrenequinone",
+          "event_type": "KE",
+          "description": "Reactive electrophile"
+        },
+        {
+          "chemical": "9,10-Phenanthrenequinone",
+          "event_type": "KE",
+          "description": "Redox cycling"
+        },
+        {
+          "chemical": "9,10-PQ",
+          "event_type": "KE",
+          "description": "Inactivation of GAPDH"
+        },
+        {
+          "chemical": "ACR",
+          "event_type": "MIE",
+          "description": "Activation of TRPA1"
+        },
+        {
+          "chemical": "ACR",
+          "event_type": "KE",
+          "description": "Upregulation of TRPA1"
+        },
+        {
+          "chemical": "Acrolein",
+          "event_type": "KE",
+          "description": "Covalent modification of TRPA1 receptor"
+        },
+        {
+          "chemical": "Acrolein",
+          "event_type": "KE",
+          "description": "Cumulative activation of nociceptive neuronal systems"
+        },
+        {
+          "chemical": "Acrolein",
+          "event_type": "KE",
+          "description": "Protein modification via Michael addition"
+        },
+        {
+          "chemical": "Acrolein",
+          "event_type": "KE",
+          "description": "Steady increase in covalent modification of targets"
+        },
+        {
+          "chemical": "Acrolein",
+          "event_type": "KE",
+          "description": "Turnover-limited cumulative effect"
+        },
+        {
+          "chemical": "Diesel exhaust particles (DEPs)",
+          "event_type": "MIE",
+          "description": "Fenton reaction capacity"
+        },
+        {
+          "chemical": "Diesel exhaust particles (DEPs)",
+          "event_type": "KE",
+          "description": "Prooxidant activity"
+        },
+        {
+          "chemical": "Diesel exhaust particles (DEPs)",
+          "event_type": "AO",
+          "description": "Induction of HO-1 expression"
+        },
+        {
+          "chemical": "Ultrafine PM",
+          "event_type": "KE",
+          "description": "Mitochondrial damage"
+        }
+      ]
+    }
+  ]
+}
