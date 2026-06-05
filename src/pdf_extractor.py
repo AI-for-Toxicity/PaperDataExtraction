@@ -901,9 +901,8 @@ class PDFExtractor:
 
       # docling on both
       big_md, small_md = None, None
-      if not only_tables and not only_figures:
-        big_md = self.run_docling_on_pdf(str(big_pdf_path)).strip()
-        small_md = self.run_docling_on_pdf(str(small_pdf_path)).strip()
+      big_md = self.run_docling_on_pdf(str(big_pdf_path)).strip()
+      small_md = self.run_docling_on_pdf(str(small_pdf_path)).strip()
 
       # tables from original PDF
       table_texts = None
