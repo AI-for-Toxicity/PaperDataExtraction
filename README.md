@@ -1,4 +1,4 @@
-# AOPEventsExtractor
+# AOP Events Extractor
 
 Thesis project for extracting mechanistic toxicology events — **MIE** (Molecular Initiating Events), **KE** (Key Events), **AO** (Adverse Outcomes) — from scientific papers, in the context of **Adverse Outcome Pathways (AOPs)**.
 
