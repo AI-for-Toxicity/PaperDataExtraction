@@ -72,12 +72,18 @@ def pipeline(input_dir, output_base_dir, skip_existing):
   ) as extractor:
     extractor.extract_events(folder=extracted_events_folder)
   
-  # Score events
+  # Score events predicted by the model
   print("\nLoading Event Scorer module...")
   from event_scorer import EventScorer
-  
-  with EventScorer(json_files_dir=DIVIDED_MD_DIR, labels_dir=LABELS_DIR, output_dir=SCORED_EVENTS_DIR) as scorer:
-    scorer.run_scoring()
+  scored_events_folder = "scored_events"
+  with EventScorer(
+    json_files_dir=preprocessing_output_dir / divided_md_folder,
+    output_dir=results_output_dir / scored_events_folder,
+  ) as scorer:
+    scorer.run_scoring_from_extracted(
+      extracted_dir=results_output_dir / extracted_events_folder,
+      divided_md_dir=preprocessing_output_dir / divided_md_folder,
+    )
 
   exit(0)
   
