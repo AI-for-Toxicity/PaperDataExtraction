@@ -20,61 +20,6 @@ Always run Python from the **project root**, not from `src/`.
 
 ---
 
-## Configuration — `config.ini`
-
-All runtime parameters are read from `config.ini` in the project root. There is no need to pass paths or model names on the command line for the main scripts.
-
-### `[MODEL]` — Model & chunking
-
-| Key | Description |
-|-----|-------------|
-| `model` | HuggingFace model ID used for inference and tokenizer init |
-| `model_weights` | Local path to trained LoRA adapter weights (output of `train.py`) |
-| `model_context_tokens` | Model's context window size limit |
-| `min_chunk_tokens` | Minimum tokens per markdown chunk |
-| `target_chunk_tokens` | Target tokens per chunk |
-| `max_chunk_tokens` | Hard maximum tokens per chunk |
-| `reserved_output_tokens` | Tokens reserved for model output |
-| `safety_margin_tokens` | Extra margin subtracted from usable context |
-
-### `[DATASET]` — Dataset generation (`dev.py` only)
-
-| Key | Description |
-|-----|-------------|
-| `test_ratio` | Fraction of data held out as test set |
-| `empty_ratio` | Fraction of empty (negative) chunks to keep |
-| `k_folds` | Number of cross-validation folds |
-| `seed` | Random seed |
-
-### `[DIRECTORIES]` — Data paths
-
-Used by `main.py`:
-
-| Key | Default | Description |
-|-----|---------|-------------|
-| `input_pdf_dir` | `data/raw` | Input PDF files |
-| `raw_markdown_dir` | `data/processed/raw_markdown` | Raw extracted markdown |
-| `clean_markdown_dir` | `data/processed/clean_markdown` | Cleaned markdown |
-| `divided_markdown_dir` | `data/processed/divided_markdown` | Chunked JSON files |
-| `extracted_events_dir` | `data/results/extracted_events` | Model extraction output |
-| `scored_events_dir` | `data/results/scored_events` | Scored/annotated events |
-
-Used by `dev.py`:
-
-| Key | Default | Description |
-|-----|---------|-------------|
-| `raw_labels_dir` | `data/labels/raw` | Human-annotated label files |
-| `scored_labels_dir` | `data/labels/scored` | Scored label files |
-| `dataset_dir` | `data/dataset` | Output directory for generated dataset |
-| `train_file_path` | `data/dataset/train.jsonl` | Training JSONL (for token check) |
-| `test_file_path` | `data/dataset/test.jsonl` | Test JSONL (for token check) |
-| `split_info_path` | `data/eval/split_info.json` | Fold split metadata |
-| `eval_preds_path` | `data/eval/eval_preds.jsonl` | Model evaluation predictions |
-| `eval_analysis_path` | `data/eval/eval_analysis.txt` | Evaluation analysis output |
-| `full_eval_analysis_dir` | `data/eval/full_analysis` | Per-paper evaluation details |
-
----
-
 ## `src/main.py` — Extraction Pipeline
 
 Runs the full end-to-end pipeline for extracting AOP events from PDF papers.
@@ -243,3 +188,58 @@ python src/model/eval.py \
   --max_new_tokens 512 \
   --save_preds fold_0/eval_preds.jsonl
 ```
+
+## Configuration — `config.ini`
+
+All runtime parameters of `main.py` and `dev.py` are read from `config.ini` in the project root. There is no need to pass paths or model names on the command line for those scripts.
+
+### `[MODEL]` — Model & chunking
+
+| Key | Description |
+|-----|-------------|
+| `model` | HuggingFace model ID used for inference and tokenizer init |
+| `model_weights` | Local path to trained LoRA adapter weights (output of `train.py`) |
+| `model_context_tokens` | Model's context window size limit |
+| `min_chunk_tokens` | Minimum tokens per markdown chunk |
+| `target_chunk_tokens` | Target tokens per chunk |
+| `max_chunk_tokens` | Hard maximum tokens per chunk |
+| `reserved_output_tokens` | Tokens reserved for model output |
+| `safety_margin_tokens` | Extra margin subtracted from usable context |
+
+### `[DATASET]` — Dataset generation (`dev.py` only)
+
+| Key | Description |
+|-----|-------------|
+| `test_ratio` | Fraction of data held out as test set |
+| `empty_ratio` | Fraction of empty (negative) chunks to keep |
+| `k_folds` | Number of cross-validation folds |
+| `seed` | Random seed |
+
+### `[DIRECTORIES]` — Data paths
+
+Used by `main.py`:
+
+| Key | Default | Description |
+|-----|---------|-------------|
+| `input_pdf_dir` | `data/raw` | Input PDF files |
+| `raw_markdown_dir` | `data/processed/raw_markdown` | Raw extracted markdown |
+| `clean_markdown_dir` | `data/processed/clean_markdown` | Cleaned markdown |
+| `divided_markdown_dir` | `data/processed/divided_markdown` | Chunked JSON files |
+| `extracted_events_dir` | `data/results/extracted_events` | Model extraction output |
+| `scored_events_dir` | `data/results/scored_events` | Scored/annotated events |
+
+Used by `dev.py`:
+
+| Key | Default | Description |
+|-----|---------|-------------|
+| `raw_labels_dir` | `data/labels/raw` | Human-annotated label files |
+| `scored_labels_dir` | `data/labels/scored` | Scored label files |
+| `dataset_dir` | `data/dataset` | Output directory for generated dataset |
+| `train_file_path` | `data/dataset/train.jsonl` | Training JSONL (for token check) |
+| `test_file_path` | `data/dataset/test.jsonl` | Test JSONL (for token check) |
+| `split_info_path` | `data/eval/split_info.json` | Fold split metadata |
+| `eval_preds_path` | `data/eval/eval_preds.jsonl` | Model evaluation predictions |
+| `eval_analysis_path` | `data/eval/eval_analysis.txt` | Evaluation analysis output |
+| `full_eval_analysis_dir` | `data/eval/full_analysis` | Per-paper evaluation details |
+
+---
