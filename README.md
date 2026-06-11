@@ -97,7 +97,7 @@ python src/dev.py --do-token-check
 
 ---
 
-## `src/model/train.py` — Fine-tuning
+## `src/model/train.py` — Model Fine-tuning
 
 QLoRA/LoRA fine-tuning of a causal LLM (example: Llama-3.1-8B-Instruct) on the generated dataset. Checkpoints are saved every epoch; the last 3 are kept.
 
@@ -148,7 +148,7 @@ python src/model/train.py \
   --lora_r 32
 ```
 
-## `src/model/eval.py` — Evaluation
+## `src/model/eval.py` — Model Evaluation
 
 Runs a trained model (base or with LoRA adapter) over an evaluation JSONL file and reports exact match, ordered line accuracy, and set-based micro P/R/F1 (for more accurate evaluation metrics, run `--eval-analysis` with the [Development Tools script](#srcdevpy--development-tools)).
 
