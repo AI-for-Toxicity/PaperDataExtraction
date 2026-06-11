@@ -125,12 +125,12 @@ if __name__ == "__main__":
   safety_margin_tokens = config.getint("MODEL", "safety_margin_tokens")
 
   directories = {
-    "input_pdf": Path(config.get("DIRECTORIES", "input_pdf_dir")),
-    "raw_markdown": Path(config.get("DIRECTORIES", "raw_markdown_dir")),
-    "clean_markdown": Path(config.get("DIRECTORIES", "clean_markdown_dir")),
-    "divided_markdown": Path(config.get("DIRECTORIES", "divided_markdown_dir")),
-    "extracted_events": Path(config.get("DIRECTORIES", "extracted_events_dir")),
-    "scored_events": Path(config.get("DIRECTORIES", "scored_events_dir")),
+    "input_pdf": Path(config.get("PATHS", "input_pdf_dir")),
+    "raw_markdown": Path(config.get("PATHS", "raw_markdown_dir")),
+    "clean_markdown": Path(config.get("PATHS", "clean_markdown_dir")),
+    "divided_markdown": Path(config.get("PATHS", "divided_markdown_dir")),
+    "extracted_events": Path(config.get("PATHS", "extracted_events_dir")),
+    "scored_events": Path(config.get("PATHS", "scored_events_dir")),
   }
 
   # Initialize tokenizer and calculate reserved prompt tokens

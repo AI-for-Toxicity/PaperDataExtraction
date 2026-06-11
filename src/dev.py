@@ -111,21 +111,21 @@ if __name__ == "__main__":
 
 
   paths = {
-    "input_pdf": Path(config.get("DIRECTORIES", "input_pdf_dir")),
-    "raw_markdown": Path(config.get("DIRECTORIES", "raw_markdown_dir")),
-    "clean_markdown": Path(config.get("DIRECTORIES", "clean_markdown_dir")),
-    "divided_markdown": Path(config.get("DIRECTORIES", "divided_markdown_dir")),
-    "extracted_events": Path(config.get("DIRECTORIES", "extracted_events_dir")),
-    "scored_events": Path(config.get("DIRECTORIES", "scored_events_dir")),
-    "raw_labels": Path(config.get("DIRECTORIES", "raw_labels_dir")),
-    "scored_labels": Path(config.get("DIRECTORIES", "scored_labels_dir")),
-    "dataset": Path(config.get("DIRECTORIES", "dataset_dir")),
-    "split_info": Path(config.get("DIRECTORIES", "split_info_path")),
-    "eval_preds": Path(config.get("DIRECTORIES", "eval_preds_path")),
-    "eval_analysis": Path(config.get("DIRECTORIES", "eval_analysis_path")),
-    "full_eval_analysis": Path(config.get("DIRECTORIES", "full_eval_analysis_dir")),
-    "train_file": Path(config.get("DIRECTORIES", "train_file_path")),
-    "test_file": Path(config.get("DIRECTORIES", "test_file_path"))
+    "input_pdf": Path(config.get("PATHS", "input_pdf_dir")),
+    "raw_markdown": Path(config.get("PATHS", "raw_markdown_dir")),
+    "clean_markdown": Path(config.get("PATHS", "clean_markdown_dir")),
+    "divided_markdown": Path(config.get("PATHS", "divided_markdown_dir")),
+    "extracted_events": Path(config.get("PATHS", "extracted_events_dir")),
+    "scored_events": Path(config.get("PATHS", "scored_events_dir")),
+    "raw_labels": Path(config.get("PATHS", "raw_labels_dir")),
+    "scored_labels": Path(config.get("PATHS", "scored_labels_dir")),
+    "dataset": Path(config.get("PATHS", "dataset_dir")),
+    "split_info": Path(config.get("PATHS", "split_info_path")),
+    "eval_preds": Path(config.get("PATHS", "eval_preds_path")),
+    "eval_analysis": Path(config.get("PATHS", "eval_analysis_path")),
+    "full_eval_analysis": Path(config.get("PATHS", "full_eval_analysis_dir")),
+    "train_file": Path(config.get("PATHS", "train_file_path")),
+    "test_file": Path(config.get("PATHS", "test_file_path"))
   }
 
   if not (args.do_scoring or args.do_dataset or args.do_eval_analysis or args.do_token_check):

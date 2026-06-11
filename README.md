@@ -215,7 +215,7 @@ All runtime parameters of `main.py` and `dev.py` are read from `config.ini` in t
 | `k_folds` | Number of cross-validation folds |
 | `seed` | Random seed |
 
-### `[DIRECTORIES]` — Data paths
+### `[PATHS]` — Data paths
 
 Used by `main.py`:
 
