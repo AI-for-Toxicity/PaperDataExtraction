@@ -1039,22 +1039,23 @@ class AppWindow(QMainWindow):
                 self._viewer_page._on_clear_clicked()
 
 class ResultsApp():
-    def __init__(self, md_folder: Path, events_folder: Path) -> None:
-        self.md_folder = md_folder
-        self.events_folder = events_folder
+    def __init__(self, md_files: List[Path], events_files: List[Path]) -> None:
+        self.md_files = md_files
+        self.events_files = events_files
 
     def __enter__(self):
         return self
-    
+
     def _find_matched_files(self) -> list[dict]:
         """
-        Match .md files in md_folder to *_events.json files in events_folder.
+        Pair each .md file with its corresponding *_events.json by stem.
         A markdown file `{stem}.md` matches `{stem}_events.json`.
         """
+        events_by_stem = {f.stem.removesuffix("_events"): f for f in self.events_files}
         matched = []
-        for md_file in sorted(self.md_folder.glob("*.md")):
-            events_file = self.events_folder / f"{md_file.stem}_events.json"
-            if events_file.exists():
+        for md_file in sorted(self.md_files):
+            events_file = events_by_stem.get(md_file.stem)
+            if events_file:
                 matched.append({
                     "filename": md_file.stem,
                     "markdown_path": str(md_file),
@@ -1074,14 +1075,3 @@ class ResultsApp():
 
     def __exit__(self, exc_type, exc, tb):
         pass
-
-
-def main():
-    md_folder = Path(r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\processed\cleaned_markdown")
-    events_folder = Path(r"C:\Users\Davide.Lugli\Code\tesi\PaperDataExtraction\test_data\labels\scored")
-    with ResultsApp(md_folder=md_folder, events_folder=events_folder) as app:
-        app.run()
-
-
-if __name__ == "__main__":
-    main()

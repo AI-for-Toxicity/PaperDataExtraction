@@ -3,16 +3,26 @@ import csv
 import json
 from pathlib import Path
 
-from model.common import contains_wordbound, compute_score
+from typing import Callable, List
+
+from model.common import contains_wordbound, compute_score, compute_score_short_only
+
+_ScoreFn = Callable[[str, dict], float]
 
 
 class EventScorer:
     """
     Class to process the divided JSON files, load events, annotate chunks, and save results.
     """
-    def __init__(self, json_files_dir: Path | str, output_dir: Path | str, labels_dir: Path | str | None = None):
-        self.json_files_dir = Path(json_files_dir)
-        self.labels_dir = Path(labels_dir) if labels_dir is not None else None
+    def __init__(
+        self,
+        divided_md_files: List[Path],
+        output_dir: Path | str,
+        label_files: List[Path] | None = None,
+    ):
+        self.divided_md_files = divided_md_files
+        self._divided_by_stem = {f.stem: f for f in divided_md_files}
+        self.label_files = label_files if label_files is not None else []
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -45,6 +55,7 @@ class EventScorer:
         events,
         key_text: str,
         *,
+        score_fn: _ScoreFn = compute_score,
         min_score: float = 68.0,
         require_chemical: bool = True,
         top_k: int | None = 2
@@ -85,7 +96,7 @@ class EventScorer:
                 text = block.get(key_text, "") or ""
                 clean_text = text
 
-                score = compute_score(text, ev)
+                score = score_fn(text, ev)
 
                 # chemical_found computed per-block
                 chemical_found = False
@@ -173,12 +184,17 @@ class EventScorer:
             print(f"[SKIP] {out_path} already exists")
             return
 
-        if self.labels_dir is None:
-            raise ValueError("labels_dir is required for run_scoring / process_file")
+        if self.label_files is None:
+            raise ValueError("label_files is required for run_scoring / process_file")
 
-        label_path = self.labels_dir / f"{base}.txt"
-
-        if not label_path.exists():
+        # labels file with matching base name
+        label_path = None
+        for lf in self.label_files:
+            if lf.stem.startswith(base):
+                label_path = lf
+                break
+        
+        if not label_path:
             print(f"[WARN] No label file for {base}")
             return
 
@@ -226,10 +242,7 @@ class EventScorer:
         print(f"[OK] Saved {out_path} | events={len(events)} matched={len(matched_chunks)} unmatched={len(unmatched_events_chunk)} ls={lowest_matched_score} hs={highest_matched_score}")
 
     def run_scoring(self):
-        """
-        Runs process_file on all files inside json_files_dir
-        """
-        for json_path in self.json_files_dir.glob("paper_*_divided.json"):
+        for json_path in self.divided_md_files:
             self.process_file(json_path)
 
     # -------------------------------------------------------------------------
@@ -263,7 +276,7 @@ class EventScorer:
         return events, event_id_to_chunk_id
 
     def process_extracted_file(
-        self, extracted_json_path: Path, divided_json_path: Path
+        self, extracted_json_path: Path, divided_json_path: Path, output_subdir: Path
     ):
         """
         Score events from one EventExtractor output file.
@@ -271,7 +284,7 @@ class EventScorer:
         kept in their original extraction chunk with score=0.
         """
         stem = extracted_json_path.stem.removesuffix("_extracted")
-        out_path = self.output_dir / f"{stem}_events.json"
+        out_path = output_subdir / f"{stem}_events.json"
         if out_path.exists():
             print(f"[SKIP] {out_path} already exists")
             return
@@ -291,10 +304,10 @@ class EventScorer:
         para_dicts  = [{"title": p.get("title", ""), "text": p.get("body", "")} for p in divided_data.get("paragraphs", [])]
         chunks_dicts = [dict(c) for c in divided_data.get("chunks", [])]
 
-        sentences_annotated, matched_sents   = self.annotate_blocks(sent_dicts,   events, "text", top_k=1)
-        lines_annotated,     matched_lines   = self.annotate_blocks(line_dicts,   events, "text", top_k=1)
-        paragraphs_annotated, matched_paras  = self.annotate_blocks(para_dicts,   events, "text", top_k=1)
-        chunks_annotated,    matched_chunks  = self.annotate_blocks(chunks_dicts, events, "text", top_k=None)
+        sentences_annotated, matched_sents   = self.annotate_blocks(sent_dicts,   events, "text", score_fn=compute_score_short_only, top_k=1)
+        lines_annotated,     matched_lines   = self.annotate_blocks(line_dicts,   events, "text", score_fn=compute_score_short_only, top_k=1)
+        paragraphs_annotated, matched_paras  = self.annotate_blocks(para_dicts,   events, "text", score_fn=compute_score_short_only, top_k=1)
+        chunks_annotated,    matched_chunks  = self.annotate_blocks(chunks_dicts, events, "text", score_fn=compute_score_short_only, top_k=None)
 
         all_matched = matched_sents | matched_lines | matched_paras | matched_chunks
         unmatched   = [ev for ev in events if ev["event_id"] not in all_matched]
@@ -325,23 +338,17 @@ class EventScorer:
             f"events={len(events)} matched={len(all_matched)} fallback={len(unmatched)}"
         )
 
-    def run_scoring_from_extracted(
-        self, extracted_dir: Path | str, divided_md_dir: Path | str
-    ):
-        """
-        Run process_extracted_file on all *_extracted.json files in extracted_dir,
-        pairing each with the corresponding divided markdown JSON.
-        """
-        extracted_dir  = Path(extracted_dir)
-        divided_md_dir = Path(divided_md_dir)
+    def run_scoring_from_extracted(self, extracted_files: List[Path], folder: str):
+        output_subdir = self.output_dir / folder
+        output_subdir.mkdir(parents=True, exist_ok=True)
 
-        for extracted_path in sorted(extracted_dir.glob("*_extracted.json")):
+        for extracted_path in extracted_files:
             divided_stem = extracted_path.stem.removesuffix("_extracted")
-            divided_path = divided_md_dir / f"{divided_stem}.json"
-            if not divided_path.exists():
+            divided_path = self._divided_by_stem.get(divided_stem)
+            if not divided_path:
                 print(f"[WARN] No divided JSON for {extracted_path.name}")
                 continue
-            self.process_extracted_file(extracted_path, divided_path)
+            self.process_extracted_file(extracted_path, divided_path, output_subdir)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass

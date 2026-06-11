@@ -111,3 +111,22 @@ def compute_score(text: str, event: dict) -> float:
     score += 60.0 * fl
 
     return min(99.0, score)
+
+
+def compute_score_short_only(text: str, event: dict) -> float:
+    """
+    Score variant for model-predicted events that carry only a short description.
+    Skips the long-description term entirely and weights the full 80 pts on
+    the short-description fuzzy match (same blend as compute_score uses for desc_s).
+    """
+    desc_s = event.get("event_description_short", "")
+    if not desc_s:
+        return 10.0
+    if contains_normalized_substring(text, desc_s):
+        return 100.0
+    t = norm(text)
+    p_s = norm(desc_s)
+    pr_s = fuzz.partial_ratio(t, p_s) / 100.0
+    ts_s = fuzz.token_set_ratio(t, p_s) / 100.0
+    fs = max(pr_s * 0.7 + ts_s * 0.3, ts_s * 0.6 + pr_s * 0.4)
+    return min(99.0, 10.0 + 80.0 * fs)
