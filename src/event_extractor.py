@@ -5,7 +5,7 @@ import torch
 from pathlib import Path
 from typing import List, Dict, Any
 
-from model.common import PROMPT_INSTRUCTIONS
+from common import PROMPT_INSTRUCTIONS
 
 
 class EventExtractor:
