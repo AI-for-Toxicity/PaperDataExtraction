@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Evaluate a BioMistral-7B (+ LoRA adapter) event extractor.
+Evaluate a fine-tuned causal LM event extractor.
 
 Metrics:
 A) Token-level masked loss (normal LM loss) on the gold assistant text.
@@ -12,8 +12,8 @@ B) Generation metrics:
 Expected assistant format (one per line):
   "chemical","event_type","short_description"
 
-If no events: ideally empty output (no lines). If you used a sentinel like NO_EVENTS,
-this script treats "NO_EVENTS" / "NO EVENT IDENTIFIED" / "NO AOP IDENTIFIED" as empty.
+If no events: ideally empty output. Sentinels like NO_EVENTS / NO EVENT IDENTIFIED
+are treated as empty.
 """
 
 import argparse
@@ -25,13 +25,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Set
 
 import sys
-from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from peft import PeftModel
-from rag.retriever import AOPRetriever
 
 
 # ----------------- I/O -----------------
@@ -83,12 +81,11 @@ def merge_system_user(messages: List[Dict[str, str]]) -> Tuple[str, str]:
 def canonicalize_events_text(text: str) -> str:
     """
     Canonical order: strip empty lines, normalize whitespace minimally, sort lines.
-    This matches what you do during training.
+    Matches the canonicalization applied during training.
     """
     if not text:
         return ""
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-    # Drop sentinel-y outputs if present (including the ### END training suffix)
     sentinels = {"no_events", "no event identified", "no aop identified", "### end"}
     lines = [ln for ln in lines if ln.strip().lower() not in sentinels]
     if not lines:
@@ -102,7 +99,6 @@ def canonicalize_events_text(text: str) -> str:
 _SENTINELS_RE = re.compile(r"^\s*(NO_EVENTS|NO\s+EVENT\s+IDENTIFIED|NO\s+AOP\s+IDENTIFIED|###\s*END)\s*$", re.IGNORECASE)
 
 def normalize_line(line: str) -> str:
-    # Keep it strict-ish but not insane: trim and collapse internal spaces
     line = line.strip()
     line = re.sub(r"\s+", " ", line)
     return line
@@ -111,7 +107,6 @@ def normalize_line(line: str) -> str:
 def parse_event_lines(text: str) -> List[str]:
     """
     Returns normalized lines (order-preserving), ignoring empties and sentinels.
-    Does not enforce CSV correctness here; we treat each non-empty line as a "line item".
     """
     if not text:
         return []
@@ -128,8 +123,7 @@ def parse_event_lines(text: str) -> List[str]:
 
 def parse_csv_triplets(text: str) -> Set[Tuple[str, str, str]]:
     """
-    Robust-ish parse: for each line, try csv.reader. If it fails, fall back to raw line set.
-    Returns a set of (chemical, event_type, short_desc).
+    Parses each line as a CSV triplet (chemical, event_type, short_desc).
     """
     triples = set()
     lines = parse_event_lines(text)
@@ -137,7 +131,6 @@ def parse_csv_triplets(text: str) -> Set[Tuple[str, str, str]]:
         try:
             row = next(csv.reader([ln], skipinitialspace=True))
             if len(row) < 3:
-                # Not a valid triplet line, skip (or treat as raw)
                 continue
             chem = row[0].strip()
             etype = row[1].strip()
@@ -158,9 +151,7 @@ def micro_prf(tp: int, fp: int, fn: int) -> Dict[str, float]:
 
 
 def ordered_line_metrics(pred_lines: List[str], gold_lines: List[str]) -> Dict[str, float]:
-    """
-    Order-sensitive: same length + same lines in same positions.
-    """
+    """Order-sensitive: same length + same lines in same positions."""
     if not gold_lines and not pred_lines:
         return {"ordered_exact": 1.0, "ordered_line_acc": 1.0}
     if not gold_lines:
@@ -169,7 +160,6 @@ def ordered_line_metrics(pred_lines: List[str], gold_lines: List[str]) -> Dict[s
     same_len = (len(pred_lines) == len(gold_lines))
     exact = 1.0 if same_len and all(p == g for p, g in zip(pred_lines, gold_lines)) else 0.0
 
-    # line accuracy over gold positions (truncate to shortest)
     m = min(len(pred_lines), len(gold_lines))
     correct = sum(1 for i in range(m) if pred_lines[i] == gold_lines[i])
     acc = correct / len(gold_lines) if len(gold_lines) > 0 else 0.0
@@ -178,7 +168,7 @@ def ordered_line_metrics(pred_lines: List[str], gold_lines: List[str]) -> Dict[s
 
 # ----------------- Model loading -----------------
 
-def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool, device_map: str="auto"):
+def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool, device_map: str = "auto"):
     print("[eval] loading tokenizer...", flush=True)
     tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True)
     if tokenizer.pad_token is None:
@@ -207,7 +197,7 @@ def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool
     if adapter_dir:
         print("[eval] loading LoRA adapter...", flush=True)
         model = PeftModel.from_pretrained(model, adapter_dir)
-    
+
     model.eval()
     print("[eval] model ready.", flush=True)
     return model, tokenizer
@@ -217,9 +207,7 @@ def load_model(base_model: str, adapter_dir: str, load_in_4bit: bool, bf16: bool
 
 @torch.no_grad()
 def masked_ce_loss(model, tokenizer, prompt_str: str, full_str: str, max_length: int) -> float:
-    """
-    Compute CE loss only on assistant tokens by masking prompt tokens.
-    """
+    """Compute CE loss only on assistant tokens by masking prompt tokens."""
     full = tokenizer(full_str, truncation=True, max_length=max_length, return_tensors="pt")
     prompt = tokenizer(prompt_str, truncation=True, max_length=max_length, return_tensors="pt")
 
@@ -270,7 +258,7 @@ def main():
 
     ap.add_argument("--max_length", type=int, default=2048)
     ap.add_argument("--max_new_tokens", type=int, default=256)
-    ap.add_argument("--temperature", type=float, default=0.0)  # 0 = greedy
+    ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--top_p", type=float, default=0.95)
 
     ap.add_argument("--load_in_4bit", action="store_true")
@@ -279,16 +267,9 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="0 = no limit")
     ap.add_argument("--save_preds", type=str, default="", help="optional path to write JSONL with per-example outputs")
 
-    ap.add_argument("--rag_index", type=str, default="", help="path to aop_rag_index.json; enables RAG prompt augmentation")
-    ap.add_argument("--rag_top_k", type=int, default=6, help="number of AOP entries to retrieve per example")
-
     args = ap.parse_args()
 
     model, tokenizer = load_model(args.base_model, args.adapter_dir, args.load_in_4bit, args.bf16)
-
-    retriever = None
-    if args.rag_index:
-        retriever = AOPRetriever(args.rag_index, top_k=args.rag_top_k)
 
     data = read_jsonl(args.eval_file)
     if args.limit and args.limit > 0:
@@ -296,19 +277,13 @@ def main():
 
     print(f"[eval] loaded {len(data)} examples", flush=True)
 
-    # Aggregate counters
     n = 0
     loss_sum = 0.0
-
     exact_match = 0
-
     ordered_exact_sum = 0.0
     ordered_line_acc_sum = 0.0
-
-    # set-based micro
     tp = fp = fn = 0
 
-    # optional output
     out_f = open(args.save_preds, "w", encoding="utf-8") if args.save_preds else None
 
     for ex in data:
@@ -317,22 +292,16 @@ def main():
 
         messages = ex.get("messages", ex.get("conversation", ex.get("data", None)))
         if messages is None:
-            # If your jsonl format differs, you're allowed to be consistent for once
             raise RuntimeError("Example has no 'messages' field (or compatible alias).")
 
         merged_user, gold_assistant = merge_system_user(messages)
 
-        if retriever is not None:
-            merged_user = retriever.augment(merged_user)
-
-        # Prompt boundary (IMPORTANT): include assistant-start tokens here
         prompt_str = tokenizer.apply_chat_template(
             [{"role": "user", "content": merged_user}],
             tokenize=False,
             add_generation_prompt=True,
         )
 
-        # Full string for loss: user + assistant content (no gen prompt)
         gold_assistant_canon = canonicalize_events_text(gold_assistant)
         full_str = tokenizer.apply_chat_template(
             [{"role": "user", "content": merged_user},
@@ -341,11 +310,9 @@ def main():
             add_generation_prompt=False,
         )
 
-        # 1) masked CE loss
         ce = masked_ce_loss(model, tokenizer, prompt_str, full_str, args.max_length)
         loss_sum += ce
 
-        # 2) generation
         pred_text = generate_answer(
             model, tokenizer, prompt_str,
             max_new_tokens=args.max_new_tokens,
@@ -357,14 +324,12 @@ def main():
         if pred_canon.strip() == gold_assistant_canon.strip():
             exact_match += 1
 
-        # Ordered-line metrics (order sensitive)
         pred_lines = parse_event_lines(pred_canon)
         gold_lines = parse_event_lines(gold_assistant_canon)
         om = ordered_line_metrics(pred_lines, gold_lines)
         ordered_exact_sum += om["ordered_exact"]
         ordered_line_acc_sum += om["ordered_line_acc"]
 
-        # Set-based metrics (order + duplicates invariant)
         pred_set = set(pred_lines)
         gold_set = set(gold_lines)
         tp_i = len(pred_set & gold_set)
@@ -392,7 +357,6 @@ def main():
 
     avg_loss = loss_sum / max(1, n)
     ppl = math.exp(avg_loss) if avg_loss < 50 else float("inf")
-
     set_prf = micro_prf(tp, fp, fn)
 
     print(json.dumps({
@@ -413,10 +377,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-'''
-Notes (so you don’t accidentally gaslight yourself with metrics)
-- Masked CE loss tells you: “How well can it reproduce the canonical target text?” It’s order-sensitive because text is order-sensitive.
-- Set micro F1 tells you what you actually care about: “Did it extract the right event lines, regardless of order and duplicates?”
-If you want, next step is adding a line-normalization mode for set matching (lowercase event_type, normalize quotes, etc.) so you can choose strict vs forgiving matching without lying to yourself.
-'''

@@ -12,52 +12,11 @@ from transformers import (
     TrainingArguments,
     Trainer,
     DataCollatorForLanguageModeling,
-    DataCollatorWithPadding,
     BitsAndBytesConfig,
-    TrainerCallback
 )
 
-
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-import bitsandbytes as bnb
 
-
-CHECKPOINT_EPOCHS = {3, 5, 8}
-
-
-class EpochCheckpointCallback(TrainerCallback):
-    """Save checkpoints only at specific epochs."""
-
-    def on_epoch_end(self, args, state, control, **kwargs):
-        epoch = round(state.epoch)
-        if epoch in CHECKPOINT_EPOCHS:
-            control.should_save = True
-        else:
-            control.should_save = False
-        return control
-
-
-class PadWithLabels:
-    def __init__(self, tokenizer):
-        self.tokenizer = tokenizer
-
-    def __call__(self, features):
-        # pad input_ids/attention_mask
-        batch = self.tokenizer.pad(
-            features,
-            padding=True,
-            return_tensors="pt",
-        )
-        # tokenizer.pad will pad "labels" too, but with pad_token_id, not -100.
-        # We must use attention_mask to identify padding positions, NOT the token value,
-        # because pad_token_id == eos_token_id — replacing by value would also mask the
-        # real EOS at the end of the assistant response, preventing the model from
-        # learning to generate </s> to terminate output.
-        if "labels" in batch and "attention_mask" in batch:
-            labels = batch["labels"]
-            labels[batch["attention_mask"] == 0] = -100
-            batch["labels"] = labels
-        return batch
 
 # ------------- DATASET UTILS ------------- #
 
@@ -74,15 +33,8 @@ def read_jsonl(path: str) -> List[Dict[str, Any]]:
 
 def canonicalize_events_text(text: str) -> str:
     """
-    Prende l'output dell'assistant (righe CSV) e lo trasforma
-    in una rappresentazione canonica:
-    - split per righe
-    - rimozione righe vuote
-    - sort alfabetico
-    - join con '\n'
-
-    Questo rende la loss "order-invariant" rispetto all'ordine originale degli eventi,
-    perché alleni sempre verso una forma ordinata del set.
+    Normalizes assistant output to order-invariant form: strip empty lines, sort, rejoin.
+    Applied during training so the model always learns toward a sorted canonical form.
     """
     if text is None:
         return ""
@@ -94,20 +46,6 @@ def canonicalize_events_text(text: str) -> str:
 
 
 class EventsChatDataset(Dataset):
-    """
-    Dataset per training chat-like di BioMistral:
-
-    Ogni esempio nel file è:
-    {
-      "messages": [
-        {"role": "system", "content": ...},
-        {"role": "user", "content": ...}
-      ]
-    }
-
-    La loss viene calcolata SOLO sui token della risposta.
-    """
-
     def __init__(self, data, tokenizer, max_length: int = 2048):
         self.data = data
         self.tokenizer = tokenizer
@@ -126,7 +64,6 @@ class EventsChatDataset(Dataset):
         if len(raw_messages) < 2:
             raise ValueError(f"Example {idx} has too few messages: {raw_messages}")
 
-        # estrai system (opzionale), user e assistant
         system_msg = None
         user_msg = None
         assistant_msg = None
@@ -142,10 +79,8 @@ class EventsChatDataset(Dataset):
         if user_msg is None or assistant_msg is None:
             raise ValueError(f"Example {idx} missing user or assistant message: {raw_messages}")
 
-        # canonicalizza la risposta dell'assistant (ordine eventi)
         canonical_assistant_text = canonicalize_events_text(assistant_msg["content"])
 
-        # mergia system + user in un unico prompt utente
         merged_user_content_parts = []
         if system_msg is not None and system_msg.get("content"):
             merged_user_content_parts.append(system_msg["content"])
@@ -154,24 +89,22 @@ class EventsChatDataset(Dataset):
 
         merged_user_content = "\n\n".join(merged_user_content_parts).strip()
 
-        # nuova conversazione SOLO con ruoli user/assistant
         conv_messages = [
             {"role": "user", "content": merged_user_content},
             {"role": "assistant", "content": canonical_assistant_text},
         ]
 
-        # stringa completa (user + assistant)
         full_str = self.tokenizer.apply_chat_template(
             conv_messages,
             tokenize=False,
             add_generation_prompt=False,
         )
 
-        # Build the *exact* prompt boundary: user + assistant header/start tokens
+        # Build the exact prompt boundary including assistant-start tokens
         prompt_str = self.tokenizer.apply_chat_template(
             [{"role": "user", "content": merged_user_content}],
             tokenize=False,
-            add_generation_prompt=True,   # IMPORTANT: includes assistant-start tokens
+            add_generation_prompt=True,
         )
 
         full_tokens = self.tokenizer(
@@ -182,11 +115,10 @@ class EventsChatDataset(Dataset):
             return_tensors="pt",
         )
 
-        # Do NOT truncate the prompt here: we need the true prompt token count to correctly
+        # Do NOT truncate the prompt: we need the true prompt token count to correctly
         # place the label mask boundary. The min() below handles the case where the prompt
         # alone exceeds max_length (all labels become -100 and that example contributes no
-        # gradient — acceptable). Using truncation=True here would cap prompt_len at
-        # max_length even when full_tokens is shorter, corrupting the mask.
+        # gradient — acceptable). Using truncation=True here would corrupt the mask.
         prompt_tokens = self.tokenizer(
             prompt_str,
             truncation=False,
@@ -203,7 +135,7 @@ class EventsChatDataset(Dataset):
         # Safety: in case truncation makes prompt_len exceed full length
         prompt_len = min(prompt_len, labels.shape[0])
 
-        # Mask everything up to the generation start; loss only on assistant content tokens
+        # Mask prompt tokens; loss computed only on assistant content tokens
         labels[:prompt_len] = -100
 
         return {
@@ -213,22 +145,36 @@ class EventsChatDataset(Dataset):
         }
 
 
-# ------------- MODEL / QLOLA SETUP ------------- #
+class PadWithLabels:
+    def __init__(self, tokenizer):
+        self.tokenizer = tokenizer
 
-def get_bnb_config():
-    return bnb.nn.Linear4bit(
-        16, 16, bias=False,
-        compute_dtype=torch.bfloat16,
-    )  # placeholder per forzare l'import; usato solo per assicurare bitsandbytes
+    def __call__(self, features):
+        batch = self.tokenizer.pad(
+            features,
+            padding=True,
+            return_tensors="pt",
+        )
+        # tokenizer.pad pads "labels" with pad_token_id, not -100.
+        # Use attention_mask to identify padding positions — NOT the token value,
+        # because pad_token_id == eos_token_id, so replacing by value would also mask
+        # the real EOS at the end of the assistant response.
+        if "labels" in batch and "attention_mask" in batch:
+            labels = batch["labels"]
+            labels[batch["attention_mask"] == 0] = -100
+            batch["labels"] = labels
+        return batch
 
+
+# ------------- MODEL / QLORA SETUP ------------- #
 
 def load_model_and_tokenizer(base_model: str, load_in_4bit: bool = False, lora_r: int = 32):
     """
-    Loads BioMistral with LoRA.
+    Loads the model with LoRA.
 
     load_in_4bit=False (default): loads in bf16 — recommended when VRAM >= 20GB.
     load_in_4bit=True: QLoRA (4-bit NF4) for low-VRAM environments.
-    lora_r: LoRA rank. Higher = more capacity. 32 is a good default for 48GB VRAM.
+    lora_r: LoRA rank. Higher = more capacity.
     """
     tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True)
     if tokenizer.pad_token is None:
@@ -249,7 +195,6 @@ def load_model_and_tokenizer(base_model: str, load_in_4bit: bool = False, lora_r
         )
         model = prepare_model_for_kbit_training(model)
     else:
-        # Full bf16: ~14GB for 7B model, fine for A40/A100/H100
         model = AutoModelForCausalLM.from_pretrained(
             base_model,
             device_map="auto",
@@ -259,7 +204,6 @@ def load_model_and_tokenizer(base_model: str, load_in_4bit: bool = False, lora_r
     lora_config = LoraConfig(
         r=lora_r,
         lora_alpha=lora_r * 2,
-        # Attention + MLP: covers both retrieval and generation behaviour
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                         "gate_proj", "up_proj", "down_proj"],
         lora_dropout=0.15,
@@ -268,17 +212,15 @@ def load_model_and_tokenizer(base_model: str, load_in_4bit: bool = False, lora_r
     )
 
     model = get_peft_model(model, lora_config)
-    # Gradient checkpointing is not needed with large VRAM; omit it to save ~25% runtime
 
     return model, tokenizer
 
 
-# ------------- TRAINER (LOSS STANDARD, METRIC SET-BASED POSSIBILE A PARTE) ------------- #
+# ------------- TRAINING ------------- #
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--base_model", type=str, required=True,
-                        help="Base model, es. meta-llama/Llama-3.1-8B-Instruct")
+    parser.add_argument("--base_model", type=str, required=True)
     parser.add_argument("--train_file", type=str, required=True)
     parser.add_argument("--eval_file", type=str, required=True)
     parser.add_argument("--load_in_4bit", action="store_true",
@@ -312,10 +254,6 @@ def main():
     eval_dataset = EventsChatDataset(eval_data, tokenizer, max_length=args.max_length)
 
     data_collator = PadWithLabels(tokenizer)
-    #DataCollatorForLanguageModeling(
-    #    tokenizer=tokenizer,
-    #    mlm=False,
-    #)
 
     training_args = TrainingArguments(
         output_dir=args.output_dir,
@@ -330,7 +268,7 @@ def main():
         eval_strategy="epoch",
         save_strategy="epoch",
         load_best_model_at_end=False,
-        save_total_limit=len(CHECKPOINT_EPOCHS),
+        save_total_limit=3,
         bf16=True,
         lr_scheduler_type="cosine",
         report_to="none",
@@ -343,7 +281,6 @@ def main():
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         data_collator=data_collator,
-        callbacks=[EpochCheckpointCallback()],
     )
 
     trainer.train()
@@ -353,19 +290,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-'''
-If you see the model start outputting garbage formats after a few hundred steps, LR is usually the first suspect. Common stable range is 1e-4 to 3e-5 for instruction-ish extraction tasks, especially with noisy supervision.
-
-Use early stopping behavior without adding more machinery:
-- run 3 epochs, check set-F1 on test (your eval script),
-- if it’s still improving and not getting more hallucination-y, go to 5–7 epochs,
-- if test set-F1 peaks early and then drops, you were already overtraining.
-Practical tweaks I’d actually recommend
-If your dataset is < ~5k examples:
-- try LR = 1e-4 first (or 5e-5 if it’s really small / very noisy)
-- consider 5 epochs max unless test metrics keep improving
-If your dataset is > ~10k examples:
-- 2e-4 can be fine, and 3 epochs may even be enough.
-And regardless: don’t judge by loss alone. Judge by set-based F1, because that’s your real target behavior.
-'''
