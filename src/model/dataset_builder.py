@@ -13,12 +13,10 @@ class DatasetBuilder:
     """
     Class to build the final dataset for model fine-tuning.
     """
-    def __init__(self, input_dir: Path | str, output_train_path: Path | str, output_test_path: Path | str):
+    def __init__(self, input_dir: Path | str, output_dir: Path | str):
         self.input_dir = Path(input_dir)
-        self.output_train_path = Path(output_train_path)
-        self.output_test_path = Path(output_test_path)
-        self.output_train_path.parent.mkdir(parents=True, exist_ok=True)
-        self.output_test_path.parent.mkdir(parents=True, exist_ok=True)
+        self.output_dir = Path(output_dir)
+        self.output_dir.mkdir(parents=True, exist_ok=True)
 
     def __enter__(self):
         return self
@@ -218,8 +216,6 @@ class DatasetBuilder:
 
         # --- Write JSONL splits (strip all internal tracking tags) ---
         _internal_keys = {"_paper_stem", "_chunk_text", "_events"}
-        train_path.parent.mkdir(parents=True, exist_ok=True)
-        test_path.parent.mkdir(parents=True, exist_ok=True)
 
         with train_path.open("w", encoding="utf-8") as f:
             for ex in train_examples:
@@ -333,13 +329,9 @@ class DatasetBuilder:
             for fold_idx, test_ids in enumerate(folds):
                 train_ids = [p for i, f in enumerate(folds) for p in f if i != fold_idx]
 
-                train_path = self.output_train_path.with_stem(
-                    f"{self.output_train_path.stem}_fold_{fold_idx}"
-                )
-                test_path = self.output_test_path.with_stem(
-                    f"{self.output_test_path.stem}_fold_{fold_idx}"
-                )
-                meta_path = self.output_train_path.parent / f"split_info_fold_{fold_idx}.json"
+                train_path = self.output_dir / f"train_fold_{fold_idx}.jsonl"
+                test_path = self.output_dir / f"test_fold_{fold_idx}.jsonl"
+                meta_path = self.output_dir / f"split_info_fold_{fold_idx}.json"
 
                 print(f"\n[K-FOLD {fold_idx + 1}/{k_folds}] test papers: {len(test_ids)}, train papers: {len(train_ids)}")
                 self._write_split(
@@ -357,14 +349,14 @@ class DatasetBuilder:
             n_test_papers = max(1, int(len(paper_ids) * test_ratio)) if len(paper_ids) > 1 else 0
             test_paper_ids = paper_ids[:n_test_papers]
             train_paper_ids = paper_ids[n_test_papers:]
-            meta_path = self.output_train_path.parent / "split_info.json"
+            meta_path = self.output_dir / "split_info.json"
 
             self._write_split(
                 train_paper_ids,
                 test_paper_ids,
                 path_by_stem,
-                self.output_train_path,
-                self.output_test_path,
+                self.output_dir / "train.jsonl",
+                self.output_dir / "test.jsonl",
                 meta_path,
                 empty_ratio,
                 seed,

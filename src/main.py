@@ -2,7 +2,7 @@ import logging
 from pathlib import Path
 
 
-def pipeline(dirs, skip_existing, run_only=None):
+def pipeline(dirs, skip_existing, model, model_weights, tokenizer, run_only=None):
   # Subdirectory names
   pdf_folder              = dirs["input_pdf"]
   md_folder               = dirs["raw_markdown"]
@@ -148,4 +148,7 @@ if __name__ == "__main__":
     dirs=directories,
     skip_existing=args.skip_existing,
     run_only=run_only,
+    model=model,
+    model_weights=model_weights,
+    tokenizer=tokenizer
   )
