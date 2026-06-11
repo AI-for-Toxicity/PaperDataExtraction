@@ -5,7 +5,7 @@ from pathlib import Path
 
 from typing import Callable, List
 
-from model.common import contains_wordbound, compute_score, compute_score_short_only
+from common import contains_wordbound, compute_score, compute_score_short_only
 
 _ScoreFn = Callable[[str, dict], float]
 
@@ -186,15 +186,9 @@ class EventScorer:
         if self.label_files is None:
             raise ValueError("label_files is required for run_scoring / process_file")
 
-        # labels file with matching base name
-        label_path = None
-        for lf in self.label_files:
-            if lf.stem.startswith(base):
-                label_path = lf
-                break
-        
+        label_path = next((lf for lf in self.label_files if lf.stem == json_path.stem), None)
         if not label_path:
-            print(f"[WARN] No label file for {base}")
+            print(f"[WARN] No label file for {json_path.stem}")
             return
 
         with open(json_path, "r", encoding="utf8") as f:

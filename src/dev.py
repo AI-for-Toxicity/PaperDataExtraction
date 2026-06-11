@@ -50,7 +50,7 @@ def score_events(dirs):
     scorer.run_scoring()
 
 def build_dataset(dirs, test_ratio=0.15, empty_ratio=1.0, k_folds=5, seed=42):
-  from model.dataset_builder import DatasetBuilder
+  from dataset_builder import DatasetBuilder
   
   with DatasetBuilder(
     input_dir=dirs["scored_labels"],
@@ -64,7 +64,7 @@ def build_dataset(dirs, test_ratio=0.15, empty_ratio=1.0, k_folds=5, seed=42):
     )
 
 def analyze_eval_results(paths):
-  from model.pred_evaluator import PredEvaluator
+  from pred_evaluator import PredEvaluator
 
   with PredEvaluator(
     paths["eval_preds"], 
@@ -93,7 +93,7 @@ if __name__ == "__main__":
 
   # Get config values from config.ini
   import configparser
-  from model.common import PROMPT_INSTRUCTIONS
+  from common import PROMPT_INSTRUCTIONS
   config = configparser.ConfigParser()
   config.read("config.ini")
   model = config.get("MODEL", "model")

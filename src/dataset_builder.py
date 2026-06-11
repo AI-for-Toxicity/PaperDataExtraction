@@ -3,7 +3,7 @@ import random
 from typing import List, Dict, Any, Tuple
 from pathlib import Path
 
-from model.common import PROMPT_INSTRUCTIONS, csv_quote, normalize_whitespace
+from common import PROMPT_INSTRUCTIONS, csv_quote, normalize_whitespace
 
 
 RESPONSE_SUFFIX = "### END"

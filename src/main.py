@@ -112,7 +112,7 @@ if __name__ == "__main__":
 
   # Get config values from config.ini
   import configparser
-  from model.common import PROMPT_INSTRUCTIONS
+  from common import PROMPT_INSTRUCTIONS
   config = configparser.ConfigParser()
   config.read("config.ini")
   model = config.get("MODEL", "model")

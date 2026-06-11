@@ -5,7 +5,7 @@ from collections import defaultdict
 from sentence_transformers import SentenceTransformer, util
 from pathlib import Path
 
-from model.common import PROMPT_INSTRUCTIONS, norm, contains_normalized_substring, contains_wordbound, fuzzy_score, compute_score
+from common import PROMPT_INSTRUCTIONS, norm, contains_normalized_substring, contains_wordbound, fuzzy_score, compute_score
 
 
 # Minimum fuzzy chemical similarity required to allow a fuzzy event match
