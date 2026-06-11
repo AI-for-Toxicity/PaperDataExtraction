@@ -1048,10 +1048,9 @@ class ResultsApp():
 
     def _find_matched_files(self) -> list[dict]:
         """
-        Pair each .md file with its corresponding *_events.json by stem.
-        A markdown file `{stem}.md` matches `{stem}_events.json`.
+        Pair each .md file with its corresponding events JSON by stem.
         """
-        events_by_stem = {f.stem.removesuffix("_events"): f for f in self.events_files}
+        events_by_stem = {f.stem: f for f in self.events_files}
         matched = []
         for md_file in sorted(self.md_files):
             events_file = events_by_stem.get(md_file.stem)

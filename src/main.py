@@ -71,7 +71,7 @@ def pipeline(dirs, skip_existing, model, model_weights, tokenizer, run_only=None
       extractor.extract_events()
 
   # 5. Score events predicted by the model
-  extracted_files = list(extracted_events_folder.glob("*_extracted.json"))
+  extracted_files = list(extracted_events_folder.glob("*.json"))
   if run_only is None or run_only == 5:
     print("\nLoading Event Scorer module...")
     from event_scorer import EventScorer
@@ -82,7 +82,7 @@ def pipeline(dirs, skip_existing, model, model_weights, tokenizer, run_only=None
       scorer.run_scoring_from_extracted(extracted_files=extracted_files)
 
   # 6. Display results
-  scored_events_files = list(scored_events_folder.glob("*_events.json"))
+  scored_events_files = list(scored_events_folder.glob("*.json"))
   if run_only is None or run_only == 6:
     print("\nLoading Display Results module...")
     from display_results import ResultsApp
@@ -94,7 +94,7 @@ if __name__ == "__main__":
   # Parse command line arguments
   import argparse
   parser = argparse.ArgumentParser(description="AOP Events Extractor")
-  parser.add_argument("--skip_existing", type=bool, default=True,
+  parser.add_argument("--skip-existing", type=bool, default=True,
                       help="Skip processing steps that have already been completed")
   parser.add_argument("--verbose", action="store_true",
                       help="Enable verbose logging")
@@ -115,14 +115,14 @@ if __name__ == "__main__":
   from model.common import PROMPT_INSTRUCTIONS
   config = configparser.ConfigParser()
   config.read("config.ini")
-  model = config.get("DEFAULT", "model")
-  model_weights = config.get("DEFAULT", "model_weights")
-  model_context_tokens = config.getint("DEFAULT", "model_context_tokens")
-  min_chunk_tokens = config.getint("DEFAULT", "min_chunk_tokens")
-  target_chunk_tokens = config.getint("DEFAULT", "target_chunk_tokens")
-  max_chunk_tokens = config.getint("DEFAULT", "max_chunk_tokens")
-  reserved_output_tokens = config.getint("DEFAULT", "reserved_output_tokens")
-  safety_margin_tokens = config.getint("DEFAULT", "safety_margin_tokens")
+  model = config.get("MODEL", "model")
+  model_weights = config.get("MODEL", "model_weights")
+  model_context_tokens = config.getint("MODEL", "model_context_tokens")
+  min_chunk_tokens = config.getint("MODEL", "min_chunk_tokens")
+  target_chunk_tokens = config.getint("MODEL", "target_chunk_tokens")
+  max_chunk_tokens = config.getint("MODEL", "max_chunk_tokens")
+  reserved_output_tokens = config.getint("MODEL", "reserved_output_tokens")
+  safety_margin_tokens = config.getint("MODEL", "safety_margin_tokens")
 
   directories = {
     "input_pdf": Path(config.get("DIRECTORIES", "input_pdf_dir")),

@@ -307,7 +307,7 @@ class DatasetBuilder:
             train_fold_0.jsonl, test_fold_0.jsonl, split_info_fold_0.json, ...
         """
         input_dir_path = Path(self.input_dir)
-        files = sorted(input_dir_path.glob("*_events.json"))
+        files = sorted(input_dir_path.glob("*.json"))
 
         if not files:
             raise RuntimeError(f"No events .json files found in {input_dir_path}")

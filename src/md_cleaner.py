@@ -427,8 +427,7 @@ class MarkdownCleaner:
 
     for i, md_file in enumerate(self.md_files, 1):
       print(f"[{i}/{total}] Processing {md_file.name}...")
-      parts = md_file.stem.split("_")
-      name = "_".join(parts[:2]) if len(parts) > 1 else parts[0]
+      name = md_file.stem
       out_dir = self.output_dir
       out_dir.mkdir(parents=True, exist_ok=True)
       out_path = out_dir / f"{name}.md"

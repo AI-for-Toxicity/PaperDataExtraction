@@ -508,7 +508,7 @@ class MarkdownDivider:
 
       # filename without .md
       stem = md_file.stem
-      output_json_path = self.output_dir / f"{stem}_divided.json"
+      output_json_path = self.output_dir / f"{stem}.json"
       output_json_path.parent.mkdir(parents=True, exist_ok=True)
 
       if self.skip_existing and output_json_path.exists():

@@ -178,8 +178,7 @@ class EventScorer:
         - Annotates lines, then sentences, then paragraphs, then chunks incrementally
         - Saves the annotated results and unmatched events to output_dir
         """
-        base = json_path.name.replace("_divided.json", "")
-        out_path = self.output_dir / f"{base}_events.json"
+        out_path = self.output_dir / f"{json_path.stem}.json"
         if out_path.exists():
             print(f"[SKIP] {out_path} already exists")
             return
@@ -283,8 +282,7 @@ class EventScorer:
         Events that don't reach the scoring threshold on any textual unit are
         kept in their original extraction chunk with score=0.
         """
-        stem = extracted_json_path.stem.removesuffix("_extracted")
-        out_path = output_subdir / f"{stem}_events.json"
+        out_path = output_subdir / f"{extracted_json_path.stem}.json"
         if out_path.exists():
             print(f"[SKIP] {out_path} already exists")
             return
@@ -342,7 +340,7 @@ class EventScorer:
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
         for extracted_path in extracted_files:
-            divided_stem = extracted_path.stem.removesuffix("_extracted")
+            divided_stem = extracted_path.stem
             divided_path = self._divided_by_stem.get(divided_stem)
             if not divided_path:
                 print(f"[WARN] No divided JSON for {extracted_path.name}")

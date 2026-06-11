@@ -80,13 +80,13 @@ if __name__ == "__main__":
   # Parse command line arguments
   import argparse
   parser = argparse.ArgumentParser(description="AOP Events Extractor (Dev Tools)")
-  parser.add_argument("--do_scoring", action="store_true",
+  parser.add_argument("--do-scoring", action="store_true",
                       help="Run event scoring")
-  parser.add_argument("--do_dataset", action="store_true",
+  parser.add_argument("--do-dataset", action="store_true",
                       help="Build dataset for model training")
-  parser.add_argument("--do_eval_analysis", action="store_true",
+  parser.add_argument("--do-eval-analysis", action="store_true",
                       help="Analyze evaluation results")
-  parser.add_argument("--do_token_check", action="store_true",
+  parser.add_argument("--do-token-check", action="store_true",
                       help="Analyze token lengths in train/test datasets")
   
   args = parser.parse_args()
@@ -96,14 +96,14 @@ if __name__ == "__main__":
   from model.common import PROMPT_INSTRUCTIONS
   config = configparser.ConfigParser()
   config.read("config.ini")
-  model = config.get("DEFAULT", "model")
-  model_weights = config.get("DEFAULT", "model_weights")
-  model_context_tokens = config.getint("DEFAULT", "model_context_tokens")
-  min_chunk_tokens = config.getint("DEFAULT", "min_chunk_tokens")
-  target_chunk_tokens = config.getint("DEFAULT", "target_chunk_tokens")
-  max_chunk_tokens = config.getint("DEFAULT", "max_chunk_tokens")
-  reserved_output_tokens = config.getint("DEFAULT", "reserved_output_tokens")
-  safety_margin_tokens = config.getint("DEFAULT", "safety_margin_tokens")
+  model = config.get("MODEL", "model")
+  model_weights = config.get("MODEL", "model_weights")
+  model_context_tokens = config.getint("MODEL", "model_context_tokens")
+  min_chunk_tokens = config.getint("MODEL", "min_chunk_tokens")
+  target_chunk_tokens = config.getint("MODEL", "target_chunk_tokens")
+  max_chunk_tokens = config.getint("MODEL", "max_chunk_tokens")
+  reserved_output_tokens = config.getint("MODEL", "reserved_output_tokens")
+  safety_margin_tokens = config.getint("MODEL", "safety_margin_tokens")
   dataset_test_ratio = config.getfloat("DATASET", "test_ratio")
   dataset_empty_ratio = config.getfloat("DATASET", "empty_ratio")
   dataset_k_folds = config.getint("DATASET", "k_folds")
@@ -129,7 +129,7 @@ if __name__ == "__main__":
   }
 
   if not (args.do_scoring or args.do_dataset or args.do_eval_analysis or args.do_token_check):
-    print("No action specified. Use --do_scoring, --do_dataset, --do_eval_analysis, and/or --do_token_check.")
+    print("No action specified. Use --do-scoring, --do-dataset, --do-eval-analysis, and/or --do-token-check.")
 
   if args.do_scoring:
     score_events(paths)

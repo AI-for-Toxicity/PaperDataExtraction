@@ -865,8 +865,7 @@ class PDFExtractor:
 
     for i, pdf in enumerate(self.paper_files, 1):
       print(f"[{i}/{total}] Processing {pdf.name}...")
-      parts = pdf.stem.split("_")
-      name = "_".join(parts[:2]) if len(parts) > 1 else parts[0]
+      name = pdf.stem
       out_dir = self.output_dir
       out_dir.mkdir(parents=True, exist_ok=True)
       out_path = out_dir / f"{name}.md"

@@ -278,7 +278,7 @@ def load_model_and_tokenizer(base_model: str, load_in_4bit: bool = False, lora_r
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--base_model", type=str, required=True,
-                        help="BioMistral base model, es. BioMistral/BioMistral-7B")
+                        help="Base model, es. meta-llama/Llama-3.1-8B-Instruct")
     parser.add_argument("--train_file", type=str, required=True)
     parser.add_argument("--eval_file", type=str, required=True)
     parser.add_argument("--load_in_4bit", action="store_true",

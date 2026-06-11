@@ -94,7 +94,7 @@ class EventExtractor:
                 continue
 
             stem = json_path.stem
-            out_path = self.output_dir / f"{stem}_extracted.json"
+            out_path = self.output_dir / f"{stem}.json"
             out_path.parent.mkdir(parents=True, exist_ok=True)
 
             if self.skip_existing and out_path.exists():
