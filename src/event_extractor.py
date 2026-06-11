@@ -83,7 +83,7 @@ class EventExtractor:
                 continue
         return events
 
-    def extract_events(self, folder: str):
+    def extract_events(self):
         total = len(self.divided_md_files)
         print(f"Found {total} divided markdown files to process for event extraction.")
 
@@ -94,7 +94,7 @@ class EventExtractor:
                 continue
 
             stem = json_path.stem
-            out_path = self.output_dir / folder / f"{stem}_extracted.json"
+            out_path = self.output_dir / f"{stem}_extracted.json"
             out_path.parent.mkdir(parents=True, exist_ok=True)
 
             if self.skip_existing and out_path.exists():

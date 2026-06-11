@@ -488,7 +488,7 @@ class MarkdownDivider:
 
   # FULL DIVISION PIPELINE
 
-  def divide_files(self, folder: str):
+  def divide_files(self):
     """
     Run the full markdown division pipeline on the provided files, saving results to JSON.
     Each JSON will contain:
@@ -502,13 +502,13 @@ class MarkdownDivider:
 
     for i, md_file in enumerate(self.md_files, 1):
       print(f"[{i}/{total}] Processing {md_file.name}...")
-      
+
       if not md_file.is_file():
         continue
 
       # filename without .md
       stem = md_file.stem
-      output_json_path = self.output_dir / folder / f"{stem}_divided.json"
+      output_json_path = self.output_dir / f"{stem}_divided.json"
       output_json_path.parent.mkdir(parents=True, exist_ok=True)
 
       if self.skip_existing and output_json_path.exists():

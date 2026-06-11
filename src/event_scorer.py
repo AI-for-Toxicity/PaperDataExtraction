@@ -338,9 +338,8 @@ class EventScorer:
             f"events={len(events)} matched={len(all_matched)} fallback={len(unmatched)}"
         )
 
-    def run_scoring_from_extracted(self, extracted_files: List[Path], folder: str):
-        output_subdir = self.output_dir / folder
-        output_subdir.mkdir(parents=True, exist_ok=True)
+    def run_scoring_from_extracted(self, extracted_files: List[Path]):
+        self.output_dir.mkdir(parents=True, exist_ok=True)
 
         for extracted_path in extracted_files:
             divided_stem = extracted_path.stem.removesuffix("_extracted")
@@ -348,7 +347,7 @@ class EventScorer:
             if not divided_path:
                 print(f"[WARN] No divided JSON for {extracted_path.name}")
                 continue
-            self.process_extracted_file(extracted_path, divided_path, output_subdir)
+            self.process_extracted_file(extracted_path, divided_path, self.output_dir)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass

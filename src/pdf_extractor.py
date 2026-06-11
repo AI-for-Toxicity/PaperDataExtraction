@@ -851,9 +851,9 @@ class PDFExtractor:
 
   # FULL EXTRACTION PIPELINE
 
-  def run_text_extraction(self, folder="markdown", ocr_figure_lang: str = "en", only_tables=True, only_figures=False):
+  def run_text_extraction(self, ocr_figure_lang: str = "en", only_tables=True, only_figures=False):
     """
-    Iterates paper_files and extracts text into markdown files in output_dir/folder.
+    Iterates paper_files and extracts text into markdown files in output_dir.
     For each PDF it does the following:
     1. Divide body text (font size >= threshold) from small text
     2. Extract text from tables, trasforming each row into a sentence
@@ -867,7 +867,7 @@ class PDFExtractor:
       print(f"[{i}/{total}] Processing {pdf.name}...")
       parts = pdf.stem.split("_")
       name = "_".join(parts[:2]) if len(parts) > 1 else parts[0]
-      out_dir = self.output_dir / folder
+      out_dir = self.output_dir
       out_dir.mkdir(parents=True, exist_ok=True)
       out_path = out_dir / f"{name}.md"
 

@@ -418,7 +418,7 @@ class MarkdownCleaner:
 
     return text.strip()
 
-  def clean_markdowns(self, folder="cleaned_markdown"):
+  def clean_markdowns(self):
     """
     Run the full cleaning pipeline on all markdown files and save cleaned versions.
     """
@@ -429,7 +429,7 @@ class MarkdownCleaner:
       print(f"[{i}/{total}] Processing {md_file.name}...")
       parts = md_file.stem.split("_")
       name = "_".join(parts[:2]) if len(parts) > 1 else parts[0]
-      out_dir = self.output_dir / folder
+      out_dir = self.output_dir
       out_dir.mkdir(parents=True, exist_ok=True)
       out_path = out_dir / f"{name}.md"
 
