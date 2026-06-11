@@ -1,5 +1,0 @@
-dropout increased to 0.15
-gradient steps increased to 16
-learning rate reduced to 5e-6
-checkpoints saved at epoch 3 5 and 8
-eval strategy changed to epoch

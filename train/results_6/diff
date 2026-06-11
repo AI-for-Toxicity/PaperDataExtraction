@@ -1,6 +1,0 @@
-k-fold cross evaluation
-fix chemical names in dataset
-add a paper
-remove top_k for chunks in eventscorer, so now event gets associated to each chunk where it appears
-change eventscorer threshold for chunks from 65 to 68
-put chemical variant in dataset instead of full chemical string
