@@ -1,6 +1,6 @@
-# PaperDataExtraction
+# AOPEventsExtractor
 
-Thesis project for extracting mechanistic toxicology events — **MIE** (Molecular Initiating Events), **KE** (Key Events), **AO** (Adverse Outcomes) — from scientific papers, in the context of Adverse Outcome Pathways (AOPs).
+Thesis project for extracting mechanistic toxicology events — **MIE** (Molecular Initiating Events), **KE** (Key Events), **AO** (Adverse Outcomes) — from scientific papers, in the context of **Adverse Outcome Pathways (AOPs)**.
 
 ## Setup
 
@@ -82,7 +82,7 @@ Runs the full end-to-end pipeline for extracting AOP events from PDF papers.
 **Steps:**
 
 1. **PDF → Markdown** — converts PDFs using Docling; extracts tables and body text
-2. **Clean Markdown** — fixes OCR artifacts, repairs hyphenated words
+2. **Clean Markdown** — fixes Docling artifacts, repairs hyphenated words
 3. **Divide Markdown** — chunks text into semantic units of 60–250 tokens
 4. **Extract Events** — runs the fine-tuned LLM over each chunk to extract MIE/KE/AO events
 5. **Score Events** — matches extracted events back to the source chunks that support them, computing a relevance score based on keyword and entity overlap
