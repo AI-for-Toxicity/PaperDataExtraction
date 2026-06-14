@@ -66,36 +66,39 @@ class PredEvaluator:
 
         # --- SEMANTIC DEDUPLICATION LOGIC ---
         deduped = []
-        
+
         # 1. Group events by (normalized chemical, event_type)
         grouped_events = defaultdict(list)
         for ev in events:
             group_key = (norm(ev["chemical"]), ev["event_type"])
             grouped_events[group_key].append(ev)
-            
-        # 2. Deduplicate descriptions within each group using Cosine Similarity
+
+        # 2. Batch-encode all descriptions in one pass, then deduplicate per group
+        flat_events: list[dict] = []
+        flat_group_keys: list[tuple] = []
         for group_key, ev_list in grouped_events.items():
-            unique_in_group = []
-            
             for ev in ev_list:
-                desc = ev["description"]
-                # Encode the description
-                emb = self.embedder.encode(desc, convert_to_tensor=True)
-                
-                is_duplicate = False
-                # Compare against already accepted unique events in this group
-                for unique_ev, unique_emb in unique_in_group:
-                    sim = util.cos_sim(emb, unique_emb).item()
-                    
-                    # If the semantic similarity hits the threshold, toss it as a duplicate
-                    if sim >= dedup_threshold:
-                        is_duplicate = True
-                        break
-                        
-                if not is_duplicate:
-                    unique_in_group.append((ev, emb))
+                flat_events.append(ev)
+                flat_group_keys.append(group_key)
+
+        if not flat_events:
+            return deduped
+
+        all_embs = self.embedder.encode(
+            [ev["description"] for ev in flat_events], convert_to_tensor=True
+        )
+
+        grouped_with_embs: dict[tuple, list] = defaultdict(list)
+        for ev, gk, emb in zip(flat_events, flat_group_keys, all_embs):
+            grouped_with_embs[gk].append((ev, emb))
+
+        for ev_emb_list in grouped_with_embs.values():
+            unique_embs = []
+            for ev, emb in ev_emb_list:
+                if not any(util.cos_sim(emb, u).item() >= dedup_threshold for u in unique_embs):
+                    unique_embs.append(emb)
                     deduped.append(ev)
-                    
+
         return deduped
 
     @staticmethod
@@ -257,13 +260,31 @@ class PredEvaluator:
         matched_gold: set[int] = set()
         matched_pred: set[int] = set()
 
-        # Score all pairs (could be big, but usually gold is small)
+        # Batch-encode all descriptions, then compute the full similarity matrix at once
         candidates = []
-        for pi, pe in enumerate(pred_remaining):
-            for gi, ge in enumerate(gold_remaining):
-                sim = self.event_cosine_similarity(pe, ge)
-                if sim >= sim_threshold:
-                    candidates.append((sim, pi, gi))
+        if pred_remaining and gold_remaining:
+            pred_embs = self.embedder.encode(
+                [e.get("description", "") for e in pred_remaining], convert_to_tensor=True
+            )
+            gold_embs = self.embedder.encode(
+                [e.get("description", "") for e in gold_remaining], convert_to_tensor=True
+            )
+            desc_sim_matrix = util.cos_sim(pred_embs, gold_embs)
+
+            for pi, pe in enumerate(pred_remaining):
+                chem_p = pe.get("chemical", "")
+                for gi, ge in enumerate(gold_remaining):
+                    chem_g = ge.get("chemical", "")
+                    if self._chemicals_match(chem_p, chem_g):
+                        chem_sim = 1.0
+                    else:
+                        chem_sim = fuzzy_score(chem_p, chem_g)
+                        if chem_sim < MIN_CHEM_SIM:
+                            continue
+                    desc_sim = desc_sim_matrix[pi][gi].item()
+                    sim = 0.4 * chem_sim + 0.6 * desc_sim
+                    if sim >= sim_threshold:
+                        candidates.append((sim, pi, gi))
 
         # Greedy match: highest similarity first
         candidates.sort(reverse=True, key=lambda x: x[0])
