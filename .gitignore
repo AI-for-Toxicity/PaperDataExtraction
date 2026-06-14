@@ -15,6 +15,7 @@ train/
 utils/
 bash/
 rag/
+config.ini.local
 .*/
 *.md
 !README.md
