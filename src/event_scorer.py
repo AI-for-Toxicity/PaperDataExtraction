@@ -325,6 +325,31 @@ class EventScorer:
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
 
+        # CSV: one row per event, best match across all textual units
+        event_best: dict[int, tuple[float, str]] = {ev["event_id"]: (0.0, "") for ev in events}
+        for annotated_list in (sentences_annotated, lines_annotated, paragraphs_annotated, chunks_annotated):
+            for block in annotated_list:
+                block_text = block.get("text", "") or ""
+                for ev_entry in block.get("events", []):
+                    eid = ev_entry["event_id"]
+                    score = ev_entry.get("score", 0.0)
+                    if score > event_best[eid][0]:
+                        event_best[eid] = (score, block_text)
+
+        csv_path = out_path.with_suffix(".csv")
+        with open(csv_path, "w", encoding="utf-8", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["chemical", "event type", "description", "match score", "matched text"])
+            for ev in events:
+                score, matched_text = event_best[ev["event_id"]]
+                writer.writerow([
+                    ev["chemical"],
+                    ev["event_type"],
+                    ev["event_description_short"],
+                    score,
+                    matched_text,
+                ])
+
         print(
             f"[OK] Saved {out_path} | "
             f"events={len(events)} matched={len(all_matched)} fallback={len(unmatched)}"
