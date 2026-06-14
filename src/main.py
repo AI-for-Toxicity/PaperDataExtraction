@@ -2,7 +2,7 @@ import logging
 from pathlib import Path
 
 
-def pipeline(dirs, skip_existing, model, model_weights, tokenizer, run_only=None):
+def pipeline(dirs, skip_existing, model, model_weights, tokenizer, run_only=None, skip_results=False):
   # Subdirectory names
   pdf_folder              = dirs["input_pdf"]
   md_folder               = dirs["raw_markdown"]
@@ -83,7 +83,7 @@ def pipeline(dirs, skip_existing, model, model_weights, tokenizer, run_only=None
 
   # 6. Display results
   scored_events_files = list(scored_events_folder.glob("*.json"))
-  if run_only is None or run_only == 6:
+  if not skip_results and (run_only is None or run_only == 6):
     print("\nLoading Display Results module...")
     from display_results import ResultsApp
     with ResultsApp(md_files=clean_md_files, events_files=scored_events_files) as app:
@@ -103,6 +103,8 @@ if __name__ == "__main__":
                       help="Run only pipeline step N (1-6)")
   parser.add_argument("--display-results", action="store_true", dest="display_results",
                       help="Alias for --run-only=6")
+  parser.add_argument("--skip-results", action="store_true", dest="skip_results",
+                      help="Skip the results viewer (step 6); do not open the desktop app")
 
   args = parser.parse_args()
 
@@ -148,6 +150,7 @@ if __name__ == "__main__":
     dirs=directories,
     skip_existing=args.skip_existing,
     run_only=run_only,
+    skip_results=args.skip_results,
     model=model,
     model_weights=model_weights,
     tokenizer=tokenizer

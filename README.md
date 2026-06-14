@@ -46,6 +46,7 @@ python src/main.py [options]
 | `--skip-existing` | `True` | In each step, skip files whose output already exists |
 | `--run-only N` | — | Run only step N (1–6) |
 | `--display-results` | — | Alias for `--run-only 6` |
+| `--skip-results` | — | Skip step 6; do not open the results viewer |
 | `--verbose` | — | Enable verbose logging from Docling/PyMuPDF |
 
 ### Examples
@@ -59,6 +60,9 @@ python src/main.py --run-only 4
 
 # Open the results viewer
 python src/main.py --display-results
+
+# Run the full pipeline without opening the results viewer
+python src/main.py --skip-results
 ```
 
 ---
