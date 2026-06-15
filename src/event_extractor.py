@@ -3,7 +3,7 @@ import io
 import json
 import torch
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict
 
 from common import PROMPT_INSTRUCTIONS
 
@@ -22,24 +22,29 @@ class EventExtractor:
         self.output_dir = Path(output_dir)
         self.skip_existing = skip_existing
 
-        # Prefer local weights if available, fall back to HF model identifier
-        weights_path = model_weights if (model_weights and Path(model_weights).exists()) else model
-        if not weights_path:
-            raise ValueError("Either model or model_weights must be provided")
-
         from transformers import AutoTokenizer, AutoModelForCausalLM
 
-        print(f"Loading tokenizer from: {weights_path}")
-        self.tokenizer = AutoTokenizer.from_pretrained(weights_path, use_fast=True)
+        if not model:
+            raise ValueError("model must be provided")
+
+        print(f"Loading tokenizer from: {model}")
+        self.tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
 
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         dtype = torch.float16 if self.device == "cuda" else torch.float32
-        print(f"Loading model from: {weights_path} (device={self.device}, dtype={dtype})")
+        print(f"Loading model from: {model} (device={self.device}, dtype={dtype})")
         self.model = AutoModelForCausalLM.from_pretrained(
-            weights_path,
+            model,
             torch_dtype=dtype,
             device_map="auto" if self.device == "cuda" else None,
         )
+
+        adapter_path = Path(model_weights) if model_weights else None
+        if adapter_path and (adapter_path / "adapter_config.json").exists():
+            from peft import PeftModel
+            print(f"Loading LoRA adapter from: {adapter_path}")
+            self.model = PeftModel.from_pretrained(self.model, str(adapter_path))
+
         self.model.eval()
         print(f"Model loaded.")
 

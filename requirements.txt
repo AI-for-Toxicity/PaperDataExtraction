@@ -6,6 +6,7 @@ pymupdf
 docling
 easyocr
 transformers
+peft
 torch
 sentence-transformers
 PySide6
