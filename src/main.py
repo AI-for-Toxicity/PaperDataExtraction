@@ -2,7 +2,7 @@ import logging
 from pathlib import Path
 
 
-def pipeline(dirs, skip_existing, model, model_weights, tokenizer, run_only=None, skip_results=False):
+def pipeline(dirs, skip_existing, model, model_weights, run_only=None, skip_results=False):
   # Subdirectory names
   pdf_folder              = dirs["input_pdf"]
   md_folder               = dirs["raw_markdown"]
@@ -40,6 +40,10 @@ def pipeline(dirs, skip_existing, model, model_weights, tokenizer, run_only=None
   clean_md_files = list(clean_md_folder.glob("*.md"))
   if run_only is None or run_only == 3:
     print("\nLoading Markdown Divider module...")
+    from transformers import AutoTokenizer
+    from common import PROMPT_INSTRUCTIONS
+    tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
+    reserved_prompt_tokens = len(tokenizer(PROMPT_INSTRUCTIONS, add_special_tokens=False)["input_ids"])
     from md_divider import MarkdownDivider
     with MarkdownDivider(
       clean_md_files,
@@ -114,7 +118,6 @@ if __name__ == "__main__":
 
   # Get config values from config.ini
   import configparser
-  from common import PROMPT_INSTRUCTIONS
   config = configparser.ConfigParser()
   config.read("config.ini")
   model = config.get("MODEL", "model")
@@ -135,11 +138,6 @@ if __name__ == "__main__":
     "scored_events": Path(config.get("PATHS", "scored_events_dir")),
   }
 
-  # Initialize tokenizer and calculate reserved prompt tokens
-  from transformers import AutoTokenizer
-  tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
-  reserved_prompt_tokens = len(tokenizer(PROMPT_INSTRUCTIONS, add_special_tokens=False)["input_ids"])
-
   if not args.verbose:
     logging.getLogger("docling").setLevel(logging.ERROR)
     logging.getLogger("docling_core").setLevel(logging.ERROR)
@@ -153,5 +151,4 @@ if __name__ == "__main__":
     skip_results=args.skip_results,
     model=model,
     model_weights=model_weights,
-    tokenizer=tokenizer
   )
