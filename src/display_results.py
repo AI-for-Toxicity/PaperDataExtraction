@@ -1,3 +1,4 @@
+import html
 import json
 import re
 import sys
@@ -265,6 +266,7 @@ class ClickableEventBox(QFrame):
         event_type = str(event_data.get("event_type", "")).upper()
         short_desc = str(event_data.get("event_description_short", ""))
         long_desc = str(event_data.get("event_description_long", ""))
+        matched_text = str(event_data.get("matched_text") or "")
         score = float(event_data.get("score", 0.0))
         chemical_found = bool(event_data.get("chemical_found", False))
 
@@ -281,9 +283,20 @@ class ClickableEventBox(QFrame):
         top_row.addWidget(type_label, 0)
         top_row.addWidget(short_label, 1)
 
-        long_label = QLabel(long_desc)
+        long_label = QLabel()
         long_label.setWordWrap(True)
-        long_label.setStyleSheet("color: #666666;")
+
+        if long_desc:
+            long_label.setTextFormat(Qt.TextFormat.PlainText)
+            long_label.setText(long_desc)
+            long_label.setStyleSheet("color: #666666;")
+        elif matched_text:
+            preview = matched_text if len(matched_text) <= 120 else matched_text[:120] + "…"
+            long_label.setTextFormat(Qt.TextFormat.RichText)
+            long_label.setText(f"<i>{html.escape(preview)}</i>")
+            long_label.setStyleSheet("color: #888888;")
+        else:
+            long_label.setVisible(False)
 
         score_color = self._score_color(score)
         chemical_found_text = "True" if chemical_found else "False"
