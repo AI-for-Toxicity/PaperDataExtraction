@@ -102,6 +102,32 @@ class PredEvaluator:
         return deduped
 
     @staticmethod
+    def _count_parse_stats(s: str) -> tuple[int, int]:
+        """
+        Returns (total_nonempty_lines, valid_lines) for a raw model output string.
+        A line is valid if it parses as CSV with 3 non-empty fields.
+        """
+        if not s:
+            return 0, 0
+        total = 0
+        valid = 0
+        for raw_line in s.splitlines():
+            line = raw_line.strip()
+            if not line:
+                continue
+            total += 1
+            try:
+                row = next(csv.reader([line]))
+            except Exception:
+                continue
+            if len(row) < 3:
+                continue
+            if not (row[0] or "").strip() or not (row[1] or "").strip() or not (row[2] or "").strip():
+                continue
+            valid += 1
+        return total, valid
+
+    @staticmethod
     def _chemical_variants(chem: str) -> list[str]:
         """
         Return all normalized name variants for a chemical string.
@@ -452,6 +478,7 @@ class PredEvaluator:
         tot_sim = tot_fp = tot_fn = 0
         tot_gold = tot_pred = 0
         tot_text_match = tot_text_no_match = 0
+        tot_raw_lines = tot_valid_lines = 0
         n = 0
 
         # Load paper→chunk mapping for deduplicated summary
@@ -477,6 +504,9 @@ class PredEvaluator:
                 # can collapse legitimately distinct annotations, deflating recall unfairly.
                 gold_events = self.parse_event_lines_to_list(gold_s, dedup_threshold=1.1)
                 pred_events = self.parse_event_lines_to_list(pred_s)
+                raw_lines, valid_lines = self._count_parse_stats(pred_s)
+                tot_raw_lines += raw_lines
+                tot_valid_lines += valid_lines
 
                 chunk_text = self.extract_chunk_text_from_prompt(prompt)
 
@@ -491,7 +521,8 @@ class PredEvaluator:
                 emit()
                 emit("=" * 90)
                 emit(f"[RECORD {n}] id={rid} loss={loss}")
-                emit(f"Gold events: {len(gold_events)} | Pred events: {len(pred_events)}")
+                parse_rate = f"{valid_lines}/{raw_lines}" if raw_lines else "0/0"
+                emit(f"Gold events: {len(gold_events)} | Pred events: {len(pred_events)} | Parse rate: {parse_rate} lines valid")
                 emit(
                     f"{cmp['similar_to_gold']} matches similar to gold ones "
                     f"(exact={cmp['exact_hits']}, fuzzy={cmp['fuzzy_hits']}), "
@@ -560,6 +591,8 @@ class PredEvaluator:
         emit(f"Records: {n}")
         emit(f"Total gold events (chunk-level): {tot_gold} | Total pred events (chunk-level): {tot_pred}")
         emit(f"Total similar-to-gold: {tot_sim} | Total not-in-gold (FP): {tot_fp} | Total gold-not-found (FN): {tot_fn}")
+        agg_parse_rate = tot_valid_lines / tot_raw_lines if tot_raw_lines else 0.0
+        emit(f"Output parse rate: {tot_valid_lines}/{tot_raw_lines} lines valid ({agg_parse_rate:.1%})")
         emit(
             f"Total pred grounded in text: {tot_text_match} match, {tot_text_no_match} don't match "
             f"(threshold={text_match_threshold:.0f})"
@@ -652,20 +685,26 @@ class PredEvaluator:
                 if paper_id is None:
                     continue
                 gold_events = self.parse_event_lines_to_list(rec.get("gold", "") or "", dedup_threshold=1.1)
-                pred_events = self.parse_event_lines_to_list(rec.get("pred", "") or "")
-                paper_chunks.setdefault(paper_id, []).append((gold_events, pred_events))
+                pred_s_pp = rec.get("pred", "") or ""
+                pred_events = self.parse_event_lines_to_list(pred_s_pp)
+                raw_lines, valid_lines = self._count_parse_stats(pred_s_pp)
+                paper_chunks.setdefault(paper_id, []).append((gold_events, pred_events, raw_lines, valid_lines))
 
         # Per-paper analysis: deduplicate events across chunks then compare
         results = []
         tot_sim = tot_fp = tot_fn = tot_gold = tot_pred = 0
+        tot_raw_lines_pp = tot_valid_lines_pp = 0
 
         for paper_id, chunks in sorted(paper_chunks.items()):
             seen_gold: set[tuple] = set()
             deduped_gold: list[dict] = []
             seen_pred: set[tuple] = set()
             deduped_pred: list[dict] = []
+            paper_raw_lines = paper_valid_lines = 0
 
-            for gold_evs, pred_evs in chunks:
+            for gold_evs, pred_evs, raw_lines, valid_lines in chunks:
+                paper_raw_lines += raw_lines
+                paper_valid_lines += valid_lines
                 for ev in gold_evs:
                     key = (norm(ev.get("chemical", "")), (ev.get("event_type") or "").upper(), norm(ev.get("description", "")))
                     if key not in seen_gold:
@@ -704,6 +743,7 @@ class PredEvaluator:
                     for ge, pe in pairs
                 )
 
+            paper_parse_rate = round(paper_valid_lines / paper_raw_lines, 4) if paper_raw_lines else None
             results.append({
                 "paper_id": paper_id,
                 "n_chunks": len(chunks),
@@ -717,6 +757,9 @@ class PredEvaluator:
                 "precision": round(prec, 4),
                 "recall": round(rec, 4),
                 "f1": round(f1, 4),
+                "output_lines_total": paper_raw_lines,
+                "output_lines_valid": paper_valid_lines,
+                "parse_rate": paper_parse_rate,
                 "gold_events": self._sort_events(deduped_gold),
                 "pred_events": self._sort_events(deduped_pred),
                 "matched_text": _matched_text(cmp["matched_pairs"]),
@@ -729,10 +772,13 @@ class PredEvaluator:
             tot_fn += fn
             tot_gold += n_gold
             tot_pred += n_pred
+            tot_raw_lines_pp += paper_raw_lines
+            tot_valid_lines_pp += paper_valid_lines
 
         agg_prec = tot_sim / tot_pred if tot_pred else 0.0
         agg_rec = tot_sim / tot_gold if tot_gold else 0.0
         agg_f1 = (2 * agg_prec * agg_rec / (agg_prec + agg_rec)) if (agg_prec + agg_rec) else 0.0
+        agg_parse_rate = round(tot_valid_lines_pp / tot_raw_lines_pp, 4) if tot_raw_lines_pp else None
 
         _text_keys = {"matched_text", "unmatched_gold_text", "unmatched_pred_text"}
         output = {
@@ -746,6 +792,9 @@ class PredEvaluator:
                 "precision": round(agg_prec, 4),
                 "recall": round(agg_rec, 4),
                 "f1": round(agg_f1, 4),
+                "output_lines_total": tot_raw_lines_pp,
+                "output_lines_valid": tot_valid_lines_pp,
+                "parse_rate": agg_parse_rate,
             },
             "papers": [{k: v for k, v in p.items() if k not in _text_keys} for p in results],
         }
@@ -765,8 +814,9 @@ class PredEvaluator:
         with out_path.open("w", encoding="utf-8") as fout:
             json.dump(output, fout, indent=2, ensure_ascii=False)
 
+        parse_rate_str = f"{agg_parse_rate:.1%}" if agg_parse_rate is not None else "n/a"
         print(f"Per-paper analysis saved to {out_path}")
-        print(f"Papers: {len(results)} | Gold: {tot_gold} | Pred: {tot_pred} | Precision≈{agg_prec:.3f} Recall≈{agg_rec:.3f} F1≈{agg_f1:.3f}")
+        print(f"Papers: {len(results)} | Gold: {tot_gold} | Pred: {tot_pred} | Precision≈{agg_prec:.3f} Recall≈{agg_rec:.3f} F1≈{agg_f1:.3f} | Parse rate: {tot_valid_lines_pp}/{tot_raw_lines_pp} ({parse_rate_str})")
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass
