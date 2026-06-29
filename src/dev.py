@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from transformers import AutoTokenizer
 
 
 def check_token_lengths(paths, max_tokens, tokenizer):
@@ -147,6 +146,7 @@ if __name__ == "__main__":
     analyze_eval_results(paths)
   
   if args.do_token_check:
+    from transformers import AutoTokenizer
     check_token_lengths(
       paths,
       max_tokens=model_context_tokens - reserved_output_tokens - safety_margin_tokens,
