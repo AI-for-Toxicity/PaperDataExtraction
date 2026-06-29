@@ -2,8 +2,8 @@ rapidfuzz
 numpy
 pyspellchecker
 pillow
-pymupdf
-docling
+pymupdf==1.26.6
+docling==2.65.0
 easyocr
 transformers
 peft
